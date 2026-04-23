@@ -415,6 +415,8 @@ class IntegrationType(str, Enum):
     OPS_GENIE = "OPS_GENIE"
     VICTOR_OPS = "VICTOR_OPS"
     WEBHOOK = "WEBHOOK"
+    MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
+    PROMETHEUS = "PROMETHEUS"
 
 
 class AllRole(str, Enum):
@@ -439,3 +441,17 @@ class AllRole(str, Enum):
     GROUP_BACKUP_ADMIN = GroupRole.GROUP_BACKUP_ADMIN.value
     GROUP_AUTOMATION_ADMIN = GroupRole.GROUP_AUTOMATION_ADMIN.value
     GROUP_USER_ADMIN = GroupRole.GROUP_USER_ADMIN.value
+
+
+class PrometheusServiceDiscoveryType(str, Enum):
+    """Enum for Prometheus service discovery types."""
+
+    FILE = "file"
+    HTTP = "http"
+
+
+class PrometheusScheme(str, Enum):
+    """Enum for Prometheus schemes."""
+
+    HTTP = "http"
+    HTTPS = "https"

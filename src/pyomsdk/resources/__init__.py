@@ -47,6 +47,15 @@ from .telemetry_resource import TelemetryResource
 from .integration_settings_resource import IntegrationSettingsResource
 from .users_resource import UsersResource
 from .version_manifest_resource import VersionManifestResource
+from .integration_settings import PagerDutyIntegrationSettings
+from .integration_settings import SlackIntegrationSettings
+from .integration_settings import DatadogIntegrationSettings
+from .integration_settings import HipChatIntegrationSettings
+from .integration_settings import OpsgenieIntegrationSettings
+from .integration_settings import VictorOpsIntegrationSettings
+from .integration_settings import WebhookIntegrationSettings
+from .integration_settings import MicrosoftTeamsIntegrationSettings
+from .integration_settings import PrometheusIntegrationSettings
 
 __all__ = [
     "AccessListResource",
@@ -98,4 +107,13 @@ __all__ = [
     "IntegrationSettingsResource",
     "UsersResource",
     "VersionManifestResource",
+    "PagerDutyIntegrationSettings",
+    "SlackIntegrationSettings",
+    "DatadogIntegrationSettings",
+    "HipChatIntegrationSettings",
+    "OpsgenieIntegrationSettings",
+    "VictorOpsIntegrationSettings",
+    "WebhookIntegrationSettings",
+    "MicrosoftTeamsIntegrationSettings",
+    "PrometheusIntegrationSettings",
 ]
