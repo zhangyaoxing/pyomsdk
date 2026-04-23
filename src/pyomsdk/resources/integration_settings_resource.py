@@ -68,57 +68,32 @@ For endpoints that return a list of results, the content object is an envelope. 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        datadog: Optional[str] = Field("None", serialization_alias="Datadog")
-        """No description.
-        """
-
-        hip_chat: Optional[str] = Field("None", serialization_alias="HipChat")
-        """No description.
-        """
-
-        microsoft_teams: Optional[str] = Field(
-            "None", serialization_alias="Microsoft Teams"
-        )
-        """No description.
-        """
-
-        opsgenie: Optional[str] = Field("None", serialization_alias="Opsgenie")
-        """No description.
-        """
-
-        pager_duty: Optional[str] = Field("None", serialization_alias="PagerDuty")
-        """No description.
-        """
-
-        prometheus: Optional[str] = Field("None", serialization_alias="Prometheus")
-        """No description.
-        """
-
-        slack: Optional[str] = Field("None", serialization_alias="Slack")
-        """No description.
-        """
-
-        victor_ops: Optional[str] = Field("None", serialization_alias="VictorOps")
-        """No description.
-        """
-
-        webhook_settings: Optional[str] = Field(
-            "None", serialization_alias="Webhook Settings"
-        )
-        """No description.
+        type: IntegrationType = Field(serialization_alias="type")
+        """The type of the third-party integration.
         """
 
     def create(
         self,
         path_params: CreatePathParams,
         query_params: Optional[CreateQueryParams],
-        body_params: Optional[CreateBodyParams],
+        body_params: CreateBodyParams,
     ) -> dict[str, Any]:
         """
-        ## Create a Configuration for a Third-Party Service Integration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
-        - Resource: `POST /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-        - Description: No description.
+                ## Create a Configuration for a Third-Party Service Integration
+                - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
+                - Resource: `POST /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+                - Description: Use the following dataclasses to pass the integration settings:
+
+        - PagerDutyIntegrationSettings
+        - SlackIntegrationSettings
+        - DatadogIntegrationSettings
+        - HipChatIntegrationSettings
+        - OpsgenieIntegrationSettings
+        - VictorOpsIntegrationSettings
+        - WebhookIntegrationSettings
+        - MicrosoftTeamsIntegrationSettings
+        - PrometheusIntegrationSettings
+
         """
         return self._request(
             "POST",
@@ -433,57 +408,32 @@ For endpoints that return a list of results, the content object is an envelope. 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        datadog: Optional[str] = Field("None", serialization_alias="Datadog")
-        """No description.
-        """
-
-        hip_chat: Optional[str] = Field("None", serialization_alias="HipChat")
-        """No description.
-        """
-
-        microsoft_teams: Optional[str] = Field(
-            "None", serialization_alias="Microsoft Teams"
-        )
-        """No description.
-        """
-
-        opsgenie: Optional[str] = Field("None", serialization_alias="Opsgenie")
-        """No description.
-        """
-
-        pager_duty: Optional[str] = Field("None", serialization_alias="PagerDuty")
-        """No description.
-        """
-
-        prometheus: Optional[str] = Field("None", serialization_alias="Prometheus")
-        """No description.
-        """
-
-        slack: Optional[str] = Field("None", serialization_alias="Slack")
-        """No description.
-        """
-
-        victor_ops: Optional[str] = Field("None", serialization_alias="VictorOps")
-        """No description.
-        """
-
-        webhook_settings: Optional[str] = Field(
-            "None", serialization_alias="Webhook Settings"
-        )
-        """No description.
+        type: IntegrationType = Field(serialization_alias="type")
+        """The type of the third-party integration.
         """
 
     def update(
         self,
         path_params: UpdatePathParams,
         query_params: Optional[UpdateQueryParams],
-        body_params: Optional[UpdateBodyParams],
+        body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
         """
-        ## Update a Configuration for a Third-Party Service Integration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)
-        - Resource: `PUT /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-        - Description: No description.
+                ## Update a Configuration for a Third-Party Service Integration
+                - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)
+                - Resource: `PUT /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+                - Description: Use the following dataclasses to pass the integration settings:
+
+        - PagerDutyIntegrationSettings
+        - SlackIntegrationSettings
+        - DatadogIntegrationSettings
+        - HipChatIntegrationSettings
+        - OpsgenieIntegrationSettings
+        - VictorOpsIntegrationSettings
+        - WebhookIntegrationSettings
+        - MicrosoftTeamsIntegrationSettings
+        - PrometheusIntegrationSettings
+
         """
         return self._request(
             "PUT",

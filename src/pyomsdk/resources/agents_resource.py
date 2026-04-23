@@ -209,6 +209,118 @@ Expected response body
             None,
         )
 
+    class GetAllPathParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True)
+
+        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        """Unique identifier of the project that owns the Agent API Key.
+        """
+
+    class GetAllQueryParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True)
+
+        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        """Flag that indicates whether or not to wrap the response in an envelope.
+
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+
+For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+        """
+
+        items_per_page: Optional[float] = Field(
+            100.0, serialization_alias="itemsPerPage"
+        )
+        """Number of items to return per page, up to a maximum of 500.
+        """
+
+        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        """One-based integer that returns a subsection of results.
+        """
+
+        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        """Flag that indicates whether the response body should be in a prettyprint format.
+        """
+
+    def get_all(
+        self,
+        path_params: GetAllPathParams,
+        query_params: Optional[GetAllQueryParams],
+    ) -> dict[str, Any]:
+        """
+        ## Get Links to Agent Resources for a Project
+        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
+        - Resource: `GET /groups/{PROJECT-ID}/agents`
+        - Description: Get links to Monitoring, Backup, and Automation Agent resources for a project.
+        """
+        return self._request(
+            "GET",
+            "/groups/{PROJECT-ID}/agents",
+            path_params,
+            query_params,
+            None,
+        )
+
+    class GetByTypePathParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True)
+
+        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        """Unique identifier of the project that owns the Agent API Key.
+        """
+
+        type: AgentType = Field(serialization_alias="TYPE")
+        """The agent type to retrieve. TYPE can be one of the following values:
+
+MONITORING
+
+BACKUP
+
+AUTOMATION
+        """
+
+    class GetByTypeQueryParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True)
+
+        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        """Flag that indicates whether or not to wrap the response in an envelope.
+
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+
+For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+        """
+
+        items_per_page: Optional[float] = Field(
+            100.0, serialization_alias="itemsPerPage"
+        )
+        """Number of items to return per page, up to a maximum of 500.
+        """
+
+        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        """One-based integer that returns a subsection of results.
+        """
+
+        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        """Flag that indicates whether the response body should be in a prettyprint format.
+        """
+
+    def get_by_type(
+        self,
+        path_params: GetByTypePathParams,
+        query_params: Optional[GetByTypeQueryParams],
+    ) -> dict[str, Any]:
+        """
+        ## Get Agents by Type for One Project
+        - Document: [Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
+        - Resource: `GET /groups/{PROJECT-ID}/agents/{TYPE}`
+        - Description: Get all agents of a specified type (i.e. Monitoring, Backup, or Automation) for a project.
+        """
+        return self._request(
+            "GET",
+            "/groups/{PROJECT-ID}/agents/{TYPE}",
+            path_params,
+            query_params,
+            None,
+        )
+
     class RetrieveAllVersionsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
@@ -320,118 +432,6 @@ Expected response body
         return self._request(
             "GET",
             "/groups/{PROJECT-ID}/agents/versions",
-            path_params,
-            query_params,
-            None,
-        )
-
-    class GetAllPathParams(BaseModel):
-        model_config = ConfigDict(populate_by_name=True)
-
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
-        """
-
-    class GetAllQueryParams(BaseModel):
-        model_config = ConfigDict(populate_by_name=True)
-
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
-
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
-
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
-        """
-
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
-        """Number of items to return per page, up to a maximum of 500.
-        """
-
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
-        """
-
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
-        """
-
-    def get_all(
-        self,
-        path_params: GetAllPathParams,
-        query_params: Optional[GetAllQueryParams],
-    ) -> dict[str, Any]:
-        """
-        ## Get Links to Agent Resources for a Project
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/agents`
-        - Description: Get links to Monitoring, Backup, and Automation Agent resources for a project.
-        """
-        return self._request(
-            "GET",
-            "/groups/{PROJECT-ID}/agents",
-            path_params,
-            query_params,
-            None,
-        )
-
-    class GetByTypePathParams(BaseModel):
-        model_config = ConfigDict(populate_by_name=True)
-
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
-        """
-
-        type: AgentType = Field(serialization_alias="TYPE")
-        """The agent type to retrieve. TYPE can be one of the following values:
-
-MONITORING
-
-BACKUP
-
-AUTOMATION
-        """
-
-    class GetByTypeQueryParams(BaseModel):
-        model_config = ConfigDict(populate_by_name=True)
-
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
-
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
-
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
-        """
-
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
-        """Number of items to return per page, up to a maximum of 500.
-        """
-
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
-        """
-
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
-        """
-
-    def get_by_type(
-        self,
-        path_params: GetByTypePathParams,
-        query_params: Optional[GetByTypeQueryParams],
-    ) -> dict[str, Any]:
-        """
-        ## Get Agents by Type for One Project
-        - Document: [Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
-        - Resource: `GET /groups/{PROJECT-ID}/agents/{TYPE}`
-        - Description: Get all agents of a specified type (i.e. Monitoring, Backup, or Automation) for a project.
-        """
-        return self._request(
-            "GET",
-            "/groups/{PROJECT-ID}/agents/{TYPE}",
             path_params,
             query_params,
             None,
