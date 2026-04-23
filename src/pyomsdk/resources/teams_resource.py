@@ -14,11 +14,11 @@ class TeamsResource(BaseResource):
     class AddUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization you want to associate the team with.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The name of the team you want to add users to.
         """
 
@@ -61,7 +61,7 @@ Expected response body
     class AddUsersBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique ID of the user you want to add to the team
         """
 
@@ -88,7 +88,7 @@ Expected response body
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization with which you want to associate the team.
         """
 
@@ -131,7 +131,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: Optional[str] = Field("None", serialization_alias="name")
+        name: Optional[str] = Field(serialization_alias="name")
         """The name of the team you want to create.
         """
 
@@ -158,11 +158,11 @@ Expected response body
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization associated with the team.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team you want to delete.
         """
 
@@ -224,11 +224,11 @@ Expected response body
     class GetAllTeamUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization associated with the team.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team whose user membership you want to retrieve.
         """
 
@@ -279,7 +279,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization whose teams you want to retrieve.
         """
 
@@ -330,11 +330,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOneByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization associated with the team.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team whose information you want to retrieve.
         """
 
@@ -396,11 +396,11 @@ Expected response body
     class GetOneByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization associated with the team.
         """
 
-        team_name: str = Field("None", serialization_alias="TEAM-NAME")
+        team_name: str = Field(serialization_alias="TEAM-NAME")
         """The name of the team whose information you want to retrieve.
         """
 
@@ -462,15 +462,15 @@ Expected response body
     class RemoveUserPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization that contains the team from which you want to remove a MongoDB user.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team from which you want to remove a MongoDB user.
         """
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """The unique identifier of the MongoDB user that you want to remove from the specified team.
         """
 
@@ -532,11 +532,11 @@ Expected response body
     class RenamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization associated with the team that you want to rename.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team that you want to rename.
         """
 
@@ -579,7 +579,7 @@ Expected response body
     class RenameBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: str = Field("None", serialization_alias="name")
+        name: str = Field(serialization_alias="name")
         """The new name of the team.
         """
 
@@ -606,11 +606,11 @@ Expected response body
     class UpdateRolesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project associated with this team.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """Unique identifier of the team for which you want to update roles.
         """
 

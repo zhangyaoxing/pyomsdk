@@ -14,11 +14,11 @@ class LogCollectionJobsResource(BaseResource):
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
-        job_id: str = Field("None", serialization_alias="JOB-ID")
+        job_id: str = Field(serialization_alias="JOB-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
         """
 
@@ -80,11 +80,11 @@ Expected response body
     class DownloadLogsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
-        job_id: str = Field("None", serialization_alias="JOB-ID")
+        job_id: str = Field(serialization_alias="JOB-ID")
         """Unique identifier of the job for which to download the logs. You can obtain the JOB-IDs associated with your project by using the Get All Log Collection Jobs for One Project endpoint.
         """
 
@@ -146,7 +146,7 @@ Expected response body
     class GetAllJobsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
@@ -289,11 +289,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class RetryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
-        job_id: str = Field("None", serialization_alias="JOB-ID")
+        job_id: str = Field(serialization_alias="JOB-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
         """
 
@@ -355,7 +355,7 @@ Expected response body
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
@@ -416,7 +416,7 @@ FTDC
         """If set to true, emails, hostnames, IP addresses, and namespaces in API responses involving this job are replaced with random string values.
         """
 
-        resource_name: str = Field("None", serialization_alias="resourceName")
+        resource_name: str = Field(serialization_alias="resourceName")
         """Name of the resource from which to collect logs. The resource type defines the value:
 
 For the CLUSTER resourceType, the value is the name of the deployment or the CLUSTER-ID. For example, my-deployment.
@@ -471,11 +471,11 @@ REPLICASET, for a replica set.`
     class ExtendPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection request job.
         """
 
-        job_id: str = Field("None", serialization_alias="JOB-ID")
+        job_id: str = Field(serialization_alias="JOB-ID")
         """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
         """
 
@@ -518,7 +518,7 @@ Expected response body
     class ExtendBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        expiration_date: str = Field("None", serialization_alias="expirationDate")
+        expiration_date: str = Field(serialization_alias="expirationDate")
         """Timestamp, in the number of seconds that have elapsed since the UNIX epoch when this job expires. This can be up to 6 months from the time the job was created. You cannot specify a date which precedes the time the request is made.
         """
 

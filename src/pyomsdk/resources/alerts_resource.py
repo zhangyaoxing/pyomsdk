@@ -14,11 +14,11 @@ class AlertsResource(BaseResource):
     class AcknowledgeOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_id: str = Field("None", serialization_alias="ALERT-ID")
+        alert_id: str = Field(serialization_alias="ALERT-ID")
         """Unique identifier for the Alert.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project in which this alert is set.
         """
 
@@ -62,7 +62,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         acknowledged_until: Optional[str] = Field(
-            "None", serialization_alias="acknowledgedUntil"
+            serialization_alias="acknowledgedUntil"
         )
         """Timestamp in ISO 8601 date and time format in UTC until which the alert should be acknowledged.
 
@@ -72,7 +72,7 @@ To unacknowledge an acknowledged alert, remove this parameter from your request.
         """
 
         acknowledgement_comment: Optional[str] = Field(
-            "None", serialization_alias="acknowledgementComment"
+            serialization_alias="acknowledgementComment"
         )
         """Text description of the reason for this acknowledgement.
 
@@ -102,11 +102,11 @@ Ops Manager displays the comment next to the message that the alert has been ack
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_id: str = Field("None", serialization_alias="ALERT-ID")
+        alert_id: str = Field(serialization_alias="ALERT-ID")
         """(Required.) Alert identifier.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Project identifier.
         """
 
@@ -168,7 +168,7 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Project identifier.
         """
 

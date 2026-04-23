@@ -14,22 +14,22 @@ class MeasurementsResource(BaseResource):
     class DatabasePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        database_name: str = Field("None", serialization_alias="DATABASE-NAME")
+        database_name: str = Field(serialization_alias="DATABASE-NAME")
         """Unique identifier of the database on which the MongoDB process is stored.
         """
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host that serves the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the host.
         """
 
     class DatabaseQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field("None", serialization_alias="end")
+        end: Optional[str] = Field(serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
@@ -64,7 +64,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        granularity: str = Field("None", serialization_alias="granularity")
+        granularity: str = Field(serialization_alias="granularity")
         """Duration in ISO 8601 notation that specifies the interval between measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -120,7 +120,7 @@ PT0.5S
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field("None", serialization_alias="m")
+        m: Optional[str] = Field(serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -136,7 +136,7 @@ You must specify measurements that are valid for the host. Ops Manager returns a
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field("None", serialization_alias="period")
+        period: Optional[str] = Field(serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
@@ -146,7 +146,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field("None", serialization_alias="start")
+        start: Optional[str] = Field(serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -172,22 +172,22 @@ For example, to request the last 36 hours, include this query parameter: period=
     class DiskPartitionPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host that serves the MongoDB process.
         """
 
-        partition_name: str = Field("None", serialization_alias="PARTITION-NAME")
+        partition_name: str = Field(serialization_alias="PARTITION-NAME")
         """Name of the disk partition on which the MongoDB process is stored.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the host.
         """
 
     class DiskPartitionQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field("None", serialization_alias="end")
+        end: Optional[str] = Field(serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
@@ -222,7 +222,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        granularity: str = Field("None", serialization_alias="granularity")
+        granularity: str = Field(serialization_alias="granularity")
         """Duration in ISO 8601 notation that specifies the interval between measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -278,7 +278,7 @@ PT0.5S
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field("None", serialization_alias="m")
+        m: Optional[str] = Field(serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -294,7 +294,7 @@ You must specify measurements that are valid for the host. Ops Manager returns a
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field("None", serialization_alias="period")
+        period: Optional[str] = Field(serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
@@ -304,7 +304,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field("None", serialization_alias="start")
+        start: Optional[str] = Field(serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -330,18 +330,18 @@ For example, to request the last 36 hours, include this query parameter: period=
     class HostPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host that serves the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the host.
         """
 
     class HostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field("None", serialization_alias="end")
+        end: Optional[str] = Field(serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
@@ -376,7 +376,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        granularity: str = Field("None", serialization_alias="granularity")
+        granularity: str = Field(serialization_alias="granularity")
         """Duration in ISO 8601 notation that specifies the interval between measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -432,7 +432,7 @@ PT0.5S
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field("None", serialization_alias="m")
+        m: Optional[str] = Field(serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -448,7 +448,7 @@ You must specify measurements that are valid for the host. Ops Manager returns a
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field("None", serialization_alias="period")
+        period: Optional[str] = Field(serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
@@ -458,7 +458,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field("None", serialization_alias="start")
+        start: Optional[str] = Field(serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -484,18 +484,18 @@ For example, to request the last 36 hours, include this query parameter: period=
     class GetTypesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host that serves the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the host.
         """
 
     class GetTypesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field("None", serialization_alias="end")
+        end: Optional[str] = Field(serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
@@ -530,7 +530,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        granularity: str = Field("None", serialization_alias="granularity")
+        granularity: str = Field(serialization_alias="granularity")
         """Duration in ISO 8601 notation that specifies the interval between measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -586,7 +586,7 @@ PT0.5S
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field("None", serialization_alias="m")
+        m: Optional[str] = Field(serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -602,7 +602,7 @@ You must specify measurements that are valid for the host. Ops Manager returns a
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field("None", serialization_alias="period")
+        period: Optional[str] = Field(serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
@@ -612,7 +612,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field("None", serialization_alias="start")
+        start: Optional[str] = Field(serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 

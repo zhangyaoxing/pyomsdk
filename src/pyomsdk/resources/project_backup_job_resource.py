@@ -57,7 +57,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier that represents this project and its backup job configuration.
         """
 
@@ -119,7 +119,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier that represents this project and its backup job configuration.
         """
 
@@ -166,12 +166,12 @@ Expected response body
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                "None", serialization_alias="headRootDirectory"
+                serialization_alias="headRootDirectory"
             )
             """Optional. The root-relative path of the head directory on this Backup Daemon host.
             """
 
-            machine: Optional[str] = Field("None", serialization_alias="machine")
+            machine: Optional[str] = Field(serialization_alias="machine")
             """The host address for one Backup Daemon host.
             """
 
@@ -181,18 +181,18 @@ Expected response body
         """Optional. An array of pairs of Backup Daemon hosts and their head directories that to which this project's backup jobs are limited. If omitted, all available Backup Daemons are used.
         """
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique identifier that represents this project and its backup job configuration.
         """
 
         kmip_client_cert_password: Optional[str] = Field(
-            "None", serialization_alias="kmipClientCertPassword"
+            serialization_alias="kmipClientCertPassword"
         )
         """Optional. The password that encrypts the KMIP client certificate.
         """
 
         kmip_client_cert_path: Optional[str] = Field(
-            "None", serialization_alias="kmipClientCertPath"
+            serialization_alias="kmipClientCertPath"
         )
         """Optional. The root-relative path on the Backup Daemon host that stores the KMIP client certificate.
         """
@@ -208,7 +208,7 @@ If omitted, the project's backup jobs can use any available Backup Daemon or sna
         class OplogstorefilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            id: Optional[str] = Field("None", serialization_alias="id")
+            id: Optional[str] = Field(serialization_alias="id")
             """Unique identifier representing an oplog store that may be used with this project's backup jobs.
 
 Retrieve the id of the oplog store you want to use with Get All Oplog Configurations.
@@ -235,7 +235,7 @@ thirdPartyOplogStore
         class SnapshotstorefilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            id: Optional[str] = Field("None", serialization_alias="id")
+            id: Optional[str] = Field(serialization_alias="id")
             """Optional. The unique identifier representing specific snapshot stores that can be used with this project's backup jobs.
             """
 

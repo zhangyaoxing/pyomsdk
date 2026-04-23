@@ -14,7 +14,7 @@ class AgentsResource(BaseResource):
     class CreateApiKeyPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the Agent API Key.
         """
 
@@ -57,7 +57,7 @@ Expected response body
     class CreateApiKeyBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field("None", serialization_alias="desc")
+        desc: Optional[str] = Field(serialization_alias="desc")
         """Label for this Agent API Key.
         """
 
@@ -84,11 +84,11 @@ Expected response body
     class RemoveApiKeyPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_agent_key_id: str = Field("None", serialization_alias="API-AGENT-KEY-ID")
+        api_agent_key_id: str = Field(serialization_alias="API-AGENT-KEY-ID")
         """Unique identifier of Agent API Key.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the Agent API Key.
         """
 
@@ -150,7 +150,7 @@ Expected response body
     class GetAllApiKeysPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the Agent API Key.
         """
 
@@ -212,7 +212,7 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the Agent API Key.
         """
 
@@ -263,7 +263,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByTypePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the Agent API Key.
         """
 
@@ -378,7 +378,7 @@ Expected response body
     class RetrieveForOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 

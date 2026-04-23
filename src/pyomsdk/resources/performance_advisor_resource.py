@@ -14,11 +14,11 @@ class PerformanceAdvisorResource(BaseResource):
     class GetSlowQueryLogsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host for the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -77,11 +77,11 @@ For example:
     class GetSuggestedIndexesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host for the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -144,11 +144,11 @@ For example:
     class GetNamespacesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """The unique identifier for the host of a MongoDB process. For information about retrieving host ids, see Get All Hosts in One Project.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier for the project where the MongoDB host resides.
         """
 

@@ -14,11 +14,11 @@ class DeploymentRegionsResource(BaseResource):
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique 24-hexadecimal digit string that identifies the cluster whose backup configuration you want to find.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that holds the cluster with the backup configuration you want to find.
         """
 
@@ -64,11 +64,11 @@ Expected response body
         class DeploymentconfigsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            deployment_id: str = Field("None", serialization_alias="deploymentId")
+            deployment_id: str = Field(serialization_alias="deploymentId")
             """Unique identifier that references the deployment region to assign to the shard.
             """
 
-            rs_id: str = Field("None", serialization_alias="rsId")
+            rs_id: str = Field(serialization_alias="rsId")
             """Replica set label that identifies the shard.
             """
 
@@ -107,7 +107,7 @@ Expected response body
     class CreateByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        deployment_id: str = Field("None", serialization_alias="DEPLOYMENT-ID")
+        deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
         """Unique identifier that references this deployment region in configurations.
         """
 
@@ -156,23 +156,21 @@ Expected response body
         """Flag indicating whether you can assign Deployment Regions to backup resources.
         """
 
-        bq_proxy_endpoint: str = Field("None", serialization_alias="bqProxyEndpoint")
+        bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
         """Ops Manager instance that serves Queryable Backup requests. Value is in the following format: domain:port. For example, localhost:8080.
         """
 
-        deployment_description: str = Field(
-            "None", serialization_alias="deploymentDescription"
-        )
+        deployment_description: str = Field(serialization_alias="deploymentDescription")
         """String that describes the purpose of the deployment region.
         """
 
         ingestion_endpoint: Optional[str] = Field(
-            "None", serialization_alias="ingestionEndpoint"
+            serialization_alias="ingestionEndpoint"
         )
         """Ops Manager instance to which the Backup Agent writes snapshot or oplog data. Value is a valid URL such as http://www.mongodb.com. Supports both HTTP and HTTPS.
         """
 
-        restore_endpoint: str = Field("None", serialization_alias="restoreEndpoint")
+        restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
         """Ops Manager instance that serves restore requests.
         """
 
@@ -241,27 +239,25 @@ Expected response body
         """Flag indicating whether you can assign Deployment Regions to backup resources.
         """
 
-        bq_proxy_endpoint: str = Field("None", serialization_alias="bqProxyEndpoint")
+        bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
         """Ops Manager instance that serves Queryable Backup requests. Value is in the following format: domain:port. For example, localhost:8080.
         """
 
-        deployment_description: str = Field(
-            "None", serialization_alias="deploymentDescription"
-        )
+        deployment_description: str = Field(serialization_alias="deploymentDescription")
         """String that describes the purpose of the deployment region.
         """
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """Unique identifier that references this deployment region in configurations.
         """
 
         ingestion_endpoint: Optional[str] = Field(
-            "None", serialization_alias="ingestionEndpoint"
+            serialization_alias="ingestionEndpoint"
         )
         """Ops Manager instance to which the Backup Agent writes snapshot or oplog data. Value is a valid URL such as http://www.mongodb.com. Supports both HTTP and HTTPS.
         """
 
-        restore_endpoint: str = Field("None", serialization_alias="restoreEndpoint")
+        restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
         """Ops Manager instance that serves restore requests.
         """
 
@@ -287,7 +283,7 @@ Expected response body
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        deployment_id: str = Field("None", serialization_alias="DEPLOYMENT-ID")
+        deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
         """Unique identifier that references the deployment region in configurations.
         """
 
@@ -392,7 +388,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        deployment_id: str = Field("None", serialization_alias="DEPLOYMENT-ID")
+        deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
         """Unique identifier that references the deployment region in configurations.
         """
 

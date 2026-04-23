@@ -14,11 +14,11 @@ class BackupEncryptionKeysResource(BaseResource):
     class RetrieveKmipMasterKeyIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier of the cluster to which the encryption keys belongs.
         """
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique identifier of the project to which the encryption key belongs.
         """
 
@@ -80,11 +80,11 @@ Expected response body
     class RotateKmipMasterKeyIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier of the cluster to which the encryption keys belongs.
         """
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique identifier of the project to which the encryption key belongs.
         """
 

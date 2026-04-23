@@ -14,7 +14,7 @@ class OrganizationsResource(BaseResource):
     class InviteUserPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -67,7 +67,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
         """Unique 24-hexadecimal digit strings that identify the teams that you invite the user to join.
         """
 
-        username: str = Field("None", serialization_alias="username")
+        username: str = Field(serialization_alias="username")
         """Email address of the invited user. This is the address to which Ops Manager sends the invite.
 
 If the user accepts the invitation, they log in to Ops Manager with this username.
@@ -96,11 +96,11 @@ If the user accepts the invitation, they log in to Ops Manager with this usernam
     class DeleteInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -162,7 +162,7 @@ Expected response body
     class GetAllInvitationsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -202,7 +202,7 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Email address of the invited user. This is the address to which Ops Manager sent the invite.
 
 If omitted, Ops Manager returns all pending invitations.
@@ -230,11 +230,11 @@ If omitted, Ops Manager returns all pending invitations.
     class GetOneInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -296,11 +296,11 @@ Expected response body
     class UpdateByInvitationIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -374,7 +374,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     class UpdateInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique 24-hexadecimal digit string that identifies the organization.
         """
 
@@ -425,7 +425,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
 IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that you provide in this request. Ensure that you include all roles that you want to assign the user in this request.
         """
 
-        username: str = Field("None", serialization_alias="username")
+        username: str = Field(serialization_alias="username")
         """Username of the user whose invitation you want to update. In Ops Manager, an invited user's username is the email address to which Ops Manager sent the invitation.
         """
 
@@ -506,7 +506,7 @@ Array of documents that specify the mapping between the Ops Manager Organization
 If specifying ldapGroupMappings, mapping for ORG_OWNER role is required.
         """
 
-        name: str = Field("None", serialization_alias="name")
+        name: str = Field(serialization_alias="name")
         """Name of the organization you want to create.
         """
 
@@ -532,7 +532,7 @@ If specifying ldapGroupMappings, mapping for ORG_OWNER role is required.
     class DeleteOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization to delete.
         """
 
@@ -594,7 +594,7 @@ Expected response body
     class GetAllProjectsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization whose information you want to retrieve.
         """
 
@@ -611,7 +611,7 @@ Expected response body
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        name: Optional[str] = Field("None", serialization_alias="name")
+        name: Optional[str] = Field(serialization_alias="name")
         """Human-readable label of the project to use to filter the returned list. Performs a case-insensitive search for a project, which is prefixed by the specified name, within the organization.
 
 For example, if you specify a name query parameter of project1, Ops Manager returns the project named project1, but would not return a project named project123.
@@ -647,7 +647,7 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
     class GetAllUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization whose user information you want to retrieve.
         """
 
@@ -720,7 +720,7 @@ If set to true or omitted, users assigned a global role receive deleted projects
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        name: Optional[str] = Field("None", serialization_alias="name")
+        name: Optional[str] = Field(serialization_alias="name")
         """Filters results based on the specified organization name. Performs a case-insensitive search for organizations which exactly match the specified name.
 
 For example, if you specify a name query parameter of org1, Ops Manager returns organizations named org1 and Org1, but would not return an organization named org123.
@@ -755,7 +755,7 @@ For example, if you specify a name query parameter of org1, Ops Manager returns 
     class GetOneOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """(Required.) The unique identifier for the organization whose information you want to retrieve.
         """
 
@@ -827,7 +827,7 @@ If set to true or omitted, users assigned a global role receive deleted projects
     class RenameOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier of the organization.
         """
 
@@ -876,7 +876,7 @@ Expected response body
         """For LDAP-backed Ops Manager, the mappings of LDAP groups to Ops Manager organization roles. Only accepted for LDAP-backed Ops Manager.
         """
 
-        name: Optional[str] = Field("None", serialization_alias="name")
+        name: Optional[str] = Field(serialization_alias="name")
         """The new name for the organization.
         """
 

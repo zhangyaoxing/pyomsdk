@@ -62,7 +62,7 @@ Expected response body
         """Optional. Flag indicating whether the username and password for this blockstore were encrypted using the credentialstool.
         """
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique name that labels this blockstore.
         """
 
@@ -86,7 +86,7 @@ To learn more about Load Factor, see Edit One Existing Blockstore.
         """Optional. Flag indicating whether this blockstore only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this blockstore.
         """
 
@@ -130,7 +130,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        blockstore_id: str = Field("None", serialization_alias="BLOCKSTORE-ID")
+        blockstore_id: str = Field(serialization_alias="BLOCKSTORE-ID")
         """Unique name that labels this blockstore configuration.
         """
 
@@ -241,7 +241,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        blockstore_id: str = Field("None", serialization_alias="BLOCKSTORE-ID")
+        blockstore_id: str = Field(serialization_alias="BLOCKSTORE-ID")
         """The unique name that labels this blockstore configuration.
         """
 
@@ -303,7 +303,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        blockstore_id: str = Field("None", serialization_alias="BLOCKSTORE-ID")
+        blockstore_id: str = Field(serialization_alias="BLOCKSTORE-ID")
         """The unique name that labels this blockstore configuration.
         """
 
@@ -378,7 +378,7 @@ To learn more about Load Factor, see Edit One Existing Blockstore.
         """Optional. Flag indicating whether this blockstore only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this blockstore.
         """
 

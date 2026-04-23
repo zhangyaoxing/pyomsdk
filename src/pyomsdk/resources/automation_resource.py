@@ -14,7 +14,7 @@ class AutomationResource(BaseResource):
     class GetStatusOfLast50PlansPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """(Required.) The unique identifier for the group.
         """
 
@@ -76,7 +76,7 @@ Expected response body
     class GetStatusPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 

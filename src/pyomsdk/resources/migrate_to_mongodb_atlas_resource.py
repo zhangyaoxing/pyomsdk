@@ -14,7 +14,7 @@ class MigrateToMongodbAtlasResource(BaseResource):
     class ConnectWithAtlasOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique 24-hexadecimal digit string that identifies the source organization that contains your projects.
         """
 
@@ -57,7 +57,7 @@ Expected response body
     class ConnectWithAtlasOrganizationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        link_token: str = Field("None", serialization_alias="linkToken")
+        link_token: str = Field(serialization_alias="linkToken")
         """String that contains the information necessary to connect from MongoDB Cloud Manager or Ops Manager to MongoDB Atlas during a Live Migration from a MongoDB Cloud Manager or Ops Manager deployment to a cluster in MongoDB Atlas.
 
 When you migrate data from a MongoDB Cloud Manager or Ops Manager deployment, you need to do the following:
@@ -92,7 +92,7 @@ You use the same link-token to migrate each deployment in your MongoDB Cloud Man
     class RemoveConnectionPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique 24-hexadecimal digit string that identifies the source organization that contains your projects.
         """
 
@@ -154,7 +154,7 @@ Expected response body
     class ReturnConnectionStatusPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique 24-hexadecimal digit string that identifies the source organization that contains the projects to be migrated to MongoDB Atlas.
         """
 

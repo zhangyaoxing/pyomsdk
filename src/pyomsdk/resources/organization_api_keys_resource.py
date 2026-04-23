@@ -14,7 +14,7 @@ class OrganizationApiKeysResource(BaseResource):
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -69,7 +69,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field("None", serialization_alias="desc")
+        desc: Optional[str] = Field(serialization_alias="desc")
         """Description of the API key. Must be between 1 and 250 characters in length.
         """
 
@@ -141,11 +141,11 @@ Organization Read Only
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier of the API Key.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier of the organization that owns the API Key.
         """
 
@@ -219,7 +219,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -293,11 +293,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """The unique identifier for the API key you want to retrieve. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """The unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -371,11 +371,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key you want to update. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -430,7 +430,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field("None", serialization_alias="desc")
+        desc: Optional[str] = Field(serialization_alias="desc")
         """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
         """
 

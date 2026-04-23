@@ -14,7 +14,7 @@ class ServerUsageResource(BaseResource):
     class GetDiagnosticArchivePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the diagnostics archive.
         """
 
@@ -131,7 +131,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class CreatePhysicalHostBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: str = Field("None", serialization_alias="name")
+        name: str = Field(serialization_alias="name")
         """Label you gave to the physical host. This value must be unique.
         """
 
@@ -152,11 +152,11 @@ To learn more, see MongoDB Usage Page.
         class VirtualhostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field("None", serialization_alias="groupId")
+            group_id: Optional[str] = Field(serialization_alias="groupId")
             """Unique identifier of the project into which Ops Manager places this virtual host.
             """
 
-            hostname: Optional[str] = Field("None", serialization_alias="hostname")
+            hostname: Optional[str] = Field(serialization_alias="hostname")
             """FQDN of the virtual host bound to the physical host.
             """
 
@@ -188,7 +188,7 @@ To learn more, see MongoDB Usage Page.
     class GetGlobalUsageReportArchiveQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Date in ISO 8601 date format when the report ends.
         """
 
@@ -221,7 +221,7 @@ content
 Expected response body
         """
 
-        file_format: str = Field("None", serialization_alias="fileFormat")
+        file_format: str = Field(serialization_alias="fileFormat")
         """Compression format of the resulting report. Ops Manager accepts zip or .tar.gz.
         """
 
@@ -233,7 +233,7 @@ Expected response body
         """Flag that indicates whether the response should censor all IP addresses, hostnames, organization names, and project names in the report.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Date in ISO 8601 date format when the report starts.
         """
 
@@ -390,7 +390,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetServerTypeInOneOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique identifier of the organization.
         """
 
@@ -452,7 +452,7 @@ Expected response body
     class GetDefaultServerTypePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="groupId")
+        group_id: str = Field(serialization_alias="groupId")
         """Unique identifier of the project associated with the desired hosts.
         """
 
@@ -514,7 +514,7 @@ Expected response body
     class RetreiveOnePhysicalHostPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        physical_host_id: str = Field("None", serialization_alias="physicalHostId")
+        physical_host_id: str = Field(serialization_alias="physicalHostId")
         """Unique identifier of the physical host to be retrieved.
         """
 
@@ -588,14 +588,14 @@ For endpoints that return a list of results, the results object is an envelope. 
     class ListHostAssignmentsInOneOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique identifier of the organization associated with the desired hosts.
         """
 
     class ListHostAssignmentsInOneOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Date in ISO 8601 date format when the list of host assignments ends.
         """
 
@@ -640,7 +640,7 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Date in ISO 8601 date format when the list of host assignments starts.
         """
 
@@ -666,14 +666,14 @@ Expected response body
     class ListHostAssignmentsInOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="groupId")
+        group_id: str = Field(serialization_alias="groupId")
         """Unique identifier of the project associated with the desired hosts.
         """
 
     class ListHostAssignmentsInOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Date in ISO 8601 date format when the list of host assignments ends.
         """
 
@@ -718,7 +718,7 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Date in ISO 8601 date format when the list of host assignments starts.
         """
 
@@ -744,7 +744,7 @@ Expected response body
     class ListHostAssignmentsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Date in ISO 8601 date format when the list of host assignments ends.
         """
 
@@ -789,7 +789,7 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Date in ISO 8601 date format when the list of host assignments starts.
         """
 
@@ -814,7 +814,7 @@ Expected response body
     class RemovePhysicalHostPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        physical_host_id: str = Field("None", serialization_alias="physicalHostId")
+        physical_host_id: str = Field(serialization_alias="physicalHostId")
         """Unique identifier of the physical host.
         """
 
@@ -888,7 +888,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdateServerTypeForOneOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique identifier of the organization.
         """
 
@@ -993,7 +993,7 @@ To learn more, see MongoDB Usage Page.
     class UpdateDefaultServerTypePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="groupId")
+        group_id: str = Field(serialization_alias="groupId")
         """Unique identifier of the project associated with the desired hosts.
         """
 
@@ -1098,7 +1098,7 @@ To learn more, see MongoDB Usage Page.
     class UpdatePhysicalHostPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        physical_host_id: str = Field("None", serialization_alias="physicalHostId")
+        physical_host_id: str = Field(serialization_alias="physicalHostId")
         """Unique identifier of the physical host.
         """
 
@@ -1153,7 +1153,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdatePhysicalHostBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: str = Field("None", serialization_alias="name")
+        name: str = Field(serialization_alias="name")
         """Label you gave to the physical host. This value must be unique.
         """
 
@@ -1174,11 +1174,11 @@ To learn more, see MongoDB Usage Page.
         class VirtualhostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field("None", serialization_alias="groupId")
+            group_id: Optional[str] = Field(serialization_alias="groupId")
             """Unique identifier of the project into which Ops Manager places this virtual host.
             """
 
-            hostname: Optional[str] = Field("None", serialization_alias="hostname")
+            hostname: Optional[str] = Field(serialization_alias="hostname")
             """FQDN of the virtual host bound to the physical host.
             """
 
@@ -1211,7 +1211,7 @@ To learn more, see MongoDB Usage Page.
     class UpdateServerTypePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="hostId")
+        host_id: str = Field(serialization_alias="hostId")
         """Unique identifier of the host.
         """
 

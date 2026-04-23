@@ -14,7 +14,7 @@ class BackupConfigurationsResource(BaseResource):
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project to which the backup configuration applies.
         """
 
@@ -65,11 +65,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique 24-hexadecimal digit string that identifies the cluster whose backup configuration you want to find.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that holds the cluster with the backup configuration you want to find.
         """
 
@@ -131,11 +131,11 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="clusterId")
+        cluster_id: str = Field(serialization_alias="clusterId")
         """Unique 24-hexadecimal digit string that identifies the cluster whose backup configuration you want to change.
         """
 
-        project_id: str = Field("None", serialization_alias="projectId")
+        project_id: str = Field(serialization_alias="projectId")
         """Unique 24-hexadecimal digit string that identifies the project that holds the cluster with the backup configuration you want to change.
         """
 
@@ -256,13 +256,11 @@ Without the syncSource parameter, the request fails.
 If the new list only removes namespaces from the existing array, don't set syncSource.
         """
 
-        password: Optional[str] = Field("None", serialization_alias="password")
+        password: Optional[str] = Field(serialization_alias="password")
         """Password to use to connect to the sync source database. Ops Manager requires this parameter when the sync store mongod instances require clients to authenticate.
         """
 
-        preferred_member: Optional[str] = Field(
-            "None", serialization_alias="preferredMember"
-        )
+        preferred_member: Optional[str] = Field(serialization_alias="preferredMember")
         """Cluster member that a user designates as the preferred replica set member to create snapshots. You can set the preferred member using the console. View available replica set members that can act as a preferred member using the Get one backup config endpoint.
         """
 
@@ -274,13 +272,13 @@ If the new list only removes namespaces from the existing array, don't set syncS
             model_config = ConfigDict(populate_by_name=True)
 
             snapshot_store_id: Optional[str] = Field(
-                "None", serialization_alias="snapshotStoreId"
+                serialization_alias="snapshotStoreId"
             )
             """String that identifies the S3 blockstore to transition to. New snapshots will be stored in this destination S3 blockstore. Existing snapshots remain in the original store until they expire based on your configured retention policy. If you provide the snapshotStore object, you must specify both the snapshotStoreType and snapshotStoreId parameters.
             """
 
             snapshot_store_type: Optional[str] = Field(
-                "None", serialization_alias="snapshotStoreType"
+                serialization_alias="snapshotStoreType"
             )
             """String that identifies the snapshot store type. Currently, only an S3 bucket (S3 blockstore) is supported. Value must be s3blockstore. If you provide the snapshotStore object, you must specify both the snapshotStoreType and snapshotStoreId parameters.
             """
@@ -321,13 +319,13 @@ MEMORY_MAPPED
 WIRED_TIGER
         """
 
-        sync_source: Optional[str] = Field("None", serialization_alias="syncSource")
+        sync_source: Optional[str] = Field(serialization_alias="syncSource")
         """mongod instance from which you retrieve backup data. Ops Manager accepts either a specific hostname or one of: PRIMARY and SECONDARY.
 
 Ops Manager requires this parameter if "storageEngineName" : "WIRED_TIGER".
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Name of the user to use to connect to the sync source database. Ops Manager requires this parameter when the sync store mongod instances require clients to authenticate.
 
 Send this parameter to Ops Manager when updating the backup configuration for a replica set or sharded cluster that Ops Manager doesn't manage.

@@ -14,7 +14,7 @@ class ConfigurationResource(BaseResource):
     class GetTheAuditLogRotateConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the automation configuration.
         """
 
@@ -76,7 +76,7 @@ Expected response body
     class GetTheAutomationConfigurationNoSecretsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the group that owns the automation configuration.
         """
 
@@ -138,7 +138,7 @@ Expected response body
     class GetTheAutomationConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the group that owns the automation configuration.
         """
 
@@ -200,7 +200,7 @@ Expected response body
     class GetBackupConfigurationSettingsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
         """
 
@@ -262,7 +262,7 @@ Expected response body
     class GetMonitoringConfigurationSettingsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
         """
 
@@ -324,7 +324,7 @@ Expected response body
     class GetTheSystemLogRotateConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the automation configuration.
         """
 
@@ -386,7 +386,7 @@ Expected response body
     class UpdateAgentVersionsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the group that owns the automation configuration.
         """
 
@@ -430,19 +430,19 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         automation_agent_version: Optional[str] = Field(
-            "None", serialization_alias="automationAgentVersion"
+            serialization_alias="automationAgentVersion"
         )
         """Version to which you want to update the MongoDB Agent.
         """
 
         bi_connector_version: Optional[str] = Field(
-            "None", serialization_alias="biConnectorVersion"
+            serialization_alias="biConnectorVersion"
         )
         """Version to which you want to update the BI Connector.
         """
 
         mongo_db_tools_version: Optional[str] = Field(
-            "None", serialization_alias="mongoDbToolsVersion"
+            serialization_alias="mongoDbToolsVersion"
         )
         """Version to which you want to update the MongoDB Database Tools
         """
@@ -470,7 +470,7 @@ Expected response body
     class UpdateTheAuditLogRotateConfigPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the automation configuration.
         """
 
@@ -560,7 +560,7 @@ Expected response body
     class UpdateTheAutomationConfigurationNoSecretsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the group that owns the automation configuration.
         """
 
@@ -622,7 +622,7 @@ Expected response body
     class UpdateTheAutomationConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the group that owns the automation configuration.
         """
 
@@ -684,7 +684,7 @@ Expected response body
     class UpdateBackupConfigurationSettingsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
         """
 
@@ -869,7 +869,7 @@ sslTrustedMMSBackupServerCertificate
 string
         """
 
-        log_path: Optional[str] = Field("None", serialization_alias="logPath")
+        log_path: Optional[str] = Field(serialization_alias="logPath")
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
@@ -892,7 +892,7 @@ string
         """Thresholds after which this MongoDB Agent rotates the backup log.
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """MongoDB user in the application database that manages the backup logs.
 
 If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
@@ -921,7 +921,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
     class UpdateMonitoringConfigurationSettingsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
         """
 
@@ -1097,7 +1097,7 @@ enableMunin
 boolean
         """
 
-        log_path: Optional[str] = Field("None", serialization_alias="logPath")
+        log_path: Optional[str] = Field(serialization_alias="logPath")
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
@@ -1120,7 +1120,7 @@ boolean
         """Thresholds after which this MongoDB Agent rotates the monitoring log.
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """MongoDB user in the application database that manages the monitoring logs.
 
 If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
@@ -1149,7 +1149,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
     class UpdateTheSystemLogRotateConfigPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns the automation configuration.
         """
 

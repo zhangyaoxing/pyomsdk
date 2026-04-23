@@ -50,11 +50,11 @@ Expected response body
     class CreateEntryBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cidr_block: str = Field("None", serialization_alias="cidrBlock")
+        cidr_block: str = Field(serialization_alias="cidrBlock")
         """Access list entry in IPv4 or IPv6 CIDR notation to be added.
         """
 
-        description: str = Field("None", serialization_alias="description")
+        description: str = Field(serialization_alias="description")
         """Description of the Global Access List Entry. Must be between 1 and 250 characters in length.
         """
 
@@ -80,7 +80,7 @@ Expected response body
     class DeleteEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_id: str = Field("None", serialization_alias="ACCESS-LIST-ID")
+        access_list_id: str = Field(serialization_alias="ACCESS-LIST-ID")
         """Unique identifier for the access list entry you want to delete.
         """
 
@@ -185,7 +185,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOneEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_id: str = Field("None", serialization_alias="ACCESS-LIST-ID")
+        access_list_id: str = Field(serialization_alias="ACCESS-LIST-ID")
         """Unique identifier for the Global Access List Entry.
         """
 
@@ -247,7 +247,7 @@ Expected response body
     class UpdateEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_id: str = Field("None", serialization_alias="ACCESS-LIST-ID")
+        access_list_id: str = Field(serialization_alias="ACCESS-LIST-ID")
         """Unique identifier for the Global Access List Entry.
         """
 

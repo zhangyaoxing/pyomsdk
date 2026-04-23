@@ -80,7 +80,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class RetrieveForOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that has the controlled features.
         """
 
@@ -154,7 +154,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that has the controlled features.
         """
 
@@ -212,15 +212,15 @@ For endpoints that return a list of results, the results object is an envelope. 
         class ExternalmanagementsystemParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            name: Optional[str] = Field("None", serialization_alias="name")
+            name: Optional[str] = Field(serialization_alias="name")
             """Identifying label for the external system that manages this Ops Manager Project.
             """
 
-            system_id: Optional[str] = Field("None", serialization_alias="systemId")
+            system_id: Optional[str] = Field(serialization_alias="systemId")
             """Unique identifier of the external system that manages this Ops Manager Project.
             """
 
-            version: Optional[str] = Field("None", serialization_alias="version")
+            version: Optional[str] = Field(serialization_alias="version")
             """Active release of the external system that manages this Ops Manager Project.
             """
 

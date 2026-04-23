@@ -36,7 +36,7 @@ VICTOR_OPS
 WEBHOOK
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Project identifier.
         """
 
@@ -128,7 +128,7 @@ VICTOR_OPS
 WEBHOOK
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Project identifier.
         """
 
@@ -179,7 +179,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class ReturnLatestPrometheusTargetsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique 24-hexadecimal digit string that identifies your project.
         """
 
@@ -230,7 +230,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetAllConfigurationsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Project identifier.
         """
 
@@ -303,7 +303,7 @@ VICTOR_OPS
 WEBHOOK
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Project identifier.
         """
 
@@ -376,7 +376,7 @@ VICTOR_OPS
 WEBHOOK
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Project identifier.
         """
 

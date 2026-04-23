@@ -14,7 +14,7 @@ class BackupDaemonResource(BaseResource):
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        machine: str = Field("None", serialization_alias="MACHINE")
+        machine: str = Field(serialization_alias="MACHINE")
         """Hostname or IP address of the machine that serves the Backup Daemon.
         """
 
@@ -101,12 +101,12 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                "None", serialization_alias="headRootDirectory"
+                serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
 
-            machine: str = Field("None", serialization_alias="machine")
+            machine: str = Field(serialization_alias="machine")
             """Hostname or IP address of the Backup Daemon host.
             """
 
@@ -153,13 +153,11 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        head_root_directory: str = Field(
-            "None", serialization_alias="HEAD-ROOT-DIRECTORY"
-        )
+        head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
         """Root-relative URL-encoded path of the head directory on this Backup Daemon host. May be omitted if the Backup Daemon has not been configured.
         """
 
-        machine: str = Field("None", serialization_alias="MACHINE")
+        machine: str = Field(serialization_alias="MACHINE")
         """Hostname or IP address of the machine that serves the Backup Daemon.
         """
 
@@ -270,13 +268,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        head_root_directory: str = Field(
-            "None", serialization_alias="HEAD-ROOT-DIRECTORY"
-        )
+        head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
         """Root-relative URL-encoded path of the head directory on this Backup Daemon host. May be omitted if the Backup Daemon has not been configured.
         """
 
-        machine: str = Field("None", serialization_alias="MACHINE")
+        machine: str = Field(serialization_alias="MACHINE")
         """Hostname or IP address of the machine that serves the Backup Daemon.
         """
 
@@ -338,9 +334,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        head_root_directory: str = Field(
-            "None", serialization_alias="HEAD-ROOT-DIRECTORY"
-        )
+        head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
         """Root-relative URL-encoded path of the head directory on this Backup Daemon host.
 
 Requests encode slashes in the URL path. For example, for Linux platforms, you should add the head directory in this format:
@@ -349,7 +343,7 @@ http://localhost:8080/api/public/v1.0/admin/backup/
 daemon/config/localhost/%2Fdata%2Fbackup%2F
         """
 
-        machine: str = Field("None", serialization_alias="MACHINE")
+        machine: str = Field(serialization_alias="MACHINE")
         """Hostname or IP address of the machine that serves the Backup Daemon.
         """
 
@@ -436,12 +430,12 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                "None", serialization_alias="headRootDirectory"
+                serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
 
-            machine: str = Field("None", serialization_alias="machine")
+            machine: str = Field(serialization_alias="machine")
             """Hostname or IP address of the Backup Daemon host.
             """
 

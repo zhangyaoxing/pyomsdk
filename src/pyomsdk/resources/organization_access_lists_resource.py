@@ -14,11 +14,11 @@ class OrganizationAccessListsResource(BaseResource):
     class CreateEntriesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the Organization API Key for which you want to create a new access list entry.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization to which the target API Key belongs. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -73,11 +73,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class CreateEntriesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cidr_block: Optional[str] = Field("None", serialization_alias="cidrBlock")
+        cidr_block: Optional[str] = Field(serialization_alias="cidrBlock")
         """Access list entry in CIDR notation to be added for the API key. This field is mutually exclusive with the ipAddress field.
         """
 
-        ip_address: Optional[str] = Field("None", serialization_alias="ipAddress")
+        ip_address: Optional[str] = Field(serialization_alias="ipAddress")
         """IP address to be added to the access list for the API key. This field is mutually exclusive with the cidrBlock field.
         """
 
@@ -104,15 +104,15 @@ For endpoints that return a list of results, the results object is an envelope. 
     class DeleteEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_entry: str = Field("None", serialization_alias="ACCESS-LIST-ENTRY")
+        access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
         """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
         """
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization to which the target API key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -186,11 +186,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetAllEntriesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API Key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization to which the target API Key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -264,15 +264,15 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetOneEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_entry: str = Field("None", serialization_alias="ACCESS-LIST-ENTRY")
+        access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
         """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
         """
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API Key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
 
-        org_id: str = Field("None", serialization_alias="ORG-ID")
+        org_id: str = Field(serialization_alias="ORG-ID")
         """Unique identifier for the organization to which the target API Key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
         """
 

@@ -14,7 +14,7 @@ class GlobalAlertsResource(BaseResource):
     class AcknowledgeOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_id: str = Field("None", serialization_alias="ALERT-ID")
+        alert_id: str = Field(serialization_alias="ALERT-ID")
         """Unique identifier of the alert you want to acknowledge.
         """
 
@@ -57,7 +57,7 @@ Expected response body
     class AcknowledgeOneBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        acknowledged_until: str = Field("None", serialization_alias="acknowledgedUntil")
+        acknowledged_until: str = Field(serialization_alias="acknowledgedUntil")
         """Timestamp in ISO 8601 date and time format in UTC through which you acknowledge this alert. After this time passes, Ops Manager reverts the alert to un-acknowledged.
 
 To prevent the alert from resuming any time soon, set the date and time to some point in the distant future.
@@ -66,7 +66,7 @@ To un-acknowledge an alert, specify a time and date in the past.
         """
 
         acknowledgement_comment: Optional[str] = Field(
-            "None", serialization_alias="acknowledgementComment"
+            serialization_alias="acknowledgementComment"
         )
         """Comment describing the alert acknowledgement.
         """
@@ -95,13 +95,13 @@ To un-acknowledge an alert, specify a time and date in the past.
         model_config = ConfigDict(populate_by_name=True)
 
         created_on_or_after: Optional[str] = Field(
-            "None", serialization_alias="createdOnOrAfter"
+            serialization_alias="createdOnOrAfter"
         )
         """Creation date of alerts you want to return. Ops Manager returns alerts created on or after the date you indicate.
         """
 
         created_on_or_before: Optional[str] = Field(
-            "None", serialization_alias="createdOnOrBefore"
+            serialization_alias="createdOnOrBefore"
         )
         """Creation date of alerts you want to return. Ops Manager returns alerts created on or before the date you indicate.
         """
@@ -177,7 +177,7 @@ Alert is closed.
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_id: str = Field("None", serialization_alias="ALERT-ID")
+        alert_id: str = Field(serialization_alias="ALERT-ID")
         """Unique identifier of the alert you want to retrieve.
         """
 

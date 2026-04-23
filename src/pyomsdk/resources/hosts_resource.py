@@ -14,7 +14,7 @@ class HostsResource(BaseResource):
     class BeginMonitoringPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -77,7 +77,7 @@ MONGODB_X509
 NONE
         """
 
-        hostname: str = Field("None", serialization_alias="hostname")
+        hostname: str = Field(serialization_alias="hostname")
         """Set the primary hostname Ops Manager should use to connect to this MongoDB instance.
         """
 
@@ -85,7 +85,7 @@ NONE
         """Set to true if Ops Manager should collect logs for this MongoDB process.
         """
 
-        password: Optional[str] = Field("None", serialization_alias="password")
+        password: Optional[str] = Field(serialization_alias="password")
         """Password associated with username for connecting to this MongoDB process.
 
 Set this parameter if "authMechanismName" : "MONGODB_CR"
@@ -107,7 +107,7 @@ Ops Manager doesn't include this parameter in any Host || response.
 Set to true if "authMechanismName" : "MONGODB_X509".
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Username needed to connect to this MongoDB process.
 
 Required if "authMechanismName" : "MONGODB_CR"
@@ -136,11 +136,11 @@ Required if "authMechanismName" : "MONGODB_CR"
     class StopMonitoringPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host for the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project that owns this MongoDB host.
         """
 
@@ -202,14 +202,14 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns this MongoDB host.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="clusterId")
+        cluster_id: str = Field(serialization_alias="clusterId")
         """Unique identifier of the cluster in which this MongoDB process belongs.
         """
 
@@ -257,15 +257,15 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByHostnamePortPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        hostname: str = Field("None", serialization_alias="HOSTNAME")
+        hostname: str = Field(serialization_alias="HOSTNAME")
         """Primary hostname Ops Manager should use to connect to this MongoDB instance. This hostname can be a hostname, an FQDN, an IPv4 address, or an IPv6 address.
         """
 
-        port: str = Field("None", serialization_alias="PORT")
+        port: str = Field(serialization_alias="PORT")
         """Port on which the MongoDB process listens.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -327,11 +327,11 @@ Expected response body
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host for the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -393,11 +393,11 @@ Expected response body
     class UpdateConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """Unique identifier of the host for the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -464,7 +464,7 @@ NONE
         """Set to true if Ops Manager should collect logs for this MongoDB process.
         """
 
-        password: Optional[str] = Field("None", serialization_alias="password")
+        password: Optional[str] = Field(serialization_alias="password")
         """Password for connecting to this MongoDB process. Specify if "authMechanismName" : "MONGODB_CR" or "authMechanismName" : "SCRAM_SHA_1". However, it will never be exposed when a host entity is returned.
         """
 
@@ -476,7 +476,7 @@ NONE
         """Set to true if TLS/SSL should be enabled for this MongoDB process. Set to true if "authMechanismName" : "MONGODB_X509".
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Username needed to connect to this MongoDB process. Specify if "authMechanismName" : "MONGODB_CR" or "authMechanismName" : "SCRAM_SHA_1".
         """
 

@@ -14,15 +14,15 @@ class DatabasesResource(BaseResource):
     class GetByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        database_name: str = Field("None", serialization_alias="DATABASE-NAME")
+        database_name: str = Field(serialization_alias="DATABASE-NAME")
         """(Required.) The name of the MongoDB database.
         """
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host running the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project that owns this MongoDB process.
         """
 
@@ -84,11 +84,11 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host running the MongoDB process.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project that owns this MongoDB process.
         """
 

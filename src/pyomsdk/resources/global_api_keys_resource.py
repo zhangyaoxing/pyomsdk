@@ -50,7 +50,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: str = Field("None", serialization_alias="desc")
+        desc: str = Field(serialization_alias="desc")
         """Description of the Global API Key. Must be between 1 and 250 characters in length.
         """
 
@@ -143,7 +143,7 @@ Global User Admin
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key you want to delete. Use the /admin/apiKeys endpoint to retrieve all API keys to which the authenticated user has access.
         """
 
@@ -314,7 +314,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the Global API Key you want to retrieve.
         """
 
@@ -376,7 +376,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the Global API key you want to update.
         """
 
@@ -419,7 +419,7 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field("None", serialization_alias="desc")
+        desc: Optional[str] = Field(serialization_alias="desc")
         """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
         """
 

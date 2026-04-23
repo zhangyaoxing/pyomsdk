@@ -68,7 +68,7 @@ Expected response body
     class GetAllFromOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project.
         """
 
@@ -119,11 +119,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier for the cluster you want to retrieve.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project.
         """
 
@@ -185,11 +185,11 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier for the cluster you want to retrieve.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project.
         """
 
@@ -232,7 +232,7 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_name: str = Field("None", serialization_alias="clusterName")
+        cluster_name: str = Field(serialization_alias="clusterName")
         """Name to assign to the cluster.
         """
 

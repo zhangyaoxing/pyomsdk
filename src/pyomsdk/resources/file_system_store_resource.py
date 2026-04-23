@@ -56,7 +56,7 @@ Expected response body
         """Flag that indicates whether this file system store can be assigned backup jobs.
         """
 
-        id: str = Field("None", serialization_alias="id")
+        id: str = Field(serialization_alias="id")
         """Unique identifier of this file system store.
         """
 
@@ -73,7 +73,7 @@ To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
-            "None", serialization_alias="mmapv1CompressionSetting"
+            serialization_alias="mmapv1CompressionSetting"
         )
         """Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
@@ -84,12 +84,12 @@ If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
 IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you edit your deployment's configuration to change your storage engine to WiredTiger Storage Engine, Ops Manager restarts the MongoDB processes.
         """
 
-        store_path: str = Field("None", serialization_alias="storePath")
+        store_path: str = Field(serialization_alias="storePath")
         """Location where file system-based backups are stored on the file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
-            "None", serialization_alias="wtCompressionSetting"
+            serialization_alias="wtCompressionSetting"
         )
         """Compression setting if you use the WiredTiger storage engine for your snaphots.
 
@@ -120,9 +120,7 @@ If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        file_system_config_id: str = Field(
-            "None", serialization_alias="FILE-SYSTEM-CONFIG-ID"
-        )
+        file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
         """Unique identifier that labels this file system store configuration.
         """
 
@@ -233,9 +231,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        file_system_config_id: str = Field(
-            "None", serialization_alias="FILE-SYSTEM-CONFIG-ID"
-        )
+        file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
         """Unique name that labels this file system store configuration.
         """
 
@@ -297,9 +293,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        file_system_config_id: str = Field(
-            "None", serialization_alias="FILE-SYSTEM-CONFIG-ID"
-        )
+        file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
         """Unique identifier that labels this file system store configuration.
         """
 
@@ -361,7 +355,7 @@ To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
-            "None", serialization_alias="mmapv1CompressionSetting"
+            serialization_alias="mmapv1CompressionSetting"
         )
         """Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
@@ -372,12 +366,12 @@ If the MongoDB runs FCV 4.2 or later, Ops Manager ignores this setting.
 IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you edit your deployment's configuration to change your storage engine to WiredTiger Storage Engine, Ops Manager restarts the MongoDB processes.
         """
 
-        store_path: str = Field("None", serialization_alias="storePath")
+        store_path: str = Field(serialization_alias="storePath")
         """Location where file system-based backups are stored on the file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
-            "None", serialization_alias="wtCompressionSetting"
+            serialization_alias="wtCompressionSetting"
         )
         """Compression setting if you use the WiredTiger storage engine for your snaphots.
 

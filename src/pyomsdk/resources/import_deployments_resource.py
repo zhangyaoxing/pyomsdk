@@ -14,11 +14,11 @@ class ImportDeploymentsResource(BaseResource):
     class CancelImportDeploymentRequestPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
-        request_id: str = Field("None", serialization_alias="REQUEST-ID")
+        request_id: str = Field(serialization_alias="REQUEST-ID")
         """Unique identifier of the import deployment request to cancel.
         """
 
@@ -80,7 +80,7 @@ Expected response body
     class CreateImportDeploymentRequestPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project that will own the imported deployments.
         """
 
@@ -123,18 +123,18 @@ Expected response body
     class CreateImportDeploymentRequestBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        admin_db: Optional[str] = Field("None", serialization_alias="adminDb")
+        admin_db: Optional[str] = Field(serialization_alias="adminDb")
         """Database to authenticate against. Default: admin.
         """
 
         admin_kerberos_keytab: Optional[str] = Field(
-            "None", serialization_alias="adminKerberosKeytab"
+            serialization_alias="adminKerberosKeytab"
         )
         """Path to the Kerberos keytab file for GSSAPI authentication.
         """
 
         admin_ldap_group_dn: Optional[str] = Field(
-            "None", serialization_alias="adminLdapGroupDn"
+            serialization_alias="adminLdapGroupDn"
         )
         """LDAP group distinguished name for PLAIN authentication.
         """
@@ -155,39 +155,37 @@ MONGODB_X509
 NONE
         """
 
-        ca_file_path: Optional[str] = Field("None", serialization_alias="caFilePath")
+        ca_file_path: Optional[str] = Field(serialization_alias="caFilePath")
         """Path to the Certificate Authority file for TLS connections.
         """
 
         client_certificate_mode: Optional[str] = Field(
-            "None", serialization_alias="clientCertificateMode"
+            serialization_alias="clientCertificateMode"
         )
         """Client certificate mode for TLS connections.
         """
 
         cluster_ca_file_path: Optional[str] = Field(
-            "None", serialization_alias="clusterCaFilePath"
+            serialization_alias="clusterCaFilePath"
         )
         """Path to the cluster Certificate Authority file for TLS connections.
         """
 
-        password: Optional[str] = Field("None", serialization_alias="password")
+        password: Optional[str] = Field(serialization_alias="password")
         """Password for authenticating to the MongoDB processes. Required if authMechanism is MONGODB_CR.
 
 Ops Manager doesn't include this parameter in response documents.
         """
 
         pem_key_file_password: Optional[str] = Field(
-            "None", serialization_alias="pemKeyFilePassword"
+            serialization_alias="pemKeyFilePassword"
         )
         """Password for the PEM key file.
 
 Ops Manager doesn't include this parameter in response documents.
         """
 
-        pem_key_file_path: Optional[str] = Field(
-            "None", serialization_alias="pemKeyFilePath"
-        )
+        pem_key_file_path: Optional[str] = Field(serialization_alias="pemKeyFilePath")
         """Path to the PEM key file for TLS client authentication.
         """
 
@@ -195,13 +193,11 @@ Ops Manager doesn't include this parameter in response documents.
         """Array of hostname:port strings representing MongoDB processes that must be discovered before the import can proceed.
         """
 
-        sasl_service_name: Optional[str] = Field(
-            "None", serialization_alias="saslServiceName"
-        )
+        sasl_service_name: Optional[str] = Field(serialization_alias="saslServiceName")
         """SASL service name for GSSAPI authentication.
         """
 
-        seed_hostport: str = Field("None", serialization_alias="seedHostport")
+        seed_hostport: str = Field(serialization_alias="seedHostport")
         """Hostname and port of the seed MongoDB process to connect to for discovery (e.g., mongodb1.example.com:27017).
         """
 
@@ -234,7 +230,7 @@ Ops Manager doesn't include this parameter in response documents.
         """Timeout settings for various import phases.
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Username for authenticating to the MongoDB processes. Required if authMechanism is specified.
         """
 
@@ -261,11 +257,11 @@ Ops Manager doesn't include this parameter in response documents.
     class DeleteImportDeploymentRequestPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
-        request_id: str = Field("None", serialization_alias="REQUEST-ID")
+        request_id: str = Field(serialization_alias="REQUEST-ID")
         """Unique identifier of the import deployment request to delete.
         """
 
@@ -327,7 +323,7 @@ Expected response body
     class GetImportDeploymentRequestsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -389,11 +385,11 @@ Expected response body
     class GetImportDeploymentRequestStatusPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        import_process_id: str = Field("None", serialization_alias="IMPORT-PROCESS-ID")
+        import_process_id: str = Field(serialization_alias="IMPORT-PROCESS-ID")
         """Unique identifier of the import deployment request.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 

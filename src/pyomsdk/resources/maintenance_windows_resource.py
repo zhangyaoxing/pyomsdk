@@ -14,7 +14,7 @@ class MaintenanceWindowsResource(BaseResource):
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -61,15 +61,15 @@ Expected response body
         """Alert types to silence during maintenance window. For example: HOST, REPLICA_SET, CLUSTER, AGENT, BACKUP
         """
 
-        description: Optional[str] = Field("None", serialization_alias="description")
+        description: Optional[str] = Field(serialization_alias="description")
         """Description of the maintenance window.
         """
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Timestamp in ISO 8601 date and time format in UTC when the maintenance window ends.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Timestamp in ISO 8601 date and time format in UTC when the maintenance window starts.
         """
 
@@ -96,11 +96,11 @@ Expected response body
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        mw_id: str = Field("None", serialization_alias="MW-ID")
+        mw_id: str = Field(serialization_alias="MW-ID")
         """Unique identifier of the maintenance window you want to delete.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -162,7 +162,7 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -224,11 +224,11 @@ Expected response body
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        mw_id: str = Field("None", serialization_alias="MW-ID")
+        mw_id: str = Field(serialization_alias="MW-ID")
         """Unique identifier of the maintenance window you want to retrieve.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -290,11 +290,11 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        mw_id: str = Field("None", serialization_alias="MW-ID")
+        mw_id: str = Field(serialization_alias="MW-ID")
         """Unique identifier of the maintenance window you want to update.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project.
         """
 
@@ -341,15 +341,15 @@ Expected response body
         """Alert types to silence during maintenance window. For example: HOST, REPLICA_SET, CLUSTER, AGENT, BACKUP
         """
 
-        description: Optional[str] = Field("None", serialization_alias="description")
+        description: Optional[str] = Field(serialization_alias="description")
         """Description of the maintenance window.
         """
 
-        end_date: str = Field("None", serialization_alias="endDate")
+        end_date: str = Field(serialization_alias="endDate")
         """Timestamp in ISO 8601 date and time format in UTC when the maintenance window ends.
         """
 
-        start_date: str = Field("None", serialization_alias="startDate")
+        start_date: str = Field(serialization_alias="startDate")
         """Timestamp in ISO 8601 date and time format in UTC when the maintenance window starts.
         """
 

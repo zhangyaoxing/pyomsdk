@@ -14,7 +14,7 @@ class ProjectsResource(BaseResource):
     class AddExistingUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 
@@ -57,18 +57,18 @@ Expected response body
     class AddExistingUsersBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique identifier for an existing user.
         """
 
         class RolesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field("None", serialization_alias="groupId")
+            group_id: Optional[str] = Field(serialization_alias="groupId")
             """The unique identifier for the project role.
             """
 
-            role_name: Optional[str] = Field("None", serialization_alias="roleName")
+            role_name: Optional[str] = Field(serialization_alias="roleName")
             """The display name for the user role.
             """
 
@@ -99,7 +99,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 
@@ -148,7 +148,7 @@ Expected response body
         """For LDAP-backed Ops Manager, the mappings of LDAP groups to Ops Manager project roles. Only accepted for LDAP-backed Ops Manager.
         """
 
-        name: Optional[str] = Field("None", serialization_alias="name")
+        name: Optional[str] = Field(serialization_alias="name")
         """The new name for the project.
         """
 
@@ -237,11 +237,11 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: str = Field("None", serialization_alias="name")
+        name: str = Field(serialization_alias="name")
         """Human-readable label that identifies the project.
         """
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique 24-hexadecimal digit string that identifies the organization within which to create the project.
 
 Ops Manager set the oldest Organization Owner of the specified organization as a Project Owner for the new project.
@@ -269,7 +269,7 @@ Ops Manager set the oldest Organization Owner of the specified organization as a
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 
@@ -374,7 +374,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetBySpecificTagsForTheCurrentUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        tag: Optional[str] = Field("None", serialization_alias="tag")
+        tag: Optional[str] = Field(serialization_alias="tag")
         """The tags assigned to the project for use in programmatically identifying the project.
 
 To view tags you must have the Project Read Only role.
@@ -403,7 +403,7 @@ To create or edit tags you must have the Project Automation Admin role.
     class GetAllUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project.
         """
 
@@ -450,7 +450,7 @@ The default value is false.
     class GetByAgentApiKeyPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        agent_api_key: str = Field("None", serialization_alias="AGENT-API-KEY")
+        agent_api_key: str = Field(serialization_alias="AGENT-API-KEY")
         """(Required.) The agent API key
         """
 
@@ -512,7 +512,7 @@ Expected response body
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 
@@ -574,7 +574,7 @@ Expected response body
     class GetByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_name: str = Field("None", serialization_alias="GROUP-NAME")
+        group_name: str = Field(serialization_alias="GROUP-NAME")
         """(Required.) The name of the project.
         """
 
@@ -636,7 +636,7 @@ Expected response body
     class AddTeamsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier for the project to which you are adding the team or teams.
         """
 
@@ -692,7 +692,7 @@ GROUP_AUTOMATION_ADMIN - Project Automation Admin
 GROUP_USER_ADMIN - Project User Admin
         """
 
-        team_id: Optional[str] = Field("None", serialization_alias="teamId")
+        team_id: Optional[str] = Field(serialization_alias="teamId")
         """The unique identifier of the team you want to associate with the project. The team and project must share the same parent organization.
         """
 
@@ -719,7 +719,7 @@ GROUP_USER_ADMIN - Project User Admin
     class GetAllTeamsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier for the project.
         """
 
@@ -770,11 +770,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class RemoveUserPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) The unique identifier for the project.
         """
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """(Required.) The unique identifier for the user in {PROJECT-ID}.
         """
 
@@ -836,7 +836,7 @@ Expected response body
     class CreateInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
@@ -967,7 +967,7 @@ GROUP_USER_ADMIN
 Project User Admin
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Email address to which Ops Manager sent the invitation. The user uses this email address as their Ops Manager username if they accept this invitation.
         """
 
@@ -994,11 +994,11 @@ Project User Admin
     class DeleteInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
@@ -1060,7 +1060,7 @@ Expected response body
     class GetAllInvitationsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
@@ -1100,7 +1100,7 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        username: Optional[str] = Field("None", serialization_alias="username")
+        username: Optional[str] = Field(serialization_alias="username")
         """Email address of the invited user. This is the address to which Ops Manager sent the invite.
 
 If omitted, Ops Manager returns all pending invitations.
@@ -1128,11 +1128,11 @@ If omitted, Ops Manager returns all pending invitations.
     class GetOneInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
@@ -1194,11 +1194,11 @@ Expected response body
     class UpdateInvitationByInvitationIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
-        invitation_id: str = Field("None", serialization_alias="INVITATION-ID")
+        invitation_id: str = Field(serialization_alias="INVITATION-ID")
         """Unique 24-hexadecimal digit string that identifies the invitation.
         """
 
@@ -1272,7 +1272,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     class UpdateInvitationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
@@ -1323,7 +1323,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
 IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that you provide in this request. Ensure that you include all roles that you want to assign the user in this request.
         """
 
-        username: str = Field("None", serialization_alias="username")
+        username: str = Field(serialization_alias="username")
         """Username of the user whose invitation you want to update. In Ops Manager, an invited user's username is the email address to which Ops Manager sent the invitation.
         """
 
@@ -1350,11 +1350,11 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     class RemoveTeamPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """The unique identifier of the group from which you want to remove a team.
         """
 
-        team_id: str = Field("None", serialization_alias="TEAM-ID")
+        team_id: str = Field(serialization_alias="TEAM-ID")
         """The unique identifier of the team that you want to remove from the specified project.
         """
 

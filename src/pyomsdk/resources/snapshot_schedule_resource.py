@@ -14,11 +14,11 @@ class SnapshotScheduleResource(BaseResource):
     class GetSchedulePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier of the cluster whose snapshot schedule you want to get.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project that holds the cluster with the snapshot schedule you want to get.
         """
 
@@ -80,11 +80,11 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        cluster_id: str = Field("None", serialization_alias="CLUSTER-ID")
+        cluster_id: str = Field(serialization_alias="CLUSTER-ID")
         """Unique identifier of the cluster whose snapshot schedule you want to update.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the project that holds the cluster with the snapshot schedule you want to update.
         """
 
@@ -133,7 +133,7 @@ Expected response body
         """Number of minutes between successive cluster checkpoints. This only applies to sharded clusters. This number determines the granularity of point-in-time restores for sharded clusters. You can set a value of 15, 30, or 60.
         """
 
-        cluster_id: Optional[str] = Field("None", serialization_alias="clusterId")
+        cluster_id: Optional[str] = Field(serialization_alias="clusterId")
         """Unique identifier of the cluster to which this backup configuration applies.
         """
 
@@ -146,12 +146,12 @@ Setting dailySnapshotRetentionDays to 0 disables this rule.
         """
 
         full_incremental_day_of_week: Optional[str] = Field(
-            "None", serialization_alias="fullIncrementalDayOfWeek"
+            serialization_alias="fullIncrementalDayOfWeek"
         )
         """Day of the week when Ops Manager takes a full snapshot. This ensures a recent complete backup. Ops Manager sets the default value to SUNDAY.
         """
 
-        group_id: Optional[str] = Field("None", serialization_alias="groupId")
+        group_id: Optional[str] = Field(serialization_alias="groupId")
         """Unique identifier of the project that owns the backup configuration.
         """
 
@@ -186,7 +186,7 @@ Setting monthlySnapshotRetentionMonths to 0 disables this rule.
         """
 
         reference_time_zone_offset: Optional[str] = Field(
-            "None", serialization_alias="referenceTimeZoneOffset"
+            serialization_alias="referenceTimeZoneOffset"
         )
         """The ISO-8601 timezone offset where the Ops Manager host resides. To avoid problems with daylight saving time, use UTC. The default is +0000, which is equivalent to UTC. Z is also a supported value and equivalent to UTC.
 

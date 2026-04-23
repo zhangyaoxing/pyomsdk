@@ -14,7 +14,7 @@ class AccessListResource(BaseResource):
     class AddEntriesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
         """
 
@@ -46,7 +46,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class AddEntriesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        ip_address: str = Field("None", serialization_alias="ipAddress")
+        ip_address: str = Field(serialization_alias="ipAddress")
         """(Required.) The IP address or CIDR block that you want to add to the specified user's access list.
         """
 
@@ -73,11 +73,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class DeleteEntryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_entry: str = Field("None", serialization_alias="ACCESS-LIST-ENTRY")
+        access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
         """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
         """
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
         """
 
@@ -139,7 +139,7 @@ Expected response body
     class GetForCurrentUserPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """(Required.) User Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
         """
 
@@ -190,11 +190,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetForIpAddressPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        access_list_entry: str = Field("None", serialization_alias="ACCESS-LIST-ENTRY")
+        access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
         """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
         """
 
-        user_id: str = Field("None", serialization_alias="USER-ID")
+        user_id: str = Field(serialization_alias="USER-ID")
         """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
         """
 

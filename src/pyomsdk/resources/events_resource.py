@@ -14,7 +14,7 @@ class EventsResource(BaseResource):
     class GetAllOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """The unique identifier of the organization.
         """
 
@@ -52,7 +52,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        event_type: Optional[str] = Field("None", serialization_alias="eventType")
+        event_type: Optional[str] = Field(serialization_alias="eventType")
         """Return only events of the specified types.
 
 To review the types of events that generate alerts, see Alert Types.
@@ -72,11 +72,11 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        max_date: Optional[str] = Field("None", serialization_alias="maxDate")
+        max_date: Optional[str] = Field(serialization_alias="maxDate")
         """Return only events for which the created date is less than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
-        min_date: Optional[str] = Field("None", serialization_alias="minDate")
+        min_date: Optional[str] = Field(serialization_alias="minDate")
         """Return only events for which the created date is greater than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
@@ -110,7 +110,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     class GetAllProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        group_id: str = Field("None", serialization_alias="groupId")
+        group_id: str = Field(serialization_alias="groupId")
         """Unique identifier of the project associated with the desired event.
         """
 
@@ -148,7 +148,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        event_type: Optional[str] = Field("None", serialization_alias="eventType")
+        event_type: Optional[str] = Field(serialization_alias="eventType")
         """Return only events of the specified types.
 
 To review the types of events that generate alerts, see Alert Types.
@@ -168,11 +168,11 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        max_date: Optional[str] = Field("None", serialization_alias="maxDate")
+        max_date: Optional[str] = Field(serialization_alias="maxDate")
         """Return only events for which the created date is less than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
-        min_date: Optional[str] = Field("None", serialization_alias="minDate")
+        min_date: Optional[str] = Field(serialization_alias="minDate")
         """Return only events for which the created date is greater than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
@@ -206,11 +206,11 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     class GetOneOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        event_id: str = Field("None", serialization_alias="eventId")
+        event_id: str = Field(serialization_alias="eventId")
         """Unique identifier of the desired event.
         """
 
-        org_id: str = Field("None", serialization_alias="orgId")
+        org_id: str = Field(serialization_alias="orgId")
         """Unique identifier of the organization associated with the desired event.
         """
 
@@ -253,11 +253,11 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     class GetOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        event_id: str = Field("None", serialization_alias="eventId")
+        event_id: str = Field(serialization_alias="eventId")
         """Unique identifier of the desired event.
         """
 
-        group_id: str = Field("None", serialization_alias="groupId")
+        group_id: str = Field(serialization_alias="groupId")
         """Unique identifier of the project associated with the desired event.
         """
 

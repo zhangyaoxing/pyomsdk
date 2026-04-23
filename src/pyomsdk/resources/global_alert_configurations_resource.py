@@ -15,7 +15,7 @@ class GlobalAlertConfigurationsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(
-            "None", serialization_alias="GLOBAL-ALERT-CONFIG-ID"
+            serialization_alias="GLOBAL-ALERT-CONFIG-ID"
         )
         """Unique identifier of the global alert configuration for which you want to retrieve open alerts.
         """
@@ -207,11 +207,11 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field("None", serialization_alias="metricName")
+            metric_name: Optional[str] = Field(serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the globalAlerts resource. For a list of possible values, see Measurement Types for Global Alerts.
             """
 
-            mode: Optional[str] = Field("None", serialization_alias="mode")
+            mode: Optional[str] = Field(serialization_alias="mode")
             """This is set to AVERAGE and computes the current metric value as an average.
             """
 
@@ -278,13 +278,11 @@ For example, a metric that measures memory consumption can use BYTES, while a me
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: Optional[str] = Field("None", serialization_alias="apiToken")
+            api_token: Optional[str] = Field(serialization_alias="apiToken")
             """Slack API token or Bot token. Only accepted for SLACK notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
             """
 
-            channel_name: Optional[str] = Field(
-                "None", serialization_alias="channelName"
-            )
+            channel_name: Optional[str] = Field(serialization_alias="channelName")
             """Slack channel name. Only accepted for SLACK notifications.
             """
 
@@ -305,22 +303,22 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
-                "None", serialization_alias="microsoftTeamsWebhookUrl"
+                serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Only accepted for MICROSOFT_TEAMS notifications.
             """
 
             notification_token: Optional[str] = Field(
-                "None", serialization_alias="notificationToken"
+                serialization_alias="notificationToken"
             )
             """HipChat API token. Only accepted for HIP_CHAT notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
             """
 
-            room_name: Optional[str] = Field("None", serialization_alias="roomName")
+            room_name: Optional[str] = Field(serialization_alias="roomName")
             """HipChat room name. Only accepted for HIP_CHAT notifications.
             """
 
-            service_key: Optional[str] = Field("None", serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(serialization_alias="serviceKey")
             """PagerDuty integration key. Only accepted for PAGER_DUTY notifications. If the key later becomes invalid, Ops Manager sends an email to the project owner and removes the key.
 
 All new PagerDuty keys use their Events API v2. If you have an Events API v1 key, you can continue to use that key with Ops Manager.
@@ -350,25 +348,23 @@ SLACK
 PAGER_DUTY
             """
 
-            username: Optional[str] = Field("None", serialization_alias="username")
+            username: Optional[str] = Field(serialization_alias="username")
             """Name of the Ops Manager user to whom to send notifications. Only present for USER notifications.
             """
 
             webhook_body_template: Optional[str] = Field(
-                "None", serialization_alias="webhookBodyTemplate"
+                serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                "None", serialization_alias="webhookHeadersTemplate"
+                serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(
-                "None", serialization_alias="webhookSecret"
-            )
+            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -380,7 +376,7 @@ You can configure a webhookSecret for a default webhookURL only with the Admin C
 To explicitly declare a webhookURL without a webhookSecret, omit this field.
             """
 
-            webhook_url: Optional[str] = Field("None", serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set in the Admin Console.
             """
 
@@ -419,7 +415,7 @@ TOO_FEW_HEALTHY_MEMBERS
 TOO_MANY_UNHEALTHY_MEMBERS
         """
 
-        type_name: Optional[str] = Field("None", serialization_alias="typeName")
+        type_name: Optional[str] = Field(serialization_alias="typeName")
         """This field is deprecated and will be ignored.
         """
 
@@ -446,7 +442,7 @@ TOO_MANY_UNHEALTHY_MEMBERS
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(
-            "None", serialization_alias="GLOBAL-ALERT-CONFIG-ID"
+            serialization_alias="GLOBAL-ALERT-CONFIG-ID"
         )
         """Unique identifier of the global alert configuration you want to delete.
         """
@@ -553,7 +549,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(
-            "None", serialization_alias="GLOBAL-ALERT-CONFIG-ID"
+            serialization_alias="GLOBAL-ALERT-CONFIG-ID"
         )
         """Unique identifier of the global alert configuration you want to retrieve.
         """
@@ -616,11 +612,11 @@ Expected response body
     class TestGlobalAlertConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique 24-hexadecimal digit string that identifies the global alert configuration.
         """
 
-        notification_id: str = Field("None", serialization_alias="NOTIFICATION-ID")
+        notification_id: str = Field(serialization_alias="NOTIFICATION-ID")
         """Unique 24-hexadecimal digit string that identifies the notification method within the global alert configuration.
         """
 
@@ -646,7 +642,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(
-            "None", serialization_alias="GLOBAL-ALERT-CONFIG-ID"
+            serialization_alias="GLOBAL-ALERT-CONFIG-ID"
         )
         """Unique identifier of the global alert configuration you want to enable or disable.
         """
@@ -722,7 +718,7 @@ Set to false to disable a global alert configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(
-            "None", serialization_alias="GLOBAL-ALERT-CONFIG-ID"
+            serialization_alias="GLOBAL-ALERT-CONFIG-ID"
         )
         """Unique identifier of the global alert configuration you want to update.
         """
@@ -870,11 +866,11 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field("None", serialization_alias="metricName")
+            metric_name: Optional[str] = Field(serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the globalAlerts resource. For a list of possible values, see Measurement Types for Global Alerts.
             """
 
-            mode: Optional[str] = Field("None", serialization_alias="mode")
+            mode: Optional[str] = Field(serialization_alias="mode")
             """This is set to AVERAGE and computes the current metric value as an average.
             """
 
@@ -941,13 +937,11 @@ For example, a metric that measures memory consumption can use BYTES, while a me
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: Optional[str] = Field("None", serialization_alias="apiToken")
+            api_token: Optional[str] = Field(serialization_alias="apiToken")
             """Slack API token or Bot token. Only accepted for SLACK notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
             """
 
-            channel_name: Optional[str] = Field(
-                "None", serialization_alias="channelName"
-            )
+            channel_name: Optional[str] = Field(serialization_alias="channelName")
             """Slack channel name. Only accepted for SLACK notifications.
             """
 
@@ -968,22 +962,22 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
-                "None", serialization_alias="microsoftTeamsWebhookUrl"
+                serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Only accepted for MICROSOFT_TEAMS notifications.
             """
 
             notification_token: Optional[str] = Field(
-                "None", serialization_alias="notificationToken"
+                serialization_alias="notificationToken"
             )
             """HipChat API token. Only accepted for HIP_CHAT notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
             """
 
-            room_name: Optional[str] = Field("None", serialization_alias="roomName")
+            room_name: Optional[str] = Field(serialization_alias="roomName")
             """HipChat room name. Only accepted for HIP_CHAT notifications.
             """
 
-            service_key: Optional[str] = Field("None", serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(serialization_alias="serviceKey")
             """PagerDuty integration key. Only accepted for PAGER_DUTY notifications. If the key later becomes invalid, Ops Manager sends an email to the project owner and removes the key.
 
 All new PagerDuty keys use their Events API v2. If you have an Events API v1 key, you can continue to use that key with Ops Manager.
@@ -1013,25 +1007,23 @@ SLACK
 PAGER_DUTY
             """
 
-            username: Optional[str] = Field("None", serialization_alias="username")
+            username: Optional[str] = Field(serialization_alias="username")
             """Name of the Ops Manager user to whom to send notifications. Only present for USER notifications.
             """
 
             webhook_body_template: Optional[str] = Field(
-                "None", serialization_alias="webhookBodyTemplate"
+                serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                "None", serialization_alias="webhookHeadersTemplate"
+                serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(
-                "None", serialization_alias="webhookSecret"
-            )
+            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -1043,7 +1035,7 @@ You can configure a webhookSecret for a default webhookURL only with the Admin C
 To explicitly declare a webhookURL without a webhookSecret, omit this field.
             """
 
-            webhook_url: Optional[str] = Field("None", serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set in the Admin Console.
             """
 
@@ -1082,7 +1074,7 @@ TOO_FEW_HEALTHY_MEMBERS
 TOO_MANY_UNHEALTHY_MEMBERS
         """
 
-        type_name: Optional[str] = Field("None", serialization_alias="typeName")
+        type_name: Optional[str] = Field(serialization_alias="typeName")
         """This field is deprecated and will be ignored.
         """
 

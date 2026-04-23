@@ -14,15 +14,15 @@ class DisksResource(BaseResource):
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host where the disk partition resides.
         """
 
-        partition_name: str = Field("None", serialization_alias="PARTITION-NAME")
+        partition_name: str = Field(serialization_alias="PARTITION-NAME")
         """(Required.) The name of the disk partition that you want to retrieve.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project where the disk partition resides.
         """
 
@@ -84,11 +84,11 @@ Expected response body
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        host_id: str = Field("None", serialization_alias="HOST-ID")
+        host_id: str = Field(serialization_alias="HOST-ID")
         """(Required.) Unique identifier of the host where the disk partition resides.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """(Required.) Unique identifier of the project where the disk partition resides.
         """
 

@@ -14,11 +14,11 @@ class ApiKeysOnProjectsResource(BaseResource):
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key you want to update. Request the /groups/{PROJECT-ID}/apiKeys endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project whose API keys you want to update. Use the /groups endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -184,7 +184,7 @@ Project User Admin
     class CreateAssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project whose API keys you want to retrieve. Use the /groups endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -239,7 +239,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class CreateAssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field("None", serialization_alias="desc")
+        desc: Optional[str] = Field(serialization_alias="desc")
         """Description of the API key. Must be between 1 and 250 characters in length.
         """
 
@@ -360,11 +360,11 @@ Project User Admin
     class UnassignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key you want to update. Request the /groups/{PROJECT-ID}/apiKeys endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project you wish to unassign from the API key. Use the /groups endpoint to retrieve all organizations to which the authenticated user has access.
         """
 
@@ -438,7 +438,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project from which you want to retrieve its assigned Organization API keys. Use the /groups endpoint to retrieve all Projects to which the authenticated user has access.
         """
 
@@ -512,11 +512,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class ModifyRolesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        api_key_id: str = Field("None", serialization_alias="API-KEY-ID")
+        api_key_id: str = Field(serialization_alias="API-KEY-ID")
         """Unique identifier for the API key you want to update. Request the /groups/{PROJECT-ID}/apiKeys endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for the Project whose API keys you want to update. Use the /groups endpoint to retrieve all organizations to which the authenticated user has access.
         """
 

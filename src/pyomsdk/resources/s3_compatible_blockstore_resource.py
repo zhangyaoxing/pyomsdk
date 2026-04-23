@@ -62,17 +62,13 @@ If you set this to false, Ops Manager returns an error. The error states that Op
         """Flag that indicates whether you can assign backup jobs to this data store.
         """
 
-        aws_access_key: Optional[str] = Field(
-            "None", serialization_alias="awsAccessKey"
-        )
+        aws_access_key: Optional[str] = Field(serialization_alias="awsAccessKey")
         """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
         """
 
-        aws_secret_key: Optional[str] = Field(
-            "None", serialization_alias="awsSecretKey"
-        )
+        aws_secret_key: Optional[str] = Field(serialization_alias="awsSecretKey")
         """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
@@ -81,11 +77,11 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         class CustomcertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            cert_string: Optional[str] = Field("None", serialization_alias="certString")
+            cert_string: Optional[str] = Field(serialization_alias="certString")
             """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
             """
 
-            filename: Optional[str] = Field("None", serialization_alias="filename")
+            filename: Optional[str] = Field(serialization_alias="filename")
             """Name that identifies the Certificate Authority PEM file.
             """
 
@@ -105,7 +101,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         """Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the credentialstool.
         """
 
-        id: str = Field("None", serialization_alias="id")
+        id: str = Field(serialization_alias="id")
         """Name that uniquely identifies this S3 Snapshot Store.
         """
 
@@ -189,11 +185,11 @@ IAM_ROLE
 Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in s3BucketName. awsAccessKey and awsSecretKey fields are ignored. To learn more, see the AWS documentation
         """
 
-        s3_bucket_endpoint: str = Field("None", serialization_alias="s3BucketEndpoint")
+        s3_bucket_endpoint: str = Field(serialization_alias="s3BucketEndpoint")
         """URL used to access this S3-compatible storage bucket.
         """
 
-        s3_bucket_name: str = Field("None", serialization_alias="s3BucketName")
+        s3_bucket_name: str = Field(serialization_alias="s3BucketName")
         """Name of the S3-compatible storage bucket that hosts the S3-compatible storage blockstore.
         """
 
@@ -202,7 +198,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """
 
         s3_region_override: Optional[str] = Field(
-            "None", serialization_alias="s3RegionOverride"
+            serialization_alias="s3RegionOverride"
         )
         """Region where your S3-compatible storage bucket resides.
 
@@ -217,7 +213,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Flag that indicates whether this S3-compatible storage blockstore only accepts connections encrypted using TLS.
         """
 
-        uri: str = Field("None", serialization_alias="uri")
+        uri: str = Field(serialization_alias="uri")
         """Connection String that connects to the metadata database for this S3-compatible storage blockstore. This database stores the locations of the blocks in the AWS S3-compatible storage bucket.
         """
 
@@ -262,7 +258,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         model_config = ConfigDict(populate_by_name=True)
 
         s3_blockstore_config_id: str = Field(
-            "None", serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
+            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
         )
         """The unique name that labels this S3 blockstore configuration.
         """
@@ -375,7 +371,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         s3_blockstore_config_id: str = Field(
-            "None", serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
+            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
         )
         """The unique name that labels this S3 blockstore configuration.
         """
@@ -439,7 +435,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         s3_blockstore_config_id: str = Field(
-            "None", serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
+            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
         )
         """The unique name that labels this S3 blockstore configuration.
         """
@@ -495,17 +491,13 @@ If you set this to false, Ops Manager returns an error. The error states that Op
         """Flag that indicates whether you can assign backup jobs to this data store.
         """
 
-        aws_access_key: Optional[str] = Field(
-            "None", serialization_alias="awsAccessKey"
-        )
+        aws_access_key: Optional[str] = Field(serialization_alias="awsAccessKey")
         """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
         """
 
-        aws_secret_key: Optional[str] = Field(
-            "None", serialization_alias="awsSecretKey"
-        )
+        aws_secret_key: Optional[str] = Field(serialization_alias="awsSecretKey")
         """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
@@ -514,11 +506,11 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         class CustomcertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            cert_string: Optional[str] = Field("None", serialization_alias="certString")
+            cert_string: Optional[str] = Field(serialization_alias="certString")
             """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
             """
 
-            filename: Optional[str] = Field("None", serialization_alias="filename")
+            filename: Optional[str] = Field(serialization_alias="filename")
             """Name that identifies the Certificate Authority PEM file.
             """
 
@@ -618,11 +610,11 @@ IAM_ROLE
 Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in s3BucketName. awsAccessKey and awsSecretKey fields are ignored. To learn more, see the AWS documentation
         """
 
-        s3_bucket_endpoint: str = Field("None", serialization_alias="s3BucketEndpoint")
+        s3_bucket_endpoint: str = Field(serialization_alias="s3BucketEndpoint")
         """URL used to access this S3-compatible storage bucket.
         """
 
-        s3_bucket_name: str = Field("None", serialization_alias="s3BucketName")
+        s3_bucket_name: str = Field(serialization_alias="s3BucketName")
         """Name of the S3-compatible storage bucket that hosts the S3-compatible storage blockstore.
         """
 
@@ -631,7 +623,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """
 
         s3_region_override: Optional[str] = Field(
-            "None", serialization_alias="s3RegionOverride"
+            serialization_alias="s3RegionOverride"
         )
         """Region where your S3-compatible storage bucket resides.
 
@@ -646,7 +638,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Flag that indicates whether this S3-compatible storage blockstore only accepts connections encrypted using TLS.
         """
 
-        uri: str = Field("None", serialization_alias="uri")
+        uri: str = Field(serialization_alias="uri")
         """Comma-separated list of hosts in the <hostname:port> format that can access this S3-compatible storage blockstore.
         """
 

@@ -62,7 +62,7 @@ Expected response body
         """Optional. Flag indicating whether the username and password for this oplog store were encrypted using the credentialstool.
         """
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique name that labels this oplog store.
         """
 
@@ -80,7 +80,7 @@ Setting these tags limits which backup jobs this oplog store can process. If omi
         """Optional. Flag indicating whether this oplog store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this oplog store.
         """
 
@@ -124,7 +124,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        oplog_config_id: str = Field("None", serialization_alias="OPLOG-CONFIG-ID")
+        oplog_config_id: str = Field(serialization_alias="OPLOG-CONFIG-ID")
         """Unique identifier of this Oplog configuration.
         """
 
@@ -235,7 +235,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        oplog_config_id: str = Field("None", serialization_alias="OPLOG-CONFIG-ID")
+        oplog_config_id: str = Field(serialization_alias="OPLOG-CONFIG-ID")
         """The unique identifier that represents this Oplog configuration.
         """
 
@@ -297,7 +297,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        oplog_config_id: str = Field("None", serialization_alias="OPLOG-CONFIG-ID")
+        oplog_config_id: str = Field(serialization_alias="OPLOG-CONFIG-ID")
         """Unique identifier for this oplog configuration.
         """
 
@@ -366,7 +366,7 @@ Setting these tags limits which backup jobs this oplog store can process. If omi
         """Optional. Flag indicating whether this oplog store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this oplog store.
         """
 

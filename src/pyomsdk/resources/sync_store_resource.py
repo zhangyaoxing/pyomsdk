@@ -62,7 +62,7 @@ Expected response body
         """Optional. Flag indicating whether the username and password for this sync store were encrypted using the credentialstool.
         """
 
-        id: Optional[str] = Field("None", serialization_alias="id")
+        id: Optional[str] = Field(serialization_alias="id")
         """The unique name that labels this sync store.
         """
 
@@ -80,7 +80,7 @@ Setting these tags limits which backup jobs this sync store can process. If omit
         """Optional. Flag indicating whether this sync store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this sync store.
         """
 
@@ -124,9 +124,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        sync_store_config_id: str = Field(
-            "None", serialization_alias="SYNC-STORE-CONFIG-ID"
-        )
+        sync_store_config_id: str = Field(serialization_alias="SYNC-STORE-CONFIG-ID")
         """Unique identifier of this Sync Store configuration.
         """
 
@@ -237,9 +235,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        sync_store_config_id: str = Field(
-            "None", serialization_alias="SYNC-STORE-CONFIG-ID"
-        )
+        sync_store_config_id: str = Field(serialization_alias="SYNC-STORE-CONFIG-ID")
         """The unique identifier that represents this Oplog configuration.
         """
 
@@ -301,9 +297,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        sync_store_config_id: str = Field(
-            "None", serialization_alias="SYNC-STORE-CONFIG-ID"
-        )
+        sync_store_config_id: str = Field(serialization_alias="SYNC-STORE-CONFIG-ID")
         """Unique identifier for this Sync Store configuration.
         """
 
@@ -372,7 +366,7 @@ Setting these tags limits which backup jobs this sync store can process. If omit
         """Optional. Flag indicating whether this sync store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field("None", serialization_alias="uri")
+        uri: Optional[str] = Field(serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this sync store.
         """
 

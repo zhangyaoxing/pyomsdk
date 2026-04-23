@@ -14,7 +14,7 @@ class AlertConfigurationsResource(BaseResource):
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -385,11 +385,11 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field("None", serialization_alias="metricName")
+            metric_name: Optional[str] = Field(serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field("None", serialization_alias="mode")
+            mode: Optional[str] = Field(serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
@@ -456,7 +456,7 @@ DAYS
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: str = Field("None", serialization_alias="apiToken")
+            api_token: str = Field(serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -466,11 +466,11 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: str = Field("None", serialization_alias="channelName")
+            channel_name: str = Field(serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: str = Field("None", serialization_alias="datadogApiKey")
+            datadog_api_key: str = Field(serialization_alias="datadogApiKey")
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -484,7 +484,7 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: str = Field("None", serialization_alias="emailAddress")
+            email_address: str = Field(serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
@@ -501,20 +501,18 @@ Query the third-party integration settings through the API.
             """
 
             microsoft_teams_webhook_url: str = Field(
-                "None", serialization_alias="microsoftTeamsWebhookUrl"
+                serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: str = Field("None", serialization_alias="mobileNumber")
+            mobile_number: str = Field(serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: str = Field(
-                "None", serialization_alias="notificationToken"
-            )
+            notification_token: str = Field(serialization_alias="notificationToken")
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -524,15 +522,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: str = Field("None", serialization_alias="role")
+            role: str = Field(serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: str = Field("None", serialization_alias="roomName")
+            room_name: str = Field(serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: str = Field("None", serialization_alias="serviceKey")
+            service_key: str = Field(serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -550,7 +548,7 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field("None", serialization_alias="teamId")
+            team_id: Optional[str] = Field(serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
@@ -580,25 +578,23 @@ USER
 WEBHOOK
             """
 
-            username: str = Field("None", serialization_alias="username")
+            username: str = Field(serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
             webhook_body_template: Optional[str] = Field(
-                "None", serialization_alias="webhookBodyTemplate"
+                serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                "None", serialization_alias="webhookHeadersTemplate"
+                serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(
-                "None", serialization_alias="webhookSecret"
-            )
+            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -612,7 +608,7 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field("None", serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
@@ -672,11 +668,11 @@ LESS_THAN
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique identifier for this alert configuration.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -738,11 +734,11 @@ Expected response body
     class EnableDisablePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique identifier for this alert configuration.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -812,7 +808,7 @@ Expected response body
     class GetAllForAProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -863,11 +859,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique identifier for this alert configuration.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -972,11 +968,11 @@ Expected response body
     class GetOpenAlertsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique identifier for this alert configuration.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -1027,15 +1023,15 @@ For endpoints that return a list of results, the content object is an envelope. 
     class TestProjectAlertConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique 24-hexadecimal digit string that identifies the alert configuration.
         """
 
-        group_id: str = Field("None", serialization_alias="GROUP-ID")
+        group_id: str = Field(serialization_alias="GROUP-ID")
         """Unique 24-hexadecimal digit string that identifies the project.
         """
 
-        notification_id: str = Field("None", serialization_alias="NOTIFICATION-ID")
+        notification_id: str = Field(serialization_alias="NOTIFICATION-ID")
         """Unique 24-hexadecimal digit string that identifies the notification method within the alert configuration.
         """
 
@@ -1060,11 +1056,11 @@ For endpoints that return a list of results, the content object is an envelope. 
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alert_config_id: str = Field("None", serialization_alias="ALERT-CONFIG-ID")
+        alert_config_id: str = Field(serialization_alias="ALERT-CONFIG-ID")
         """Unique identifier for this alert configuration.
         """
 
-        project_id: str = Field("None", serialization_alias="PROJECT-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier for this Project.
         """
 
@@ -1435,11 +1431,11 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field("None", serialization_alias="metricName")
+            metric_name: Optional[str] = Field(serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field("None", serialization_alias="mode")
+            mode: Optional[str] = Field(serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
@@ -1506,7 +1502,7 @@ DAYS
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: str = Field("None", serialization_alias="apiToken")
+            api_token: str = Field(serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1516,11 +1512,11 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: str = Field("None", serialization_alias="channelName")
+            channel_name: str = Field(serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: str = Field("None", serialization_alias="datadogApiKey")
+            datadog_api_key: str = Field(serialization_alias="datadogApiKey")
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1534,7 +1530,7 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: str = Field("None", serialization_alias="emailAddress")
+            email_address: str = Field(serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
@@ -1551,20 +1547,18 @@ Query the third-party integration settings through the API.
             """
 
             microsoft_teams_webhook_url: str = Field(
-                "None", serialization_alias="microsoftTeamsWebhookUrl"
+                serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: str = Field("None", serialization_alias="mobileNumber")
+            mobile_number: str = Field(serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: str = Field(
-                "None", serialization_alias="notificationToken"
-            )
+            notification_token: str = Field(serialization_alias="notificationToken")
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1574,15 +1568,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: str = Field("None", serialization_alias="role")
+            role: str = Field(serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: str = Field("None", serialization_alias="roomName")
+            room_name: str = Field(serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: str = Field("None", serialization_alias="serviceKey")
+            service_key: str = Field(serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1600,7 +1594,7 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field("None", serialization_alias="teamId")
+            team_id: Optional[str] = Field(serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
@@ -1630,25 +1624,23 @@ USER
 WEBHOOK
             """
 
-            username: str = Field("None", serialization_alias="username")
+            username: str = Field(serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
             webhook_body_template: Optional[str] = Field(
-                "None", serialization_alias="webhookBodyTemplate"
+                serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                "None", serialization_alias="webhookHeadersTemplate"
+                serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(
-                "None", serialization_alias="webhookSecret"
-            )
+            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -1662,7 +1654,7 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field("None", serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
