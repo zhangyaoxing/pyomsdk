@@ -84,9 +84,12 @@ The username is usually an email address. If you set this value to an email addr
     ) -> dict[str, Any]:
         """
         ## Create the First User
-        - Document: [Create First User](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create-first/)
-        - Resource: `POST /unauth/users`
-        - Description: Create the first Ops Manager user. You can call this endpoint without having an API key.
+        ### Document:
+        [Create First User](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create-first/)
+        ### Endpoint:
+        `POST /unauth/users`
+        ### Description
+        Create the first Ops Manager user. You can call this endpoint without having an API key.
         """
         return self._request(
             "POST",
@@ -395,9 +398,12 @@ See mms.email.validation for details.
     ) -> dict[str, Any]:
         """
         ## Create One User
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create/)
-        - Resource: `POST /users`
-        - Description: Create a new user. By default, any non-global organization and project roles in the payload send users an invitation to the organization or project first.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create/)
+        ### Endpoint:
+        `POST /users`
+        ### Description
+        Create a new user. By default, any non-global organization and project roles in the payload send users an invitation to the organization or project first.
         """
         return self._request(
             "POST",
@@ -457,9 +463,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get a User by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-id/)
-        - Resource: `GET /users/{USER-ID}`
-        - Description: You can always retrieve your own user account. Otherwise, you must be a global user or you must have the Project User Admin role in at least one project that is common between you and the user you are retrieving.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-id/)
+        ### Endpoint:
+        `GET /users/{USER-ID}`
+        ### Description
+        You can always retrieve your own user account. Otherwise, you must be a global user or you must have the Project User Admin role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -519,9 +528,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get a User by Name
-        - Document: [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-name/)
-        - Resource: `GET /users/byName/{USER-NAME}`
-        - Description: You can always retrieve your own user account. Otherwise, you must be a global user or you must have the Project User Admin role in at least one project that is common between you and the user you are retrieving.
+        ### Document:
+        [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-name/)
+        ### Endpoint:
+        `GET /users/byName/{USER-NAME}`
+        ### Description
+        You can always retrieve your own user account. Otherwise, you must be a global user or you must have the Project User Admin role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -780,9 +792,12 @@ Global User Admin
     ) -> dict[str, Any]:
         """
         ## Update Roles for One User
-        - Document: [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-update/)
-        - Resource: `PATCH /users/{USER-ID}`
-        - Description: Add, update, or remove a user's roles within an organization or project. By default, any new non-global organization and project roles in the payload send users an invitation to the organization or project first. You can add users directly to an organization or project only if you set the mms.user.bypassInviteForExistingUsers setting to true.
+        ### Document:
+        [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-update/)
+        ### Endpoint:
+        `PATCH /users/{USER-ID}`
+        ### Description
+        Add, update, or remove a user's roles within an organization or project. By default, any new non-global organization and project roles in the payload send users an invitation to the organization or project first. You can add users directly to an organization or project only if you set the mms.user.bypassInviteForExistingUsers setting to true.
         """
         return self._request(
             "PATCH",
@@ -842,9 +857,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Remove One User
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/users/delete-one-user/)
-        - Resource: `DELETE /users/{USER-ID}`
-        - Description: Removes one user from Ops Manager by user ID.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/users/delete-one-user/)
+        ### Endpoint:
+        `DELETE /users/{USER-ID}`
+        ### Description
+        Removes one user from Ops Manager by user ID.
         """
         return self._request(
             "DELETE",

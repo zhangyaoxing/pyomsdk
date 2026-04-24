@@ -53,9 +53,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get All Clusters in All Projects
-        - Document: [Get All from All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all-key/)
-        - Resource: `GET /api/public/v1.0/clusters`
-        - Description: Get details for all clusters in all projects available to the programmatic API key making the request.
+        ### Document:
+        [Get All from All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all-key/)
+        ### Endpoint:
+        `GET /api/public/v1.0/clusters`
+        ### Description
+        Get details for all clusters in all projects available to the programmatic API key making the request.
         """
         return self._request(
             "GET",
@@ -104,9 +107,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Clusters in One Project
-        - Document: [Get All from One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/clusters`
-        - Description: Retrieve details for all clusters in one project.
+        ### Document:
+        [Get All from One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/clusters`
+        ### Description
+        Retrieve details for all clusters in one project.
         """
         return self._request(
             "GET",
@@ -170,9 +176,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Cluster in One Project
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-one/)
-        - Resource: `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
-        - Description: Retrieve details for one cluster in one project.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-one/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
+        ### Description
+        Retrieve details for one cluster in one project.
         """
         return self._request(
             "GET",
@@ -244,9 +253,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Update One Cluster
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-update-one/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
-        - Description: Update one cluster in one project.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-update-one/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
+        ### Description
+        Update one cluster in one project.
         """
         return self._request(
             "PATCH",

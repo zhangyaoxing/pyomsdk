@@ -95,9 +95,12 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     ) -> dict[str, Any]:
         """
         ## Get All Organization Events
-        - Document: [Get All (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-org/)
-        - Resource: `GET /orgs/{orgId}/events`
-        - Description: No description.
+        ### Document:
+        [Get All (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-org/)
+        ### Endpoint:
+        `GET /orgs/{orgId}/events`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -191,9 +194,12 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     ) -> dict[str, Any]:
         """
         ## Get All Project Events
-        - Document: [Get All (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-project/)
-        - Resource: `GET /groups/{groupId}/events`
-        - Description: No description.
+        ### Document:
+        [Get All (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-project/)
+        ### Endpoint:
+        `GET /groups/{groupId}/events`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -238,9 +244,12 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     ) -> dict[str, Any]:
         """
         ## Get One Organization Event
-        - Document: [Get One (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-org/)
-        - Resource: `GET /orgs/{orgId}/events/{eventId}`
-        - Description: No description.
+        ### Document:
+        [Get One (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-org/)
+        ### Endpoint:
+        `GET /orgs/{orgId}/events/{eventId}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -285,9 +294,12 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
     ) -> dict[str, Any]:
         """
         ## Get One Project Event
-        - Document: [Get One (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-project/)
-        - Resource: `GET /groups/{groupId}/events/{eventId}`
-        - Description: No description.
+        ### Document:
+        [Get One (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-project/)
+        ### Endpoint:
+        `GET /groups/{groupId}/events/{eventId}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

@@ -115,9 +115,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Create One Blockstore Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/create-one-blockstore-configuration/)
-        - Resource: `POST /snapshot/mongoConfigs`
-        - Description: Configures one new blockstore.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/create-one-blockstore-configuration/)
+        ### Endpoint:
+        `POST /snapshot/mongoConfigs`
+        ### Description
+        Configures one new blockstore.
         """
         return self._request(
             "POST",
@@ -177,9 +180,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Blockstore Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/delete-one-blockstore-configuration/)
-        - Resource: `DELETE /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
-        - Description: Deletes the configuration of one blockstore.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/delete-one-blockstore-configuration/)
+        ### Endpoint:
+        `DELETE /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
+        ### Description
+        Deletes the configuration of one blockstore.
         """
         return self._request(
             "DELETE",
@@ -226,9 +232,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Blockstore Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/get-all-blockstore-configurations/)
-        - Resource: `GET /snapshot/mongoConfigs`
-        - Description: Retrieves the configurations of all blockstores.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/get-all-blockstore-configurations/)
+        ### Endpoint:
+        `GET /snapshot/mongoConfigs`
+        ### Description
+        Retrieves the configurations of all blockstores.
         """
         return self._request(
             "GET",
@@ -288,9 +297,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Blockstore Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/get-one-blockstore-configuration-by-id/)
-        - Resource: `GET /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
-        - Description: Retrieves the configuration of one blockstore.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/get-one-blockstore-configuration-by-id/)
+        ### Endpoint:
+        `GET /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
+        ### Description
+        Retrieves the configuration of one blockstore.
         """
         return self._request(
             "GET",
@@ -408,9 +420,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Update One Blockstore Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/update-one-blockstore-configuration/)
-        - Resource: `PUT /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
-        - Description: Updates the configuration of one blockstore.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoConfigs/update-one-blockstore-configuration/)
+        ### Endpoint:
+        `PUT /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
+        ### Description
+        Updates the configuration of one blockstore.
         """
         return self._request(
             "PUT",

@@ -58,9 +58,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Add Entries to an Access List
-        - Document: [Add Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-add-entries/)
-        - Resource: `POST /users/{USER-ID}/accessList`
-        - Description: No description.
+        ### Document:
+        [Add Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-add-entries/)
+        ### Endpoint:
+        `POST /users/{USER-ID}/accessList`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -124,9 +127,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Entry from One Access List
-        - Document: [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-delete-entry/)
-        - Resource: `DELETE /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
-        - Description: No description.
+        ### Document:
+        [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-delete-entry/)
+        ### Endpoint:
+        `DELETE /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -175,9 +181,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get Access List for the Current User
-        - Document: [Get for Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-current-user/)
-        - Resource: `GET /users/{USER-ID}/accessList`
-        - Description: No description.
+        ### Document:
+        [Get for Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-current-user/)
+        ### Endpoint:
+        `GET /users/{USER-ID}/accessList`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -241,9 +250,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Access List for an IP Address
-        - Document: [Get for IP Address](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-ip-address/)
-        - Resource: `GET /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
-        - Description: Retrieves an access list entity if the value of IP-ADDRESS equals the value of the entity's ipAddress field. This does not retrieve an object where the value of IP-ADDRESS is contained within the values allowed by the cidrBlock field.
+        ### Document:
+        [Get for IP Address](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-ip-address/)
+        ### Endpoint:
+        `GET /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
+        ### Description
+        Retrieves an access list entity if the value of IP-ADDRESS equals the value of the entity's ipAddress field. This does not retrieve an object where the value of IP-ADDRESS is contained within the values allowed by the cidrBlock field.
         """
         return self._request(
             "GET",

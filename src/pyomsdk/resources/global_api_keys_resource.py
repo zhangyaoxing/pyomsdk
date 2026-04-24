@@ -128,9 +128,12 @@ Global User Admin
     ) -> dict[str, Any]:
         """
         ## Create One Global API Key
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-api-key/)
-        - Resource: `POST /admin/apiKeys`
-        - Description: Create one Global API Key for Ops Manager.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-api-key/)
+        ### Endpoint:
+        `POST /admin/apiKeys`
+        ### Description
+        Create one Global API Key for Ops Manager.
         """
         return self._request(
             "POST",
@@ -190,9 +193,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Global API Key
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-api-key/)
-        - Resource: `DELETE /admin/apiKeys/{API-KEY-ID}`
-        - Description: Delete one Global API Key from Ops Manager using the unique identifier for that Key.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-api-key/)
+        ### Endpoint:
+        `DELETE /admin/apiKeys/{API-KEY-ID}`
+        ### Description
+        Delete one Global API Key from Ops Manager using the unique identifier for that Key.
         """
         return self._request(
             "DELETE",
@@ -256,9 +262,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Roles for Global API Keys
-        - Document: [Get All Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-key-roles/)
-        - Resource: `GET /admin/apiKeys/roles`
-        - Description: Return a list of acceptable Global Roles for Global API Keys.
+        ### Document:
+        [Get All Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-key-roles/)
+        ### Endpoint:
+        `GET /admin/apiKeys/roles`
+        ### Description
+        Return a list of acceptable Global Roles for Global API Keys.
         """
         return self._request(
             "GET",
@@ -299,9 +308,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Global API Keys
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/)
-        - Resource: `GET /admin/apiKeys`
-        - Description: Return all Global API Keys for Ops Manager.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/)
+        ### Endpoint:
+        `GET /admin/apiKeys`
+        ### Description
+        Return all Global API Keys for Ops Manager.
         """
         return self._request(
             "GET",
@@ -361,9 +373,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global API Key
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-api-key/)
-        - Resource: `GET /admin/apiKeys/{API-KEY-ID}`
-        - Description: Return one Global API Key for Ops Manager using the unique identifier for that Key.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-api-key/)
+        ### Endpoint:
+        `GET /admin/apiKeys/{API-KEY-ID}`
+        ### Description
+        Return one Global API Key for Ops Manager using the unique identifier for that Key.
         """
         return self._request(
             "GET",
@@ -498,9 +513,12 @@ Global User Admin
     ) -> dict[str, Any]:
         """
         ## Update One Global API Key
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-api-key/)
-        - Resource: `PATCH /admin/apiKeys/{API-KEY-ID}`
-        - Description: Update values of one Global API Key from Ops Manager using the unique identifier for that Key.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-api-key/)
+        ### Endpoint:
+        `PATCH /admin/apiKeys/{API-KEY-ID}`
+        ### Description
+        Update values of one Global API Key from Ops Manager using the unique identifier for that Key.
         """
         return self._request(
             "PATCH",

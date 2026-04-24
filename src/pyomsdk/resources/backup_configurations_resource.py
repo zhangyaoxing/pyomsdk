@@ -50,9 +50,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Backup Configurations for One Project
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-backup-configs-for-group/)
-        - Resource: `GET /groups/{PROJECT-ID}/backupConfigs`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-backup-configs-for-group/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/backupConfigs`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -116,9 +119,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Backup Configuration from One Project
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-backup-config-by-cluster-id/)
-        - Resource: `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-backup-config-by-cluster-id/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -339,9 +345,12 @@ Send this parameter to Ops Manager when updating the backup configuration for a 
     ) -> dict[str, Any]:
         """
         ## Update One Backup Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-backup-config/)
-        - Resource: `PATCH /groups/{projectId}/backupConfigs/{clusterId}`
-        - Description: No description.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-backup-config/)
+        ### Endpoint:
+        `PATCH /groups/{projectId}/backupConfigs/{clusterId}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",

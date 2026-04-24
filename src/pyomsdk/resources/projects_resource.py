@@ -84,9 +84,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Add Existing Users to One Project
-        - Document: [Add Existing Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/add-users-to-one-group/)
-        - Resource: `POST /groups/{PROJECT-ID}/users`
-        - Description: This resource adds users who exist in Ops Manager to another project. It does not create new users and add them to a project. By default, users first receive an invitation to the project. You can add users directly to a project only if you set the mms.user.bypassInviteForExistingUsers setting to true.
+        ### Document:
+        [Add Existing Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/add-users-to-one-group/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/users`
+        ### Description
+        This resource adds users who exist in Ops Manager to another project. It does not create new users and add them to a project. By default, users first receive an invitation to the project. You can add users directly to a project only if you set the mms.user.bypassInviteForExistingUsers setting to true.
         """
         return self._request(
             "POST",
@@ -186,9 +189,12 @@ Are limited to 32 characters
     ) -> dict[str, Any]:
         """
         ## Update One Project
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/change-one-group-name/)
-        - Resource: `PATCH /groups/{PROJECT-ID}`
-        - Description: Use this endpoint to make any of the following changes to one project:
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/change-one-group-name/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}`
+        ### Description
+        Use this endpoint to make any of the following changes to one project:
         """
         return self._request(
             "PATCH",
@@ -254,9 +260,12 @@ Ops Manager set the oldest Organization Owner of the specified organization as a
     ) -> dict[str, Any]:
         """
         ## Create One Project
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/create-one-group/)
-        - Resource: `POST /groups`
-        - Description: No description.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/create-one-group/)
+        ### Endpoint:
+        `POST /groups`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -316,9 +325,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Project
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/delete-one-group/)
-        - Resource: `DELETE /groups/{PROJECT-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/delete-one-group/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -359,9 +371,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Projects for the Current User
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/)
-        - Resource: `GET /groups`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/)
+        ### Endpoint:
+        `GET /groups`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -388,9 +403,12 @@ To create or edit tags you must have the Project Automation Admin role.
     ) -> dict[str, Any]:
         """
         ## Get All Projects with Specific Tags for the Current User
-        - Document: [Get by Specific Tags for the Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-with-specific-tags-for-current-user/)
-        - Resource: `GET /groups`
-        - Description: No description.
+        ### Document:
+        [Get by Specific Tags for the Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-with-specific-tags-for-current-user/)
+        ### Endpoint:
+        `GET /groups`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -435,9 +453,12 @@ The default value is false.
     ) -> dict[str, Any]:
         """
         ## Get All Users in One Project
-        - Document: [Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
-        - Resource: `GET /groups/{PROJECT-ID}/users`
-        - Description: No description.
+        ### Document:
+        [Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/users`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -497,9 +518,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Project by Agent API Key
-        - Document: [Get by Agent API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-agent-api-key/)
-        - Resource: `GET /groups/byAgentApiKey/{AGENT-API-KEY}`
-        - Description: No description.
+        ### Document:
+        [Get by Agent API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-agent-api-key/)
+        ### Endpoint:
+        `GET /groups/byAgentApiKey/{AGENT-API-KEY}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -559,9 +583,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Project by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-id/)
-        - Resource: `GET /groups/{PROJECT-ID}`
-        - Description: No description.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-id/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -621,9 +648,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Project by Name
-        - Document: [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-name/)
-        - Resource: `GET /groups/byName/{GROUP-NAME}`
-        - Description: No description.
+        ### Document:
+        [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-name/)
+        ### Endpoint:
+        `GET /groups/byName/{GROUP-NAME}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -704,9 +734,12 @@ GROUP_USER_ADMIN - Project User Admin
     ) -> dict[str, Any]:
         """
         ## Add Teams to a Project
-        - Document: [Add Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-add-team/)
-        - Resource: `POST /groups/{PROJECT-ID}/teams`
-        - Description: No description.
+        ### Document:
+        [Add Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-add-team/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/teams`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -755,9 +788,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Teams in One Project
-        - Document: [Get All Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-get-teams/)
-        - Resource: `GET /groups/{PROJECT-ID}/teams`
-        - Description: No description.
+        ### Document:
+        [Get All Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-get-teams/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/teams`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -821,9 +857,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Remove One User from One Project
-        - Document: [Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/remove-one-user-from-one-group/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/users/{USER-ID}`
-        - Description: No description.
+        ### Document:
+        [Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/remove-one-user-from-one-group/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/users/{USER-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -979,9 +1018,12 @@ Project User Admin
     ) -> dict[str, Any]:
         """
         ## Create One Project Invitation
-        - Document: [Create Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/create-one-invitation/)
-        - Resource: `POST /groups/{GROUP-ID}/invites/`
-        - Description: Retrieve details for one pending invitation to the specified Ops Manager project.
+        ### Document:
+        [Create Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/create-one-invitation/)
+        ### Endpoint:
+        `POST /groups/{GROUP-ID}/invites/`
+        ### Description
+        Retrieve details for one pending invitation to the specified Ops Manager project.
         """
         return self._request(
             "POST",
@@ -1045,9 +1087,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Project Invitation
-        - Document: [Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/delete-one-invitation/)
-        - Resource: `DELETE /groups/{GROUP-ID}/invites/{INVITATION-ID}`
-        - Description: Deletes one pending invitation to the Ops Manager project that you specify. You can't delete an invitation that a user has accepted.
+        ### Document:
+        [Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/delete-one-invitation/)
+        ### Endpoint:
+        `DELETE /groups/{GROUP-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Deletes one pending invitation to the Ops Manager project that you specify. You can't delete an invitation that a user has accepted.
         """
         return self._request(
             "DELETE",
@@ -1113,9 +1158,12 @@ If omitted, Ops Manager returns all pending invitations.
     ) -> dict[str, Any]:
         """
         ## Get All Project Invitations
-        - Document: [Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-all-invitations/)
-        - Resource: `GET /groups/{GROUP-ID}/invites`
-        - Description: Retrieves all pending invitations to the specified Ops Manager project.
+        ### Document:
+        [Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-all-invitations/)
+        ### Endpoint:
+        `GET /groups/{GROUP-ID}/invites`
+        ### Description
+        Retrieves all pending invitations to the specified Ops Manager project.
         """
         return self._request(
             "GET",
@@ -1179,9 +1227,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Project Invitation
-        - Document: [Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-one-invitation/)
-        - Resource: `GET /groups/{GROUP-ID}/invites/{INVITATION-ID}`
-        - Description: Retrieve details for one pending invitation to the specified Ops Manager project.
+        ### Document:
+        [Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-one-invitation/)
+        ### Endpoint:
+        `GET /groups/{GROUP-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Retrieve details for one pending invitation to the specified Ops Manager project.
         """
         return self._request(
             "GET",
@@ -1257,9 +1308,12 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     ) -> dict[str, Any]:
         """
         ## Update One Project Invitation by Invitation ID
-        - Document: [Update Invitation by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation-by-id/)
-        - Resource: `PATCH /groups/{GROUP-ID}/invites/{INVITATION-ID}`
-        - Description: Updates one pending invitation by {INVITATION-ID} to the Ops Manager project that you specify.
+        ### Document:
+        [Update Invitation by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation-by-id/)
+        ### Endpoint:
+        `PATCH /groups/{GROUP-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Updates one pending invitation by {INVITATION-ID} to the Ops Manager project that you specify.
         """
         return self._request(
             "PATCH",
@@ -1335,9 +1389,12 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     ) -> dict[str, Any]:
         """
         ## Update One Project Invitation
-        - Document: [Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation/)
-        - Resource: `PATCH /groups/{GROUP-ID}/invites`
-        - Description: Updates one pending invitation to the Ops Manager project that you specify.
+        ### Document:
+        [Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation/)
+        ### Endpoint:
+        `PATCH /groups/{GROUP-ID}/invites`
+        ### Description
+        Updates one pending invitation to the Ops Manager project that you specify.
         """
         return self._request(
             "PATCH",
@@ -1413,9 +1470,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Remove One Team From One Project
-        - Document: [Remove Team](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-from-project/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/teams/{TEAM-ID}`
-        - Description: No description.
+        ### Document:
+        [Remove Team](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-from-project/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/teams/{TEAM-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",

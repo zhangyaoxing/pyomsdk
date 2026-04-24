@@ -42,9 +42,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Root
-        - Document: [Root](https://www.mongodb.com/docs/ops-manager/current/reference/api/root/)
-        - Resource: `GET /`
-        - Description: The root resource is the starting point for the Ops Manager API. From here, you can traverse the links to reach all other API resources.
+        ### Document:
+        [Root](https://www.mongodb.com/docs/ops-manager/current/reference/api/root/)
+        ### Endpoint:
+        `GET /`
+        ### Description
+        The root resource is the starting point for the Ops Manager API. From here, you can traverse the links to reach all other API resources.
         """
         return self._request(
             "GET",

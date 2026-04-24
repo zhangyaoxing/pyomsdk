@@ -69,9 +69,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get a Database by Name
-        - Document: [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/database-get-by-name/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}`
-        - Description: No description.
+        ### Document:
+        [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/database-get-by-name/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -124,9 +127,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Databases on One Host
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/databases-get-all-on-host/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases`
-        - Description: Retrieve all databases running on the specified host.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/databases-get-all-on-host/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases`
+        ### Description
+        Retrieve all databases running on the specified host.
         """
         return self._request(
             "GET",

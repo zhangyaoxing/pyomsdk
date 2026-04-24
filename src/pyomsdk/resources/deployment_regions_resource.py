@@ -92,9 +92,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Assign Deployment Region to One Shard
-        - Document: [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/assign-deployment-region/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
-        - Description: No description.
+        ### Document:
+        [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/assign-deployment-region/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",
@@ -182,9 +185,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Deployment Region by ID
-        - Document: [Create by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region-by-id/)
-        - Resource: `PUT /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        - Description: No description.
+        ### Document:
+        [Create by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region-by-id/)
+        ### Endpoint:
+        `PUT /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PUT",
@@ -268,9 +274,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Deployment Region
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region/)
-        - Resource: `POST /admin/backup/backupDeployments`
-        - Description: No description.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region/)
+        ### Endpoint:
+        `POST /admin/backup/backupDeployments`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -330,9 +339,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Deployment Region by ID
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/delete-one-deployment-region-by-id/)
-        - Resource: `DELETE /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/delete-one-deployment-region-by-id/)
+        ### Endpoint:
+        `DELETE /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -373,9 +385,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Deployment Regions
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-deployment-regions/)
-        - Resource: `GET /admin/backup/backupDeployments`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-deployment-regions/)
+        ### Endpoint:
+        `GET /admin/backup/backupDeployments`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -424,9 +439,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get One Deployment Region
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-deployment-region-by-id/)
-        - Resource: `GET /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-deployment-region-by-id/)
+        ### Endpoint:
+        `GET /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

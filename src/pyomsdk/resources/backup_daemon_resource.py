@@ -138,9 +138,12 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
     ) -> dict[str, Any]:
         """
         ## Create One Backup Daemon Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/create-one-backup-daemon-configuration/)
-        - Resource: `PUT /daemon/configs/{MACHINE}`
-        - Description: Configures a new Backup Daemon.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/create-one-backup-daemon-configuration/)
+        ### Endpoint:
+        `PUT /daemon/configs/{MACHINE}`
+        ### Description
+        Configures a new Backup Daemon.
         """
         return self._request(
             "PUT",
@@ -204,9 +207,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Backup Daemon Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/delete-one-backup-daemon-configuration/)
-        - Resource: `DELETE /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
-        - Description: Deletes the configuration of one backup daemon.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/delete-one-backup-daemon-configuration/)
+        ### Endpoint:
+        `DELETE /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
+        ### Description
+        Deletes the configuration of one backup daemon.
         """
         return self._request(
             "DELETE",
@@ -253,9 +259,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Backup Daemon Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-all-backup-daemon-configurations/)
-        - Resource: `GET /daemon/configs`
-        - Description: Retrieves the configurations of all backup daemons.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-all-backup-daemon-configurations/)
+        ### Endpoint:
+        `GET /daemon/configs`
+        ### Description
+        Retrieves the configurations of all backup daemons.
         """
         return self._request(
             "GET",
@@ -319,9 +328,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Backup Daemon Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-one-backup-daemon-configuration-by-host/)
-        - Resource: `GET /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
-        - Description: Retrieves the configuration of one backup daemon.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-one-backup-daemon-configuration-by-host/)
+        ### Endpoint:
+        `GET /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
+        ### Description
+        Retrieves the configuration of one backup daemon.
         """
         return self._request(
             "GET",
@@ -467,9 +479,12 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
     ) -> dict[str, Any]:
         """
         ## Update One Backup Daemon Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/update-one-backup-daemon-configuration/)
-        - Resource: `PUT /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
-        - Description: Updates the configuration of one Backup Daemon.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/update-one-backup-daemon-configuration/)
+        ### Endpoint:
+        `PUT /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
+        ### Description
+        Updates the configuration of one Backup Daemon.
         """
         return self._request(
             "PUT",

@@ -77,9 +77,12 @@ You use the same link-token to migrate each deployment in your MongoDB Cloud Man
     ) -> dict[str, Any]:
         """
         ## Connect One Organization with One Atlas Organization
-        - Document: [Connect with Atlas Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/link-the-organization-with-atlas/)
-        - Resource: `POST /orgs/{orgId}/liveExport/migrationLink`
-        - Description: Connect the source Ops Manager organization with a target MongoDB Atlas organization.
+        ### Document:
+        [Connect with Atlas Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/link-the-organization-with-atlas/)
+        ### Endpoint:
+        `POST /orgs/{orgId}/liveExport/migrationLink`
+        ### Description
+        Connect the source Ops Manager organization with a target MongoDB Atlas organization.
         """
         return self._request(
             "POST",
@@ -139,9 +142,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Remove the Connection between Organizations
-        - Document: [Remove Connection](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/remove-the-link-between-organizations/)
-        - Resource: `DELETE /orgs/{orgId}/liveExport/migrationLink`
-        - Description: Remove the connection between the source Ops Manager organization and the target MongoDB Atlas organization. This stops the source organization from synchronizing data with the target organization.
+        ### Document:
+        [Remove Connection](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/remove-the-link-between-organizations/)
+        ### Endpoint:
+        `DELETE /orgs/{orgId}/liveExport/migrationLink`
+        ### Description
+        Remove the connection between the source Ops Manager organization and the target MongoDB Atlas organization. This stops the source organization from synchronizing data with the target organization.
         """
         return self._request(
             "DELETE",
@@ -201,9 +207,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Return the Status of the Connection between Organizations
-        - Document: [Return Connection Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/return-the-status-of-the-organization-link/)
-        - Resource: `GET /orgs/{orgId}/liveExport/migrationLink/status`
-        - Description: Return the status of the connection between the specified source Ops Manager organization and the target MongoDB Atlas organization.
+        ### Document:
+        [Return Connection Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/return-the-status-of-the-organization-link/)
+        ### Endpoint:
+        `GET /orgs/{orgId}/liveExport/migrationLink/status`
+        ### Description
+        Return the status of the connection between the specified source Ops Manager organization and the target MongoDB Atlas organization.
         """
         return self._request(
             "GET",

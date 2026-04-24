@@ -79,9 +79,12 @@ To un-acknowledge an alert, specify a time and date in the past.
     ) -> dict[str, Any]:
         """
         ## Acknowledge One Global Alert
-        - Document: [Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-ack-one/)
-        - Resource: `PATCH /globalAlerts/{ALERT-ID}`
-        - Description: You can acknowledge one alert until the time and date you specify. You can also un-acknowledge an alert by specifying a date and time in the past.
+        ### Document:
+        [Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-ack-one/)
+        ### Endpoint:
+        `PATCH /globalAlerts/{ALERT-ID}`
+        ### Description
+        You can acknowledge one alert until the time and date you specify. You can also un-acknowledge an alert by specifying a date and time in the past.
         """
         return self._request(
             "PATCH",
@@ -162,9 +165,12 @@ Alert is closed.
     ) -> dict[str, Any]:
         """
         ## Get All Global Alerts
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-all/)
-        - Resource: `GET /globalAlerts`
-        - Description: Retrieve all global alerts.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-all/)
+        ### Endpoint:
+        `GET /globalAlerts`
+        ### Description
+        Retrieve all global alerts.
         """
         return self._request(
             "GET",
@@ -224,9 +230,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global Alert
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-one/)
-        - Resource: `GET /globalAlerts/{ALERT-ID}`
-        - Description: Retrieve one alert by its ALERT-ID.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-one/)
+        ### Endpoint:
+        `GET /globalAlerts/{ALERT-ID}`
+        ### Description
+        Retrieve one alert by its ALERT-ID.
         """
         return self._request(
             "GET",

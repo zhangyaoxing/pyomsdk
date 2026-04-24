@@ -65,9 +65,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Retrieve All Feature Policies
-        - Document: [Retrieve All](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-all-feature-control-policies/)
-        - Resource: `GET /groups/availablePolicies`
-        - Description: No description.
+        ### Document:
+        [Retrieve All](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-all-feature-control-policies/)
+        ### Endpoint:
+        `GET /groups/availablePolicies`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -139,9 +142,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Retrieve Feature Policies for One Project
-        - Document: [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-controlled-features-for-one-project/)
-        - Resource: `GET /groups/{PROJECT-ID}/controlledFeature`
-        - Description: No description.
+        ### Document:
+        [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-controlled-features-for-one-project/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/controlledFeature`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -343,9 +349,12 @@ Users can't change the server type of hosts.
     ) -> dict[str, Any]:
         """
         ## Update Feature Policies for One Project
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/update-controlled-features-for-one-project/)
-        - Resource: `PUT /groups/{PROJECT-ID}/controlledFeature`
-        - Description: No description.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/update-controlled-features-for-one-project/)
+        ### Endpoint:
+        `PUT /groups/{PROJECT-ID}/controlledFeature`
+        ### Description
+        No description.
         """
         return self._request(
             "PUT",

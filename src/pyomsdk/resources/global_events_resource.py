@@ -81,9 +81,12 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
     ) -> dict[str, Any]:
         """
         ## Get All Global Events
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-global/)
-        - Resource: `GET /globalEvents`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-global/)
+        ### Endpoint:
+        `GET /globalEvents`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -143,9 +146,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global Event
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-global/)
-        - Resource: `GET /globalEvents/{eventId}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-global/)
+        ### Endpoint:
+        `GET /globalEvents/{eventId}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

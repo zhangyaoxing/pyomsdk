@@ -65,9 +65,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Cancel Import Deployment Request
-        - Document: [Cancel Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/cancel/)
-        - Resource: `POST /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel`
-        - Description: Cancel an in-progress import deployment request. This endpoint allows you to stop an import deployment request that is currently running. Once cancelled, the import process will stop and the request state will change to CANCELLED.
+        ### Document:
+        [Cancel Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/cancel/)
+        ### Endpoint:
+        `POST /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel`
+        ### Description
+        Cancel an in-progress import deployment request. This endpoint allows you to stop an import deployment request that is currently running. Once cancelled, the import process will stop and the request state will change to CANCELLED.
         """
         return self._request(
             "POST",
@@ -242,9 +245,12 @@ Ops Manager doesn't include this parameter in response documents.
     ) -> dict[str, Any]:
         """
         ## Create Import Deployment Request
-        - Document: [Create Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/create/)
-        - Resource: `POST /automation/importDeployment/{PROJECT-ID}`
-        - Description: Create a new import deployment request to add existing MongoDB processes to Ops Manager automation. This endpoint initiates the process of importing multiple MongoDB processes into both monitoring and automation management.
+        ### Document:
+        [Create Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/create/)
+        ### Endpoint:
+        `POST /automation/importDeployment/{PROJECT-ID}`
+        ### Description
+        Create a new import deployment request to add existing MongoDB processes to Ops Manager automation. This endpoint initiates the process of importing multiple MongoDB processes into both monitoring and automation management.
         """
         return self._request(
             "POST",
@@ -308,9 +314,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete Import Deployment Request
-        - Document: [Delete Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/delete/)
-        - Resource: `DELETE /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}`
-        - Description: Delete a failed import deployment request and clean up any partially imported resources. This endpoint removes the import deployment request record and performs cleanup of any resources that were partially imported during the failed import process.
+        ### Document:
+        [Delete Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/delete/)
+        ### Endpoint:
+        `DELETE /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}`
+        ### Description
+        Delete a failed import deployment request and clean up any partially imported resources. This endpoint removes the import deployment request record and performs cleanup of any resources that were partially imported during the failed import process.
         """
         return self._request(
             "DELETE",
@@ -370,9 +379,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Import Deployment Requests
-        - Document: [Get Import Deployment Requests](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-all/)
-        - Resource: `GET /automation/importDeployment/{PROJECT-ID}`
-        - Description: Retrieve all import deployment requests for a project. This endpoint returns a list of all import deployment requests that have been created for the specified project, including their current status and history.
+        ### Document:
+        [Get Import Deployment Requests](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-all/)
+        ### Endpoint:
+        `GET /automation/importDeployment/{PROJECT-ID}`
+        ### Description
+        Retrieve all import deployment requests for a project. This endpoint returns a list of all import deployment requests that have been created for the specified project, including their current status and history.
         """
         return self._request(
             "GET",
@@ -436,9 +448,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Import Deployment Request Status
-        - Document: [Get Import Deployment Request Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-status/)
-        - Resource: `GET /automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}`
-        - Description: Retrieve the status of a specific import deployment request. This endpoint provides detailed information about the current state and history of a single import deployment request.
+        ### Document:
+        [Get Import Deployment Request Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-status/)
+        ### Endpoint:
+        `GET /automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}`
+        ### Description
+        Retrieve the status of a specific import deployment request. This endpoint provides detailed information about the current state and history of a single import deployment request.
         """
         return self._request(
             "GET",

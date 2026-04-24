@@ -109,9 +109,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Create One Sync Store Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/create-one-sync-store-configuration/)
-        - Resource: `POST /sync/mongoConfigs`
-        - Description: Configures one new sync store.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/create-one-sync-store-configuration/)
+        ### Endpoint:
+        `POST /sync/mongoConfigs`
+        ### Description
+        Configures one new sync store.
         """
         return self._request(
             "POST",
@@ -171,9 +174,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Sync Store Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/delete-one-sync-store-configuration/)
-        - Resource: `DELETE /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
-        - Description: Deletes the configuration of one sync store.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/delete-one-sync-store-configuration/)
+        ### Endpoint:
+        `DELETE /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
+        ### Description
+        Deletes the configuration of one sync store.
         """
         return self._request(
             "DELETE",
@@ -220,9 +226,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Sync Store Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/get-all-sync-store-configurations/)
-        - Resource: `GET /sync/mongoConfigs`
-        - Description: Retrieves the configurations of all sync stores.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/get-all-sync-store-configurations/)
+        ### Endpoint:
+        `GET /sync/mongoConfigs`
+        ### Description
+        Retrieves the configurations of all sync stores.
         """
         return self._request(
             "GET",
@@ -282,9 +291,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Sync Store Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/get-one-sync-store-configuration-by-id/)
-        - Resource: `GET /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
-        - Description: Retrieves the configuration of one sync store.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/get-one-sync-store-configuration-by-id/)
+        ### Endpoint:
+        `GET /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
+        ### Description
+        Retrieves the configuration of one sync store.
         """
         return self._request(
             "GET",
@@ -396,9 +408,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Update One Sync Store Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/update-one-sync-store-configuration/)
-        - Resource: `PUT /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
-        - Description: Updates the configuration of one sync store.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoConfigs/update-one-sync-store-configuration/)
+        ### Endpoint:
+        `PUT /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
+        ### Description
+        Updates the configuration of one sync store.
         """
         return self._request(
             "PUT",

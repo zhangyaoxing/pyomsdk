@@ -62,9 +62,12 @@ For example:
     ) -> dict[str, Any]:
         """
         ## Get Slow Query Logs
-        - Document: [Get Slow Query Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-slow-queries/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/slowQueryLogs`
-        - Description: Retrieves log lines for slow queries as determined by the Performance Advisor.
+        ### Document:
+        [Get Slow Query Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-slow-queries/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/slowQueryLogs`
+        ### Description
+        Retrieves log lines for slow queries as determined by the Performance Advisor.
         """
         return self._request(
             "GET",
@@ -129,9 +132,12 @@ For example:
     ) -> dict[str, Any]:
         """
         ## Get Suggested Indexes
-        - Document: [Get Suggested Indexes](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-suggested-indexes/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/suggestedIndexes`
-        - Description: Retrieves suggested indexes as determined by the Performance Advisor.
+        ### Document:
+        [Get Suggested Indexes](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-suggested-indexes/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/suggestedIndexes`
+        ### Description
+        Retrieves suggested indexes as determined by the Performance Advisor.
         """
         return self._request(
             "GET",
@@ -178,9 +184,12 @@ For example:
     ) -> dict[str, Any]:
         """
         ## Get Namespaces for a Project
-        - Document: [Get Namespaces](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/pa-namespaces-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/namespaces`
-        - Description: Retrieve namespaces for collections experiencing slow queries on a specified host. Namespaces appear in the following format: {database}.{collection}.
+        ### Document:
+        [Get Namespaces](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/pa-namespaces-get-all/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/namespaces`
+        ### Description
+        Retrieve namespaces for collections experiencing slow queries on a specified host. Namespaces appear in the following format: {database}.{collection}.
         """
         return self._request(
             "GET",

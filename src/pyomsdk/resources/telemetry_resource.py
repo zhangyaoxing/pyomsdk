@@ -16,9 +16,12 @@ class TelemetryResource(BaseResource):
     ) -> dict[str, Any]:
         """
         ## Retrieve Telemetry Data
-        - Document: [Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/get-data/)
-        - Resource: `GET /collection/details`
-        - Description: Retrieve telemetry collection status and configuration details for your Ops Manager installation.
+        ### Document:
+        [Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/get-data/)
+        ### Endpoint:
+        `GET /collection/details`
+        ### Description
+        Retrieve telemetry collection status and configuration details for your Ops Manager installation.
         """
         return self._request(
             "GET",
@@ -41,9 +44,12 @@ class TelemetryResource(BaseResource):
     ) -> dict[str, Any]:
         """
         ## Toggle Telemetry Status
-        - Document: [Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/toggle-status/)
-        - Resource: `PATCH /collection/status`
-        - Description: Enable or disable telemetry collection for your Ops Manager installation.
+        ### Document:
+        [Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/toggle-status/)
+        ### Endpoint:
+        `PATCH /collection/status`
+        ### Description
+        Enable or disable telemetry collection for your Ops Manager installation.
         """
         return self._request(
             "PATCH",

@@ -79,11 +79,13 @@ For endpoints that return a list of results, the content object is an envelope. 
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
         """
-                ## Create a Configuration for a Third-Party Service Integration
-                - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
-                - Resource: `POST /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-                - Description: Use the following dataclasses to pass the integration settings:
-
+        ## Create a Configuration for a Third-Party Service Integration
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+        ### Description
+        Use the following dataclasses to pass the integration settings:
         - PagerDutyIntegrationSettings
         - SlackIntegrationSettings
         - DatadogIntegrationSettings
@@ -164,9 +166,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Delete a Configuration for a Third-Party Service Integration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-delete/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-delete/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -215,9 +220,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Return the Latest Targets for Prometheus
-        - Document: [Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-discovery/)
-        - Resource: `GET /groups/{PROJECT-ID}/discovery`
-        - Description: No description.
+        ### Document:
+        [Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-discovery/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/discovery`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -266,9 +274,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Configurations for Third-Party Service Integrations
-        - Document: [Get All Configurations](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-all/)
-        - Resource: `GET /api/public/v1.0/groups/{PROJECT-ID}/integrations`
-        - Description: No description.
+        ### Document:
+        [Get All Configurations](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-all/)
+        ### Endpoint:
+        `GET /api/public/v1.0/groups/{PROJECT-ID}/integrations`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -339,9 +350,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get the Configuration of a Third-Party Service Integration
-        - Document: [Get One Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-one/)
-        - Resource: `GET /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-        - Description: No description.
+        ### Document:
+        [Get One Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-one/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -419,11 +433,13 @@ For endpoints that return a list of results, the content object is an envelope. 
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
         """
-                ## Update a Configuration for a Third-Party Service Integration
-                - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)
-                - Resource: `PUT /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
-                - Description: Use the following dataclasses to pass the integration settings:
-
+        ## Update a Configuration for a Third-Party Service Integration
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)
+        ### Endpoint:
+        `PUT /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
+        ### Description
+        Use the following dataclasses to pass the integration settings:
         - PagerDutyIntegrationSettings
         - SlackIntegrationSettings
         - DatadogIntegrationSettings

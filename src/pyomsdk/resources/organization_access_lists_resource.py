@@ -89,9 +89,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Create Access List Entries for One Organization API Key
-        - Document: [Create Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-org-api-key-access-list/)
-        - Resource: `POST /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
-        - Description: No description.
+        ### Document:
+        [Create Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-org-api-key-access-list/)
+        ### Endpoint:
+        `POST /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -171,9 +174,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Delete One Access List Entry for an API Key
-        - Document: [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-org-api-key-access-list/)
-        - Resource: `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
-        - Description: No description.
+        ### Document:
+        [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-org-api-key-access-list/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -249,9 +255,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Access List Entries for One Organization API Key
-        - Document: [Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
-        - Resource: `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
-        - Description: No description.
+        ### Document:
+        [Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -331,9 +340,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get One Access List Entry for One Organization API Key
-        - Document: [Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key-access-list/)
-        - Resource: `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
-        - Description: No description.
+        ### Document:
+        [Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key-access-list/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

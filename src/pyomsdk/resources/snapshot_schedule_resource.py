@@ -65,9 +65,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get the Snapshot Schedule
-        - Document: [Get Schedule](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-snapshot-schedule/)
-        - Resource: `GET /groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule`
-        - Description: No description.
+        ### Document:
+        [Get Schedule](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-snapshot-schedule/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -223,9 +226,12 @@ Setting weeklySnapshotRetentionWeeks to 0 disables this rule.
     ) -> dict[str, Any]:
         """
         ## Update the Snapshot Schedule
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-one-snapshot-schedule-by-cluster-id/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule`
-        - Description: No description.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-one-snapshot-schedule-by-cluster-id/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",

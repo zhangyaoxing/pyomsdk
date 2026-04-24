@@ -105,9 +105,12 @@ If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
     ) -> dict[str, Any]:
         """
         ## Create One File System Store Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/create-one-file-system-store-configuration/)
-        - Resource: `POST /snapshot/fileSystemConfigs`
-        - Description: Configures one new file system store.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/create-one-file-system-store-configuration/)
+        ### Endpoint:
+        `POST /snapshot/fileSystemConfigs`
+        ### Description
+        Configures one new file system store.
         """
         return self._request(
             "POST",
@@ -167,9 +170,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One File System Store Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/delete-one-file-system-store-configuration/)
-        - Resource: `DELETE /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        - Description: Deletes the configuration of one file system store.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/delete-one-file-system-store-configuration/)
+        ### Endpoint:
+        `DELETE /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+        ### Description
+        Deletes the configuration of one file system store.
         """
         return self._request(
             "DELETE",
@@ -216,9 +222,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All File System Store Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-all-file-system-store-configurations/)
-        - Resource: `GET /snapshot/fileSystemConfigs`
-        - Description: Retrieves the configurations of all file system stores.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-all-file-system-store-configurations/)
+        ### Endpoint:
+        `GET /snapshot/fileSystemConfigs`
+        ### Description
+        Retrieves the configurations of all file system stores.
         """
         return self._request(
             "GET",
@@ -278,9 +287,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One File System Store Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-one-file-system-store-configuration-by-id/)
-        - Resource: `GET /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        - Description: Retrieves the configuration of one file system store.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-one-file-system-store-configuration-by-id/)
+        ### Endpoint:
+        `GET /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+        ### Description
+        Retrieves the configuration of one file system store.
         """
         return self._request(
             "GET",
@@ -388,9 +400,12 @@ If the MongoDB runs FCV 4.2 or later, Ops Manager ignores this setting.
     ) -> dict[str, Any]:
         """
         ## Update One File System Store Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/update-one-file-system-store-configuration/)
-        - Resource: `PUT /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        - Description: Updates the configuration of one file system store.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/update-one-file-system-store-configuration/)
+        ### Endpoint:
+        `PUT /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+        ### Description
+        Updates the configuration of one file system store.
         """
         return self._request(
             "PUT",

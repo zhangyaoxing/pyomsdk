@@ -157,9 +157,12 @@ For example, to request the last 36 hours, include this query parameter: period=
     ) -> dict[str, Any]:
         """
         ## Get Database Measurements
-        - Document: [Database](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-database-measurements/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}/measurements`
-        - Description: Database measurements provide statistics on database performance and storage. The Monitoring collects database measurements through the dbStats command.
+        ### Document:
+        [Database](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-database-measurements/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}/measurements`
+        ### Description
+        Database measurements provide statistics on database performance and storage. The Monitoring collects database measurements through the dbStats command.
         """
         return self._request(
             "GET",
@@ -315,9 +318,12 @@ For example, to request the last 36 hours, include this query parameter: period=
     ) -> dict[str, Any]:
         """
         ## Get Disk Partition Measurements
-        - Document: [Disk Partition](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-disk-measurements/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}/measurements`
-        - Description: Disk measurements provide data on IOPS, disk use, and disk latency on the disk partitions for hosts running MongoDB that the Automations collect. You must run Ops Manager Automation to retrieve disk measurements.
+        ### Document:
+        [Disk Partition](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-disk-measurements/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}/measurements`
+        ### Description
+        Disk measurements provide data on IOPS, disk use, and disk latency on the disk partitions for hosts running MongoDB that the Automations collect. You must run Ops Manager Automation to retrieve disk measurements.
         """
         return self._request(
             "GET",
@@ -469,9 +475,12 @@ For example, to request the last 36 hours, include this query parameter: period=
     ) -> dict[str, Any]:
         """
         ## Get Host, Process, System Measurements
-        - Document: [Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-host-process-system-measurements/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements?granularity={ISO-8601-PERIOD}&period={ISO-8601-PERIOD}`
-        - Description: Host measurements provide data on the state of the MongoDB process. The Monitoring collects host measurements through the MongoDB serverStatus and dbStats commands.
+        ### Document:
+        [Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-host-process-system-measurements/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements?granularity={ISO-8601-PERIOD}&period={ISO-8601-PERIOD}`
+        ### Description
+        Host measurements provide data on the state of the MongoDB process. The Monitoring collects host measurements through the MongoDB serverStatus and dbStats commands.
         """
         return self._request(
             "GET",
@@ -623,9 +632,12 @@ For example, to request the last 36 hours, include this query parameter: period=
     ) -> dict[str, Any]:
         """
         ## Get Measurement Types
-        - Document: [Get Types](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-measurement-types/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements`
-        - Description: To retrieve the Measurement Types that apply to a specific measurement without returning a large document, issue the following GET command with a value of PT5M for both the granularity and period. This returns a document with only one data point for each measurement.
+        ### Document:
+        [Get Types](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-measurement-types/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements`
+        ### Description
+        To retrieve the Measurement Types that apply to a specific measurement without returning a large document, issue the following GET command with a value of PT5M for both the granularity and period. This returns a document with only one data point for each measurement.
         """
         return self._request(
             "GET",

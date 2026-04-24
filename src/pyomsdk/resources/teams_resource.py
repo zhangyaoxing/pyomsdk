@@ -73,9 +73,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Add Users to Team
-        - Document: [Add Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-add-user/)
-        - Resource: `POST /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
-        - Description: No description.
+        ### Document:
+        [Add Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-add-user/)
+        ### Endpoint:
+        `POST /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -143,9 +146,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create a Team
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-create-one/)
-        - Resource: `POST /orgs/{ORG-ID}/teams`
-        - Description: No description.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-create-one/)
+        ### Endpoint:
+        `POST /orgs/{ORG-ID}/teams`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -209,9 +215,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Team
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-delete-one/)
-        - Resource: `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-delete-one/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -264,9 +273,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Users Assigned to a Team
-        - Document: [Get All Team Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all-users/)
-        - Resource: `GET /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
-        - Description: No description.
+        ### Document:
+        [Get All Team Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all-users/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -315,9 +327,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Teams
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all/)
-        - Resource: `GET /orgs/{ORG-ID}/teams`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/teams`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -381,9 +396,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Team by ID
-        - Document: [Get One by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-id/)
-        - Resource: `GET /orgs/{ORG-ID}/teams/{TEAM-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-id/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/teams/{TEAM-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -447,9 +465,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Team by Name
-        - Document: [Get One by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-name/)
-        - Resource: `GET /orgs/{ORG-ID}/teams/byName/{TEAM-NAME}`
-        - Description: No description.
+        ### Document:
+        [Get One by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-name/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/teams/byName/{TEAM-NAME}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -517,9 +538,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Remove a User from a Team
-        - Document: [Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-user/)
-        - Resource: `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}/users/{USER-ID}`
-        - Description: No description.
+        ### Document:
+        [Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-user/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}/users/{USER-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -591,9 +615,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Rename a Team
-        - Document: [Rename](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-rename-one/)
-        - Resource: `PATCH /orgs/{ORG-ID}/teams/{TEAM-ID}`
-        - Description: No description.
+        ### Document:
+        [Rename](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-rename-one/)
+        ### Endpoint:
+        `PATCH /orgs/{ORG-ID}/teams/{TEAM-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",
@@ -644,9 +671,12 @@ Defaults to false.
     ) -> dict[str, Any]:
         """
         ## Update Team Roles in One Project
-        - Document: [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-update-roles/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/teams/{TEAM-ID}`
-        - Description: No description.
+        ### Document:
+        [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-update-roles/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/teams/{TEAM-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",

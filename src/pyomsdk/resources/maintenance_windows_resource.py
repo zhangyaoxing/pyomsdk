@@ -81,9 +81,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Maintenance Window
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-create-one/)
-        - Resource: `POST /groups/{PROJECT-ID}/maintenanceWindows/`
-        - Description: Create one maintenance window. Ops Manager turns off alert notifications for certain alert types for a period of time you specify to allow maintenance to occur.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-create-one/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/maintenanceWindows/`
+        ### Description
+        Create one maintenance window. Ops Manager turns off alert notifications for certain alert types for a period of time you specify to allow maintenance to occur.
         """
         return self._request(
             "POST",
@@ -147,9 +150,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Maintenance Window
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-delete-one/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
-        - Description: Delete one maintenance window with an end date in the future.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-delete-one/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
+        ### Description
+        Delete one maintenance window with an end date in the future.
         """
         return self._request(
             "DELETE",
@@ -209,9 +215,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get All Maintenance Windows
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/maintenanceWindows/`
-        - Description: Retrieve all maintenance windows with end dates in the future.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-all/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/maintenanceWindows/`
+        ### Description
+        Retrieve all maintenance windows with end dates in the future.
         """
         return self._request(
             "GET",
@@ -275,9 +284,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Maintenance Window
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-one/)
-        - Resource: `GET /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
-        - Description: Retrieve one maintenance window with an end date in the future.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-one/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
+        ### Description
+        Retrieve one maintenance window with an end date in the future.
         """
         return self._request(
             "GET",
@@ -361,9 +373,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Update One Maintenance Window
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-update-one/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
-        - Description: Update one maintenance window with an end date in the future.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-update-one/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
+        ### Description
+        Update one maintenance window with an end date in the future.
         """
         return self._request(
             "PATCH",

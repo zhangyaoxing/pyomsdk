@@ -42,9 +42,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Project Backup Jobs Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-all-backup-group-configurations/)
-        - Resource: `GET /groups`
-        - Description: Retrieves the configurations of all project's backup jobs.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-all-backup-group-configurations/)
+        ### Endpoint:
+        `GET /groups`
+        ### Description
+        Retrieves the configurations of all project's backup jobs.
         """
         return self._request(
             "GET",
@@ -104,9 +107,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Project Backup Jobs Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-one-backup-group-configuration-by-id/)
-        - Resource: `GET /groups/{PROJECT-ID}`
-        - Description: Retrieves the configuration of one project's backup jobs.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-one-backup-group-configuration-by-id/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}`
+        ### Description
+        Retrieves the configuration of one project's backup jobs.
         """
         return self._request(
             "GET",
@@ -271,9 +277,12 @@ fileSystemStore
     ) -> dict[str, Any]:
         """
         ## Update One Project Backup Jobs Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/update-one-backup-group-configuration/)
-        - Resource: `PUT /groups/{PROJECT-ID}`
-        - Description: Updates the configuration of one project's backup jobs.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/update-one-backup-group-configuration/)
+        ### Endpoint:
+        `PUT /groups/{PROJECT-ID}`
+        ### Description
+        Updates the configuration of one project's backup jobs.
         """
         return self._request(
             "PUT",

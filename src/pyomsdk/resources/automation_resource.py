@@ -61,9 +61,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Automation Status of Last 50 Plans
-        - Document: [Get Status of Last 50 Plans](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status-full/)
-        - Resource: `GET /groups/GROUP-ID/automationStatus/full`
-        - Description: No description.
+        ### Document:
+        [Get Status of Last 50 Plans](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status-full/)
+        ### Endpoint:
+        `GET /groups/GROUP-ID/automationStatus/full`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -123,9 +126,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Automation Status of Latest Plan
-        - Document: [Get Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status/)
-        - Resource: `GET /groups/{PROJECT-ID}/automationStatus`
-        - Description: No description.
+        ### Document:
+        [Get Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/automationStatus`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

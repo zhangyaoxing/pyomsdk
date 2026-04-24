@@ -169,9 +169,12 @@ Project User Admin
     ) -> dict[str, Any]:
         """
         ## Assign One Organization API Key to One Project
-        - Document: [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/assign-one-org-apiKey-to-one-project/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/assign-one-org-apiKey-to-one-project/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",
@@ -345,9 +348,12 @@ Project User Admin
     ) -> dict[str, Any]:
         """
         ## Create and Assign One Organization API Key to One Project
-        - Document: [Create & Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/create-one-apiKey-in-one-project/)
-        - Resource: `POST /groups/{PROJECT-ID}/apiKeys`
-        - Description: No description.
+        ### Document:
+        [Create & Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/create-one-apiKey-in-one-project/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/apiKeys`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -423,9 +429,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Unassign One Organization API Key from One Project
-        - Document: [Unassign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/delete-one-apiKey-in-one-project/)
-        - Resource: `DELETE /orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Unassign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/delete-one-apiKey-in-one-project/)
+        ### Endpoint:
+        `DELETE /orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -497,9 +506,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Organization API Keys Assigned to One Project
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
-        - Resource: `GET /groups/{PROJECT-ID}/apiKeys`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/apiKeys`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -669,9 +681,12 @@ Include all roles that you want this API Key to have. Any roles not in this arra
     ) -> dict[str, Any]:
         """
         ## Modify Roles of One Organization API Key to One Project
-        - Document: [Modify Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/update-one-apiKey-in-one-project/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Modify Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/update-one-apiKey-in-one-project/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",

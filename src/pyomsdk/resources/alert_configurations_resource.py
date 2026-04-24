@@ -653,9 +653,12 @@ LESS_THAN
     ) -> dict[str, Any]:
         """
         ## Create an Alert Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-create-config/)
-        - Resource: `POST /groups/{PROJECT-ID}/alertConfigs`
-        - Description: No description.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-create-config/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/alertConfigs`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -719,9 +722,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete an Alert Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-delete-config/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-delete-config/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -793,9 +799,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Enable/Disable Alert Configuration
-        - Document: [Enable/Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-enable-disable-config/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
-        - Description: No description.
+        ### Document:
+        [Enable/Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-enable-disable-config/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",
@@ -844,9 +853,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Alert Configurations for a Project
-        - Document: [Get All for a Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-all-configs/)
-        - Resource: `GET /groups/{PROJECT-ID}/alertConfigs`
-        - Description: No description.
+        ### Document:
+        [Get All for a Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-all-configs/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/alertConfigs`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -899,9 +911,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get an Alert Configuration
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-config/)
-        - Resource: `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-config/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -953,9 +968,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get All Alert Configuration Matchers Field Names
-        - Document: [Get Matchers Field Names](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-matchers-field-names/)
-        - Resource: `GET /alertConfigs/matchers/fieldNames`
-        - Description: No description.
+        ### Document:
+        [Get Matchers Field Names](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-matchers-field-names/)
+        ### Endpoint:
+        `GET /alertConfigs/matchers/fieldNames`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -1008,9 +1026,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get Open Alerts for Alert Configuration
-        - Document: [Get Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-open-alerts/)
-        - Resource: `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}/alerts`
-        - Description: No description.
+        ### Document:
+        [Get Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-open-alerts/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}/alerts`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -1041,9 +1062,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Test Project Alert Configuration
-        - Document: [Test Project Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-test-config/)
-        - Resource: `POST /api/public/v1.0/groups/{GROUP-ID}/alertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
-        - Description: Triggers a test notification for a specific notification method in a project alert configuration. This endpoint sends a test payload with dummy data and rendered templates to validate your webhook configuration.
+        ### Document:
+        [Test Project Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-test-config/)
+        ### Endpoint:
+        `POST /api/public/v1.0/groups/{GROUP-ID}/alertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
+        ### Description
+        Triggers a test notification for a specific notification method in a project alert configuration. This endpoint sends a test payload with dummy data and rendered templates to validate your webhook configuration.
         """
         return self._request(
             "POST",
@@ -1699,9 +1723,12 @@ LESS_THAN
     ) -> dict[str, Any]:
         """
         ## Update an Alert Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-update-config/)
-        - Resource: `PUT /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
-        - Description: No description.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-update-config/)
+        ### Endpoint:
+        `PUT /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PUT",

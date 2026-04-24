@@ -87,9 +87,12 @@ Ops Manager displays the comment next to the message that the alert has been ack
     ) -> dict[str, Any]:
         """
         ## Acknowledge One Alert
-        - Document: [Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-acknowledge-alert/)
-        - Resource: `PATCH /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
-        - Description: No description.
+        ### Document:
+        [Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-acknowledge-alert/)
+        ### Endpoint:
+        `PATCH /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",
@@ -153,9 +156,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Alert
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-alert/)
-        - Resource: `GET /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-alert/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -221,9 +227,12 @@ To return all closed alerts.
     ) -> dict[str, Any]:
         """
         ## Get All Alerts
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-all-alerts/)
-        - Resource: `GET /groups/{PROJECT-ID}/alerts`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-all-alerts/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/alerts`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

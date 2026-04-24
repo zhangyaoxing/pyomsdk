@@ -69,9 +69,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get a Disk Partition
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/disk-get-one/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}`
-        - Description: Retrieves a disk partition.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/disk-get-one/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}`
+        ### Description
+        Retrieves a disk partition.
         """
         return self._request(
             "GET",
@@ -124,9 +127,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get all Disk Partitions
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/disks-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks`
-        - Description: Retrieves all disk partitions on the specified host.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/disks-get-all/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks`
+        ### Description
+        Retrieves all disk partitions on the specified host.
         """
         return self._request(
             "GET",

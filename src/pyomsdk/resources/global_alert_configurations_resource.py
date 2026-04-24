@@ -52,9 +52,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Open Alerts Triggered by One Global Alert Configuration
-        - Document: [Get All Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configuration-get-all-open-alerts-triggered/)
-        - Resource: `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts`
-        - Description: Retrieve all open alerts triggered by a global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        ### Document:
+        [Get All Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configuration-get-all-open-alerts-triggered/)
+        ### Endpoint:
+        `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts`
+        ### Description
+        Retrieve all open alerts triggered by a global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
         """
         return self._request(
             "GET",
@@ -426,9 +429,12 @@ TOO_MANY_UNHEALTHY_MEMBERS
     ) -> dict[str, Any]:
         """
         ## Create One Global Alert Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-create-one/)
-        - Resource: `POST /globalAlertConfigs`
-        - Description: Create one global alert configuration.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-create-one/)
+        ### Endpoint:
+        `POST /globalAlertConfigs`
+        ### Description
+        Create one global alert configuration.
         """
         return self._request(
             "POST",
@@ -490,9 +496,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Global Alert Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-delete-one/)
-        - Resource: `DELETE /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
-        - Description: Delete one global alert configuration.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-delete-one/)
+        ### Endpoint:
+        `DELETE /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
+        ### Description
+        Delete one global alert configuration.
         """
         return self._request(
             "DELETE",
@@ -533,9 +542,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Global Alert Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-all/)
-        - Resource: `GET /globalAlertConfigs`
-        - Description: Retrieve all global alert configurations.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-all/)
+        ### Endpoint:
+        `GET /globalAlertConfigs`
+        ### Description
+        Retrieve all global alert configurations.
         """
         return self._request(
             "GET",
@@ -597,9 +609,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global Alert Configuration
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-one/)
-        - Resource: `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
-        - Description: Retrieve one global alert configuration by its GLOBAL-ALERT-CONFIG-ID.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-one/)
+        ### Endpoint:
+        `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
+        ### Description
+        Retrieve one global alert configuration by its GLOBAL-ALERT-CONFIG-ID.
         """
         return self._request(
             "GET",
@@ -626,9 +641,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Test Global Alert Configuration
-        - Document: [Test Global Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-test-one/)
-        - Resource: `POST /api/public/v1.0/globalAlertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
-        - Description: Triggers a test notification for a specific notification method in a global alert configuration. This endpoint sends a test payload with dummy data and rendered templates to validate your webhook configuration.
+        ### Document:
+        [Test Global Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-test-one/)
+        ### Endpoint:
+        `POST /api/public/v1.0/globalAlertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
+        ### Description
+        Triggers a test notification for a specific notification method in a global alert configuration. This endpoint sends a test payload with dummy data and rendered templates to validate your webhook configuration.
         """
         return self._request(
             "POST",
@@ -702,9 +720,12 @@ Set to false to disable a global alert configuration.
     ) -> dict[str, Any]:
         """
         ## Enable or Disable One Global Alert Configuration
-        - Document: [Enable or Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-toggle-one/)
-        - Resource: `PATCH /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
-        - Description: Enable or disable one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        ### Document:
+        [Enable or Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-toggle-one/)
+        ### Endpoint:
+        `PATCH /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
+        ### Description
+        Enable or disable one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
         """
         return self._request(
             "PATCH",
@@ -1086,9 +1107,12 @@ TOO_MANY_UNHEALTHY_MEMBERS
     ) -> dict[str, Any]:
         """
         ## Update One Global Alert Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-update-one/)
-        - Resource: `PUT /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
-        - Description: Update one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-update-one/)
+        ### Endpoint:
+        `PUT /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
+        ### Description
+        Update one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
         """
         return self._request(
             "PUT",

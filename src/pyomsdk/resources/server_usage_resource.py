@@ -68,9 +68,12 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
     ) -> dict[str, Any]:
         """
         ## Get One Project Diagnostic Archive
-        - Document: [Get Diagnostic Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/diagnostics/get-project-diagnostic-archive/)
-        - Resource: `GET /groups/{PROJECT-ID}/diagnostics`
-        - Description: MongoDB engineers may request that Ops Manager administrators provide diagnostic archives for one project for debugging and troubleshooting. Project diagnostic archives also contain global system information about Ops Manager.
+        ### Document:
+        [Get Diagnostic Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/diagnostics/get-project-diagnostic-archive/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/diagnostics`
+        ### Description
+        MongoDB engineers may request that Ops Manager administrators provide diagnostic archives for one project for debugging and troubleshooting. Project diagnostic archives also contain global system information about Ops Manager.
         """
         return self._request(
             "GET",
@@ -173,9 +176,12 @@ To learn more, see MongoDB Usage Page.
     ) -> dict[str, Any]:
         """
         ## Create One Physical Host
-        - Document: [Create Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-physical-host/)
-        - Resource: `POST /usage/groups`
-        - Description: No description.
+        ### Document:
+        [Create Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-physical-host/)
+        ### Endpoint:
+        `POST /usage/groups`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -243,9 +249,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global Usage Report Archive
-        - Document: [Get Global Usage Report Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-report/)
-        - Resource: `GET /usage/report`
-        - Description: Retrieve a compressed report, in zip or .tar.gz format, of server usage in a given timeframe.
+        ### Document:
+        [Get Global Usage Report Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-report/)
+        ### Endpoint:
+        `GET /usage/report`
+        ### Description
+        Retrieve a compressed report, in zip or .tar.gz format, of server usage in a given timeframe.
         """
         return self._request(
             "GET",
@@ -309,9 +318,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Generate Daily Usage Snapshot
-        - Document: [Generate Usage Snapshot](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/generate-daily-usage-snapshot/)
-        - Resource: `POST /usage/dailyCapture`
-        - Description: If MongoDB Usage UI is set to On, you can trigger this endpoint which tells Ops Manager to:
+        ### Document:
+        [Generate Usage Snapshot](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/generate-daily-usage-snapshot/)
+        ### Endpoint:
+        `POST /usage/dailyCapture`
+        ### Description
+        If MongoDB Usage UI is set to On, you can trigger this endpoint which tells Ops Manager to:
         """
         return self._request(
             "POST",
@@ -375,9 +387,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Retrieve All Physical Hosts
-        - Document: [Retrieve All Physical Hosts](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-all-physical-hosts/)
-        - Resource: `GET /usage/groups`
-        - Description: No description.
+        ### Document:
+        [Retrieve All Physical Hosts](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-all-physical-hosts/)
+        ### Endpoint:
+        `GET /usage/groups`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -437,9 +452,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Default Server Type For One Organization
-        - Document: [Get Server Type in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-organization/)
-        - Resource: `GET /usage/organizations/{orgId}/defaultServerType`
-        - Description: Retrieve the default server type for one organization.
+        ### Document:
+        [Get Server Type in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-organization/)
+        ### Endpoint:
+        `GET /usage/organizations/{orgId}/defaultServerType`
+        ### Description
+        Retrieve the default server type for one organization.
         """
         return self._request(
             "GET",
@@ -499,9 +517,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get Default Server Type For One Project
-        - Document: [Get Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-project/)
-        - Resource: `GET /usage/groups/{groupId}/defaultServerType`
-        - Description: Retrieve the default server type for one project.
+        ### Document:
+        [Get Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-project/)
+        ### Endpoint:
+        `GET /usage/groups/{groupId}/defaultServerType`
+        ### Description
+        Retrieve the default server type for one project.
         """
         return self._request(
             "GET",
@@ -573,9 +594,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Retrieve One Physical Host
-        - Document: [Retreive One Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-one-physical-host-by-host-id/)
-        - Resource: `GET /usage/groups/{physicalHostId}`
-        - Description: No description.
+        ### Document:
+        [Retreive One Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-one-physical-host-by-host-id/)
+        ### Endpoint:
+        `GET /usage/groups/{physicalHostId}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -651,9 +675,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## List All Host Assignments In One Organization
-        - Document: [List Host Assignments in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-organization/)
-        - Resource: `GET /usage/organizations/{orgId}/hosts`
-        - Description: Retrieves all host assignments for one organization.
+        ### Document:
+        [List Host Assignments in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-organization/)
+        ### Endpoint:
+        `GET /usage/organizations/{orgId}/hosts`
+        ### Description
+        Retrieves all host assignments for one organization.
         """
         return self._request(
             "GET",
@@ -729,9 +756,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## List All Host Assignments In One Project
-        - Document: [List Host Assignments in One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-project/)
-        - Resource: `GET /usage/groups/{groupId}/hosts`
-        - Description: Retrieves all host assignments for one project.
+        ### Document:
+        [List Host Assignments in One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-project/)
+        ### Endpoint:
+        `GET /usage/groups/{groupId}/hosts`
+        ### Description
+        Retrieves all host assignments for one project.
         """
         return self._request(
             "GET",
@@ -799,9 +829,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## List All Host Assignments
-        - Document: [List Host Assignments](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments/)
-        - Resource: `GET /usage/assignments`
-        - Description: Retrieves all host assignments.
+        ### Document:
+        [List Host Assignments](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments/)
+        ### Endpoint:
+        `GET /usage/assignments`
+        ### Description
+        Retrieves all host assignments.
         """
         return self._request(
             "GET",
@@ -873,9 +906,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Remove One Physical Host
-        - Document: [Remove Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/remove-one-physical-host/)
-        - Resource: `DELETE /usage/groups/{physicalHostId}`
-        - Description: No description.
+        ### Document:
+        [Remove Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/remove-one-physical-host/)
+        ### Endpoint:
+        `DELETE /usage/groups/{physicalHostId}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -978,9 +1014,12 @@ To learn more, see MongoDB Usage Page.
     ) -> dict[str, Any]:
         """
         ## Update Default Server Type For One Organization
-        - Document: [Update Server Type for One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-organization/)
-        - Resource: `PUT /usage/organizations/{orgId}/defaultServerType`
-        - Description: Update the default server type for one organization.
+        ### Document:
+        [Update Server Type for One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-organization/)
+        ### Endpoint:
+        `PUT /usage/organizations/{orgId}/defaultServerType`
+        ### Description
+        Update the default server type for one organization.
         """
         return self._request(
             "PUT",
@@ -1083,9 +1122,12 @@ To learn more, see MongoDB Usage Page.
     ) -> dict[str, Any]:
         """
         ## Update Default Server Type For One Project
-        - Document: [Update Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-project/)
-        - Resource: `PUT /usage/groups/{groupId}/defaultServerType`
-        - Description: Update the default server type for one project.
+        ### Document:
+        [Update Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-project/)
+        ### Endpoint:
+        `PUT /usage/groups/{groupId}/defaultServerType`
+        ### Description
+        Update the default server type for one project.
         """
         return self._request(
             "PUT",
@@ -1196,9 +1238,12 @@ To learn more, see MongoDB Usage Page.
     ) -> dict[str, Any]:
         """
         ## Update One Physical Host
-        - Document: [Update Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-one-physical-host/)
-        - Resource: `PUT /usage/groups/{physicalHostId}`
-        - Description: No description.
+        ### Document:
+        [Update Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-one-physical-host/)
+        ### Endpoint:
+        `PUT /usage/groups/{physicalHostId}`
+        ### Description
+        No description.
         """
         return self._request(
             "PUT",
@@ -1301,9 +1346,12 @@ To learn more, see MongoDB Usage Page.
     ) -> dict[str, Any]:
         """
         ## Update Server Type for One Host
-        - Document: [Update Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-server-type-for-one-host/)
-        - Resource: `PUT /usage/hosts/{hostId}`
-        - Description: Update one default server type for one host.
+        ### Document:
+        [Update Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-server-type-for-one-host/)
+        ### Endpoint:
+        `PUT /usage/hosts/{hostId}`
+        ### Description
+        Update one default server type for one host.
         """
         return self._request(
             "PUT",

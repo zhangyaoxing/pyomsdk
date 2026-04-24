@@ -65,9 +65,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Restore Job for One Cluster
-        - Document: [Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/)
-        - Resource: `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
-        - Description: No description.
+        ### Document:
+        [Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -254,9 +257,12 @@ If you set pointInTimeUTCMillis, you cannot set oplogInc, oplogTs, or checkpoint
     ) -> dict[str, Any]:
         """
         ## Create One Restore Job for One Legacy Mirrored Config Server
-        - Document: [Create (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-sccc-config-server/)
-        - Resource: `POST /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
-        - Description: No description.
+        ### Document:
+        [Create (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-sccc-config-server/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -313,9 +319,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Restore Jobs for One Cluster
-        - Document: [Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-cluster/)
-        - Resource: `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
-        - Description: Get all restore jobs for a cluster. CLUSTER-ID must be the ID of either a replica set or a sharded cluster.
+        ### Document:
+        [Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-cluster/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
+        ### Description
+        Get all restore jobs for a cluster. CLUSTER-ID must be the ID of either a replica set or a sharded cluster.
         """
         return self._request(
             "GET",
@@ -368,9 +377,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Restore Jobs for One Legacy Mirrored Config Server
-        - Document: [Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-sccc-config-server/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
-        - Description: No description.
+        ### Document:
+        [Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-sccc-config-server/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -438,9 +450,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Restore Job for One Cluster
-        - Document: [Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-cluster/)
-        - Resource: `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/{JOB-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-cluster/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/{JOB-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -508,9 +523,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Restore Job for One Legacy Mirrored Config Server
-        - Document: [Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-sccc-config-server/)
-        - Resource: `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs/{JOB-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-sccc-config-server/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs/{JOB-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

@@ -242,9 +242,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Create One S3 Blockstore Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/create-one-s3-blockstore-configuration/)
-        - Resource: `POST /snapshot/s3Configs`
-        - Description: Configures one new s3 blockstore.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/create-one-s3-blockstore-configuration/)
+        ### Endpoint:
+        `POST /snapshot/s3Configs`
+        ### Description
+        Configures one new s3 blockstore.
         """
         return self._request(
             "POST",
@@ -306,9 +309,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One S3-Compatible Blockstore Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/delete-one-s3-blockstore-configuration/)
-        - Resource: `DELETE /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
-        - Description: Deletes the configuration of one s3 blockstore.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/delete-one-s3-blockstore-configuration/)
+        ### Endpoint:
+        `DELETE /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
+        ### Description
+        Deletes the configuration of one s3 blockstore.
         """
         return self._request(
             "DELETE",
@@ -355,9 +361,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All S3 Blockstore Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/get-all-s3-blockstore-configurations/)
-        - Resource: `GET /snapshot/s3Configs`
-        - Description: Retrieves the configurations of all S3 blockstores.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/get-all-s3-blockstore-configurations/)
+        ### Endpoint:
+        `GET /snapshot/s3Configs`
+        ### Description
+        Retrieves the configurations of all S3 blockstores.
         """
         return self._request(
             "GET",
@@ -419,9 +428,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One S3 Blockstore Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/get-one-s3-blockstore-configuration-by-id/)
-        - Resource: `GET /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
-        - Description: Retrieves the configuration of one S3 blockstore.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/get-one-s3-blockstore-configuration-by-id/)
+        ### Endpoint:
+        `GET /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
+        ### Description
+        Retrieves the configuration of one S3 blockstore.
         """
         return self._request(
             "GET",
@@ -668,9 +680,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Update One S3 Blockstore Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/update-one-s3-blockstore-configuration/)
-        - Resource: `PUT /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
-        - Description: Updates the configuration of one s3 blockstore.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3Configs/update-one-s3-blockstore-configuration/)
+        ### Endpoint:
+        `PUT /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
+        ### Description
+        Updates the configuration of one s3 blockstore.
         """
         return self._request(
             "PUT",

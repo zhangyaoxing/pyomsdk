@@ -81,9 +81,12 @@ If the user accepts the invitation, they log in to Ops Manager with this usernam
     ) -> dict[str, Any]:
         """
         ## Invite One User to an Ops Manager Organization
-        - Document: [Invite User](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/create-one-invitation/)
-        - Resource: `POST /orgs/{ORG-ID}/invites`
-        - Description: Invites one user to the Ops Manager organization that you specify.
+        ### Document:
+        [Invite User](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/create-one-invitation/)
+        ### Endpoint:
+        `POST /orgs/{ORG-ID}/invites`
+        ### Description
+        Invites one user to the Ops Manager organization that you specify.
         """
         return self._request(
             "POST",
@@ -147,9 +150,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Organization Invitation
-        - Document: [Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/delete-one-invitation/)
-        - Resource: `DELETE /orgs/{ORG-ID}/invites/{INVITATION-ID}`
-        - Description: Deletes one pending invitation to the specified Ops Manager organization. You can't delete an invitation that a user has accepted.
+        ### Document:
+        [Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/delete-one-invitation/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Deletes one pending invitation to the specified Ops Manager organization. You can't delete an invitation that a user has accepted.
         """
         return self._request(
             "DELETE",
@@ -215,9 +221,12 @@ If omitted, Ops Manager returns all pending invitations.
     ) -> dict[str, Any]:
         """
         ## Get All Organization Invitations
-        - Document: [Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-all-invitations/)
-        - Resource: `GET /orgs/{ORG-ID}/invites`
-        - Description: Retrieves all pending invitations to the specified Ops Manager organization.
+        ### Document:
+        [Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-all-invitations/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/invites`
+        ### Description
+        Retrieves all pending invitations to the specified Ops Manager organization.
         """
         return self._request(
             "GET",
@@ -281,9 +290,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Organization Invitation
-        - Document: [Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-one-invitation/)
-        - Resource: `GET /orgs/{ORG-ID}/invites/{INVITATION-ID}`
-        - Description: Retrieve details for one pending invitation to the specified Ops Manager organization.
+        ### Document:
+        [Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-one-invitation/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Retrieve details for one pending invitation to the specified Ops Manager organization.
         """
         return self._request(
             "GET",
@@ -359,9 +371,12 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     ) -> dict[str, Any]:
         """
         ## Update One Organization Invitation by Invitation ID
-        - Document: [Update by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation-by-id/)
-        - Resource: `PATCH /orgs/{ORG-ID}/invites/{INVITATION-ID}`
-        - Description: Updates one pending invitation by {INVITATION-ID} to the Ops Manager organization that you specify.
+        ### Document:
+        [Update by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation-by-id/)
+        ### Endpoint:
+        `PATCH /orgs/{ORG-ID}/invites/{INVITATION-ID}`
+        ### Description
+        Updates one pending invitation by {INVITATION-ID} to the Ops Manager organization that you specify.
         """
         return self._request(
             "PATCH",
@@ -437,9 +452,12 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     ) -> dict[str, Any]:
         """
         ## Update One Organization Invitation
-        - Document: [Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation/)
-        - Resource: `PATCH /orgs/{ORG-ID}/invites`
-        - Description: Updates one pending invitation to the Ops Manager organization that you specify.
+        ### Document:
+        [Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation/)
+        ### Endpoint:
+        `PATCH /orgs/{ORG-ID}/invites`
+        ### Description
+        Updates one pending invitation to the Ops Manager organization that you specify.
         """
         return self._request(
             "PATCH",
@@ -517,9 +535,12 @@ If specifying ldapGroupMappings, mapping for ORG_OWNER role is required.
     ) -> dict[str, Any]:
         """
         ## Create One Organization
-        - Document: [Create Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-create-one/)
-        - Resource: `POST /orgs`
-        - Description: No description.
+        ### Document:
+        [Create Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-create-one/)
+        ### Endpoint:
+        `POST /orgs`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -579,9 +600,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Organization
-        - Document: [Delete Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-delete-one/)
-        - Resource: `DELETE /orgs/{ORG-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-delete-one/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -632,9 +656,12 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
     ) -> dict[str, Any]:
         """
         ## Get All Projects in an Organization
-        - Document: [Get All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-projects/)
-        - Resource: `GET /orgs/{ORG-ID}/groups`
-        - Description: No description.
+        ### Document:
+        [Get All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-projects/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/groups`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -685,9 +712,12 @@ Defaults to false.
     ) -> dict[str, Any]:
         """
         ## Get All Organization Users
-        - Document: [Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-users/)
-        - Resource: `GET /orgs/{ORG-ID}/users`
-        - Description: No description.
+        ### Document:
+        [Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-users/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/users`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -740,9 +770,12 @@ For example, if you specify a name query parameter of org1, Ops Manager returns 
     ) -> dict[str, Any]:
         """
         ## Get All Organizations
-        - Document: [Get All Organizations](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
-        - Resource: `GET /orgs`
-        - Description: No description.
+        ### Document:
+        [Get All Organizations](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
+        ### Endpoint:
+        `GET /orgs`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -812,9 +845,12 @@ If set to true or omitted, users assigned a global role receive deleted projects
     ) -> dict[str, Any]:
         """
         ## Get One Organization
-        - Document: [Get One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-one/)
-        - Resource: `GET /orgs/{ORG-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-one/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -888,9 +924,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Update One Organization
-        - Document: [Rename Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-rename/)
-        - Resource: `PATCH /orgs/{ORG-ID}`
-        - Description: Use this endpoint to make any of the following changes to one organization:
+        ### Document:
+        [Rename Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-rename/)
+        ### Endpoint:
+        `PATCH /orgs/{ORG-ID}`
+        ### Description
+        Use this endpoint to make any of the following changes to one organization:
         """
         return self._request(
             "PATCH",

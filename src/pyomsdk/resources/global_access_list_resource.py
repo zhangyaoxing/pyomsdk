@@ -65,9 +65,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Global Access List Entry
-        - Document: [Create Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-access-list/)
-        - Resource: `POST /admin/accessList`
-        - Description: Create one Global Access List Entry for Ops Manager.
+        ### Document:
+        [Create Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-access-list/)
+        ### Endpoint:
+        `POST /admin/accessList`
+        ### Description
+        Create one Global Access List Entry for Ops Manager.
         """
         return self._request(
             "POST",
@@ -127,9 +130,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Access List Entry for a Global API Key
-        - Document: [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-access-list/)
-        - Resource: `DELETE /admin/accessList/{ACCESS-LIST-ID}`
-        - Description: Delete one Global Access List Entry from Ops Manager using the unique identifier for the desired IP address.
+        ### Document:
+        [Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-access-list/)
+        ### Endpoint:
+        `DELETE /admin/accessList/{ACCESS-LIST-ID}`
+        ### Description
+        Delete one Global Access List Entry from Ops Manager using the unique identifier for the desired IP address.
         """
         return self._request(
             "DELETE",
@@ -170,9 +176,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Access List Entries for a Global API Key
-        - Document: [Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-access-list/)
-        - Resource: `GET /admin/accessList`
-        - Description: Return all Global Access List Entries for Ops Manager.
+        ### Document:
+        [Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-access-list/)
+        ### Endpoint:
+        `GET /admin/accessList`
+        ### Description
+        Return all Global Access List Entries for Ops Manager.
         """
         return self._request(
             "GET",
@@ -232,9 +241,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Global Access List Entry
-        - Document: [Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-access-list/)
-        - Resource: `GET /admin/accessList/{ACCESS-LIST-ID}`
-        - Description: Return one Global Access List Entry using the unique identifier for the desired IP address.
+        ### Document:
+        [Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-access-list/)
+        ### Endpoint:
+        `GET /admin/accessList/{ACCESS-LIST-ID}`
+        ### Description
+        Return one Global Access List Entry using the unique identifier for the desired IP address.
         """
         return self._request(
             "GET",
@@ -294,9 +306,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Update One Global Access List Entry
-        - Document: [Update Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-access-list/)
-        - Resource: `PATCH /admin/accessList/{ACCESS-LIST-ID}`
-        - Description: Update the values of one Global Access List Entry using the unique identifier for the desired IP address.
+        ### Document:
+        [Update Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-access-list/)
+        ### Endpoint:
+        `PATCH /admin/accessList/{ACCESS-LIST-ID}`
+        ### Description
+        Update the values of one Global Access List Entry using the unique identifier for the desired IP address.
         """
         return self._request(
             "PATCH",

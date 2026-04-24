@@ -24,9 +24,12 @@ class VersionManifestResource(BaseResource):
     ) -> dict[str, Any]:
         """
         ## Retrieve the Ops Manager Version Manifest
-        - Document: [Retrieve](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/get-om-version-manifest/)
-        - Resource: `GET /unauth/versionManifest`
-        - Description: Use this resource to retrieve the version manifest that Ops Manager is configured to use.
+        ### Document:
+        [Retrieve](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/get-om-version-manifest/)
+        ### Endpoint:
+        `GET /unauth/versionManifest`
+        ### Description
+        Use this resource to retrieve the version manifest that Ops Manager is configured to use.
         """
         return self._request(
             "GET",
@@ -49,9 +52,12 @@ class VersionManifestResource(BaseResource):
     ) -> dict[str, Any]:
         """
         ## Update the Version Manifest
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/update-version-manifest/)
-        - Resource: `PUT /versionManifest`
-        - Description: Use this resource to upload the latest version manifest from MongoDB, Inc.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/update-version-manifest/)
+        ### Endpoint:
+        `PUT /versionManifest`
+        ### Description
+        Use this resource to upload the latest version manifest from MongoDB, Inc.
         """
         return self._request(
             "PUT",

@@ -126,9 +126,12 @@ Organization Read Only
     ) -> dict[str, Any]:
         """
         ## Create an API Key
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-one-org-api-key/)
-        - Resource: `POST /orgs/{ORG-ID}/apiKeys`
-        - Description: No description.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-one-org-api-key/)
+        ### Endpoint:
+        `POST /orgs/{ORG-ID}/apiKeys`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -204,9 +207,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Delete One API Key
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-api-key/)
-        - Resource: `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-api-key/)
+        ### Endpoint:
+        `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -278,9 +284,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All API Keys
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-keys/)
-        - Resource: `GET /orgs/{ORG-ID}/apiKeys`
-        - Description: No description.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-keys/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/apiKeys`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -356,9 +365,12 @@ For endpoints that return a list of results, the results object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get One API Key
-        - Document: [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key/)
-        - Resource: `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key/)
+        ### Endpoint:
+        `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -487,9 +499,12 @@ Organization Read Only
     ) -> dict[str, Any]:
         """
         ## Update an API Key
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/update-one-org-api-key/)
-        - Resource: `PATCH /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/update-one-org-api-key/)
+        ### Endpoint:
+        `PATCH /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "PATCH",

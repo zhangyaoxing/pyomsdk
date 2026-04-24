@@ -69,9 +69,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Create One Agent API Key
-        - Document: [Create API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/create-one-agent-api-key/)
-        - Resource: `POST /groups/{PROJECT-ID}/agentapikeys`
-        - Description: No description.
+        ### Document:
+        [Create API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/create-one-agent-api-key/)
+        ### Endpoint:
+        `POST /groups/{PROJECT-ID}/agentapikeys`
+        ### Description
+        No description.
         """
         return self._request(
             "POST",
@@ -135,9 +138,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Remove One Agent API Key
-        - Document: [Remove API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/delete-one-agent-api-key/)
-        - Resource: `DELETE /groups/{PROJECT-ID}/agentapikeys/{API-AGENT-KEY-ID}`
-        - Description: No description.
+        ### Document:
+        [Remove API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/delete-one-agent-api-key/)
+        ### Endpoint:
+        `DELETE /groups/{PROJECT-ID}/agentapikeys/{API-AGENT-KEY-ID}`
+        ### Description
+        No description.
         """
         return self._request(
             "DELETE",
@@ -197,9 +203,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get All Agent API Keys for One Project
-        - Document: [Get All API Keys](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/get-all-agent-api-keys-for-project/)
-        - Resource: `GET /groups/{PROJECT-ID}/agentapikeys`
-        - Description: No description.
+        ### Document:
+        [Get All API Keys](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/get-all-agent-api-keys-for-project/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/agentapikeys`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -248,9 +257,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get Links to Agent Resources for a Project
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
-        - Resource: `GET /groups/{PROJECT-ID}/agents`
-        - Description: Get links to Monitoring, Backup, and Automation Agent resources for a project.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/agents`
+        ### Description
+        Get links to Monitoring, Backup, and Automation Agent resources for a project.
         """
         return self._request(
             "GET",
@@ -309,9 +321,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get Agents by Type for One Project
-        - Document: [Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
-        - Resource: `GET /groups/{PROJECT-ID}/agents/{TYPE}`
-        - Description: Get all agents of a specified type (i.e. Monitoring, Backup, or Automation) for a project.
+        ### Document:
+        [Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/agents/{TYPE}`
+        ### Description
+        Get all agents of a specified type (i.e. Monitoring, Backup, or Automation) for a project.
         """
         return self._request(
             "GET",
@@ -363,9 +378,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Retrieve All Agent Versions
-        - Document: [Retrieve All Versions](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-global/)
-        - Resource: `GET /softwareComponents/versions/`
-        - Description: No description.
+        ### Document:
+        [Retrieve All Versions](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-global/)
+        ### Endpoint:
+        `GET /softwareComponents/versions/`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",
@@ -425,9 +443,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Retrieve All Agent Versions for One Project
-        - Document: [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-per-project/)
-        - Resource: `GET /groups/{PROJECT-ID}/agents/versions`
-        - Description: No description.
+        ### Document:
+        [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-per-project/)
+        ### Endpoint:
+        `GET /groups/{PROJECT-ID}/agents/versions`
+        ### Description
+        No description.
         """
         return self._request(
             "GET",

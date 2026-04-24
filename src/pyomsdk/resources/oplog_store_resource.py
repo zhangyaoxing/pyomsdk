@@ -109,9 +109,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Create One Oplog Configuration
-        - Document: [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/create-one-oplog-configuration/)
-        - Resource: `POST /oplog/mongoConfigs`
-        - Description: Configures one new oplog store.
+        ### Document:
+        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/create-one-oplog-configuration/)
+        ### Endpoint:
+        `POST /oplog/mongoConfigs`
+        ### Description
+        Configures one new oplog store.
         """
         return self._request(
             "POST",
@@ -171,9 +174,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Delete One Oplog Configuration
-        - Document: [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/delete-one-oplog-configuration/)
-        - Resource: `DELETE /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
-        - Description: Deletes the configuration of one oplog store.
+        ### Document:
+        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/delete-one-oplog-configuration/)
+        ### Endpoint:
+        `DELETE /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
+        ### Description
+        Deletes the configuration of one oplog store.
         """
         return self._request(
             "DELETE",
@@ -220,9 +226,12 @@ For endpoints that return a list of results, the content object is an envelope. 
     ) -> dict[str, Any]:
         """
         ## Get All Oplog Configurations
-        - Document: [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/get-all-oplog-configurations/)
-        - Resource: `GET /oplog/mongoConfigs`
-        - Description: Retrieves the configurations of all oplog stores.
+        ### Document:
+        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/get-all-oplog-configurations/)
+        ### Endpoint:
+        `GET /oplog/mongoConfigs`
+        ### Description
+        Retrieves the configurations of all oplog stores.
         """
         return self._request(
             "GET",
@@ -282,9 +291,12 @@ Expected response body
     ) -> dict[str, Any]:
         """
         ## Get One Oplog Configuration by ID
-        - Document: [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/get-one-oplog-configuration-by-id/)
-        - Resource: `GET /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
-        - Description: Retrieves the configuration of one oplog store.
+        ### Document:
+        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/get-one-oplog-configuration-by-id/)
+        ### Endpoint:
+        `GET /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
+        ### Description
+        Retrieves the configuration of one oplog store.
         """
         return self._request(
             "GET",
@@ -396,9 +408,12 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     ) -> dict[str, Any]:
         """
         ## Update One Oplog Configuration
-        - Document: [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/update-one-oplog-configuration/)
-        - Resource: `PUT /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
-        - Description: Updates the configuration of one oplog store.
+        ### Document:
+        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/update-one-oplog-configuration/)
+        ### Endpoint:
+        `PUT /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
+        ### Description
+        Updates the configuration of one oplog store.
         """
         return self._request(
             "PUT",
