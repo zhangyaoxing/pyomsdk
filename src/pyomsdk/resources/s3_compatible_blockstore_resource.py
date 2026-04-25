@@ -109,7 +109,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
+        load_factor: Optional[int] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
@@ -185,7 +185,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """Name of the S3-compatible storage bucket that hosts the S3-compatible storage blockstore.
         """
 
-        s3_max_connections: float = Field(serialization_alias="s3MaxConnections")
+        s3_max_connections: int = Field(serialization_alias="s3MaxConnections")
         """Positive integer indicating the maximum number of connections to this S3-compatible storage blockstore.
         """
 
@@ -325,11 +325,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -524,7 +524,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
+        load_factor: Optional[int] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
@@ -600,7 +600,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """Name of the S3-compatible storage bucket that hosts the S3-compatible storage blockstore.
         """
 
-        s3_max_connections: float = Field(serialization_alias="s3MaxConnections")
+        s3_max_connections: int = Field(serialization_alias="s3MaxConnections")
         """Positive integer indicating the maximum number of connections to this S3-compatible storage blockstore.
         """
 

@@ -56,11 +56,11 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -223,11 +223,11 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -404,11 +404,11 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -479,11 +479,11 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -558,11 +558,11 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 

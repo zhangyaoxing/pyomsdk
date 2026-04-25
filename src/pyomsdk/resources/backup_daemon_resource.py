@@ -108,7 +108,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[float] = Field(None, serialization_alias="numWorkers")
+        num_workers: Optional[int] = Field(None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 
@@ -233,11 +233,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -441,7 +441,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[float] = Field(None, serialization_alias="numWorkers")
+        num_workers: Optional[int] = Field(None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 

@@ -145,7 +145,7 @@ If you provide this setting, this endpoint restores all data up to this checkpoi
         class DeliveryParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            expiration_hours: Optional[float] = Field(None, serialization_alias="expirationHours")
+            expiration_hours: Optional[int] = Field(None, serialization_alias="expirationHours")
             """Number of hours the download URL is valid once the restore job is complete.
 
 delivery.methodName" : "HTTP"
@@ -157,7 +157,7 @@ delivery.methodName" : "HTTP"
 delivery.methodName" : "HTTP"
             """
 
-            max_downloads: Optional[float] = Field(None, serialization_alias="maxDownloads")
+            max_downloads: Optional[int] = Field(None, serialization_alias="maxDownloads")
             """Number of times the download URL can be used. This must be 1 or greater.
 
 delivery.methodName" : "HTTP"
@@ -294,11 +294,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -350,11 +350,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 

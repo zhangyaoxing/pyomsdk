@@ -201,23 +201,23 @@ Ops Manager doesn't include this parameter in response documents.
         class TimeoutsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            automation_imported: Optional[float] = Field(
+            automation_imported: Optional[int] = Field(
                 None, serialization_alias="automationImported"
             )
             """Timeout in seconds for completing the automation import. Range: 60-86400 seconds. Default uses system settings.
             """
 
-            goal_state_sec: Optional[float] = Field(None, serialization_alias="goalStateSec")
+            goal_state_sec: Optional[int] = Field(None, serialization_alias="goalStateSec")
             """Timeout in seconds for reaching automation goal state. Range: 60-86400 seconds. Default uses system settings.
             """
 
-            processes_discovery_sec: Optional[float] = Field(
+            processes_discovery_sec: Optional[int] = Field(
                 None, serialization_alias="processesDiscoverySec"
             )
             """Timeout in seconds for discovering all required processes. Range: 60-86400 seconds. Default uses system settings.
             """
 
-            seed_host_connection_sec: Optional[float] = Field(
+            seed_host_connection_sec: Optional[int] = Field(
                 None, serialization_alias="seedHostConnectionSec"
             )
             """Timeout in seconds for connecting to the seed host. Range: 60-86400 seconds. Default uses system settings.

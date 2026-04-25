@@ -93,7 +93,7 @@ Set this parameter if "authMechanismName" : "MONGODB_CR"
 Ops Manager doesn't include this parameter in any Host || response.
         """
 
-        port: float = Field(serialization_alias="port")
+        port: int = Field(serialization_alias="port")
         """Port on which MongoDB process listens.
         """
 
@@ -227,11 +227,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 

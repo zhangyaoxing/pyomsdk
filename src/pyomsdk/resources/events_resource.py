@@ -66,7 +66,7 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
 IMPORTANT: The values in the raw document differ depending on the resource that the event applies to. Use this field with caution, as its structure may vary across resource types.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -78,7 +78,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """Return only events for which the created date is greater than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -163,7 +163,7 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
 IMPORTANT: The values in the raw document differ depending on the resource that the event applies to. Use this field with caution, as its structure may vary across resource types.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -175,7 +175,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """Return only events for which the created date is greater than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 

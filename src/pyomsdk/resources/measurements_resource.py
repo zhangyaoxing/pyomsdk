@@ -114,7 +114,7 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -130,7 +130,7 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -273,7 +273,7 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -289,7 +289,7 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -428,7 +428,7 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -444,7 +444,7 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
@@ -583,7 +583,7 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -599,7 +599,7 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 

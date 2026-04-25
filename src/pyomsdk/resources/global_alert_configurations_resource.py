@@ -29,11 +29,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -220,7 +220,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which this alert configuration triggers an alert.
             """
 
@@ -281,7 +281,7 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """Slack channel name. Only accepted for SLACK notifications.
             """
 
-            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before Ops Manager sends out the first notification.
             """
 
@@ -293,7 +293,7 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """Toggle specifying whether Ops Manager sends email notifications. Only accepted for GROUP and USER notifications.
             """
 
-            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged, unresolved alerts that this alert configuration triggers.
             """
 
@@ -392,7 +392,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which this alert configuration triggers an alert.
             """
 
@@ -506,11 +506,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -877,7 +877,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which this alert configuration triggers an alert.
             """
 
@@ -938,7 +938,7 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """Slack channel name. Only accepted for SLACK notifications.
             """
 
-            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before Ops Manager sends out the first notification.
             """
 
@@ -950,7 +950,7 @@ For example, a metric that measures memory consumption can use BYTES, while a me
             """Toggle specifying whether Ops Manager sends email notifications. Only accepted for GROUP and USER notifications.
             """
 
-            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged, unresolved alerts that this alert configuration triggers.
             """
 
@@ -1049,7 +1049,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which this alert configuration triggers an alert.
             """
 

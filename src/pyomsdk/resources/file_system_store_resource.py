@@ -64,7 +64,7 @@ Expected response body
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
+        load_factor: Optional[int] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
@@ -198,11 +198,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -352,7 +352,7 @@ Expected response body
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
+        load_factor: Optional[int] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.

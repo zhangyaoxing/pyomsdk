@@ -161,7 +161,7 @@ For example:
     class GetNamespacesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        duration: Optional[float] = Field(None, serialization_alias="duration")
+        duration: Optional[int] = Field(None, serialization_alias="duration")
         """Length of time from the since parameter, in milliseconds, for which you want to receive results. If you do not also specify the since parameter, the endpoint returns results from the number of milliseconds specified by duration before the current time until now.
         """
 
@@ -173,7 +173,7 @@ For example:
         """Indicates whether the response body should be in a prettyprint format. The default value is false.
         """
 
-        since: Optional[float] = Field(None, serialization_alias="since")
+        since: Optional[int] = Field(None, serialization_alias="since")
         """Point in time, specified as milliseconds since the Unix Epoch, from which you want to receive results. If you do not also specify the duration parameter, the endpoint returns results from since until the current time.
         """
 

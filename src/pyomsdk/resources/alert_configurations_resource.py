@@ -399,7 +399,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
@@ -474,7 +474,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
@@ -490,7 +490,7 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
@@ -619,7 +619,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
@@ -818,11 +818,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -874,11 +874,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -987,11 +987,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -1449,7 +1449,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
@@ -1524,7 +1524,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
@@ -1540,7 +1540,7 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
@@ -1669,7 +1669,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 

@@ -478,11 +478,11 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
@@ -627,7 +627,7 @@ Expected response body
         """Specifies whether or not to wrap the response in an envelope.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -637,7 +637,7 @@ Expected response body
 For example, if you specify a name query parameter of project1, Ops Manager returns the project named project1, but would not return a project named project123.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-based).
         """
 
@@ -683,13 +683,13 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
 Defaults to false.
         """
 
-        items_per_page: Optional[float] = Field(None, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(None, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
 
 Defaults to 100.
         """
 
-        page_num: Optional[float] = Field(None, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(None, serialization_alias="pageNum")
         """The page to return.
 
 Defaults to 1.
@@ -738,7 +738,7 @@ Ops Manager honors the value of this parameter only if the user who makes the re
 If set to true or omitted, users assigned a global role receive deleted projects in the response. If set to false or if the user does not have a global owner role, the response does not contain deleted organizations.
         """
 
-        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -748,7 +748,7 @@ If set to true or omitted, users assigned a global role receive deleted projects
 For example, if you specify a name query parameter of org1, Ops Manager returns organizations named org1 and Org1, but would not return an organization named org123.
         """
 
-        page_num: Optional[float] = Field(1.0, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
         """Page number (1-based).
         """
 
