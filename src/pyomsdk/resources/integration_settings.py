@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Literal, Optional
 from pydantic import Field
 from .enums import IntegrationType, PrometheusScheme, PrometheusServiceDiscoveryType
 from .integration_settings_resource import IntegrationSettingsResource
@@ -10,8 +10,8 @@ BodyParamsB = IntegrationSettingsResource.UpdateBodyParams
 class PagerDutyIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for PagerDuty integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.PAGER_DUTY, serialization_alias="type", const=True
+    type: Literal[IntegrationType.PAGER_DUTY] = Field(
+        IntegrationType.PAGER_DUTY, serialization_alias="type"
     )
     service_key: str = Field(None, serialization_alias="serviceKey")
     """Your Integration Key.
@@ -29,9 +29,7 @@ After you create a third-party integration that requires an API or integration k
 class SlackIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Slack integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.SLACK, serialization_alias="type", const=True
-    )
+    type: Literal[IntegrationType.SLACK] = Field(IntegrationType.SLACK, serialization_alias="type")
     api_token: str = Field(None, serialization_alias="apiToken")
     """Your API Token.
 
@@ -48,8 +46,8 @@ After you create a third-party integration that requires an API or integration k
 class DatadogIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Datadog integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.DATADOG, serialization_alias="type", const=True
+    type: Literal[IntegrationType.DATADOG] = Field(
+        IntegrationType.DATADOG, serialization_alias="type"
     )
     api_key: str = Field(None, serialization_alias="apiKey")
     """Your API Key.
@@ -63,8 +61,8 @@ After you create a third-party integration that requires an API or integration k
 class HipChatIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for HipChat integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.HIP_CHAT, serialization_alias="type", const=True
+    type: Literal[IntegrationType.HIP_CHAT] = Field(
+        IntegrationType.HIP_CHAT, serialization_alias="type"
     )
     notification_token: str = Field(None, serialization_alias="notificationToken")
     """Notification token for your HipChat user account.
@@ -80,8 +78,8 @@ After you create a third-party integration that requires an API or integration k
 class OpsgenieIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Opsgenie integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.OPS_GENIE, serialization_alias="type", const=True
+    type: Literal[IntegrationType.OPS_GENIE] = Field(
+        IntegrationType.OPS_GENIE, serialization_alias="type"
     )
     api_key: str = Field(None, serialization_alias="apiKey")
     """Your API Key.
@@ -97,8 +95,8 @@ After you create a third-party integration that requires an API or integration k
 class VictorOpsIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for VictorOps integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.VICTOR_OPS, serialization_alias="type", const=True
+    type: Literal[IntegrationType.VICTOR_OPS] = Field(
+        IntegrationType.VICTOR_OPS, serialization_alias="type"
     )
     api_key: str = Field(None, serialization_alias="apiKey")
     """Your API Key.
@@ -114,8 +112,8 @@ After you create a third-party integration that requires an API or integration k
 class WebhookIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Webhook integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.WEBHOOK, serialization_alias="type", const=True
+    type: Literal[IntegrationType.WEBHOOK] = Field(
+        IntegrationType.WEBHOOK, serialization_alias="type"
     )
     url: str = Field(None, serialization_alias="url")
     """Your webhook URL."""
@@ -128,12 +126,10 @@ After creating a webhook notification, the URL is partially redacted when you vi
 class MicrosoftTeamsIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Microsoft Teams integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.MICROSOFT_TEAMS, serialization_alias="type", const=True
+    type: Literal[IntegrationType.MICROSOFT_TEAMS] = Field(
+        IntegrationType.MICROSOFT_TEAMS, serialization_alias="type"
     )
-    microsoft_teams_webhook_url: str = Field(
-        None, serialization_alias="microsoftTeamsWebhookUrl"
-    )
+    microsoft_teams_webhook_url: str = Field(None, serialization_alias="microsoftTeamsWebhookUrl")
     """Your Microsoft Teams incoming webhook URL.
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted."""
@@ -142,8 +138,8 @@ When you view or edit the alert for a webhook notification, the URL appears part
 class PrometheusIntegrationSettings(BodyParamsA, BodyParamsB):
     """Client for Prometheus integration settings resource."""
 
-    type: IntegrationType = Field(
-        IntegrationType.PROMETHEUS, serialization_alias="type", const=True
+    type: Literal[IntegrationType.PROMETHEUS] = Field(
+        IntegrationType.PROMETHEUS, serialization_alias="type"
     )
     username: str = Field(None, serialization_alias="username")
     """Your Prometheus username."""
