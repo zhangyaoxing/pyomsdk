@@ -1,19 +1,7 @@
 from typing import Any
-import pytest
-from shared import get_client
+from conftest import get_user_info, get_client, add_user, delete_user
 from pyomsdk.resources.enums import AllRole
 from pyomsdk.resources.users_resource import UsersResource
-
-
-def get_user_info() -> dict[str, Any]:
-    user_info = {
-        "email_address": "new.user@example.com",
-        "first_name": "New",
-        "last_name": "User",
-        "password": "Passw0rd!",
-        "username": "new.user",
-    }
-    return user_info
 
 
 def asserts_user_info(user: dict[str, Any]) -> None:
@@ -22,38 +10,6 @@ def asserts_user_info(user: dict[str, Any]) -> None:
     assert user["firstName"] == user_info["first_name"]
     assert user["lastName"] == user_info["last_name"]
     assert user["username"] == user_info["username"]
-
-
-@pytest.fixture(name="user")
-def new_user():
-    client = get_client()
-    result = add_user(client)
-
-    yield result
-
-    delete_user(client, result["id"])
-
-
-def add_user(client: Any) -> dict[str, Any]:
-    resource = client.users_resource
-    body_params = UsersResource.CreateBodyParams(
-        **get_user_info(),
-        roles=[
-            UsersResource.CreateBodyParams.RolesParams(
-                role_name=AllRole.GLOBAL_READ_ONLY,
-            )
-        ],
-    )
-
-    result = resource.create(None, body_params)
-    return result
-
-
-def delete_user(client: Any, user_id: str) -> None:
-    resource = client.users_resource
-    delete_path_params = UsersResource.DeletePathParams(user_id=user_id)
-    delete_query_params = UsersResource.DeleteQueryParams(envelope=True)
-    resource.delete(delete_path_params, delete_query_params)
 
 
 def test_users_create_first_user() -> None:
@@ -127,7 +83,7 @@ def test_users_update_roles(user) -> None:
 def test_users_delete() -> None:
     client = get_client()
     resource = client.users_resource
-    created_user = add_user(client)
+    created_user = add_user(client, get_user_info())
 
     path_params = UsersResource.DeletePathParams(user_id=created_user["id"])
 
