@@ -61,9 +61,7 @@ Expected response body
     class AcknowledgeOneBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        acknowledged_until: Optional[str] = Field(
-            serialization_alias="acknowledgedUntil"
-        )
+        acknowledged_until: Optional[str] = Field(None, serialization_alias="acknowledgedUntil")
         """Timestamp in ISO 8601 date and time format in UTC until which the alert should be acknowledged.
 
 To acknowledge an alert "forever", set the field value to a large number of years in the future. Recommend setting to 100 years in the future.
@@ -72,7 +70,7 @@ To unacknowledge an acknowledged alert, remove this parameter from your request.
         """
 
         acknowledgement_comment: Optional[str] = Field(
-            serialization_alias="acknowledgementComment"
+            None, serialization_alias="acknowledgementComment"
         )
         """Text description of the reason for this acknowledgement.
 
@@ -189,9 +187,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -203,7 +199,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
-        status: Optional[AlertStatus] = Field(serialization_alias="status")
+        status: Optional[AlertStatus] = Field(None, serialization_alias="status")
         """Specify a status to return only those alerts with the specified status. Omit to return all alerts.
 
 Ops Manager accepts the following values:

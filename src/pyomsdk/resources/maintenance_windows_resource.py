@@ -61,7 +61,7 @@ Expected response body
         """Alert types to silence during maintenance window. For example: HOST, REPLICA_SET, CLUSTER, AGENT, BACKUP
         """
 
-        description: Optional[str] = Field(serialization_alias="description")
+        description: Optional[str] = Field(None, serialization_alias="description")
         """Description of the maintenance window.
         """
 
@@ -353,7 +353,7 @@ Expected response body
         """Alert types to silence during maintenance window. For example: HOST, REPLICA_SET, CLUSTER, AGENT, BACKUP
         """
 
-        description: Optional[str] = Field(serialization_alias="description")
+        description: Optional[str] = Field(None, serialization_alias="description")
         """Description of the maintenance window.
         """
 

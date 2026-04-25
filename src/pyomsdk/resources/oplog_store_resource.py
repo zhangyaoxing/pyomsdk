@@ -50,43 +50,39 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Optional. Flag indicating whether this oplog store can be assigned backup jobs.
         """
 
         encrypted_credentials: Optional[bool] = Field(
-            serialization_alias="encryptedCredentials"
+            None, serialization_alias="encryptedCredentials"
         )
         """Optional. Flag indicating whether the username and password for this oplog store were encrypted using the credentialstool.
         """
 
-        id: Optional[str] = Field(serialization_alias="id")
+        id: Optional[str] = Field(None, serialization_alias="id")
         """The unique name that labels this oplog store.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Optional. Array of tags to manage which backup jobs Ops Manager can assign to which oplog stores.
 
 Setting these tags limits which backup jobs this oplog store can process. If omitted, this oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        max_capacity_gb: Optional[float] = Field(serialization_alias="maxCapacityGB")
+        max_capacity_gb: Optional[float] = Field(None, serialization_alias="maxCapacityGB")
         """Optional. The oplog store’s expected maximum available capacity for use in the OUTSIDE_SPACE_USED_THRESHOLD alert. maxCapacityGB does not enforce any limitation on the size of the backing database.
         """
 
-        ssl: Optional[bool] = Field(serialization_alias="ssl")
+        ssl: Optional[bool] = Field(None, serialization_alias="ssl")
         """Optional. Flag indicating whether this oplog store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field(serialization_alias="uri")
+        uri: Optional[str] = Field(None, serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this oplog store.
         """
 
-        write_concern: Optional[WriteConcern] = Field(
-            serialization_alias="writeConcern"
-        )
+        write_concern: Optional[WriteConcern] = Field(None, serialization_alias="writeConcern")
         """Optional. The write concern used for this oplog store.
 
 The accepted values for this option are:
@@ -192,9 +188,7 @@ Expected response body
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignable_only: Optional[bool] = Field(
-            True, serialization_alias="assignableOnly"
-        )
+        assignable_only: Optional[bool] = Field(True, serialization_alias="assignableOnly")
         """Indicates whether this oplog store can be assigned new backup jobs.
         """
 
@@ -206,9 +200,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -352,39 +344,35 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Optional. Flag indicating whether this oplog store can be assigned backup jobs.
         """
 
         encrypted_credentials: Optional[bool] = Field(
-            serialization_alias="encryptedCredentials"
+            None, serialization_alias="encryptedCredentials"
         )
         """Optional. Flag indicating whether the username and password for this oplog store were encrypted using the credentialstool.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Optional. Array of tags to manage which backup jobs Ops Manager can assign to which oplog stores.
 
 Setting these tags limits which backup jobs this oplog store can process. If omitted, this oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        max_capacity_gb: Optional[float] = Field(serialization_alias="maxCapacityGB")
+        max_capacity_gb: Optional[float] = Field(None, serialization_alias="maxCapacityGB")
         """Optional. The oplog store’s expected maximum available capacity for use in the OUTSIDE_SPACE_USED_THRESHOLD alert. maxCapacityGB does not enforce any limitation on the size of the backing database.
         """
 
-        ssl: Optional[bool] = Field(serialization_alias="ssl")
+        ssl: Optional[bool] = Field(None, serialization_alias="ssl")
         """Optional. Flag indicating whether this oplog store only accepts connections encrypted using TLS.
         """
 
-        uri: Optional[str] = Field(serialization_alias="uri")
+        uri: Optional[str] = Field(None, serialization_alias="uri")
         """A comma-separated list of hosts in the <hostname:port> format that can be used to access this oplog store.
         """
 
-        write_concern: Optional[WriteConcern] = Field(
-            serialization_alias="writeConcern"
-        )
+        write_concern: Optional[WriteConcern] = Field(None, serialization_alias="writeConcern")
         """Optional. The write concern used for this oplog store.
 
 The accepted values for this option are:

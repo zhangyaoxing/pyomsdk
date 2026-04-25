@@ -130,7 +130,7 @@ Expected response body
     class CreateConfigServerBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        checkpoint_id: Optional[str] = Field(serialization_alias="checkpointId")
+        checkpoint_id: Optional[str] = Field(None, serialization_alias="checkpointId")
         """Unique identifier for the sharded cluster checkpoint that represents the point in time to which your data will be restored.
 
 Conditions include:
@@ -145,21 +145,19 @@ If you provide this setting, this endpoint restores all data up to this checkpoi
         class DeliveryParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            expiration_hours: Optional[float] = Field(
-                serialization_alias="expirationHours"
-            )
+            expiration_hours: Optional[float] = Field(None, serialization_alias="expirationHours")
             """Number of hours the download URL is valid once the restore job is complete.
 
 delivery.methodName" : "HTTP"
             """
 
-            expires: Optional[str] = Field(serialization_alias="expires")
+            expires: Optional[str] = Field(None, serialization_alias="expires")
             """Timestamp in ISO 8601 date and time format in UTC after which the URL is no longer available.
 
 delivery.methodName" : "HTTP"
             """
 
-            max_downloads: Optional[float] = Field(serialization_alias="maxDownloads")
+            max_downloads: Optional[float] = Field(None, serialization_alias="maxDownloads")
             """Number of times the download URL can be used. This must be 1 or greater.
 
 delivery.methodName" : "HTTP"
@@ -183,9 +181,7 @@ In addition, the response shows the delivery.methodName as HTTP. An automated re
 IMPORTANT: Restore delivery using SCP was removed in Ops Manager 4.0.
             """
 
-            target_cluster_id: Optional[str] = Field(
-                serialization_alias="targetClusterId"
-            )
+            target_cluster_id: Optional[str] = Field(None, serialization_alias="targetClusterId")
             """Unique identifier of the target cluster. Use the clusterId returned in the response body of the Get All Snapshots and Get a Snapshot endpoints.
 
 delivery.methodName" : "AUTOMATED_RESTORE".
@@ -193,7 +189,7 @@ delivery.methodName" : "AUTOMATED_RESTORE".
 If backup is not enabled on the target cluster, the Get All Snapshots endpoint returns an empty results array without clusterId elements, and the Get a Snapshot endpoint also does not return a clusterId element.
             """
 
-            target_group_id: Optional[str] = Field(serialization_alias="targetGroupId")
+            target_group_id: Optional[str] = Field(None, serialization_alias="targetGroupId")
             """Unique identifier of the project that contains the destination cluster for the restore job.
 
 delivery.methodName" : "AUTOMATED_RESTORE"
@@ -203,7 +199,7 @@ delivery.methodName" : "AUTOMATED_RESTORE"
         """Method and details of how the restored snapshot data is delivered.
         """
 
-        oplog_inc: Optional[str] = Field(serialization_alias="oplogInc")
+        oplog_inc: Optional[str] = Field(None, serialization_alias="oplogInc")
         """32-bit incrementing ordinal that represents operations within a given second. When paired with oplogTs, they represent the point in time to which your data will be restored.
 
 "delivery.methodName" : "AUTOMATED_RESTORE" for Replica Sets Only.
@@ -217,7 +213,7 @@ Cannot set checkpointId or pointInTimeUTCMillis.
 If you provide this setting, this endpoint restores all data up to and including this Oplog timestamp to the database you specified in the delivery object.
         """
 
-        oplog_ts: Optional[str] = Field(serialization_alias="oplogTs")
+        oplog_ts: Optional[str] = Field(None, serialization_alias="oplogTs")
         """Oplog timestamp given as a Timestamp in the number of seconds that have elapsed since the UNIX epoch. When paired with oplogInc, they represent the point in time to which your data will be restored.
 
 Run a query against local.oplog.rs on your replica set to find the desired timestamp.
@@ -234,7 +230,7 @@ If you provide this setting, this endpoint restores all data up to and including
         """
 
         point_in_time_utc_millis: Optional[int] = Field(
-            serialization_alias="pointInTimeUTCMillis"
+            None, serialization_alias="pointInTimeUTCMillis"
         )
         """timestamp in the number of milliseconds that have elapsed since the UNIX epoch that represents the point in time to which your data will be restored. This timestamp must be within last 24 hours of the current time.
 
@@ -245,7 +241,7 @@ If you provide this setting, this endpoint restores all data up to this Point in
 If you set pointInTimeUTCMillis, you cannot set oplogInc, oplogTs, or checkpointId.
         """
 
-        snapshot_id: Optional[str] = Field(serialization_alias="snapshotId")
+        snapshot_id: Optional[str] = Field(None, serialization_alias="snapshotId")
         """Unique identifier of the snapshot to restore.
         """
 
@@ -286,7 +282,7 @@ If you set pointInTimeUTCMillis, you cannot set oplogInc, oplogTs, or checkpoint
     class GetAllClusterQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        batch_id: Optional[str] = Field(serialization_alias="BATCH-ID")
+        batch_id: Optional[str] = Field(None, serialization_alias="BATCH-ID")
         """Unique identifier of the batch.
         """
 
@@ -298,9 +294,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -356,9 +350,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 

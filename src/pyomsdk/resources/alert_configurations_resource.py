@@ -57,7 +57,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(serialization_alias="enabled")
+        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
         """If omitted, the configuration is disabled.
         """
 
@@ -308,9 +308,7 @@ To review the full list of events that generate alerts and their descriptions, s
         class MatchersParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            field_name: Optional[MatcherFieldName] = Field(
-                serialization_alias="fieldName"
-            )
+            field_name: Optional[MatcherFieldName] = Field(None, serialization_alias="fieldName")
             """Name of the field in the target object to match on.
 
 Host alerts support these fields:
@@ -342,7 +340,7 @@ SHARD_NAME
 All other types of alerts do not support matchers.
             """
 
-            operator: Optional[MatcherOperator] = Field(serialization_alias="operator")
+            operator: Optional[MatcherOperator] = Field(None, serialization_alias="operator")
             """Operator to test the field's value. Accepted values are:
 
 EQUALS
@@ -360,7 +358,7 @@ ENDS_WITH
 REGEX
             """
 
-            value: Optional[MatcherValue] = Field(serialization_alias="value")
+            value: Optional[MatcherValue] = Field(None, serialization_alias="value")
             """Value to test with the specified operator.
 
 If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
@@ -376,7 +374,7 @@ CONFIG
 MONGOS
             """
 
-        matchers: Optional[list[MatchersParams]] = Field(serialization_alias="matchers")
+        matchers: Optional[list[MatchersParams]] = Field(None, serialization_alias="matchers")
         """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
 
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
@@ -385,17 +383,15 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field(serialization_alias="metricName")
+            metric_name: Optional[str] = Field(None, serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field(serialization_alias="mode")
+            mode: Optional[str] = Field(None, serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
-            operator: Optional[ThresholdOperator] = Field(
-                serialization_alias="operator"
-            )
+            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
             """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
 
 GREATER_THAN
@@ -403,11 +399,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(serialization_alias="threshold")
+            threshold: Optional[float] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-            units: Optional[Unit] = Field(serialization_alias="units")
+            units: Optional[Unit] = Field(None, serialization_alias="units")
             """Units for the threshold value. Depends on the type of metric.
 
 For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
@@ -447,9 +443,7 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricthresholdParams = Field(
-            serialization_alias="metricThreshold"
-        )
+        metric_threshold: MetricthresholdParams = Field(serialization_alias="metricThreshold")
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 
@@ -480,7 +474,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[float] = Field(serialization_alias="delayMin")
+            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
@@ -496,13 +490,11 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[float] = Field(serialization_alias="intervalMin")
+            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
-            microsoft_teams_webhook_url: str = Field(
-                serialization_alias="microsoftTeamsWebhookUrl"
-            )
+            microsoft_teams_webhook_url: str = Field(serialization_alias="microsoftTeamsWebhookUrl")
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
@@ -548,13 +540,11 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field(serialization_alias="teamId")
+            team_id: Optional[str] = Field(None, serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
-            type_name: Optional[NotificationsTypeName] = Field(
-                serialization_alias="typeName"
-            )
+            type_name: Optional[NotificationsTypeName] = Field(None, serialization_alias="typeName")
             """Type of alert notification. Accepted values are:
 
 DATADOG
@@ -583,18 +573,18 @@ WEBHOOK
             """
 
             webhook_body_template: Optional[str] = Field(
-                serialization_alias="webhookBodyTemplate"
+                None, serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                serialization_alias="webhookHeadersTemplate"
+                None, serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
+            webhook_secret: Optional[str] = Field(None, serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -608,24 +598,20 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(None, serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-        notifications: list[NotificationsParams] = Field(
-            serialization_alias="notifications"
-        )
+        notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
         """Notifications to send when an alert condition is detected.
         """
 
         class ThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            operator: Optional[ThresholdOperator] = Field(
-                serialization_alias="operator"
-            )
+            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
             """Operator to apply when checking the current metric value against the threshold value.
 
 GREATER_THAN
@@ -633,7 +619,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(serialization_alias="threshold")
+            threshold: Optional[float] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
@@ -787,7 +773,7 @@ Expected response body
     class EnableDisableBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(serialization_alias="enabled")
+        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
         """Specify true to enable; false to disable.
         """
 
@@ -832,9 +818,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -890,9 +874,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -1005,9 +987,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -1127,7 +1107,7 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(serialization_alias="enabled")
+        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
         """If omitted, the configuration is disabled.
         """
 
@@ -1378,9 +1358,7 @@ To review the full list of events that generate alerts and their descriptions, s
         class MatchersParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            field_name: Optional[MatcherFieldName] = Field(
-                serialization_alias="fieldName"
-            )
+            field_name: Optional[MatcherFieldName] = Field(None, serialization_alias="fieldName")
             """Name of the field in the target object to match on.
 
 Host alerts support these fields:
@@ -1412,7 +1390,7 @@ SHARD_NAME
 All other types of alerts do not support matchers.
             """
 
-            operator: Optional[MatcherOperator] = Field(serialization_alias="operator")
+            operator: Optional[MatcherOperator] = Field(None, serialization_alias="operator")
             """Operator to test the field's value. Accepted values are:
 
 EQUALS
@@ -1430,7 +1408,7 @@ ENDS_WITH
 REGEX
             """
 
-            value: Optional[MatcherValue] = Field(serialization_alias="value")
+            value: Optional[MatcherValue] = Field(None, serialization_alias="value")
             """Value to test with the specified operator.
 
 If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
@@ -1446,7 +1424,7 @@ CONFIG
 MONGOS
             """
 
-        matchers: Optional[list[MatchersParams]] = Field(serialization_alias="matchers")
+        matchers: Optional[list[MatchersParams]] = Field(None, serialization_alias="matchers")
         """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
 
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
@@ -1455,17 +1433,15 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricthresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field(serialization_alias="metricName")
+            metric_name: Optional[str] = Field(None, serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field(serialization_alias="mode")
+            mode: Optional[str] = Field(None, serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
-            operator: Optional[ThresholdOperator] = Field(
-                serialization_alias="operator"
-            )
+            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
             """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
 
 GREATER_THAN
@@ -1473,11 +1449,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(serialization_alias="threshold")
+            threshold: Optional[float] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-            units: Optional[Unit] = Field(serialization_alias="units")
+            units: Optional[Unit] = Field(None, serialization_alias="units")
             """Units for the threshold value. Depends on the type of metric.
 
 For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
@@ -1517,9 +1493,7 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricthresholdParams = Field(
-            serialization_alias="metricThreshold"
-        )
+        metric_threshold: MetricthresholdParams = Field(serialization_alias="metricThreshold")
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 
@@ -1550,7 +1524,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[float] = Field(serialization_alias="delayMin")
+            delay_min: Optional[float] = Field(None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
@@ -1566,13 +1540,11 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[float] = Field(serialization_alias="intervalMin")
+            interval_min: Optional[float] = Field(None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
-            microsoft_teams_webhook_url: str = Field(
-                serialization_alias="microsoftTeamsWebhookUrl"
-            )
+            microsoft_teams_webhook_url: str = Field(serialization_alias="microsoftTeamsWebhookUrl")
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
@@ -1618,13 +1590,11 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field(serialization_alias="teamId")
+            team_id: Optional[str] = Field(None, serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
-            type_name: Optional[NotificationsTypeName] = Field(
-                serialization_alias="typeName"
-            )
+            type_name: Optional[NotificationsTypeName] = Field(None, serialization_alias="typeName")
             """Type of alert notification. Accepted values are:
 
 DATADOG
@@ -1653,18 +1623,18 @@ WEBHOOK
             """
 
             webhook_body_template: Optional[str] = Field(
-                serialization_alias="webhookBodyTemplate"
+                None, serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                serialization_alias="webhookHeadersTemplate"
+                None, serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(serialization_alias="webhookSecret")
+            webhook_secret: Optional[str] = Field(None, serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -1678,24 +1648,20 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field(serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(None, serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-        notifications: list[NotificationsParams] = Field(
-            serialization_alias="notifications"
-        )
+        notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
         """Notifications to send when an alert condition is detected.
         """
 
         class ThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            operator: Optional[ThresholdOperator] = Field(
-                serialization_alias="operator"
-            )
+            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
             """Operator to apply when checking the current metric value against the threshold value.
 
 GREATER_THAN
@@ -1703,7 +1669,7 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[float] = Field(serialization_alias="threshold")
+            threshold: Optional[float] = Field(None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 

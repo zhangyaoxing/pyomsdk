@@ -50,9 +50,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag that indicates whether this file system store can be assigned backup jobs.
         """
 
@@ -60,20 +58,20 @@ Expected response body
         """Unique identifier of this file system store.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Tags to manage which backup jobs Ops Manager can assign to which file system stores.
 
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(serialization_alias="loadFactor")
+        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
-            serialization_alias="mmapv1CompressionSetting"
+            None, serialization_alias="mmapv1CompressionSetting"
         )
         """Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
@@ -89,7 +87,7 @@ IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
         """
 
         wt_compression_setting: Optional[str] = Field(
-            serialization_alias="wtCompressionSetting"
+            None, serialization_alias="wtCompressionSetting"
         )
         """Compression setting if you use the WiredTiger storage engine for your snaphots.
 
@@ -188,9 +186,7 @@ Expected response body
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignable_only: Optional[bool] = Field(
-            True, serialization_alias="assignableOnly"
-        )
+        assignable_only: Optional[bool] = Field(True, serialization_alias="assignableOnly")
         """Flag that indicates whether this file system store can be assigned new backup jobs.
         """
 
@@ -202,9 +198,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -348,26 +342,24 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag that indicates whether this file system store can be assigned backup jobs.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Tags to manage which backup jobs Ops Manager can assign to which file system stores.
 
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(serialization_alias="loadFactor")
+        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
-            serialization_alias="mmapv1CompressionSetting"
+            None, serialization_alias="mmapv1CompressionSetting"
         )
         """Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
@@ -383,7 +375,7 @@ IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
         """
 
         wt_compression_setting: Optional[str] = Field(
-            serialization_alias="wtCompressionSetting"
+            None, serialization_alias="wtCompressionSetting"
         )
         """Compression setting if you use the WiredTiger storage engine for your snaphots.
 

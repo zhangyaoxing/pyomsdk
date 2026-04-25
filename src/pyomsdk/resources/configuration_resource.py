@@ -448,19 +448,17 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         automation_agent_version: Optional[str] = Field(
-            serialization_alias="automationAgentVersion"
+            None, serialization_alias="automationAgentVersion"
         )
         """Version to which you want to update the MongoDB Agent.
         """
 
-        bi_connector_version: Optional[str] = Field(
-            serialization_alias="biConnectorVersion"
-        )
+        bi_connector_version: Optional[str] = Field(None, serialization_alias="biConnectorVersion")
         """Version to which you want to update the BI Connector.
         """
 
         mongo_db_tools_version: Optional[str] = Field(
-            serialization_alias="mongoDbToolsVersion"
+            None, serialization_alias="mongoDbToolsVersion"
         )
         """Version to which you want to update the MongoDB Database Tools
         """
@@ -534,27 +532,23 @@ Expected response body
     class UpdateTheAuditLogRotateConfigBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        num_total: Optional[Any] = Field(serialization_alias="numTotal")
+        num_total: Optional[Any] = Field(None, serialization_alias="numTotal")
         """Total number of log files. If the number of log files on disk is greater than this number, the oldest files will be deleted. If a number is not specified, defaults to 0 and is determined by other settings.
         """
 
-        num_uncompressed: Optional[Any] = Field(serialization_alias="numUncompressed")
+        num_uncompressed: Optional[Any] = Field(None, serialization_alias="numUncompressed")
         """Maximum number of total log files to leave uncompressed, including the current log file. The default is 5. If number of log files is more than max uncompressed, sort by date, and then keep compressing the oldest file until the restraint is met.
         """
 
-        percent_of_diskspace: Optional[Any] = Field(
-            serialization_alias="percentOfDiskspace"
-        )
+        percent_of_diskspace: Optional[Any] = Field(None, serialization_alias="percentOfDiskspace")
         """Maximum percentage of total disk space all log files should take up before deletion. The default is .02. If log files size is taking up more than max percent of total disk space, sort by date, and then keep deleting the oldest file until the restraint is met.
         """
 
-        size_threshold_mb: Optional[Any] = Field(serialization_alias="sizeThresholdMB")
+        size_threshold_mb: Optional[Any] = Field(None, serialization_alias="sizeThresholdMB")
         """Maximum size in MB for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
         """
 
-        time_threshold_hrs: Optional[Any] = Field(
-            serialization_alias="timeThresholdHrs"
-        )
+        time_threshold_hrs: Optional[Any] = Field(None, serialization_alias="timeThresholdHrs")
         """Maximum time in hours for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
         """
 
@@ -757,7 +751,7 @@ Expected response body
     class UpdateBackupConfigurationSettingsBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        config_overrides: Optional[dict] = Field(serialization_alias="configOverrides")
+        config_overrides: Optional[dict] = Field(None, serialization_alias="configOverrides")
         """List of MongoDB Agent settings that you need to change because your backup settings differ from those of the MongoDB Agent. Configure this option when upgrading from legacy agents to the MongoDB Agent.
 
 Setting
@@ -899,30 +893,26 @@ sslTrustedMMSBackupServerCertificate
 string
         """
 
-        log_path: Optional[str] = Field(serialization_alias="logPath")
+        log_path: Optional[str] = Field(None, serialization_alias="logPath")
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
         class LogrotateParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            size_threshold_mb: Optional[int] = Field(
-                serialization_alias="sizeThresholdMB"
-            )
+            size_threshold_mb: Optional[int] = Field(None, serialization_alias="sizeThresholdMB")
             """Maximum size, in MB, of a log file before this MongoDB Agent rotates the logs.
             """
 
-            time_duration_hrs: Optional[int] = Field(
-                serialization_alias="timeDurationHrs"
-            )
+            time_duration_hrs: Optional[int] = Field(None, serialization_alias="timeDurationHrs")
             """Number of hours after which this MongoDB Agent rotates the log file.
             """
 
-        log_rotate: Optional[LogrotateParams] = Field(serialization_alias="logRotate")
+        log_rotate: Optional[LogrotateParams] = Field(None, serialization_alias="logRotate")
         """Thresholds after which this MongoDB Agent rotates the backup log.
         """
 
-        username: Optional[str] = Field(serialization_alias="username")
+        username: Optional[str] = Field(None, serialization_alias="username")
         """MongoDB user in the application database that manages the backup logs.
 
 If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
@@ -997,7 +987,7 @@ Expected response body
     class UpdateMonitoringConfigurationSettingsBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        config_overrides: Optional[dict] = Field(serialization_alias="configOverrides")
+        config_overrides: Optional[dict] = Field(None, serialization_alias="configOverrides")
         """List of MongoDB Agent settings that you need to change because your monitoring settings differ from those of the MongoDB Agent. Configure this option when upgrading from legacy agents to the MongoDB Agent.
 
 Setting
@@ -1130,30 +1120,26 @@ enableMunin
 boolean
         """
 
-        log_path: Optional[str] = Field(serialization_alias="logPath")
+        log_path: Optional[str] = Field(None, serialization_alias="logPath")
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
         class LogrotateParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            size_threshold_mb: Optional[int] = Field(
-                serialization_alias="sizeThresholdMB"
-            )
+            size_threshold_mb: Optional[int] = Field(None, serialization_alias="sizeThresholdMB")
             """Maximum size, in MB, of a log file before this MongoDB Agent rotates the logs.
             """
 
-            time_duration_hrs: Optional[int] = Field(
-                serialization_alias="timeDurationHrs"
-            )
+            time_duration_hrs: Optional[int] = Field(None, serialization_alias="timeDurationHrs")
             """Number of hours after which this MongoDB Agent rotates the log file.
             """
 
-        log_rotate: Optional[LogrotateParams] = Field(serialization_alias="logRotate")
+        log_rotate: Optional[LogrotateParams] = Field(None, serialization_alias="logRotate")
         """Thresholds after which this MongoDB Agent rotates the monitoring log.
         """
 
-        username: Optional[str] = Field(serialization_alias="username")
+        username: Optional[str] = Field(None, serialization_alias="username")
         """MongoDB user in the application database that manages the monitoring logs.
 
 If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
@@ -1228,27 +1214,23 @@ Expected response body
     class UpdateTheSystemLogRotateConfigBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        num_total: Optional[Any] = Field(serialization_alias="numTotal")
+        num_total: Optional[Any] = Field(None, serialization_alias="numTotal")
         """Total number of log files. If the number of log files on disk is greater than this number, the oldest files will be deleted. If a number is not specified, defaults to 0 and is determined by other settings.
         """
 
-        num_uncompressed: Optional[Any] = Field(serialization_alias="numUncompressed")
+        num_uncompressed: Optional[Any] = Field(None, serialization_alias="numUncompressed")
         """Maximum number of total log files to leave uncompressed, including the current log file. The default is 5. If number of log files is more than max uncompressed, sort by date, and then keep compressing the oldest file until the restraint is met.
         """
 
-        percent_of_diskspace: Optional[Any] = Field(
-            serialization_alias="percentOfDiskspace"
-        )
+        percent_of_diskspace: Optional[Any] = Field(None, serialization_alias="percentOfDiskspace")
         """Maximum percentage of total disk space all log files should take up before deletion. The default is .02. If log files size is taking up more than max percent of total disk space, sort by date, and then keep deleting the oldest file until the restraint is met.
         """
 
-        size_threshold_mb: Optional[Any] = Field(serialization_alias="sizeThresholdMB")
+        size_threshold_mb: Optional[Any] = Field(None, serialization_alias="sizeThresholdMB")
         """Maximum size in MB for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
         """
 
-        time_threshold_hrs: Optional[Any] = Field(
-            serialization_alias="timeThresholdHrs"
-        )
+        time_threshold_hrs: Optional[Any] = Field(None, serialization_alias="timeThresholdHrs")
         """Maximum time in hours for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
         """
 

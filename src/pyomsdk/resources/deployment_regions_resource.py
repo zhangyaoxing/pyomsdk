@@ -78,9 +78,7 @@ Expected response body
         """Specification objects for the cluster members for which to assign deployment regions.
         """
 
-        multi_region_backup_enabled: bool = Field(
-            serialization_alias="multiRegionBackupEnabled"
-        )
+        multi_region_backup_enabled: bool = Field(serialization_alias="multiRegionBackupEnabled")
         """Flag that indicates whether multi-region backup is enabled for the cluster.
         """
 
@@ -153,9 +151,7 @@ Expected response body
     class CreateByIdBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag indicating whether you can assign Deployment Regions to backup resources.
         """
 
@@ -167,9 +163,7 @@ Expected response body
         """String that describes the purpose of the deployment region.
         """
 
-        ingestion_endpoint: Optional[str] = Field(
-            serialization_alias="ingestionEndpoint"
-        )
+        ingestion_endpoint: Optional[str] = Field(None, serialization_alias="ingestionEndpoint")
         """Ops Manager instance to which the Backup Agent writes snapshot or oplog data. Value is a valid URL such as http://www.mongodb.com. Supports both HTTP and HTTPS.
         """
 
@@ -239,9 +233,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag indicating whether you can assign Deployment Regions to backup resources.
         """
 
@@ -253,13 +245,11 @@ Expected response body
         """String that describes the purpose of the deployment region.
         """
 
-        id: Optional[str] = Field(serialization_alias="id")
+        id: Optional[str] = Field(None, serialization_alias="id")
         """Unique identifier that references this deployment region in configurations.
         """
 
-        ingestion_endpoint: Optional[str] = Field(
-            serialization_alias="ingestionEndpoint"
-        )
+        ingestion_endpoint: Optional[str] = Field(None, serialization_alias="ingestionEndpoint")
         """Ops Manager instance to which the Backup Agent writes snapshot or oplog data. Value is a valid URL such as http://www.mongodb.com. Supports both HTTP and HTTPS.
         """
 
@@ -365,9 +355,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -418,9 +406,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 

@@ -65,13 +65,13 @@ Expected response body
     class ChangeExpiryBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        do_not_delete: Optional[bool] = Field(serialization_alias="doNotDelete")
+        do_not_delete: Optional[bool] = Field(None, serialization_alias="doNotDelete")
         """Indicator that the snapshot cannot be deleted.
 
 IMPORTANT: You cannot set doNotDelete to true and set a timestamp for expires in the same request. If you do, Ops Manager returns an error: Cannot modify snapshot because of invalid fields.
         """
 
-        expires: Optional[str] = Field(serialization_alias="expires")
+        expires: Optional[str] = Field(None, serialization_alias="expires")
         """The date in ISO 8601 date and time format at UTC after which this snapshot can be deleted.
 
 If doNotDelete is set to true, any existing value in expires is removed.
@@ -126,9 +126,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -196,9 +194,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -465,7 +461,7 @@ Expected response body
     class CreateOneOnDemandClusterQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.

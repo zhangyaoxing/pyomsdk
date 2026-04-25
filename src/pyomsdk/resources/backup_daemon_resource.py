@@ -57,31 +57,25 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag indicating whether this Backup Daemon can be assigned backup jobs.
         """
 
-        backup_jobs_enabled: Optional[bool] = Field(
-            serialization_alias="backupJobsEnabled"
-        )
+        backup_jobs_enabled: Optional[bool] = Field(None, serialization_alias="backupJobsEnabled")
         """Flag indicating whether this Backup Daemon can be used to backup databases.
         """
 
-        configured: Optional[bool] = Field(serialization_alias="configured")
+        configured: Optional[bool] = Field(None, serialization_alias="configured")
         """Flag indicating whether this Backup Daemon is ready to use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
-            serialization_alias="garbageCollectionEnabled"
+            None, serialization_alias="garbageCollectionEnabled"
         )
         """Flag indicating whether this Backup Daemon has garbage collection set.
         """
 
-        head_disk_type: Optional[HeadDiskType] = Field(
-            serialization_alias="headDiskType"
-        )
+        head_disk_type: Optional[HeadDiskType] = Field(None, serialization_alias="headDiskType")
         """Type of disk used to store the head directory.
 
 The accepted values for this option are:
@@ -91,7 +85,7 @@ HDD
 SSD
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which Backup Daemons.
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
@@ -101,7 +95,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                serialization_alias="headRootDirectory"
+                None, serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
@@ -114,18 +108,18 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[float] = Field(serialization_alias="numWorkers")
+        num_workers: Optional[float] = Field(None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 
         resource_usage_enabled: Optional[bool] = Field(
-            serialization_alias="resourceUsageEnabled"
+            None, serialization_alias="resourceUsageEnabled"
         )
         """Flag indicating whether this Backup Daemon has its resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
-            serialization_alias="restoreQueryableJobsEnabled"
+            None, serialization_alias="restoreQueryableJobsEnabled"
         )
         """Flag indicating whether this Backup Daemon can perform queryable restores.
         """
@@ -239,9 +233,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -398,31 +390,25 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag indicating whether this Backup Daemon can be assigned backup jobs.
         """
 
-        backup_jobs_enabled: Optional[bool] = Field(
-            serialization_alias="backupJobsEnabled"
-        )
+        backup_jobs_enabled: Optional[bool] = Field(None, serialization_alias="backupJobsEnabled")
         """Flag indicating whether this Backup Daemon can be used to backup databases.
         """
 
-        configured: Optional[bool] = Field(serialization_alias="configured")
+        configured: Optional[bool] = Field(None, serialization_alias="configured")
         """Flag indicating whether this Backup Daemon is ready to use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
-            serialization_alias="garbageCollectionEnabled"
+            None, serialization_alias="garbageCollectionEnabled"
         )
         """Flag indicating whether this Backup Daemon has garbage collection set.
         """
 
-        head_disk_type: Optional[HeadDiskType] = Field(
-            serialization_alias="headDiskType"
-        )
+        head_disk_type: Optional[HeadDiskType] = Field(None, serialization_alias="headDiskType")
         """Type of disk used to store the head directory.
 
 The accepted values for this option are:
@@ -432,7 +418,7 @@ HDD
 SSD
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which Backup Daemons.
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
@@ -442,7 +428,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                serialization_alias="headRootDirectory"
+                None, serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
@@ -455,18 +441,18 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[float] = Field(serialization_alias="numWorkers")
+        num_workers: Optional[float] = Field(None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 
         resource_usage_enabled: Optional[bool] = Field(
-            serialization_alias="resourceUsageEnabled"
+            None, serialization_alias="resourceUsageEnabled"
         )
         """Flag indicating whether this Backup Daemon has its resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
-            serialization_alias="restoreQueryableJobsEnabled"
+            None, serialization_alias="restoreQueryableJobsEnabled"
         )
         """Flag indicating whether this Backup Daemon can perform queryable restores.
         """

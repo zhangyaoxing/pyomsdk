@@ -14,9 +14,7 @@ class IntegrationSettingsResource(BaseResource):
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        integration_type: IntegrationType = Field(
-            serialization_alias="INTEGRATION-TYPE"
-        )
+        integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
 DATADOG
@@ -51,9 +49,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -108,9 +104,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        integration_type: IntegrationType = Field(
-            serialization_alias="INTEGRATION-TYPE"
-        )
+        integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
 DATADOG
@@ -145,9 +139,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -199,9 +191,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -253,9 +243,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -292,9 +280,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOneConfigurationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        integration_type: IntegrationType = Field(
-            serialization_alias="INTEGRATION-TYPE"
-        )
+        integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
 DATADOG
@@ -329,9 +315,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -368,9 +352,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        integration_type: IntegrationType = Field(
-            serialization_alias="INTEGRATION-TYPE"
-        )
+        integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
 DATADOG
@@ -405,9 +387,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 

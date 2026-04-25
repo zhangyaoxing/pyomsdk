@@ -33,9 +33,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -86,7 +84,7 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
     class CreatePhysicalHostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -117,9 +115,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -155,17 +151,15 @@ To learn more, see MongoDB Usage Page.
         class VirtualhostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field(serialization_alias="groupId")
+            group_id: Optional[str] = Field(None, serialization_alias="groupId")
             """Unique identifier of the project into which Ops Manager places this virtual host.
             """
 
-            hostname: Optional[str] = Field(serialization_alias="hostname")
+            hostname: Optional[str] = Field(None, serialization_alias="hostname")
             """FQDN of the virtual host bound to the physical host.
             """
 
-        virtual_hosts: list[VirtualhostsParams] = Field(
-            serialization_alias="virtualHosts"
-        )
+        virtual_hosts: list[VirtualhostsParams] = Field(serialization_alias="virtualHosts")
         """List of virtual hosts bound to the provided physical host.
         """
 
@@ -267,7 +261,7 @@ Expected response body
     class GenerateUsageSnapshotQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -298,9 +292,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -336,7 +328,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class RetrieveAllPhysicalHostsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -367,9 +359,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -542,7 +532,7 @@ Expected response body
     class RetreiveOnePhysicalHostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -573,9 +563,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -854,7 +842,7 @@ Expected response body
     class RemovePhysicalHostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -885,9 +873,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -970,7 +956,7 @@ Expected response body
         class ServertypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            label: Optional[ServerTypeLabel] = Field(serialization_alias="label")
+            label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
             """Server Type label for the physical host.
 
 You can set this to one of the following values:
@@ -1078,7 +1064,7 @@ Expected response body
         class ServertypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            label: Optional[ServerTypeLabel] = Field(serialization_alias="label")
+            label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
             """Server Type label for the physical host.
 
 You can set this to one of the following values:
@@ -1147,7 +1133,7 @@ To learn more, see MongoDB Usage Page.
     class UpdatePhysicalHostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -1178,9 +1164,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -1216,17 +1200,15 @@ To learn more, see MongoDB Usage Page.
         class VirtualhostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field(serialization_alias="groupId")
+            group_id: Optional[str] = Field(None, serialization_alias="groupId")
             """Unique identifier of the project into which Ops Manager places this virtual host.
             """
 
-            hostname: Optional[str] = Field(serialization_alias="hostname")
+            hostname: Optional[str] = Field(None, serialization_alias="hostname")
             """FQDN of the virtual host bound to the physical host.
             """
 
-        virtual_hosts: list[VirtualhostsParams] = Field(
-            serialization_alias="virtualHosts"
-        )
+        virtual_hosts: list[VirtualhostsParams] = Field(serialization_alias="virtualHosts")
         """List of virtual hosts bound to the provided physical host.
         """
 
@@ -1302,7 +1284,7 @@ Expected response body
         class ServertypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            label: Optional[ServerTypeLabel] = Field(serialization_alias="label")
+            label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
             """Server Type label for the physical host.
 
 You can set this to one of the following values:

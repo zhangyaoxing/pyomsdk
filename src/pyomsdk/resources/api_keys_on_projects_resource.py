@@ -25,7 +25,7 @@ class ApiKeysOnProjectsResource(BaseResource):
     class AssignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -56,9 +56,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -194,7 +192,7 @@ Project User Admin
     class CreateAssignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -225,9 +223,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -242,11 +238,11 @@ For endpoints that return a list of results, the results object is an envelope. 
     class CreateAssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field(serialization_alias="desc")
+        desc: Optional[str] = Field(None, serialization_alias="desc")
         """Description of the API key. Must be between 1 and 250 characters in length.
         """
 
-        roles: Optional[list[str]] = Field(serialization_alias="roles")
+        roles: Optional[list[str]] = Field(None, serialization_alias="roles")
         """List of roles that the API Key needs to have. If the roles array is provided:
 
 Provide at least one role
@@ -377,7 +373,7 @@ Project User Admin
     class UnassignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -408,9 +404,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -454,7 +448,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -485,9 +479,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -535,7 +527,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class ModifyRolesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -566,9 +558,7 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 

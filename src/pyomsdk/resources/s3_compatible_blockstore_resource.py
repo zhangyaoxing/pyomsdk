@@ -56,19 +56,17 @@ Expected response body
 If you set this to false, Ops Manager returns an error. The error states that Ops Manager can't create the S3-compatible storage store.
         """
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag that indicates whether you can assign backup jobs to this data store.
         """
 
-        aws_access_key: Optional[str] = Field(serialization_alias="awsAccessKey")
+        aws_access_key: Optional[str] = Field(None, serialization_alias="awsAccessKey")
         """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
         """
 
-        aws_secret_key: Optional[str] = Field(serialization_alias="awsSecretKey")
+        aws_secret_key: Optional[str] = Field(None, serialization_alias="awsSecretKey")
         """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
@@ -77,26 +75,26 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         class CustomcertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            cert_string: Optional[str] = Field(serialization_alias="certString")
+            cert_string: Optional[str] = Field(None, serialization_alias="certString")
             """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
             """
 
-            filename: Optional[str] = Field(serialization_alias="filename")
+            filename: Optional[str] = Field(None, serialization_alias="filename")
             """Name that identifies the Certificate Authority PEM file.
             """
 
         custom_certificates: Optional[list[CustomcertificatesParams]] = Field(
-            serialization_alias="customCertificates"
+            None, serialization_alias="customCertificates"
         )
         """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.
         """
 
-        disable_proxy_s3: Optional[bool] = Field(serialization_alias="disableProxyS3")
+        disable_proxy_s3: Optional[bool] = Field(None, serialization_alias="disableProxyS3")
         """Flag that indicates whether the HTTP proxy should be used when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
         """
 
         encrypted_credentials: Optional[bool] = Field(
-            serialization_alias="encryptedCredentials"
+            None, serialization_alias="encryptedCredentials"
         )
         """Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the credentialstool.
         """
@@ -105,27 +103,23 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         """Name that uniquely identifies this S3 Snapshot Store.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which S3 blockstores.
 
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(serialization_alias="loadFactor")
+        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
-        object_lock_enabled: Optional[bool] = Field(
-            serialization_alias="objectLockEnabled"
-        )
+        object_lock_enabled: Optional[bool] = Field(None, serialization_alias="objectLockEnabled")
         """Flag that indicates whether object lock is enabled to prevent the objects in an S3 bucket from being deleted.
         """
 
-        path_style_access_enabled: bool = Field(
-            serialization_alias="pathStyleAccessEnabled"
-        )
+        path_style_access_enabled: bool = Field(serialization_alias="pathStyleAccessEnabled")
         """Flag that indicates the style of this endpoint.
 
 Value
@@ -162,9 +156,7 @@ Virtual-host-style URL endpoint
 To review the S3-compatible storage bucket URL conventions, see the AWS S3 documentation.
         """
 
-        s3_auth_method: Optional[S3AuthMethod] = Field(
-            serialization_alias="s3AuthMethod"
-        )
+        s3_auth_method: Optional[S3AuthMethod] = Field(None, serialization_alias="s3AuthMethod")
         """Method used to authorize access to the S3-compatible storage bucket specified in s3BucketName.
 
 Accepted values for this option are: KEYS, IAM_ROLE.
@@ -197,9 +189,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """Positive integer indicating the maximum number of connections to this S3-compatible storage blockstore.
         """
 
-        s3_region_override: Optional[str] = Field(
-            serialization_alias="s3RegionOverride"
-        )
+        s3_region_override: Optional[str] = Field(None, serialization_alias="s3RegionOverride")
         """Region where your S3-compatible storage bucket resides.
 
 Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn't support region scoping. Don't use this field with AWS S3 buckets.
@@ -209,7 +199,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Flag that indicates whether this S3-compatible storage blockstore enables server-side encryption.
         """
 
-        ssl: Optional[bool] = Field(serialization_alias="ssl")
+        ssl: Optional[bool] = Field(None, serialization_alias="ssl")
         """Flag that indicates whether this S3-compatible storage blockstore only accepts connections encrypted using TLS.
         """
 
@@ -217,9 +207,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Connection String that connects to the metadata database for this S3-compatible storage blockstore. This database stores the locations of the blocks in the AWS S3-compatible storage bucket.
         """
 
-        write_concern: Optional[WriteConcern] = Field(
-            serialization_alias="writeConcern"
-        )
+        write_concern: Optional[WriteConcern] = Field(None, serialization_alias="writeConcern")
         """Write concern used for this blockstore.
 
 Ops Manager accepts the following values:
@@ -260,9 +248,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        s3_blockstore_config_id: str = Field(
-            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
-        )
+        s3_blockstore_config_id: str = Field(serialization_alias="S3-BLOCKSTORE-CONFIG-ID")
         """The unique name that labels this S3 blockstore configuration.
         """
 
@@ -327,9 +313,7 @@ Expected response body
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignable_only: Optional[bool] = Field(
-            True, serialization_alias="assignableOnly"
-        )
+        assignable_only: Optional[bool] = Field(True, serialization_alias="assignableOnly")
         """Flag indicating whether this S3 blockstore can be assigned new backup jobs.
         """
 
@@ -341,9 +325,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -379,9 +361,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        s3_blockstore_config_id: str = Field(
-            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
-        )
+        s3_blockstore_config_id: str = Field(serialization_alias="S3-BLOCKSTORE-CONFIG-ID")
         """The unique name that labels this S3 blockstore configuration.
         """
 
@@ -446,9 +426,7 @@ Expected response body
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        s3_blockstore_config_id: str = Field(
-            serialization_alias="S3-BLOCKSTORE-CONFIG-ID"
-        )
+        s3_blockstore_config_id: str = Field(serialization_alias="S3-BLOCKSTORE-CONFIG-ID")
         """The unique name that labels this S3 blockstore configuration.
         """
 
@@ -497,19 +475,17 @@ Expected response body
 If you set this to false, Ops Manager returns an error. The error states that Ops Manager can't create the S3-compatible storage store.
         """
 
-        assignment_enabled: Optional[bool] = Field(
-            serialization_alias="assignmentEnabled"
-        )
+        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
         """Flag that indicates whether you can assign backup jobs to this data store.
         """
 
-        aws_access_key: Optional[str] = Field(serialization_alias="awsAccessKey")
+        aws_access_key: Optional[str] = Field(None, serialization_alias="awsAccessKey")
         """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
         """
 
-        aws_secret_key: Optional[str] = Field(serialization_alias="awsSecretKey")
+        aws_secret_key: Optional[str] = Field(None, serialization_alias="awsSecretKey")
         """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
 
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
@@ -518,51 +494,47 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         class CustomcertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            cert_string: Optional[str] = Field(serialization_alias="certString")
+            cert_string: Optional[str] = Field(None, serialization_alias="certString")
             """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
             """
 
-            filename: Optional[str] = Field(serialization_alias="filename")
+            filename: Optional[str] = Field(None, serialization_alias="filename")
             """Name that identifies the Certificate Authority PEM file.
             """
 
         custom_certificates: Optional[list[CustomcertificatesParams]] = Field(
-            serialization_alias="customCertificates"
+            None, serialization_alias="customCertificates"
         )
         """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.
         """
 
-        disable_proxy_s3: Optional[bool] = Field(serialization_alias="disableProxyS3")
+        disable_proxy_s3: Optional[bool] = Field(None, serialization_alias="disableProxyS3")
         """Flag that indicates whether the HTTP proxy should be used when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
         """
 
         encrypted_credentials: Optional[bool] = Field(
-            serialization_alias="encryptedCredentials"
+            None, serialization_alias="encryptedCredentials"
         )
         """Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the credentialstool.
         """
 
-        labels: Optional[list[str]] = Field(serialization_alias="labels")
+        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which S3 blockstores.
 
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
 
-        load_factor: Optional[float] = Field(serialization_alias="loadFactor")
+        load_factor: Optional[float] = Field(None, serialization_alias="loadFactor")
         """Positive, non-zero integer that expresses how much backup work this snapshot store performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
 To learn more about Load Factor, see Edit One Existing Blockstore.
         """
 
-        object_lock_enabled: Optional[bool] = Field(
-            serialization_alias="objectLockEnabled"
-        )
+        object_lock_enabled: Optional[bool] = Field(None, serialization_alias="objectLockEnabled")
         """Flag that indicates whether object lock is enabled to prevent the objects in an S3 bucket from being deleted.
         """
 
-        path_style_access_enabled: bool = Field(
-            serialization_alias="pathStyleAccessEnabled"
-        )
+        path_style_access_enabled: bool = Field(serialization_alias="pathStyleAccessEnabled")
         """Flag that indicates the style of this endpoint.
 
 Value
@@ -599,9 +571,7 @@ Virtual-host-style URL endpoint
 To review the S3-compatible storage bucket URL conventions, see the AWS S3 documentation.
         """
 
-        s3_auth_method: Optional[S3AuthMethod] = Field(
-            serialization_alias="s3AuthMethod"
-        )
+        s3_auth_method: Optional[S3AuthMethod] = Field(None, serialization_alias="s3AuthMethod")
         """Method used to authorize access to the S3-compatible storage bucket specified in s3BucketName.
 
 Ops Manager accepts the following values:
@@ -634,9 +604,7 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """Positive integer indicating the maximum number of connections to this S3-compatible storage blockstore.
         """
 
-        s3_region_override: Optional[str] = Field(
-            serialization_alias="s3RegionOverride"
-        )
+        s3_region_override: Optional[str] = Field(None, serialization_alias="s3RegionOverride")
         """Region where your S3-compatible storage bucket resides.
 
 Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn't support region scoping. Don't use this field with AWS S3 buckets.
@@ -646,7 +614,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Flag that indicates whether this S3-compatible storage blockstore enables server-side encryption.
         """
 
-        ssl: Optional[bool] = Field(serialization_alias="ssl")
+        ssl: Optional[bool] = Field(None, serialization_alias="ssl")
         """Flag that indicates whether this S3-compatible storage blockstore only accepts connections encrypted using TLS.
         """
 
@@ -654,9 +622,7 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
         """Comma-separated list of hosts in the <hostname:port> format that can access this S3-compatible storage blockstore.
         """
 
-        write_concern: Optional[WriteConcern] = Field(
-            serialization_alias="writeConcern"
-        )
+        write_concern: Optional[WriteConcern] = Field(None, serialization_alias="writeConcern")
         """Write concern used for this blockstore.
 
 Ops Manager accepts the following values:

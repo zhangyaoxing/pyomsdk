@@ -61,7 +61,7 @@ Expected response body
     class AddUsersBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        id: Optional[str] = Field(serialization_alias="id")
+        id: Optional[str] = Field(None, serialization_alias="id")
         """The unique ID of the user you want to add to the team
         """
 
@@ -134,7 +134,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        name: Optional[str] = Field(serialization_alias="name")
+        name: Optional[str] = Field(None, serialization_alias="name")
         """The name of the team you want to create.
         """
 
@@ -252,9 +252,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -306,9 +304,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -644,13 +640,13 @@ Expected response body
     class UpdateRolesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Flag that specifies whether or not to wrap the response in an envelope.
 
 Defaults to false.
         """
 
-        pretty: Optional[bool] = Field(serialization_alias="pretty")
+        pretty: Optional[bool] = Field(None, serialization_alias="pretty")
         """Flag that specifies whether or not to return a "pretty-printed" JSON document.
 
 Defaults to false.

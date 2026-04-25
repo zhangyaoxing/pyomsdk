@@ -25,7 +25,7 @@ class PerformanceAdvisorResource(BaseResource):
     class GetSlowQueryLogsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        duration: Optional[int] = Field(serialization_alias="duration")
+        duration: Optional[int] = Field(None, serialization_alias="duration")
         """Length of time in milliseconds during which to find slow query logs among the managed namespaces in the cluster.
         """
 
@@ -51,7 +51,7 @@ For example:
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        since: Optional[int] = Field(serialization_alias="since")
+        since: Optional[int] = Field(None, serialization_alias="since")
         """Point in time from which to retrieve slow query logs, stated in milliseconds since epoch.
         """
 
@@ -91,7 +91,7 @@ For example:
     class GetSuggestedIndexesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        duration: Optional[int] = Field(serialization_alias="duration")
+        duration: Optional[int] = Field(None, serialization_alias="duration")
         """Length of time in milliseconds during which to find suggested indexes among the managed namespaces in the cluster.
         """
 
@@ -103,7 +103,7 @@ For example:
         """Maximum number of examples queries to provide that will be improved by a suggested index.
         """
 
-        n_indexes: Optional[int] = Field(serialization_alias="nIndexes")
+        n_indexes: Optional[int] = Field(None, serialization_alias="nIndexes")
         """Maximum number of indexes to suggest.
         """
 
@@ -121,7 +121,7 @@ For example:
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        since: Optional[int] = Field(serialization_alias="since")
+        since: Optional[int] = Field(None, serialization_alias="since")
         """Point in time from which to retrieve suggested indexes, stated in milliseconds since epoch.
         """
 
@@ -161,19 +161,19 @@ For example:
     class GetNamespacesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        duration: Optional[float] = Field(serialization_alias="duration")
+        duration: Optional[float] = Field(None, serialization_alias="duration")
         """Length of time from the since parameter, in milliseconds, for which you want to receive results. If you do not also specify the since parameter, the endpoint returns results from the number of milliseconds specified by duration before the current time until now.
         """
 
-        envelope: Optional[bool] = Field(serialization_alias="envelope")
+        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
         """Specifies whether or not to wrap the response in an envelope. The default is false.
         """
 
-        pretty: Optional[bool] = Field(serialization_alias="pretty")
+        pretty: Optional[bool] = Field(None, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format. The default value is false.
         """
 
-        since: Optional[float] = Field(serialization_alias="since")
+        since: Optional[float] = Field(None, serialization_alias="since")
         """Point in time, specified as milliseconds since the Unix Epoch, from which you want to receive results. If you do not also specify the duration parameter, the endpoint returns results from since until the current time.
         """
 

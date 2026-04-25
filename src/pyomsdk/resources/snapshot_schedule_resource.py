@@ -131,17 +131,17 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_checkpoint_interval_min: Optional[float] = Field(
-            serialization_alias="clusterCheckpointIntervalMin"
+            None, serialization_alias="clusterCheckpointIntervalMin"
         )
         """Number of minutes between successive cluster checkpoints. This only applies to sharded clusters. This number determines the granularity of point-in-time restores for sharded clusters. You can set a value of 15, 30, or 60.
         """
 
-        cluster_id: Optional[str] = Field(serialization_alias="clusterId")
+        cluster_id: Optional[str] = Field(None, serialization_alias="clusterId")
         """Unique identifier of the cluster to which this backup configuration applies.
         """
 
         daily_snapshot_retention_days: Optional[float] = Field(
-            serialization_alias="dailySnapshotRetentionDays"
+            None, serialization_alias="dailySnapshotRetentionDays"
         )
         """Number of days to retain daily snapshots. Accepted values are: 0, 3, 4, 5, 6, 7, 15, 30, 60, 90, 120, 180, 360.
 
@@ -149,21 +149,21 @@ Setting dailySnapshotRetentionDays to 0 disables this rule.
         """
 
         full_incremental_day_of_week: Optional[str] = Field(
-            serialization_alias="fullIncrementalDayOfWeek"
+            None, serialization_alias="fullIncrementalDayOfWeek"
         )
         """Day of the week when Ops Manager takes a full snapshot. This ensures a recent complete backup. Ops Manager sets the default value to SUNDAY.
         """
 
-        group_id: Optional[str] = Field(serialization_alias="groupId")
+        group_id: Optional[str] = Field(None, serialization_alias="groupId")
         """Unique identifier of the project that owns the backup configuration.
         """
 
-        links: Optional[list[dict]] = Field(serialization_alias="links")
+        links: Optional[list[dict]] = Field(None, serialization_alias="links")
         """One or more links to sub-resources or related resources. All links arrays in responses include at least one link called self. The relationships between URLs are explained in the Web Linking Specification.
         """
 
         monthly_snapshot_retention_months: Optional[float] = Field(
-            serialization_alias="monthlySnapshotRetentionMonths"
+            None, serialization_alias="monthlySnapshotRetentionMonths"
         )
         """Number of months to retain monthly snapshots. You can set a value between 1 and 36, inclusive.
 
@@ -171,25 +171,25 @@ Setting monthlySnapshotRetentionMonths to 0 disables this rule.
         """
 
         point_in_time_window_hours: Optional[float] = Field(
-            serialization_alias="pointInTimeWindowHours"
+            None, serialization_alias="pointInTimeWindowHours"
         )
         """Number of hours in the past for which a point-in-time snapshot can be created.
         """
 
         reference_hour_of_day: Optional[float] = Field(
-            serialization_alias="referenceHourOfDay"
+            None, serialization_alias="referenceHourOfDay"
         )
         """Hour of the day to schedule snapshots using a 24 hour clock. You can set a value between 0 and 23, inclusive.
         """
 
         reference_minute_of_hour: Optional[float] = Field(
-            serialization_alias="referenceMinuteOfHour"
+            None, serialization_alias="referenceMinuteOfHour"
         )
         """Minute of the hour to schedule snapshots. You can set a value between 0 and 59, inclusive.
         """
 
         reference_time_zone_offset: Optional[str] = Field(
-            serialization_alias="referenceTimeZoneOffset"
+            None, serialization_alias="referenceTimeZoneOffset"
         )
         """The ISO-8601 timezone offset where the Ops Manager host resides. To avoid problems with daylight saving time, use UTC. The default is +0000, which is equivalent to UTC. Z is also a supported value and equivalent to UTC.
 
@@ -199,19 +199,19 @@ For example, you pass in a request with a referenceHourOfDay of 5 and a referenc
         """
 
         snapshot_interval_hours: Optional[float] = Field(
-            serialization_alias="snapshotIntervalHours"
+            None, serialization_alias="snapshotIntervalHours"
         )
         """Number of hours between snapshots. You can set a value of 6, 8, 12, or 24.
         """
 
         snapshot_retention_days: Optional[float] = Field(
-            serialization_alias="snapshotRetentionDays"
+            None, serialization_alias="snapshotRetentionDays"
         )
         """Number of days to keep recent snapshots. You can set a value between 2 and 5, inclusive.
         """
 
         weekly_snapshot_retention_weeks: Optional[float] = Field(
-            serialization_alias="weeklySnapshotRetentionWeeks"
+            None, serialization_alias="weeklySnapshotRetentionWeeks"
         )
         """Number of weeks to retain weekly snapshots. You can set a value between 1 and 52, inclusive.
 

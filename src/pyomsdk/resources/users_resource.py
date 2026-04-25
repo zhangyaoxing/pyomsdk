@@ -14,7 +14,7 @@ class UsersResource(BaseResource):
     class CreateFirstUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        whitelist: Optional[str] = Field(serialization_alias="whitelist")
+        whitelist: Optional[str] = Field(None, serialization_alias="whitelist")
         """IP address that you want to add to the whitelist for the first Ops Manager user.
 
 You can add more than one whitelist parameter and value.
@@ -23,7 +23,7 @@ You can add more than one whitelist parameter and value.
     class CreateFirstUserBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        email_address: Optional[str] = Field(serialization_alias="emailAddress")
+        email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
         """Email address of the first Ops Manager user.
         """
 
@@ -138,23 +138,23 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        email_address: Optional[str] = Field(serialization_alias="emailAddress")
+        email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
         """Email address of the Ops Manager user.
         """
 
-        first_name: Optional[str] = Field(serialization_alias="firstName")
+        first_name: Optional[str] = Field(None, serialization_alias="firstName")
         """First name of the Ops Manager user.
         """
 
-        last_name: Optional[str] = Field(serialization_alias="lastName")
+        last_name: Optional[str] = Field(None, serialization_alias="lastName")
         """Last name of the Ops Manager user.
         """
 
-        mobile_number: Optional[str] = Field(serialization_alias="mobileNumber")
+        mobile_number: Optional[str] = Field(None, serialization_alias="mobileNumber")
         """Mobile telephone number of the Ops Manager user.
         """
 
-        password: Optional[str] = Field(serialization_alias="password")
+        password: Optional[str] = Field(None, serialization_alias="password")
         """Password of the Ops Manager user.
 
 This field is not included in the entity returned from the server. It can be sent only in the entity body when you create a new user.
@@ -163,17 +163,17 @@ This field is not included in the entity returned from the server. It can be sen
         class RolesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field(serialization_alias="groupId")
+            group_id: Optional[str] = Field(None, serialization_alias="groupId")
             """Unique identifier of the group in which the Ops Manager user has the specified role.
 
 For the "global" roles (those whose name starts with GLOBAL_) there is no groupId since these roles are not tied to a group.
             """
 
-            org_id: Optional[str] = Field(serialization_alias="orgId")
+            org_id: Optional[str] = Field(None, serialization_alias="orgId")
             """Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
 
-            role_name: Optional[AllRole] = Field(serialization_alias="roleName")
+            role_name: Optional[AllRole] = Field(None, serialization_alias="roleName")
             """Name of the role. Accepted values are:
 
 Value
@@ -351,7 +351,7 @@ GLOBAL_USER_ADMIN
 Global User Admin
             """
 
-        roles: Optional[list[RolesParams]] = Field(serialization_alias="roles")
+        roles: Optional[list[RolesParams]] = Field(None, serialization_alias="roles")
         """Role assignments of the Ops Manager user.
         """
 
@@ -592,17 +592,17 @@ Expected response body
         class RolesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            group_id: Optional[str] = Field(serialization_alias="groupId")
+            group_id: Optional[str] = Field(None, serialization_alias="groupId")
             """Unique identifier of the project in which the Ops Manager user has the specified role.
 
 Roles that start with GLOBAL_ don't require a groupId. These roles aren't tied to a project.
             """
 
-            org_id: Optional[str] = Field(serialization_alias="orgId")
+            org_id: Optional[str] = Field(None, serialization_alias="orgId")
             """Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
 
-            role_name: Optional[AllRole] = Field(serialization_alias="roleName")
+            role_name: Optional[AllRole] = Field(None, serialization_alias="roleName")
             """Name of the role. Accepted values are:
 
 Value

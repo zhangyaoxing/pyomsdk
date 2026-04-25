@@ -57,12 +57,12 @@ Expected response body
     class BeginMonitoringBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alerts_enabled: Optional[bool] = Field(serialization_alias="alertsEnabled")
+        alerts_enabled: Optional[bool] = Field(None, serialization_alias="alertsEnabled")
         """Set to true if alerts should be enabled for this MongoDB process.
         """
 
         auth_mechanism_name: Optional[AuthMechanismName] = Field(
-            serialization_alias="authMechanismName"
+            None, serialization_alias="authMechanismName"
         )
         """Specify which authentication mechanism should be used to connect to this MongoDB process. Possible values are:
 
@@ -81,11 +81,11 @@ NONE
         """Set the primary hostname Ops Manager should use to connect to this MongoDB instance.
         """
 
-        logs_enabled: Optional[bool] = Field(serialization_alias="logsEnabled")
+        logs_enabled: Optional[bool] = Field(None, serialization_alias="logsEnabled")
         """Set to true if Ops Manager should collect logs for this MongoDB process.
         """
 
-        password: Optional[str] = Field(serialization_alias="password")
+        password: Optional[str] = Field(None, serialization_alias="password")
         """Password associated with username for connecting to this MongoDB process.
 
 Set this parameter if "authMechanismName" : "MONGODB_CR"
@@ -97,17 +97,17 @@ Ops Manager doesn't include this parameter in any Host || response.
         """Port on which MongoDB process listens.
         """
 
-        profiler_enabled: Optional[bool] = Field(serialization_alias="profilerEnabled")
+        profiler_enabled: Optional[bool] = Field(None, serialization_alias="profilerEnabled")
         """Flag indicating whether Ops Manager collects profile information from this MongoDB process.
         """
 
-        ssl_enabled: Optional[bool] = Field(serialization_alias="sslEnabled")
+        ssl_enabled: Optional[bool] = Field(None, serialization_alias="sslEnabled")
         """Flag indicating whether TLS should be enabled for this MongoDB process.
 
 Set to true if "authMechanismName" : "MONGODB_X509".
         """
 
-        username: Optional[str] = Field(serialization_alias="username")
+        username: Optional[str] = Field(None, serialization_alias="username")
         """Username needed to connect to this MongoDB process.
 
 Required if "authMechanismName" : "MONGODB_CR"
@@ -227,9 +227,7 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[float] = Field(
-            100.0, serialization_alias="itemsPerPage"
-        )
+        items_per_page: Optional[float] = Field(100.0, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
@@ -455,12 +453,12 @@ Expected response body
     class UpdateConfigurationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        alerts_enabled: Optional[bool] = Field(serialization_alias="alertsEnabled")
+        alerts_enabled: Optional[bool] = Field(None, serialization_alias="alertsEnabled")
         """Set to true if alerts should be enabled for this MongoDB process.
         """
 
         auth_mechanism_name: Optional[AuthMechanismName] = Field(
-            serialization_alias="authMechanismName"
+            None, serialization_alias="authMechanismName"
         )
         """Specify which authentication mechanism should be used to connect to this MongoDB process. Possible values are:
 
@@ -475,23 +473,23 @@ MONGODB_X509
 NONE
         """
 
-        logs_enabled: Optional[bool] = Field(serialization_alias="logsEnabled")
+        logs_enabled: Optional[bool] = Field(None, serialization_alias="logsEnabled")
         """Set to true if Ops Manager should collect logs for this MongoDB process.
         """
 
-        password: Optional[str] = Field(serialization_alias="password")
+        password: Optional[str] = Field(None, serialization_alias="password")
         """Password for connecting to this MongoDB process. Specify if "authMechanismName" : "MONGODB_CR" or "authMechanismName" : "SCRAM_SHA_1". However, it will never be exposed when a host entity is returned.
         """
 
-        profiler_enabled: Optional[bool] = Field(serialization_alias="profilerEnabled")
+        profiler_enabled: Optional[bool] = Field(None, serialization_alias="profilerEnabled")
         """Set to true if Ops Manager collects profile information from this MongoDB process.
         """
 
-        ssl_enabled: Optional[bool] = Field(serialization_alias="sslEnabled")
+        ssl_enabled: Optional[bool] = Field(None, serialization_alias="sslEnabled")
         """Set to true if TLS/SSL should be enabled for this MongoDB process. Set to true if "authMechanismName" : "MONGODB_X509".
         """
 
-        username: Optional[str] = Field(serialization_alias="username")
+        username: Optional[str] = Field(None, serialization_alias="username")
         """Username needed to connect to this MongoDB process. Specify if "authMechanismName" : "MONGODB_CR" or "authMechanismName" : "SCRAM_SHA_1".
         """
 
