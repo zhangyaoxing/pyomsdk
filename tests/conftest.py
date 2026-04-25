@@ -1,9 +1,11 @@
 import os
-from typing import Any
 import pytest
 from pyomsdk import OpsManagerClient
-from pyomsdk.resources.enums import AllRole
-from pyomsdk.resources.users_resource import UsersResource
+from tests.shared.accesslist import add_accesslist, delete_accesslist, random_ip
+from tests.shared.org import create_org, delete_org
+from tests.shared.user import add_user, get_user_info, delete_user
+from tests.shared.project import create_project, delete_project
+from tests.shared.agent import create_agent_api_key, delete_agent_api_key
 
 
 @pytest.fixture(name="client")
@@ -15,45 +17,40 @@ def get_client():
     yield client
 
 
-def get_user_info(
-    username: str = "new.user",
-    email_address: str = "new.user@example.com",
-    first_name: str = "New",
-    last_name: str = "User",
-    password: str = "Passw0rd!",
-) -> dict[str, Any]:
-    return {
-        "email_address": email_address,
-        "first_name": first_name,
-        "last_name": last_name,
-        "password": password,
-        "username": username,
-    }
-
-
-def add_user(client: OpsManagerClient, user_info: dict[str, Any]) -> dict[str, Any]:
-    users_resource = client.users_resource
-    body_params = UsersResource.CreateBodyParams(
-        **user_info,
-        roles=[
-            UsersResource.CreateBodyParams.RolesParams(
-                role_name=AllRole.GLOBAL_OWNER,
-            )
-        ],
-    )
-    return users_resource.create(None, body_params)
-
-
-def delete_user(client: OpsManagerClient, user_id: str) -> None:
-    users_resource = client.users_resource
-    path_params = UsersResource.DeletePathParams(user_id=user_id)
-    users_resource.delete(path_params, None)
-
-
 @pytest.fixture(name="user")
-def new_user(client):
-    result = add_user(client, get_user_info())
+def new_user(client: OpsManagerClient):
+    user = add_user(client, get_user_info())
+    yield user
+    delete_user(client, user["id"])
 
-    yield result
 
-    delete_user(client, result["id"])
+@pytest.fixture(name="org")
+def new_organization(client: OpsManagerClient):
+    org = create_org(client, "Temp Org for Testing")
+    yield org
+    delete_org(client, org["id"])
+
+
+@pytest.fixture(name="project")
+def new_project(client: OpsManagerClient, org: dict):
+    project = create_project(client, org["id"])
+    yield project
+    delete_project(client, project["id"])
+
+
+@pytest.fixture(name="api_key")
+def new_api_key(client: OpsManagerClient, project: dict):
+    api_key = create_agent_api_key(client, project["id"])
+    yield api_key
+    delete_agent_api_key(client, api_key["id"])
+
+
+@pytest.fixture(name="user_with_access_list_entry")
+def _user_with_access_list_entry_fixture(
+    client: OpsManagerClient,
+    user: dict,
+):
+    ip_address = random_ip()
+    add_accesslist(client, user["id"], ip_address)
+    yield user, ip_address
+    delete_accesslist(client, user["id"], ip_address)

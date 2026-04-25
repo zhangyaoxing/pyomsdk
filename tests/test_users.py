@@ -1,5 +1,5 @@
 from typing import Any
-from conftest import get_user_info, add_user, delete_user
+from tests.shared.user import get_user_info, add_user, delete_user
 from pyomsdk.resources.enums import AllRole
 from pyomsdk.resources.users_resource import UsersResource
 
@@ -77,11 +77,7 @@ def test_users_update_roles(client, user) -> None:
 
 
 def test_users_delete(client) -> None:
-    resource = client.users_resource
     created_user = add_user(client, get_user_info())
-
-    path_params = UsersResource.DeletePathParams(user_id=created_user["id"])
-
-    result = resource.delete(path_params, None)
+    result = delete_user(client, created_user["id"])
 
     assert result is None
