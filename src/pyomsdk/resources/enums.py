@@ -9,6 +9,9 @@ class ServerTypeName(str, Enum):
     PRODUCTION_SERVER = "PRODUCTION_SERVER"
     RAM_POOL = "RAM_POOL"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class ServerTypeLabel(str, Enum):
     """Enum for server type labels."""
@@ -17,6 +20,9 @@ class ServerTypeLabel(str, Enum):
     TEST_SERVER = "Test Server"
     PRODUCTION_SERVER = "Production Server"
     RAM_POOL = "Ram Pool"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class Policy(str, Enum):
@@ -52,12 +58,18 @@ class Policy(str, Enum):
     DISABLE_MONGOD_HOST_MANAGEMENT = "DISABLE_MONGOD_HOST_MANAGEMENT"
     """Users can't change the server type of hosts."""
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class HeadDiskType(str, Enum):
     """Type of disk used to store the head directory."""
 
     HDD = "HDD"
     SSD = "SSD"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class OplogStoreFilterType(str, Enum):
@@ -67,6 +79,9 @@ class OplogStoreFilterType(str, Enum):
     S3_OPLOG_STORE = "s3OplogStore"
     THIRD_PARTY_OPLOG_STORE = "thirdPartyOplogStore"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class SnapshotStoreFilterType(str, Enum):
     """The type of the specific snapshot store given as `snapshotStoreFilter.id`."""
@@ -74,6 +89,9 @@ class SnapshotStoreFilterType(str, Enum):
     S3_BLOCK_STORE = "s3blockstore"
     BLOCK_STORE = "blockstore"
     FILE_SYSTEM_STORE = "fileSystemStore"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class WriteConcern(str, Enum):
@@ -84,6 +102,9 @@ class WriteConcern(str, Enum):
     JOURNALED = "JOURNALED"
     MAJORITY = "MAJORITY"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class S3AuthMethod(str, Enum):
     """Enum for S3 authentication methods."""
@@ -93,6 +114,9 @@ class S3AuthMethod(str, Enum):
     IAM_ROLE = "IAM_ROLE"
     """Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in s3BucketName. awsAccessKey and awsSecretKey fields are ignored. To learn more, see the AWS documentation"""
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class AgentType(str, Enum):
     """Enum for agent types."""
@@ -100,6 +124,9 @@ class AgentType(str, Enum):
     MONITORING = "MONITORING"
     BACKUP = "BACKUP"
     AUTOMATION = "AUTOMATION"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class EventTypeName(str, Enum):
@@ -212,6 +239,9 @@ class EventTypeName(str, Enum):
     REQUESTED_TO_JOIN_GROUP = "REQUESTED_TO_JOIN_GROUP"
     USER_ROLES_CHANGED_AUDIT = "USER_ROLES_CHANGED_AUDIT"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class MatcherFieldName(str, Enum):
     """Enum for field name matchers."""
@@ -223,6 +253,9 @@ class MatcherFieldName(str, Enum):
     TYPE_NAME = "TYPE_NAME"
     SHARD_NAME = "SHARD_NAME"
     CLUSTER_NAME = "CLUSTER_NAME"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class MatcherOperator(str, Enum):
@@ -236,6 +269,9 @@ class MatcherOperator(str, Enum):
     ENDS_WITH = "ENDS_WITH"
     REGEX = "REGEX"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class MatcherValue(str, Enum):
     """Enum for value matchers."""
@@ -246,12 +282,18 @@ class MatcherValue(str, Enum):
     CONFIG = "CONFIG"
     MONGOS = "MONGOS"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class ThresholdOperator(str, Enum):
     """Enum for metric threshold operators."""
 
     GREATER_THAN = "GREATER_THAN"
     LESS_THAN = "LESS_THAN"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class Unit(str, Enum):
@@ -274,6 +316,9 @@ class Unit(str, Enum):
     HOURS = "HOURS"
     DAYS = "DAYS"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class NotificationsTypeName(str, Enum):
     """Enum for notifications type names."""
@@ -289,6 +334,9 @@ class NotificationsTypeName(str, Enum):
     USER = "USER"
     WEBHOOK = "WEBHOOK"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class AlertStatus(str, Enum):
     """Enum for alert statuses."""
@@ -302,6 +350,9 @@ class AlertStatus(str, Enum):
 
 If an alert's configuration has multiple notifications, each with its own notification delay, Ops Manager uses the smallest delay value to determine when to move the alert from TRACKING to OPEN."""
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class GlobalRole(str, Enum):
     """Enum for Ops Manager roles."""
@@ -312,6 +363,9 @@ class GlobalRole(str, Enum):
     GLOBAL_OWNER = "GLOBAL_OWNER"
     GLOBAL_READ_ONLY = "GLOBAL_READ_ONLY"
     GLOBAL_USER_ADMIN = "GLOBAL_USER_ADMIN"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class AuthMechanismName(str, Enum):
@@ -324,6 +378,9 @@ class AuthMechanismName(str, Enum):
     MONGODB_X509 = "MONGODB_X509"
     NONE = "NONE"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class BackupStatusName(str, Enum):
     """Enum for backup status names."""
@@ -334,12 +391,18 @@ class BackupStatusName(str, Enum):
     STOPPED = "STOPPED"
     TERMINATING = "TERMINATING"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class StorageEngineName(str, Enum):
     """Enum for storage engine names."""
 
     MEMORY_MAPPED = "MEMORY_MAPPED"
     WIRED_TIGER = "WIRED_TIGER"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class GroupRole(str, Enum):
@@ -355,6 +418,9 @@ class GroupRole(str, Enum):
     GROUP_AUTOMATION_ADMIN = "GROUP_AUTOMATION_ADMIN"
     GROUP_USER_ADMIN = "GROUP_USER_ADMIN"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class ResourceType(str, Enum):
     """Enum for resource types."""
@@ -366,6 +432,9 @@ class ResourceType(str, Enum):
     REPLICASET = "REPLICASET"
     """For a replica set."""
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class LogType(str, Enum):
     """Enum for log types."""
@@ -376,6 +445,9 @@ class LogType(str, Enum):
     MONGODB = "MONGODB"
     FTDC = "FTDC"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class OrgRole(str, Enum):
     """Enum for organization role names."""
@@ -385,12 +457,18 @@ class OrgRole(str, Enum):
     ORG_MEMBER = "ORG_MEMBER"
     ORG_GROUP_CREATOR = "ORG_GROUP_CREATOR"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class DeliveryMethodName(str, Enum):
     """Enum for delivery method names."""
 
     AUTOMATED_RESTORE = "AUTOMATED_RESTORE"
     HTTP = "HTTP"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class SnapshotCompletedState(str, Enum):
@@ -402,6 +480,9 @@ class SnapshotCompletedState(str, Enum):
     """Return only incomplete snapshots"""
     ALL = "all"
     """Return both completed and incomplete snapshots"""
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class IntegrationType(str, Enum):
@@ -417,6 +498,9 @@ class IntegrationType(str, Enum):
     WEBHOOK = "WEBHOOK"
     MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
     PROMETHEUS = "PROMETHEUS"
+
+    def __str__(self) -> str:
+        return self.value
 
 
 class AllRole(str, Enum):
@@ -442,6 +526,9 @@ class AllRole(str, Enum):
     GROUP_AUTOMATION_ADMIN = GroupRole.GROUP_AUTOMATION_ADMIN.value
     GROUP_USER_ADMIN = GroupRole.GROUP_USER_ADMIN.value
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class PrometheusServiceDiscoveryType(str, Enum):
     """Enum for Prometheus service discovery types."""
@@ -449,9 +536,15 @@ class PrometheusServiceDiscoveryType(str, Enum):
     FILE = "file"
     HTTP = "http"
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class PrometheusScheme(str, Enum):
     """Enum for Prometheus schemes."""
 
     HTTP = "http"
     HTTPS = "https"
+
+    def __str__(self) -> str:
+        return self.value
