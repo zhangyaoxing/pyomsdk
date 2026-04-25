@@ -56,6 +56,9 @@ class OpsManagerClient:
         self, base_url: str, public_key: str, private_key: str, timeout: float = 30.0
     ) -> None:
         ver_num: str = version("ops-manager-sdk")
+        assert (
+            base_url and public_key and private_key
+        ), "Base URL, public key, and private key are required to initialize the OpsManagerClient."
         auth: Auth = DigestAuth(public_key, private_key)
         self._client = Client(
             base_url=f"{base_url.rstrip('/')}/api/public/v1.0",
