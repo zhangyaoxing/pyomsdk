@@ -7,7 +7,6 @@ import pytest
 # Pylint does not understand pytest fixture injection and reports false positives.
 # pylint: disable=redefined-outer-name
 
-from conftest import get_client
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.access_list_resource import AccessListResource
 

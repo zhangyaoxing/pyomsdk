@@ -1,5 +1,5 @@
 from typing import Any
-from conftest import get_user_info, get_client, add_user, delete_user
+from conftest import get_user_info, add_user, delete_user
 from pyomsdk.resources.enums import AllRole
 from pyomsdk.resources.users_resource import UsersResource
 
