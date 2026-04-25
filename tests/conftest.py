@@ -1,17 +1,18 @@
-import pytest
 import os
 from typing import Any
+import pytest
 from pyomsdk import OpsManagerClient
 from pyomsdk.resources.enums import AllRole
 from pyomsdk.resources.users_resource import UsersResource
 
 
-def get_client() -> OpsManagerClient:
+@pytest.fixture(name="client")
+def get_client():
     public_key = os.getenv("PUBLIC_KEY", "")
     private_key = os.getenv("PRIVATE_KEY", "")
     base_url = os.getenv("BASE_URL", "")
     client = OpsManagerClient(base_url=base_url, public_key=public_key, private_key=private_key)
-    return client
+    yield client
 
 
 def get_user_info(
@@ -50,8 +51,7 @@ def delete_user(client: OpsManagerClient, user_id: str) -> None:
 
 
 @pytest.fixture(name="user")
-def new_user():
-    client = get_client()
+def new_user(client):
     result = add_user(client, get_user_info())
 
     yield result

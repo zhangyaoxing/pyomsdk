@@ -1,47 +1,102 @@
-from shared import get_client
+from collections.abc import Generator
+from typing import Any
+from uuid import uuid4
+
+import pytest
+
+# Pylint does not understand pytest fixture injection and reports false positives.
+# pylint: disable=redefined-outer-name
+
+from conftest import get_client
+from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.access_list_resource import AccessListResource
 
 
-def test_access_list_add_entries() -> None:
-    client = get_client()
+def _random_ip_address() -> str:
+    host = 1 + (int(uuid4().hex[:2], 16) % 254)
+    return f"203.0.113.{host}"
+
+
+def _add_access_list_entry(client: Any, user_id: str, ip_address: str) -> None:
+    access_list_resource = client.access_list_resource
+    path_params = AccessListResource.AddEntriesPathParams(user_id=user_id)
+    body_params = [AccessListResource.AddEntriesBodyParams(ip_address=ip_address)]
+    access_list_resource.add_entries(path_params, None, body_params)
+
+
+def _delete_access_list_entry(client: Any, user_id: str, ip_address: str) -> None:
+    access_list_resource = client.access_list_resource
+    path_params = AccessListResource.DeleteEntryPathParams(
+        user_id=user_id,
+        access_list_entry=ip_address,
+    )
+    access_list_resource.delete_entry(path_params, None)
+
+
+@pytest.fixture(name="user_with_access_list_entry")
+def _user_with_access_list_entry_fixture(
+    client: OpsManagerClient,
+    user: dict[str, Any],
+) -> Generator[tuple[dict[str, Any], str], None, None]:
+    ip_address = _random_ip_address()
+    _add_access_list_entry(client, user["id"], ip_address)
+    yield user, ip_address
+    _delete_access_list_entry(client, user["id"], ip_address)
+
+
+def test_access_list_add_entries(client: OpsManagerClient, user: dict[str, Any]) -> None:
     resource = client.access_list_resource
+    ip_address = _random_ip_address()
 
-    path_params = AccessListResource.AddEntriesPathParams(user_id="user-1")
-    query_params = AccessListResource.AddEntriesQueryParams(envelope=True, page_num=2)
-    body_params = [AccessListResource.AddEntriesBodyParams(ip_address="192.168.1.1")]
+    path_params = AccessListResource.AddEntriesPathParams(user_id=user["id"])
+    body_params = [AccessListResource.AddEntriesBodyParams(ip_address=ip_address)]
 
-    resource.add_entries(path_params, query_params, body_params)
+    result = resource.add_entries(path_params, None, body_params)
+    assert result is not None
+
+    _delete_access_list_entry(client, user["id"], ip_address)
 
 
-def test_access_list_delete_entry() -> None:
-    client = get_client()
+def test_access_list_delete_entry(client: OpsManagerClient, user: dict[str, Any]) -> None:
     resource = client.access_list_resource
+    ip_address = _random_ip_address()
+
+    _add_access_list_entry(client, user["id"], ip_address)
 
     path_params = AccessListResource.DeleteEntryPathParams(
-        user_id="user-1", access_list_entry="10.0.0.1"
+        user_id=user["id"],
+        access_list_entry=ip_address,
     )
-    query_params = AccessListResource.DeleteEntryQueryParams(pretty=True)
 
-    resource.delete_entry(path_params, query_params)
+    result = resource.delete_entry(path_params, None)
+    assert result is None
 
 
-def test_access_list_get_for_current_user() -> None:
-    client = get_client()
+def test_access_list_get_for_current_user(
+    client: OpsManagerClient,
+    user_with_access_list_entry: tuple[dict[str, Any], str],
+) -> None:
     resource = client.access_list_resource
+    created_user, _ = user_with_access_list_entry
 
-    path_params = AccessListResource.GetForCurrentUserPathParams(user_id="user-1")
-    query_params = AccessListResource.GetForCurrentUserQueryParams(items_per_page=50, page_num=3)
+    path_params = AccessListResource.GetForCurrentUserPathParams(user_id=created_user["id"])
+    query_params = AccessListResource.GetForCurrentUserQueryParams(items_per_page=50, page_num=1)
 
-    resource.get_for_current_user(path_params, query_params)
+    result = resource.get_for_current_user(path_params, query_params)
+    assert result is not None
 
 
-def test_access_list_get_for_ip_address() -> None:
-    client = get_client()
+def test_access_list_get_for_ip_address(
+    client: OpsManagerClient,
+    user_with_access_list_entry: tuple[dict[str, Any], str],
+) -> None:
     resource = client.access_list_resource
+    created_user, ip_address = user_with_access_list_entry
 
     path_params = AccessListResource.GetForIpAddressPathParams(
-        user_id="user-1", access_list_entry="203.0.113.5"
+        user_id=created_user["id"],
+        access_list_entry=ip_address,
     )
-    query_params = AccessListResource.GetForIpAddressQueryParams(envelope=True)
 
-    resource.get_for_ip_address(path_params, query_params)
+    result = resource.get_for_ip_address(path_params, None)
+    assert result is not None
