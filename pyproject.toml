@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ops-manager-sdk"
+version = "0.1.0"
+description = "Python SDK for MongoDB Ops Manager API"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Yaoxing" }]
+dependencies = ["httpx>=0.27,<1.0", "pydantic>=2.7,<3.0"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+    "pylint>=3.2,<4.0",
+    "black>=25.1,<26.0",
+    "mypy>=1.10,<2.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pylint.main]
+py-version = "3.10"
+jobs = 0
+init-hook = "import sys; from pathlib import Path; sys.path.append(str(Path().resolve() / 'src'))"
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "too-few-public-methods",
+    "duplicate-code",
+]
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = ["src"]
+files = ["src", "tests"]
+pretty = true
+show_error_codes = true
+explicit_package_bases = true
+plugins = ["pydantic.mypy"]
