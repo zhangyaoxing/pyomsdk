@@ -40,7 +40,6 @@ def test_alerts_get_all(client: OpsManagerClient, project) -> None:
     """Test getting all alerts in a project."""
     resource = client.alerts_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(

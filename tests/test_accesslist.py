@@ -1,7 +1,5 @@
 from typing import Any
 
-import pytest
-
 # Pylint does not understand pytest fixture injection and reports false positives.
 # pylint: disable=redefined-outer-name
 
@@ -36,10 +34,6 @@ def test_access_list_delete_entry(client: OpsManagerClient, user: dict[str, Any]
     )
 
     result = resource.delete_entry(path_params, None)
-    if isinstance(result, dict) and result.get("errorCode") == "ACCESS_LIST_ACCESS_DENIED":
-        pytest.skip(
-            "Current API credentials cannot remove access list entries for the created user"
-        )
     assert result is None
 
 
