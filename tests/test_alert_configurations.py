@@ -57,6 +57,7 @@ def test_alert_configurations_get_all_for_a_project(
 
     result = resource.get_all_for_a_project(path_params, query_params)
     assert result is not None
+    assert "error" not in result
 
     configs = _results_list(result)
     assert isinstance(configs, list)
@@ -77,6 +78,7 @@ def test_alert_configurations_get_one(
 
     result = resource.get_one(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert _alert_config_id(result) == alert_config_id
 
 
@@ -107,6 +109,7 @@ def test_alert_configurations_get_matchers_field_names(client: OpsManagerClient)
 
     result = resource.get_matchers_field_names(query_params)
     assert result is not None
+    assert "error" not in result
 
     if isinstance(result, dict):
         field_names = result.get("fieldNames") or result.get("results") or []
