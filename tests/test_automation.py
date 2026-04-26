@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 def test_automation_get_status(client: OpsManagerClient, project) -> None:
     resource = client.automation_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
@@ -32,6 +31,7 @@ def test_automation_get_status(client: OpsManagerClient, project) -> None:
 
     result = resource.get_status(path_params, query_params)
     assert result is not None
+
 
 def test_automation_get_status_of_last_50_plans(client: OpsManagerClient, project) -> None:
     """Test get_status_of_last_50_plans."""
@@ -58,4 +58,3 @@ def test_automation_get_status_of_last_50_plans(client: OpsManagerClient, projec
     result = resource.get_status_of_last_50_plans(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
-

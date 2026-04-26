@@ -64,13 +64,13 @@ Expected response body
         ### Document:
         [Get Status of Last 50 Plans](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status-full/)
         ### Endpoint:
-        `GET /groups/GROUP-ID/automationStatus/full`
+        `GET /groups/{GROUP-ID}/automationStatus/full`
         ### Description
         No description.
         """
         return self._request(
             "GET",
-            "/groups/GROUP-ID/automationStatus/full",
+            "/groups/{GROUP-ID}/automationStatus/full",
             path_params,
             query_params,
             None,
