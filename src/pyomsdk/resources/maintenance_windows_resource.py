@@ -90,7 +90,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/maintenanceWindows/",
+            "/api/public/v1.0/groups/{PROJECT-ID}/maintenanceWindows/",
             path_params,
             query_params,
             body_params,
@@ -159,7 +159,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
             path_params,
             query_params,
             None,
@@ -224,7 +224,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/maintenanceWindows/",
+            "/api/public/v1.0/groups/{PROJECT-ID}/maintenanceWindows/",
             path_params,
             query_params,
             None,
@@ -293,7 +293,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
             path_params,
             query_params,
             None,
@@ -382,7 +382,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}",
             path_params,
             query_params,
             body_params,

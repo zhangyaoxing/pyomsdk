@@ -164,7 +164,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}/measurements",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}/measurements",
             path_params,
             query_params,
             None,
@@ -323,7 +323,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}/measurements",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}/measurements",
             path_params,
             query_params,
             None,
@@ -478,7 +478,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements?granularity={ISO-8601-PERIOD}&period={ISO-8601-PERIOD}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements?granularity={ISO-8601-PERIOD}&period={ISO-8601-PERIOD}",
             path_params,
             query_params,
             None,
@@ -633,7 +633,7 @@ For example, to request the last 36 hours, include this query parameter: period=
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements",
             path_params,
             query_params,
             None,

@@ -93,7 +93,7 @@ The username is usually an email address. If you set this value to an email addr
         """
         return self._request(
             "POST",
-            "/unauth/users",
+            "/api/public/v1.0/unauth/users",
             None,
             query_params,
             body_params,
@@ -407,7 +407,7 @@ See mms.email.validation for details.
         """
         return self._request(
             "POST",
-            "/users",
+            "/api/public/v1.0/users",
             None,
             query_params,
             body_params,
@@ -472,7 +472,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/users/{USER-ID}",
+            "/api/public/v1.0/users/{USER-ID}",
             path_params,
             query_params,
             None,
@@ -537,7 +537,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/users/byName/{USER-NAME}",
+            "/api/public/v1.0/users/byName/{USER-NAME}",
             path_params,
             query_params,
             None,
@@ -801,7 +801,7 @@ Global User Admin
         """
         return self._request(
             "PATCH",
-            "/users/{USER-ID}",
+            "/api/public/v1.0/users/{USER-ID}",
             path_params,
             query_params,
             body_params,
@@ -866,7 +866,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/users/{USER-ID}",
+            "/api/public/v1.0/users/{USER-ID}",
             path_params,
             query_params,
             None,

@@ -148,4 +148,4 @@ def assert_success_or_skip(result: Any) -> None:
     if isinstance(result, dict) and "error" in result:
         error_code = result.get("errorCode")
         detail = result.get("detail")
-        pytest.skip(f"API returned error ({error_code}): {detail}")
+        assert False, f"API returned error ({error_code}): {detail}"

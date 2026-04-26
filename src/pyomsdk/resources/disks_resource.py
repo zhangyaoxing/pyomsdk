@@ -78,7 +78,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}",
             path_params,
             query_params,
             None,
@@ -134,7 +134,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/disks",
             path_params,
             query_params,
             None,

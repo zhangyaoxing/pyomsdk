@@ -74,7 +74,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule",
             path_params,
             query_params,
             None,
@@ -233,7 +233,7 @@ Setting weeklySnapshotRetentionWeeks to 0 disables this rule.
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule",
             path_params,
             query_params,
             body_params,

@@ -57,7 +57,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/backupConfigs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs",
             path_params,
             query_params,
             None,
@@ -126,7 +126,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}",
             path_params,
             query_params,
             None,
@@ -346,7 +346,7 @@ Send this parameter to Ops Manager when updating the backup configuration for a 
         """
         return self._request(
             "PATCH",
-            "/groups/{projectId}/backupConfigs/{clusterId}",
+            "/api/public/v1.0/groups/{projectId}/backupConfigs/{clusterId}",
             path_params,
             query_params,
             body_params,

@@ -49,7 +49,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/",
+            "/api/public/v1.0/",
             None,
             query_params,
             None,

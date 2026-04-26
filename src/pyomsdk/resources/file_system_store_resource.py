@@ -112,7 +112,7 @@ If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
         """
         return self._request(
             "POST",
-            "/snapshot/fileSystemConfigs",
+            "/api/public/v1.0/admin/backup/snapshot/fileSystemConfigs",
             None,
             query_params,
             body_params,
@@ -177,7 +177,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -225,7 +225,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/snapshot/fileSystemConfigs",
+            "/api/public/v1.0/admin/backup/snapshot/fileSystemConfigs",
             None,
             query_params,
             None,
@@ -290,7 +290,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -401,7 +401,7 @@ If the MongoDB runs FCV 4.2 or later, Ops Manager ignores this setting.
         """
         return self._request(
             "PUT",
-            "/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}",
             path_params,
             query_params,
             body_params,

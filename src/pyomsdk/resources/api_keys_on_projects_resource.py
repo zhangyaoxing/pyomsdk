@@ -176,7 +176,7 @@ Project User Admin
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             body_params,
@@ -353,7 +353,7 @@ Project User Admin
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/apiKeys",
+            "/api/public/v1.0/groups/{PROJECT-ID}/apiKeys",
             path_params,
             query_params,
             body_params,
@@ -432,7 +432,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "DELETE",
-            "/orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             None,
@@ -507,7 +507,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/apiKeys",
+            "/api/public/v1.0/groups/{PROJECT-ID}/apiKeys",
             path_params,
             query_params,
             None,
@@ -680,7 +680,7 @@ Include all roles that you want this API Key to have. Any roles not in this arra
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             body_params,

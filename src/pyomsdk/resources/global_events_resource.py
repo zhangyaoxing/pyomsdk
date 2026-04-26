@@ -88,7 +88,7 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
         """
         return self._request(
             "GET",
-            "/globalEvents",
+            "/api/public/v1.0/globalEvents",
             None,
             query_params,
             None,
@@ -153,7 +153,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/globalEvents/{eventId}",
+            "/api/public/v1.0/globalEvents/{eventId}",
             path_params,
             query_params,
             None,

@@ -25,7 +25,7 @@ class TelemetryResource(BaseResource):
         """
         return self._request(
             "GET",
-            "/collection/details",
+            "/api/private/v1.0/telemetry/collection/details",
             None,
             None,
             None,
@@ -53,7 +53,7 @@ class TelemetryResource(BaseResource):
         """
         return self._request(
             "PATCH",
-            "/collection/status",
+            "/api/private/v1.0/telemetry/collection/status",
             None,
             None,
             body_params,

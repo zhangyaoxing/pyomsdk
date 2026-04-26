@@ -102,7 +102,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """
         return self._request(
             "GET",
-            "/orgs/{orgId}/events",
+            "/api/public/v1.0/orgs/{orgId}/events",
             path_params,
             query_params,
             None,
@@ -199,7 +199,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """
         return self._request(
             "GET",
-            "/groups/{groupId}/events",
+            "/api/public/v1.0/groups/{groupId}/events",
             path_params,
             query_params,
             None,
@@ -249,7 +249,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """
         return self._request(
             "GET",
-            "/orgs/{orgId}/events/{eventId}",
+            "/api/public/v1.0/orgs/{orgId}/events/{eventId}",
             path_params,
             query_params,
             None,
@@ -299,7 +299,7 @@ IMPORTANT: The values in the raw document differ depending on the resource that 
         """
         return self._request(
             "GET",
-            "/groups/{groupId}/events/{eventId}",
+            "/api/public/v1.0/groups/{groupId}/events/{eventId}",
             path_params,
             query_params,
             None,

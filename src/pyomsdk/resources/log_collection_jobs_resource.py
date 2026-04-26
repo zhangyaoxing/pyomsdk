@@ -74,7 +74,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
             path_params,
             query_params,
             None,
@@ -143,7 +143,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/download",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/download",
             path_params,
             query_params,
             None,
@@ -199,7 +199,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/logCollectionJobs",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs",
             path_params,
             query_params,
             None,
@@ -288,7 +288,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
             path_params,
             query_params,
             None,
@@ -357,7 +357,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/retry",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/retry",
             path_params,
             query_params,
             None,
@@ -474,7 +474,7 @@ REPLICASET, for a replica set.`
         """
         return self._request(
             "POST",
-            "/groups/{GROUP-ID}/logCollectionJobs",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs",
             path_params,
             query_params,
             body_params,
@@ -551,7 +551,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}",
             path_params,
             query_params,
             body_params,

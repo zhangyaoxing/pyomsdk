@@ -70,7 +70,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig",
             path_params,
             query_params,
             None,
@@ -135,7 +135,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig/noSecrets",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/noSecrets",
             path_params,
             query_params,
             None,
@@ -200,7 +200,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig",
             path_params,
             query_params,
             None,
@@ -265,7 +265,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig/backupAgentConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/backupAgentConfig",
             path_params,
             query_params,
             None,
@@ -330,7 +330,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig",
             path_params,
             query_params,
             None,
@@ -395,7 +395,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig",
             path_params,
             query_params,
             None,
@@ -480,7 +480,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/automationConfig/updateAgentVersions",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/updateAgentVersions",
             path_params,
             query_params,
             body_params,
@@ -569,7 +569,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig",
             path_params,
             query_params,
             body_params,
@@ -634,7 +634,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig/noSecrets",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/noSecrets",
             path_params,
             query_params,
             None,
@@ -699,7 +699,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig",
             path_params,
             query_params,
             None,
@@ -935,7 +935,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig/backupAgentConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/backupAgentConfig",
             path_params,
             query_params,
             body_params,
@@ -1162,7 +1162,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig",
             path_params,
             query_params,
             body_params,
@@ -1251,7 +1251,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig",
             path_params,
             query_params,
             body_params,

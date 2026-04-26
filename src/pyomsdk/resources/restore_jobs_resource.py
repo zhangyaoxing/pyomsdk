@@ -74,7 +74,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs",
             path_params,
             query_params,
             None,
@@ -262,7 +262,7 @@ If you set pointInTimeUTCMillis, you cannot set oplogInc, oplogTs, or checkpoint
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs",
             path_params,
             query_params,
             body_params,
@@ -322,7 +322,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs",
             path_params,
             query_params,
             None,
@@ -378,7 +378,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs",
             path_params,
             query_params,
             None,
@@ -451,7 +451,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/{JOB-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/{JOB-ID}",
             path_params,
             query_params,
             None,
@@ -524,7 +524,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs/{JOB-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs/{JOB-ID}",
             path_params,
             query_params,
             None,

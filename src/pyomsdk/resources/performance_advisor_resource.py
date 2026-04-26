@@ -71,7 +71,7 @@ For example:
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/slowQueryLogs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/slowQueryLogs",
             path_params,
             query_params,
             None,
@@ -141,7 +141,7 @@ For example:
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/suggestedIndexes",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/suggestedIndexes",
             path_params,
             query_params,
             None,
@@ -193,7 +193,7 @@ For example:
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/namespaces",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/namespaces",
             path_params,
             query_params,
             None,

@@ -86,7 +86,7 @@ You use the same link-token to migrate each deployment in your MongoDB Cloud Man
         """
         return self._request(
             "POST",
-            "/orgs/{orgId}/liveExport/migrationLink",
+            "/api/public/v1.0/orgs/{orgId}/liveExport/migrationLink",
             path_params,
             query_params,
             body_params,
@@ -151,7 +151,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/orgs/{orgId}/liveExport/migrationLink",
+            "/api/public/v1.0/orgs/{orgId}/liveExport/migrationLink",
             path_params,
             query_params,
             None,
@@ -216,7 +216,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/orgs/{orgId}/liveExport/migrationLink/status",
+            "/api/public/v1.0/orgs/{orgId}/liveExport/migrationLink/status",
             path_params,
             query_params,
             None,

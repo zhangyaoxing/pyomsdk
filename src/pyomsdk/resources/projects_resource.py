@@ -93,7 +93,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/users",
+            "/api/public/v1.0/groups/{PROJECT-ID}/users",
             path_params,
             query_params,
             body_params,
@@ -198,7 +198,7 @@ Are limited to 32 characters
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}",
             path_params,
             query_params,
             body_params,
@@ -269,7 +269,7 @@ Ops Manager set the oldest Organization Owner of the specified organization as a
         """
         return self._request(
             "POST",
-            "/groups",
+            "/api/public/v1.0/groups",
             None,
             query_params,
             body_params,
@@ -334,7 +334,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}",
             path_params,
             query_params,
             None,
@@ -378,7 +378,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups",
+            "/api/public/v1.0/groups",
             None,
             query_params,
             None,
@@ -410,7 +410,7 @@ To create or edit tags you must have the Project Automation Admin role.
         """
         return self._request(
             "GET",
-            "/groups",
+            "/api/public/v1.0/groups",
             None,
             query_params,
             None,
@@ -460,7 +460,7 @@ The default value is false.
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/users",
+            "/api/public/v1.0/groups/{PROJECT-ID}/users",
             path_params,
             query_params,
             None,
@@ -525,7 +525,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/byAgentApiKey/{AGENT-API-KEY}",
+            "/api/public/v1.0/groups/byAgentApiKey/{AGENT-API-KEY}",
             path_params,
             query_params,
             None,
@@ -590,7 +590,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}",
             path_params,
             query_params,
             None,
@@ -655,7 +655,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/byName/{GROUP-NAME}",
+            "/api/public/v1.0/groups/byName/{GROUP-NAME}",
             path_params,
             query_params,
             None,
@@ -739,7 +739,7 @@ GROUP_USER_ADMIN - Project User Admin
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/teams",
+            "/api/public/v1.0/groups/{PROJECT-ID}/teams",
             path_params,
             query_params,
             body_params,
@@ -791,7 +791,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/teams",
+            "/api/public/v1.0/groups/{PROJECT-ID}/teams",
             path_params,
             query_params,
             None,
@@ -860,7 +860,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/users/{USER-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/users/{USER-ID}",
             path_params,
             query_params,
             None,
@@ -1021,7 +1021,7 @@ Project User Admin
         """
         return self._request(
             "POST",
-            "/groups/{GROUP-ID}/invites/",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites/",
             path_params,
             query_params,
             body_params,
@@ -1090,7 +1090,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{GROUP-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             None,
@@ -1161,7 +1161,7 @@ If omitted, Ops Manager returns all pending invitations.
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/invites",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites",
             path_params,
             query_params,
             None,
@@ -1230,7 +1230,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             None,
@@ -1311,7 +1311,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
         """
         return self._request(
             "PATCH",
-            "/groups/{GROUP-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             body_params,
@@ -1392,7 +1392,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
         """
         return self._request(
             "PATCH",
-            "/groups/{GROUP-ID}/invites",
+            "/api/public/v1.0/groups/{GROUP-ID}/invites",
             path_params,
             query_params,
             body_params,
@@ -1471,7 +1471,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/teams/{TEAM-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/teams/{TEAM-ID}",
             path_params,
             query_params,
             None,

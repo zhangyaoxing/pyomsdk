@@ -141,7 +141,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """
         return self._request(
             "PUT",
-            "/daemon/configs/{MACHINE}",
+            "/api/public/v1.0/admin/backup/daemon/configs/{MACHINE}",
             path_params,
             query_params,
             body_params,
@@ -210,7 +210,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
+            "/api/public/v1.0/admin/backup/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
             path_params,
             query_params,
             None,
@@ -260,7 +260,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/daemon/configs",
+            "/api/public/v1.0/admin/backup/daemon/configs",
             None,
             query_params,
             None,
@@ -329,7 +329,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
+            "/api/public/v1.0/admin/backup/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
             path_params,
             query_params,
             None,
@@ -474,7 +474,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """
         return self._request(
             "PUT",
-            "/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
+            "/api/public/v1.0/admin/backup/daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}",
             path_params,
             query_params,
             body_params,

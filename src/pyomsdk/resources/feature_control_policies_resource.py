@@ -72,7 +72,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/availablePolicies",
+            "/api/public/v1.0/groups/availablePolicies",
             None,
             query_params,
             None,
@@ -147,7 +147,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/controlledFeature",
+            "/api/public/v1.0/groups/{PROJECT-ID}/controlledFeature",
             path_params,
             query_params,
             None,
@@ -350,7 +350,7 @@ Users can't change the server type of hosts.
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/controlledFeature",
+            "/api/public/v1.0/groups/{PROJECT-ID}/controlledFeature",
             path_params,
             query_params,
             body_params,

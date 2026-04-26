@@ -78,7 +78,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/agentapikeys",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agentapikeys",
             path_params,
             query_params,
             body_params,
@@ -147,7 +147,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/agentapikeys/{API-AGENT-KEY-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agentapikeys/{API-AGENT-KEY-ID}",
             path_params,
             query_params,
             None,
@@ -212,7 +212,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/agentapikeys",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agentapikeys",
             path_params,
             query_params,
             None,
@@ -264,7 +264,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/agents",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agents",
             path_params,
             query_params,
             None,
@@ -326,7 +326,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/agents/{TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agents/{TYPE}",
             path_params,
             query_params,
             None,
@@ -383,7 +383,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/softwareComponents/versions/",
+            "/api/public/v1.0/softwareComponents/versions/",
             None,
             query_params,
             None,
@@ -448,7 +448,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/agents/versions",
+            "/api/public/v1.0/groups/{PROJECT-ID}/agents/versions",
             path_params,
             query_params,
             None,

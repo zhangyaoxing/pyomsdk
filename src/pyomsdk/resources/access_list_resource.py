@@ -65,7 +65,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "POST",
-            "/users/{USER-ID}/accessList",
+            "/api/public/v1.0/users/{USER-ID}/accessList",
             path_params,
             query_params,
             body_params,
@@ -134,7 +134,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}",
+            "/api/public/v1.0/users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}",
             path_params,
             query_params,
             None,
@@ -186,7 +186,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/users/{USER-ID}/accessList",
+            "/api/public/v1.0/users/{USER-ID}/accessList",
             path_params,
             query_params,
             None,
@@ -255,7 +255,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}",
+            "/api/public/v1.0/users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}",
             path_params,
             query_params,
             None,

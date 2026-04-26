@@ -120,7 +120,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "POST",
-            "/snapshot/mongoConfigs",
+            "/api/public/v1.0/admin/backup/snapshot/mongoConfigs",
             None,
             query_params,
             body_params,
@@ -185,7 +185,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
             path_params,
             query_params,
             None,
@@ -233,7 +233,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/snapshot/mongoConfigs",
+            "/api/public/v1.0/admin/backup/snapshot/mongoConfigs",
             None,
             query_params,
             None,
@@ -298,7 +298,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
             path_params,
             query_params,
             None,
@@ -417,7 +417,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "PUT",
-            "/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
+            "/api/public/v1.0/admin/backup/snapshot/mongoConfigs/{BLOCKSTORE-ID}",
             path_params,
             query_params,
             body_params,

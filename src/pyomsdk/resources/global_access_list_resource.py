@@ -74,7 +74,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/admin/accessList",
+            "/api/public/v1.0/admin/accessList",
             None,
             query_params,
             body_params,
@@ -139,7 +139,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/admin/accessList/{ACCESS-LIST-ID}",
+            "/api/public/v1.0/admin/accessList/{ACCESS-LIST-ID}",
             path_params,
             query_params,
             None,
@@ -183,7 +183,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/admin/accessList",
+            "/api/public/v1.0/admin/accessList",
             None,
             query_params,
             None,
@@ -248,7 +248,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/admin/accessList/{ACCESS-LIST-ID}",
+            "/api/public/v1.0/admin/accessList/{ACCESS-LIST-ID}",
             path_params,
             query_params,
             None,
@@ -313,7 +313,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/admin/accessList/{ACCESS-LIST-ID}",
+            "/api/public/v1.0/admin/accessList/{ACCESS-LIST-ID}",
             path_params,
             query_params,
             None,

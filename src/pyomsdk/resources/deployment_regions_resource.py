@@ -99,7 +99,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}",
             path_params,
             query_params,
             body_params,
@@ -188,7 +188,7 @@ Expected response body
         """
         return self._request(
             "PUT",
-            "/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
+            "/api/public/v1.0/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
             path_params,
             query_params,
             body_params,
@@ -273,7 +273,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/admin/backup/backupDeployments",
+            "/api/public/v1.0/admin/backup/backupDeployments",
             None,
             query_params,
             body_params,
@@ -338,7 +338,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
+            "/api/public/v1.0/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
             path_params,
             query_params,
             None,
@@ -382,7 +382,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/admin/backup/backupDeployments",
+            "/api/public/v1.0/admin/backup/backupDeployments",
             None,
             query_params,
             None,
@@ -434,7 +434,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
+            "/api/public/v1.0/admin/backup/backupDeployments/{DEPLOYMENT-ID}",
             path_params,
             query_params,
             None,

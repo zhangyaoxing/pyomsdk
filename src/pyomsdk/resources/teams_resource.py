@@ -82,7 +82,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}/users",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}/users",
             path_params,
             query_params,
             body_params,
@@ -155,7 +155,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/orgs/{ORG-ID}/teams",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams",
             path_params,
             query_params,
             body_params,
@@ -224,7 +224,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}",
             path_params,
             query_params,
             None,
@@ -280,7 +280,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}/users",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}/users",
             path_params,
             query_params,
             None,
@@ -332,7 +332,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/teams",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams",
             path_params,
             query_params,
             None,
@@ -401,7 +401,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}",
             path_params,
             query_params,
             None,
@@ -470,7 +470,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/teams/byName/{TEAM-NAME}",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/byName/{TEAM-NAME}",
             path_params,
             query_params,
             None,
@@ -543,7 +543,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}/users/{USER-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}/users/{USER-ID}",
             path_params,
             query_params,
             None,
@@ -620,7 +620,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/orgs/{ORG-ID}/teams/{TEAM-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}",
             path_params,
             query_params,
             body_params,
@@ -676,7 +676,7 @@ Defaults to false.
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/teams/{TEAM-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/teams/{TEAM-ID}",
             path_params,
             query_params,
             body_params,

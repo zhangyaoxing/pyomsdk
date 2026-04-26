@@ -33,7 +33,7 @@ class VersionManifestResource(BaseResource):
         """
         return self._request(
             "GET",
-            "/unauth/versionManifest",
+            "/api/public/v1.0/unauth/versionManifest",
             None,
             query_params,
             None,
@@ -61,7 +61,7 @@ class VersionManifestResource(BaseResource):
         """
         return self._request(
             "PUT",
-            "/versionManifest",
+            "/api/public/v1.0/versionManifest",
             None,
             query_params,
             None,

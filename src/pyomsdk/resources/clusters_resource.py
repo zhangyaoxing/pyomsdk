@@ -62,7 +62,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/api/public/v1.0/clusters",
+            "/api/public/v1.0/api/public/v1.0/clusters",
             None,
             query_params,
             None,
@@ -114,7 +114,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters",
             path_params,
             query_params,
             None,
@@ -183,7 +183,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}",
             path_params,
             query_params,
             None,
@@ -260,7 +260,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}",
             path_params,
             query_params,
             body_params,

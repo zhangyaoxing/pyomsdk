@@ -130,7 +130,7 @@ Required if "authMechanismName" : "MONGODB_CR"
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/hosts",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts",
             path_params,
             query_params,
             body_params,
@@ -199,7 +199,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}",
             path_params,
             query_params,
             None,
@@ -255,7 +255,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts",
             path_params,
             query_params,
             None,
@@ -328,7 +328,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/byName/{HOSTNAME}:{PORT}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/byName/{HOSTNAME}:{PORT}",
             path_params,
             query_params,
             None,
@@ -397,7 +397,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}",
             path_params,
             query_params,
             None,
@@ -510,7 +510,7 @@ NONE
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}",
             path_params,
             query_params,
             body_params,

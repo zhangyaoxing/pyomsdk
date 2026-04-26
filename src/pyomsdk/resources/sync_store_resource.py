@@ -114,7 +114,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "POST",
-            "/sync/mongoConfigs",
+            "/api/public/v1.0/admin/backup/sync/mongoConfigs",
             None,
             query_params,
             body_params,
@@ -179,7 +179,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -227,7 +227,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/sync/mongoConfigs",
+            "/api/public/v1.0/admin/backup/sync/mongoConfigs",
             None,
             query_params,
             None,
@@ -292,7 +292,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -405,7 +405,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "PUT",
-            "/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}",
             path_params,
             query_params,
             body_params,

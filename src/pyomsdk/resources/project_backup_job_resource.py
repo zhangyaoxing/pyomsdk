@@ -49,7 +49,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups",
+            "/api/public/v1.0/admin/backup/groups",
             None,
             query_params,
             None,
@@ -114,7 +114,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}",
+            "/api/public/v1.0/admin/backup/groups/{PROJECT-ID}",
             path_params,
             query_params,
             None,
@@ -280,7 +280,7 @@ fileSystemStore
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}",
+            "/api/public/v1.0/admin/backup/groups/{PROJECT-ID}",
             path_params,
             query_params,
             body_params,

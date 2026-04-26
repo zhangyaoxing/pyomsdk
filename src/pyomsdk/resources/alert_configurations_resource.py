@@ -648,7 +648,7 @@ LESS_THAN
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/alertConfigs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs",
             path_params,
             query_params,
             body_params,
@@ -717,7 +717,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -794,7 +794,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
             path_params,
             query_params,
             body_params,
@@ -846,7 +846,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/alertConfigs",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs",
             path_params,
             query_params,
             None,
@@ -902,7 +902,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -959,7 +959,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/alertConfigs/matchers/fieldNames",
+            "/api/public/v1.0/alertConfigs/matchers/fieldNames",
             None,
             query_params,
             None,
@@ -1015,7 +1015,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}/alerts",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}/alerts",
             path_params,
             query_params,
             None,
@@ -1698,7 +1698,7 @@ LESS_THAN
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}",
             path_params,
             query_params,
             body_params,

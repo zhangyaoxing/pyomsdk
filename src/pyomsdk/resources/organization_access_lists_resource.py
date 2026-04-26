@@ -96,7 +96,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "POST",
-            "/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList",
+            "/api/public/v1.0/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList",
             path_params,
             query_params,
             body_params,
@@ -179,7 +179,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "DELETE",
-            "/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}",
+            "/api/public/v1.0/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}",
             path_params,
             query_params,
             None,
@@ -258,7 +258,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList",
+            "/api/public/v1.0/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList",
             path_params,
             query_params,
             None,
@@ -341,7 +341,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}",
+            "/api/public/v1.0/orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}",
             path_params,
             query_params,
             None,

@@ -70,7 +70,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{GROUP-ID}/automationStatus/full",
+            "/api/public/v1.0/groups/{GROUP-ID}/automationStatus/full",
             path_params,
             query_params,
             None,
@@ -135,7 +135,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/automationStatus",
+            "/api/public/v1.0/groups/{PROJECT-ID}/automationStatus",
             path_params,
             query_params,
             None,

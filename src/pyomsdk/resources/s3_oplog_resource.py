@@ -229,7 +229,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "POST",
-            "/oplog/s3Configs",
+            "/api/public/v1.0/admin/backup/oplog/s3Configs",
             None,
             query_params,
             body_params,
@@ -294,7 +294,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -342,7 +342,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/oplog/s3Configs",
+            "/api/public/v1.0/admin/backup/oplog/s3Configs",
             None,
             query_params,
             None,
@@ -407,7 +407,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -635,7 +635,7 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         """
         return self._request(
             "PUT",
-            "/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
+            "/api/public/v1.0/admin/backup/oplog/s3Configs/{S3-OPLOG-CONFIG-ID}",
             path_params,
             query_params,
             body_params,

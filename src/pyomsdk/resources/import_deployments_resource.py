@@ -74,7 +74,7 @@ Expected response body
         """
         return self._request(
             "POST",
-            "/automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel",
+            "/api/public/v1.0/automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel",
             path_params,
             query_params,
             None,
@@ -248,7 +248,7 @@ Ops Manager doesn't include this parameter in response documents.
         """
         return self._request(
             "POST",
-            "/automation/importDeployment/{PROJECT-ID}",
+            "/api/public/v1.0/automation/importDeployment/{PROJECT-ID}",
             path_params,
             query_params,
             body_params,
@@ -317,7 +317,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}",
+            "/api/public/v1.0/automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}",
             path_params,
             query_params,
             None,
@@ -382,7 +382,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/automation/importDeployment/{PROJECT-ID}",
+            "/api/public/v1.0/automation/importDeployment/{PROJECT-ID}",
             path_params,
             query_params,
             None,
@@ -451,7 +451,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}",
+            "/api/public/v1.0/automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}",
             path_params,
             query_params,
             None,

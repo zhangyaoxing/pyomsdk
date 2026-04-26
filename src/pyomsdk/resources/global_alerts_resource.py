@@ -88,7 +88,7 @@ To un-acknowledge an alert, specify a time and date in the past.
         """
         return self._request(
             "PATCH",
-            "/globalAlerts/{ALERT-ID}",
+            "/api/public/v1.0/globalAlerts/{ALERT-ID}",
             path_params,
             query_params,
             body_params,
@@ -168,7 +168,7 @@ Alert is closed.
         """
         return self._request(
             "GET",
-            "/globalAlerts",
+            "/api/public/v1.0/globalAlerts",
             None,
             query_params,
             None,
@@ -233,7 +233,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/globalAlerts/{ALERT-ID}",
+            "/api/public/v1.0/globalAlerts/{ALERT-ID}",
             path_params,
             query_params,
             None,

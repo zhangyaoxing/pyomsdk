@@ -57,7 +57,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts",
+            "/api/public/v1.0/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts",
             path_params,
             query_params,
             None,
@@ -424,7 +424,7 @@ TOO_MANY_UNHEALTHY_MEMBERS
         """
         return self._request(
             "POST",
-            "/globalAlertConfigs",
+            "/api/public/v1.0/globalAlertConfigs",
             None,
             query_params,
             body_params,
@@ -489,7 +489,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
+            "/api/public/v1.0/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -533,7 +533,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/globalAlertConfigs",
+            "/api/public/v1.0/globalAlertConfigs",
             None,
             query_params,
             None,
@@ -598,7 +598,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
+            "/api/public/v1.0/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
             path_params,
             query_params,
             None,
@@ -707,7 +707,7 @@ Set to false to disable a global alert configuration.
         """
         return self._request(
             "PATCH",
-            "/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
+            "/api/public/v1.0/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
             path_params,
             query_params,
             body_params,
@@ -1082,7 +1082,7 @@ TOO_MANY_UNHEALTHY_MEMBERS
         """
         return self._request(
             "PUT",
-            "/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
+            "/api/public/v1.0/globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}",
             path_params,
             query_params,
             body_params,

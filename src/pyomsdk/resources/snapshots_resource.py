@@ -98,7 +98,7 @@ If the current expires timestamp has already passed, it cannot be edited.
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
             path_params,
             query_params,
             body_params,
@@ -154,7 +154,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots",
             path_params,
             query_params,
             None,
@@ -222,7 +222,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots",
             path_params,
             query_params,
             None,
@@ -295,7 +295,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots/{SNAPSHOT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots/{SNAPSHOT-ID}",
             path_params,
             query_params,
             None,
@@ -368,7 +368,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
             path_params,
             query_params,
             None,
@@ -441,7 +441,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}",
             path_params,
             query_params,
             None,
@@ -489,7 +489,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "POST",
-            "/groups/{groupId}/clusters/{clusterId}/snapshots/onDemandSnapshot",
+            "/api/public/v1.0/groups/{groupId}/clusters/{clusterId}/snapshots/onDemandSnapshot",
             path_params,
             query_params,
             None,

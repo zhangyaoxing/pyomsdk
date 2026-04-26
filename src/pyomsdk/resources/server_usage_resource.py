@@ -75,7 +75,7 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/diagnostics",
+            "/api/public/v1.0/groups/{PROJECT-ID}/diagnostics",
             path_params,
             query_params,
             None,
@@ -179,7 +179,7 @@ To learn more, see MongoDB Usage Page.
         """
         return self._request(
             "POST",
-            "/usage/groups",
+            "/api/public/v1.0/usage/groups",
             None,
             query_params,
             body_params,
@@ -252,7 +252,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/report",
+            "/api/public/v1.0/usage/report",
             None,
             query_params,
             None,
@@ -319,7 +319,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "POST",
-            "/usage/dailyCapture",
+            "/api/public/v1.0/usage/dailyCapture",
             None,
             query_params,
             None,
@@ -386,7 +386,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/usage/groups",
+            "/api/public/v1.0/usage/groups",
             None,
             query_params,
             None,
@@ -451,7 +451,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/organizations/{orgId}/defaultServerType",
+            "/api/public/v1.0/usage/organizations/{orgId}/defaultServerType",
             path_params,
             query_params,
             None,
@@ -516,7 +516,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/groups/{groupId}/defaultServerType",
+            "/api/public/v1.0/usage/groups/{groupId}/defaultServerType",
             path_params,
             query_params,
             None,
@@ -591,7 +591,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/usage/groups/{physicalHostId}",
+            "/api/public/v1.0/usage/groups/{physicalHostId}",
             path_params,
             query_params,
             None,
@@ -672,7 +672,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/organizations/{orgId}/hosts",
+            "/api/public/v1.0/usage/organizations/{orgId}/hosts",
             path_params,
             query_params,
             None,
@@ -753,7 +753,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/groups/{groupId}/hosts",
+            "/api/public/v1.0/usage/groups/{groupId}/hosts",
             path_params,
             query_params,
             None,
@@ -826,7 +826,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/usage/assignments",
+            "/api/public/v1.0/usage/assignments",
             None,
             query_params,
             None,
@@ -901,7 +901,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "DELETE",
-            "/usage/groups/{physicalHostId}",
+            "/api/public/v1.0/usage/groups/{physicalHostId}",
             path_params,
             query_params,
             None,
@@ -1009,7 +1009,7 @@ To learn more, see MongoDB Usage Page.
         """
         return self._request(
             "PUT",
-            "/usage/organizations/{orgId}/defaultServerType",
+            "/api/public/v1.0/usage/organizations/{orgId}/defaultServerType",
             path_params,
             query_params,
             body_params,
@@ -1117,7 +1117,7 @@ To learn more, see MongoDB Usage Page.
         """
         return self._request(
             "PUT",
-            "/usage/groups/{groupId}/defaultServerType",
+            "/api/public/v1.0/usage/groups/{groupId}/defaultServerType",
             path_params,
             query_params,
             body_params,
@@ -1229,7 +1229,7 @@ To learn more, see MongoDB Usage Page.
         """
         return self._request(
             "PUT",
-            "/usage/groups/{physicalHostId}",
+            "/api/public/v1.0/usage/groups/{physicalHostId}",
             path_params,
             query_params,
             body_params,
@@ -1337,7 +1337,7 @@ To learn more, see MongoDB Usage Page.
         """
         return self._request(
             "PUT",
-            "/usage/hosts/{hostId}",
+            "/api/public/v1.0/usage/hosts/{hostId}",
             path_params,
             query_params,
             body_params,

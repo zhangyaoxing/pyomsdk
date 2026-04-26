@@ -94,7 +94,7 @@ Ops Manager displays the comment next to the message that the alert has been ack
         """
         return self._request(
             "PATCH",
-            "/groups/{PROJECT-ID}/alerts/{ALERT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alerts/{ALERT-ID}",
             path_params,
             query_params,
             body_params,
@@ -163,7 +163,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/alerts/{ALERT-ID}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alerts/{ALERT-ID}",
             path_params,
             query_params,
             None,
@@ -232,7 +232,7 @@ To return all closed alerts.
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/alerts",
+            "/api/public/v1.0/groups/{PROJECT-ID}/alerts",
             path_params,
             query_params,
             None,

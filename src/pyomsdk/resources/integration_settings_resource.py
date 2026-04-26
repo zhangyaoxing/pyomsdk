@@ -95,7 +95,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "POST",
-            "/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             body_params,
@@ -167,7 +167,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "DELETE",
-            "/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             None,
@@ -219,7 +219,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/discovery",
+            "/prometheus/v1.0//groups/{PROJECT-ID}/discovery",
             path_params,
             query_params,
             None,
@@ -271,7 +271,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/api/public/v1.0/groups/{PROJECT-ID}/integrations",
+            "/api/public/v1.0/api/public/v1.0/groups/{PROJECT-ID}/integrations",
             path_params,
             query_params,
             None,
@@ -343,7 +343,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             None,
@@ -433,7 +433,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "PUT",
-            "/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             body_params,

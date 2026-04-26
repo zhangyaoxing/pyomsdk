@@ -90,7 +90,7 @@ If the user accepts the invitation, they log in to Ops Manager with this usernam
         """
         return self._request(
             "POST",
-            "/orgs/{ORG-ID}/invites",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites",
             path_params,
             query_params,
             body_params,
@@ -159,7 +159,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/orgs/{ORG-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             None,
@@ -230,7 +230,7 @@ If omitted, Ops Manager returns all pending invitations.
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/invites",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites",
             path_params,
             query_params,
             None,
@@ -299,7 +299,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             None,
@@ -380,7 +380,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
         """
         return self._request(
             "PATCH",
-            "/orgs/{ORG-ID}/invites/{INVITATION-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites/{INVITATION-ID}",
             path_params,
             query_params,
             body_params,
@@ -461,7 +461,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
         """
         return self._request(
             "PATCH",
-            "/orgs/{ORG-ID}/invites",
+            "/api/public/v1.0/orgs/{ORG-ID}/invites",
             path_params,
             query_params,
             body_params,
@@ -542,7 +542,7 @@ If specifying ldapGroupMappings, mapping for ORG_OWNER role is required.
         """
         return self._request(
             "POST",
-            "/orgs",
+            "/api/public/v1.0/orgs",
             None,
             query_params,
             body_params,
@@ -607,7 +607,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/orgs/{ORG-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}",
             path_params,
             query_params,
             None,
@@ -661,7 +661,7 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/groups",
+            "/api/public/v1.0/orgs/{ORG-ID}/groups",
             path_params,
             query_params,
             None,
@@ -717,7 +717,7 @@ Defaults to false.
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}/users",
+            "/api/public/v1.0/orgs/{ORG-ID}/users",
             path_params,
             query_params,
             None,
@@ -771,7 +771,7 @@ For example, if you specify a name query parameter of org1, Ops Manager returns 
         """
         return self._request(
             "GET",
-            "/orgs",
+            "/api/public/v1.0/orgs",
             None,
             query_params,
             None,
@@ -844,7 +844,7 @@ If set to true or omitted, users assigned a global role receive deleted projects
         """
         return self._request(
             "GET",
-            "/orgs/{ORG-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}",
             path_params,
             query_params,
             None,
@@ -923,7 +923,7 @@ Expected response body
         """
         return self._request(
             "PATCH",
-            "/orgs/{ORG-ID}",
+            "/api/public/v1.0/orgs/{ORG-ID}",
             path_params,
             query_params,
             body_params,

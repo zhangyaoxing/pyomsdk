@@ -137,7 +137,7 @@ Global User Admin
         """
         return self._request(
             "POST",
-            "/admin/apiKeys",
+            "/api/public/v1.0/admin/apiKeys",
             None,
             query_params,
             body_params,
@@ -202,7 +202,7 @@ Expected response body
         """
         return self._request(
             "DELETE",
-            "/admin/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/admin/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             None,
@@ -269,7 +269,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
         return self._request(
             "GET",
-            "/admin/apiKeys/roles",
+            "/api/public/v1.0/admin/apiKeys/roles",
             None,
             query_params,
             None,
@@ -313,7 +313,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/admin/apiKeys",
+            "/api/public/v1.0/admin/apiKeys",
             None,
             query_params,
             None,
@@ -378,7 +378,7 @@ Expected response body
         """
         return self._request(
             "GET",
-            "/admin/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/admin/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             None,
@@ -518,7 +518,7 @@ Global User Admin
         """
         return self._request(
             "PATCH",
-            "/admin/apiKeys/{API-KEY-ID}",
+            "/api/public/v1.0/admin/apiKeys/{API-KEY-ID}",
             path_params,
             query_params,
             body_params,
