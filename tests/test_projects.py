@@ -38,6 +38,7 @@ def test_projects_get_by_id(client: OpsManagerClient, project: dict[str, Any]) -
 
     result = resource.get_by_id(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert _project_id(result) == _project_id(project)
 
 
@@ -53,6 +54,7 @@ def test_projects_get_by_name(client: OpsManagerClient, org: dict[str, Any]) -> 
 
     result = resource.get_by_name(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert _project_id(result) == created_project_id
     assert result.get("name") == project_name
 
@@ -68,6 +70,7 @@ def test_projects_get_all(client: OpsManagerClient, project: dict[str, Any]) -> 
 
     result = resource.get_all(query_params)
     assert result is not None
+    assert "error" not in result
 
     projects = result.get("results", [])
     assert isinstance(projects, list)
@@ -88,6 +91,7 @@ def test_projects_update(client: OpsManagerClient, org: dict[str, Any]) -> None:
 
     result = resource.update(path_params, query_params, body_params)
     assert result is not None
+    assert "error" not in result
     assert _project_id(result) == created_project_id
     assert result.get("name") == renamed_name
 
@@ -107,6 +111,7 @@ def test_projects_get_all_users(client: OpsManagerClient, project: dict[str, Any
 
     result = resource.get_all_users(path_params, query_params)
     assert result is not None
+    assert "error" not in result
 
     users = result.get("results", [])
     assert isinstance(users, list)

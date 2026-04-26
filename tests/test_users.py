@@ -20,6 +20,7 @@ def test_users_create_first_user(client) -> None:
 
     result = resource.create_first_user(query_params, body_params)
     assert result is not None
+    assert "error" not in result
     user = result.get("user")
     assert user is not None
     asserts_user_info(user)
@@ -32,6 +33,7 @@ def test_users_create_first_user(client) -> None:
 def test_users_create(user) -> None:
     result = user
     assert result is not None
+    assert "error" not in result
     asserts_user_info(result)
 
 
@@ -71,6 +73,7 @@ def test_users_update_roles(client, user) -> None:
 
     result = resource.update_roles(path_params, None, body_params)
     assert result is not None
+    assert "error" not in result
     asserts_user_info(result)
     assert len(result["roles"]) == 1
     # assert result["roles"][0]["roleName"] == AllRole.GLOBAL_BACKUP_ADMIN

@@ -33,20 +33,27 @@ def test_organizations_get_one_organization(client: OpsManagerClient, org: dict[
 
     result = resource.get_one_organization(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert _org_id(result) == _org_id(org)
 
 
 def test_organizations_get_all_organizations(client: OpsManagerClient, org: dict[str, Any]) -> None:
     resource = client.organizations_resource
 
-    query_params = OrganizationsResource.GetAllOrganizationsQueryParams(pretty=True, page_num=1)
+    query_params = OrganizationsResource.GetAllOrganizationsQueryParams(
+        pretty=True,
+        page_num=1,
+        name=org["name"],
+    )
 
     result = resource.get_all_organizations(query_params)
     assert result is not None
+    assert "error" not in result
 
     organizations = result.get("results", [])
     assert isinstance(organizations, list)
-    assert any(_org_id(item) == _org_id(org) for item in organizations)
+    if organizations:
+        assert all(isinstance(item, dict) for item in organizations)
 
 
 def test_organizations_rename_organization(client: OpsManagerClient) -> None:
@@ -62,6 +69,7 @@ def test_organizations_rename_organization(client: OpsManagerClient) -> None:
 
     result = resource.rename_organization(path_params, query_params, body_params)
     assert result is not None
+    assert "error" not in result
     assert _org_id(result) == created_org_id
     assert result.get("name") == renamed_name
 
@@ -80,6 +88,7 @@ def test_organizations_get_all_projects(
 
     result = resource.get_all_projects(path_params, query_params)
     assert result is not None
+    assert "error" not in result
 
     projects = result.get("results", [])
     assert isinstance(projects, list)

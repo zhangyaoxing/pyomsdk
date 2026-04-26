@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import pytest
 from pyomsdk import OpsManagerClient
 from tests.shared.accesslist import add_accesslist, delete_accesslist, random_ip
@@ -6,6 +7,23 @@ from tests.shared.org import create_org, delete_org
 from tests.shared.user import add_user, get_user_info, delete_user
 from tests.shared.project import create_project, delete_project
 from tests.shared.agent import create_agent_api_key, delete_agent_api_key
+
+
+def _load_env_file() -> None:
+    env_path = Path(__file__).resolve().parent.parent / ".env"
+    if not env_path.exists():
+        return
+
+    for line in env_path.read_text().splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+
+        key, value = stripped.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+_load_env_file()
 
 
 @pytest.fixture(name="client")
@@ -42,11 +60,13 @@ def new_project(client: OpsManagerClient, org: dict):
 def new_api_key(client: OpsManagerClient, project: dict):
     api_key = create_agent_api_key(client, project["id"])
     yield api_key
-    delete_agent_api_key(client, api_key["id"])
+    api_key_id = api_key.get("id") or api_key.get("_id")
+    if api_key_id:
+        delete_agent_api_key(client, api_key_id, project["id"])
 
 
 @pytest.fixture(name="user_with_access_list_entry")
-def _user_with_access_list_entry_fixture(
+def user_with_access_list_entry_fixture(
     client: OpsManagerClient,
     user: dict,
 ):

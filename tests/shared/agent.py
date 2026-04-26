@@ -20,11 +20,18 @@ def create_agent_api_key(
     return agents_resource.create_api_key(path_params, None, body_params)
 
 
-def delete_agent_api_key(client: OpsManagerClient, api_agent_key_id: str) -> dict[str, Any]:
+def delete_agent_api_key(
+    client: OpsManagerClient,
+    api_agent_key_id: str,
+    project_id: str | None = None,
+) -> dict[str, Any]:
     """Delete an agent API key."""
     agents_resource = client.agents_resource
+    resolved_project_id = project_id or client.projects_resource.get_all(None).get("results", [{}])[0].get(
+        "id", ""
+    )
     path_params = AgentsResource.RemoveApiKeyPathParams(
         api_agent_key_id=api_agent_key_id,
-        project_id=client.projects_resource.get_all(None).get("results", [{}])[0].get("id", ""),
+        project_id=resolved_project_id,
     )
     return agents_resource.remove_api_key(path_params, None)

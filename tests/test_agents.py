@@ -39,6 +39,7 @@ def test_agents_get_all_api_keys(
 
     result = resource.get_all_api_keys(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert len(result) > 0
     assert any(key.get("_id") == api_key["_id"] for key in result)
 
@@ -52,6 +53,7 @@ def test_agents_get_all(client: OpsManagerClient, project: dict) -> None:
 
     result = resource.get_all(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert "links" in result
     assert isinstance(result["links"], list)
 
@@ -65,6 +67,7 @@ def test_agents_get_by_type(client: OpsManagerClient, project: dict) -> None:
     )
     result = resource.get_by_type(path_params, None)
     assert result is not None
+    assert "error" not in result
     assert result["results"] is not None
     assert isinstance(result["results"], list)
     assert len(result["results"]) == 0
@@ -78,6 +81,7 @@ def test_agents_retrieve_all_versions(client: OpsManagerClient) -> None:
 
     result = resource.retrieve_all_versions(query_params)
     assert result is not None
+    assert "error" not in result
     assert "automationMinimumVersion" in result
     assert "automationVersion" in result
     assert "biConnectorMinimumVersion" in result
@@ -94,4 +98,5 @@ def test_agents_retrieve_for_one_project(client: OpsManagerClient, project: dict
 
     result = resource.retrieve_for_one_project(path_params, query_params)
     assert result is not None
+    assert "error" not in result
     assert result["count"] == 0
