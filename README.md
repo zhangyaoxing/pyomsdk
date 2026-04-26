@@ -3,7 +3,7 @@ This is the repository for MongoDB Ops Manager API SDK in Python language.
 
 ## How It's Built?
 The SDK code is generated based on the [Ops Mananger API document](https://www.mongodb.com/docs/ops-manager/current/api/).
-1. Playwright is used to crawl pages listed in the site map.
+1. Playwright is used to crawl pages listed in the sitemap.
 2. Metadata of each API endpoint is extracted from the page.
 3. The code generator uses the metadata to generate Python code SDK.
 
@@ -37,4 +37,4 @@ orgs_resource.delete_organization(path_params, None)
   - All the optional parameters are defined as `Optional[]`. Other parameters are required.
 - All the enum types are defined in the `pyomsdk.resources.enums`. They are not crawled but hard-coded because they are unlikely to change. You can use these values to help you initialize the parameters.
 
-**Important Notes:** Keep in mind the information is from the document. The document is not always accurate. For example, some parameters doesn't have necessity, they are all marked optional. When you have doubts, click the document link and review the document.
+**Important Notes:** Keep in mind the metadata is from the API document. But the document is not always accurate. For example, some parameters doesn't have necessity, they are all marked as optional. When you have doubts, click the document link and review the document.
