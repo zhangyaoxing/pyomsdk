@@ -26,11 +26,13 @@ jobs:
             - name: Build distribution
               run: python -m build
 
+            - name: Show built artifacts
+              run: ls -lah dist
+
             - name: Check distribution metadata
               run: twine check dist/*
 
             - name: Publish to PyPI
-              env:
-                  TWINE_USERNAME: __token__
-                  TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-              run: twine upload dist/*
+              uses: pypa/gh-action-pypi-publish@release/v1
+              with:
+                  verbose: true
