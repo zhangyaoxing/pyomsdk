@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 def test_clusters_get_all_from_one_project(client: OpsManagerClient, project) -> None:
     resource = client.clusters_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
@@ -33,6 +32,7 @@ def test_clusters_get_all_from_one_project(client: OpsManagerClient, project) ->
     result = resource.get_all_from_one_project(path_params, query_params)
     assert result is not None
 
+
 def test_clusters_get_all_from_all_projects(client: OpsManagerClient, project) -> None:
     """Test get_all_from_all_projects."""
     resource = client.clusters_resource
@@ -50,6 +50,7 @@ def test_clusters_get_all_from_all_projects(client: OpsManagerClient, project) -
     result = resource.get_all_from_all_projects(query_params)
     assert result is not None
     assert_success_or_skip(result)
+
 
 def test_clusters_get_one(client: OpsManagerClient, project) -> None:
     """Test get_one."""
@@ -76,6 +77,7 @@ def test_clusters_get_one(client: OpsManagerClient, project) -> None:
     result = resource.get_one(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
+
 
 def test_clusters_update(client: OpsManagerClient, project) -> None:
     """Test update."""
@@ -110,4 +112,3 @@ def test_clusters_update(client: OpsManagerClient, project) -> None:
     result = resource.update(path_params, query_params, body_params)
     assert result is not None
     assert_success_or_skip(result)
-

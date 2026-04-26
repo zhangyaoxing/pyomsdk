@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 def test_performance_advisor_get_namespaces(client: OpsManagerClient, project) -> None:
     resource = client.performance_advisor_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
@@ -32,6 +31,7 @@ def test_performance_advisor_get_namespaces(client: OpsManagerClient, project) -
 
     result = resource.get_namespaces(path_params, query_params)
     assert result is not None
+
 
 def test_performance_advisor_get_slow_query_logs(client: OpsManagerClient, project) -> None:
     """Test get_slow_query_logs."""
@@ -59,6 +59,7 @@ def test_performance_advisor_get_slow_query_logs(client: OpsManagerClient, proje
     assert result is not None
     assert_success_or_skip(result)
 
+
 def test_performance_advisor_get_suggested_indexes(client: OpsManagerClient, project) -> None:
     """Test get_suggested_indexes."""
     resource = client.performance_advisor_resource
@@ -84,4 +85,3 @@ def test_performance_advisor_get_suggested_indexes(client: OpsManagerClient, pro
     result = resource.get_suggested_indexes(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
-

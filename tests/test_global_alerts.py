@@ -1,5 +1,3 @@
-from typing import Any
-
 import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient

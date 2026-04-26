@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip
 def test_maintenance_windows_get_all(client: OpsManagerClient, project) -> None:
     resource = client.maintenance_windows_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(

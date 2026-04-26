@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 def test_disks_get_all(client: OpsManagerClient, project) -> None:
     resource = client.disks_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
@@ -32,6 +31,7 @@ def test_disks_get_all(client: OpsManagerClient, project) -> None:
 
     result = resource.get_all(path_params, query_params)
     assert result is not None
+
 
 def test_disks_get_one(client: OpsManagerClient, project) -> None:
     """Test get_one."""
@@ -58,4 +58,3 @@ def test_disks_get_one(client: OpsManagerClient, project) -> None:
     result = resource.get_one(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
-

@@ -33,7 +33,6 @@ def test_feature_control_policies_retrieve_for_one_project(
     """Test retrieving feature control policies for one project."""
     resource = client.feature_control_policies_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(

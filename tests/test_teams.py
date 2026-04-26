@@ -9,7 +9,6 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_teams_get_all(client: OpsManagerClient, org) -> None:
     resource = client.teams_resource
-    org = org
     project = None
     user = None
     api_key = None

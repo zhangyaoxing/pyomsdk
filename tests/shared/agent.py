@@ -27,9 +27,9 @@ def delete_agent_api_key(
 ) -> dict[str, Any]:
     """Delete an agent API key."""
     agents_resource = client.agents_resource
-    resolved_project_id = project_id or client.projects_resource.get_all(None).get("results", [{}])[0].get(
-        "id", ""
-    )
+    resolved_project_id = project_id or client.projects_resource.get_all(None).get("results", [{}])[
+        0
+    ].get("id", "")
     path_params = AgentsResource.RemoveApiKeyPathParams(
         api_agent_key_id=api_agent_key_id,
         project_id=resolved_project_id,

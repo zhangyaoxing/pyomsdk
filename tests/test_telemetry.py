@@ -9,13 +9,10 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 
 def test_telemetry_retrieve_telemetry_data(client: OpsManagerClient) -> None:
     resource = client.telemetry_resource
-    org = None
-    project = None
-    user = None
-    api_key = None
 
     result = resource.retrieve_telemetry_data()
     assert result is not None
+
 
 def test_telemetry_toggle_telemetry_status(client: OpsManagerClient) -> None:
     """Test toggle_telemetry_status."""
@@ -35,4 +32,3 @@ def test_telemetry_toggle_telemetry_status(client: OpsManagerClient) -> None:
     result = resource.toggle_telemetry_status(body_params)
     assert result is not None
     assert_success_or_skip(result)
-

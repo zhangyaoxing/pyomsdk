@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 def test_events_get_all_project(client: OpsManagerClient, project) -> None:
     resource = client.events_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
@@ -32,6 +31,7 @@ def test_events_get_all_project(client: OpsManagerClient, project) -> None:
 
     result = resource.get_all_project(path_params, query_params)
     assert result is not None
+
 
 def test_events_get_all_organization(client: OpsManagerClient, project) -> None:
     """Test get_all_organization."""
@@ -59,6 +59,7 @@ def test_events_get_all_organization(client: OpsManagerClient, project) -> None:
     assert result is not None
     assert_success_or_skip(result)
 
+
 def test_events_get_one_organization(client: OpsManagerClient, project) -> None:
     """Test get_one_organization."""
     resource = client.events_resource
@@ -85,6 +86,7 @@ def test_events_get_one_organization(client: OpsManagerClient, project) -> None:
     assert result is not None
     assert_success_or_skip(result)
 
+
 def test_events_get_one_project(client: OpsManagerClient, project) -> None:
     """Test get_one_project."""
     resource = client.events_resource
@@ -110,4 +112,3 @@ def test_events_get_one_project(client: OpsManagerClient, project) -> None:
     result = resource.get_one_project(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
-

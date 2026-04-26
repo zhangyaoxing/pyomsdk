@@ -10,7 +10,6 @@ from tests.shared.resource_api import build_model_or_skip
 def test_configuration_get_the_automation_configuration(client: OpsManagerClient, project) -> None:
     resource = client.configuration_resource
     org = None
-    project = project
     user = None
     api_key = None
     path_params = build_model_or_skip(
