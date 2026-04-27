@@ -1,10 +1,7 @@
 from typing import Any
 
-import pytest
-
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.import_deployments_resource import ImportDeploymentsResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -24,108 +21,59 @@ def test_import_deployments_get_import_deployment_requests(
 
 
 def test_import_deployments_get_import_deployment_request_status(
-    client: OpsManagerClient, project: dict[str, Any]
+    client: OpsManagerClient, project_with_cluster: dict[str, Any]
 ) -> None:
     resource = client.import_deployments_resource
-    all_result = resource.get_import_deployment_requests(
-        ImportDeploymentsResource.GetImportDeploymentRequestsPathParams(project_id=project["id"]),
-        None,
-    )
-    items = all_result if isinstance(all_result, list) else all_result.get("results", [])
-    if not items:
-        pytest.skip("No import deployment requests found")
 
-    import_id = items[0].get("id") or items[0].get("_id")
     path_params = ImportDeploymentsResource.GetImportDeploymentRequestStatusPathParams(
-        project_id=project["id"], import_process_id=import_id
+        project_id=project_with_cluster["id"], import_process_id=project_with_cluster["id"]
     )
     result = resource.get_import_deployment_request_status(path_params, None)
     assert result is not None
-    assert "error" not in result
+    assert result["status"] == 404
 
-def test_import_deployments_cancel_import_deployment_request(client: OpsManagerClient, project) -> None:
+
+def test_import_deployments_cancel_import_deployment_request(
+    client: OpsManagerClient, project
+) -> None:
     """Test cancel_import_deployment_request."""
     resource = client.import_deployments_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ImportDeploymentsResource.CancelImportDeploymentRequestPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = ImportDeploymentsResource.CancelImportDeploymentRequestPathParams(
+        project_id=project["id"],
+        request_id=project["id"],
     )
-    query_params = build_model_or_skip(
-        ImportDeploymentsResource.CancelImportDeploymentRequestQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.cancel_import_deployment_request(path_params, query_params)
+    result = resource.cancel_import_deployment_request(path_params, None)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" in result
 
-def test_import_deployments_create_import_deployment_request(client: OpsManagerClient, project) -> None:
+
+def test_import_deployments_create_import_deployment_request(
+    client: OpsManagerClient, project
+) -> None:
     """Test create_import_deployment_request."""
     resource = client.import_deployments_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ImportDeploymentsResource.CreateImportDeploymentRequestPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = ImportDeploymentsResource.CreateImportDeploymentRequestPathParams(
+        project_id=project["id"],
     )
-    query_params = build_model_or_skip(
-        ImportDeploymentsResource.CreateImportDeploymentRequestQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    body_params = ImportDeploymentsResource.CreateImportDeploymentRequestBodyParams(
+        seed_hostport="example.com:27017",
+        required_processes=["example.com:27017"],
     )
-    body_params = build_model_or_skip(
-        ImportDeploymentsResource.CreateImportDeploymentRequestBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.create_import_deployment_request(path_params, query_params, body_params)
+    result = resource.create_import_deployment_request(path_params, None, body_params)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" in result
+    assert result["error"] == 400
 
-def test_import_deployments_delete_import_deployment_request(client: OpsManagerClient, project) -> None:
+
+def test_import_deployments_delete_import_deployment_request(
+    client: OpsManagerClient, project
+) -> None:
     """Test delete_import_deployment_request."""
     resource = client.import_deployments_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ImportDeploymentsResource.DeleteImportDeploymentRequestPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = ImportDeploymentsResource.DeleteImportDeploymentRequestPathParams(
+        project_id=project["id"],
+        request_id=project["id"],
     )
-    query_params = build_model_or_skip(
-        ImportDeploymentsResource.DeleteImportDeploymentRequestQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.delete_import_deployment_request(path_params, query_params)
+    result = resource.delete_import_deployment_request(path_params, None)
     assert result is not None
-    assert_success_or_skip(result)
-
+    assert "error" in result

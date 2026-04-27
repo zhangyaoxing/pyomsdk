@@ -18,3 +18,4 @@ def test_integration_settings_get_all_configurations(
     result = resource.get_all_configurations(path_params, None)
     assert result is not None
     assert "error" not in result
+    assert len(result["results"]) == 0
