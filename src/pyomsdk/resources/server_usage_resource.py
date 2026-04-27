@@ -148,7 +148,7 @@ RAM_POOL
 To learn more, see MongoDB Usage Page.
         """
 
-        class VirtualhostsParams(BaseModel):
+        class VirtualHostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(None, serialization_alias="groupId")
@@ -159,7 +159,7 @@ To learn more, see MongoDB Usage Page.
             """FQDN of the virtual host bound to the physical host.
             """
 
-        virtual_hosts: list[VirtualhostsParams] = Field(serialization_alias="virtualHosts")
+        virtual_hosts: list[VirtualHostsParams] = Field(serialization_alias="virtualHosts")
         """List of virtual hosts bound to the provided physical host.
         """
 
@@ -953,7 +953,7 @@ Expected response body
     class UpdateServerTypeForOneOrganizationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class ServertypeParams(BaseModel):
+        class ServerTypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
@@ -988,7 +988,7 @@ RAM_POOL
 To learn more, see MongoDB Usage Page.
             """
 
-        server_type: ServertypeParams = Field(serialization_alias="serverType")
+        server_type: ServerTypeParams = Field(serialization_alias="serverType")
         """Server Type of the physical host.
         """
 
@@ -1061,7 +1061,7 @@ Expected response body
     class UpdateDefaultServerTypeBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class ServertypeParams(BaseModel):
+        class ServerTypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
@@ -1096,7 +1096,7 @@ RAM_POOL
 To learn more, see MongoDB Usage Page.
             """
 
-        server_type: ServertypeParams = Field(serialization_alias="serverType")
+        server_type: ServerTypeParams = Field(serialization_alias="serverType")
         """Server Type of the physical host.
         """
 
@@ -1197,7 +1197,7 @@ RAM_POOL
 To learn more, see MongoDB Usage Page.
         """
 
-        class VirtualhostsParams(BaseModel):
+        class VirtualHostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(None, serialization_alias="groupId")
@@ -1208,7 +1208,7 @@ To learn more, see MongoDB Usage Page.
             """FQDN of the virtual host bound to the physical host.
             """
 
-        virtual_hosts: list[VirtualhostsParams] = Field(serialization_alias="virtualHosts")
+        virtual_hosts: list[VirtualHostsParams] = Field(serialization_alias="virtualHosts")
         """List of virtual hosts bound to the provided physical host.
         """
 
@@ -1281,7 +1281,7 @@ Expected response body
     class UpdateServerTypeBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class ServertypeParams(BaseModel):
+        class ServerTypeParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             label: Optional[ServerTypeLabel] = Field(None, serialization_alias="label")
@@ -1316,7 +1316,7 @@ RAM_POOL
 To learn more, see MongoDB Usage Page.
             """
 
-        server_type: ServertypeParams = Field(serialization_alias="serverType")
+        server_type: ServerTypeParams = Field(serialization_alias="serverType")
         """Server Type of the physical host.
         """
 

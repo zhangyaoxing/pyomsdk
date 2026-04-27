@@ -201,7 +201,7 @@ MONGOS
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
         """
 
-        class MetricthresholdParams(BaseModel):
+        class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(None, serialization_alias="metricName")
@@ -264,7 +264,7 @@ DAYS
 For example, a metric that measures memory consumption can use BYTES, while a metric that measures time can use HOURS.
             """
 
-        metric_threshold: Optional[MetricthresholdParams] = Field(
+        metric_threshold: Optional[MetricThresholdParams] = Field(
             None, serialization_alias="metricThreshold"
         )
         """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to OUTSIDE_METRIC_THRESHOLD.
@@ -858,7 +858,7 @@ MONGOS
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
         """
 
-        class MetricthresholdParams(BaseModel):
+        class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(None, serialization_alias="metricName")
@@ -921,7 +921,7 @@ DAYS
 For example, a metric that measures memory consumption can use BYTES, while a metric that measures time can use HOURS.
             """
 
-        metric_threshold: Optional[MetricthresholdParams] = Field(
+        metric_threshold: Optional[MetricThresholdParams] = Field(
             None, serialization_alias="metricThreshold"
         )
         """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to OUTSIDE_METRIC_THRESHOLD.

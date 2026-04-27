@@ -380,7 +380,7 @@ MONGOS
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
         """
 
-        class MetricthresholdParams(BaseModel):
+        class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(None, serialization_alias="metricName")
@@ -443,7 +443,7 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricthresholdParams = Field(serialization_alias="metricThreshold")
+        metric_threshold: MetricThresholdParams = Field(serialization_alias="metricThreshold")
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 
@@ -1430,7 +1430,7 @@ MONGOS
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
         """
 
-        class MetricthresholdParams(BaseModel):
+        class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(None, serialization_alias="metricName")
@@ -1493,7 +1493,7 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricthresholdParams = Field(serialization_alias="metricThreshold")
+        metric_threshold: MetricThresholdParams = Field(serialization_alias="metricThreshold")
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 

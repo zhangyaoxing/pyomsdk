@@ -166,7 +166,7 @@ Expected response body
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class DaemonfilterParams(BaseModel):
+        class DaemonFilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
@@ -179,7 +179,7 @@ Expected response body
             """The host address for one Backup Daemon host.
             """
 
-        daemon_filter: Optional[list[DaemonfilterParams]] = Field(
+        daemon_filter: Optional[list[DaemonFilterParams]] = Field(
             None, serialization_alias="daemonFilter"
         )
         """Optional. An array of pairs of Backup Daemon hosts and their head directories that to which this project's backup jobs are limited. If omitted, all available Backup Daemons are used.
@@ -207,7 +207,7 @@ If a snapshot store or any Backup Daemon has the same labels set as this labelFi
 If omitted, the project's backup jobs can use any available Backup Daemon or snapshot store.
         """
 
-        class OplogstorefilterParams(BaseModel):
+        class OplogStoreFilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(None, serialization_alias="id")
@@ -228,13 +228,13 @@ s3OplogStore
 thirdPartyOplogStore
             """
 
-        oplog_store_filter: Optional[list[OplogstorefilterParams]] = Field(
+        oplog_store_filter: Optional[list[OplogStoreFilterParams]] = Field(
             None, serialization_alias="oplogStoreFilter"
         )
         """Optional. An array of unique identifiers representing Oplog stores that may be used with this project's backup jobs. If omitted, all available oplog stores may be used.
         """
 
-        class SnapshotstorefilterParams(BaseModel):
+        class SnapshotStoreFilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(None, serialization_alias="id")
@@ -253,7 +253,7 @@ blockstore
 fileSystemStore
             """
 
-        snapshot_store_filter: Optional[list[SnapshotstorefilterParams]] = Field(
+        snapshot_store_filter: Optional[list[SnapshotStoreFilterParams]] = Field(
             None, serialization_alias="snapshotStoreFilter"
         )
         """Optional. Array of unique identifiers representing specific snapshot stores and their types that can be used with this project's backup jobs. If omitted, all available snapshot stores are used.

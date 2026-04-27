@@ -897,7 +897,7 @@ string
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
-        class LogrotateParams(BaseModel):
+        class LogRotateParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             size_threshold_mb: Optional[int] = Field(None, serialization_alias="sizeThresholdMB")
@@ -908,7 +908,7 @@ string
             """Number of hours after which this MongoDB Agent rotates the log file.
             """
 
-        log_rotate: Optional[LogrotateParams] = Field(None, serialization_alias="logRotate")
+        log_rotate: Optional[LogRotateParams] = Field(None, serialization_alias="logRotate")
         """Thresholds after which this MongoDB Agent rotates the backup log.
         """
 
@@ -1124,7 +1124,7 @@ boolean
         """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
         """
 
-        class LogrotateParams(BaseModel):
+        class LogRotateParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             size_threshold_mb: Optional[int] = Field(None, serialization_alias="sizeThresholdMB")
@@ -1135,7 +1135,7 @@ boolean
             """Number of hours after which this MongoDB Agent rotates the log file.
             """
 
-        log_rotate: Optional[LogrotateParams] = Field(None, serialization_alias="logRotate")
+        log_rotate: Optional[LogRotateParams] = Field(None, serialization_alias="logRotate")
         """Thresholds after which this MongoDB Agent rotates the monitoring log.
         """
 

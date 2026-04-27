@@ -270,7 +270,7 @@ If the new list only removes namespaces from the existing array, don't set syncS
         """Flag that indicates if Ops Manager has provisioned the resources needed to store a backup.
         """
 
-        class SnapshotstoreParams(BaseModel):
+        class SnapshotStoreParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             snapshot_store_id: Optional[str] = Field(None, serialization_alias="snapshotStoreId")
@@ -283,7 +283,7 @@ If the new list only removes namespaces from the existing array, don't set syncS
             """String that identifies the snapshot store type. Currently, only an S3 bucket (S3 blockstore) is supported. Value must be s3blockstore. If you provide the snapshotStore object, you must specify both the snapshotStoreType and snapshotStoreId parameters.
             """
 
-        snapshot_store: Optional[SnapshotstoreParams] = Field(
+        snapshot_store: Optional[SnapshotStoreParams] = Field(
             None, serialization_alias="snapshotStore"
         )
         """Object that specifies the snapshot store to transition to. This object contains the snapshot store type and the ID of the S3 bucket (S3 blockstore). Existing snapshots remain in the original store until they expire based on your configured retention policy. You can also transition between S3-compatible snapshot stores from the Jobs page.

@@ -209,7 +209,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class ExternalmanagementsystemParams(BaseModel):
+        class ExternalManagementSystemParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             name: Optional[str] = Field(None, serialization_alias="name")
@@ -224,7 +224,7 @@ For endpoints that return a list of results, the results object is an envelope. 
             """Active release of the external system that manages this Ops Manager Project.
             """
 
-        external_management_system: Optional[ExternalmanagementsystemParams] = Field(
+        external_management_system: Optional[ExternalManagementSystemParams] = Field(
             None, serialization_alias="externalManagementSystem"
         )
         """Identifying parameters for the external system that manages this Ops Manager Project.

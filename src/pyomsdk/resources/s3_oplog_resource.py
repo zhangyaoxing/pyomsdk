@@ -72,7 +72,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         """
 
-        class CustomcertificatesParams(BaseModel):
+        class CustomCertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             cert_string: Optional[str] = Field(None, serialization_alias="certString")
@@ -83,7 +83,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
             """Name that identifies the Certificate Authority PEM file.
             """
 
-        custom_certificates: Optional[list[CustomcertificatesParams]] = Field(
+        custom_certificates: Optional[list[CustomCertificatesParams]] = Field(
             None, serialization_alias="customCertificates"
         )
         """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.
@@ -481,7 +481,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
 If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         """
 
-        class CustomcertificatesParams(BaseModel):
+        class CustomCertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             cert_string: Optional[str] = Field(None, serialization_alias="certString")
@@ -492,7 +492,7 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
             """Name that identifies the Certificate Authority PEM file.
             """
 
-        custom_certificates: Optional[list[CustomcertificatesParams]] = Field(
+        custom_certificates: Optional[list[CustomCertificatesParams]] = Field(
             None, serialization_alias="customCertificates"
         )
         """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.

@@ -493,7 +493,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class CreateOrganizationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class LdapgroupmappingsParams(BaseModel):
+        class LdapGroupMappingsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             ldap_groups: Optional[list[Any]] = Field(None, serialization_alias="ldapGroups")
@@ -512,7 +512,7 @@ ORG_OWNER
 You cannot specify a global role, project role, or an organization billing admin role.
             """
 
-        ldap_group_mappings: Optional[list[LdapgroupmappingsParams]] = Field(
+        ldap_group_mappings: Optional[list[LdapGroupMappingsParams]] = Field(
             None, serialization_alias="ldapGroupMappings"
         )
         """Requires LDAP integration for Ops Manager.

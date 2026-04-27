@@ -61,7 +61,7 @@ Expected response body
     class AssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        class DeploymentconfigsParams(BaseModel):
+        class DeploymentConfigsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             deployment_id: str = Field(serialization_alias="deploymentId")
@@ -72,7 +72,7 @@ Expected response body
             """Replica set label that identifies the shard.
             """
 
-        deployment_configs: list[DeploymentconfigsParams] = Field(
+        deployment_configs: list[DeploymentConfigsParams] = Field(
             serialization_alias="deploymentConfigs"
         )
         """Specification objects for the cluster members for which to assign deployment regions.
