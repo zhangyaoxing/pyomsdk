@@ -1,8 +1,8 @@
+from urllib.parse import quote
 import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.backup_daemon_resource import BackupDaemonResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -11,10 +11,9 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 
 def test_backup_daemon_get_all(client: OpsManagerClient) -> None:
     resource = client.backup_daemon_resource
-    query_params = BackupDaemonResource.GetAllQueryParams(pretty=True)
-    result = resource.get_all(query_params)
+    result = resource.get_all(None)
     assert result is not None
-    assert_success_or_skip(result)
+    assert result["totalCount"] > 0
 
 
 def test_backup_daemon_get_by_id(client: OpsManagerClient) -> None:
@@ -24,8 +23,9 @@ def test_backup_daemon_get_by_id(client: OpsManagerClient) -> None:
     if not items:
         pytest.skip("No backup daemons configured")
 
-    machine = items[0].get("machine") or items[0].get("hostname")
-    head_root_dir = items[0].get("headRootDirectory") or ""
+    machine = items[0].get("machine").get("machine")
+    head_root_dir = items[0].get("machine").get("headRootDirectory")
+    head_root_dir = quote(head_root_dir, safe="")
     if not machine:
         pytest.skip("Backup daemon entry has no machine/hostname field")
 
@@ -34,101 +34,50 @@ def test_backup_daemon_get_by_id(client: OpsManagerClient) -> None:
     )
     result = resource.get_by_id(path_params, None)
     assert result is not None
-    assert_success_or_skip(result)
+    assert result["assignmentEnabled"] is True
 
 
-def test_backup_daemon_create(client: OpsManagerClient, project) -> None:
+def test_backup_daemon_create(client: OpsManagerClient) -> None:
     """Test create."""
     resource = client.backup_daemon_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        BackupDaemonResource.CreatePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        BackupDaemonResource.CreateQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    body_params = build_model_or_skip(
-        BackupDaemonResource.CreateBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = BackupDaemonResource.CreatePathParams(machine="example.com")
+    query_params = None
+    body_params = BackupDaemonResource.CreateBodyParams(
+        machine=BackupDaemonResource.CreateBodyParams.MachineParams(
+            machine="example.com", head_root_directory="/data/backupd"
+        )
     )
     result = resource.create(path_params, query_params, body_params)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" in result
+    assert result["errorCode"] == "DAEMON_MACHINE_CONFIG_NOT_FOUND"
 
 
-def test_backup_daemon_delete(client: OpsManagerClient, project) -> None:
+def test_backup_daemon_delete(client: OpsManagerClient) -> None:
     """Test delete."""
     resource = client.backup_daemon_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        BackupDaemonResource.DeletePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = BackupDaemonResource.DeletePathParams(
+        machine="example.com", head_root_directory=quote("/data/backupd", safe="")
     )
-    query_params = build_model_or_skip(
-        BackupDaemonResource.DeleteQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
+    query_params = None
     result = resource.delete(path_params, query_params)
-    assert result is not None
-    assert_success_or_skip(result)
+    assert result is None
 
 
-def test_backup_daemon_update(client: OpsManagerClient, project) -> None:
+def test_backup_daemon_update(client: OpsManagerClient) -> None:
     """Test update."""
     resource = client.backup_daemon_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        BackupDaemonResource.UpdatePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        BackupDaemonResource.UpdateQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    body_params = build_model_or_skip(
-        BackupDaemonResource.UpdateBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    machine = {
+        "machine": "backup-daemon",
+        "head_root_directory": quote("/headDB/", safe=""),
+    }
+    path_params = BackupDaemonResource.UpdatePathParams(**machine)
+    query_params = None
+    body_params = BackupDaemonResource.UpdateBodyParams(
+        assignment_enabled=True,
+        machine=BackupDaemonResource.UpdateBodyParams.MachineParams(**machine),
     )
     result = resource.update(path_params, query_params, body_params)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" not in result
+    assert result["assignmentEnabled"] is True

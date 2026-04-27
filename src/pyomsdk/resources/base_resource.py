@@ -38,6 +38,8 @@ class BaseResource:
         path = self._build_path(path_template, self._param_to_dict(path_params))
         query = self._param_to_dict(query_params)
         body = self._param_to_dict(body_params)
+        if body is None and method in ("POST", "PUT", "PATCH"):
+            body = {}
         response = self._client.request(method=method, url=path, params=query, json=body)
         if not response.content:
             return None

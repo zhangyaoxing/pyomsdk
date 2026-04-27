@@ -56,6 +56,32 @@ def new_project(client: OpsManagerClient, org: dict):
     delete_project(client, project["id"])
 
 
+@pytest.fixture(name="project_with_cluster")
+def get_project_with_cluster(client: OpsManagerClient):
+    project_resource = client.projects_resource
+    project_name = "MongoDB"
+    project = project_resource.get_by_name(
+        project_resource.GetByNamePathParams(group_name=project_name), None
+    )
+    if project is None:
+        pytest.skip(f"Project with name '{project_name}' not found, skipping test.")
+    yield project
+
+
+@pytest.fixture(name="cluster")
+def cluster(client: OpsManagerClient, project_with_cluster: dict):
+    cluster_resource = client.clusters_resource
+    pid: str = project_with_cluster.get("id")
+    clusters = cluster_resource.get_all_from_one_project(
+        cluster_resource.GetAllFromOneProjectPathParams(project_id=pid), None
+    )
+    if not clusters or "results" not in clusters or not clusters["results"]:
+        pytest.skip(
+            f"No clusters found in project '{project_with_cluster['name']}', skipping test."
+        )
+    return clusters["results"][0]
+
+
 @pytest.fixture(name="api_key")
 def new_api_key(client: OpsManagerClient, project: dict):
     api_key = create_agent_api_key(client, project["id"])

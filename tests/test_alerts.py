@@ -1,5 +1,3 @@
-from typing import Any
-
 import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
@@ -36,7 +34,7 @@ def _first_alert_id(client: OpsManagerClient, project_id: str) -> str:
     return alert_id
 
 
-def test_alerts_get_all(client: OpsManagerClient, project) -> None:
+def test_alerts_get_all(client: OpsManagerClient, project_with_cluster: dict) -> None:
     """Test getting all alerts in a project."""
     resource = client.alerts_resource
     org = None
@@ -46,7 +44,7 @@ def test_alerts_get_all(client: OpsManagerClient, project) -> None:
         AlertsResource.GetAllPathParams,
         client=client,
         org=org,
-        project=project,
+        project=project_with_cluster,
         user=user,
         api_key=api_key,
     )
@@ -54,7 +52,7 @@ def test_alerts_get_all(client: OpsManagerClient, project) -> None:
         AlertsResource.GetAllQueryParams,
         client=client,
         org=org,
-        project=project,
+        project=project_with_cluster,
         user=user,
         api_key=api_key,
     )
@@ -64,13 +62,13 @@ def test_alerts_get_all(client: OpsManagerClient, project) -> None:
     assert "error" not in result
 
 
-def test_alerts_get_one(client: OpsManagerClient, project: dict[str, Any]) -> None:
+def test_alerts_get_one(client: OpsManagerClient, project_with_cluster: dict) -> None:
     """Test getting a specific alert by ID."""
     resource = client.alerts_resource
-    alert_id = _first_alert_id(client, project["id"])
+    alert_id = _first_alert_id(client, project_with_cluster["id"])
 
     path_params = AlertsResource.GetOnePathParams(
-        project_id=project["id"],
+        project_id=project_with_cluster["id"],
         alert_id=alert_id,
     )
     query_params = AlertsResource.GetOneQueryParams(pretty=True)
@@ -78,15 +76,16 @@ def test_alerts_get_one(client: OpsManagerClient, project: dict[str, Any]) -> No
     result = resource.get_one(path_params, query_params)
     assert result is not None
     assert "error" not in result
+    assert result.get("id") == alert_id
 
 
-def test_alerts_acknowledge_one(client: OpsManagerClient, project: dict[str, Any]) -> None:
+def test_alerts_acknowledge_one(client: OpsManagerClient, project_with_cluster: dict) -> None:
     """Test acknowledging an alert."""
     resource = client.alerts_resource
-    alert_id = _first_alert_id(client, project["id"])
+    alert_id = _first_alert_id(client, project_with_cluster["id"])
 
     path_params = AlertsResource.AcknowledgeOnePathParams(
-        project_id=project["id"],
+        project_id=project_with_cluster["id"],
         alert_id=alert_id,
     )
     query_params = AlertsResource.AcknowledgeOneQueryParams(pretty=True)
@@ -98,3 +97,4 @@ def test_alerts_acknowledge_one(client: OpsManagerClient, project: dict[str, Any
     result = resource.acknowledge_one(path_params, query_params, body_params)
     assert result is not None
     assert "error" not in result
+    assert result.get("id") == alert_id

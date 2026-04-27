@@ -5,7 +5,7 @@ import pytest
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.backup_configurations_resource import BackupConfigurationsResource
 from pyomsdk.resources.clusters_resource import ClustersResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
+from pyomsdk.resources.enums import BackupStatusName
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -22,58 +22,50 @@ def _first_cluster_id(client: OpsManagerClient, project_id: str) -> str | None:
     return items[0].get("id") or items[0].get("_id")
 
 
-def test_backup_configurations_get_all(client: OpsManagerClient, project: dict[str, Any]) -> None:
+def test_backup_configurations_get_all(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any]
+) -> None:
     resource = client.backup_configurations_resource
-    path_params = BackupConfigurationsResource.GetAllPathParams(project_id=project["id"])
+    path_params = BackupConfigurationsResource.GetAllPathParams(
+        project_id=project_with_cluster["id"]
+    )
     result = resource.get_all(path_params, None)
     assert result is not None
     assert "error" not in result
+    assert len(result.get("results", [])) > 0
 
 
-def test_backup_configurations_get_one(client: OpsManagerClient, project: dict[str, Any]) -> None:
-    cluster_id = _first_cluster_id(client, project["id"])
+def test_backup_configurations_get_one(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any]
+) -> None:
+    cluster_id = _first_cluster_id(client, project_with_cluster["id"])
     if not cluster_id:
         pytest.skip("No clusters found in project")
 
     resource = client.backup_configurations_resource
     path_params = BackupConfigurationsResource.GetOnePathParams(
-        project_id=project["id"], cluster_id=cluster_id
+        project_id=project_with_cluster["id"], cluster_id=cluster_id
     )
     result = resource.get_one(path_params, None)
     assert result is not None
     assert "error" not in result
 
-def test_backup_configurations_update(client: OpsManagerClient, project) -> None:
+
+def test_backup_configurations_update(
+    client: OpsManagerClient,
+    project_with_cluster: dict[str, Any],
+    cluster: dict[str, Any],
+) -> None:
     """Test update."""
     resource = client.backup_configurations_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        BackupConfigurationsResource.UpdatePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        BackupConfigurationsResource.UpdateQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    body_params = build_model_or_skip(
-        BackupConfigurationsResource.UpdateBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.update(path_params, query_params, body_params)
-    assert result is not None
-    assert_success_or_skip(result)
 
+    path_params = BackupConfigurationsResource.UpdatePathParams(
+        cluster_id=cluster["id"],
+        project_id=project_with_cluster["id"],
+    )
+    body_params = BackupConfigurationsResource.UpdateBodyParams(
+        status_name=BackupStatusName.STARTED
+    )
+    result = resource.update(path_params, None, body_params)
+    assert result is not None
+    assert result["error"] == 409

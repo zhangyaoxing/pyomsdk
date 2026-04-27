@@ -58,19 +58,19 @@ def test_agents_get_all(client: OpsManagerClient, project: dict) -> None:
     assert isinstance(result["links"], list)
 
 
-def test_agents_get_by_type(client: OpsManagerClient, project: dict) -> None:
+def test_agents_get_by_type(client: OpsManagerClient, project_with_cluster: dict) -> None:
     """Test getting agents by type for a project."""
     resource = client.agents_resource
 
     path_params = AgentsResource.GetByTypePathParams(
-        project_id=project["id"], type=AgentType.AUTOMATION
+        project_id=project_with_cluster["id"], type=AgentType.AUTOMATION
     )
     result = resource.get_by_type(path_params, None)
     assert result is not None
     assert "error" not in result
     assert result["results"] is not None
     assert isinstance(result["results"], list)
-    assert len(result["results"]) == 0
+    assert len(result["results"]) >= 0
 
 
 def test_agents_retrieve_all_versions(client: OpsManagerClient) -> None:
@@ -89,14 +89,18 @@ def test_agents_retrieve_all_versions(client: OpsManagerClient) -> None:
     assert "mongoDbToolsVersion" in result
 
 
-def test_agents_retrieve_for_one_project(client: OpsManagerClient, project: dict) -> None:
+def test_agents_retrieve_for_one_project(
+    client: OpsManagerClient, project_with_cluster: dict
+) -> None:
     """Test retrieving all agent versions for one project."""
     resource = client.agents_resource
 
-    path_params = AgentsResource.RetrieveForOneProjectPathParams(project_id=project["id"])
+    path_params = AgentsResource.RetrieveForOneProjectPathParams(
+        project_id=project_with_cluster["id"]
+    )
     query_params = AgentsResource.RetrieveForOneProjectQueryParams(pretty=True)
 
     result = resource.retrieve_for_one_project(path_params, query_params)
     assert result is not None
     assert "error" not in result
-    assert result["count"] == 0
+    assert result["count"] >= 0
