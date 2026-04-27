@@ -31,3 +31,7 @@ def test_maintenance_windows_get_all(client: OpsManagerClient, project) -> None:
 
     result = resource.get_all(path_params, query_params)
     assert result is not None
+    assert "error" not in result
+    assert result["results"] is not None
+    assert isinstance(result["results"], list)
+    assert len(result["results"]) == 0
