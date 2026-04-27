@@ -24,3 +24,6 @@ def test_global_access_list_get_all_entries(client: OpsManagerClient) -> None:
 
     result = resource.get_all_entries(query_params)
     assert result is not None
+    assert result["results"] is not None
+    assert isinstance(result["results"], list)
+    assert len(result["results"]) > 0

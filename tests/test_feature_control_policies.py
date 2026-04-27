@@ -25,6 +25,7 @@ def test_feature_control_policies_retrieve_all(client: OpsManagerClient) -> None
     result = resource.retrieve_all(query_params)
     assert result is not None
     assert "error" not in result
+    assert len(result) > 0
 
 
 def test_feature_control_policies_retrieve_for_one_project(
@@ -55,6 +56,7 @@ def test_feature_control_policies_retrieve_for_one_project(
     result = resource.retrieve_for_one_project(path_params, query_params)
     assert result is not None
     assert "error" not in result
+    assert len(result["policies"]) == 0
 
 
 def test_feature_control_policies_update(client: OpsManagerClient, project: dict[str, Any]) -> None:
@@ -63,8 +65,18 @@ def test_feature_control_policies_update(client: OpsManagerClient, project: dict
 
     path_params = FeatureControlPoliciesResource.UpdatePathParams(project_id=project["id"])
     query_params = FeatureControlPoliciesResource.UpdateQueryParams(pretty=True)
-    body_params = FeatureControlPoliciesResource.UpdateBodyParams()
+    body_params = FeatureControlPoliciesResource.UpdateBodyParams(
+        external_management_system=FeatureControlPoliciesResource.UpdateBodyParams.ExternalManagementSystemParams(
+            name="test-system",
+            system_id="test-system-id",
+            version="1.0",
+        ),
+        policies=[],
+    )
 
     result = resource.update(path_params, query_params, body_params)
     assert result is not None
     assert "error" not in result
+    assert result["externalManagementSystem"]["name"] == "test-system"
+    assert result["externalManagementSystem"]["systemId"] == "test-system-id"
+    assert result["externalManagementSystem"]["version"] == "1.0"
