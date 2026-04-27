@@ -18,7 +18,7 @@ class BackupEncryptionKeysResource(BaseResource):
         """Unique identifier of the cluster to which the encryption keys belongs.
         """
 
-        group_id: str = Field(serialization_alias="GROUP-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project to which the encryption key belongs.
         """
 
@@ -87,7 +87,7 @@ Expected response body
         """Unique identifier of the cluster to which the encryption keys belongs.
         """
 
-        group_id: str = Field(serialization_alias="GROUP-ID")
+        project_id: str = Field(serialization_alias="PROJECT-ID")
         """Unique identifier of the project to which the encryption key belongs.
         """
 
