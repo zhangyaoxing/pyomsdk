@@ -1,4 +1,8 @@
 # Ops Manager SDK for Python
+
+[![PyPI version](https://img.shields.io/pypi/v/pyomsdk.svg)](https://pypi.org/project/pyomsdk/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
+
 This is the repository for MongoDB Ops Manager API SDK in Python language.
 
 ## How It's Built?
