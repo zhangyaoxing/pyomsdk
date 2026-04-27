@@ -56,13 +56,13 @@ Expected response body
         ### Document:
         [Get All from All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all-key/)
         ### Endpoint:
-        `GET /api/public/v1.0/clusters`
+        `GET /clusters`
         ### Description
         Get details for all clusters in all projects available to the programmatic API key making the request.
         """
         return self._request(
             "GET",
-            "/api/public/v1.0/api/public/v1.0/clusters",
+            "/api/public/v1.0/clusters",
             None,
             query_params,
             None,
