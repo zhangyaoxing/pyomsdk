@@ -31,3 +31,4 @@ def test_configuration_get_the_automation_configuration(client: OpsManagerClient
 
     result = resource.get_the_automation_configuration(path_params, query_params)
     assert result is not None
+    assert "processes" in result
