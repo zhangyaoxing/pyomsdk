@@ -1,6 +1,7 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.organization_access_lists_resource import OrganizationAccessListsResource
 from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
+from tests.shared.org import create_api_key
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,28 +10,17 @@ from tests.shared.resource_api import build_model_or_skip, assert_success_or_ski
 
 def test_organization_access_lists_get_all_entries(client: OpsManagerClient, org) -> None:
     resource = client.organization_access_lists_resource
-    project = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        OrganizationAccessListsResource.GetAllEntriesPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        OrganizationAccessListsResource.GetAllEntriesQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    org_key = create_api_key(client, org["id"], "Test API Key for Organization Access Lists")
+    path_params = OrganizationAccessListsResource.GetAllEntriesPathParams(
+        org_id=org["id"], api_key_id=org_key["id"]
     )
 
-    result = resource.get_all_entries(path_params, query_params)
+    result = resource.get_all_entries(path_params, None)
     assert result is not None
+    assert result["results"] is not None
+    assert isinstance(result["results"], list)
+    assert len(result["results"]) == 0
+
 
 def test_organization_access_lists_create_entries(client: OpsManagerClient, org) -> None:
     """Test create_entries."""
@@ -67,6 +57,7 @@ def test_organization_access_lists_create_entries(client: OpsManagerClient, org)
     assert result is not None
     assert_success_or_skip(result)
 
+
 def test_organization_access_lists_delete_entry(client: OpsManagerClient, org) -> None:
     """Test delete_entry."""
     resource = client.organization_access_lists_resource
@@ -93,6 +84,7 @@ def test_organization_access_lists_delete_entry(client: OpsManagerClient, org) -
     assert result is not None
     assert_success_or_skip(result)
 
+
 def test_organization_access_lists_get_one_entry(client: OpsManagerClient, org) -> None:
     """Test get_one_entry."""
     resource = client.organization_access_lists_resource
@@ -118,4 +110,3 @@ def test_organization_access_lists_get_one_entry(client: OpsManagerClient, org) 
     result = resource.get_one_entry(path_params, query_params)
     assert result is not None
     assert_success_or_skip(result)
-

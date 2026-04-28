@@ -71,7 +71,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """Description of the API key. Must be between 1 and 250 characters in length.
         """
 
-        roles: Optional[list[str]] = Field(None, serialization_alias="roles")
+        roles: Optional[list[OrgRole]] = Field(None, serialization_alias="roles")
         """List of roles that the API key should have. There must be at least one role listed, and all roles must be valid for an Organization.
 
 Organization roles include:
@@ -436,7 +436,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
         """
 
-        roles: Optional[list[str]] = Field(None, serialization_alias="roles")
+        roles: Optional[list[OrgRole]] = Field(None, serialization_alias="roles")
         """List of roles that the API key should have. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If roles is provided, there must be at least one role listed, and all roles must be valid for an Organization.
 
 Organization roles include:

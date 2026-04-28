@@ -24,3 +24,6 @@ def test_oplog_store_get_all(client: OpsManagerClient) -> None:
 
     result = resource.get_all(query_params)
     assert result is not None
+    assert result["results"] is not None
+    assert isinstance(result["results"], list)
+    assert len(result["results"]) > 0

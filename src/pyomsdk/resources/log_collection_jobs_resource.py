@@ -409,7 +409,7 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        log_types: LogType = Field(serialization_alias="logTypes")
+        log_types: list[LogType] = Field(serialization_alias="logTypes")
         """Array of strings specifying the types of logs to collect. Each array element must be one of the following values:
 
 AUTOMATION_AGENT

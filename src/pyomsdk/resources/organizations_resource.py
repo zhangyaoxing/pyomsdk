@@ -57,7 +57,7 @@ Expected response body
     class InviteUserBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[OrgRole] = Field(serialization_alias="roles")
         """Ops Manager roles to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
@@ -355,7 +355,7 @@ Expected response body
     class UpdateByInvitationIdBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[OrgRole] = Field(serialization_alias="roles")
         """Ops Manager roles to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
@@ -432,7 +432,7 @@ Expected response body
     class UpdateInvitationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[OrgRole] = Field(serialization_alias="roles")
         """Ops Manager roles to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.

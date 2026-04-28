@@ -655,7 +655,7 @@ Defaults to false.
     class UpdateRolesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        role_names: GroupRole = Field(serialization_alias="roleNames")
+        role_names: list[GroupRole] = Field(serialization_alias="roleNames")
         """Project roles you want to assign the given team.
         """
 

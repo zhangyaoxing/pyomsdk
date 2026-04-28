@@ -694,7 +694,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class AddTeamsBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        role_names: Optional[GroupRole] = Field(None, serialization_alias="roleNames")
+        role_names: Optional[list[GroupRole]] = Field(None, serialization_alias="roleNames")
         """Each object in the array represents a project role you want to assign to the team.
 
 The valid roles and their associated mappings are:
@@ -912,7 +912,7 @@ Expected response body
     class CreateInvitationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: Optional[list[str]] = Field(None, serialization_alias="roles")
+        roles: Optional[list[GroupRole]] = Field(None, serialization_alias="roles")
         """List of Ops Manager project roles to assign to the invited user. If the user accepts the invitation, Ops Manager assigns these roles to them. Specify one or more of the following values:
 
 Role Value in API
@@ -1286,7 +1286,7 @@ Expected response body
     class UpdateInvitationByInvitationIdBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[GroupRole] = Field(serialization_alias="roles")
         """Ops Manager roles to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
@@ -1363,7 +1363,7 @@ Expected response body
     class UpdateInvitationBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[GroupRole] = Field(serialization_alias="roles")
         """Ops Manager roles to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.

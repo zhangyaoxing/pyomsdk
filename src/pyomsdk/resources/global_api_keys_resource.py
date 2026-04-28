@@ -54,7 +54,7 @@ Expected response body
         """Description of the Global API Key. Must be between 1 and 250 characters in length.
         """
 
-        roles: GlobalRole = Field(serialization_alias="roles")
+        roles: list[GlobalRole] = Field(serialization_alias="roles")
         """List of roles that the Global API Key needs to have. If the roles array is provided:
 
 Provide at least one role
@@ -434,7 +434,7 @@ Expected response body
         """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
         """
 
-        roles: Optional[GlobalRole] = Field(None, serialization_alias="roles")
+        roles: Optional[list[GlobalRole]] = Field(None, serialization_alias="roles")
         """List of roles that the Global API Key needs to have. If the roles array is provided:
 
 Provide at least one role

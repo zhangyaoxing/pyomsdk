@@ -71,7 +71,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class AssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[Any] = Field(serialization_alias="roles")
+        roles: list[GroupRole] = Field(serialization_alias="roles")
         """List of roles that the API Key should be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
 Role Value in API
@@ -242,7 +242,7 @@ For endpoints that return a list of results, the results object is an envelope. 
         """Description of the API key. Must be between 1 and 250 characters in length.
         """
 
-        roles: Optional[list[str]] = Field(None, serialization_alias="roles")
+        roles: Optional[list[GroupRole]] = Field(None, serialization_alias="roles")
         """List of roles that the API Key needs to have. If the roles array is provided:
 
 Provide at least one role
@@ -573,7 +573,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class ModifyRolesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[GroupRole] = Field(serialization_alias="roles")
         """List of roles that the API Key should be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
 Role Value in API
