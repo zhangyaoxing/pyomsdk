@@ -187,7 +187,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         assignable_only: Optional[bool] = Field(True, serialization_alias="assignableOnly")
-        """Flag that indicates whether this file system store can be assigned new backup jobs.
+        """Indicates whether to return only file system stores to which you can assign new backup jobs.
         """
 
         envelope: Optional[bool] = Field(False, serialization_alias="envelope")

@@ -15,7 +15,7 @@ class EventsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """The unique identifier of the organization.
+        """Unique identifier of the organization associated with the events.
         """
 
     class GetAllOrganizationQueryParams(BaseModel):

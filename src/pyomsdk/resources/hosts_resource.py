@@ -251,7 +251,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/hosts`
         ### Description
-        Get all MongoDB hosts in a project. Use the CLUSTER-ID query parameter to only get the hosts that belong to the specified cluster. The response sorts the hosts alphabetically by HOSTNAME:PORT.
+        Get all MongoDB hosts in a project. Use the clusterId query parameter to only get the hosts that belong to the specified cluster. The response sorts the hosts alphabetically by HOSTNAME:PORT.
         """
         return self._request(
             "GET",

@@ -98,11 +98,11 @@ To un-acknowledge an alert, specify a time and date in the past.
         model_config = ConfigDict(populate_by_name=True)
 
         created_on_or_after: Optional[str] = Field(None, serialization_alias="createdOnOrAfter")
-        """Creation date of alerts you want to return. Ops Manager returns alerts created on or after the date you indicate.
+        """Creation date of alerts you want to return, in ISO 8601 format. Ops Manager returns alerts created on or after the date you indicate.
         """
 
         created_on_or_before: Optional[str] = Field(None, serialization_alias="createdOnOrBefore")
-        """Creation date of alerts you want to return. Ops Manager returns alerts created on or before the date you indicate.
+        """Creation date of alerts you want to return, in ISO 8601. Ops Manager returns alerts created on or before the date you indicate.
         """
 
         envelope: Optional[bool] = Field(False, serialization_alias="envelope")

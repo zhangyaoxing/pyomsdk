@@ -678,7 +678,7 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(None, serialization_alias="envelope")
-        """A boolean that specifies whether or not to wrap the response in an envelope.
+        """Specifies whether or not to wrap the response in an envelope.
 
 Defaults to false.
         """
@@ -696,7 +696,7 @@ Defaults to 1.
         """
 
         pretty: Optional[bool] = Field(None, serialization_alias="pretty")
-        """A boolean that specifies whether or not to return a "pretty-printed" JSON document.
+        """Specifies whether or not to return a "pretty-printed" JSON document.
 
 Defaults to false.
         """

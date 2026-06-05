@@ -161,13 +161,13 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-delete/)
         ### Endpoint:
-        `DELETE /groups/{GROUP-ID}/integrations/{INTEGRATION-TYPE}`
+        `DELETE /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
         ### Description
         No description.
         """
         return self._request(
             "DELETE",
-            "/api/public/v1.0/groups/{GROUP-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             None,
@@ -213,13 +213,13 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Document:
         [Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-discovery/)
         ### Endpoint:
-        `GET /groups/{GROUP-ID}/discovery`
+        `GET /groups/{PROJECT-ID}/discovery`
         ### Description
         No description.
         """
         return self._request(
             "GET",
-            "/prometheus/v1.0//groups/{GROUP-ID}/discovery",
+            "/prometheus/v1.0//groups/{PROJECT-ID}/discovery",
             path_params,
             query_params,
             None,
@@ -337,13 +337,13 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Document:
         [Get One Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-one/)
         ### Endpoint:
-        `GET /groups/{GROUP-ID}/integrations/{INTEGRATION-TYPE}`
+        `GET /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
         ### Description
         No description.
         """
         return self._request(
             "GET",
-            "/api/public/v1.0/groups/{GROUP-ID}/integrations/{INTEGRATION-TYPE}",
+            "/api/public/v1.0/groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}",
             path_params,
             query_params,
             None,

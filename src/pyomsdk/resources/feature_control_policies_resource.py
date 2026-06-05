@@ -248,16 +248,16 @@ Purpose
 
 
 
-EXTERNALLY_MANAGED_LOCK
+ExternallyManagedLock
 
 	
 
-Users can't use Ops Manager to manage other settings given in the policies.policy[n] array. These same users may use a configured external system, like the Kubernetes Operator to manage these settings.
+Users can't use Ops Manager to manage other settings given in the policies[n].policy array. These same users may use a configured external system, like the Kubernetes Operator to manage these settings.
 
 
 
 
-DISABLE_USER_MANAGEMENT
+DisableUserManagement
 
 	
 
@@ -265,24 +265,21 @@ Users can't manage users or roles.
 
 
 
-DISABLE_AUTHENTICATION_
-MECHANISMS
+DisableAuthenticationMechanisms
 	
 
 Users can't change authentication settings.
 
 
 
-DISABLE_SET_MONGOD_
-CONFIG
+DisableSetMongodConfig
 	
 
 Users can't change any mongod settings listed in the policies[n].disabledParams array.
 
 
 
-DISABLE_SET_MONGOD_
-VERSION
+DisableSetMongodVersion
 	
 
 Users can't change the version of any mongod or mongos.
@@ -290,7 +287,7 @@ Users can't change the version of any mongod or mongos.
 
 
 
-DISABLE_BACKUP_AGENT
+DisableBackupAgent
 
 	
 
@@ -298,32 +295,28 @@ Users can't enable or disable the Backup agent.
 
 
 
-DISABLE_MONGOD_LOG_
-MANAGEMENT
+DisableMongodLogManagement
 	
 
 Users can't change log management settings.
 
 
 
-DISABLE_IMPORT_TO_
-AUTOMATION
+DisableImportToAutomation
 	
 
 Users can't manage deployments using Automation.
 
 
 
-DISABLE_AGENT_API_KEY_
-MANAGEMENT
+DisableAgentApiKeyManagement
 	
 
 Users can't create or update Agent API keys.
 
 
 
-DISABLE_MONGOD_HOST_
-MANAGEMENT
+DisableMongodHostManagement
 	
 
 Users can't change the server type of hosts.

@@ -443,14 +443,16 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricThresholdParams = Field(serialization_alias="metricThreshold")
+        metric_threshold: Optional[MetricThresholdParams] = Field(
+            None, serialization_alias="metricThreshold"
+        )
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: str = Field(serialization_alias="apiToken")
+            api_token: Optional[str] = Field(None, serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -460,11 +462,11 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: str = Field(serialization_alias="channelName")
+            channel_name: Optional[str] = Field(None, serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: str = Field(serialization_alias="datadogApiKey")
+            datadog_api_key: Optional[str] = Field(None, serialization_alias="datadogApiKey")
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -478,11 +480,11 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: str = Field(serialization_alias="emailAddress")
+            email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
-            email_enabled: bool = Field(serialization_alias="emailEnabled")
+            email_enabled: Optional[bool] = Field(None, serialization_alias="emailEnabled")
             """Determines if email notifications should be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -494,17 +496,19 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
-            microsoft_teams_webhook_url: str = Field(serialization_alias="microsoftTeamsWebhookUrl")
+            microsoft_teams_webhook_url: Optional[str] = Field(
+                None, serialization_alias="microsoftTeamsWebhookUrl"
+            )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: str = Field(serialization_alias="mobileNumber")
+            mobile_number: Optional[str] = Field(None, serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: str = Field(serialization_alias="notificationToken")
+            notification_token: Optional[str] = Field(None, serialization_alias="notificationToken")
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -514,15 +518,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: str = Field(serialization_alias="role")
+            role: Optional[str] = Field(None, serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: str = Field(serialization_alias="roomName")
+            room_name: Optional[str] = Field(None, serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: str = Field(serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(None, serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -532,7 +536,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            sms_enabled: bool = Field(serialization_alias="smsEnabled")
+            sms_enabled: Optional[bool] = Field(None, serialization_alias="smsEnabled")
             """Flag indicating SMS notifications must be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -568,7 +572,7 @@ USER
 WEBHOOK
             """
 
-            username: str = Field(serialization_alias="username")
+            username: Optional[str] = Field(None, serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
@@ -623,7 +627,7 @@ LESS_THAN
             """Threshold value outside of which an alert is triggered.
             """
 
-        threshold: ThresholdParams = Field(serialization_alias="threshold")
+        threshold: Optional[ThresholdParams] = Field(None, serialization_alias="threshold")
         """Threshold that will cause an alert to be triggered. Required if:
 
 "eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
@@ -1493,14 +1497,16 @@ HOURS
 DAYS
             """
 
-        metric_threshold: MetricThresholdParams = Field(serialization_alias="metricThreshold")
+        metric_threshold: Optional[MetricThresholdParams] = Field(
+            None, serialization_alias="metricThreshold"
+        )
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: str = Field(serialization_alias="apiToken")
+            api_token: Optional[str] = Field(None, serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1510,11 +1516,11 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: str = Field(serialization_alias="channelName")
+            channel_name: Optional[str] = Field(None, serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: str = Field(serialization_alias="datadogApiKey")
+            datadog_api_key: Optional[str] = Field(None, serialization_alias="datadogApiKey")
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1528,11 +1534,11 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: str = Field(serialization_alias="emailAddress")
+            email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
-            email_enabled: bool = Field(serialization_alias="emailEnabled")
+            email_enabled: Optional[bool] = Field(None, serialization_alias="emailEnabled")
             """Determines if email notifications should be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -1544,17 +1550,19 @@ Query the third-party integration settings through the API.
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
-            microsoft_teams_webhook_url: str = Field(serialization_alias="microsoftTeamsWebhookUrl")
+            microsoft_teams_webhook_url: Optional[str] = Field(
+                None, serialization_alias="microsoftTeamsWebhookUrl"
+            )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: str = Field(serialization_alias="mobileNumber")
+            mobile_number: Optional[str] = Field(None, serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: str = Field(serialization_alias="notificationToken")
+            notification_token: Optional[str] = Field(None, serialization_alias="notificationToken")
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1564,15 +1572,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: str = Field(serialization_alias="role")
+            role: Optional[str] = Field(None, serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: str = Field(serialization_alias="roomName")
+            room_name: Optional[str] = Field(None, serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: str = Field(serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(None, serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1582,7 +1590,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            sms_enabled: bool = Field(serialization_alias="smsEnabled")
+            sms_enabled: Optional[bool] = Field(None, serialization_alias="smsEnabled")
             """Flag indicating SMS notifications must be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -1618,7 +1626,7 @@ USER
 WEBHOOK
             """
 
-            username: str = Field(serialization_alias="username")
+            username: Optional[str] = Field(None, serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
@@ -1673,7 +1681,7 @@ LESS_THAN
             """Threshold value outside of which an alert is triggered.
             """
 
-        threshold: ThresholdParams = Field(serialization_alias="threshold")
+        threshold: Optional[ThresholdParams] = Field(None, serialization_alias="threshold")
         """Threshold that will cause an alert to be triggered. Required if:
 
 "eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
