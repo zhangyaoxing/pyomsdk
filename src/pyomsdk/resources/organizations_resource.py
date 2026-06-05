@@ -21,7 +21,7 @@ class OrganizationsResource(BaseResource):
     class InviteUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -50,7 +50,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -63,7 +63,7 @@ Expected response body
 If the user accepts the invitation, Ops Manager assigns these roles to them.
         """
 
-        team_ids: Optional[list[str]] = Field(None, serialization_alias="teamIds")
+        team_ids: Optional[list[str]] = Field(default=None, serialization_alias="teamIds")
         """Unique 24-hexadecimal digit strings that identify the teams that you invite the user to join.
         """
 
@@ -110,7 +110,7 @@ If the user accepts the invitation, they log in to Ops Manager with this usernam
     class DeleteInvitationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -139,7 +139,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -175,7 +175,7 @@ Expected response body
     class GetAllInvitationsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -204,11 +204,11 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        username: Optional[str] = Field(None, serialization_alias="username")
+        username: Optional[str] = Field(default=None, serialization_alias="username")
         """Email address of the invited user. This is the address to which Ops Manager sent the invite.
 
 If omitted, Ops Manager returns all pending invitations.
@@ -250,7 +250,7 @@ If omitted, Ops Manager returns all pending invitations.
     class GetOneInvitationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -279,7 +279,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -319,7 +319,7 @@ Expected response body
     class UpdateByInvitationIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -348,7 +348,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -396,7 +396,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     class UpdateInvitationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -425,7 +425,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -470,7 +470,7 @@ IMPORTANT: Ops Manager replaces the roles in the invitation with the roles that 
     class CreateOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -478,15 +478,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -496,11 +496,11 @@ For endpoints that return a list of results, the content object is an envelope. 
         class LdapGroupMappingsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            ldap_groups: Optional[list[Any]] = Field(None, serialization_alias="ldapGroups")
+            ldap_groups: Optional[list[Any]] = Field(default=None, serialization_alias="ldapGroups")
             """LDAP group(s) that map to associate to the roleName.
             """
 
-            role_name: Optional[OrgRole] = Field(None, serialization_alias="roleName")
+            role_name: Optional[OrgRole] = Field(default=None, serialization_alias="roleName")
             """Ops Manager organization role to map. Can specify from the following list:
 
 ORG_READ_ONLY
@@ -513,7 +513,7 @@ You cannot specify a global role, project role, or an organization billing admin
             """
 
         ldap_group_mappings: Optional[list[LdapGroupMappingsParams]] = Field(
-            None, serialization_alias="ldapGroupMappings"
+            default=None, serialization_alias="ldapGroupMappings"
         )
         """Requires LDAP integration for Ops Manager.
 
@@ -558,7 +558,7 @@ If specifying ldapGroupMappings, mapping for ORG_OWNER role is required.
     class DeleteOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -587,7 +587,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -623,25 +623,25 @@ Expected response body
     class GetAllProjectsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Specifies whether or not to wrap the response in an envelope.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        name: Optional[str] = Field(None, serialization_alias="name")
+        name: Optional[str] = Field(default=None, serialization_alias="name")
         """Human-readable label of the project to use to filter the returned list. Performs a case-insensitive search for a project, which is prefixed by the specified name, within the organization.
 
 For example, if you specify a name query parameter of project1, Ops Manager returns the project named project1, but would not return a project named project123.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Displays response in a prettyprint format.
         """
 
@@ -677,25 +677,25 @@ For example, if you specify a name query parameter of project1, Ops Manager retu
     class GetAllUsersQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Specifies whether or not to wrap the response in an envelope.
 
 Defaults to false.
         """
 
-        items_per_page: Optional[int] = Field(None, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=None, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
 
 Defaults to 100.
         """
 
-        page_num: Optional[int] = Field(None, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=None, serialization_alias="pageNum")
         """The page to return.
 
 Defaults to 1.
         """
 
-        pretty: Optional[bool] = Field(None, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=None, serialization_alias="pretty")
         """Specifies whether or not to return a "pretty-printed" JSON document.
 
 Defaults to false.
@@ -726,11 +726,13 @@ Defaults to false.
     class GetAllOrganizationsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Specifies whether or not to wrap the response in an envelope.
         """
 
-        include_deleted_orgs: Optional[bool] = Field(True, serialization_alias="includeDeletedOrgs")
+        include_deleted_orgs: Optional[bool] = Field(
+            default=True, serialization_alias="includeDeletedOrgs"
+        )
         """Flag indicating whether the response body contains deleted organizations.
 
 Ops Manager honors the value of this parameter only if the user who makes the request has a global role.
@@ -738,21 +740,21 @@ Ops Manager honors the value of this parameter only if the user who makes the re
 If set to true or omitted, users assigned a global role receive deleted projects in the response. If set to false or if the user does not have a global owner role, the response does not contain deleted organizations.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        name: Optional[str] = Field(None, serialization_alias="name")
+        name: Optional[str] = Field(default=None, serialization_alias="name")
         """Filters results based on the specified organization name. Performs a case-insensitive search for organizations which exactly match the specified name.
 
 For example, if you specify a name query parameter of org1, Ops Manager returns organizations named org1 and Org1, but would not return an organization named org123.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Displays response in a prettyprint format.
         """
 
@@ -787,7 +789,7 @@ For example, if you specify a name query parameter of org1, Ops Manager returns 
     class GetOneOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag indicating whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -816,7 +818,9 @@ content
 Expected response body
         """
 
-        include_deleted_orgs: Optional[bool] = Field(True, serialization_alias="includeDeletedOrgs")
+        include_deleted_orgs: Optional[bool] = Field(
+            default=True, serialization_alias="includeDeletedOrgs"
+        )
         """Flag indicating whether the response body contains deleted organizations.
 
 Ops Manager honors the value of this parameter only if the user who makes the request has a global role.
@@ -824,7 +828,7 @@ Ops Manager honors the value of this parameter only if the user who makes the re
 If set to true or omitted, users assigned a global role receive deleted projects in the response. If set to false or if the user does not have a global owner role, the response does not contain deleted organizations.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -860,7 +864,7 @@ If set to true or omitted, users assigned a global role receive deleted projects
     class RenameOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -889,7 +893,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -897,12 +901,12 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         ldap_group_mappings: Optional[list[dict]] = Field(
-            None, serialization_alias="ldapGroupMappings"
+            default=None, serialization_alias="ldapGroupMappings"
         )
         """For LDAP-backed Ops Manager, the mappings of LDAP groups to Ops Manager organization roles. Only accepted for LDAP-backed Ops Manager.
         """
 
-        name: Optional[str] = Field(None, serialization_alias="name")
+        name: Optional[str] = Field(default=None, serialization_alias="name")
         """The new name for the organization.
         """
 

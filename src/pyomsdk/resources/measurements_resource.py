@@ -29,11 +29,11 @@ class MeasurementsResource(BaseResource):
     class DatabaseQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field(None, serialization_alias="end")
+        end: Optional[str] = Field(default=None, serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -114,11 +114,11 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field(None, serialization_alias="m")
+        m: Optional[str] = Field(default=None, serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -130,21 +130,21 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field(None, serialization_alias="period")
+        period: Optional[str] = Field(default=None, serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field(None, serialization_alias="start")
+        start: Optional[str] = Field(default=None, serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -188,11 +188,11 @@ For example, to request the last 36 hours, include this query parameter: period=
     class DiskPartitionQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field(None, serialization_alias="end")
+        end: Optional[str] = Field(default=None, serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -273,11 +273,11 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field(None, serialization_alias="m")
+        m: Optional[str] = Field(default=None, serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -289,21 +289,21 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field(None, serialization_alias="period")
+        period: Optional[str] = Field(default=None, serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field(None, serialization_alias="start")
+        start: Optional[str] = Field(default=None, serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -343,11 +343,11 @@ For example, to request the last 36 hours, include this query parameter: period=
     class HostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field(None, serialization_alias="end")
+        end: Optional[str] = Field(default=None, serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -428,11 +428,11 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field(None, serialization_alias="m")
+        m: Optional[str] = Field(default=None, serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -444,21 +444,21 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field(None, serialization_alias="period")
+        period: Optional[str] = Field(default=None, serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field(None, serialization_alias="start")
+        start: Optional[str] = Field(default=None, serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 
@@ -498,11 +498,11 @@ For example, to request the last 36 hours, include this query parameter: period=
     class GetTypesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        end: Optional[str] = Field(None, serialization_alias="end")
+        end: Optional[str] = Field(default=None, serialization_alias="end")
         """Timestamp in ISO 8601 date and time format in UTC for the end of the period for which to retrieve measurements. If you specify end you must also specify start.
         """
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -583,11 +583,11 @@ PT0.5S
 500 milliseconds
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        m: Optional[str] = Field(None, serialization_alias="m")
+        m: Optional[str] = Field(default=None, serialization_alias="m")
         """Measurements to return. If m is not specified, all measurements are returned.
 
 To specify multiple values for m, you must repeat the m parameter.
@@ -599,21 +599,21 @@ For example:
 You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see Measurement Types.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        period: Optional[str] = Field(None, serialization_alias="period")
+        period: Optional[str] = Field(default=None, serialization_alias="period")
         """Duration in ISO 8601 notation that specifies how far back in the past to retrieve measurements.
 
 For example, to request the last 36 hours, include this query parameter: period=P1DT12H.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
-        start: Optional[str] = Field(None, serialization_alias="start")
+        start: Optional[str] = Field(default=None, serialization_alias="start")
         """Timestamp in ISO 8601 date and time format in UTC for the beginning of the period for which to retrieve measurements. If you specify start you must also specify end.
         """
 

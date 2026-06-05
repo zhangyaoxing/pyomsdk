@@ -14,7 +14,7 @@ class GlobalApiKeysResource(BaseResource):
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -43,7 +43,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -153,7 +153,7 @@ Global User Admin
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -182,7 +182,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -211,7 +211,7 @@ Expected response body
     class GetAllRolesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -242,15 +242,15 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
@@ -278,7 +278,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -286,15 +286,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -329,7 +329,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -358,7 +358,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -394,7 +394,7 @@ Expected response body
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -423,18 +423,18 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        desc: Optional[str] = Field(None, serialization_alias="desc")
+        desc: Optional[str] = Field(default=None, serialization_alias="desc")
         """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
         """
 
-        roles: Optional[list[GlobalRole]] = Field(None, serialization_alias="roles")
+        roles: Optional[list[GlobalRole]] = Field(default=None, serialization_alias="roles")
         """List of roles that the Global API Key needs to have. If the roles array is provided:
 
 Provide at least one role

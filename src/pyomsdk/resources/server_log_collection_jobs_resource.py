@@ -21,7 +21,7 @@ class ServerLogCollectionJobsResource(BaseResource):
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -50,7 +50,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -86,7 +86,7 @@ Expected response body
     class DownloadLogsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -115,7 +115,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -144,23 +144,23 @@ Expected response body
     class GetAllJobsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether to wrap the response in an envelope. Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        verbose: Optional[bool] = Field(False, serialization_alias="verbose")
+        verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
         """Flag that indicates whether to include all child jobs in the response. Each Ops Manager server log collection job has a child job for each combination of server and log type included in the request.
         """
 
@@ -195,15 +195,15 @@ Expected response body
     class GetOneJobQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether to wrap the response in an envelope. Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        verbose: Optional[bool] = Field(False, serialization_alias="verbose")
+        verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
         """Flag that indicates whether to include all child jobs in the response.
         """
 
@@ -232,27 +232,27 @@ Expected response body
     class ListActiveServersQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether to wrap the response in an envelope. Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
-        status: Optional[str] = Field("active", serialization_alias="status")
+        status: Optional[str] = Field(default="active", serialization_alias="status")
         """Server status to filter by. Currently the only valid value is active. Any other value returns 400 INVALID_SERVER_STATUS. If you omit this parameter, Ops Manager returns active servers.
         """
 
-        type: Optional[str] = Field("All types", serialization_alias="type")
+        type: Optional[str] = Field(default="All types", serialization_alias="type")
         """Server type to filter by. Pass this parameter multiple times to include several types (?type=VALUE_1&type=VALUE_2). The currently supported value is MMS_SERVER, which represents the Ops Manager application server. If you omit this parameter, Ops Manager returns all types (currently only MMS_SERVER).
         """
 
@@ -287,7 +287,7 @@ Expected response body
     class RetryQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -316,7 +316,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -345,7 +345,7 @@ Expected response body
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -374,7 +374,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -382,7 +382,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         eachvalueinserversmustidentifyaregisteredactive_ops_managerserver: Optional[Any] = Field(
-            None,
+            default=None,
             serialization_alias="Each value in servers must identify a registered, active Ops Manager server",
         )
         """400
@@ -391,20 +391,20 @@ Expected response body
         theestimatedstoragemustnotexceedthestoragelimitthatthe_ops_manageradministratorhasconfiguredforlogcollection: Optional[
             Any
         ] = Field(
-            None,
+            default=None,
             serialization_alias="The estimated storage must not exceed the storage limit that the Ops Manager administrator has configured for log collection",
         )
         """413
         """
 
         thenumberofconcurrentjobsmustnotexceed4: Optional[Any] = Field(
-            None, serialization_alias="The number of concurrent jobs must not exceed 4"
+            default=None, serialization_alias="The number of concurrent jobs must not exceed 4"
         )
         """429
         """
 
         thetimerangemustnotexceed7days: Optional[Any] = Field(
-            None, serialization_alias="The time range must not exceed 7 days"
+            default=None, serialization_alias="The time range must not exceed 7 days"
         )
         """400
         """
@@ -412,44 +412,45 @@ Expected response body
         thetimerangemustnotstartearlierthanthemaximumloghistorythatthe_ops_manageradministratorhasconfigured: Optional[
             Any
         ] = Field(
-            None,
+            default=None,
             serialization_alias="The time range must not start earlier than the maximum log history that the Ops Manager administrator has configured",
         )
         """400
         """
 
         log_collection_from_date: Optional[str] = Field(
-            None, serialization_alias="logCollectionFromDate"
+            default=None, serialization_alias="logCollectionFromDate"
         )
         """Start of the time range to collect, in ISO 8601 UTC format. If you set this field, you must also set logCollectionToDate.
         """
 
         log_collection_from_dateandlog_collection_to_datemustbesettogether: Optional[Any] = Field(
-            None,
+            default=None,
             serialization_alias="logCollectionFromDate and logCollectionToDate must be set together",
         )
         """400
         """
 
         log_collection_from_datemustnotbeinthefuture: Optional[Any] = Field(
-            None, serialization_alias="logCollectionFromDate must not be in the future"
+            default=None, serialization_alias="logCollectionFromDate must not be in the future"
         )
         """400
         """
 
         log_collection_from_datemustprecedelog_collection_to_date: Optional[Any] = Field(
-            None, serialization_alias="logCollectionFromDate must precede logCollectionToDate"
+            default=None,
+            serialization_alias="logCollectionFromDate must precede logCollectionToDate",
         )
         """400
         """
 
         log_collection_to_date: Optional[str] = Field(
-            None, serialization_alias="logCollectionToDate"
+            default=None, serialization_alias="logCollectionToDate"
         )
         """End of the time range to collect, in ISO 8601 UTC format. If you set this field, you must also set logCollectionFromDate.
         """
 
-        log_types: Optional[list[LogType]] = Field(None, serialization_alias="logTypes")
+        log_types: Optional[list[LogType]] = Field(default=None, serialization_alias="logTypes")
         """Log types to collect. Each element must be one of the following values:
 
 APPLICATION
@@ -461,18 +462,18 @@ MIGRATION
 If you omit this field or pass an empty array, Ops Manager collects every log type.
         """
 
-        servers: Optional[list[str]] = Field(None, serialization_alias="servers")
+        servers: Optional[list[str]] = Field(default=None, serialization_alias="servers")
         """List of serverId values returned by List Active Ops Manager Servers. If you omit this field or pass an empty array, Ops Manager collects logs from every active server.
         """
 
         size_requested_per_file_bytes: Optional[int] = Field(
-            None, serialization_alias="sizeRequestedPerFileBytes"
+            default=None, serialization_alias="sizeRequestedPerFileBytes"
         )
         """Maximum uncompressed size, in bytes, per log type per server. Must be greater than 0. If you omit this field, Ops Manager auto-allocates the remaining configured storage across the requested servers and log types.
         """
 
         size_requested_per_file_bytesmustbegreaterthan0: Optional[Any] = Field(
-            None, serialization_alias="sizeRequestedPerFileBytes must be greater than 0"
+            default=None, serialization_alias="sizeRequestedPerFileBytes must be greater than 0"
         )
         """400
         """
@@ -509,7 +510,7 @@ If you omit this field or pass an empty array, Ops Manager collects every log ty
     class ExtendExpirationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -538,7 +539,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 

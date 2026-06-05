@@ -21,7 +21,7 @@ class BackupDaemonResource(BaseResource):
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -50,32 +50,38 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
+        assignment_enabled: Optional[bool] = Field(
+            default=None, serialization_alias="assignmentEnabled"
+        )
         """Flag indicating whether this Backup Daemon can be assigned backup jobs.
         """
 
-        backup_jobs_enabled: Optional[bool] = Field(None, serialization_alias="backupJobsEnabled")
+        backup_jobs_enabled: Optional[bool] = Field(
+            default=None, serialization_alias="backupJobsEnabled"
+        )
         """Flag indicating whether this Backup Daemon can be used to backup databases.
         """
 
-        configured: Optional[bool] = Field(None, serialization_alias="configured")
+        configured: Optional[bool] = Field(default=None, serialization_alias="configured")
         """Flag indicating whether this Backup Daemon is ready to use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
-            None, serialization_alias="garbageCollectionEnabled"
+            default=None, serialization_alias="garbageCollectionEnabled"
         )
         """Flag indicating whether this Backup Daemon has garbage collection set.
         """
 
-        head_disk_type: Optional[HeadDiskType] = Field(None, serialization_alias="headDiskType")
+        head_disk_type: Optional[HeadDiskType] = Field(
+            default=None, serialization_alias="headDiskType"
+        )
         """Type of disk used to store the head directory.
 
 The accepted values for this option are:
@@ -85,7 +91,7 @@ HDD
 SSD
         """
 
-        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
+        labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which Backup Daemons.
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
@@ -95,7 +101,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                None, serialization_alias="headRootDirectory"
+                default=None, serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
@@ -108,18 +114,18 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[int] = Field(None, serialization_alias="numWorkers")
+        num_workers: Optional[int] = Field(default=None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 
         resource_usage_enabled: Optional[bool] = Field(
-            None, serialization_alias="resourceUsageEnabled"
+            default=None, serialization_alias="resourceUsageEnabled"
         )
         """Flag indicating whether this Backup Daemon has its resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
-            None, serialization_alias="restoreQueryableJobsEnabled"
+            default=None, serialization_alias="restoreQueryableJobsEnabled"
         )
         """Flag indicating whether this Backup Daemon can perform queryable restores.
         """
@@ -161,7 +167,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -190,7 +196,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -220,12 +226,12 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         backup_jobs_enabled_only: Optional[bool] = Field(
-            True, serialization_alias="backupJobsEnabledOnly"
+            default=True, serialization_alias="backupJobsEnabledOnly"
         )
         """Flag indicating whether to exclude daemons not enabled for backing up databases from the response. Set this to false to include daemon configurations with the backupJobsEnabled flag set to false.
         """
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -233,15 +239,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -280,7 +286,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class GetByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -309,7 +315,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -354,7 +360,7 @@ daemon/config/localhost/%2Fdata%2Fbackup%2F
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -383,32 +389,38 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        assignment_enabled: Optional[bool] = Field(None, serialization_alias="assignmentEnabled")
+        assignment_enabled: Optional[bool] = Field(
+            default=None, serialization_alias="assignmentEnabled"
+        )
         """Flag indicating whether this Backup Daemon can be assigned backup jobs.
         """
 
-        backup_jobs_enabled: Optional[bool] = Field(None, serialization_alias="backupJobsEnabled")
+        backup_jobs_enabled: Optional[bool] = Field(
+            default=None, serialization_alias="backupJobsEnabled"
+        )
         """Flag indicating whether this Backup Daemon can be used to backup databases.
         """
 
-        configured: Optional[bool] = Field(None, serialization_alias="configured")
+        configured: Optional[bool] = Field(default=None, serialization_alias="configured")
         """Flag indicating whether this Backup Daemon is ready to use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
-            None, serialization_alias="garbageCollectionEnabled"
+            default=None, serialization_alias="garbageCollectionEnabled"
         )
         """Flag indicating whether this Backup Daemon has garbage collection set.
         """
 
-        head_disk_type: Optional[HeadDiskType] = Field(None, serialization_alias="headDiskType")
+        head_disk_type: Optional[HeadDiskType] = Field(
+            default=None, serialization_alias="headDiskType"
+        )
         """Type of disk used to store the head directory.
 
 The accepted values for this option are:
@@ -418,7 +430,7 @@ HDD
 SSD
         """
 
-        labels: Optional[list[str]] = Field(None, serialization_alias="labels")
+        labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
         """Array of tags to manage which backup jobs Ops Manager can assign to which Backup Daemons.
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
@@ -428,7 +440,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
 
             head_root_directory: Optional[str] = Field(
-                None, serialization_alias="headRootDirectory"
+                default=None, serialization_alias="headRootDirectory"
             )
             """Root-relative path of the head directory on this Backup Daemon host. This directory must end with a slash (/). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
@@ -441,18 +453,18 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         """Backup Daemon host and its head directories.
         """
 
-        num_workers: Optional[int] = Field(None, serialization_alias="numWorkers")
+        num_workers: Optional[int] = Field(default=None, serialization_alias="numWorkers")
         """Number of worker processes that can perform tasks (i.e. backup, restore, or groom) for the Backup Daemon.
         """
 
         resource_usage_enabled: Optional[bool] = Field(
-            None, serialization_alias="resourceUsageEnabled"
+            default=None, serialization_alias="resourceUsageEnabled"
         )
         """Flag indicating whether this Backup Daemon has its resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
-            None, serialization_alias="restoreQueryableJobsEnabled"
+            default=None, serialization_alias="restoreQueryableJobsEnabled"
         )
         """Flag indicating whether this Backup Daemon can perform queryable restores.
         """

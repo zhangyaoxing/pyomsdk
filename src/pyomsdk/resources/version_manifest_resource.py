@@ -14,7 +14,7 @@ class VersionManifestResource(BaseResource):
     class RetrieveQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
@@ -42,7 +42,7 @@ class VersionManifestResource(BaseResource):
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 

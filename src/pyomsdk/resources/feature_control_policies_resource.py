@@ -14,7 +14,7 @@ class FeatureControlPoliciesResource(BaseResource):
     class RetrieveAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -45,15 +45,15 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
@@ -88,7 +88,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class RetrieveForOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -119,15 +119,15 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
@@ -163,7 +163,7 @@ For endpoints that return a list of results, the results object is an envelope. 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(None, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
@@ -194,15 +194,15 @@ Expected response body
 For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """Page number (1-index based).
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Indicates whether the response body should be in a prettyprint format.
         """
 
@@ -212,20 +212,20 @@ For endpoints that return a list of results, the results object is an envelope. 
         class ExternalManagementSystemParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            name: Optional[str] = Field(None, serialization_alias="name")
+            name: Optional[str] = Field(default=None, serialization_alias="name")
             """Identifying label for the external system that manages this Ops Manager Project.
             """
 
-            system_id: Optional[str] = Field(None, serialization_alias="systemId")
+            system_id: Optional[str] = Field(default=None, serialization_alias="systemId")
             """Unique identifier of the external system that manages this Ops Manager Project.
             """
 
-            version: Optional[str] = Field(None, serialization_alias="version")
+            version: Optional[str] = Field(default=None, serialization_alias="version")
             """Active release of the external system that manages this Ops Manager Project.
             """
 
         external_management_system: Optional[ExternalManagementSystemParams] = Field(
-            None, serialization_alias="externalManagementSystem"
+            default=None, serialization_alias="externalManagementSystem"
         )
         """Identifying parameters for the external system that manages this Ops Manager Project.
         """
@@ -233,11 +233,13 @@ For endpoints that return a list of results, the results object is an envelope. 
         class PoliciesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            disabled_params: Optional[list[Any]] = Field(None, serialization_alias="disabledParams")
+            disabled_params: Optional[list[Any]] = Field(
+                default=None, serialization_alias="disabledParams"
+            )
             """List of mongod settings to disable when you apply the DISABLE_SET_MONGOD_CONFIG policy. Automation doesn't support all MongoDB options, which can result in failed import attempts. To learn more, see MongoDB Settings and Automation Support.
             """
 
-            policy: Optional[Policy] = Field(None, serialization_alias="policy")
+            policy: Optional[Policy] = Field(default=None, serialization_alias="policy")
             """Single policy set for this Ops Manager Project. This parameter can be set one or more times in the policies array.
 
 Accepted values are:
@@ -322,7 +324,9 @@ DisableMongodHostManagement
 Users can't change the server type of hosts.
             """
 
-        policies: Optional[list[PoliciesParams]] = Field(None, serialization_alias="policies")
+        policies: Optional[list[PoliciesParams]] = Field(
+            default=None, serialization_alias="policies"
+        )
         """List of policies that the external system applies to this Ops Manager Project.
         """
 

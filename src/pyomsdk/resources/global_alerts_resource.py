@@ -21,7 +21,7 @@ class GlobalAlertsResource(BaseResource):
     class AcknowledgeOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -50,7 +50,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -66,7 +66,7 @@ To un-acknowledge an alert, specify a time and date in the past.
         """
 
         acknowledgement_comment: Optional[str] = Field(
-            None, serialization_alias="acknowledgementComment"
+            default=None, serialization_alias="acknowledgementComment"
         )
         """Comment describing the alert acknowledgement.
         """
@@ -97,15 +97,19 @@ To un-acknowledge an alert, specify a time and date in the past.
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        created_on_or_after: Optional[str] = Field(None, serialization_alias="createdOnOrAfter")
+        created_on_or_after: Optional[str] = Field(
+            default=None, serialization_alias="createdOnOrAfter"
+        )
         """Creation date of alerts you want to return, in ISO 8601 format. Ops Manager returns alerts created on or after the date you indicate.
         """
 
-        created_on_or_before: Optional[str] = Field(None, serialization_alias="createdOnOrBefore")
+        created_on_or_before: Optional[str] = Field(
+            default=None, serialization_alias="createdOnOrBefore"
+        )
         """Creation date of alerts you want to return, in ISO 8601. Ops Manager returns alerts created on or before the date you indicate.
         """
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -113,19 +117,19 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
-        status: Optional[AlertStatus] = Field(None, serialization_alias="status")
+        status: Optional[AlertStatus] = Field(default=None, serialization_alias="status")
         """Status of alerts you want to return. Ops Manager returns alerts that match the status you indicate. Accepted values include:
 
 TRACKING
@@ -184,7 +188,7 @@ Alert is closed.
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -213,7 +217,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 

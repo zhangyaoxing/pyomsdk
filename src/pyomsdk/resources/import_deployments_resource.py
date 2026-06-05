@@ -25,7 +25,7 @@ class ImportDeploymentsResource(BaseResource):
     class CancelImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -54,7 +54,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -90,7 +90,7 @@ Expected response body
     class CreateImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -119,29 +119,31 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class CreateImportDeploymentRequestBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        admin_db: Optional[str] = Field(None, serialization_alias="adminDb")
+        admin_db: Optional[str] = Field(default=None, serialization_alias="adminDb")
         """Database to authenticate against. Default: admin.
         """
 
         admin_kerberos_keytab: Optional[str] = Field(
-            None, serialization_alias="adminKerberosKeytab"
+            default=None, serialization_alias="adminKerberosKeytab"
         )
         """Path to the Kerberos keytab file for GSSAPI authentication.
         """
 
-        admin_ldap_group_dn: Optional[str] = Field(None, serialization_alias="adminLdapGroupDn")
+        admin_ldap_group_dn: Optional[str] = Field(
+            default=None, serialization_alias="adminLdapGroupDn"
+        )
         """LDAP group distinguished name for PLAIN authentication.
         """
 
         auth_mechanism: Optional[AuthMechanismName] = Field(
-            None, serialization_alias="authMechanism"
+            default=None, serialization_alias="authMechanism"
         )
         """Authentication mechanism for connecting to the MongoDB processes. Possible values are:
 
@@ -156,33 +158,37 @@ MONGODB_X509
 NONE
         """
 
-        ca_file_path: Optional[str] = Field(None, serialization_alias="caFilePath")
+        ca_file_path: Optional[str] = Field(default=None, serialization_alias="caFilePath")
         """Path to the Certificate Authority file for TLS connections.
         """
 
         client_certificate_mode: Optional[str] = Field(
-            None, serialization_alias="clientCertificateMode"
+            default=None, serialization_alias="clientCertificateMode"
         )
         """Client certificate mode for TLS connections.
         """
 
-        cluster_ca_file_path: Optional[str] = Field(None, serialization_alias="clusterCaFilePath")
+        cluster_ca_file_path: Optional[str] = Field(
+            default=None, serialization_alias="clusterCaFilePath"
+        )
         """Path to the cluster Certificate Authority file for TLS connections.
         """
 
-        password: Optional[str] = Field(None, serialization_alias="password")
+        password: Optional[str] = Field(default=None, serialization_alias="password")
         """Password for authenticating to the MongoDB processes. Required if authMechanism is MONGODB_CR.
 
 Ops Manager doesn't include this parameter in response documents.
         """
 
-        pem_key_file_password: Optional[str] = Field(None, serialization_alias="pemKeyFilePassword")
+        pem_key_file_password: Optional[str] = Field(
+            default=None, serialization_alias="pemKeyFilePassword"
+        )
         """Password for the PEM key file.
 
 Ops Manager doesn't include this parameter in response documents.
         """
 
-        pem_key_file_path: Optional[str] = Field(None, serialization_alias="pemKeyFilePath")
+        pem_key_file_path: Optional[str] = Field(default=None, serialization_alias="pemKeyFilePath")
         """Path to the PEM key file for TLS client authentication.
         """
 
@@ -190,7 +196,9 @@ Ops Manager doesn't include this parameter in response documents.
         """Array of hostname:port strings representing MongoDB processes that must be discovered before the import can proceed.
         """
 
-        sasl_service_name: Optional[str] = Field(None, serialization_alias="saslServiceName")
+        sasl_service_name: Optional[str] = Field(
+            default=None, serialization_alias="saslServiceName"
+        )
         """SASL service name for GSSAPI authentication.
         """
 
@@ -202,32 +210,32 @@ Ops Manager doesn't include this parameter in response documents.
             model_config = ConfigDict(populate_by_name=True)
 
             automation_imported: Optional[int] = Field(
-                None, serialization_alias="automationImported"
+                default=None, serialization_alias="automationImported"
             )
             """Timeout in seconds for completing the automation import. Range: 60-86400 seconds. Default uses system settings.
             """
 
-            goal_state_sec: Optional[int] = Field(None, serialization_alias="goalStateSec")
+            goal_state_sec: Optional[int] = Field(default=None, serialization_alias="goalStateSec")
             """Timeout in seconds for reaching automation goal state. Range: 60-86400 seconds. Default uses system settings.
             """
 
             processes_discovery_sec: Optional[int] = Field(
-                None, serialization_alias="processesDiscoverySec"
+                default=None, serialization_alias="processesDiscoverySec"
             )
             """Timeout in seconds for discovering all required processes. Range: 60-86400 seconds. Default uses system settings.
             """
 
             seed_host_connection_sec: Optional[int] = Field(
-                None, serialization_alias="seedHostConnectionSec"
+                default=None, serialization_alias="seedHostConnectionSec"
             )
             """Timeout in seconds for connecting to the seed host. Range: 60-86400 seconds. Default uses system settings.
             """
 
-        timeouts: Optional[TimeoutsParams] = Field(None, serialization_alias="timeouts")
+        timeouts: Optional[TimeoutsParams] = Field(default=None, serialization_alias="timeouts")
         """Timeout settings for various import phases.
         """
 
-        username: Optional[str] = Field(None, serialization_alias="username")
+        username: Optional[str] = Field(default=None, serialization_alias="username")
         """Username for authenticating to the MongoDB processes. Required if authMechanism is specified.
         """
 
@@ -268,7 +276,7 @@ Ops Manager doesn't include this parameter in response documents.
     class DeleteImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -297,7 +305,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -333,7 +341,7 @@ Expected response body
     class GetImportDeploymentRequestsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -362,7 +370,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -402,7 +410,7 @@ Expected response body
     class GetImportDeploymentRequestStatusQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -431,7 +439,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 

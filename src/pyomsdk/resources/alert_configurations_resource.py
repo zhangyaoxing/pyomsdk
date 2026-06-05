@@ -21,7 +21,7 @@ class AlertConfigurationsResource(BaseResource):
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -50,14 +50,14 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
+        enabled: Optional[bool] = Field(default=None, serialization_alias="enabled")
         """If omitted, the configuration is disabled.
         """
 
@@ -308,7 +308,9 @@ To review the full list of events that generate alerts and their descriptions, s
         class MatchersParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            field_name: Optional[MatcherFieldName] = Field(None, serialization_alias="fieldName")
+            field_name: Optional[MatcherFieldName] = Field(
+                default=None, serialization_alias="fieldName"
+            )
             """Name of the field in the target object to match on.
 
 Host alerts support these fields:
@@ -340,7 +342,9 @@ SHARD_NAME
 All other types of alerts do not support matchers.
             """
 
-            operator: Optional[MatcherOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[MatcherOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to test the field's value. Accepted values are:
 
 EQUALS
@@ -358,7 +362,7 @@ ENDS_WITH
 REGEX
             """
 
-            value: Optional[MatcherValue] = Field(None, serialization_alias="value")
+            value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
 If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
@@ -374,7 +378,9 @@ CONFIG
 MONGOS
             """
 
-        matchers: Optional[list[MatchersParams]] = Field(None, serialization_alias="matchers")
+        matchers: Optional[list[MatchersParams]] = Field(
+            default=None, serialization_alias="matchers"
+        )
         """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
 
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
@@ -383,15 +389,17 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field(None, serialization_alias="metricName")
+            metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field(None, serialization_alias="mode")
+            mode: Optional[str] = Field(default=None, serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
-            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[ThresholdOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
 
 GREATER_THAN
@@ -399,11 +407,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[int] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-            units: Optional[Unit] = Field(None, serialization_alias="units")
+            units: Optional[Unit] = Field(default=None, serialization_alias="units")
             """Units for the threshold value. Depends on the type of metric.
 
 For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
@@ -444,7 +452,7 @@ DAYS
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
-            None, serialization_alias="metricThreshold"
+            default=None, serialization_alias="metricThreshold"
         )
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
@@ -452,7 +460,7 @@ DAYS
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: Optional[str] = Field(None, serialization_alias="apiToken")
+            api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -462,11 +470,13 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: Optional[str] = Field(None, serialization_alias="channelName")
+            channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: Optional[str] = Field(None, serialization_alias="datadogApiKey")
+            datadog_api_key: Optional[str] = Field(
+                default=None, serialization_alias="datadogApiKey"
+            )
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -476,15 +486,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
+            email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
-            email_enabled: Optional[bool] = Field(None, serialization_alias="emailEnabled")
+            email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
             """Determines if email notifications should be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -492,23 +502,25 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
-                None, serialization_alias="microsoftTeamsWebhookUrl"
+                default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: Optional[str] = Field(None, serialization_alias="mobileNumber")
+            mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: Optional[str] = Field(None, serialization_alias="notificationToken")
+            notification_token: Optional[str] = Field(
+                default=None, serialization_alias="notificationToken"
+            )
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -518,15 +530,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: Optional[str] = Field(None, serialization_alias="role")
+            role: Optional[str] = Field(default=None, serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: Optional[str] = Field(None, serialization_alias="roomName")
+            room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: Optional[str] = Field(None, serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -536,7 +548,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            sms_enabled: Optional[bool] = Field(None, serialization_alias="smsEnabled")
+            sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
             """Flag indicating SMS notifications must be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -544,11 +556,13 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field(None, serialization_alias="teamId")
+            team_id: Optional[str] = Field(default=None, serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
-            type_name: Optional[NotificationsTypeName] = Field(None, serialization_alias="typeName")
+            type_name: Optional[NotificationsTypeName] = Field(
+                default=None, serialization_alias="typeName"
+            )
             """Type of alert notification. Accepted values are:
 
 DATADOG
@@ -572,23 +586,23 @@ USER
 WEBHOOK
             """
 
-            username: Optional[str] = Field(None, serialization_alias="username")
+            username: Optional[str] = Field(default=None, serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
             webhook_body_template: Optional[str] = Field(
-                None, serialization_alias="webhookBodyTemplate"
+                default=None, serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                None, serialization_alias="webhookHeadersTemplate"
+                default=None, serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(None, serialization_alias="webhookSecret")
+            webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -602,7 +616,7 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field(None, serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
@@ -615,7 +629,9 @@ After creating a webhook notification, the URL is partially redacted when you vi
         class ThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[ThresholdOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to apply when checking the current metric value against the threshold value.
 
 GREATER_THAN
@@ -623,11 +639,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[int] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-        threshold: Optional[ThresholdParams] = Field(None, serialization_alias="threshold")
+        threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
         """Threshold that will cause an alert to be triggered. Required if:
 
 "eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
@@ -672,7 +688,7 @@ LESS_THAN
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -701,7 +717,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -741,7 +757,7 @@ Expected response body
     class EnableDisableQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -770,14 +786,14 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class EnableDisableBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
+        enabled: Optional[bool] = Field(default=None, serialization_alias="enabled")
         """Specify true to enable; false to disable.
         """
 
@@ -814,7 +830,7 @@ Expected response body
     class GetAllForAProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -822,15 +838,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -870,7 +886,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -878,15 +894,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -915,7 +931,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class GetMatchersFieldNamesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -944,7 +960,7 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
@@ -983,7 +999,7 @@ Expected response body
     class GetOpenAlertsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
@@ -991,15 +1007,15 @@ Some API clients cannot access the HTTP response headers or status code. To reme
 For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
         """
 
-        items_per_page: Optional[int] = Field(100, serialization_alias="itemsPerPage")
+        items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         """Number of items to return per page, up to a maximum of 500.
         """
 
-        page_num: Optional[int] = Field(1, serialization_alias="pageNum")
+        page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         """One-based integer that returns a subsection of results.
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag that indicates whether the response body should be in a prettyprint format.
         """
 
@@ -1075,7 +1091,7 @@ For endpoints that return a list of results, the content object is an envelope. 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        envelope: Optional[bool] = Field(False, serialization_alias="envelope")
+        envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
         """Flag that indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
@@ -1104,14 +1120,14 @@ content
 Expected response body
         """
 
-        pretty: Optional[bool] = Field(False, serialization_alias="pretty")
+        pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        enabled: Optional[bool] = Field(None, serialization_alias="enabled")
+        enabled: Optional[bool] = Field(default=None, serialization_alias="enabled")
         """If omitted, the configuration is disabled.
         """
 
@@ -1362,7 +1378,9 @@ To review the full list of events that generate alerts and their descriptions, s
         class MatchersParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            field_name: Optional[MatcherFieldName] = Field(None, serialization_alias="fieldName")
+            field_name: Optional[MatcherFieldName] = Field(
+                default=None, serialization_alias="fieldName"
+            )
             """Name of the field in the target object to match on.
 
 Host alerts support these fields:
@@ -1394,7 +1412,9 @@ SHARD_NAME
 All other types of alerts do not support matchers.
             """
 
-            operator: Optional[MatcherOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[MatcherOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to test the field's value. Accepted values are:
 
 EQUALS
@@ -1412,7 +1432,7 @@ ENDS_WITH
 REGEX
             """
 
-            value: Optional[MatcherValue] = Field(None, serialization_alias="value")
+            value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
 If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
@@ -1428,7 +1448,9 @@ CONFIG
 MONGOS
             """
 
-        matchers: Optional[list[MatchersParams]] = Field(None, serialization_alias="matchers")
+        matchers: Optional[list[MatchersParams]] = Field(
+            default=None, serialization_alias="matchers"
+        )
         """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
 
 You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
@@ -1437,15 +1459,17 @@ You can filter using the matchers array only when the eventTypeName specifies an
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            metric_name: Optional[str] = Field(None, serialization_alias="metricName")
+            metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
             """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
             """
 
-            mode: Optional[str] = Field(None, serialization_alias="mode")
+            mode: Optional[str] = Field(default=None, serialization_alias="mode")
             """Set to AVERAGE to compute the average of this metric.
             """
 
-            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[ThresholdOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
 
 GREATER_THAN
@@ -1453,11 +1477,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[int] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-            units: Optional[Unit] = Field(None, serialization_alias="units")
+            units: Optional[Unit] = Field(default=None, serialization_alias="units")
             """Units for the threshold value. Depends on the type of metric.
 
 For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
@@ -1498,7 +1522,7 @@ DAYS
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
-            None, serialization_alias="metricThreshold"
+            default=None, serialization_alias="metricThreshold"
         )
         """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
         """
@@ -1506,7 +1530,7 @@ DAYS
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            api_token: Optional[str] = Field(None, serialization_alias="apiToken")
+            api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
             """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1516,11 +1540,13 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            channel_name: Optional[str] = Field(None, serialization_alias="channelName")
+            channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
             """Slack channel name. Required if "notifications.typeName" : "SLACK".
             """
 
-            datadog_api_key: Optional[str] = Field(None, serialization_alias="datadogApiKey")
+            datadog_api_key: Optional[str] = Field(
+                default=None, serialization_alias="datadogApiKey"
+            )
             """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1530,15 +1556,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            delay_min: Optional[int] = Field(None, serialization_alias="delayMin")
+            delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
             """Number of minutes to wait after an alert condition is detected before sending out the first notification.
             """
 
-            email_address: Optional[str] = Field(None, serialization_alias="emailAddress")
+            email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
             """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
             """
 
-            email_enabled: Optional[bool] = Field(None, serialization_alias="emailEnabled")
+            email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
             """Determines if email notifications should be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -1546,23 +1572,25 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            interval_min: Optional[int] = Field(None, serialization_alias="intervalMin")
+            interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
             """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
-                None, serialization_alias="microsoftTeamsWebhookUrl"
+                default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
             """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
 
 When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
             """
 
-            mobile_number: Optional[str] = Field(None, serialization_alias="mobileNumber")
+            mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
             """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
             """
 
-            notification_token: Optional[str] = Field(None, serialization_alias="notificationToken")
+            notification_token: Optional[str] = Field(
+                default=None, serialization_alias="notificationToken"
+            )
             """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1572,15 +1600,15 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            role: Optional[str] = Field(None, serialization_alias="role")
+            role: Optional[str] = Field(default=None, serialization_alias="role")
             """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
             """
 
-            room_name: Optional[str] = Field(None, serialization_alias="roomName")
+            room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
             """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
             """
 
-            service_key: Optional[str] = Field(None, serialization_alias="serviceKey")
+            service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
             """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
 
 After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
@@ -1590,7 +1618,7 @@ View or edit the alert through the UI.
 Query the third-party integration settings through the API.
             """
 
-            sms_enabled: Optional[bool] = Field(None, serialization_alias="smsEnabled")
+            sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
             """Flag indicating SMS notifications must be sent. Required if:
 
 "notifications.typeName" : "GROUP"
@@ -1598,11 +1626,13 @@ Query the third-party integration settings through the API.
 "notifications.typeName" : "USER"
             """
 
-            team_id: Optional[str] = Field(None, serialization_alias="teamId")
+            team_id: Optional[str] = Field(default=None, serialization_alias="teamId")
             """Unique identifier of a team.
             """
 
-            type_name: Optional[NotificationsTypeName] = Field(None, serialization_alias="typeName")
+            type_name: Optional[NotificationsTypeName] = Field(
+                default=None, serialization_alias="typeName"
+            )
             """Type of alert notification. Accepted values are:
 
 DATADOG
@@ -1626,23 +1656,23 @@ USER
 WEBHOOK
             """
 
-            username: Optional[str] = Field(None, serialization_alias="username")
+            username: Optional[str] = Field(default=None, serialization_alias="username")
             """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
             """
 
             webhook_body_template: Optional[str] = Field(
-                None, serialization_alias="webhookBodyTemplate"
+                default=None, serialization_alias="webhookBodyTemplate"
             )
             """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
-                None, serialization_alias="webhookHeadersTemplate"
+                default=None, serialization_alias="webhookHeadersTemplate"
             )
             """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
             """
 
-            webhook_secret: Optional[str] = Field(None, serialization_alias="webhookSecret")
+            webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
             """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
 
 A notifications.typeName of WEBHOOK
@@ -1656,7 +1686,7 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
 
-            webhook_url: Optional[str] = Field(None, serialization_alias="webhookUrl")
+            webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
             """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
@@ -1669,7 +1699,9 @@ After creating a webhook notification, the URL is partially redacted when you vi
         class ThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
-            operator: Optional[ThresholdOperator] = Field(None, serialization_alias="operator")
+            operator: Optional[ThresholdOperator] = Field(
+                default=None, serialization_alias="operator"
+            )
             """Operator to apply when checking the current metric value against the threshold value.
 
 GREATER_THAN
@@ -1677,11 +1709,11 @@ GREATER_THAN
 LESS_THAN
             """
 
-            threshold: Optional[int] = Field(None, serialization_alias="threshold")
+            threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
             """Threshold value outside of which an alert is triggered.
             """
 
-        threshold: Optional[ThresholdParams] = Field(None, serialization_alias="threshold")
+        threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
         """Threshold that will cause an alert to be triggered. Required if:
 
 "eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
