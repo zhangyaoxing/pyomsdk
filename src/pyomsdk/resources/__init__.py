@@ -38,6 +38,7 @@ from .backup_encryption_keys_resource import BackupEncryptionKeysResource
 from .log_collection_jobs_resource import LogCollectionJobsResource
 from .maintenance_windows_resource import MaintenanceWindowsResource
 from .measurements_resource import MeasurementsResource
+from .server_log_collection_jobs_resource import ServerLogCollectionJobsResource
 from .performance_advisor_resource import PerformanceAdvisorResource
 from .restore_jobs_resource import RestoreJobsResource
 from .root_resource import RootResource
@@ -98,6 +99,7 @@ __all__ = [
     "LogCollectionJobsResource",
     "MaintenanceWindowsResource",
     "MeasurementsResource",
+    "ServerLogCollectionJobsResource",
     "PerformanceAdvisorResource",
     "RestoreJobsResource",
     "RootResource",

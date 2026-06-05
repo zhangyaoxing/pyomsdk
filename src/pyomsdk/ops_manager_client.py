@@ -40,6 +40,7 @@ from .resources import BackupEncryptionKeysResource
 from .resources import LogCollectionJobsResource
 from .resources import MaintenanceWindowsResource
 from .resources import MeasurementsResource
+from .resources import ServerLogCollectionJobsResource
 from .resources import PerformanceAdvisorResource
 from .resources import RestoreJobsResource
 from .resources import RootResource
@@ -270,6 +271,11 @@ class OpsManagerClient:
     def measurements_resource(self) -> MeasurementsResource:
         """Get the client for MeasurementsResource resource."""
         return MeasurementsResource(self._client)
+
+    @property
+    def server_log_collection_jobs_resource(self) -> ServerLogCollectionJobsResource:
+        """Get the client for ServerLogCollectionJobsResource resource."""
+        return ServerLogCollectionJobsResource(self._client)
 
     @property
     def performance_advisor_resource(self) -> PerformanceAdvisorResource:
