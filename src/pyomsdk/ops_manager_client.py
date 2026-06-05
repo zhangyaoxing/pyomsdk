@@ -55,7 +55,7 @@ class OpsManagerClient:
     def __init__(
         self, base_url: str, public_key: str, private_key: str, timeout: float = 30.0
     ) -> None:
-        ver_num: str = version("ops-manager-sdk")
+        ver_num: str = version("pyomsdk")
         assert (
             base_url and public_key and private_key
         ), "Base URL, public key, and private key are required to initialize the OpsManagerClient."
@@ -65,7 +65,7 @@ class OpsManagerClient:
             headers={
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "User-Agent": f"ops-manager-sdk-python/{ver_num}",
+                "User-Agent": f"pyomsdk/{ver_num}",
             },
             timeout=timeout,
             auth=auth,
