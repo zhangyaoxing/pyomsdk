@@ -1,4 +1,5 @@
 import os
+from typing import Any, Optional
 from pathlib import Path
 import pytest
 from pyomsdk import OpsManagerClient
@@ -46,7 +47,9 @@ def new_user(client: OpsManagerClient):
 def new_organization(client: OpsManagerClient):
     org = create_org(client, "Temp Org for Testing")
     yield org
-    delete_org(client, org["id"])
+    org_id = org.get("id")
+    assert org_id is not None, "Organization ID should not be None"
+    delete_org(client, org_id)
 
 
 @pytest.fixture(name="project")
@@ -69,9 +72,10 @@ def get_project_with_cluster(client: OpsManagerClient):
 
 
 @pytest.fixture(name="cluster")
-def cluster(client: OpsManagerClient, project_with_cluster: dict):
+def cluster(client: OpsManagerClient, project_with_cluster: dict[str, Any]) -> dict[str, Any]:
     cluster_resource = client.clusters_resource
-    pid: str = project_with_cluster.get("id")
+    pid: Optional[str] = project_with_cluster.get("id")
+    assert pid is not None, "Project ID should not be None"
     clusters = cluster_resource.get_all_from_one_project(
         cluster_resource.GetAllFromOneProjectPathParams(project_id=pid), None
     )
