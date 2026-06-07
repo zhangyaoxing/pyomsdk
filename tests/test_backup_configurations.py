@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, cast
 
 import pytest
 
@@ -16,10 +16,11 @@ def _first_cluster_id(client: OpsManagerClient, project_id: str) -> str | None:
     result = client.clusters_resource.get_all_from_one_project(
         ClustersResource.GetAllFromOneProjectPathParams(project_id=project_id), None
     )
-    items = result if isinstance(result, list) else result.get("results", [])
+    items: list[Any] = cast(list[Any], result.get("results", []))
     if not items:
         return None
-    return items[0].get("id") or items[0].get("_id")
+    first_item = items[0]
+    return first_item.get("id") or first_item.get("_id")
 
 
 def test_backup_configurations_get_all(

@@ -8,10 +8,10 @@ venv:
 	python3 -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/python -m pip install --upgrade pip setuptools wheel
 
-install:
+install: venv
 	$(PIP) install -e .
 
-install-dev:
+install-dev: venv
 	$(PIP) install -e .[dev]
 
 lint:
