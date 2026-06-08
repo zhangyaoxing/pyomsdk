@@ -7,7 +7,7 @@ class BaseResource:
     def __init__(self, client: Client) -> None:
         self._client = client
 
-    def _param_to_dict(self, params):
+    def _param_to_dict(self, params: Optional[Any]) -> Optional[Any]:
         if params is None:
             return None
         if isinstance(params, dict):

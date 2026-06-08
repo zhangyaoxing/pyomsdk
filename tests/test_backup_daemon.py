@@ -9,22 +9,18 @@ from pyomsdk.resources.backup_daemon_resource import BackupDaemonResource
 # pylint: disable=redefined-outer-name
 
 
-def test_backup_daemon_get_all(client: OpsManagerClient) -> None:
+def test_backup_daemon_get_all(client: OpsManagerClient, backup_daemon) -> None:
+    assert backup_daemon is not None
+    assert backup_daemon["assignmentEnabled"]
+
+
+def test_backup_daemon_get_by_id(client: OpsManagerClient, backup_daemon) -> None:
     resource = client.backup_daemon_resource
-    result = resource.get_all(None)
-    assert result is not None
-    assert result["totalCount"] > 0
 
-
-def test_backup_daemon_get_by_id(client: OpsManagerClient) -> None:
-    resource = client.backup_daemon_resource
-    all_result = resource.get_all(BackupDaemonResource.GetAllQueryParams())
-    items = all_result if isinstance(all_result, list) else all_result.get("results", [])
-    if not items:
-        pytest.skip("No backup daemons configured")
-
-    machine = items[0].get("machine").get("machine")
-    head_root_dir = items[0].get("machine").get("headRootDirectory")
+    first_item = backup_daemon
+    assert "machine" in first_item and "headRootDirectory" in first_item["machine"]
+    machine = first_item["machine"].get("machine")
+    head_root_dir = first_item["machine"].get("headRootDirectory")
     head_root_dir = quote(head_root_dir, safe="")
     if not machine:
         pytest.skip("Backup daemon entry has no machine/hostname field")
@@ -64,18 +60,20 @@ def test_backup_daemon_delete(client: OpsManagerClient) -> None:
     assert result is None
 
 
-def test_backup_daemon_update(client: OpsManagerClient) -> None:
+def test_backup_daemon_update(client: OpsManagerClient, backup_daemon) -> None:
     """Test update."""
     resource = client.backup_daemon_resource
-    machine = {
-        "machine": "backup-daemon",
-        "head_root_directory": quote("/headDB/", safe=""),
-    }
-    path_params = BackupDaemonResource.UpdatePathParams(**machine)
+    machine = backup_daemon["machine"]
+    path_params = BackupDaemonResource.UpdatePathParams(
+        machine=machine.get("machine"),
+        head_root_directory=quote(machine.get("headRootDirectory", ""), safe=""),
+    )
     query_params = None
     body_params = BackupDaemonResource.UpdateBodyParams(
         assignment_enabled=True,
-        machine=BackupDaemonResource.UpdateBodyParams.MachineParams(**machine),
+        machine=BackupDaemonResource.UpdateBodyParams.MachineParams(
+            machine=machine.get("machine"), head_root_directory=machine.get("headRootDirectory", "")
+        ),
     )
     result = resource.update(path_params, query_params, body_params)
     assert result is not None

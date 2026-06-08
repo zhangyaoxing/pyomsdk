@@ -104,3 +104,12 @@ def user_with_access_list_entry_fixture(
     add_accesslist(client, user["id"], ip_address)
     yield user, ip_address
     delete_accesslist(client, user["id"], ip_address)
+
+@pytest.fixture(name="backup_daemon")
+def get_daemon(client: OpsManagerClient):
+    """Helper function to get a backup daemon."""
+    resource = client.backup_daemon_resource
+    all_result = resource.get_all(None)
+    items: list[dict[str, Any]] = all_result.get("results", [])
+    
+    yield items[0]
