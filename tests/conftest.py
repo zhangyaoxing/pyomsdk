@@ -4,6 +4,8 @@ from pathlib import Path
 import pytest
 from pyomsdk import OpsManagerClient
 from tests.shared.accesslist import add_accesslist, delete_accesslist, random_ip
+from tests.shared.org_accesslist import add_org_access_list_entry, delete_org_access_list_entry
+from tests.shared.org_api_key import create_org_api_key, delete_org_api_key
 from tests.shared.org import create_org, delete_org
 from tests.shared.user import add_user, get_user_info, delete_user
 from tests.shared.project import create_project, delete_project
@@ -105,11 +107,33 @@ def user_with_access_list_entry_fixture(
     yield user, ip_address
     delete_accesslist(client, user["id"], ip_address)
 
+
 @pytest.fixture(name="backup_daemon")
 def get_daemon(client: OpsManagerClient):
     """Helper function to get a backup daemon."""
     resource = client.backup_daemon_resource
     all_result = resource.get_all(None)
     items: list[dict[str, Any]] = all_result.get("results", [])
-    
+
     yield items[0]
+
+
+@pytest.fixture(name="org_api_key")
+def get_org_api_key(client: OpsManagerClient, org: dict):
+    """Helper function to create an organization API key."""
+    api_key = create_org_api_key(client, org["id"], "Test API Key")
+    yield api_key
+    delete_org_api_key(client, org["id"], api_key["id"])
+
+
+@pytest.fixture(name="org_access_list_entry")
+def get_org_access_list_entry(client: OpsManagerClient, org, org_api_key):
+    """Helper function to create an organization access list entry."""
+    entry = add_org_access_list_entry(
+        client,
+        api_key_id=org_api_key["id"],
+        org_id=org["id"],
+        ip_addr="192.168.1.1",
+    )
+    yield entry
+    delete_org_access_list_entry(client, org_api_key["id"], org["id"], "192.168.1.1")

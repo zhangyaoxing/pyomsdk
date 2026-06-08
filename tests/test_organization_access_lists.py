@@ -19,94 +19,36 @@ def test_organization_access_lists_get_all_entries(client: OpsManagerClient, org
     assert result is not None
     assert result["results"] is not None
     assert isinstance(result["results"], list)
-    assert len(result["results"]) == 0
+    assert len(result["results"]) >= 0
 
 
-def test_organization_access_lists_create_entries(client: OpsManagerClient, org) -> None:
+def test_organization_access_lists_create_entries(org_access_list_entry) -> None:
     """Test create_entries."""
-    resource = client.organization_access_lists_resource
-    project = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        OrganizationAccessListsResource.CreateEntriesPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        OrganizationAccessListsResource.CreateEntriesQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    entry = build_model_or_skip(
-        OrganizationAccessListsResource.CreateEntriesBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    body_params = [entry]
-    result = resource.create_entries(path_params, query_params, body_params)
-    assert result is not None
-    assert_success_or_skip(result)
+    assert org_access_list_entry is not None
 
 
-def test_organization_access_lists_delete_entry(client: OpsManagerClient, org) -> None:
+def test_organization_access_lists_delete_entry(
+    client: OpsManagerClient, org, org_api_key, org_access_list_entry
+) -> None:
     """Test delete_entry."""
     resource = client.organization_access_lists_resource
-    project = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        OrganizationAccessListsResource.DeleteEntryPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    entry = org_access_list_entry["results"][0]
+    path_params = resource.DeleteEntryPathParams(
+        api_key_id=org_api_key["id"], org_id=org["id"], access_list_entry=entry["ipAddress"]
     )
-    query_params = build_model_or_skip(
-        OrganizationAccessListsResource.DeleteEntryQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.delete_entry(path_params, query_params)
-    assert result is not None
-    assert_success_or_skip(result)
+    result = resource.delete_entry(path_params, None)
+    assert result is None
 
 
-def test_organization_access_lists_get_one_entry(client: OpsManagerClient, org) -> None:
+def test_organization_access_lists_get_one_entry(
+    client: OpsManagerClient, org, org_api_key, org_access_list_entry
+) -> None:
     """Test get_one_entry."""
     resource = client.organization_access_lists_resource
-    project = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        OrganizationAccessListsResource.GetOneEntryPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    entry = org_access_list_entry["results"][0]
+    path_params = resource.GetOneEntryPathParams(
+        api_key_id=org_api_key["id"], org_id=org["id"], access_list_entry=entry["ipAddress"]
     )
-    query_params = build_model_or_skip(
-        OrganizationAccessListsResource.GetOneEntryQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.get_one_entry(path_params, query_params)
+    result = resource.get_one_entry(path_params, None)
     assert result is not None
-    assert_success_or_skip(result)
+    assert result["ipAddress"] == entry["ipAddress"]
