@@ -2,7 +2,7 @@ from pyomsdk import OpsManagerClient
 from pyomsdk.resources.enums import OrgRole
 
 
-def create_org(client: OpsManagerClient, org_name: str) -> str:
+def create_org(client: OpsManagerClient, org_name: str) -> dict:
     """Create a new organization and return its ID."""
     orgs_resource = client.organizations_resource
     org = orgs_resource.create_organization(
