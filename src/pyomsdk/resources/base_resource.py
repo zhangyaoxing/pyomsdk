@@ -1,4 +1,5 @@
 from typing import Any, Optional
+from urllib.parse import quote
 from httpx import Client
 from pydantic import BaseModel
 
@@ -24,7 +25,7 @@ class BaseResource:
         for key, value in path_params.items():
             placeholder = f"{{{key}}}"
             if placeholder in path_template:
-                path_template = path_template.replace(placeholder, str(value))
+                path_template = path_template.replace(placeholder, quote(str(value), safe=""))
         return path_template
 
     def _request(

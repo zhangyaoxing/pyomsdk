@@ -1,4 +1,3 @@
-from urllib.parse import quote
 import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
@@ -21,7 +20,6 @@ def test_backup_daemon_get_by_id(client: OpsManagerClient, backup_daemon) -> Non
     assert "machine" in first_item and "headRootDirectory" in first_item["machine"]
     machine = first_item["machine"].get("machine")
     head_root_dir = first_item["machine"].get("headRootDirectory")
-    head_root_dir = quote(head_root_dir, safe="")
     if not machine:
         pytest.skip("Backup daemon entry has no machine/hostname field")
 
@@ -53,7 +51,7 @@ def test_backup_daemon_delete(client: OpsManagerClient) -> None:
     """Test delete."""
     resource = client.backup_daemon_resource
     path_params = BackupDaemonResource.DeletePathParams(
-        machine="example.com", head_root_directory=quote("/data/backupd", safe="")
+        machine="example.com", head_root_directory="/data/backupd"
     )
     query_params = None
     result = resource.delete(path_params, query_params)
@@ -66,7 +64,7 @@ def test_backup_daemon_update(client: OpsManagerClient, backup_daemon) -> None:
     machine = backup_daemon["machine"]
     path_params = BackupDaemonResource.UpdatePathParams(
         machine=machine.get("machine"),
-        head_root_directory=quote(machine.get("headRootDirectory", ""), safe=""),
+        head_root_directory=machine.get("headRootDirectory", ""),
     )
     query_params = None
     body_params = BackupDaemonResource.UpdateBodyParams(
