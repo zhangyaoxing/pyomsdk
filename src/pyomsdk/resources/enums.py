@@ -449,6 +449,17 @@ class LogType(str, Enum):
         return self.value
 
 
+class ServerLogType(str, Enum):
+    """Enum for server log types."""
+
+    APPLICATION = "APPLICATION"
+    HTTP_ACCESS = "HTTP_ACCESS"
+    MIGRATION = "MIGRATION"
+
+    def __str__(self) -> str:
+        return self.value
+
+
 class OrgRole(str, Enum):
     """Enum for organization role names."""
 

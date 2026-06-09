@@ -381,67 +381,10 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
-        eachvalueinserversmustidentifyaregisteredactive_ops_managerserver: Optional[Any] = Field(
-            default=None,
-            serialization_alias="Each value in servers must identify a registered, active Ops Manager server",
-        )
-        """400
-        """
-
-        theestimatedstoragemustnotexceedthestoragelimitthatthe_ops_manageradministratorhasconfiguredforlogcollection: Optional[
-            Any
-        ] = Field(
-            default=None,
-            serialization_alias="The estimated storage must not exceed the storage limit that the Ops Manager administrator has configured for log collection",
-        )
-        """413
-        """
-
-        thenumberofconcurrentjobsmustnotexceed4: Optional[Any] = Field(
-            default=None, serialization_alias="The number of concurrent jobs must not exceed 4"
-        )
-        """429
-        """
-
-        thetimerangemustnotexceed7days: Optional[Any] = Field(
-            default=None, serialization_alias="The time range must not exceed 7 days"
-        )
-        """400
-        """
-
-        thetimerangemustnotstartearlierthanthemaximumloghistorythatthe_ops_manageradministratorhasconfigured: Optional[
-            Any
-        ] = Field(
-            default=None,
-            serialization_alias="The time range must not start earlier than the maximum log history that the Ops Manager administrator has configured",
-        )
-        """400
-        """
-
         log_collection_from_date: Optional[str] = Field(
             default=None, serialization_alias="logCollectionFromDate"
         )
         """Start of the time range to collect, in ISO 8601 UTC format. If you set this field, you must also set logCollectionToDate.
-        """
-
-        log_collection_from_dateandlog_collection_to_datemustbesettogether: Optional[Any] = Field(
-            default=None,
-            serialization_alias="logCollectionFromDate and logCollectionToDate must be set together",
-        )
-        """400
-        """
-
-        log_collection_from_datemustnotbeinthefuture: Optional[Any] = Field(
-            default=None, serialization_alias="logCollectionFromDate must not be in the future"
-        )
-        """400
-        """
-
-        log_collection_from_datemustprecedelog_collection_to_date: Optional[Any] = Field(
-            default=None,
-            serialization_alias="logCollectionFromDate must precede logCollectionToDate",
-        )
-        """400
         """
 
         log_collection_to_date: Optional[str] = Field(
@@ -450,7 +393,9 @@ Expected response body
         """End of the time range to collect, in ISO 8601 UTC format. If you set this field, you must also set logCollectionFromDate.
         """
 
-        log_types: Optional[list[LogType]] = Field(default=None, serialization_alias="logTypes")
+        log_types: Optional[list[ServerLogType]] = Field(
+            default=None, serialization_alias="logTypes"
+        )
         """Log types to collect. Each element must be one of the following values:
 
 APPLICATION
@@ -470,12 +415,6 @@ If you omit this field or pass an empty array, Ops Manager collects every log ty
             default=None, serialization_alias="sizeRequestedPerFileBytes"
         )
         """Maximum uncompressed size, in bytes, per log type per server. Must be greater than 0. If you omit this field, Ops Manager auto-allocates the remaining configured storage across the requested servers and log types.
-        """
-
-        size_requested_per_file_bytesmustbegreaterthan0: Optional[Any] = Field(
-            default=None, serialization_alias="sizeRequestedPerFileBytes must be greater than 0"
-        )
-        """400
         """
 
     def create(
