@@ -9,7 +9,7 @@ from pyomsdk.resources.backup_daemon_resource import BackupDaemonResource
 # pylint: disable=redefined-outer-name
 
 
-def test_backup_daemon_get_all(client: OpsManagerClient, backup_daemon) -> None:
+def test_backup_daemon_get_all(backup_daemon) -> None:
     assert backup_daemon is not None
     assert backup_daemon["assignmentEnabled"]
 

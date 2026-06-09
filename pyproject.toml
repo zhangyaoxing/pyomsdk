@@ -44,6 +44,7 @@ disable = [
     "missing-function-docstring",
     "too-few-public-methods",
     "duplicate-code",
+    "line-too-long",
 ]
 
 [tool.mypy]
