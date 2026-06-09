@@ -1,8 +1,8 @@
+from typing import Optional
 import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.project_backup_job_resource import ProjectBackupJobResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -20,7 +20,7 @@ def test_project_backup_job_get_all(client: OpsManagerClient) -> None:
 def test_project_backup_job_get_by_id(client: OpsManagerClient) -> None:
     resource = client.project_backup_job_resource
     all_result = resource.get_all(ProjectBackupJobResource.GetAllQueryParams())
-    items = all_result if isinstance(all_result, list) else all_result.get("results", [])
+    items: Optional[list] = all_result.get("results", []) if all_result else None
     if not items:
         pytest.skip("No backup jobs configured")
 
@@ -37,35 +37,14 @@ def test_project_backup_job_get_by_id(client: OpsManagerClient) -> None:
 def test_project_backup_job_update(client: OpsManagerClient, project) -> None:
     """Test update."""
     resource = client.project_backup_job_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ProjectBackupJobResource.UpdatePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        ProjectBackupJobResource.UpdateQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    body_params = build_model_or_skip(
-        ProjectBackupJobResource.UpdateBodyParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    result = resource.update(path_params, query_params, body_params)
+    all_result = resource.get_all(ProjectBackupJobResource.GetAllQueryParams())
+    items: Optional[list] = all_result.get("results", []) if all_result else None
+    if not items:
+        pytest.skip("No backup jobs configured")
+    resource = client.project_backup_job_resource
+    path_params = resource.UpdatePathParams(project_id=project["id"])
+    result = resource.update(path_params, None, None)
     # Endpoint can return 204 No Content on success.
     if result is None:
         return
-    assert_success_or_skip(result)
+    assert "error" not in result

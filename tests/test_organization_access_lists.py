@@ -1,6 +1,5 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.organization_access_lists_resource import OrganizationAccessListsResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
 from tests.shared.org import create_api_key
 
 
