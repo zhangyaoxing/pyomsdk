@@ -1,6 +1,4 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
-from pyomsdk.resources.global_access_list_resource import GlobalAccessListResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.

@@ -3,7 +3,6 @@ import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.s3_oplog_resource import S3OplogResource
-from tests.shared.resource_api import build_model_or_skip, assert_success_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -15,7 +14,7 @@ def test_s3_oplog_get_all(client: OpsManagerClient) -> None:
     query_params = S3OplogResource.GetAllQueryParams(pretty=True)
     result = resource.get_all(query_params)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" not in result
 
 
 def test_s3_oplog_get_by_id(client: OpsManagerClient) -> None:
@@ -29,7 +28,7 @@ def test_s3_oplog_get_by_id(client: OpsManagerClient) -> None:
     path_params = S3OplogResource.GetByIdPathParams(s3_oplog_config_id=config_id)
     result = resource.get_by_id(path_params, None)
     assert result is not None
-    assert_success_or_skip(result)
+    assert "error" not in result
 
 
 def test_s3_oplog_create(client: OpsManagerClient) -> None:

@@ -1,6 +1,4 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
-from pyomsdk.resources.oplog_store_resource import OplogStoreResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,20 +7,8 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_oplog_store_get_all(client: OpsManagerClient) -> None:
     resource = client.oplog_store_resource
-    org = None
-    project = None
-    user = None
-    api_key = None
-    query_params = build_model_or_skip(
-        OplogStoreResource.GetAllQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
 
-    result = resource.get_all(query_params)
+    result = resource.get_all(None)
     assert result is not None
     assert result["results"] is not None
     assert isinstance(result["results"], list)

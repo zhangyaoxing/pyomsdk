@@ -1,6 +1,4 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
-from pyomsdk.resources.global_events_resource import GlobalEventsResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,27 +7,15 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_global_events_get_all(client: OpsManagerClient) -> None:
     resource = client.global_events_resource
-    org = None
-    project = None
-    user = None
-    api_key = None
-    query_params = build_model_or_skip(
-        GlobalEventsResource.GetAllQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
 
-    result = resource.get_all(query_params)
+    result = resource.get_all(None)
     assert result is not None
 
 
 def test_global_events_get_one(client: OpsManagerClient, org) -> None:
     """Test get_one."""
     resource = client.global_events_resource
-    path_params = GlobalEventsResource.GetOnePathParams(event_id=org["id"])
+    path_params = resource.GetOnePathParams(event_id=org["id"])
     result = resource.get_one(path_params, None)
     assert result is not None
     assert "error" in result

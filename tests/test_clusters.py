@@ -1,6 +1,5 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.clusters_resource import ClustersResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,27 +8,11 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_clusters_get_all_from_one_project(client: OpsManagerClient, project_with_cluster) -> None:
     resource = client.clusters_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ClustersResource.GetAllFromOneProjectPathParams,
-        client=client,
-        org=org,
-        project=project_with_cluster,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        ClustersResource.GetAllFromOneProjectQueryParams,
-        client=client,
-        org=org,
-        project=project_with_cluster,
-        user=user,
-        api_key=api_key,
+    path_params = ClustersResource.GetAllFromOneProjectPathParams(
+        project_id=project_with_cluster["id"]
     )
 
-    result = resource.get_all_from_one_project(path_params, query_params)
+    result = resource.get_all_from_one_project(path_params, None)
     assert result is not None
     assert len(result["results"]) > 0
 

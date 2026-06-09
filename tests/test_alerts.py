@@ -2,7 +2,6 @@ import pytest
 
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.alerts_resource import AlertsResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -37,27 +36,8 @@ def _first_alert_id(client: OpsManagerClient, project_id: str) -> str:
 def test_alerts_get_all(client: OpsManagerClient, project_with_cluster: dict) -> None:
     """Test getting all alerts in a project."""
     resource = client.alerts_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        AlertsResource.GetAllPathParams,
-        client=client,
-        org=org,
-        project=project_with_cluster,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        AlertsResource.GetAllQueryParams,
-        client=client,
-        org=org,
-        project=project_with_cluster,
-        user=user,
-        api_key=api_key,
-    )
-
-    result = resource.get_all(path_params, query_params)
+    path_params = resource.GetAllPathParams(project_id=project_with_cluster["id"])
+    result = resource.get_all(path_params, None)
     assert result is not None
     assert "error" not in result
 

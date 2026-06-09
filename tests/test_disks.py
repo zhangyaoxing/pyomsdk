@@ -1,6 +1,5 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.disks_resource import DisksResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,28 +8,14 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_disks_get_all(client: OpsManagerClient, project) -> None:
     resource = client.disks_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        DisksResource.GetAllPathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        DisksResource.GetAllQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
+    path_params = DisksResource.GetAllPathParams(
+        project_id=project["id"],
+        host_id="non-existent-host-id",
     )
 
-    result = resource.get_all(path_params, query_params)
+    result = resource.get_all(path_params, None)
     assert result is not None
+    assert result["errorCode"] == "HOST_NOT_FOUND"
 
 
 def test_disks_get_one(client: OpsManagerClient, project_with_cluster) -> None:

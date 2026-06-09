@@ -1,6 +1,4 @@
 from pyomsdk.ops_manager_client import OpsManagerClient
-from pyomsdk.resources.server_usage_resource import ServerUsageResource
-from tests.shared.resource_api import build_model_or_skip
 
 
 # Pylint does not understand pytest fixture injection and reports false positives.
@@ -9,25 +7,8 @@ from tests.shared.resource_api import build_model_or_skip
 
 def test_server_usage_get_default_server_type(client: OpsManagerClient, project) -> None:
     resource = client.server_usage_resource
-    org = None
-    user = None
-    api_key = None
-    path_params = build_model_or_skip(
-        ServerUsageResource.GetDefaultServerTypePathParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
-    query_params = build_model_or_skip(
-        ServerUsageResource.GetDefaultServerTypeQueryParams,
-        client=client,
-        org=org,
-        project=project,
-        user=user,
-        api_key=api_key,
-    )
+    path_params = resource.GetDefaultServerTypePathParams(group_id=project["id"])
 
-    result = resource.get_default_server_type(path_params, query_params)
+    result = resource.get_default_server_type(path_params, None)
     assert result is not None
+    assert result["name"] == "PRODUCTION_SERVER"
