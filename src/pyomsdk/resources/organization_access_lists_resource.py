@@ -1,7 +1,6 @@
 """Auto-generated client for OrganizationAccessListsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
-
 from typing import Any, Optional
 
 from pydantic import BaseModel, ConfigDict, Field

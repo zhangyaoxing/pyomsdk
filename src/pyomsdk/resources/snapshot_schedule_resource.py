@@ -68,13 +68,13 @@ Expected response body
         ### Document:
         [Get Schedule](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-snapshot-schedule/)
         ### Endpoint:
-        `GET /groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule`
+        `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule`
         ### Description
         No description.
         """
         return self._request(
             "GET",
-            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/CLUSTER-ID/snapshotSchedule",
+            "/api/public/v1.0/groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule",
             path_params,
             query_params,
             None,
