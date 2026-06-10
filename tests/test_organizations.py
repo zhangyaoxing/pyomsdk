@@ -108,3 +108,14 @@ def test_organizations_delete_organization(client: OpsManagerClient) -> None:
 
     result = resource.delete_organization(path_params, None)
     assert result is None
+
+
+def test_organizations_get_all_users(client: OpsManagerClient, org: dict[str, Any]) -> None:
+    resource = client.organizations_resource
+    path_params = OrganizationsResource.GetAllUsersPathParams(org_id=_org_id(org))
+    query_params = OrganizationsResource.GetAllUsersQueryParams(pretty=True, page_num=1)
+
+    result = resource.get_all_users(path_params, query_params)
+    assert result is not None
+    assert "error" not in result
+    assert isinstance(result.get("results", []), list)

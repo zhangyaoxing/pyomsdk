@@ -22,3 +22,12 @@ def test_global_api_keys_get_one(client: OpsManagerClient) -> None:
     assert "error" not in result
     assert "id" in result
     assert result["id"] == all_keys["results"][0]["id"]
+
+
+def test_global_api_keys_get_all_roles(client: OpsManagerClient) -> None:
+    resource = client.global_api_keys_resource
+    query_params = GlobalApiKeysResource.GetAllRolesQueryParams(pretty=True)
+
+    result = resource.get_all_roles(query_params)
+    assert result is not None
+    assert "error" not in result

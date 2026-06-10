@@ -128,3 +128,24 @@ def test_projects_delete(client: OpsManagerClient, org: dict[str, Any]) -> None:
 
     result = resource.delete(path_params, None)
     assert result == {}
+
+
+def test_projects_get_by_specific_tags_for_the_current_user(client: OpsManagerClient) -> None:
+    resource = client.projects_resource
+    query_params = ProjectsResource.GetBySpecificTagsForTheCurrentUserQueryParams()
+
+    result = resource.get_by_specific_tags_for_the_current_user(query_params)
+    assert result is not None
+    assert "error" not in result
+    assert isinstance(result.get("results", []), list)
+
+
+def test_projects_get_all_teams(client: OpsManagerClient, project: dict[str, Any]) -> None:
+    resource = client.projects_resource
+    path_params = ProjectsResource.GetAllTeamsPathParams(project_id=_project_id(project))
+    query_params = ProjectsResource.GetAllTeamsQueryParams(pretty=True, page_num=1)
+
+    result = resource.get_all_teams(path_params, query_params)
+    assert result is not None
+    assert "error" not in result
+    assert isinstance(result.get("results", []), list)
