@@ -58,7 +58,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         acknowledged_until: str = Field(serialization_alias="acknowledgedUntil")
-        """Timestamp in ISO 8601 date and time format in UTC through which you acknowledge this alert. After this time passes, Ops Manager reverts the alert to un-acknowledged.
+        """ISO 8601 through which you acknowledge this alert. After this time passes, Ops Manager reverts the alert to un-acknowledged.
 
 To prevent the alert from resuming any time soon, set the date and time to some point in the distant future.
 

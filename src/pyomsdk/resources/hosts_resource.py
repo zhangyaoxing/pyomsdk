@@ -490,7 +490,7 @@ NONE
         """
 
         ssl_enabled: Optional[bool] = Field(default=None, serialization_alias="sslEnabled")
-        """Set to true if TLS/SSL should be enabled for this MongoDB process. Set to true if "authMechanismName" : "MONGODB_X509".
+        """Set to true if TLS should be enabled for this MongoDB process. Set to true if "authMechanismName" : "MONGODB_X509".
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")

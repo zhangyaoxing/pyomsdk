@@ -64,7 +64,7 @@ Expected response body
         acknowledged_until: Optional[str] = Field(
             default=None, serialization_alias="acknowledgedUntil"
         )
-        """Timestamp in ISO 8601 date and time format in UTC until which the alert should be acknowledged.
+        """ISO 8601 until which the alert should be acknowledged.
 
 To acknowledge an alert "forever", set the field value to a large number of years in the future. Recommend setting to 100 years in the future.
 

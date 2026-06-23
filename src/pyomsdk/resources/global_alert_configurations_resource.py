@@ -636,7 +636,7 @@ Expected response body
         ### Document:
         [Test Global Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-test-one/)
         ### Endpoint:
-        `POST /api/public/v1.0/globalAlertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
+        `POST /globalAlertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
         ### Description
         Triggers a test notification for a specific notification method in a global alert configuration. This endpoint sends a test payload with dummy data and rendered templates to validate your webhook configuration.
         """

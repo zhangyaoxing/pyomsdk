@@ -632,7 +632,7 @@ Expected response body
         query_params: Optional[UpdateTheAutomationConfigurationNoSecretsQueryParams],
     ) -> dict[str, Any]:
         """
-        ## Update the Automation Configuration (Sensitive Information Ignored)
+        ## Update Automation Config Without Sensitive Fields
         ### Document:
         [Update the Automation Configuration (No Secrets)](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-automation-config-no-secrets/)
         ### Endpoint:
