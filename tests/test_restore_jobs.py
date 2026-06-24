@@ -15,20 +15,22 @@ def _first_cluster_id(client: OpsManagerClient, project_id: str) -> str | None:
     result = client.clusters_resource.get_all_from_one_project(
         ClustersResource.GetAllFromOneProjectPathParams(project_id=project_id), None
     )
-    items = result if isinstance(result, list) else result.get("results", [])
+    items = result.get("results", [])
     if not items:
         return None
     return items[0].get("id") or items[0].get("_id")
 
 
-def test_restore_jobs_get_all_cluster(client: OpsManagerClient, project: dict[str, Any]) -> None:
-    cluster_id = _first_cluster_id(client, project["id"])
+def test_restore_jobs_get_all_cluster(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any]
+) -> None:
+    cluster_id = _first_cluster_id(client, project_with_cluster["id"])
     if not cluster_id:
         pytest.skip("No clusters found in project")
 
     resource = client.restore_jobs_resource
     path_params = RestoreJobsResource.GetAllClusterPathParams(
-        project_id=project["id"], cluster_id=cluster_id
+        project_id=project_with_cluster["id"], cluster_id=cluster_id
     )
     result = resource.get_all_cluster(path_params, None)
     assert result is not None

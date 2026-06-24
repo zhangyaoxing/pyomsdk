@@ -267,21 +267,27 @@ Users can't manage users or roles.
 
 
 
+
 DisableAuthenticationMechanisms
+
 	
 
 Users can't change authentication settings.
 
 
 
+
 DisableSetMongodConfig
+
 	
 
 Users can't change any mongod settings listed in the policies[n].disabledParams array.
 
 
 
+
 DisableSetMongodVersion
+
 	
 
 Users can't change the version of any mongod or mongos.
@@ -297,28 +303,36 @@ Users can't enable or disable the Backup agent.
 
 
 
+
 DisableMongodLogManagement
+
 	
 
 Users can't change log management settings.
 
 
 
+
 DisableImportToAutomation
+
 	
 
 Users can't manage deployments using Automation.
 
 
 
+
 DisableAgentApiKeyManagement
+
 	
 
 Users can't create or update Agent API keys.
 
 
 
+
 DisableMongodHostManagement
+
 	
 
 Users can't change the server type of hosts.

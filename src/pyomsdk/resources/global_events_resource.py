@@ -58,11 +58,11 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
         """
 
         max_date: Optional[str] = Field(default=None, serialization_alias="maxDate")
-        """Return only events for which the created date is less than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
+        """Return only events for which the created date is less than or equal to the specified ISO 8601.
         """
 
         min_date: Optional[str] = Field(default=None, serialization_alias="minDate")
-        """Return only events for which the created date is greater than or equal to the specified Timestamp in ISO 8601 date and time format in UTC.
+        """Return only events for which the created date is greater than or equal to the specified ISO 8601.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")

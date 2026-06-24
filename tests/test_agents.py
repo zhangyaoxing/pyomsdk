@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, cast
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.agents_resource import AgentsResource
 from pyomsdk.resources.enums import AgentType
@@ -37,7 +37,7 @@ def test_agents_get_all_api_keys(
     path_params = AgentsResource.GetAllApiKeysPathParams(project_id=project["id"])
     query_params = AgentsResource.GetAllApiKeysQueryParams(pretty=True)
 
-    result = resource.get_all_api_keys(path_params, query_params)
+    result = cast(list, resource.get_all_api_keys(path_params, query_params))
     assert result is not None
     assert "error" not in result
     assert len(result) > 0

@@ -409,6 +409,18 @@ Expected response body
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
+        log_collection_from_date: Optional[int] = Field(
+            default=None, serialization_alias="logCollectionFromDate"
+        )
+        """Date and time from which to start this log, in milliseconds since the Unix epoch. If you specify the logCollectionFromDate, you must also specify the logCollectionToDate.
+        """
+
+        log_collection_to_date: Optional[int] = Field(
+            default=None, serialization_alias="logCollectionToDate"
+        )
+        """Date and time at which to end this log, in milliseconds since the Unix epoch. If you specify the logCollectionToDate, you must also specify the logCollectionFromDate.
+        """
+
         log_types: list[LogType] = Field(serialization_alias="logTypes")
         """Array of strings specifying the types of logs to collect. Each array element must be one of the following values:
 
@@ -450,7 +462,7 @@ CLUSTER, for a sharded cluster.
 
 PROCESS, for a node in the replica set.
 
-REPLICASET, for a replica set.`
+REPLICASET, for a replica set.
         """
 
         size_requested_per_file_bytes: int = Field(serialization_alias="sizeRequestedPerFileBytes")
@@ -531,7 +543,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         expiration_date: str = Field(serialization_alias="expirationDate")
-        """Timestamp, in the number of seconds that have elapsed since the UNIX epoch when this job expires. This can be up to 6 months from the time the job was created. You cannot specify a date which precedes the time the request is made.
+        """UNIX epoch when this job expires. This can be up to 6 months from the time the job was created. You cannot specify a date which precedes the time the request is made.
         """
 
     def extend(

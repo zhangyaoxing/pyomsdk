@@ -189,7 +189,7 @@ To learn more, see MongoDB Usage Page.
         model_config = ConfigDict(populate_by_name=True)
 
         end_date: str = Field(serialization_alias="endDate")
-        """Date in ISO 8601 date format when the report ends.
+        """ISO 8601 when the report ends.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
@@ -234,7 +234,7 @@ Expected response body
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Date in ISO 8601 date format when the report starts.
+        """ISO 8601 when the report starts.
         """
 
     def get_global_usage_report_archive(

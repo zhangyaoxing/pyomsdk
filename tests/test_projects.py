@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 from uuid import uuid4
 
 from pyomsdk.ops_manager_client import OpsManagerClient
@@ -10,8 +10,9 @@ from tests.shared.project import create_project
 # pylint: disable=redefined-outer-name
 
 
-def _project_id(project: dict[str, Any]) -> str:
-    return project.get("id") or project.get("_id")
+def _project_id(project: dict[str, Any]) -> Optional[str]:
+    pid = project.get("id") or project.get("_id")
+    return pid
 
 
 def test_projects_create(client: OpsManagerClient, org: dict[str, Any]) -> None:
@@ -33,13 +34,15 @@ def test_projects_create(client: OpsManagerClient, org: dict[str, Any]) -> None:
 def test_projects_get_by_id(client: OpsManagerClient, project: dict[str, Any]) -> None:
     resource = client.projects_resource
 
-    path_params = ProjectsResource.GetByIdPathParams(project_id=_project_id(project))
+    project_id = _project_id(project)
+    assert project_id is not None
+    path_params = ProjectsResource.GetByIdPathParams(project_id=project_id)
     query_params = ProjectsResource.GetByIdQueryParams(pretty=True)
 
     result = resource.get_by_id(path_params, query_params)
     assert result is not None
     assert "error" not in result
-    assert _project_id(result) == _project_id(project)
+    assert _project_id(result) == project_id
 
 
 def test_projects_get_by_name(client: OpsManagerClient, org: dict[str, Any]) -> None:
@@ -48,6 +51,7 @@ def test_projects_get_by_name(client: OpsManagerClient, org: dict[str, Any]) -> 
 
     created_project = create_project(client, org["id"], project_name)
     created_project_id = _project_id(created_project)
+    assert created_project_id is not None
 
     path_params = ProjectsResource.GetByNamePathParams(group_name=project_name)
     query_params = ProjectsResource.GetByNameQueryParams(pretty=True)
@@ -84,6 +88,7 @@ def test_projects_update(client: OpsManagerClient, org: dict[str, Any]) -> None:
 
     created_project = create_project(client, org["id"], original_name)
     created_project_id = _project_id(created_project)
+    assert created_project_id is not None
 
     path_params = ProjectsResource.UpdatePathParams(project_id=created_project_id)
     query_params = ProjectsResource.UpdateQueryParams(pretty=True)
@@ -103,7 +108,9 @@ def test_projects_update(client: OpsManagerClient, org: dict[str, Any]) -> None:
 def test_projects_get_all_users(client: OpsManagerClient, project: dict[str, Any]) -> None:
     resource = client.projects_resource
 
-    path_params = ProjectsResource.GetAllUsersPathParams(project_id=_project_id(project))
+    project_id = _project_id(project)
+    assert project_id is not None
+    path_params = ProjectsResource.GetAllUsersPathParams(project_id=project_id)
     query_params = ProjectsResource.GetAllUsersQueryParams(
         flatten_teams=True,
         include_org_users=True,
@@ -123,6 +130,7 @@ def test_projects_delete(client: OpsManagerClient, org: dict[str, Any]) -> None:
 
     created_project = create_project(client, org["id"], project_name)
     created_project_id = _project_id(created_project)
+    assert created_project_id is not None
 
     path_params = ProjectsResource.DeletePathParams(project_id=created_project_id)
 
@@ -142,7 +150,9 @@ def test_projects_get_by_specific_tags_for_the_current_user(client: OpsManagerCl
 
 def test_projects_get_all_teams(client: OpsManagerClient, project: dict[str, Any]) -> None:
     resource = client.projects_resource
-    path_params = ProjectsResource.GetAllTeamsPathParams(project_id=_project_id(project))
+    project_id = _project_id(project)
+    assert project_id is not None
+    path_params = ProjectsResource.GetAllTeamsPathParams(project_id=project_id)
     query_params = ProjectsResource.GetAllTeamsQueryParams(pretty=True, page_num=1)
 
     result = resource.get_all_teams(path_params, query_params)

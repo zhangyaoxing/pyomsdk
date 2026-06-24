@@ -10,21 +10,25 @@ from pyomsdk.resources.measurements_resource import MeasurementsResource
 # pylint: disable=redefined-outer-name
 
 
-def _first_host_id(client: OpsManagerClient, project_with_cluster: dict[str, Any]) -> str | None:
+def _first_host_id(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any], cluster
+) -> str | None:
     result = client.hosts_resource.get_all(
-        HostsResource.GetAllPathParams(project_id=project_with_cluster["id"]), None
+        HostsResource.GetAllPathParams(project_id=project_with_cluster["id"]),
+        HostsResource.GetAllQueryParams(cluster_id=cluster["id"]),
     )
-    items = result if isinstance(result, list) else result.get("results", [])
+    items = result.get("results", [])
     if not items:
         return None
     return items[0].get("id") or items[0].get("_id")
 
 
 def test_measurements_get_types(
-    client: OpsManagerClient, project_with_cluster: dict[str, Any]
+    client: OpsManagerClient, project_with_cluster: dict[str, Any], cluster: dict[str, Any]
 ) -> None:
     resource = client.measurements_resource
-    host_id = _first_host_id(client, project_with_cluster)
+    host_id = _first_host_id(client, project_with_cluster, cluster)
+    assert host_id is not None, "No hosts found in the cluster for testing measurements"
     path_params = MeasurementsResource.GetTypesPathParams(
         project_id=project_with_cluster["id"],
         host_id=host_id,
@@ -39,8 +43,11 @@ def test_measurements_get_types(
     assert result["hostId"] == host_id
 
 
-def test_measurements_host(client: OpsManagerClient, project_with_cluster: dict[str, Any]) -> None:
-    host_id = _first_host_id(client, project_with_cluster)
+def test_measurements_host(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any], cluster: dict[str, Any]
+) -> None:
+    host_id = _first_host_id(client, project_with_cluster, cluster)
+    assert host_id is not None, "No hosts found in the cluster for testing measurements"
 
     resource = client.measurements_resource
     path_params = MeasurementsResource.HostPathParams(
@@ -56,10 +63,13 @@ def test_measurements_host(client: OpsManagerClient, project_with_cluster: dict[
     assert result["hostId"] == host_id
 
 
-def test_measurements_database(client: OpsManagerClient, project_with_cluster) -> None:
+def test_measurements_database(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any], cluster: dict[str, Any]
+) -> None:
     """Test database."""
     resource = client.measurements_resource
-    host_id = _first_host_id(client, project_with_cluster)
+    host_id = _first_host_id(client, project_with_cluster, cluster)
+    assert host_id is not None, "No hosts found in the cluster for testing measurements"
     path_params = MeasurementsResource.DatabasePathParams(
         project_id=project_with_cluster["id"],
         host_id=host_id,
@@ -75,10 +85,13 @@ def test_measurements_database(client: OpsManagerClient, project_with_cluster) -
     assert result["hostId"] == host_id
 
 
-def test_measurements_disk_partition(client: OpsManagerClient, project_with_cluster) -> None:
+def test_measurements_disk_partition(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any], cluster: dict[str, Any]
+) -> None:
     """Test disk_partition."""
     resource = client.measurements_resource
-    host_id = _first_host_id(client, project_with_cluster)
+    host_id = _first_host_id(client, project_with_cluster, cluster)
+    assert host_id is not None, "No hosts found in the cluster for testing measurements"
     path_params = MeasurementsResource.DiskPartitionPathParams(
         project_id=project_with_cluster["id"],
         host_id=host_id,

@@ -219,7 +219,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
         return self._request(
             "GET",
-            "/prometheus/v1.0//groups/{PROJECT-ID}/discovery",
+            "/prometheus/v1.0/groups/{PROJECT-ID}/discovery",
             path_params,
             query_params,
             None,

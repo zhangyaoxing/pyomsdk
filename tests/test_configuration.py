@@ -32,6 +32,66 @@ def test_configuration_get_the_automation_configuration_no_secrets(
     assert "error" not in result
 
 
+def test_configuration_update_the_automation_configuration_no_secrets(
+    client: OpsManagerClient, project_with_cluster
+) -> None:
+    resource = client.configuration_resource
+    project_id = project_with_cluster["id"]
+
+    get_path_params = ConfigurationResource.GetTheAutomationConfigurationNoSecretsPathParams(
+        project_id=project_id
+    )
+    current_config = resource.get_the_automation_configuration_no_secrets(
+        get_path_params, None
+    )
+    assert current_config is not None
+    assert "error" not in current_config
+
+    update_path_params = (
+        ConfigurationResource.UpdateTheAutomationConfigurationNoSecretsPathParams(
+            project_id=project_id
+        )
+    )
+    body_params = (
+        ConfigurationResource.UpdateTheAutomationConfigurationNoSecretsBodyParams.model_validate(
+            current_config
+        )
+    )
+
+    result = resource.update_the_automation_configuration_no_secrets(
+        update_path_params, None, body_params
+    )
+    assert result is not None
+    assert "error" not in result
+
+
+def test_configuration_update_the_automation_configuration(
+    client: OpsManagerClient, project_with_cluster
+) -> None:
+    resource = client.configuration_resource
+    project_id = project_with_cluster["id"]
+
+    get_path_params = ConfigurationResource.GetTheAutomationConfigurationPathParams(
+        project_id=project_id
+    )
+    current_config = resource.get_the_automation_configuration(get_path_params, None)
+    assert current_config is not None
+    assert "error" not in current_config
+
+    update_path_params = ConfigurationResource.UpdateTheAutomationConfigurationPathParams(
+        project_id=project_id
+    )
+    body_params = ConfigurationResource.UpdateTheAutomationConfigurationBodyParams.model_validate(
+        current_config
+    )
+
+    result = resource.update_the_automation_configuration(
+        update_path_params, None, body_params
+    )
+    assert result is not None
+    assert "error" not in result
+
+
 def test_configuration_get_log_and_agent_configuration_settings(
     client: OpsManagerClient, project_with_cluster
 ) -> None:
