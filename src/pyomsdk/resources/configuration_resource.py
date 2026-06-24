@@ -626,10 +626,14 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
+    class UpdateTheAutomationConfigurationNoSecretsBodyParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True, extra="allow")
+
     def update_the_automation_configuration_no_secrets(
         self,
         path_params: UpdateTheAutomationConfigurationNoSecretsPathParams,
         query_params: Optional[UpdateTheAutomationConfigurationNoSecretsQueryParams],
+        body_params: Optional[UpdateTheAutomationConfigurationNoSecretsBodyParams],
     ) -> dict[str, Any]:
         """
         ## Update Automation Config Without Sensitive Fields
@@ -645,7 +649,7 @@ Expected response body
             "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig/noSecrets",
             path_params,
             query_params,
-            None,
+            body_params,
         )
 
     class UpdateTheAutomationConfigurationPathParams(BaseModel):
@@ -691,10 +695,14 @@ Expected response body
         """Flag indicating whether the response body should be in a prettyprint format.
         """
 
+    class UpdateTheAutomationConfigurationBodyParams(BaseModel):
+        model_config = ConfigDict(populate_by_name=True, extra="allow")
+
     def update_the_automation_configuration(
         self,
         path_params: UpdateTheAutomationConfigurationPathParams,
         query_params: Optional[UpdateTheAutomationConfigurationQueryParams],
+        body_params: Optional[UpdateTheAutomationConfigurationBodyParams],
     ) -> dict[str, Any]:
         """
         ## Update the Automation Configuration
@@ -710,7 +718,7 @@ Expected response body
             "/api/public/v1.0/groups/{PROJECT-ID}/automationConfig",
             path_params,
             query_params,
-            None,
+            body_params,
         )
 
     class UpdateBackupConfigurationSettingsPathParams(BaseModel):
