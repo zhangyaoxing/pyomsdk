@@ -5,7 +5,7 @@
 
 This is the repository for MongoDB Ops Manager API SDK in Python language.
 
-## How It's Built?
+## How Is It Built
 The SDK code is generated based on the [Ops Mananger API document](https://www.mongodb.com/docs/ops-manager/current/api/).
 1. Playwright is used to crawl pages listed in the sitemap.
 2. Metadata of each API endpoint is extracted from the page.
@@ -14,24 +14,53 @@ The SDK code is generated based on the [Ops Mananger API document](https://www.m
 For more information about the generator, visit the repository [ops-manager-sdk](https://github.com/zhangyaoxing/ops-manager-sdk).
 
 ## Installation
+The library has been published to PyPi. Use `pip` to install it:
 ```bash
 pip install pyomsdk
 ```
+## How to Use
+### Step 1
+Initialize the `OpsManagerClient` object with:
+- `base_url`: Ops Manager base URL. For example: `http://my.opsmanager.com:8080/`
+- `public_key`: Public key that you use to access the API.
+- `private_key`: Private key that you use to access the API.
+- `timeout`: Optional. Set timeout in seconds.
 
-## Example
+For example,
+```python
+client = OpsManagerClient(base_url="http://my.opsmanager.com:8080", public_key="<public_key>", private_key="<private_key>")
+```
+
+### Step 2
+Get the resource that you want to access from the client. For example,
+```python
+resource = client.organizations_resource
+```
+
+### Step 3
+Call the action that you need. The parameters that you need can be found under the resource object, named by the title-cased action name + "PathParams|QueryParams|BodyParams".
+For example, the parameters that you need to call the `create_organization` are:
+- `resource.CreateOrganizationPathParams`
+- `resource.CreateOrganizationQueryParams`
+- `resource.CreateOrganizationBodyParams`
+
+Not all the actions need all the 3 above. For example, the `create_organization` action doesn't need path parameters. And the query parameter is optional. So you won't find `resource.CreateOrganizationPathParams`. And you can pass `None` to the `query_params`.
+
+### Full Example
 ```python
 from pyomsdk import OpsManagerClient
 
 client = OpsManagerClient(base_url="<ops_manager_url>", public_key="<public_key>", private_key="<private_key>")
-orgs_resource = client.organizations_resource
+resource = client.organizations_resource
 # Create a new organization
-org = orgs_resource.create_organization(
-    None, body_params=orgs_resource.CreateOrganizationBodyParams(name="New Organization")
+org = resource.create_organization(
+    query_params=None,
+    body_params=resource.CreateOrganizationBodyParams(name="New Organization"),
 )
 
 # Delete an organization
-path_params = orgs_resource.DeleteOrganizationPathParams(org_id=org["id"])
-orgs_resource.delete_organization(path_params, None)
+path_params = resource.DeleteOrganizationPathParams(org_id=org["id"])
+resource.delete_organization(path_params, None)
 ```
 
 ## Instructions
