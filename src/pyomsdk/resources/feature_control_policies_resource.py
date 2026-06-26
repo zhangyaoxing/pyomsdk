@@ -17,32 +17,21 @@ class FeatureControlPoliciesResource(BaseResource):
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -54,7 +43,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_all(
@@ -82,7 +72,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that has the controlled features.
+        """Unique identifier of the project that has the controlled
+features.
         """
 
     class RetrieveForOneProjectQueryParams(BaseModel):
@@ -91,32 +82,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -128,7 +108,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_for_one_project(
@@ -157,7 +138,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that has the controlled features.
+        """Unique identifier of the project that has the controlled
+features.
         """
 
     class UpdateQueryParams(BaseModel):
@@ -166,32 +148,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -203,7 +174,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -213,21 +185,25 @@ For endpoints that return a list of results, the results object is an envelope. 
             model_config = ConfigDict(populate_by_name=True)
 
             name: Optional[str] = Field(default=None, serialization_alias="name")
-            """Identifying label for the external system that manages this Ops Manager Project.
+            """Identifying label for the external system that manages this
+Ops Manager Project.
             """
 
             system_id: Optional[str] = Field(default=None, serialization_alias="systemId")
-            """Unique identifier of the external system that manages this Ops Manager Project.
+            """Unique identifier of the external system that manages this
+Ops Manager Project.
             """
 
             version: Optional[str] = Field(default=None, serialization_alias="version")
-            """Active release of the external system that manages this Ops Manager Project.
+            """Active release of the external system that manages this Ops Manager
+Project.
             """
 
         external_management_system: Optional[ExternalManagementSystemParams] = Field(
             default=None, serialization_alias="externalManagementSystem"
         )
-        """Identifying parameters for the external system that manages this Ops Manager Project.
+        """Identifying parameters for the external system that manages this
+Ops Manager Project.
         """
 
         class PoliciesParams(BaseModel):
@@ -236,112 +212,37 @@ For endpoints that return a list of results, the results object is an envelope. 
             disabled_params: Optional[list[Any]] = Field(
                 default=None, serialization_alias="disabledParams"
             )
-            """List of mongod settings to disable when you apply the DISABLE_SET_MONGOD_CONFIG policy. Automation doesn't support all MongoDB options, which can result in failed import attempts. To learn more, see MongoDB Settings and Automation Support.
+            """List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the
+`DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support
+all MongoDB options, which can result in failed import attempts.
+To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/current/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
             """
 
             policy: Optional[Policy] = Field(default=None, serialization_alias="policy")
-            """Single policy set for this Ops Manager Project. This parameter can be set one or more times in the policies array.
+            """Single policy set for this Ops Manager Project. This parameter can
+be set one or more times in the `policies` array.
 
 Accepted values are:
 
-Value
-	
-Purpose
-
-
-
-ExternallyManagedLock
-
-	
-
-Users can't use Ops Manager to manage other settings given in the policies[n].policy array. These same users may use a configured external system, like the Kubernetes Operator to manage these settings.
-
-
-
-
-DisableUserManagement
-
-	
-
-Users can't manage users or roles.
-
-
-
-
-DisableAuthenticationMechanisms
-
-	
-
-Users can't change authentication settings.
-
-
-
-
-DisableSetMongodConfig
-
-	
-
-Users can't change any mongod settings listed in the policies[n].disabledParams array.
-
-
-
-
-DisableSetMongodVersion
-
-	
-
-Users can't change the version of any mongod or mongos.
-
-
-
-
-DisableBackupAgent
-
-	
-
-Users can't enable or disable the Backup agent.
-
-
-
-
-DisableMongodLogManagement
-
-	
-
-Users can't change log management settings.
-
-
-
-
-DisableImportToAutomation
-
-	
-
-Users can't manage deployments using Automation.
-
-
-
-
-DisableAgentApiKeyManagement
-
-	
-
-Users can't create or update Agent API keys.
-
-
-
-
-DisableMongodHostManagement
-
-	
-
-Users can't change the server type of hosts.
+| Value | Purpose |
+| --- | --- |
+| `ExternallyManagedLock` | Users can't use Ops Manager to manage other settings given in the `policies[n].policy` array. These same users may use a configured external system, like the Kubernetes Operator to manage these settings. |
+| `DisableUserManagement` | Users can't manage users or roles. |
+| `DisableAuthenticationMechanisms` | Users can't change authentication settings. |
+| `DisableSetMongodConfig` | Users can't change any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings listed in the `policies[n].disabledParams` array. |
+| `DisableSetMongodVersion` | Users can't change the version of any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) or [`mongos`](https://www.mongodb.com/docs/manual/reference/program/mongos/#mongodb-binary-bin.mongos). |
+| `DisableBackupAgent` | Users can't enable or disable the Backup agent. |
+| `DisableMongodLogManagement` | Users can't change log management settings. |
+| `DisableImportToAutomation` | Users can't manage deployments using Automation. |
+| `DisableAgentApiKeyManagement` | Users can't create or update Agent API keys. |
+| `DisableMongodHostManagement` | Users can't change the server type of hosts. |
             """
 
         policies: Optional[list[PoliciesParams]] = Field(
             default=None, serialization_alias="policies"
         )
-        """List of policies that the external system applies to this Ops Manager Project.
+        """List of policies that the external system applies to this
+Ops Manager Project.
         """
 
     def update(

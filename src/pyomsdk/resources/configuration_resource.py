@@ -15,43 +15,33 @@ class ConfigurationResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the automation configuration.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
+that owns the automation configuration.
         """
 
     class GetTheAuditLogRotateConfigurationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_the_audit_log_rotate_configuration(
@@ -80,43 +70,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the group that owns the automation configuration.
+        """Unique identifier of the [group](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-group) that owns the automation
+configuration.
         """
 
     class GetTheAutomationConfigurationNoSecretsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_the_automation_configuration_no_secrets(
@@ -131,7 +111,9 @@ Expected response body
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/automationConfig/noSecrets`
         ### Description
-        A project's automation configuration determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+        A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB
+        processes and agents. The MongoDB Agent builds the deployment according
+        to the goals specified.
         """
         return self._request(
             "GET",
@@ -145,43 +127,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the group that owns the automation configuration.
+        """Unique identifier of the [group](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-group) that owns the automation
+configuration.
         """
 
     class GetTheAutomationConfigurationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_the_automation_configuration(
@@ -196,7 +168,9 @@ Expected response body
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/automationConfig`
         ### Description
-        A project's automation configuration determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+        A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB
+        processes and agents. The MongoDB Agent builds the deployment according
+        to the goals specified.
         """
         return self._request(
             "GET",
@@ -210,43 +184,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
+        """Unique 24-hexadecimal digit string that identifies the
+[project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the configuration.
         """
 
     class GetBackupConfigurationSettingsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_backup_configuration_settings(
@@ -275,43 +239,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
+        """Unique 24-hexadecimal digit string that identifies the
+[project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the configuration.
         """
 
     class GetMonitoringConfigurationSettingsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_monitoring_configuration_settings(
@@ -340,43 +294,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the automation configuration.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
+that owns the automation configuration.
         """
 
     class GetTheSystemLogRotateConfigurationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_the_system_log_rotate_configuration(
@@ -405,43 +349,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the group that owns the automation configuration.
+        """Unique identifier of the [group](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-group) that owns the automation
+configuration.
         """
 
     class UpdateAgentVersionsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateAgentVersionsBodyParams(BaseModel):
@@ -456,13 +390,14 @@ Expected response body
         bi_connector_version: Optional[str] = Field(
             default=None, serialization_alias="biConnectorVersion"
         )
-        """Version to which you want to update the BI Connector.
+        """Version to which you want to update the [BI Connector](https://www.mongodb.com/docs/bi-connector/current/).
         """
 
         mongo_db_tools_version: Optional[str] = Field(
             default=None, serialization_alias="mongoDbToolsVersion"
         )
-        """Version to which you want to update the MongoDB Database Tools
+        """Version to which you want to update the
+[MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/)
         """
 
     def update_agent_versions(
@@ -478,7 +413,8 @@ Expected response body
         ### Endpoint:
         `POST /groups/{PROJECT-ID}/automationConfig/updateAgentVersions`
         ### Description
-        This endpoint updates the MongoDB Agent and tools to the latest versions available at the time of the request:
+        This endpoint updates the MongoDB Agent and tools to the latest
+        versions available at the time of the request:
         """
         return self._request(
             "POST",
@@ -492,72 +428,75 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the automation configuration.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
+that owns the automation configuration.
         """
 
     class UpdateTheAuditLogRotateConfigQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateTheAuditLogRotateConfigBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         num_total: Optional[Any] = Field(default=None, serialization_alias="numTotal")
-        """Total number of log files. If the number of log files on disk is greater than this number, the oldest files will be deleted. If a number is not specified, defaults to 0 and is determined by other settings.
+        """Total number of log files. If the number of log files on disk is
+greater than this number, the oldest files will be deleted.
+If a number is not specified, defaults to 0 and is determined
+by other settings.
         """
 
         num_uncompressed: Optional[Any] = Field(default=None, serialization_alias="numUncompressed")
-        """Maximum number of total log files to leave uncompressed, including the current log file. The default is 5. If number of log files is more than max uncompressed, sort by date, and then keep compressing the oldest file until the restraint is met.
+        """Maximum number of total log files to leave uncompressed,
+including the current log file. The default is `5`. If number of log
+files is more than max uncompressed, sort by date, and then keep
+compressing the oldest file until the restraint is met.
         """
 
         percent_of_diskspace: Optional[Any] = Field(
             default=None, serialization_alias="percentOfDiskspace"
         )
-        """Maximum percentage of total disk space all log files should take up before deletion. The default is .02. If log files size is taking up more than max percent of total disk space, sort by date, and then keep deleting the oldest file until the restraint is met.
+        """Maximum percentage of total disk space all log files
+should take up before deletion. The default is `.02`. If log files
+size is taking up more than max percent of total disk space, sort by
+date, and then keep deleting the oldest file until the restraint is met.
         """
 
         size_threshold_mb: Optional[Any] = Field(
             default=None, serialization_alias="sizeThresholdMB"
         )
-        """Maximum size in MB for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
+        """Maximum size in MB for an individual log file before rotation.
+NOTE: this parameter is required unless you are passing an empty request body
+to disable log rotation.
         """
 
         time_threshold_hrs: Optional[Any] = Field(
             default=None, serialization_alias="timeThresholdHrs"
         )
-        """Maximum time in hours for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
+        """Maximum time in hours for an individual log file before rotation.
+NOTE: this parameter is required unless you are passing an empty request body
+to disable log rotation.
         """
 
     def update_the_audit_log_rotate_config(
@@ -573,7 +512,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig`
         ### Description
-        This endpoint updates the MongoDB Agent audit log rotation configuration. After this request completes, Ops Manager modifies the agent configuration and saves the updated version.
+        This endpoint updates the MongoDB Agent audit log rotation configuration.
+        After this request completes, Ops Manager modifies the agent configuration
+        and saves the updated version.
         """
         return self._request(
             "PUT",
@@ -587,43 +528,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the group that owns the automation configuration.
+        """Unique identifier of the [group](https://www.mongodb.com/docs/cloud-manager/reference/glossary/#std-term-group) that owns the automation
+configuration.
         """
 
     class UpdateTheAutomationConfigurationNoSecretsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateTheAutomationConfigurationNoSecretsBodyParams(BaseModel):
@@ -642,7 +573,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{PROJECT-ID}/automationConfig/noSecrets`
         ### Description
-        A project's automation configuration determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+        A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB
+        processes and agents. The MongoDB Agent builds the deployment according
+        to the goals specified.
         """
         return self._request(
             "PUT",
@@ -656,43 +589,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the group that owns the automation configuration.
+        """Unique identifier of the [group](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-group) that owns the automation
+configuration.
         """
 
     class UpdateTheAutomationConfigurationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateTheAutomationConfigurationBodyParams(BaseModel):
@@ -711,7 +634,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{PROJECT-ID}/automationConfig`
         ### Description
-        A project's automation configuration determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+        A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB
+        processes and agents. The MongoDB Agent builds the deployment according
+        to the goals specified.
         """
         return self._request(
             "PUT",
@@ -725,43 +650,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
+        """Unique 24-hexadecimal digit string that identifies the
+[project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the configuration.
         """
 
     class UpdateBackupConfigurationSettingsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBackupConfigurationSettingsBodyParams(BaseModel):
@@ -770,149 +685,35 @@ Expected response body
         config_overrides: Optional[dict] = Field(
             default=None, serialization_alias="configOverrides"
         )
-        """List of MongoDB Agent settings that you need to change because your backup settings differ from those of the MongoDB Agent. Configure this option when upgrading from legacy agents to the MongoDB Agent.
-
-Setting
-	
-Data Type
-
-
-
-mmsGroupId
-
-	
-
-string
-
-
-
-
-mmsApiKey
-
-	
-
-string
-
-
-
-
-mothership
-
-	
-
-string
-
-
-
-
-mothershipResponseHeaderTimeout
-
-	
-
-integer
-
-
-
-
-https
-
-	
-
-boolean
-
-
-
-
-httpProxy
-
-	
-
-string
-
-
-
-
-krb5Principal
-
-	
-
-string
-
-
-
-
-krb5Keytab
-
-	
-
-string
-
-
-
-
-krb5ConfigLocation
-
-	
-
-string
-
-
-
-
-gsapiServiceName
-
-	
-
-string
-
-
-
-
-sslClientCertificate
-
-	
-
-string
-
-
-
-
-sslClientCertificatePassword
-
-	
-
-string
-
-
-
-
-sslTrustedServerCertificates
-
-	
-
-string
-
-
-
-
-sslRequireValidServerCertificates
-
-	
-
-boolean
-
-
-
-
-sslTrustedMMSBackupServerCertificate
-
-	
-
-string
+        """List of MongoDB Agent settings that you need to change because
+your backup settings differ from those of the
+[MongoDB Agent](/docs/ops-manager/current/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure this
+option when upgrading from legacy agents to the MongoDB Agent.
+
+| Setting | Data Type |
+| --- | --- |
+| [`mmsGroupId`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsGroupId) | string |
+| [`mmsApiKey`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsApiKey) | string |
+| [`mothership`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothership) | string |
+| [`mothershipResponseHeaderTimeout`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothershipResponseHeaderTimeout) | integer |
+| [`https`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.https) | boolean |
+| [`httpProxy`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.httpProxy) | string |
+| [`krb5Principal`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Principal) | string |
+| [`krb5Keytab`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Keytab) | string |
+| [`krb5ConfigLocation`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5ConfigLocation) | string |
+| [`gsapiServiceName`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.gsapiServiceName) | string |
+| [`sslClientCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificate) | string |
+| [`sslClientCertificatePassword`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificatePassword) | string |
+| [`sslTrustedServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedServerCertificates) | string |
+| [`sslRequireValidServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslRequireValidServerCertificates) | boolean |
+| [`sslTrustedMMSBackupServerCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedMMSBackupServerCertificate) | string |
         """
 
         log_path: Optional[str] = Field(default=None, serialization_alias="logPath")
-        """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
+        """Absolute file path to which this MongoDB Agent writes its logs.
+If this is not specified, the log writes to standard error
+(`stderr`) on UNIX- and Linux-based systems and to the Event
+Log on Windows systems.
         """
 
         class LogRotateParams(BaseModel):
@@ -921,13 +722,15 @@ string
             size_threshold_mb: Optional[int] = Field(
                 default=None, serialization_alias="sizeThresholdMB"
             )
-            """Maximum size, in MB, of a log file before this MongoDB Agent rotates the logs.
+            """Maximum size, in MB, of a log file before this MongoDB Agent
+rotates the logs.
             """
 
             time_duration_hrs: Optional[int] = Field(
                 default=None, serialization_alias="timeDurationHrs"
             )
-            """Number of hours after which this MongoDB Agent rotates the log file.
+            """Number of hours after which this MongoDB Agent rotates the log
+file.
             """
 
         log_rotate: Optional[LogRotateParams] = Field(default=None, serialization_alias="logRotate")
@@ -935,9 +738,12 @@ string
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")
-        """MongoDB user in the application database that manages the backup logs.
+        """MongoDB user in the application database that manages the
+backup logs.
 
-If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
+If you use the API to enable authentication for the
+MongoDB Agent, set this parameter to **mms-automation** when
+executing this endpoint.
         """
 
     def update_backup_configuration_settings(
@@ -967,43 +773,33 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the project that owns the configuration.
+        """Unique 24-hexadecimal digit string that identifies the
+[project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the configuration.
         """
 
     class UpdateMonitoringConfigurationSettingsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateMonitoringConfigurationSettingsBodyParams(BaseModel):
@@ -1012,140 +808,35 @@ Expected response body
         config_overrides: Optional[dict] = Field(
             default=None, serialization_alias="configOverrides"
         )
-        """List of MongoDB Agent settings that you need to change because your monitoring settings differ from those of the MongoDB Agent. Configure this option when upgrading from legacy agents to the MongoDB Agent.
-
-Setting
-	
-Data Type
-
-
-
-mmsGroupId
-
-	
-
-string
-
-
-
-
-mmsApiKey
-
-	
-
-string
-
-
-
-
-mmsBaseUrl
-
-	
-
-string
-
-
-
-
-httpProxy
-
-	
-
-string
-
-
-
-
-krb5Principal
-
-	
-
-string
-
-
-
-
-krb5Keytab
-
-	
-
-string
-
-
-
-
-krb5ConfigLocation
-
-	
-
-string
-
-
-
-
-gssapiServiceName
-
-	
-
-string
-
-
-
-
-useSslForAllConnections
-
-	
-
-boolean
-
-
-
-
-sslClientCertificate
-
-	
-
-string
-
-
-
-
-sslClientCertificatePassword
-
-	
-
-string
-
-
-
-
-sslTrustedServerCertificates
-
-	
-
-string
-
-
-
-
-sslRequireValidServerCertificates
-
-	
-
-boolean
-
-
-
-
-enableMunin
-
-	
-
-boolean
+        """List of MongoDB Agent settings that you need to change because
+your monitoring settings differ from those of the
+[MongoDB Agent](/docs/ops-manager/current/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure
+this option when upgrading from legacy agents to the
+MongoDB Agent.
+
+| Setting | Data Type |
+| --- | --- |
+| [`mmsGroupId`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsGroupId) | string |
+| [`mmsApiKey`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsApiKey) | string |
+| [`mmsBaseUrl`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsBaseUrl) | string |
+| [`httpProxy`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.httpProxy) | string |
+| [`krb5Principal`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Principal) | string |
+| [`krb5Keytab`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Keytab) | string |
+| [`krb5ConfigLocation`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5ConfigLocation) | string |
+| [`gssapiServiceName`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.gssapiServiceName) | string |
+| [`useSslForAllConnections`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.useSslForAllConnections) | boolean |
+| [`sslClientCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificate) | string |
+| [`sslClientCertificatePassword`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificatePassword) | string |
+| [`sslTrustedServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslTrustedServerCertificates) | string |
+| [`sslRequireValidServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslRequireValidServerCertificates) | boolean |
+| `enableMunin` | boolean |
         """
 
         log_path: Optional[str] = Field(default=None, serialization_alias="logPath")
-        """Absolute file path to which this MongoDB Agent writes its logs. If this is not specified, the log writes to standard error (stderr) on UNIX- and Linux-based systems and to the Event Log on Windows systems.
+        """Absolute file path to which this MongoDB Agent writes its logs.
+If this is not specified, the log writes to standard error
+(`stderr`) on UNIX- and Linux-based systems and to the Event
+Log on Windows systems.
         """
 
         class LogRotateParams(BaseModel):
@@ -1154,23 +845,29 @@ boolean
             size_threshold_mb: Optional[int] = Field(
                 default=None, serialization_alias="sizeThresholdMB"
             )
-            """Maximum size, in MB, of a log file before this MongoDB Agent rotates the logs.
+            """Maximum size, in MB, of a log file before this MongoDB Agent
+rotates the logs.
             """
 
             time_duration_hrs: Optional[int] = Field(
                 default=None, serialization_alias="timeDurationHrs"
             )
-            """Number of hours after which this MongoDB Agent rotates the log file.
+            """Number of hours after which this MongoDB Agent rotates the log
+file.
             """
 
         log_rotate: Optional[LogRotateParams] = Field(default=None, serialization_alias="logRotate")
-        """Thresholds after which this MongoDB Agent rotates the monitoring log.
+        """Thresholds after which this MongoDB Agent rotates the monitoring
+log.
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")
-        """MongoDB user in the application database that manages the monitoring logs.
+        """MongoDB user in the application database that manages the
+monitoring logs.
 
-If you use the API to enable authentication for the MongoDB Agent, set this parameter to mms-automation when executing this endpoint.
+If you use the API to enable authentication for the
+MongoDB Agent, set this parameter to **mms-automation** when
+executing this endpoint.
         """
 
     def update_monitoring_configuration_settings(
@@ -1200,72 +897,75 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the automation configuration.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
+that owns the automation configuration.
         """
 
     class UpdateTheSystemLogRotateConfigQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateTheSystemLogRotateConfigBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         num_total: Optional[Any] = Field(default=None, serialization_alias="numTotal")
-        """Total number of log files. If the number of log files on disk is greater than this number, the oldest files will be deleted. If a number is not specified, defaults to 0 and is determined by other settings.
+        """Total number of log files. If the number of log files on disk is
+greater than this number, the oldest files will be deleted.
+If a number is not specified, defaults to 0 and is determined
+by other settings.
         """
 
         num_uncompressed: Optional[Any] = Field(default=None, serialization_alias="numUncompressed")
-        """Maximum number of total log files to leave uncompressed, including the current log file. The default is 5. If number of log files is more than max uncompressed, sort by date, and then keep compressing the oldest file until the restraint is met.
+        """Maximum number of total log files to leave uncompressed,
+including the current log file. The default is `5`. If number of log
+files is more than max uncompressed, sort by date, and then keep
+compressing the oldest file until the restraint is met.
         """
 
         percent_of_diskspace: Optional[Any] = Field(
             default=None, serialization_alias="percentOfDiskspace"
         )
-        """Maximum percentage of total disk space all log files should take up before deletion. The default is .02. If log files size is taking up more than max percent of total disk space, sort by date, and then keep deleting the oldest file until the restraint is met.
+        """Maximum percentage of total disk space all log files
+should take up before deletion. The default is `.02`. If log files
+size is taking up more than max percent of total disk space, sort by
+date, and then keep deleting the oldest file until the restraint is met.
         """
 
         size_threshold_mb: Optional[Any] = Field(
             default=None, serialization_alias="sizeThresholdMB"
         )
-        """Maximum size in MB for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
+        """Maximum size in MB for an individual log file before rotation.
+NOTE: this parameter is required unless you are passing an empty request body
+to disable log rotation.
         """
 
         time_threshold_hrs: Optional[Any] = Field(
             default=None, serialization_alias="timeThresholdHrs"
         )
-        """Maximum time in hours for an individual log file before rotation. NOTE: this parameter is required unless you are passing an empty request body to disable log rotation.
+        """Maximum time in hours for an individual log file before rotation.
+NOTE: this parameter is required unless you are passing an empty request body
+to disable log rotation.
         """
 
     def update_the_system_log_rotate_config(
@@ -1281,7 +981,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig`
         ### Description
-        This endpoint updates the MongoDB Agent system log rotation configuration. After this request completes, Ops Manager modifies the agent configuration and saves the updated version.
+        This endpoint updates the MongoDB Agent system log rotation configuration.
+        After this request completes, Ops Manager modifies the agent configuration
+        and saves the updated version.
         """
         return self._request(
             "PUT",

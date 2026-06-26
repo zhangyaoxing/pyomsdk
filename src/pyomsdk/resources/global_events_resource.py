@@ -17,40 +17,32 @@ class GlobalEventsResource(BaseResource):
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
-        """Return only events of the specified types. Accepted values include:
+        """Return only events of the specified types. Accepted
+values include:
 
-To review the types of events that generate alerts, see Alert Types.
+To review the types of events that generate alerts, see
+[Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see Audit Events.
+For a complete list of events included in the Ops Manager audit log, see
+[Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -58,11 +50,13 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
         """
 
         max_date: Optional[str] = Field(default=None, serialization_alias="maxDate")
-        """Return only events for which the created date is less than or equal to the specified ISO 8601.
+        """Return only events for which the created date is less than or
+equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         min_date: Optional[str] = Field(default=None, serialization_alias="minDate")
-        """Return only events for which the created date is greater than or equal to the specified ISO 8601.
+        """Return only events for which the created date is greater than
+or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
@@ -70,7 +64,8 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -105,36 +100,25 @@ For a complete list of events included in the Ops Manager audit log, see Audit E
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(

@@ -15,18 +15,25 @@ class AccessListResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
+        """*(Required.)* Unique identifier of the current user. To retrieve the ID of the
+current user, see
+[Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
 
     class AddEntriesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -38,14 +45,16 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class AddEntriesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         ip_address: str = Field(serialization_alias="ipAddress")
-        """(Required.) The IP address or CIDR block that you want to add to the specified user's access list.
+        """*(Required.)* The IP address or CIDR block that you want to add
+to the specified user's access list.
         """
 
     def add_entries(
@@ -75,47 +84,40 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
-        """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
+        """The IP or CIDR address.
+If the entry includes a subnet mask, such as `192.0.2.0/24`,
+use the URL-encoded value `%2F` for the forward slash `/`.
         """
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
+        """*(Required.)* Unique identifier of the current user. To retrieve the ID of the
+current user, see
+[Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
 
     class DeleteEntryQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete_entry(
@@ -144,18 +146,25 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """(Required.) User Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
+        """*(Required.)* User Unique identifier of the current user. To retrieve the ID
+of the current user, see
+[Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
 
     class GetForCurrentUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -167,7 +176,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_for_current_user(
@@ -196,47 +206,40 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
-        """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
+        """The IP or CIDR address.
+If the entry includes a subnet mask, such as `192.0.2.0/24`,
+use the URL-encoded value `%2F` for the forward slash `/`.
         """
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """(Required.) Unique identifier of the current user. To retrieve the ID of the current user, see Get All Users in One Project.
+        """*(Required.)* Unique identifier of the current user. To retrieve
+the ID of the current user, see
+[Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
 
     class GetForIpAddressQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_for_ip_address(
@@ -251,7 +254,10 @@ Expected response body
         ### Endpoint:
         `GET /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
         ### Description
-        Retrieves an access list entity if the value of IP-ADDRESS equals the value of the entity's ipAddress field. This does not retrieve an object where the value of IP-ADDRESS is contained within the values allowed by the cidrBlock field.
+        Retrieves an access list entity if the value of `IP-ADDRESS` equals the
+        value of the entity's `ipAddress` field. This does not retrieve an
+        object where the value of `IP-ADDRESS` is contained within the values
+        allowed by the `cidrBlock` field.
         """
         return self._request(
             "GET",

@@ -15,36 +15,25 @@ class GlobalAccessListResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateEntryBodyParams(BaseModel):
@@ -55,7 +44,8 @@ Expected response body
         """
 
         description: str = Field(serialization_alias="description")
-        """Description of the Global Access List Entry. Must be between 1 and 250 characters in length.
+        """Description of the Global Access List Entry. Must be between 1 and
+250 characters in length.
         """
 
     def create_entry(
@@ -91,36 +81,25 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete_entry(
@@ -135,7 +114,8 @@ Expected response body
         ### Endpoint:
         `DELETE /admin/accessList/{ACCESS-LIST-ID}`
         ### Description
-        Delete one Global Access List Entry from Ops Manager using the unique identifier for the desired IP address.
+        Delete one Global Access List Entry from Ops Manager using the unique
+        identifier for the desired IP address.
         """
         return self._request(
             "DELETE",
@@ -149,11 +129,16 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -165,7 +150,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_entries(
@@ -200,36 +186,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_entry(
@@ -244,7 +219,8 @@ Expected response body
         ### Endpoint:
         `GET /admin/accessList/{ACCESS-LIST-ID}`
         ### Description
-        Return one Global Access List Entry using the unique identifier for the desired IP address.
+        Return one Global Access List Entry using the unique identifier for the
+        desired IP address.
         """
         return self._request(
             "GET",
@@ -265,36 +241,25 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def update_entry(
@@ -309,7 +274,8 @@ Expected response body
         ### Endpoint:
         `PATCH /admin/accessList/{ACCESS-LIST-ID}`
         ### Description
-        Update the values of one Global Access List Entry using the unique identifier for the desired IP address.
+        Update the values of one Global Access List Entry using the unique
+        identifier for the desired IP address.
         """
         return self._request(
             "PATCH",

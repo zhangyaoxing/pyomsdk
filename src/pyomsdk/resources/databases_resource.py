@@ -15,51 +15,40 @@ class DatabasesResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         database_name: str = Field(serialization_alias="DATABASE-NAME")
-        """(Required.) The name of the MongoDB database.
+        """*(Required.)* The name of the MongoDB database.
         """
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """(Required.) Unique identifier of the host running the MongoDB process.
+        """*(Required.)* Unique identifier of the host running the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """(Required.) Unique identifier of the project that owns this MongoDB process.
+        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetByNameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_name(
@@ -88,22 +77,27 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """(Required.) Unique identifier of the host running the MongoDB process.
+        """*(Required.)* Unique identifier of the host running the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """(Required.) Unique identifier of the project that owns this MongoDB process.
+        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -115,7 +109,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(

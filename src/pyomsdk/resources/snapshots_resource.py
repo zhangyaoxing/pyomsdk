@@ -15,51 +15,40 @@ class SnapshotsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the snapshot.
+        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class ChangeExpiryQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class ChangeExpiryBodyParams(BaseModel):
@@ -68,17 +57,27 @@ Expected response body
         do_not_delete: Optional[bool] = Field(default=None, serialization_alias="doNotDelete")
         """Indicator that the snapshot cannot be deleted.
 
-IMPORTANT: You cannot set doNotDelete to true and set a timestamp for expires in the same request. If you do, Ops Manager returns an error: Cannot modify snapshot because of invalid fields.
+**IMPORTANT:** You cannot set `doNotDelete` to `true`
+*and* set a timestamp for `expires` in the same request. If
+you do, Ops Manager returns an error:
+`Cannot modify snapshot because of invalid fields.`
         """
 
         expires: Optional[str] = Field(default=None, serialization_alias="expires")
-        """The date in ISO 8601 date and time format at UTC after which this snapshot can be deleted.
+        """The date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=793821205) date
+and time format at UTC after
+which this snapshot can be deleted.
 
-If doNotDelete is set to true, any existing value in expires is removed.
+If `doNotDelete` is set to `true`, any existing value in
+`expires` is removed.
 
-If expires is set to a timestamp at or before the current date and time, Ops Manager deletes the snapshot at its next opportunity. There is no guarantee that the snapshot would be deleted immediately.
+If `expires` is set to a timestamp at or before the current
+date and time, Ops Manager deletes the snapshot at its next
+opportunity. There is no guarantee that the snapshot would be
+deleted immediately.
 
-If the current expires timestamp has already passed, it cannot be edited.
+If the current `expires` timestamp has already passed, it
+cannot be edited.
         """
 
     def change_expiry(
@@ -108,22 +107,27 @@ If the current expires timestamp has already passed, it cannot be edited.
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that that the snapshot represents.
+        """Unique identifier of the host that that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetAllConfigServerQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -135,7 +139,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_config_server(
@@ -164,11 +169,11 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetAllClusterQueryParams(BaseModel):
@@ -177,21 +182,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         completed: Optional[SnapshotCompletedState] = Field(
             default=SnapshotCompletedState("true"), serialization_alias="completed"
         )
-        """String that indicates whether to return completed or incomplete snapshots:
+        """String that indicates whether to return
+completed or incomplete snapshots:
 
-true: Return only completed snapshots
-
-false: Return only incomplete snapshots
-
-all: Return both completed and incomplete snapshots
+- `true`: Return only completed snapshots
+- `false`: Return only incomplete snapshots
+- `all`: Return both completed and incomplete snapshots
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -203,7 +212,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_cluster(
@@ -232,51 +242,40 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the snapshot.
+        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetOneConfigServerQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_config_server(
@@ -305,51 +304,42 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+[snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the snapshot.
+        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetOneClusterQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_cluster(
@@ -378,51 +368,40 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the snapshot.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the snapshot.
+        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class RemoveOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def remove_one(
@@ -451,7 +430,7 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the snapshot represents.
+        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         group_id: str = Field(serialization_alias="GROUP-ID")
@@ -462,15 +441,21 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         retention_days: int = Field(serialization_alias="retentionDays")
-        """Integer that indicates the number of days the on-demand snapshot will be retained. Must be greater than 0.
+        """Integer that indicates the number of days the on-demand
+snapshot will be retained. Must be greater than 0.
         """
 
     def create_one_on_demand_cluster(

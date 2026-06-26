@@ -15,43 +15,33 @@ class AgentsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+Agent API Key.
         """
 
     class CreateApiKeyQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateApiKeyBodyParams(BaseModel):
@@ -92,43 +82,33 @@ Expected response body
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+Agent API Key.
         """
 
     class RemoveApiKeyQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def remove_api_key(
@@ -157,43 +137,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+Agent API Key.
         """
 
     class GetAllApiKeysQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_api_keys(
@@ -222,18 +192,24 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+Agent API Key.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -245,7 +221,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -274,28 +251,33 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the Agent API Key.
+        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+Agent API Key.
         """
 
         type: AgentType = Field(serialization_alias="TYPE")
-        """The agent type to retrieve. TYPE can be one of the following values:
+        """The agent type to retrieve. **TYPE** can be one of the
+following values:
 
-MONITORING
-
-BACKUP
-
-AUTOMATION
+- `MONITORING`
+- `BACKUP`
+- `AUTOMATION`
         """
 
     class GetByTypeQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -307,7 +289,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_type(
@@ -322,7 +305,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/agents/{TYPE}`
         ### Description
-        Get all agents of a specified type (i.e. Monitoring, Backup, or Automation) for a project.
+        Get all agents of a specified type (i.e. Monitoring, Backup, or
+        Automation) for a project.
         """
         return self._request(
             "GET",
@@ -336,36 +320,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_all_versions(
@@ -400,36 +373,25 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_for_one_project(

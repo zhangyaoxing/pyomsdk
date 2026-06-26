@@ -15,47 +15,38 @@ class BackupEncryptionKeysResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster to which the encryption keys belongs.
+        """Unique identifier of the cluster to which the encryption keys
+belongs.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project to which the encryption key belongs.
+        """Unique identifier of the project to which the encryption key
+belongs.
         """
 
     class RetrieveKmipMasterKeyIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_kmip_master_key_id(
@@ -70,7 +61,8 @@ Expected response body
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/encryptionKey`
         ### Description
-        Use the GET HTTP method with the same endpoint to retrieve the ID of the current KMIP master key.
+        Use the `GET` HTTP method with the same endpoint to retrieve the ID
+        of the current KMIP master key.
         """
         return self._request(
             "GET",
@@ -84,47 +76,38 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster to which the encryption keys belongs.
+        """Unique identifier of the cluster to which the encryption keys
+belongs.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project to which the encryption key belongs.
+        """Unique identifier of the project to which the encryption key
+belongs.
         """
 
     class RotateKmipMasterKeyIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def rotate_kmip_master_key_id(
@@ -139,7 +122,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/encryptionKey`
         ### Description
-        Use the PUT HTTP method with the following endpoint to rotate the KMIP master key. Issue one PUT request for each shard and another PUT request for the config server replica set.
+        Use the `PUT` HTTP method with the following endpoint to rotate the
+        KMIP master key. Issue one `PUT` request for each shard and
+        another `PUT` request for the config server replica set.
         """
         return self._request(
             "PUT",

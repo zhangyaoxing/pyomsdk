@@ -22,45 +22,36 @@ class GlobalAlertsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class AcknowledgeOneBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         acknowledged_until: str = Field(serialization_alias="acknowledgedUntil")
-        """ISO 8601 through which you acknowledge this alert. After this time passes, Ops Manager reverts the alert to un-acknowledged.
+        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC through which you acknowledge this alert. After
+this time passes, Ops Manager reverts the alert to un-acknowledged.
 
-To prevent the alert from resuming any time soon, set the date and time to some point in the distant future.
+To prevent the alert from resuming any time soon, set the date
+and time to some point in the distant future.
 
 To un-acknowledge an alert, specify a time and date in the past.
         """
@@ -84,7 +75,9 @@ To un-acknowledge an alert, specify a time and date in the past.
         ### Endpoint:
         `PATCH /globalAlerts/{ALERT-ID}`
         ### Description
-        You can acknowledge one alert until the time and date you specify. You can also un-acknowledge an alert by specifying a date and time in the past.
+        You can acknowledge one alert until the time and date you specify.
+        You can also un-acknowledge an alert by specifying a date and time in
+        the past.
         """
         return self._request(
             "PATCH",
@@ -100,21 +93,28 @@ To un-acknowledge an alert, specify a time and date in the past.
         created_on_or_after: Optional[str] = Field(
             default=None, serialization_alias="createdOnOrAfter"
         )
-        """Creation date of alerts you want to return, in ISO 8601 format. Ops Manager returns alerts created on or after the date you indicate.
+        """Creation date of alerts you want to return, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Ops Manager returns alerts
+created on or after the date you indicate.
         """
 
         created_on_or_before: Optional[str] = Field(
             default=None, serialization_alias="createdOnOrBefore"
         )
-        """Creation date of alerts you want to return, in ISO 8601. Ops Manager returns alerts created on or before the date you indicate.
+        """Creation date of alerts you want to return, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Ops Manager returns alerts
+created on or before the date you indicate.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -126,35 +126,17 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         status: Optional[AlertStatus] = Field(default=None, serialization_alias="status")
-        """Status of alerts you want to return. Ops Manager returns alerts that match the status you indicate. Accepted values include:
+        """Status of alerts you want to return. Ops Manager returns alerts
+that match the status you indicate. Accepted values include:
 
-TRACKING
-
-	
-
-Alert conditions exist, but the condition hasn't persisted for long enough to trigger an alert.
-
-
-
-
-OPEN
-
-	
-
-Alert is open.
-
-
-
-
-CLOSED
-
-	
-
-Alert is closed.
+| `TRACKING` | Alert conditions exist, but the condition hasn't persisted for long enough to trigger an alert. |
+| `OPEN` | Alert is open. |
+| `CLOSED` | Alert is closed. |
         """
 
     def get_all(
@@ -189,36 +171,25 @@ Alert is closed.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -233,7 +204,7 @@ Expected response body
         ### Endpoint:
         `GET /globalAlerts/{ALERT-ID}`
         ### Description
-        Retrieve one alert by its ALERT-ID.
+        Retrieve one alert by its `ALERT-ID`.
         """
         return self._request(
             "GET",

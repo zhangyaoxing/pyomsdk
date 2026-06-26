@@ -74,250 +74,250 @@ class OpsManagerClient:
 
     @property
     def access_list_resource(self) -> AccessListResource:
-        """Get the client for AccessListResource resource."""
+        """Get the resource object for AccessListResource resource."""
         return AccessListResource(self._client)
 
     @property
     def backup_daemon_resource(self) -> BackupDaemonResource:
-        """Get the client for BackupDaemonResource resource."""
+        """Get the resource object for BackupDaemonResource resource."""
         return BackupDaemonResource(self._client)
 
     @property
     def project_backup_job_resource(self) -> ProjectBackupJobResource:
-        """Get the client for ProjectBackupJobResource resource."""
+        """Get the resource object for ProjectBackupJobResource resource."""
         return ProjectBackupJobResource(self._client)
 
     @property
     def oplog_store_resource(self) -> OplogStoreResource:
-        """Get the client for OplogStoreResource resource."""
+        """Get the resource object for OplogStoreResource resource."""
         return OplogStoreResource(self._client)
 
     @property
     def s3_oplog_resource(self) -> S3OplogResource:
-        """Get the client for S3OplogResource resource."""
+        """Get the resource object for S3OplogResource resource."""
         return S3OplogResource(self._client)
 
     @property
     def file_system_store_resource(self) -> FileSystemStoreResource:
-        """Get the client for FileSystemStoreResource resource."""
+        """Get the resource object for FileSystemStoreResource resource."""
         return FileSystemStoreResource(self._client)
 
     @property
     def blockstore_resource(self) -> BlockstoreResource:
-        """Get the client for BlockstoreResource resource."""
+        """Get the resource object for BlockstoreResource resource."""
         return BlockstoreResource(self._client)
 
     @property
     def s3_compatible_blockstore_resource(self) -> S3CompatibleBlockstoreResource:
-        """Get the client for S3CompatibleBlockstoreResource resource."""
+        """Get the resource object for S3CompatibleBlockstoreResource resource."""
         return S3CompatibleBlockstoreResource(self._client)
 
     @property
     def sync_store_resource(self) -> SyncStoreResource:
-        """Get the client for SyncStoreResource resource."""
+        """Get the resource object for SyncStoreResource resource."""
         return SyncStoreResource(self._client)
 
     @property
     def agents_resource(self) -> AgentsResource:
-        """Get the client for AgentsResource resource."""
+        """Get the resource object for AgentsResource resource."""
         return AgentsResource(self._client)
 
     @property
     def alert_configurations_resource(self) -> AlertConfigurationsResource:
-        """Get the client for AlertConfigurationsResource resource."""
+        """Get the resource object for AlertConfigurationsResource resource."""
         return AlertConfigurationsResource(self._client)
 
     @property
     def alerts_resource(self) -> AlertsResource:
-        """Get the client for AlertsResource resource."""
+        """Get the resource object for AlertsResource resource."""
         return AlertsResource(self._client)
 
     @property
     def global_access_list_resource(self) -> GlobalAccessListResource:
-        """Get the client for GlobalAccessListResource resource."""
+        """Get the resource object for GlobalAccessListResource resource."""
         return GlobalAccessListResource(self._client)
 
     @property
     def global_api_keys_resource(self) -> GlobalApiKeysResource:
-        """Get the client for GlobalApiKeysResource resource."""
+        """Get the resource object for GlobalApiKeysResource resource."""
         return GlobalApiKeysResource(self._client)
 
     @property
     def organization_api_keys_resource(self) -> OrganizationApiKeysResource:
-        """Get the client for OrganizationApiKeysResource resource."""
+        """Get the resource object for OrganizationApiKeysResource resource."""
         return OrganizationApiKeysResource(self._client)
 
     @property
     def organization_access_lists_resource(self) -> OrganizationAccessListsResource:
-        """Get the client for OrganizationAccessListsResource resource."""
+        """Get the resource object for OrganizationAccessListsResource resource."""
         return OrganizationAccessListsResource(self._client)
 
     @property
     def api_keys_on_projects_resource(self) -> ApiKeysOnProjectsResource:
-        """Get the client for ApiKeysOnProjectsResource resource."""
+        """Get the resource object for ApiKeysOnProjectsResource resource."""
         return ApiKeysOnProjectsResource(self._client)
 
     @property
     def configuration_resource(self) -> ConfigurationResource:
-        """Get the client for ConfigurationResource resource."""
+        """Get the resource object for ConfigurationResource resource."""
         return ConfigurationResource(self._client)
 
     @property
     def automation_resource(self) -> AutomationResource:
-        """Get the client for AutomationResource resource."""
+        """Get the resource object for AutomationResource resource."""
         return AutomationResource(self._client)
 
     @property
     def deployment_regions_resource(self) -> DeploymentRegionsResource:
-        """Get the client for DeploymentRegionsResource resource."""
+        """Get the resource object for DeploymentRegionsResource resource."""
         return DeploymentRegionsResource(self._client)
 
     @property
     def backup_configurations_resource(self) -> BackupConfigurationsResource:
-        """Get the client for BackupConfigurationsResource resource."""
+        """Get the resource object for BackupConfigurationsResource resource."""
         return BackupConfigurationsResource(self._client)
 
     @property
     def snapshot_schedule_resource(self) -> SnapshotScheduleResource:
-        """Get the client for SnapshotScheduleResource resource."""
+        """Get the resource object for SnapshotScheduleResource resource."""
         return SnapshotScheduleResource(self._client)
 
     @property
     def migrate_to_mongodb_atlas_resource(self) -> MigrateToMongodbAtlasResource:
-        """Get the client for MigrateToMongodbAtlasResource resource."""
+        """Get the resource object for MigrateToMongodbAtlasResource resource."""
         return MigrateToMongodbAtlasResource(self._client)
 
     @property
     def clusters_resource(self) -> ClustersResource:
-        """Get the client for ClustersResource resource."""
+        """Get the resource object for ClustersResource resource."""
         return ClustersResource(self._client)
 
     @property
     def feature_control_policies_resource(self) -> FeatureControlPoliciesResource:
-        """Get the client for FeatureControlPoliciesResource resource."""
+        """Get the resource object for FeatureControlPoliciesResource resource."""
         return FeatureControlPoliciesResource(self._client)
 
     @property
     def databases_resource(self) -> DatabasesResource:
-        """Get the client for DatabasesResource resource."""
+        """Get the resource object for DatabasesResource resource."""
         return DatabasesResource(self._client)
 
     @property
     def server_usage_resource(self) -> ServerUsageResource:
-        """Get the client for ServerUsageResource resource."""
+        """Get the resource object for ServerUsageResource resource."""
         return ServerUsageResource(self._client)
 
     @property
     def disks_resource(self) -> DisksResource:
-        """Get the client for DisksResource resource."""
+        """Get the resource object for DisksResource resource."""
         return DisksResource(self._client)
 
     @property
     def events_resource(self) -> EventsResource:
-        """Get the client for EventsResource resource."""
+        """Get the resource object for EventsResource resource."""
         return EventsResource(self._client)
 
     @property
     def global_events_resource(self) -> GlobalEventsResource:
-        """Get the client for GlobalEventsResource resource."""
+        """Get the resource object for GlobalEventsResource resource."""
         return GlobalEventsResource(self._client)
 
     @property
     def global_alert_configurations_resource(self) -> GlobalAlertConfigurationsResource:
-        """Get the client for GlobalAlertConfigurationsResource resource."""
+        """Get the resource object for GlobalAlertConfigurationsResource resource."""
         return GlobalAlertConfigurationsResource(self._client)
 
     @property
     def global_alerts_resource(self) -> GlobalAlertsResource:
-        """Get the client for GlobalAlertsResource resource."""
+        """Get the resource object for GlobalAlertsResource resource."""
         return GlobalAlertsResource(self._client)
 
     @property
     def projects_resource(self) -> ProjectsResource:
-        """Get the client for ProjectsResource resource."""
+        """Get the resource object for ProjectsResource resource."""
         return ProjectsResource(self._client)
 
     @property
     def hosts_resource(self) -> HostsResource:
-        """Get the client for HostsResource resource."""
+        """Get the resource object for HostsResource resource."""
         return HostsResource(self._client)
 
     @property
     def import_deployments_resource(self) -> ImportDeploymentsResource:
-        """Get the client for ImportDeploymentsResource resource."""
+        """Get the resource object for ImportDeploymentsResource resource."""
         return ImportDeploymentsResource(self._client)
 
     @property
     def organizations_resource(self) -> OrganizationsResource:
-        """Get the client for OrganizationsResource resource."""
+        """Get the resource object for OrganizationsResource resource."""
         return OrganizationsResource(self._client)
 
     @property
     def backup_encryption_keys_resource(self) -> BackupEncryptionKeysResource:
-        """Get the client for BackupEncryptionKeysResource resource."""
+        """Get the resource object for BackupEncryptionKeysResource resource."""
         return BackupEncryptionKeysResource(self._client)
 
     @property
     def log_collection_jobs_resource(self) -> LogCollectionJobsResource:
-        """Get the client for LogCollectionJobsResource resource."""
+        """Get the resource object for LogCollectionJobsResource resource."""
         return LogCollectionJobsResource(self._client)
 
     @property
     def maintenance_windows_resource(self) -> MaintenanceWindowsResource:
-        """Get the client for MaintenanceWindowsResource resource."""
+        """Get the resource object for MaintenanceWindowsResource resource."""
         return MaintenanceWindowsResource(self._client)
 
     @property
     def measurements_resource(self) -> MeasurementsResource:
-        """Get the client for MeasurementsResource resource."""
+        """Get the resource object for MeasurementsResource resource."""
         return MeasurementsResource(self._client)
 
     @property
     def server_log_collection_jobs_resource(self) -> ServerLogCollectionJobsResource:
-        """Get the client for ServerLogCollectionJobsResource resource."""
+        """Get the resource object for ServerLogCollectionJobsResource resource."""
         return ServerLogCollectionJobsResource(self._client)
 
     @property
     def performance_advisor_resource(self) -> PerformanceAdvisorResource:
-        """Get the client for PerformanceAdvisorResource resource."""
+        """Get the resource object for PerformanceAdvisorResource resource."""
         return PerformanceAdvisorResource(self._client)
 
     @property
     def restore_jobs_resource(self) -> RestoreJobsResource:
-        """Get the client for RestoreJobsResource resource."""
+        """Get the resource object for RestoreJobsResource resource."""
         return RestoreJobsResource(self._client)
 
     @property
     def root_resource(self) -> RootResource:
-        """Get the client for RootResource resource."""
+        """Get the resource object for RootResource resource."""
         return RootResource(self._client)
 
     @property
     def snapshots_resource(self) -> SnapshotsResource:
-        """Get the client for SnapshotsResource resource."""
+        """Get the resource object for SnapshotsResource resource."""
         return SnapshotsResource(self._client)
 
     @property
     def teams_resource(self) -> TeamsResource:
-        """Get the client for TeamsResource resource."""
+        """Get the resource object for TeamsResource resource."""
         return TeamsResource(self._client)
 
     @property
     def telemetry_resource(self) -> TelemetryResource:
-        """Get the client for TelemetryResource resource."""
+        """Get the resource object for TelemetryResource resource."""
         return TelemetryResource(self._client)
 
     @property
     def integration_settings_resource(self) -> IntegrationSettingsResource:
-        """Get the client for IntegrationSettingsResource resource."""
+        """Get the resource object for IntegrationSettingsResource resource."""
         return IntegrationSettingsResource(self._client)
 
     @property
     def users_resource(self) -> UsersResource:
-        """Get the client for UsersResource resource."""
+        """Get the resource object for UsersResource resource."""
         return UsersResource(self._client)
 
     @property
     def version_manifest_resource(self) -> VersionManifestResource:
-        """Get the client for VersionManifestResource resource."""
+        """Get the resource object for VersionManifestResource resource."""
         return VersionManifestResource(self._client)

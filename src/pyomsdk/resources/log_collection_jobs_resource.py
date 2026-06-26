@@ -15,47 +15,40 @@ class LogCollectionJobsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection job to retry. Use the
+[Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
+endpoint to obtain the IDs associated with your project.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -70,7 +63,10 @@ Expected response body
         ### Endpoint:
         `DELETE /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to delete a specified log collection job. You can delete both in-progress jobs and completed jobs.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to delete a specified log collection job. You can delete both
+        in-progress jobs and completed jobs.
         """
         return self._request(
             "DELETE",
@@ -84,47 +80,40 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique identifier of the job for which to download the logs. You can obtain the JOB-IDs associated with your project by using the Get All Log Collection Jobs for One Project endpoint.
+        """Unique identifier of the job for which to download the logs. You
+can obtain the `JOB-IDs` associated with your project by using
+the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
+endpoint.
         """
 
     class DownloadLogsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def download_logs(
@@ -139,7 +128,10 @@ Expected response body
         ### Endpoint:
         `GET /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/download`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to download a .tar.gz file stream for all logs associated with the specified job.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to download a `.tar.gz` file stream for all logs associated
+        with the specified job.
         """
         return self._request(
             "GET",
@@ -153,18 +145,24 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
     class GetAllJobsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -176,11 +174,14 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
-        """Flag that indicates whether to include all child jobs in the response. Each log collection job contains child jobs for each log type and MongoDB process included in the request.
+        """Flag that indicates whether to include all child jobs in the
+response. Each log collection job contains child jobs for each
+log type and MongoDB process included in the request.
         """
 
     def get_all_jobs(
@@ -195,7 +196,10 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Endpoint:
         `GET /groups/{GROUP-ID}/logCollectionJobs`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to retrieve all log collection jobs for a specified Ops Manager project.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to retrieve all log collection jobs for a specified Ops Manager
+        project.
         """
         return self._request(
             "GET",
@@ -212,14 +216,18 @@ For endpoints that return a list of results, the content object is an envelope. 
             default="Unique 24-hexadecimal digit string that identifies the log collection request job.",
             serialization_alias="GROUP-ID",
         )
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
         job_id: str = Field(
             default="Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.",
             serialization_alias="JOB-ID",
         )
-        """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection job to retry. Use the
+[Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
+endpoint to obtain the IDs associated with your project.
         """
 
     class GetJobQueryParams(BaseModel):
@@ -228,32 +236,21 @@ For endpoints that return a list of results, the content object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -265,11 +262,14 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
-        """If true, returns all child jobs in the response. A log collection job contains child jobs for each log type and MongoDB process included in the request.
+        """If true, returns all child jobs in the response. A log
+collection job contains child jobs for each log type and
+MongoDB process included in the request.
         """
 
     def get_job(
@@ -284,7 +284,10 @@ For endpoints that return a list of results, the results object is an envelope. 
         ### Endpoint:
         `GET /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to retrieve a single log collection job by its unique identifier.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to retrieve a single log collection job by its unique
+        identifier.
         """
         return self._request(
             "GET",
@@ -298,47 +301,40 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection job to retry. Use the
+[Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
+endpoint to obtain the IDs associated with your project.
         """
 
     class RetryQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retry(
@@ -353,7 +349,9 @@ Expected response body
         ### Endpoint:
         `PUT /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/retry`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to retry a single failed log collection job.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to retry a single failed log collection job.
         """
         return self._request(
             "PUT",
@@ -367,43 +365,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -412,57 +400,69 @@ Expected response body
         log_collection_from_date: Optional[int] = Field(
             default=None, serialization_alias="logCollectionFromDate"
         )
-        """Date and time from which to start this log, in milliseconds since the Unix epoch. If you specify the logCollectionFromDate, you must also specify the logCollectionToDate.
+        """Date and time from which to start this log, in milliseconds
+since the Unix epoch. If you specify the `logCollectionFromDate`,
+you must also specify the `logCollectionToDate`.
         """
 
         log_collection_to_date: Optional[int] = Field(
             default=None, serialization_alias="logCollectionToDate"
         )
-        """Date and time at which to end this log, in milliseconds since the Unix epoch. If you specify the logCollectionToDate, you must also specify the logCollectionFromDate.
+        """Date and time at which to end this log, in milliseconds
+since the Unix epoch. If you specify the `logCollectionToDate`,
+you must also specify the `logCollectionFromDate`.
         """
 
         log_types: list[LogType] = Field(serialization_alias="logTypes")
-        """Array of strings specifying the types of logs to collect. Each array element must be one of the following values:
+        """Array of strings specifying the types of logs to collect. Each
+array element must be one of the following values:
 
-AUTOMATION_AGENT
-
-BACKUP_AGENT
-
-MONITORING_AGENT
-
-MONGODB
-
-FTDC
+- `AUTOMATION_AGENT`
+- `BACKUP_AGENT`
+- `MONITORING_AGENT`
+- `MONGODB`
+- `FTDC`
         """
 
         redacted: bool = Field(serialization_alias="redacted")
-        """If set to true, emails, hostnames, IP addresses, and namespaces in API responses involving this job are replaced with random string values.
+        """If set to `true`, emails, hostnames, IP addresses, and
+namespaces in API responses involving this job are replaced with
+random string values.
         """
 
         resource_name: str = Field(serialization_alias="resourceName")
-        """Name of the resource from which to collect logs. The resource type defines the value:
+        """Name of the resource from which to collect logs.
+The resource type defines the value:
 
-For the CLUSTER resourceType, the value is the name of the deployment or the CLUSTER-ID. For example, my-deployment.
+- For the `CLUSTER` `resourceType`, the value is the name of
+  the deployment or the `CLUSTER-ID`.
+  For example, `my-deployment`.
 
-To obtain this value, use the /groups/{GROUP-ID}/clusters/{CLUSTER-ID} endpoint.
+  - To obtain this value, use the
+    [/groups/{GROUP-ID}/clusters/{CLUSTER-ID}](/docs/ops-manager/current/reference/api/clusters/clusters-get-one/) endpoint.
+- For the `PROCESS` `resourceType`, the value is
+  the name of the replica set followed by the node name.
+  For example, `Cluster0-shard-1-node-0`.
 
-For the PROCESS resourceType, the value is the name of the replica set followed by the node name. For example, Cluster0-shard-1-node-0.
+  - To obtain this value, use the [/groups/{PROJECT-ID}/automationConfig](/docs/ops-manager/current/reference/api/automation-config/get-automation-config/) endpoint.
+    The value is located in the `processes.name` parameter.
 
-To obtain this value, use the /groups/{PROJECT-ID}/automationConfig endpoint. The value is located in the processes.name parameter.
-
-To obtain the name of the replica set, the list of nodes, and other information, access the cluster and run rs.conf()._id and rs.status().
-
-For the REPLICASET resourceType, the value is the name of the replica set in the cluster followed by the shard name. For example, test-123abc-shard-0.
+  To obtain the name of the replica set, the list of
+  nodes, and other information, access the cluster and run
+  [`rs.conf()._id`](https://www.mongodb.com/docs/manual/reference/method/rs.conf/#mongodb-method-rs.conf)
+  and [`rs.status()`.](https://www.mongodb.com/docs/manual/reference/method/rs.status/#mongodb-method-rs.status)
+- For the `REPLICASET` `resourceType`, the value is
+  the name of the replica set in the cluster followed
+  by the shard name. For example, `test-123abc-shard-0`.
         """
 
         resource_type: ResourceType = Field(serialization_alias="resourceType")
-        """Type of resource from which to collect logs. Must be one of the following values:
+        """Type of resource from which to collect logs. Must be one of the
+following values:
 
-CLUSTER, for a sharded cluster.
-
-PROCESS, for a node in the replica set.
-
-REPLICASET, for a replica set.
+- `CLUSTER`, for a sharded cluster.
+- `PROCESS`, for a node in the replica set.
+- `REPLICASET`, for a replica set.
         """
 
         size_requested_per_file_bytes: int = Field(serialization_alias="sizeRequestedPerFileBytes")
@@ -482,7 +482,9 @@ REPLICASET, for a replica set.
         ### Endpoint:
         `POST /groups/{GROUP-ID}/logCollectionJobs`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Use this endpoint to create a new log collection job.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Use this
+        endpoint to create a new log collection job.
         """
         return self._request(
             "POST",
@@ -496,54 +498,49 @@ REPLICASET, for a replica set.
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection request job.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection request job.
         """
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.
+        """Unique 24-hexadecimal digit string that identifies the log
+collection job to retry. Use the
+[Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
+endpoint to obtain the IDs associated with your project.
         """
 
     class ExtendQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class ExtendBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         expiration_date: str = Field(serialization_alias="expirationDate")
-        """UNIX epoch when this job expires. This can be up to 6 months from the time the job was created. You cannot specify a date which precedes the time the request is made.
+        """Timestamp, in the number of seconds that have elapsed since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time?oldid=828172017) when this job expires. This can be up to 6 months
+from the time the job was created. You cannot specify a date
+which precedes the time the request is made.
         """
 
     def extend(
@@ -559,7 +556,10 @@ Expected response body
         ### Endpoint:
         `PATCH /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
         ### Description
-        When you create a log collection job, Ops Manager starts a background job to download the logs from the specified Ops Manager deployment. Each job is created with a specified expiration date. Use this endpoint to extend the expiration date of an existing log collection job.
+        When you create a log collection job, Ops Manager starts a background job to
+        download the logs from the specified Ops Manager deployment. Each job is
+        created with a specified expiration date. Use this endpoint to extend
+        the expiration date of an existing log collection job.
         """
         return self._request(
             "PATCH",

@@ -15,36 +15,25 @@ class BlockstoreResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -53,59 +42,73 @@ Expected response body
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Optional. Flag indicating whether this blockstore can be assigned backup jobs.
+        """*Optional.* Flag indicating whether this [blockstore](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database) can
+be assigned backup jobs.
         """
 
         encrypted_credentials: Optional[bool] = Field(
             default=None, serialization_alias="encryptedCredentials"
         )
-        """Optional. Flag indicating whether the username and password for this blockstore were encrypted using the credentialstool.
+        """*Optional.* Flag indicating whether the username and password
+for this blockstore were encrypted using the
+[credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
 
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        """The unique name that labels this blockstore.
+        """The unique name that labels this [blockstore.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Optional. Array of tags to manage which backup jobs Ops Manager can assign to which blockstores.
+        """*Optional.* Array of tags to manage which
+[backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
+[blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
-Setting these tags limits which backup jobs this blockstore can process. If omitted, this blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this blockstore
+can process. If omitted, this blockstore can only process
+backup jobs for projects that do not use labels to filter their
+jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Optional. A positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
+        """*Optional.* A positive, non-zero integer that expresses how much
+backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared
+to another snapshot store. This option is needed only if more
+than one snapshot store is in use.
 
-To learn more about Load Factor, see Edit One Existing Blockstore.
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
 
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        """Optional. The blockstore’s expected maximum available capacity for use in the OUTSIDE_SPACE_USED_THRESHOLD alert. maxCapacityGB does not enforce any limitation on the size of the backing database.
+        """*Optional.* The blockstore’s expected maximum available capacity for use in
+the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does
+not enforce any limitation on the size of the backing database.
         """
 
         ssl: Optional[bool] = Field(default=None, serialization_alias="ssl")
-        """Optional. Flag indicating whether this blockstore only accepts connections encrypted using TLS.
+        """*Optional.* Flag indicating whether this blockstore only accepts
+connections encrypted using
+TLS.
         """
 
         uri: Optional[str] = Field(default=None, serialization_alias="uri")
-        """A comma-separated list of hosts in the <hostname:port> format that can be used to access this blockstore.
+        """A comma-separated list of hosts in the `<hostname:port>`
+format that can be used to access this [blockstore.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
         """
 
         write_concern: Optional[WriteConcern] = Field(
             default=None, serialization_alias="writeConcern"
         )
-        """Optional. The write concern used for this blockstore.
+        """*Optional.* The write concern used for this [blockstore.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
 The accepted values for this option are:
 
-ACKNOWLEDGED
+- `ACKNOWLEDGED`
+- `W2`
+- `JOURNALED`
+- `MAJORITY`
 
-W2
-
-JOURNALED
-
-MAJORITY
-
-To learn about write acknowledgement levels in MongoDB, see Write Concern.
+To learn about write acknowledgement levels in MongoDB, see
+[Write Concern.](https://www.mongodb.com/docs/manual/reference/write-concern/)
         """
 
     def create(
@@ -141,36 +144,25 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -203,11 +195,16 @@ Expected response body
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -219,7 +216,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -254,36 +252,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_id(
@@ -319,36 +306,25 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -357,55 +333,69 @@ Expected response body
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Optional. Flag indicating whether this blockstore can be assigned backup jobs.
+        """*Optional.* Flag indicating whether this [blockstore](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database) can
+be assigned backup jobs.
         """
 
         encrypted_credentials: Optional[bool] = Field(
             default=None, serialization_alias="encryptedCredentials"
         )
-        """Optional. Flag indicating whether the username and password for this blockstore were encrypted using the credentialstool.
+        """*Optional.* Flag indicating whether the username and password
+for this blockstore were encrypted using the
+[credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Optional. Array of tags to manage which backup jobs Ops Manager can assign to which blockstores.
+        """*Optional.* Array of tags to manage which
+[backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
+[blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
-Setting these tags limits which backup jobs this blockstore can process. If omitted, this blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this blockstore
+can process. If omitted, this blockstore can only process
+backup jobs for projects that do not use labels to filter their
+jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Optional. A positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
+        """*Optional.* A positive, non-zero integer that expresses how much
+backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared
+to another snapshot store. This option is needed only if more
+than one snapshot store is in use.
 
-To learn more about Load Factor, see Edit One Existing Blockstore.
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
 
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        """Optional. The blockstore’s expected maximum available capacity for use in the OUTSIDE_SPACE_USED_THRESHOLD alert. maxCapacityGB does not enforce any limitation on the size of the backing database.
+        """*Optional.* The blockstore’s expected maximum available capacity for use in
+the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does
+not enforce any limitation on the size of the backing database.
         """
 
         ssl: Optional[bool] = Field(default=None, serialization_alias="ssl")
-        """Optional. Flag indicating whether this blockstore only accepts connections encrypted using TLS.
+        """*Optional.* Flag indicating whether this blockstore only accepts
+connections encrypted using
+TLS.
         """
 
         uri: Optional[str] = Field(default=None, serialization_alias="uri")
-        """A comma-separated list of hosts in the <hostname:port> format that can be used to access this blockstore.
+        """A comma-separated list of hosts in the `<hostname:port>`
+format that can be used to access this [blockstore.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
         """
 
         write_concern: Optional[WriteConcern] = Field(
             default=None, serialization_alias="writeConcern"
         )
-        """Optional. The write concern used for this blockstore.
+        """*Optional.* The write concern used for this [blockstore.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
 The accepted values for this option are:
 
-ACKNOWLEDGED
+- `ACKNOWLEDGED`
+- `W2`
+- `JOURNALED`
+- `MAJORITY`
 
-W2
-
-JOURNALED
-
-MAJORITY
-
-To learn about write acknowledgement levels in MongoDB, see Write Concern.
+To learn about write acknowledgement levels in MongoDB, see
+[Write Concern.](https://www.mongodb.com/docs/manual/reference/write-concern/)
         """
 
     def update(

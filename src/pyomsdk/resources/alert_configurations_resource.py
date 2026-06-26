@@ -22,36 +22,25 @@ class AlertConfigurationsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -66,243 +55,152 @@ Expected response body
 
 Values include:
 
-Agent
-
-AUTOMATION_AGENT_DOWN
-
-AUTOMATION_AGENT_UP
-
-BACKUP_AGENT_CONF_CALL_FAILURE
-
-BACKUP_AGENT_DOWN
-
-BACKUP_AGENT_UP
-
-BACKUP_AGENT_VERSION_BEHIND
-
-BACKUP_AGENT_VERSION_CURRENT
-
-MONITORING_AGENT_DOWN
-
-MONITORING_AGENT_UP
-
-MONITORING_AGENT_VERSION_BEHIND
-
-MONITORING_AGENT_VERSION_CURRENT
-
-NEW_AGENT
-
-Automation Configuration
-
-AUTOMATION_CONFIG_PUBLISHED_AUDIT
-
-Backup
-
-BAD_CLUSTERSHOTS
-
-CLUSTER_BLACKLIST_UPDATED_AUDIT
-
-CLUSTER_CHECKKPOINT_UPDATED_AUDIT
-
-CLUSTER_CREDENTIAL_UPDATED_AUDIT
-
-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT
-
-CLUSTER_STATE_CHANGED_AUDIT
-
-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT
-
-CLUSTERSHOT_DELETED_AUDIT
-
-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT
-
-CONSISTENT_BACKUP_CONFIGURATION
-
-GOOD_CLUSTERSHOT
-
-INCONSISTENT_BACKUP_CONFIGURATION
-
-INITIAL_SYNC_FINISHED_AUDIT
-
-INITIAL_SYNC_STARTED_AUDIT
-
-OPLOG_BEHIND
-
-OPLOG_CURRENT
-
-RESTORE_REQUESTED_AUDIT
-
-RESYNC_PERFORMED
-
-RESYNC_REQUIRED
-
-RS_BLACKLIST_UPDATED_AUDIT
-
-RS_CREDENTIAL_UPDATED_AUDIT
-
-RS_ROTATE_MASTER_KEY_AUDIT
-
-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT
-
-RS_STATE_CHANGED_AUDIT
-
-RS_STORAGE_ENGINE_UPDATED_AUDIT
-
-SNAPSHOT_DELETED_AUDIT
-
-SNAPSHOT_EXPIRY_UPDATED_AUDIT
-
-SYNC_PENDING_AUDIT
-
-SYNC_REQUIRED_AUDIT
-
-BI Connector
-
-BI_CONNECTOR_DOWN
-
-BI_CONNECTOR_UP
-
-Cluster
-
-CLUSTER_MONGOS_IS_MISSING
-
-CLUSTER_MONGOS_IS_PRESENT
-
-SHARD_ADDED
-
-SHARD_REMOVED
-
-Data Explorer Accessed
-
-DATA_EXPLORER
-
-DATA_EXPLORER_CRUD
-
-Host
-
-ADD_HOST_AUDIT
-
-ADD_HOST_TO_REPLICA_SET_AUDIT
-
-DELETE_HOST_AUDIT
-
-HOST_DOWN
-
-HOST_RECOVERING
-
-HOST_RESTARTED
-
-HOST_ROLLBACK
-
-HOST_SSL_CERTIFICATE_STALE
-
-OUTSIDE_METRIC_THRESHOLD
-
-REMOVE_HOST_FROM_REPLICA_SET_AUDIT
-
-UNDELETE_HOST_AUDIT
-
-VERSION_BEHIND
-
-Organization
-
-ALL_ORG_USERS_HAVE_MFA
-
-ORG_API_KEY_ADDED
-
-ORG_API_KEY_DELETED
-
-ORG_EMPLOYEE_ACCESS_RESTRICTED
-
-ORG_EMPLOYEE_ACCESS_UNRESTRICTED
-
-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED
-
-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED
-
-ORG_RENAMED
-
-ORG_TWO_FACTOR_AUTH_OPTIONAL
-
-ORG_TWO_FACTOR_AUTH_REQUIRED
-
-ORG_USERS_WITHOUT_MFA
-
-Project
-
-ALL_USERS_HAVE_MULTI_FACTOR_AUTH
-
-USERS_WITHOUT_MULTI_FACTOR_AUTH
-
-Replica Set
-
-CONFIGURATION_CHANGED
-
-ENOUGH_HEALTHY_MEMBERS
-
-MEMBER_ADDED
-
-MEMBER_REMOVED
-
-MULTIPLE_PRIMARIES
-
-NO_PRIMARY
-
-ONE_PRIMARY
-
-PRIMARY_ELECTED
-
-TOO_FEW_HEALTHY_MEMBERS
-
-TOO_MANY_ELECTIONS
-
-TOO_MANY_UNHEALTHY_MEMBERS
-
-Team
-
-TEAM_ADDED_TO_GROUP
-
-TEAM_CREATED
-
-TEAM_DELETED
-
-TEAM_NAME_CHANGED
-
-TEAM_REMOVED_FROM_GROUP
-
-TEAM_ROLES_MODIFIED
-
-TEAM_UPDATED
-
-USER_ADDED_TO_TEAM
-
-User
-
-INVITED_TO_GROUP
-
-INVITED_TO_ORG
-
-JOIN_GROUP_REQUEST_APPROVED_AUDIT
-
-JOIN_GROUP_REQUEST_DENIED_AUDIT
-
-JOINED_GROUP
-
-JOINED_ORG
-
-JOINED_TEAM
-
-REMOVED_FROM_GROUP
-
-REMOVED_FROM_ORG
-
-REMOVED_FROM_TEAM
-
-REQUESTED_TO_JOIN_GROUP
-
-USER_ROLES_CHANGED_AUDIT
-
-To review the full list of events that generate alerts and their descriptions, see Alert Types. For a complete list of events included in the Ops Manager audit log, see Audit Events.
+**Agent**
+
+- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
+- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
+- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
+- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
+- [`BACKUP_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
+- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
+- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
+- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
+- [`MONITORING_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
+- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
+- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
+- [`NEW_AGENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NEW_AGENT)
+
+**Automation Configuration**
+
+- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
+
+**Backup**
+
+- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
+- [`CLUSTER_BLACKLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_BLACKLIST_UPDATED_AUDIT)
+- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
+- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
+- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
+- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
+- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
+- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
+- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
+- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
+- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
+- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
+- [`OPLOG_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
+- [`OPLOG_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
+- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
+- [`RESYNC_PERFORMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
+- [`RESYNC_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
+- [`RS_BLACKLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_BLACKLIST_UPDATED_AUDIT)
+- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
+- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
+- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
+- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
+- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
+- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
+- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
+
+**BI Connector**
+
+- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
+- [`BI_CONNECTOR_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
+
+**Cluster**
+
+- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
+- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
+- [`SHARD_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_ADDED)
+- [`SHARD_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
+
+**Data Explorer Accessed**
+
+- [`DATA_EXPLORER`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
+- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
+
+**Host**
+
+- [`ADD_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
+- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
+- [`DELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
+- [`HOST_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_DOWN)
+- [`HOST_RECOVERING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
+- [`HOST_RESTARTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
+- [`HOST_ROLLBACK`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
+- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
+- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
+- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
+- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
+- [`VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
+
+**Organization**
+
+- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
+- [`ORG_API_KEY_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
+- [`ORG_API_KEY_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
+- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
+- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
+- [`ORG_RENAMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_RENAMED)
+- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
+- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
+- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
+
+**Project**
+
+- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
+- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
+
+**Replica Set**
+
+- [`CONFIGURATION_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
+- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
+- [`MEMBER_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
+- [`MEMBER_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
+- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
+- [`NO_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NO_PRIMARY)
+- [`ONE_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
+- [`PRIMARY_ELECTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
+- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
+- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
+- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
+
+**Team**
+
+- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
+- [`TEAM_CREATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_CREATED)
+- [`TEAM_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_DELETED)
+- [`TEAM_NAME_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
+- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
+- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
+- [`TEAM_UPDATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
+- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
+
+**User**
+
+- [`INVITED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
+- [`INVITED_TO_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
+- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
+- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
+- [`JOINED_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_GROUP)
+- [`JOINED_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_ORG)
+- [`JOINED_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_TEAM)
+- [`REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
+- [`REMOVED_FROM_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
+- [`REMOVED_FROM_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
+- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
+- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
+
+To review the full list of events that generate alerts and their
+descriptions, see [Alert Types](/docs/ops-manager/current/reference/alert-types/). For a
+complete list of events included in the Ops Manager audit log, see
+[Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
 
         class MatchersParams(BaseModel):
@@ -313,31 +211,22 @@ To review the full list of events that generate alerts and their descriptions, s
             )
             """Name of the field in the target object to match on.
 
-Host alerts support these fields:
+- Host alerts support these fields:
 
-HOSTNAME
+  - `HOSTNAME`
+  - `PORT`
+  - `HOSTNAME_AND_PORT`
+  - `REPLICA_SET_NAME`
+  - `TYPE_NAME`
+- Replica set alerts support these fields:
 
-PORT
+  - `REPLICA_SET_NAME`
+  - `SHARD_NAME`
+  - `CLUSTER_NAME`
+- Sharded cluster alerts support these fields:
 
-HOSTNAME_AND_PORT
-
-REPLICA_SET_NAME
-
-TYPE_NAME
-
-Replica set alerts support these fields:
-
-REPLICA_SET_NAME
-
-SHARD_NAME
-
-CLUSTER_NAME
-
-Sharded cluster alerts support these fields:
-
-CLUSTER_NAME
-
-SHARD_NAME
+  - `CLUSTER_NAME`
+  - `SHARD_NAME`
 
 All other types of alerts do not support matchers.
             """
@@ -347,64 +236,60 @@ All other types of alerts do not support matchers.
             )
             """Operator to test the field's value. Accepted values are:
 
-EQUALS
-
-NOT_EQUALS
-
-CONTAINS
-
-NOT_CONTAINS
-
-STARTS_WITH
-
-ENDS_WITH
-
-REGEX
+- `EQUALS`
+- `NOT_EQUALS`
+- `CONTAINS`
+- `NOT_CONTAINS`
+- `STARTS_WITH`
+- `ENDS_WITH`
+- `REGEX`
             """
 
             value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
-If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
+If `matchers.fieldName` is set to `TYPE_NAME`, you can match on
+the following values:
 
-PRIMARY
-
-SECONDARY
-
-STANDALONE
-
-CONFIG
-
-MONGOS
+- `PRIMARY`
+- `SECONDARY`
+- `STANDALONE`
+- `CONFIG`
+- `MONGOS`
             """
 
         matchers: Optional[list[MatchersParams]] = Field(
             default=None, serialization_alias="matchers"
         )
-        """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
+        """Rules to apply when matching an object against this alert
+configuration. Only entities that match *all* these rules are
+checked for an alert condition.
 
-You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
+You can filter using the `matchers` array only when the
+`eventTypeName` specifies an event for a host, replica set,
+or sharded cluster.
         """
 
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
+            """Name of the metric to check. Supports the same values as
+the `metricName` field of the `alerts` resource.
             """
 
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
-            """Set to AVERAGE to compute the average of this metric.
+            """Set to `AVERAGE` to compute the average of this metric.
             """
 
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
+            """Operator to apply when checking the current metric value
+against the threshold value. Accepted values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
@@ -412,148 +297,155 @@ LESS_THAN
             """
 
             units: Optional[Unit] = Field(default=None, serialization_alias="units")
-            """Units for the threshold value. Depends on the type of metric.
+            """Units for the threshold value. Depends on the type of
+metric.
 
-For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
+For example, a metric that measures memory consumption would
+have a byte measurement, while a metric that measures time
+would have a time unit.
 
 Accepted values are:
 
-RAW
-
-BITS
-
-BYTES
-
-KILOBITS
-
-KILOBYTES
-
-MEGABITS
-
-MEGABYTES
-
-GIGABITS
-
-GIGABYTES
-
-TERABYTES
-
-PETABYTES
-
-MILLISECONDS
-
-SECONDS
-
-MINUTES
-
-HOURS
-
-DAYS
+- `RAW`
+- `BITS`
+- `BYTES`
+- `KILOBITS`
+- `KILOBYTES`
+- `MEGABITS`
+- `MEGABYTES`
+- `GIGABITS`
+- `GIGABYTES`
+- `TERABYTES`
+- `PETABYTES`
+- `MILLISECONDS`
+- `SECONDS`
+- `MINUTES`
+- `HOURS`
+- `DAYS`
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
             default=None, serialization_alias="metricThreshold"
         )
-        """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
+        """Threshold that will cause an alert to be triggered.
+Required if `"eventTypeName" : "OUTSIDE_METRIC_THRESHOLD"`.
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
-            """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
+            """Slack API token or Bot token.
+Required if `"notifications.typeName" : "SLACK"`.
+If the token later becomes invalid, Ops Manager sends an email to
+the Project owner and eventually removes the token.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
-            """Slack channel name. Required if "notifications.typeName" : "SLACK".
+            """Slack channel name.
+Required if `"notifications.typeName" : "SLACK"`.
             """
 
             datadog_api_key: Optional[str] = Field(
                 default=None, serialization_alias="datadogApiKey"
             )
-            """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
+            """DataDog API Key. Found in the DataDog dashboard.
+Required if `"notifications.typeName" : "DATADOG"`.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
-            """Number of minutes to wait after an alert condition is detected before sending out the first notification.
+            """Number of minutes to wait after an alert condition is
+detected before sending out the first notification.
             """
 
             email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
-            """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
+            """Email address to which to send notification.
+Required if `"notifications.typeName" : "EMAIL"`.
             """
 
             email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
-            """Determines if email notifications should be sent. Required if:
+            """Determines if email notifications should be sent.
+Required if:
 
-"notifications.typeName" : "GROUP"
-
-"notifications.typeName" : "USER"
+- `"notifications.typeName" : "GROUP"`
+- `"notifications.typeName" : "USER"`
             """
 
             interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
-            """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
+            """Number of minutes to wait between successive notifications
+for unacknowledged alerts that are not resolved.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
                 default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
-            """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
+            """Microsoft Teams channel incoming webhook URL.
+Required if `"notifications.typeName" : "MICROSOFT_TEAMS"`.
 
-When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
+When you view or edit the alert for a webhook
+notification, the URL appears partially redacted, and the
+secret appears completely redacted.
             """
 
             mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
-            """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
+            """Mobile number to send SMS messages to.
+Required if `"notifications.typeName" : "SMS"`.
             """
 
             notification_token: Optional[str] = Field(
                 default=None, serialization_alias="notificationToken"
             )
-            """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
+            """A HipChat API token.
+Required if `"notifications.typeName" : "HIP_CHAT"`.
+If the token later becomes invalid, Ops Manager sends an email to
+the Project owner and eventually removes the token.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             role: Optional[str] = Field(default=None, serialization_alias="role")
-            """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
+            """Ops Manager role in current Project.
+Required if `"notifications.typeName" : "GROUP"`.
             """
 
             room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
-            """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
+            """HipChat room name.
+Required if `"notifications.typeName" : "HIP_CHAT"`.
             """
 
             service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
-            """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
+            """PagerDuty integration key.
+Required if `"notifications.typeName" : "PAGER_DUTY"`.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
-            """Flag indicating SMS notifications must be sent. Required if:
+            """Flag indicating SMS notifications must be sent.
+Required if:
 
-"notifications.typeName" : "GROUP"
-
-"notifications.typeName" : "USER"
+- `"notifications.typeName" : "GROUP"`
+- `"notifications.typeName" : "USER"`
             """
 
             team_id: Optional[str] = Field(default=None, serialization_alias="teamId")
@@ -565,65 +457,77 @@ Query the third-party integration settings through the API.
             )
             """Type of alert notification. Accepted values are:
 
-DATADOG
-
-EMAIL
-
-GROUP (Project)
-
-HIPCHAT
-
-ORG
-
-PAGER_DUTY
-
-SLACK
-
-SMS (Twilio integration must be configured)
-
-USER
-
-WEBHOOK
+- `DATADOG`
+- `EMAIL`
+- `GROUP` (Project)
+- `HIPCHAT`
+- `ORG`
+- `PAGER_DUTY`
+- `SLACK`
+- `SMS` ([Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
+- `USER`
+- `WEBHOOK`
             """
 
             username: Optional[str] = Field(default=None, serialization_alias="username")
-            """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
+            """Name of an Ops Manager user to which to send notifications.
+Specify a user in the Project that owns the alert
+configuration.
+Required if `"notifications.typeName" : "USER"`.
             """
 
             webhook_body_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookBodyTemplate"
             )
-            """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for the body content of webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookHeadersTemplate"
             )
-            """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for custom headers to include in webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
-            """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
+            """A value used to authenticate with the Webhook that accepts
+and forwards the notification. You can explicitly declare
+a secret only in a request that has both:
 
-A notifications.typeName of WEBHOOK
+- A `notifications.typeName` of `WEBHOOK`
+- An explicitly declared `notifications.webhookURL`
 
-An explicitly declared notifications.webhookURL
+You can configure a `webhookSecret` for a default
+`webhookURL` only either on the
+[Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services)
+page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
-You can configure a webhookSecret for a default webhookURL only either on the Integrations page, or with the Integrations API.
+To explicitly declare a `webhookURL` without a
+`webhookSecret`, omit this field.
 
-To explicitly declare a webhookURL without a webhookSecret, omit this field.
-
-After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
+After creating a webhook notification, the URL is
+partially redacted when you view or edit the alert, and the
+secret is completely redacted.
             """
 
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
+            """URL for the webhook that triggers this notification. If you do not
+explicitly declare a `webhookUrl`, your request will use
+the default `webhookUrl` set either on the
+[Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services)
+page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
-After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
+After creating a webhook notification, the URL is
+partially redacted when you view or edit the alert, and the
+secret is completely redacted.
             """
 
         notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
-        """Notifications to send when an alert condition is detected.
+        """Notifications to send when an alert condition is
+detected.
         """
 
         class ThresholdParams(BaseModel):
@@ -632,11 +536,11 @@ After creating a webhook notification, the URL is partially redacted when you vi
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against the threshold value.
+            """Operator to apply when checking the current metric value
+against the threshold value.
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
@@ -644,11 +548,11 @@ LESS_THAN
             """
 
         threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
-        """Threshold that will cause an alert to be triggered. Required if:
+        """Threshold that will cause an alert to be triggered.
+Required if:
 
-"eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
-
-"eventTypeName" : TOO_MANY_UNHEALTHY_MEMBERS
+- `"eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"`
+- `"eventTypeName" : TOO_MANY_UNHEALTHY_MEMBERS`
         """
 
     def create(
@@ -689,36 +593,25 @@ LESS_THAN
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -758,43 +651,32 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class EnableDisableBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         enabled: Optional[bool] = Field(default=None, serialization_alias="enabled")
-        """Specify true to enable; false to disable.
+        """Specify `true` to enable; `false` to disable.
         """
 
     def enable_disable(
@@ -831,11 +713,16 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -847,7 +734,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_for_a_project(
@@ -887,11 +775,16 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -903,7 +796,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -932,36 +826,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_matchers_field_names(
@@ -1000,11 +883,16 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -1016,7 +904,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_open_alerts(
@@ -1092,36 +981,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -1136,243 +1014,152 @@ Expected response body
 
 Values include:
 
-Agent
-
-AUTOMATION_AGENT_DOWN
-
-AUTOMATION_AGENT_UP
-
-BACKUP_AGENT_CONF_CALL_FAILURE
-
-BACKUP_AGENT_DOWN
-
-BACKUP_AGENT_UP
-
-BACKUP_AGENT_VERSION_BEHIND
-
-BACKUP_AGENT_VERSION_CURRENT
-
-MONITORING_AGENT_DOWN
-
-MONITORING_AGENT_UP
-
-MONITORING_AGENT_VERSION_BEHIND
-
-MONITORING_AGENT_VERSION_CURRENT
-
-NEW_AGENT
-
-Automation Configuration
-
-AUTOMATION_CONFIG_PUBLISHED_AUDIT
-
-Backup
-
-BAD_CLUSTERSHOTS
-
-CLUSTER_BLACKLIST_UPDATED_AUDIT
-
-CLUSTER_CHECKKPOINT_UPDATED_AUDIT
-
-CLUSTER_CREDENTIAL_UPDATED_AUDIT
-
-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT
-
-CLUSTER_STATE_CHANGED_AUDIT
-
-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT
-
-CLUSTERSHOT_DELETED_AUDIT
-
-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT
-
-CONSISTENT_BACKUP_CONFIGURATION
-
-GOOD_CLUSTERSHOT
-
-INCONSISTENT_BACKUP_CONFIGURATION
-
-INITIAL_SYNC_FINISHED_AUDIT
-
-INITIAL_SYNC_STARTED_AUDIT
-
-OPLOG_BEHIND
-
-OPLOG_CURRENT
-
-RESTORE_REQUESTED_AUDIT
-
-RESYNC_PERFORMED
-
-RESYNC_REQUIRED
-
-RS_BLACKLIST_UPDATED_AUDIT
-
-RS_CREDENTIAL_UPDATED_AUDIT
-
-RS_ROTATE_MASTER_KEY_AUDIT
-
-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT
-
-RS_STATE_CHANGED_AUDIT
-
-RS_STORAGE_ENGINE_UPDATED_AUDIT
-
-SNAPSHOT_DELETED_AUDIT
-
-SNAPSHOT_EXPIRY_UPDATED_AUDIT
-
-SYNC_PENDING_AUDIT
-
-SYNC_REQUIRED_AUDIT
-
-BI Connector
-
-BI_CONNECTOR_DOWN
-
-BI_CONNECTOR_UP
-
-Cluster
-
-CLUSTER_MONGOS_IS_MISSING
-
-CLUSTER_MONGOS_IS_PRESENT
-
-SHARD_ADDED
-
-SHARD_REMOVED
-
-Data Explorer Accessed
-
-DATA_EXPLORER
-
-DATA_EXPLORER_CRUD
-
-Host
-
-ADD_HOST_AUDIT
-
-ADD_HOST_TO_REPLICA_SET_AUDIT
-
-DELETE_HOST_AUDIT
-
-HOST_DOWN
-
-HOST_RECOVERING
-
-HOST_RESTARTED
-
-HOST_ROLLBACK
-
-HOST_SSL_CERTIFICATE_STALE
-
-OUTSIDE_METRIC_THRESHOLD
-
-REMOVE_HOST_FROM_REPLICA_SET_AUDIT
-
-UNDELETE_HOST_AUDIT
-
-VERSION_BEHIND
-
-Organization
-
-ALL_ORG_USERS_HAVE_MFA
-
-ORG_API_KEY_ADDED
-
-ORG_API_KEY_DELETED
-
-ORG_EMPLOYEE_ACCESS_RESTRICTED
-
-ORG_EMPLOYEE_ACCESS_UNRESTRICTED
-
-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED
-
-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED
-
-ORG_RENAMED
-
-ORG_TWO_FACTOR_AUTH_OPTIONAL
-
-ORG_TWO_FACTOR_AUTH_REQUIRED
-
-ORG_USERS_WITHOUT_MFA
-
-Project
-
-ALL_USERS_HAVE_MULTI_FACTOR_AUTH
-
-USERS_WITHOUT_MULTI_FACTOR_AUTH
-
-Replica Set
-
-CONFIGURATION_CHANGED
-
-ENOUGH_HEALTHY_MEMBERS
-
-MEMBER_ADDED
-
-MEMBER_REMOVED
-
-MULTIPLE_PRIMARIES
-
-NO_PRIMARY
-
-ONE_PRIMARY
-
-PRIMARY_ELECTED
-
-TOO_FEW_HEALTHY_MEMBERS
-
-TOO_MANY_ELECTIONS
-
-TOO_MANY_UNHEALTHY_MEMBERS
-
-Team
-
-TEAM_ADDED_TO_GROUP
-
-TEAM_CREATED
-
-TEAM_DELETED
-
-TEAM_NAME_CHANGED
-
-TEAM_REMOVED_FROM_GROUP
-
-TEAM_ROLES_MODIFIED
-
-TEAM_UPDATED
-
-USER_ADDED_TO_TEAM
-
-User
-
-INVITED_TO_GROUP
-
-INVITED_TO_ORG
-
-JOIN_GROUP_REQUEST_APPROVED_AUDIT
-
-JOIN_GROUP_REQUEST_DENIED_AUDIT
-
-JOINED_GROUP
-
-JOINED_ORG
-
-JOINED_TEAM
-
-REMOVED_FROM_GROUP
-
-REMOVED_FROM_ORG
-
-REMOVED_FROM_TEAM
-
-REQUESTED_TO_JOIN_GROUP
-
-USER_ROLES_CHANGED_AUDIT
-
-To review the full list of events that generate alerts and their descriptions, see Alert Types. For a complete list of events included in the Ops Manager audit log, see Audit Events.
+**Agent**
+
+- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
+- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
+- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
+- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
+- [`BACKUP_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
+- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
+- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
+- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
+- [`MONITORING_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
+- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
+- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
+- [`NEW_AGENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NEW_AGENT)
+
+**Automation Configuration**
+
+- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
+
+**Backup**
+
+- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
+- [`CLUSTER_BLACKLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_BLACKLIST_UPDATED_AUDIT)
+- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
+- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
+- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
+- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
+- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
+- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
+- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
+- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
+- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
+- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
+- [`OPLOG_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
+- [`OPLOG_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
+- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
+- [`RESYNC_PERFORMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
+- [`RESYNC_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
+- [`RS_BLACKLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_BLACKLIST_UPDATED_AUDIT)
+- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
+- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
+- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
+- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
+- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
+- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
+- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
+
+**BI Connector**
+
+- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
+- [`BI_CONNECTOR_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
+
+**Cluster**
+
+- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
+- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
+- [`SHARD_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_ADDED)
+- [`SHARD_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
+
+**Data Explorer Accessed**
+
+- [`DATA_EXPLORER`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
+- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
+
+**Host**
+
+- [`ADD_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
+- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
+- [`DELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
+- [`HOST_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_DOWN)
+- [`HOST_RECOVERING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
+- [`HOST_RESTARTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
+- [`HOST_ROLLBACK`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
+- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
+- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
+- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
+- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
+- [`VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
+
+**Organization**
+
+- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
+- [`ORG_API_KEY_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
+- [`ORG_API_KEY_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
+- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
+- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
+- [`ORG_RENAMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_RENAMED)
+- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
+- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
+- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
+
+**Project**
+
+- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
+- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
+
+**Replica Set**
+
+- [`CONFIGURATION_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
+- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
+- [`MEMBER_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
+- [`MEMBER_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
+- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
+- [`NO_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NO_PRIMARY)
+- [`ONE_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
+- [`PRIMARY_ELECTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
+- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
+- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
+- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
+
+**Team**
+
+- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
+- [`TEAM_CREATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_CREATED)
+- [`TEAM_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_DELETED)
+- [`TEAM_NAME_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
+- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
+- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
+- [`TEAM_UPDATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
+- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
+
+**User**
+
+- [`INVITED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
+- [`INVITED_TO_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
+- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
+- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
+- [`JOINED_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_GROUP)
+- [`JOINED_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_ORG)
+- [`JOINED_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_TEAM)
+- [`REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
+- [`REMOVED_FROM_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
+- [`REMOVED_FROM_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
+- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
+- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
+
+To review the full list of events that generate alerts and their
+descriptions, see [Alert Types](/docs/ops-manager/current/reference/alert-types/). For a
+complete list of events included in the Ops Manager audit log, see
+[Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
 
         class MatchersParams(BaseModel):
@@ -1383,31 +1170,22 @@ To review the full list of events that generate alerts and their descriptions, s
             )
             """Name of the field in the target object to match on.
 
-Host alerts support these fields:
+- Host alerts support these fields:
 
-HOSTNAME
+  - `HOSTNAME`
+  - `PORT`
+  - `HOSTNAME_AND_PORT`
+  - `REPLICA_SET_NAME`
+  - `TYPE_NAME`
+- Replica set alerts support these fields:
 
-PORT
+  - `REPLICA_SET_NAME`
+  - `SHARD_NAME`
+  - `CLUSTER_NAME`
+- Sharded cluster alerts support these fields:
 
-HOSTNAME_AND_PORT
-
-REPLICA_SET_NAME
-
-TYPE_NAME
-
-Replica set alerts support these fields:
-
-REPLICA_SET_NAME
-
-SHARD_NAME
-
-CLUSTER_NAME
-
-Sharded cluster alerts support these fields:
-
-CLUSTER_NAME
-
-SHARD_NAME
+  - `CLUSTER_NAME`
+  - `SHARD_NAME`
 
 All other types of alerts do not support matchers.
             """
@@ -1417,64 +1195,60 @@ All other types of alerts do not support matchers.
             )
             """Operator to test the field's value. Accepted values are:
 
-EQUALS
-
-NOT_EQUALS
-
-CONTAINS
-
-NOT_CONTAINS
-
-STARTS_WITH
-
-ENDS_WITH
-
-REGEX
+- `EQUALS`
+- `NOT_EQUALS`
+- `CONTAINS`
+- `NOT_CONTAINS`
+- `STARTS_WITH`
+- `ENDS_WITH`
+- `REGEX`
             """
 
             value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
-If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
+If `matchers.fieldName` is set to `TYPE_NAME`, you can match on
+the following values:
 
-PRIMARY
-
-SECONDARY
-
-STANDALONE
-
-CONFIG
-
-MONGOS
+- `PRIMARY`
+- `SECONDARY`
+- `STANDALONE`
+- `CONFIG`
+- `MONGOS`
             """
 
         matchers: Optional[list[MatchersParams]] = Field(
             default=None, serialization_alias="matchers"
         )
-        """Rules to apply when matching an object against this alert configuration. Only entities that match all these rules are checked for an alert condition.
+        """Rules to apply when matching an object against this alert
+configuration. Only entities that match *all* these rules are
+checked for an alert condition.
 
-You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
+You can filter using the `matchers` array only when the
+`eventTypeName` specifies an event for a host, replica set,
+or sharded cluster.
         """
 
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            """Name of the metric to check. Supports the same values as the metricName field of the alerts resource.
+            """Name of the metric to check. Supports the same values as
+the `metricName` field of the `alerts` resource.
             """
 
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
-            """Set to AVERAGE to compute the average of this metric.
+            """Set to `AVERAGE` to compute the average of this metric.
             """
 
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against the threshold value. Accepted values are:
+            """Operator to apply when checking the current metric value
+against the threshold value. Accepted values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
@@ -1482,148 +1256,155 @@ LESS_THAN
             """
 
             units: Optional[Unit] = Field(default=None, serialization_alias="units")
-            """Units for the threshold value. Depends on the type of metric.
+            """Units for the threshold value. Depends on the type of
+metric.
 
-For example, a metric that measures memory consumption would have a byte measurement, while a metric that measures time would have a time unit.
+For example, a metric that measures memory consumption would
+have a byte measurement, while a metric that measures time
+would have a time unit.
 
 Accepted values are:
 
-RAW
-
-BITS
-
-BYTES
-
-KILOBITS
-
-KILOBYTES
-
-MEGABITS
-
-MEGABYTES
-
-GIGABITS
-
-GIGABYTES
-
-TERABYTES
-
-PETABYTES
-
-MILLISECONDS
-
-SECONDS
-
-MINUTES
-
-HOURS
-
-DAYS
+- `RAW`
+- `BITS`
+- `BYTES`
+- `KILOBITS`
+- `KILOBYTES`
+- `MEGABITS`
+- `MEGABYTES`
+- `GIGABITS`
+- `GIGABYTES`
+- `TERABYTES`
+- `PETABYTES`
+- `MILLISECONDS`
+- `SECONDS`
+- `MINUTES`
+- `HOURS`
+- `DAYS`
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
             default=None, serialization_alias="metricThreshold"
         )
-        """Threshold that will cause an alert to be triggered. Required if "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD".
+        """Threshold that will cause an alert to be triggered.
+Required if `"eventTypeName" : "OUTSIDE_METRIC_THRESHOLD"`.
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
-            """Slack API token or Bot token. Required if "notifications.typeName" : "SLACK". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
+            """Slack API token or Bot token.
+Required if `"notifications.typeName" : "SLACK"`.
+If the token later becomes invalid, Ops Manager sends an email to
+the Project owner and eventually removes the token.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
-            """Slack channel name. Required if "notifications.typeName" : "SLACK".
+            """Slack channel name.
+Required if `"notifications.typeName" : "SLACK"`.
             """
 
             datadog_api_key: Optional[str] = Field(
                 default=None, serialization_alias="datadogApiKey"
             )
-            """DataDog API Key. Found in the DataDog dashboard. Required if "notifications.typeName" : "DATADOG".
+            """DataDog API Key. Found in the DataDog dashboard.
+Required if `"notifications.typeName" : "DATADOG"`.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
-            """Number of minutes to wait after an alert condition is detected before sending out the first notification.
+            """Number of minutes to wait after an alert condition is
+detected before sending out the first notification.
             """
 
             email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
-            """Email address to which to send notification. Required if "notifications.typeName" : "EMAIL".
+            """Email address to which to send notification.
+Required if `"notifications.typeName" : "EMAIL"`.
             """
 
             email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
-            """Determines if email notifications should be sent. Required if:
+            """Determines if email notifications should be sent.
+Required if:
 
-"notifications.typeName" : "GROUP"
-
-"notifications.typeName" : "USER"
+- `"notifications.typeName" : "GROUP"`
+- `"notifications.typeName" : "USER"`
             """
 
             interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
-            """Number of minutes to wait between successive notifications for unacknowledged alerts that are not resolved.
+            """Number of minutes to wait between successive notifications
+for unacknowledged alerts that are not resolved.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
                 default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
-            """Microsoft Teams channel incoming webhook URL. Required if "notifications.typeName" : "MICROSOFT_TEAMS".
+            """Microsoft Teams channel incoming webhook URL.
+Required if `"notifications.typeName" : "MICROSOFT_TEAMS"`.
 
-When you view or edit the alert for a webhook notification, the URL appears partially redacted, and the secret appears completely redacted.
+When you view or edit the alert for a webhook
+notification, the URL appears partially redacted, and the
+secret appears completely redacted.
             """
 
             mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
-            """Mobile number to send SMS messages to. Required if "notifications.typeName" : "SMS".
+            """Mobile number to send SMS messages to.
+Required if `"notifications.typeName" : "SMS"`.
             """
 
             notification_token: Optional[str] = Field(
                 default=None, serialization_alias="notificationToken"
             )
-            """A HipChat API token. Required if "notifications.typeName" : "HIP_CHAT". If the token later becomes invalid, Ops Manager sends an email to the Project owner and eventually removes the token.
+            """A HipChat API token.
+Required if `"notifications.typeName" : "HIP_CHAT"`.
+If the token later becomes invalid, Ops Manager sends an email to
+the Project owner and eventually removes the token.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             role: Optional[str] = Field(default=None, serialization_alias="role")
-            """Ops Manager role in current Project. Required if "notifications.typeName" : "GROUP".
+            """Ops Manager role in current Project.
+Required if `"notifications.typeName" : "GROUP"`.
             """
 
             room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
-            """HipChat room name. Required if "notifications.typeName" : "HIP_CHAT".
+            """HipChat room name.
+Required if `"notifications.typeName" : "HIP_CHAT"`.
             """
 
             service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
-            """PagerDuty integration key. Required if "notifications.typeName" : "PAGER_DUTY".
+            """PagerDuty integration key.
+Required if `"notifications.typeName" : "PAGER_DUTY"`.
 
-After you create a third-party integration that requires an API or integration key, the key appears partially redacted when you:
+After you create a third-party integration that requires an API or
+integration key, the key appears partially redacted when you:
 
-View or edit the alert through the UI.
-
-Query the third-party integration settings through the API.
+- View or edit the alert through the UI.
+- Query the third-party integration settings through the API.
             """
 
             sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
-            """Flag indicating SMS notifications must be sent. Required if:
+            """Flag indicating SMS notifications must be sent.
+Required if:
 
-"notifications.typeName" : "GROUP"
-
-"notifications.typeName" : "USER"
+- `"notifications.typeName" : "GROUP"`
+- `"notifications.typeName" : "USER"`
             """
 
             team_id: Optional[str] = Field(default=None, serialization_alias="teamId")
@@ -1635,65 +1416,77 @@ Query the third-party integration settings through the API.
             )
             """Type of alert notification. Accepted values are:
 
-DATADOG
-
-EMAIL
-
-GROUP (Project)
-
-HIPCHAT
-
-ORG
-
-PAGER_DUTY
-
-SLACK
-
-SMS (Twilio integration must be configured)
-
-USER
-
-WEBHOOK
+- `DATADOG`
+- `EMAIL`
+- `GROUP` (Project)
+- `HIPCHAT`
+- `ORG`
+- `PAGER_DUTY`
+- `SLACK`
+- `SMS` ([Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
+- `USER`
+- `WEBHOOK`
             """
 
             username: Optional[str] = Field(default=None, serialization_alias="username")
-            """Name of an Ops Manager user to which to send notifications. Specify a user in the Project that owns the alert configuration. Required if "notifications.typeName" : "USER".
+            """Name of an Ops Manager user to which to send notifications.
+Specify a user in the Project that owns the alert
+configuration.
+Required if `"notifications.typeName" : "USER"`.
             """
 
             webhook_body_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookBodyTemplate"
             )
-            """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for the body content of webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookHeadersTemplate"
             )
-            """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for custom headers to include in webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
-            """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
+            """A value used to authenticate with the Webhook that accepts
+and forwards the notification. You can explicitly declare
+a secret only in a request that has both:
 
-A notifications.typeName of WEBHOOK
+- A `notifications.typeName` of `WEBHOOK`
+- An explicitly declared `notifications.webhookURL`
 
-An explicitly declared notifications.webhookURL
+You can configure a `webhookSecret` for a default
+`webhookURL` only either on the
+[Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services)
+page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
-You can configure a webhookSecret for a default webhookURL only either on the Integrations page, or with the Integrations API.
+To explicitly declare a `webhookURL` without a
+`webhookSecret`, omit this field.
 
-To explicitly declare a webhookURL without a webhookSecret, omit this field.
-
-After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
+After creating a webhook notification, the URL is
+partially redacted when you view or edit the alert, and the
+secret is completely redacted.
             """
 
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set either on the Integrations page, or with the Integrations API.
+            """URL for the webhook that triggers this notification. If you do not
+explicitly declare a `webhookUrl`, your request will use
+the default `webhookUrl` set either on the
+[Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services)
+page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
-After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
+After creating a webhook notification, the URL is
+partially redacted when you view or edit the alert, and the
+secret is completely redacted.
             """
 
         notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
-        """Notifications to send when an alert condition is detected.
+        """Notifications to send when an alert condition is
+detected.
         """
 
         class ThresholdParams(BaseModel):
@@ -1702,11 +1495,11 @@ After creating a webhook notification, the URL is partially redacted when you vi
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against the threshold value.
+            """Operator to apply when checking the current metric value
+against the threshold value.
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
@@ -1714,11 +1507,11 @@ LESS_THAN
             """
 
         threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
-        """Threshold that will cause an alert to be triggered. Required if:
+        """Threshold that will cause an alert to be triggered.
+Required if:
 
-"eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"
-
-"eventTypeName" : TOO_MANY_UNHEALTHY_MEMBERS
+- `"eventTypeName" : "TOO_FEW_HEALTHY_MEMBERS"`
+- `"eventTypeName" : TOO_MANY_UNHEALTHY_MEMBERS`
         """
 
     def update(

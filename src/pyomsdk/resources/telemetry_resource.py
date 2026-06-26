@@ -21,7 +21,8 @@ class TelemetryResource(BaseResource):
         ### Endpoint:
         `GET /collection/details`
         ### Description
-        Retrieve telemetry collection status and configuration details for your Ops Manager installation.
+        Retrieve telemetry collection status and configuration details for your
+        Ops Manager installation.
         """
         return self._request(
             "GET",
@@ -35,7 +36,7 @@ class TelemetryResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         enabled: bool = Field(serialization_alias="enabled")
-        """Set to true to enable telemetry, or false to disable telemetry.
+        """Set to `true` to enable telemetry, or `false` to disable telemetry.
         """
 
     def toggle_telemetry_status(

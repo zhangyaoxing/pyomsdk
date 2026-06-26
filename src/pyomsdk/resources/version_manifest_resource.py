@@ -15,7 +15,8 @@ class VersionManifestResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve(
@@ -29,7 +30,8 @@ class VersionManifestResource(BaseResource):
         ### Endpoint:
         `GET /unauth/versionManifest`
         ### Description
-        Use this resource to retrieve the version manifest that Ops Manager is configured to use.
+        Use this resource to retrieve the version manifest that Ops Manager is
+        configured to use.
         """
         return self._request(
             "GET",
@@ -43,7 +45,8 @@ class VersionManifestResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def update(
@@ -57,7 +60,8 @@ class VersionManifestResource(BaseResource):
         ### Endpoint:
         `PUT /versionManifest`
         ### Description
-        Use this resource to upload the latest version manifest from MongoDB, Inc.
+        Use this resource to upload the latest version manifest from
+        MongoDB, Inc.
         """
         return self._request(
             "PUT",

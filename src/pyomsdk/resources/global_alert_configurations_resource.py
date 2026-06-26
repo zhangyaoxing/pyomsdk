@@ -15,18 +15,24 @@ class GlobalAlertConfigurationsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(serialization_alias="GLOBAL-ALERT-CONFIG-ID")
-        """Unique identifier of the global alert configuration for which you want to retrieve open alerts.
+        """Unique identifier of the global alert configuration for which you
+want to retrieve open alerts.
         """
 
     class GetAllOpenAlertsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -38,7 +44,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_open_alerts(
@@ -53,7 +60,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         ### Endpoint:
         `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts`
         ### Description
-        Retrieve all open alerts triggered by a global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        Retrieve all open alerts triggered by a global alert configuration
+        identified by its `GLOBAL-ALERT-CONFIG-ID`.
         """
         return self._request(
             "GET",
@@ -67,36 +75,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -107,23 +104,34 @@ Expected response body
         """
 
         event_type_name: EventTypeName = Field(serialization_alias="eventTypeName")
-        """Type of event for which this alert configuration triggers an alert.
+        """Type of event for which this alert configuration triggers
+an alert.
 
-To review the types of events that generate alerts, see Alert Types.
+To review the types of events that generate alerts, see
+[Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see Audit Events.
+For a complete list of events included in the Ops Manager audit log, see
+[Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
 
         for_all_groups: bool = Field(serialization_alias="forAllGroups")
-        """Toggle that specifies whether the global alert configuration applies to all groups. Also affects whether you can use the tags array to target the configuration to specific groups.
+        """Toggle that specifies whether the global alert configuration
+applies to all groups. Also affects whether you can use the
+`tags` array to target the configuration to specific groups.
 
-If true, the configuration applies to all groups. You can target the alert configuration to specific groups through the tags array.
+If `true`, the configuration applies to all groups. You can
+target the alert configuration to specific groups through the
+`tags` array.
 
-If false, the configuration applies only to the groups specified in the groupIds array. You must specify at least one project in the groupIds array. You can't use the tags array for this alert configuration.
+If `false`, the configuration applies only to the groups
+specified in the `groupIds` array. You must specify at
+least one project in the `groupIds` array. You can't use the
+`tags` array for this alert configuration.
         """
 
         group_ids: Optional[list[str]] = Field(default=None, serialization_alias="groupIds")
-        """IDs of the groups to which this alert configuration applies. This field applies only if forAllGroups is set to false.
+        """IDs of the groups to which this alert configuration applies.
+This field applies only if `forAllGroups` is set to `false`.
         """
 
         class MatchersParams(BaseModel):
@@ -134,31 +142,22 @@ If false, the configuration applies only to the groups specified in the groupIds
             )
             """Name of the field in the target object on which to match.
 
-Host alerts support these fields:
+- Host alerts support these fields:
 
-HOSTNAME
+  - `HOSTNAME`
+  - `PORT`
+  - `HOSTNAME_AND_PORT`
+  - `REPLICA_SET_NAME`
+  - `TYPE_NAME`
+- Replica set alerts support these fields:
 
-PORT
+  - `REPLICA_SET_NAME`
+  - `SHARD_NAME`
+  - `CLUSTER_NAME`
+- Sharded cluster alerts support these fields:
 
-HOSTNAME_AND_PORT
-
-REPLICA_SET_NAME
-
-TYPE_NAME
-
-Replica set alerts support these fields:
-
-REPLICA_SET_NAME
-
-SHARD_NAME
-
-CLUSTER_NAME
-
-Sharded cluster alerts support these fields:
-
-CLUSTER_NAME
-
-SHARD_NAME
+  - `CLUSTER_NAME`
+  - `SHARD_NAME`
 
 All other types of alerts do not support matchers.
             """
@@ -168,223 +167,234 @@ All other types of alerts do not support matchers.
             )
             """Operator to test the field's value. Accepted values are:
 
-EQUALS
-
-NOT_EQUALS
-
-CONTAINS
-
-NOT_CONTAINS
-
-STARTS_WITH
-
-ENDS_WITH
-
-REGEX
+- `EQUALS`
+- `NOT_EQUALS`
+- `CONTAINS`
+- `NOT_CONTAINS`
+- `STARTS_WITH`
+- `ENDS_WITH`
+- `REGEX`
             """
 
             value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
-If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
+If `matchers.fieldName` is set to `TYPE_NAME`, you can match on
+the following values:
 
-PRIMARY
-
-SECONDARY
-
-STANDALONE
-
-CONFIG
-
-MONGOS
+- `PRIMARY`
+- `SECONDARY`
+- `STANDALONE`
+- `CONFIG`
+- `MONGOS`
             """
 
         matchers: Optional[list[MatchersParams]] = Field(
             default=None, serialization_alias="matchers"
         )
-        """Rules to apply when matching an object against this global alert configuration. Ops Manager only checks entities that match all these rules for an alert condition.
+        """Rules to apply when matching an object against this global alert
+configuration. Ops Manager only checks entities that match *all* these
+rules for an alert condition.
 
-You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
+You can filter using the `matchers` array only when the
+`eventTypeName` specifies an event for a host, replica set, or
+sharded cluster.
         """
 
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            """Name of the metric to check. Supports the same values as the metricName field of the globalAlerts resource. For a list of possible values, see Measurement Types for Global Alerts.
+            """Name of the metric to check. Supports the same values as the
+`metricName` field of the `globalAlerts` resource. For a list
+of possible values, see
+[Measurement Types for Global Alerts.](/docs/ops-manager/current/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
             """
 
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
-            """This is set to AVERAGE and computes the current metric value as an average.
+            """This is set to `AVERAGE` and computes the current metric value
+as an average.
             """
 
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against metricThreshold.threshold. Possible values are:
+            """Operator to apply when checking the current metric value
+against `metricThreshold.threshold`. Possible values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
-            """Threshold value outside of which this alert configuration triggers an alert.
+            """Threshold value outside of which this alert configuration
+triggers an alert.
             """
 
             units: Optional[Unit] = Field(default=None, serialization_alias="units")
-            """Units for metricThreshold.threshold. The units depend on the type of metric.
+            """Units for `metricThreshold.threshold`. The units depend on
+the type of metric.
 
 Accepted values are:
 
-RAW
+- `RAW`
+- `BITS`
+- `BYTES`
+- `KILOBITS`
+- `KILOBYTES`
+- `MEGABITS`
+- `MEGABYTES`
+- `GIGABITS`
+- `GIGABYTES`
+- `TERABYTES`
+- `PETABYTES`
+- `MILLISECONDS`
+- `SECONDS`
+- `MINUTES`
+- `HOURS`
+- `DAYS`
 
-BITS
-
-BYTES
-
-KILOBITS
-
-KILOBYTES
-
-MEGABITS
-
-MEGABYTES
-
-GIGABITS
-
-GIGABYTES
-
-TERABYTES
-
-PETABYTES
-
-MILLISECONDS
-
-SECONDS
-
-MINUTES
-
-HOURS
-
-DAYS
-
-For example, a metric that measures memory consumption can use BYTES, while a metric that measures time can use HOURS.
+For example, a metric that measures memory consumption can use `BYTES`,
+while a metric that measures time can use `HOURS`.
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
             default=None, serialization_alias="metricThreshold"
         )
-        """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to OUTSIDE_METRIC_THRESHOLD.
+        """Threshold that causes this alert configuration to trigger
+an alert. Only required if `eventTypeName` is set to
+`OUTSIDE_METRIC_THRESHOLD`.
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
-            """Slack API token or Bot token. Only accepted for SLACK notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
+            """Slack API token or Bot token. Only accepted for `SLACK`
+notifications. If the token later becomes invalid, Ops Manager sends an
+email to the project owner and removes the token.
             """
 
             channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
-            """Slack channel name. Only accepted for SLACK notifications.
+            """Slack channel name. Only accepted for `SLACK` notifications.
             """
 
             delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
-            """Number of minutes to wait after an alert condition is detected before Ops Manager sends out the first notification.
+            """Number of minutes to wait after an alert condition is
+detected before Ops Manager sends out the first notification.
             """
 
             email_address: Optional[Any] = Field(default=None, serialization_alias="emailAddress")
-            """Email address to which to send notification. Only accepted for EMAIL notifications.
+            """Email address to which to send notification. Only accepted for
+`EMAIL` notifications.
             """
 
             email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
-            """Toggle specifying whether Ops Manager sends email notifications. Only accepted for GROUP and USER notifications.
+            """Toggle specifying whether Ops Manager sends email notifications.
+Only accepted for `GROUP` and `USER` notifications.
             """
 
             interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
-            """Number of minutes to wait between successive notifications for unacknowledged, unresolved alerts that this alert configuration triggers.
+            """Number of minutes to wait between successive notifications
+for unacknowledged, unresolved alerts that this alert
+configuration triggers.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
                 default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
-            """Microsoft Teams channel incoming webhook URL. Only accepted for MICROSOFT_TEAMS notifications.
+            """Microsoft Teams channel incoming webhook URL. Only accepted
+for `MICROSOFT_TEAMS` notifications.
             """
 
             notification_token: Optional[str] = Field(
                 default=None, serialization_alias="notificationToken"
             )
-            """HipChat API token. Only accepted for HIP_CHAT notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
+            """HipChat API token. Only accepted for `HIP_CHAT` notifications.
+If the token later becomes invalid, Ops Manager sends an email to the
+project owner and removes the token.
             """
 
             room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
-            """HipChat room name. Only accepted for HIP_CHAT notifications.
+            """HipChat room name. Only accepted for `HIP_CHAT` notifications.
             """
 
             service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
-            """PagerDuty integration key. Only accepted for PAGER_DUTY notifications. If the key later becomes invalid, Ops Manager sends an email to the project owner and removes the key.
+            """PagerDuty integration key. Only accepted for `PAGER_DUTY`
+notifications. If the key later becomes invalid, Ops Manager sends an
+email to the project owner and removes the key.
 
-All new PagerDuty keys use their Events API v2. If you have an Events API v1 key, you can continue to use that key with Ops Manager.
+All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgw-events-api-v2-overview).
+If you have an Events API v1 key, you can continue to use that key
+with Ops Manager.
             """
 
             sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
-            """Toggle specifying whether Ops Manager sends SMS notifications. Only accepted for GROUP and USER notifications.
+            """Toggle specifying whether Ops Manager sends SMS notifications. Only
+accepted for `GROUP` and `USER` notifications.
             """
 
             type_name: NotificationsTypeName = Field(serialization_alias="typeName")
-            """Type of alert notification this alert configuration triggers. Accepted values are:
+            """Type of alert notification this alert configuration triggers.
+Accepted values are:
 
-ADMIN
-
-GROUP
-
-USER
-
-EMAIL
-
-SMS (Available only if Ops Manager is configured for Twilio integration.)
-
-HIPCHAT
-
-SLACK
-
-PAGER_DUTY
+- `ADMIN`
+- `GROUP`
+- `USER`
+- `EMAIL`
+- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
+- `HIPCHAT`
+- `SLACK`
+- `PAGER_DUTY`
             """
 
             username: Optional[str] = Field(default=None, serialization_alias="username")
-            """Name of the Ops Manager user to whom to send notifications. Only present for USER notifications.
+            """Name of the Ops Manager user to whom to send notifications. Only
+present for `USER` notifications.
             """
 
             webhook_body_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookBodyTemplate"
             )
-            """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for the body content of webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookHeadersTemplate"
             )
-            """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for custom headers to include in webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
-            """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
+            """A value used to authenticate with the Webhook that accepts and
+forwards the notification. You can explicitly declare a secret
+only in a request that has both:
 
-A notifications.typeName of WEBHOOK
+- A `notifications.typeName` of `WEBHOOK`
+- An explicitly declared `notifications.webhookURL`
 
-An explicitly declared notifications.webhookURL
+You can configure a `webhookSecret` for a default
+`webhookURL` only with the
+[Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
 
-You can configure a webhookSecret for a default webhookURL only with the Admin Console.
-
-To explicitly declare a webhookURL without a webhookSecret, omit this field.
+To explicitly declare a `webhookURL` without a
+`webhookSecret`, omit this field.
             """
 
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set in the Admin Console.
+            """URL for the webhook that triggers this notification. If you do
+not explicitly declare a `webhookUrl`, your request will use
+the default `webhookUrl` set in the
+[Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
             """
 
         notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
-        """Notifications Ops Manager sends when it detects an alert that this alert configuration describes.
+        """Notifications Ops Manager sends when it detects an alert that this
+alert configuration describes.
         """
 
         tags: Optional[list[str]] = Field(default=None, serialization_alias="tags")
@@ -397,27 +407,29 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against threshold.threshold. Accepted values are:
+            """Operator to apply when checking the current metric value against
+`threshold.threshold`. Accepted values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
-            """Threshold value outside of which this alert configuration triggers an alert.
+            """Threshold value outside of which this alert configuration
+triggers an alert.
             """
 
         threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
-        """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to one of the following values:
+        """Threshold that causes this alert configuration to trigger
+an alert. Only required if `eventTypeName` is set to one of the
+following values:
 
-TOO_FEW_HEALTHY_MEMBERS
-
-TOO_MANY_UNHEALTHY_MEMBERS
+- `TOO_FEW_HEALTHY_MEMBERS`
+- `TOO_MANY_UNHEALTHY_MEMBERS`
         """
 
         type_name: Optional[str] = Field(default=None, serialization_alias="typeName")
-        """This field is deprecated and will be ignored.
+        """*This field is deprecated and will be ignored.*
         """
 
     def create(
@@ -446,43 +458,33 @@ TOO_MANY_UNHEALTHY_MEMBERS
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(serialization_alias="GLOBAL-ALERT-CONFIG-ID")
-        """Unique identifier of the global alert configuration you want to delete.
+        """Unique identifier of the global alert configuration you want to
+delete.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -511,11 +513,16 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -527,7 +534,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -555,43 +563,33 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(serialization_alias="GLOBAL-ALERT-CONFIG-ID")
-        """Unique identifier of the global alert configuration you want to retrieve.
+        """Unique identifier of the global alert configuration you want to
+retrieve.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -606,7 +604,8 @@ Expected response body
         ### Endpoint:
         `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
         ### Description
-        Retrieve one global alert configuration by its GLOBAL-ALERT-CONFIG-ID.
+        Retrieve one global alert configuration by its
+        `GLOBAL-ALERT-CONFIG-ID`.
         """
         return self._request(
             "GET",
@@ -652,54 +651,44 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(serialization_alias="GLOBAL-ALERT-CONFIG-ID")
-        """Unique identifier of the global alert configuration you want to enable or disable.
+        """Unique identifier of the global alert configuration you want to
+enable or disable.
         """
 
     class EnableOrDisableQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class EnableOrDisableBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         enabled: bool = Field(serialization_alias="enabled")
-        """Toggle indicating whether the global alert configuration is enabled or disabled:
+        """Toggle indicating whether the global alert configuration is
+enabled or disabled:
 
-Set to true to enable a global alert configuration.
-
-Set to false to disable a global alert configuration.
+- Set to `true` to enable a global alert configuration.
+- Set to `false` to disable a global alert configuration.
         """
 
     def enable_or_disable(
@@ -715,7 +704,8 @@ Set to false to disable a global alert configuration.
         ### Endpoint:
         `PATCH /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
         ### Description
-        Enable or disable one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        Enable or disable one global alert configuration identified by its
+        `GLOBAL-ALERT-CONFIG-ID`.
         """
         return self._request(
             "PATCH",
@@ -729,43 +719,33 @@ Set to false to disable a global alert configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         global_alert_config_id: str = Field(serialization_alias="GLOBAL-ALERT-CONFIG-ID")
-        """Unique identifier of the global alert configuration you want to update.
+        """Unique identifier of the global alert configuration you want to
+update.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -776,23 +756,34 @@ Expected response body
         """
 
         event_type_name: EventTypeName = Field(serialization_alias="eventTypeName")
-        """Type of event for which this alert configuration triggers an alert.
+        """Type of event for which this alert configuration triggers
+an alert.
 
-To review the types of events that generate alerts, see Alert Types.
+To review the types of events that generate alerts, see
+[Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see Audit Events.
+For a complete list of events included in the Ops Manager audit log, see
+[Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
 
         for_all_groups: bool = Field(serialization_alias="forAllGroups")
-        """Toggle that specifies whether the global alert configuration applies to all groups. Also affects whether you can use the tags array to target the configuration to specific groups.
+        """Toggle that specifies whether the global alert configuration
+applies to all groups. Also affects whether you can use the
+`tags` array to target the configuration to specific groups.
 
-If true, the configuration applies to all groups. You can target the alert configuration to specific groups through the tags array.
+If `true`, the configuration applies to all groups. You can
+target the alert configuration to specific groups through the
+`tags` array.
 
-If false, the configuration applies only to the groups specified in the groupIds array. You must specify at least one project in the groupIds array. You can't use the tags array for this alert configuration.
+If `false`, the configuration applies only to the groups
+specified in the `groupIds` array. You must specify at
+least one project in the `groupIds` array. You can't use the
+`tags` array for this alert configuration.
         """
 
         group_ids: Optional[list[str]] = Field(default=None, serialization_alias="groupIds")
-        """IDs of the groups to which this alert configuration applies. This field applies only if forAllGroups is set to false.
+        """IDs of the groups to which this alert configuration applies.
+This field applies only if `forAllGroups` is set to `false`.
         """
 
         class MatchersParams(BaseModel):
@@ -803,31 +794,22 @@ If false, the configuration applies only to the groups specified in the groupIds
             )
             """Name of the field in the target object on which to match.
 
-Host alerts support these fields:
+- Host alerts support these fields:
 
-HOSTNAME
+  - `HOSTNAME`
+  - `PORT`
+  - `HOSTNAME_AND_PORT`
+  - `REPLICA_SET_NAME`
+  - `TYPE_NAME`
+- Replica set alerts support these fields:
 
-PORT
+  - `REPLICA_SET_NAME`
+  - `SHARD_NAME`
+  - `CLUSTER_NAME`
+- Sharded cluster alerts support these fields:
 
-HOSTNAME_AND_PORT
-
-REPLICA_SET_NAME
-
-TYPE_NAME
-
-Replica set alerts support these fields:
-
-REPLICA_SET_NAME
-
-SHARD_NAME
-
-CLUSTER_NAME
-
-Sharded cluster alerts support these fields:
-
-CLUSTER_NAME
-
-SHARD_NAME
+  - `CLUSTER_NAME`
+  - `SHARD_NAME`
 
 All other types of alerts do not support matchers.
             """
@@ -837,223 +819,234 @@ All other types of alerts do not support matchers.
             )
             """Operator to test the field's value. Accepted values are:
 
-EQUALS
-
-NOT_EQUALS
-
-CONTAINS
-
-NOT_CONTAINS
-
-STARTS_WITH
-
-ENDS_WITH
-
-REGEX
+- `EQUALS`
+- `NOT_EQUALS`
+- `CONTAINS`
+- `NOT_CONTAINS`
+- `STARTS_WITH`
+- `ENDS_WITH`
+- `REGEX`
             """
 
             value: Optional[MatcherValue] = Field(default=None, serialization_alias="value")
             """Value to test with the specified operator.
 
-If matchers.fieldName is set to TYPE_NAME, you can match on the following values:
+If `matchers.fieldName` is set to `TYPE_NAME`, you can match on
+the following values:
 
-PRIMARY
-
-SECONDARY
-
-STANDALONE
-
-CONFIG
-
-MONGOS
+- `PRIMARY`
+- `SECONDARY`
+- `STANDALONE`
+- `CONFIG`
+- `MONGOS`
             """
 
         matchers: Optional[list[MatchersParams]] = Field(
             default=None, serialization_alias="matchers"
         )
-        """Rules to apply when matching an object against this global alert configuration. Ops Manager only checks entities that match all these rules for an alert condition.
+        """Rules to apply when matching an object against this global alert
+configuration. Ops Manager only checks entities that match *all* these
+rules for an alert condition.
 
-You can filter using the matchers array only when the eventTypeName specifies an event for a host, replica set, or sharded cluster.
+You can filter using the `matchers` array only when the
+`eventTypeName` specifies an event for a host, replica set, or
+sharded cluster.
         """
 
         class MetricThresholdParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            """Name of the metric to check. Supports the same values as the metricName field of the globalAlerts resource. For a list of possible values, see Measurement Types for Global Alerts.
+            """Name of the metric to check. Supports the same values as the
+`metricName` field of the `globalAlerts` resource. For a list
+of possible values, see
+[Measurement Types for Global Alerts.](/docs/ops-manager/current/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
             """
 
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
-            """This is set to AVERAGE and computes the current metric value as an average.
+            """This is set to `AVERAGE` and computes the current metric value
+as an average.
             """
 
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against metricThreshold.threshold. Possible values are:
+            """Operator to apply when checking the current metric value
+against `metricThreshold.threshold`. Possible values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
-            """Threshold value outside of which this alert configuration triggers an alert.
+            """Threshold value outside of which this alert configuration
+triggers an alert.
             """
 
             units: Optional[Unit] = Field(default=None, serialization_alias="units")
-            """Units for metricThreshold.threshold. The units depend on the type of metric.
+            """Units for `metricThreshold.threshold`. The units depend on
+the type of metric.
 
 Accepted values are:
 
-RAW
+- `RAW`
+- `BITS`
+- `BYTES`
+- `KILOBITS`
+- `KILOBYTES`
+- `MEGABITS`
+- `MEGABYTES`
+- `GIGABITS`
+- `GIGABYTES`
+- `TERABYTES`
+- `PETABYTES`
+- `MILLISECONDS`
+- `SECONDS`
+- `MINUTES`
+- `HOURS`
+- `DAYS`
 
-BITS
-
-BYTES
-
-KILOBITS
-
-KILOBYTES
-
-MEGABITS
-
-MEGABYTES
-
-GIGABITS
-
-GIGABYTES
-
-TERABYTES
-
-PETABYTES
-
-MILLISECONDS
-
-SECONDS
-
-MINUTES
-
-HOURS
-
-DAYS
-
-For example, a metric that measures memory consumption can use BYTES, while a metric that measures time can use HOURS.
+For example, a metric that measures memory consumption can use `BYTES`,
+while a metric that measures time can use `HOURS`.
             """
 
         metric_threshold: Optional[MetricThresholdParams] = Field(
             default=None, serialization_alias="metricThreshold"
         )
-        """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to OUTSIDE_METRIC_THRESHOLD.
+        """Threshold that causes this alert configuration to trigger
+an alert. Only required if `eventTypeName` is set to
+`OUTSIDE_METRIC_THRESHOLD`.
         """
 
         class NotificationsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             api_token: Optional[str] = Field(default=None, serialization_alias="apiToken")
-            """Slack API token or Bot token. Only accepted for SLACK notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
+            """Slack API token or Bot token. Only accepted for `SLACK`
+notifications. If the token later becomes invalid, Ops Manager sends an
+email to the project owner and removes the token.
             """
 
             channel_name: Optional[str] = Field(default=None, serialization_alias="channelName")
-            """Slack channel name. Only accepted for SLACK notifications.
+            """Slack channel name. Only accepted for `SLACK` notifications.
             """
 
             delay_min: Optional[int] = Field(default=None, serialization_alias="delayMin")
-            """Number of minutes to wait after an alert condition is detected before Ops Manager sends out the first notification.
+            """Number of minutes to wait after an alert condition is
+detected before Ops Manager sends out the first notification.
             """
 
             email_address: Optional[Any] = Field(default=None, serialization_alias="emailAddress")
-            """Email address to which to send notification. Only accepted for EMAIL notifications.
+            """Email address to which to send notification. Only accepted for
+`EMAIL` notifications.
             """
 
             email_enabled: Optional[bool] = Field(default=None, serialization_alias="emailEnabled")
-            """Toggle specifying whether Ops Manager sends email notifications. Only accepted for GROUP and USER notifications.
+            """Toggle specifying whether Ops Manager sends email notifications.
+Only accepted for `GROUP` and `USER` notifications.
             """
 
             interval_min: Optional[int] = Field(default=None, serialization_alias="intervalMin")
-            """Number of minutes to wait between successive notifications for unacknowledged, unresolved alerts that this alert configuration triggers.
+            """Number of minutes to wait between successive notifications
+for unacknowledged, unresolved alerts that this alert
+configuration triggers.
             """
 
             microsoft_teams_webhook_url: Optional[str] = Field(
                 default=None, serialization_alias="microsoftTeamsWebhookUrl"
             )
-            """Microsoft Teams channel incoming webhook URL. Only accepted for MICROSOFT_TEAMS notifications.
+            """Microsoft Teams channel incoming webhook URL. Only accepted
+for `MICROSOFT_TEAMS` notifications.
             """
 
             notification_token: Optional[str] = Field(
                 default=None, serialization_alias="notificationToken"
             )
-            """HipChat API token. Only accepted for HIP_CHAT notifications. If the token later becomes invalid, Ops Manager sends an email to the project owner and removes the token.
+            """HipChat API token. Only accepted for `HIP_CHAT` notifications.
+If the token later becomes invalid, Ops Manager sends an email to the
+project owner and removes the token.
             """
 
             room_name: Optional[str] = Field(default=None, serialization_alias="roomName")
-            """HipChat room name. Only accepted for HIP_CHAT notifications.
+            """HipChat room name. Only accepted for `HIP_CHAT` notifications.
             """
 
             service_key: Optional[str] = Field(default=None, serialization_alias="serviceKey")
-            """PagerDuty integration key. Only accepted for PAGER_DUTY notifications. If the key later becomes invalid, Ops Manager sends an email to the project owner and removes the key.
+            """PagerDuty integration key. Only accepted for `PAGER_DUTY`
+notifications. If the key later becomes invalid, Ops Manager sends an
+email to the project owner and removes the key.
 
-All new PagerDuty keys use their Events API v2. If you have an Events API v1 key, you can continue to use that key with Ops Manager.
+All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgw-events-api-v2-overview).
+If you have an Events API v1 key, you can continue to use that key
+with Ops Manager.
             """
 
             sms_enabled: Optional[bool] = Field(default=None, serialization_alias="smsEnabled")
-            """Toggle specifying whether Ops Manager sends SMS notifications. Only accepted for GROUP and USER notifications.
+            """Toggle specifying whether Ops Manager sends SMS notifications. Only
+accepted for `GROUP` and `USER` notifications.
             """
 
             type_name: NotificationsTypeName = Field(serialization_alias="typeName")
-            """Type of alert notification this alert configuration triggers. Accepted values are:
+            """Type of alert notification this alert configuration triggers.
+Accepted values are:
 
-ADMIN
-
-GROUP
-
-USER
-
-EMAIL
-
-SMS (Available only if Ops Manager is configured for Twilio integration.)
-
-HIPCHAT
-
-SLACK
-
-PAGER_DUTY
+- `ADMIN`
+- `GROUP`
+- `USER`
+- `EMAIL`
+- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
+- `HIPCHAT`
+- `SLACK`
+- `PAGER_DUTY`
             """
 
             username: Optional[str] = Field(default=None, serialization_alias="username")
-            """Name of the Ops Manager user to whom to send notifications. Only present for USER notifications.
+            """Name of the Ops Manager user to whom to send notifications. Only
+present for `USER` notifications.
             """
 
             webhook_body_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookBodyTemplate"
             )
-            """Template for the body content of webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for the body content of webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_headers_template: Optional[str] = Field(
                 default=None, serialization_alias="webhookHeadersTemplate"
             )
-            """Template for custom headers to include in webhook notifications. You can use variables in the template that are replaced with alert-specific values when the notification is sent.
+            """Template for custom headers to include in webhook notifications.
+You can use variables in the template that are replaced with
+alert-specific values when the notification is sent.
             """
 
             webhook_secret: Optional[str] = Field(default=None, serialization_alias="webhookSecret")
-            """A value used to authenticate with the Webhook that accepts and forwards the notification. You can explicitly declare a secret only in a request that has both:
+            """A value used to authenticate with the Webhook that accepts and
+forwards the notification. You can explicitly declare a secret
+only in a request that has both:
 
-A notifications.typeName of WEBHOOK
+- A `notifications.typeName` of `WEBHOOK`
+- An explicitly declared `notifications.webhookURL`
 
-An explicitly declared notifications.webhookURL
+You can configure a `webhookSecret` for a default
+`webhookURL` only with the
+[Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
 
-You can configure a webhookSecret for a default webhookURL only with the Admin Console.
-
-To explicitly declare a webhookURL without a webhookSecret, omit this field.
+To explicitly declare a `webhookURL` without a
+`webhookSecret`, omit this field.
             """
 
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            """URL for the webhook that triggers this notification. If you do not explicitly declare a webhookUrl, your request will use the default webhookUrl set in the Admin Console.
+            """URL for the webhook that triggers this notification. If you do
+not explicitly declare a `webhookUrl`, your request will use
+the default `webhookUrl` set in the
+[Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
             """
 
         notifications: list[NotificationsParams] = Field(serialization_alias="notifications")
-        """Notifications Ops Manager sends when it detects an alert that this alert configuration describes.
+        """Notifications Ops Manager sends when it detects an alert that this
+alert configuration describes.
         """
 
         tags: Optional[list[str]] = Field(default=None, serialization_alias="tags")
@@ -1066,27 +1059,29 @@ To explicitly declare a webhookURL without a webhookSecret, omit this field.
             operator: Optional[ThresholdOperator] = Field(
                 default=None, serialization_alias="operator"
             )
-            """Operator to apply when checking the current metric value against threshold.threshold. Accepted values are:
+            """Operator to apply when checking the current metric value against
+`threshold.threshold`. Accepted values are:
 
-GREATER_THAN
-
-LESS_THAN
+- `GREATER_THAN`
+- `LESS_THAN`
             """
 
             threshold: Optional[int] = Field(default=None, serialization_alias="threshold")
-            """Threshold value outside of which this alert configuration triggers an alert.
+            """Threshold value outside of which this alert configuration
+triggers an alert.
             """
 
         threshold: Optional[ThresholdParams] = Field(default=None, serialization_alias="threshold")
-        """Threshold that causes this alert configuration to trigger an alert. Only required if eventTypeName is set to one of the following values:
+        """Threshold that causes this alert configuration to trigger
+an alert. Only required if `eventTypeName` is set to one of the
+following values:
 
-TOO_FEW_HEALTHY_MEMBERS
-
-TOO_MANY_UNHEALTHY_MEMBERS
+- `TOO_FEW_HEALTHY_MEMBERS`
+- `TOO_MANY_UNHEALTHY_MEMBERS`
         """
 
         type_name: Optional[str] = Field(default=None, serialization_alias="typeName")
-        """This field is deprecated and will be ignored.
+        """*This field is deprecated and will be ignored.*
         """
 
     def update(
@@ -1102,7 +1097,8 @@ TOO_MANY_UNHEALTHY_MEMBERS
         ### Endpoint:
         `PUT /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
         ### Description
-        Update one global alert configuration identified by its GLOBAL-ALERT-CONFIG-ID.
+        Update one global alert configuration identified by its
+        `GLOBAL-ALERT-CONFIG-ID`.
         """
         return self._request(
             "PUT",

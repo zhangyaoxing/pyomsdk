@@ -15,22 +15,29 @@ class ServerUsageResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that owns the diagnostics archive.
+        """Unique identifier of the project that owns the diagnostics
+archive.
         """
 
     class GetDiagnosticArchiveQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         age_limit: Optional[int] = Field(default=7, serialization_alias="ageLimit")
-        """Length of time in days to retrieve entries for the diagnostic archive.
+        """Length of time in days to retrieve entries for the diagnostic
+archive.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -42,9 +49,11 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         minutes: Optional[int] = Field(default=1440, serialization_alias="minutes")
-        """Time range of the diagnostic archive, beginning at the specified number of minutes in the past and ending at the present time.
+        """Time range of the diagnostic archive, beginning at the specified
+number of minutes in the past and ending at the present time.
 
-For example, to retrieve a diagnostic archive with data for the last 10 minutes, specify minutes=10 in your request .
+For example, to retrieve a diagnostic archive with data for the last 10 minutes,
+specify `minutes=10` in your request .
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
@@ -52,11 +61,14 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         size_limit: Optional[int] = Field(default=50000000, serialization_alias="sizeLimit")
-        """Maximum file size of each file in the diagnostic archive expressed in the number of characters. This includes values up to the nearest whole value to this limit.
+        """Maximum file size of each file in the diagnostic archive
+expressed in the number of characters. This includes values up
+to the nearest whole value to this limit.
         """
 
     def get_diagnostic_archive(
@@ -71,7 +83,10 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
         ### Endpoint:
         `GET /groups/{PROJECT-ID}/diagnostics`
         ### Description
-        MongoDB engineers may request that Ops Manager administrators provide diagnostic archives for one project for debugging and troubleshooting. Project diagnostic archives also contain global system information about Ops Manager.
+        MongoDB engineers may request that Ops Manager administrators provide
+        diagnostic archives for one project for debugging and troubleshooting.
+        Project diagnostic archives also contain global system information
+        about Ops Manager.
         """
         return self._request(
             "GET",
@@ -87,32 +102,21 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -124,7 +128,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreatePhysicalHostBodyParams(BaseModel):
@@ -135,24 +140,23 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         server_type: ServerTypeName = Field(serialization_alias="serverType")
-        """Server Type of the physical host. You can set this to one of the following values:
+        """Server Type of the physical host. You can set this to one of the
+following values:
 
-DEV_SERVER
+- `DEV_SERVER`
+- `TEST_SERVER`
+- `PRODUCTION_SERVER`
+- `RAM_POOL`
 
-TEST_SERVER
-
-PRODUCTION_SERVER
-
-RAM_POOL
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
         """
 
         class VirtualHostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            """Unique identifier of the project into which Ops Manager places this virtual host.
+            """Unique identifier of the project into which Ops Manager places this
+virtual host.
             """
 
             hostname: Optional[str] = Field(default=None, serialization_alias="hostname")
@@ -189,52 +193,44 @@ To learn more, see MongoDB Usage Page.
         model_config = ConfigDict(populate_by_name=True)
 
         end_date: str = Field(serialization_alias="endDate")
-        """ISO 8601 when the report ends.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the report ends.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         file_format: str = Field(serialization_alias="fileFormat")
-        """Compression format of the resulting report. Ops Manager accepts zip or .tar.gz.
+        """Compression format of the resulting report. Ops Manager accepts
+**zip** or **.tar.gz**.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         redact: Optional[bool] = Field(default=True, serialization_alias="redact")
-        """Flag that indicates whether the response should censor all IP addresses, hostnames, organization names, and project names in the report.
+        """Flag that indicates whether the response should censor all IP
+addresses, hostnames, organization names, and project names in
+the report.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """ISO 8601 when the report starts.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the report starts.
         """
 
     def get_global_usage_report_archive(
@@ -248,7 +244,8 @@ Expected response body
         ### Endpoint:
         `GET /usage/report`
         ### Description
-        Retrieve a compressed report, in zip or .tar.gz format, of server usage in a given timeframe.
+        Retrieve a compressed report, in **zip** or **.tar.gz** format, of
+        server usage in a given timeframe.
         """
         return self._request(
             "GET",
@@ -264,32 +261,21 @@ Expected response body
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -301,7 +287,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def generate_usage_snapshot(
@@ -315,7 +302,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         ### Endpoint:
         `POST /usage/dailyCapture`
         ### Description
-        If MongoDB Usage UI is set to On, you can trigger this endpoint which tells Ops Manager to:
+        If [`MongoDB Usage UI`](/docs/ops-manager/current/reference/config/ui-settings/#mongodb-setting-MongoDB-Usage-UI) is set to On, you can
+        trigger this endpoint which tells Ops Manager to:
         """
         return self._request(
             "POST",
@@ -331,32 +319,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -368,7 +345,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retrieve_all_physical_hosts(
@@ -403,36 +381,25 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_server_type_in_one_organization(
@@ -461,43 +428,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="groupId")
-        """Unique identifier of the project associated with the desired hosts.
+        """Unique identifier of the project associated with the
+desired hosts.
         """
 
     class GetDefaultServerTypeQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_default_server_type(
@@ -535,32 +492,21 @@ Expected response body
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -572,7 +518,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def retreive_one_physical_host(
@@ -601,43 +548,32 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique identifier of the organization associated with the desired hosts.
+        """Unique identifier of the organization associated with the
+desired hosts.
         """
 
     class ListHostAssignmentsInOneOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end_date: str = Field(serialization_alias="endDate")
-        """Date in ISO 8601 date format when the list of host assignments ends.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments ends.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         items_per_page: int = Field(default=100, serialization_alias="itemsPerPage")
@@ -645,15 +581,17 @@ Expected response body
         """
 
         page_num: int = Field(serialization_alias="pageNum")
-        """Starting group of host assignments to return. The group size is defined by itemsPerPage. This value starts with 1.
+        """Starting group of host assignments to return. The group size is
+defined by **itemsPerPage**. This value starts with 1.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Date in ISO 8601 date format when the list of host assignments starts.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments starts.
         """
 
     def list_host_assignments_in_one_organization(
@@ -682,43 +620,32 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="groupId")
-        """Unique identifier of the project associated with the desired hosts.
+        """Unique identifier of the project associated with the
+desired hosts.
         """
 
     class ListHostAssignmentsInOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end_date: str = Field(serialization_alias="endDate")
-        """Date in ISO 8601 date format when the list of host assignments ends.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments ends.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         items_per_page: int = Field(default=100, serialization_alias="itemsPerPage")
@@ -726,15 +653,17 @@ Expected response body
         """
 
         page_num: int = Field(serialization_alias="pageNum")
-        """Starting group of host assignments to return. The group size is defined by itemsPerPage. This value starts with 1.
+        """Starting group of host assignments to return. The group size is
+defined by **itemsPerPage**. This value starts with 1.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Date in ISO 8601 date format when the list of host assignments starts.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments starts.
         """
 
     def list_host_assignments_in_one_project(
@@ -763,36 +692,24 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         end_date: str = Field(serialization_alias="endDate")
-        """Date in ISO 8601 date format when the list of host assignments ends.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments ends.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         items_per_page: int = Field(default=100, serialization_alias="itemsPerPage")
@@ -800,15 +717,17 @@ Expected response body
         """
 
         page_num: int = Field(serialization_alias="pageNum")
-        """Starting group of host assignments to return. The group size is defined by itemsPerPage. This value starts with 1.
+        """Starting group of host assignments to return. The group size is
+defined by **itemsPerPage**. This value starts with 1.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Date in ISO 8601 date format when the list of host assignments starts.
+        """Date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date format when the list of host assignments starts.
         """
 
     def list_host_assignments(
@@ -845,32 +764,21 @@ Expected response body
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -882,7 +790,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def remove_physical_host(
@@ -918,36 +827,25 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateServerTypeForOneOrganizationBodyParams(BaseModel):
@@ -961,15 +859,12 @@ Expected response body
 
 You can set this to one of the following values:
 
-Dev Server
+- **Dev Server**
+- **Test Server**
+- **Production Server**
+- **Ram Pool**
 
-Test Server
-
-Production Server
-
-Ram Pool
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
             name: ServerTypeName = Field(serialization_alias="name")
@@ -977,15 +872,12 @@ To learn more, see MongoDB Usage Page.
 
 You can set this to one of the following values:
 
-DEV_SERVER
+- `DEV_SERVER`
+- `TEST_SERVER`
+- `PRODUCTION_SERVER`
+- `RAM_POOL`
 
-TEST_SERVER
-
-PRODUCTION_SERVER
-
-RAM_POOL
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
         server_type: ServerTypeParams = Field(serialization_alias="serverType")
@@ -1019,43 +911,33 @@ To learn more, see MongoDB Usage Page.
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="groupId")
-        """Unique identifier of the project associated with the desired hosts.
+        """Unique identifier of the project associated with the
+desired hosts.
         """
 
     class UpdateDefaultServerTypeQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateDefaultServerTypeBodyParams(BaseModel):
@@ -1069,15 +951,12 @@ Expected response body
 
 You can set this to one of the following values:
 
-Dev Server
+- **Dev Server**
+- **Test Server**
+- **Production Server**
+- **Ram Pool**
 
-Test Server
-
-Production Server
-
-Ram Pool
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
             name: ServerTypeName = Field(serialization_alias="name")
@@ -1085,15 +964,12 @@ To learn more, see MongoDB Usage Page.
 
 You can set this to one of the following values:
 
-DEV_SERVER
+- `DEV_SERVER`
+- `TEST_SERVER`
+- `PRODUCTION_SERVER`
+- `RAM_POOL`
 
-TEST_SERVER
-
-PRODUCTION_SERVER
-
-RAM_POOL
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
         server_type: ServerTypeParams = Field(serialization_alias="serverType")
@@ -1136,32 +1012,21 @@ To learn more, see MongoDB Usage Page.
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -1173,7 +1038,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdatePhysicalHostBodyParams(BaseModel):
@@ -1184,24 +1050,23 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         server_type: ServerTypeName = Field(serialization_alias="serverType")
-        """Server Type of the physical host. You can set this to one of the following values:
+        """Server Type of the physical host. You can set this to one of the
+following values:
 
-DEV_SERVER
+- `DEV_SERVER`
+- `TEST_SERVER`
+- `PRODUCTION_SERVER`
+- `RAM_POOL`
 
-TEST_SERVER
-
-PRODUCTION_SERVER
-
-RAM_POOL
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
         """
 
         class VirtualHostsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            """Unique identifier of the project into which Ops Manager places this virtual host.
+            """Unique identifier of the project into which Ops Manager places this
+virtual host.
             """
 
             hostname: Optional[str] = Field(default=None, serialization_alias="hostname")
@@ -1246,36 +1111,25 @@ To learn more, see MongoDB Usage Page.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateServerTypeBodyParams(BaseModel):
@@ -1289,15 +1143,12 @@ Expected response body
 
 You can set this to one of the following values:
 
-Dev Server
+- **Dev Server**
+- **Test Server**
+- **Production Server**
+- **Ram Pool**
 
-Test Server
-
-Production Server
-
-Ram Pool
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
             name: ServerTypeName = Field(serialization_alias="name")
@@ -1305,15 +1156,12 @@ To learn more, see MongoDB Usage Page.
 
 You can set this to one of the following values:
 
-DEV_SERVER
+- `DEV_SERVER`
+- `TEST_SERVER`
+- `PRODUCTION_SERVER`
+- `RAM_POOL`
 
-TEST_SERVER
-
-PRODUCTION_SERVER
-
-RAM_POOL
-
-To learn more, see MongoDB Usage Page.
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
 
         server_type: ServerTypeParams = Field(serialization_alias="serverType")

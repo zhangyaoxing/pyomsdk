@@ -17,21 +17,14 @@ class IntegrationSettingsResource(BaseResource):
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
-DATADOG
-
-HIP_CHAT
-
-PAGER_DUTY
-
-SLACK
-
-NEW_RELIC
-
-OPS_GENIE
-
-VICTOR_OPS
-
-WEBHOOK
+- `DATADOG`
+- `HIP_CHAT`
+- `PAGER_DUTY`
+- `SLACK`
+- `NEW_RELIC`
+- `OPS_GENIE`
+- `VICTOR_OPS`
+- `WEBHOOK`
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
@@ -42,11 +35,16 @@ WEBHOOK
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -58,7 +56,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -105,23 +104,17 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted values are:
+        """Third-party service identifier. Accepted
+values are:
 
-DATADOG
-
-HIP_CHAT
-
-PAGER_DUTY
-
-SLACK
-
-NEW_RELIC
-
-OPS_GENIE
-
-VICTOR_OPS
-
-WEBHOOK
+- `DATADOG`
+- `HIP_CHAT`
+- `PAGER_DUTY`
+- `SLACK`
+- `NEW_RELIC`
+- `OPS_GENIE`
+- `VICTOR_OPS`
+- `WEBHOOK`
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
@@ -132,11 +125,16 @@ WEBHOOK
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -148,7 +146,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -184,11 +183,16 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -200,7 +204,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def return_latest_prometheus_targets(
@@ -236,11 +241,16 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -252,7 +262,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_configurations(
@@ -281,23 +292,17 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted values are:
+        """Third-party service identifier. Accepted
+values are:
 
-DATADOG
-
-HIP_CHAT
-
-PAGER_DUTY
-
-SLACK
-
-NEW_RELIC
-
-OPS_GENIE
-
-VICTOR_OPS
-
-WEBHOOK
+- `DATADOG`
+- `HIP_CHAT`
+- `PAGER_DUTY`
+- `SLACK`
+- `NEW_RELIC`
+- `OPS_GENIE`
+- `VICTOR_OPS`
+- `WEBHOOK`
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
@@ -308,11 +313,16 @@ WEBHOOK
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -324,7 +334,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_configuration(
@@ -355,21 +366,14 @@ For endpoints that return a list of results, the content object is an envelope. 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
         """Third-party service identifier. Accepted values are:
 
-DATADOG
-
-HIP_CHAT
-
-PAGER_DUTY
-
-SLACK
-
-NEW_RELIC
-
-OPS_GENIE
-
-VICTOR_OPS
-
-WEBHOOK
+- `DATADOG`
+- `HIP_CHAT`
+- `PAGER_DUTY`
+- `SLACK`
+- `NEW_RELIC`
+- `OPS_GENIE`
+- `VICTOR_OPS`
+- `WEBHOOK`
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
@@ -380,11 +384,16 @@ WEBHOOK
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -396,7 +405,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):

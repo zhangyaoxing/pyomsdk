@@ -15,70 +15,68 @@ class S3OplogResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         accepted_tos: bool = Field(serialization_alias="acceptedTos")
-        """Flag that indicates whether or not you accepted the terms of service for using S3-compatible storage stores with Ops Manager. You must set this to true to create an S3-compatible storage store.
+        """Flag that indicates whether or not you accepted the terms of
+service for using S3-compatible storage stores with Ops Manager. You
+must set this to `true` to create an S3-compatible storage store.
 
-If you set this to false, Ops Manager returns an error. The error states that Ops Manager can't create the S3-compatible storage store.
+If you set this to `false`, Ops Manager returns an error. The error states
+that Ops Manager can't create the S3-compatible storage store.
         """
 
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether you can assign backup jobs to this data store.
+        """Flag that indicates whether you can assign backup jobs to this
+data store.
         """
 
         aws_access_key: Optional[str] = Field(default=None, serialization_alias="awsAccessKey")
-        """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
+        """AWS Access Key ID that can access the S3-compatible storage bucket specified in
+**s3BucketName**.
 
-If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
+If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to
+include **awsAccessKey**.
         """
 
         aws_secret_key: Optional[str] = Field(default=None, serialization_alias="awsSecretKey")
-        """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
+        """AWS Secret Access Key that can access the S3-compatible storage bucket
+specified in `<s3BucketName>`.
 
-If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
+If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to
+include **awsSecretKey**.
         """
 
         class CustomCertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             cert_string: Optional[str] = Field(default=None, serialization_alias="certString")
-            """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
+            """Contents of the Certificate Authority PEM file that comprise your
+Certificate Authority chain.
             """
 
             filename: Optional[str] = Field(default=None, serialization_alias="filename")
@@ -88,17 +86,23 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         custom_certificates: Optional[list[CustomCertificatesParams]] = Field(
             default=None, serialization_alias="customCertificates"
         )
-        """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.
+        """List of valid Certificate Authority certificates that apply to the
+associated S3-compatible storage bucket.
         """
 
         disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        """Flag that indicates whether the HTTP proxy should be used when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        """Flag that indicates whether the
+[HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/) should be used
+when connecting to S3-compatible storage. You don't need to set this value
+unless you configured Ops Manager to use the HTTP proxy.
         """
 
         encrypted_credentials: Optional[bool] = Field(
             default=None, serialization_alias="encryptedCredentials"
         )
-        """Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the credentialstool.
+        """Flag that indicates whether the username and password for this
+S3-compatible storage oplog store were encrypted using the
+[credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
 
         id: str = Field(serialization_alias="id")
@@ -106,69 +110,38 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Array of tags to manage which backup jobs Ops Manager can assign to which S3 oplog stores.
+        """Array of tags to manage which
+[backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
+S3 oplog stores.
 
-Setting these tags limits which backup jobs this S3-compatible storage oplog store can process. If omitted, this S3-compatible storage oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this S3-compatible storage oplog
+store can process. If omitted, this S3-compatible storage oplog store can only
+process backup jobs for projects that do not use labels to
+filter their jobs.
         """
 
         path_style_access_enabled: bool = Field(serialization_alias="pathStyleAccessEnabled")
         """Flag that indicates the style of this endpoint.
 
-Value
-	
-S3 Oplog Store Endpoint Style
-	
-Example
+| Value | S3 Oplog Store Endpoint Style | Example |
+| --- | --- | --- |
+| `true` | Path-style URL endpoint | `s3.amazonaws.com/<bucket>` |
+| `false` | Virtual-host-style URL endpoint | `<bucket>.s3.amazonaws.com` |
 
-
-
-true
-
-	
-
-Path-style URL endpoint
-
-	
-
-s3.amazonaws.com/<bucket>
-
-
-
-
-false
-
-	
-
-Virtual-host-style URL endpoint
-
-	
-
-<bucket>.s3.amazonaws.com
-
-To review the S3-compatible storage bucket URL conventions, see the AWS S3 documentation.
+To review the S3-compatible storage bucket URL conventions, see the
+[AWS S3 documentation.](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro)
         """
 
         s3_auth_method: Optional[S3AuthMethod] = Field(
             default=None, serialization_alias="s3AuthMethod"
         )
-        """Method used to authorize access to the S3-compatible storage bucket specified in s3BucketName.
+        """Method used to authorize access to the S3-compatible storage bucket specified in
+**s3BucketName**.
 
 Ops Manager accepts the following values:
 
-KEYS or None
-
-	
-
-Ops Manager uses awsAccessKey and awsSecretKey to authorize access to S3-compatible storage bucket specified in s3BucketName.
-
-
-
-
-IAM_ROLE
-
-	
-
-Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in s3BucketName. awsAccessKey and awsSecretKey fields are ignored. To learn more, see the AWS documentation
+| `KEYS` or None | Ops Manager uses **awsAccessKey** and **awsSecretKey** to authorize access to S3-compatible storage bucket specified in **s3BucketName**. |
+| `IAM_ROLE` | Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in **s3BucketName**. **awsAccessKey** and **awsSecretKey** fields are ignored. To learn more, see the [AWS documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role) |
         """
 
         s3_bucket_endpoint: str = Field(serialization_alias="s3BucketEndpoint")
@@ -180,7 +153,8 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """
 
         s3_max_connections: int = Field(serialization_alias="s3MaxConnections")
-        """Positive integer indicating the maximum number of connections to this S3-compatible storage oplog store.
+        """Positive integer indicating the maximum number of connections
+to this S3-compatible storage oplog store.
         """
 
         s3_region_override: Optional[str] = Field(
@@ -188,19 +162,26 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         )
         """Region where your S3-compatible storage bucket resides.
 
-Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn't support region scoping. Don't use this field with AWS S3 buckets.
+Use this field only if your S3-compatible storage store's
+**s3BucketEndpoint** doesn't support region scoping. Don't use
+this field with AWS S3 buckets.
         """
 
         sse_enabled: bool = Field(serialization_alias="sseEnabled")
-        """Flag that indicates whether this S3-compatible storage oplog store enables server-side encryption.
+        """Flag that indicates whether this S3-compatible storage oplog store enables
+[server-side encryption.](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html)
         """
 
         ssl: Optional[bool] = Field(default=None, serialization_alias="ssl")
-        """Flag that indicates whether this S3-compatible storage oplog store only accepts connections encrypted using TLS.
+        """Flag that indicates whether this S3-compatible storage oplog store only accepts
+connections encrypted using TLS.
         """
 
         uri: str = Field(serialization_alias="uri")
-        """Connection String that connects to the metadata database for this S3-compatible storage oplog store. This database stores the locations of the blocks in the S3-compatible storage bucket.
+        """[Connection String](https://www.mongodb.com/docs/manual/reference/connection-string/)
+that connects to the metadata database for this S3-compatible storage oplog
+store. This database stores the locations of the blocks in the
+S3-compatible storage bucket.
         """
 
         write_concern: Optional[WriteConcern] = Field(
@@ -210,15 +191,13 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
 
 Ops Manager accepts the following values:
 
-ACKNOWLEDGED
+- `ACKNOWLEDGED`
+- `W2`
+- `JOURNALED`
+- `MAJORITY`
 
-W2
-
-JOURNALED
-
-MAJORITY
-
-To learn about write acknowledgement levels in MongoDB, see Write Concern.
+To learn about write acknowledgement levels in MongoDB, see
+[Write Concern.](https://www.mongodb.com/docs/manual/reference/write-concern/)
         """
 
     def create(
@@ -254,36 +233,25 @@ To learn about write acknowledgement levels in MongoDB, see Write Concern.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -316,11 +284,16 @@ Expected response body
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -332,7 +305,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -367,36 +341,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_id(
@@ -432,70 +395,68 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         accepted_tos: bool = Field(serialization_alias="acceptedTos")
-        """Flag that indicates whether or not you accepted the terms of service for using S3-compatible storage stores with Ops Manager. You must set this to true to create an S3-compatible storage store.
+        """Flag that indicates whether or not you accepted the terms of
+service for using S3-compatible storage stores with Ops Manager. You
+must set this to `true` to create an S3-compatible storage store.
 
-If you set this to false, Ops Manager returns an error. The error states that Ops Manager can't create the S3-compatible storage store.
+If you set this to `false`, Ops Manager returns an error. The error states
+that Ops Manager can't create the S3-compatible storage store.
         """
 
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether you can assign backup jobs to this data store.
+        """Flag that indicates whether you can assign backup jobs to this
+data store.
         """
 
         aws_access_key: Optional[str] = Field(default=None, serialization_alias="awsAccessKey")
-        """AWS Access Key ID that can access the S3-compatible storage bucket specified in s3BucketName.
+        """AWS Access Key ID that can access the S3-compatible storage bucket specified in
+**s3BucketName**.
 
-If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsAccessKey.
+If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to
+include **awsAccessKey**.
         """
 
         aws_secret_key: Optional[str] = Field(default=None, serialization_alias="awsSecretKey")
-        """AWS Secret Access Key that can access the S3-compatible storage bucket specified in <s3BucketName>.
+        """AWS Secret Access Key that can access the S3-compatible storage bucket
+specified in `<s3BucketName>`.
 
-If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
+If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to
+include **awsSecretKey**.
         """
 
         class CustomCertificatesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             cert_string: Optional[str] = Field(default=None, serialization_alias="certString")
-            """Contents of the Certificate Authority PEM file that comprise your Certificate Authority chain.
+            """Contents of the Certificate Authority PEM file that comprise your
+Certificate Authority chain.
             """
 
             filename: Optional[str] = Field(default=None, serialization_alias="filename")
@@ -505,83 +466,58 @@ If "s3AuthMethod" : "IAM_ROLE", then you don't need to include awsSecretKey.
         custom_certificates: Optional[list[CustomCertificatesParams]] = Field(
             default=None, serialization_alias="customCertificates"
         )
-        """List of valid Certificate Authority certificates that apply to the associated S3-compatible storage bucket.
+        """List of valid Certificate Authority certificates that apply to the
+associated S3-compatible storage bucket.
         """
 
         disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        """Flag that indicates whether the HTTP proxy should be used when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        """Flag that indicates whether the
+[HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/) should be used
+when connecting to S3-compatible storage. You don't need to set this value
+unless you configured Ops Manager to use the HTTP proxy.
         """
 
         encrypted_credentials: Optional[bool] = Field(
             default=None, serialization_alias="encryptedCredentials"
         )
-        """Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the credentialstool.
+        """Flag that indicates whether the username and password for this S3-compatible storage
+oplog store were encrypted using the
+[credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Array of tags to manage which backup jobs Ops Manager can assign to which S3 oplog stores.
+        """Array of tags to manage which
+[backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
+S3 oplog stores.
 
-Setting these tags limits which backup jobs this S3-compatible storage oplog store can process. If omitted, this S3-compatible storage oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this S3-compatible storage oplog store
+can process. If omitted, this S3-compatible storage oplog store can only process
+backup jobs for projects that do not use labels to filter their
+jobs.
         """
 
         path_style_access_enabled: bool = Field(serialization_alias="pathStyleAccessEnabled")
         """Flag that indicates the style of this endpoint.
 
-Value
-	
-S3 Oplog Store Endpoint Style
-	
-Example
+| Value | S3 Oplog Store Endpoint Style | Example |
+| --- | --- | --- |
+| `true` | Path-style URL endpoint | `s3.amazonaws.com/<bucket>` |
+| `false` | Virtual-host-style URL endpoint | `<bucket>.s3.amazonaws.com` |
 
-
-
-true
-
-	
-
-Path-style URL endpoint
-
-	
-
-s3.amazonaws.com/<bucket>
-
-
-
-
-false
-
-	
-
-Virtual-host-style URL endpoint
-
-	
-
-<bucket>.s3.amazonaws.com
-
-To review the S3-compatible storage bucket URL conventions, see the AWS S3 documentation.
+To review the S3-compatible storage bucket URL conventions, see the
+[AWS S3 documentation.](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro)
         """
 
         s3_auth_method: Optional[S3AuthMethod] = Field(
             default=None, serialization_alias="s3AuthMethod"
         )
-        """Method used to authorize access to the S3-compatible storage bucket specified in s3BucketName.
+        """Method used to authorize access to the S3-compatible storage bucket specified in
+**s3BucketName**.
 
 Ops Manager accepts the following values:
 
-KEYS or None
-
-	
-
-Ops Manager uses awsAccessKey and awsSecretKey to authorize access to S3-compatible storage bucket specified in s3BucketName.
-
-
-
-
-IAM_ROLE
-
-	
-
-Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in s3BucketName. awsAccessKey and awsSecretKey fields are ignored. To learn more, see the AWS documentation
+| `KEYS` or None | Ops Manager uses **awsAccessKey** and **awsSecretKey** to authorize access to S3-compatible storage bucket specified in **s3BucketName**. |
+| `IAM_ROLE` | Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bucket specified in **s3BucketName**. **awsAccessKey** and **awsSecretKey** fields are ignored. To learn more, see the [AWS documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role) |
         """
 
         s3_bucket_endpoint: str = Field(serialization_alias="s3BucketEndpoint")
@@ -593,7 +529,8 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         """
 
         s3_max_connections: int = Field(serialization_alias="s3MaxConnections")
-        """Positive integer indicating the maximum number of connections to this S3-compatible storage oplog store.
+        """Positive integer indicating the maximum number of connections
+to this S3-compatible storage oplog store.
         """
 
         s3_region_override: Optional[str] = Field(
@@ -601,19 +538,24 @@ Ops Manager uses an AWS IAM role to authorize access to S3-compatible storage bu
         )
         """Region where your S3-compatible storage bucket resides.
 
-Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn't support region scoping. Don't use this field with AWS S3 buckets.
+Use this field only if your S3-compatible storage store's
+**s3BucketEndpoint** doesn't support region scoping. Don't use
+this field with AWS S3 buckets.
         """
 
         sse_enabled: bool = Field(serialization_alias="sseEnabled")
-        """Flag indicating whether this S3-compatible storage oplog store enables server-side encryption.
+        """Flag indicating whether this S3-compatible storage oplog store enables
+[server-side encryption.](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html)
         """
 
         ssl: Optional[bool] = Field(default=None, serialization_alias="ssl")
-        """Flag that indicates whether this S3-compatible storage oplog store only accepts connections encrypted using TLS.
+        """Flag that indicates whether this S3-compatible storage oplog store only accepts
+connections encrypted using TLS.
         """
 
         uri: str = Field(serialization_alias="uri")
-        """Comma-separated list of hosts in the <hostname:port> format that can access this S3-compatible storage oplog store.
+        """Comma-separated list of hosts in the `<hostname:port>` format
+that can access this S3-compatible storage oplog store.
         """
 
         write_concern: Optional[WriteConcern] = Field(
@@ -623,15 +565,13 @@ Use this field only if your S3-compatible storage store's s3BucketEndpoint doesn
 
 Ops Manager accepts the following values:
 
-ACKNOWLEDGED
+- `ACKNOWLEDGED`
+- `W2`
+- `JOURNALED`
+- `MAJORITY`
 
-W2
-
-JOURNALED
-
-MAJORITY
-
-To learn about write acknowledgement levels in MongoDB, see Write Concern.
+To learn about write acknowledgement levels in MongoDB, see
+[Write Concern.](https://www.mongodb.com/docs/manual/reference/write-concern/)
         """
 
     def update(

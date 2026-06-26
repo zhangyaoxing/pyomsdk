@@ -15,36 +15,25 @@ class FileSystemStoreResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
@@ -53,7 +42,8 @@ Expected response body
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether this file system store can be assigned backup jobs.
+        """Flag that indicates whether this file system store can be
+assigned backup jobs.
         """
 
         id: str = Field(serialization_alias="id")
@@ -61,41 +51,56 @@ Expected response body
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Tags to manage which backup jobs Ops Manager can assign to which file system stores.
+        """Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
+can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
-Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this file system
+store can process. If omitted, this file system store can only
+process backup jobs for projects that do not use labels to
+filter their jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
+        """Positive, non-zero integer that expresses how much backup work
+this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
+snapshot store. Set this option only if you're using more than
+one snapshot store.
 
-To learn more about Load Factor, see Edit One Existing Blockstore.
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="mmapv1CompressionSetting"
         )
-        """Compression setting if you use the MMAPv1 storage engine for your snaphots.
+        """Compression setting if you use the MMAPv1 storage engine for
+your snaphots.
 
-Ops Manager accepts NONE or GZIP.
+Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores
+this setting.
 
-IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you edit your deployment's configuration to change your storage engine to WiredTiger Storage Engine, Ops Manager restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
+If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/)
+to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager
+restarts the MongoDB processes.
         """
 
         store_path: str = Field(serialization_alias="storePath")
-        """Location where file system-based backups are stored on the file system store host.
+        """Location where file system-based backups are stored on the
+file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="wtCompressionSetting"
         )
-        """Compression setting if you use the WiredTiger storage engine for your snaphots.
+        """Compression setting if you use the WiredTiger storage engine for
+your snaphots.
 
-Ops Manager accepts NONE or GZIP.
+Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores
+this setting.
         """
 
     def create(
@@ -124,43 +129,33 @@ If the MongoDB runs FCV 4.2 or later, MongoDB Atlas ignores this setting.
         model_config = ConfigDict(populate_by_name=True)
 
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        """Unique identifier that labels this file system store configuration.
+        """Unique identifier that labels this file system store
+configuration.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -193,11 +188,16 @@ Expected response body
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -209,7 +209,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -244,36 +245,25 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_id(
@@ -302,43 +292,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        """Unique identifier that labels this file system store configuration.
+        """Unique identifier that labels this file system store
+configuration.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -347,45 +327,63 @@ Expected response body
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether this file system store can be assigned backup jobs.
+        """Flag that indicates whether this file system store can be
+assigned backup jobs.
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Tags to manage which backup jobs Ops Manager can assign to which file system stores.
+        """Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
+can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
-Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
+Setting these tags limits which backup jobs this file system
+store can process. If omitted, this file system store can only
+process backup jobs for projects that do not use labels to
+filter their jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Positive, non-zero integer that expresses how much backup work this snapshot store should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
+        """Positive, non-zero integer that expresses how much backup work
+this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
+snapshot store. Set this option only if you're using more than
+one snapshot store.
 
-To learn more about Load Factor, see Edit One Existing Blockstore.
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
 
         mmapv1_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="mmapv1CompressionSetting"
         )
-        """Compression setting if you use the MMAPv1 storage engine for your snaphots.
+        """Compression setting if you use the MMAPv1 storage engine for
+your snaphots.
 
-Ops Manager accepts NONE or GZIP. Ops Manager sets this value to NONE by default.
+Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
+`NONE` by default.
 
-If the MongoDB runs FCV 4.2 or later, Ops Manager ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores
+this setting.
 
-IMPORTANT: MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you edit your deployment's configuration to change your storage engine to WiredTiger Storage Engine, Ops Manager restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
+If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/)
+to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager
+restarts the MongoDB processes.
         """
 
         store_path: str = Field(serialization_alias="storePath")
-        """Location where file system-based backups are stored on the file system store host.
+        """Location where file system-based backups are stored on the
+file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="wtCompressionSetting"
         )
-        """Compression setting if you use the WiredTiger storage engine for your snaphots.
+        """Compression setting if you use the WiredTiger storage engine for
+your snaphots.
 
-Ops Manager accepts NONE or GZIP. Ops Manager sets this value to GZIP by default.
+Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
+`GZIP` by default.
 
-If the MongoDB runs FCV 4.2 or later, Ops Manager ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores
+this setting.
         """
 
     def update(

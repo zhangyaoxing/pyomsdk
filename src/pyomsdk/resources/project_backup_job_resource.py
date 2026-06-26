@@ -15,11 +15,16 @@ class ProjectBackupJobResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -31,7 +36,8 @@ For endpoints that return a list of results, the content object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        """Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -59,43 +65,33 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """The unique identifier that represents this project and its backup job configuration.
+        """The unique identifier that represents this project and its backup
+job configuration.
         """
 
     class GetByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_by_id(
@@ -124,43 +120,33 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """The unique identifier that represents this project and its backup job configuration.
+        """The unique identifier that represents this project and its
+backup job configuration.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        """Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        """Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
@@ -172,101 +158,127 @@ Expected response body
             head_root_directory: Optional[str] = Field(
                 default=None, serialization_alias="headRootDirectory"
             )
-            """Optional. The root-relative path of the head directory on this Backup Daemon host.
+            """*Optional.* The root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
+on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
             machine: Optional[str] = Field(default=None, serialization_alias="machine")
-            """The host address for one Backup Daemon host.
+            """The host address for one [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
         daemon_filter: Optional[list[DaemonFilterParams]] = Field(
             default=None, serialization_alias="daemonFilter"
         )
-        """Optional. An array of pairs of Backup Daemon hosts and their head directories that to which this project's backup jobs are limited. If omitted, all available Backup Daemons are used.
+        """*Optional.* An array of pairs of [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) hosts and
+their [head directories](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) that to which
+this project's backup jobs are limited. If omitted, all available
+Backup Daemons are used.
         """
 
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        """The unique identifier that represents this project and its backup job configuration.
+        """The unique identifier that represents this project and its
+backup job configuration.
         """
 
         kmip_client_cert_password: Optional[str] = Field(
             default=None, serialization_alias="kmipClientCertPassword"
         )
-        """Optional. The password that encrypts the KMIP client certificate.
+        """*Optional.* The password that encrypts the
+KMIP
+client certificate.
         """
 
         kmip_client_cert_path: Optional[str] = Field(
             default=None, serialization_alias="kmipClientCertPath"
         )
-        """Optional. The root-relative path on the Backup Daemon host that stores the KMIP client certificate.
+        """*Optional.* The root-relative path on the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
+host that stores the
+KMIP
+client certificate.
         """
 
         label_filter: Optional[list[str]] = Field(default=None, serialization_alias="labelFilter")
-        """Optional. An array of tags that limits which Backup Daemons and snapshot stores can process backup jobs for this project.
+        """*Optional.* An array of tags that limits which
+[Backup Daemons](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon) and
+[snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) can process
+[backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) for this project.
 
-If a snapshot store or any Backup Daemon has the same labels set as this labelFilter, they can process backup jobs for this project.
+If a snapshot store or any Backup Daemon has the same `labels`
+set as this `labelFilter`, they can process backup jobs for
+this project.
 
-If omitted, the project's backup jobs can use any available Backup Daemon or snapshot store.
+If omitted, the project's backup jobs can use any available
+Backup Daemon or snapshot store.
         """
 
         class OplogStoreFilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(default=None, serialization_alias="id")
-            """Unique identifier representing an oplog store that may be used with this project's backup jobs.
+            """Unique identifier representing an
+[oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) that may be used
+with this project's backup jobs.
 
-Retrieve the id of the oplog store you want to use with Get All Oplog Configurations.
+Retrieve the `id` of the oplog store you want to use with
+[Get All Oplog Configurations.](/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoConfigs/get-all-oplog-configurations/#std-label-get-all-oplog-configs-response)
             """
 
             type: Optional[OplogStoreFilterType] = Field(default=None, serialization_alias="type")
-            """Type of oplog store to use.
+            """Type of [oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) to use.
 
 The accepted values are:
 
-oplogStore
-
-s3OplogStore
-
-thirdPartyOplogStore
+- `oplogStore`
+- `s3OplogStore`
+- `thirdPartyOplogStore`
             """
 
         oplog_store_filter: Optional[list[OplogStoreFilterParams]] = Field(
             default=None, serialization_alias="oplogStoreFilter"
         )
-        """Optional. An array of unique identifiers representing Oplog stores that may be used with this project's backup jobs. If omitted, all available oplog stores may be used.
+        """*Optional.* An array of unique identifiers representing
+[Oplog stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) that may
+be used with this project's backup jobs. If omitted, all
+available oplog stores may be used.
         """
 
         class SnapshotStoreFilterParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(default=None, serialization_alias="id")
-            """Optional. The unique identifier representing specific snapshot stores that can be used with this project's backup jobs.
+            """*Optional.* The unique identifier representing specific
+[snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) that can be
+used with this project's backup jobs.
             """
 
             type: Optional[SnapshotStoreFilterType] = Field(
                 default=None, serialization_alias="type"
             )
-            """Optional. The type of the specific snapshot store given as snapshotStoreFilter.id.
+            """*Optional.* The type of the specific snapshot store given as
+`snapshotStoreFilter.id`.
 
 The accepted values for this option are:
 
-s3blockstore
-
-blockstore
-
-fileSystemStore
+- `s3blockstore`
+- `blockstore`
+- `fileSystemStore`
             """
 
         snapshot_store_filter: Optional[list[SnapshotStoreFilterParams]] = Field(
             default=None, serialization_alias="snapshotStoreFilter"
         )
-        """Optional. Array of unique identifiers representing specific snapshot stores and their types that can be used with this project's backup jobs. If omitted, all available snapshot stores are used.
+        """*Optional.* Array of unique identifiers representing specific
+[snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) and their types that can
+be used with this project's backup jobs. If omitted, all
+available snapshot stores are used.
         """
 
         sync_store_filter: Optional[list[str]] = Field(
             default=None, serialization_alias="syncStoreFilter"
         )
-        """Optional. An array of sync store filters that can be used with this project's backup jobs. If omitted, all available sync stores are used.
+        """*Optional.* An array of sync store filters that can be used with
+this project's backup jobs. If omitted, all available sync stores
+are used.
         """
 
     def update(

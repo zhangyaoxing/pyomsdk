@@ -15,7 +15,11 @@ class OrganizationApiKeysResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+whose API keys you want to retrieve. Use the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint
+to retrieve all organizations to which the authenticated
+user has access.
         """
 
     class CreateQueryParams(BaseModel):
@@ -24,32 +28,21 @@ class OrganizationApiKeysResource(BaseResource):
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -61,59 +54,31 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        """Description of the API key. Must be between 1 and 250 characters in length.
+        """Description of the API key. Must be between 1 and 250
+characters in length.
         """
 
         roles: Optional[list[OrgRole]] = Field(default=None, serialization_alias="roles")
-        """List of roles that the API key should have. There must be at least one role listed, and all roles must be valid for an Organization.
+        """List of roles that the API key should have. There must
+be at least one role listed, and all roles must be valid for an
+Organization.
 
 Organization roles include:
 
-Role Value in API
-	
-Role
-
-
-
-ORG_OWNER
-
-	
-
-Organization Owner
-
-
-
-
-ORG_MEMBER
-
-	
-
-Organization Member
-
-
-
-
-ORG_GROUP_CREATOR
-
-	
-
-Organization Project Creator
-
-
-
-
-ORG_READ_ONLY
-
-	
-
-Organization Read Only
+| Role Value in API | Role |
+| --- | --- |
+| `ORG_OWNER` | [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) |
+| `ORG_MEMBER` | [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member) |
+| `ORG_GROUP_CREATOR` | [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator) |
+| `ORG_READ_ONLY` | [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only) |
         """
 
     def create(
@@ -156,32 +121,21 @@ Organization Read Only
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -193,7 +147,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -222,7 +177,11 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+whose API keys you want to retrieve. Use the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
+endpoint to retrieve all organizations to which the
+authenticated user has access.
         """
 
     class GetAllQueryParams(BaseModel):
@@ -231,32 +190,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -268,7 +216,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
@@ -297,11 +246,19 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """The unique identifier for the API key you want to retrieve. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        """The unique identifier for the [API key](/docs/ops-manager/current/core/api/)
+you want to retrieve. Request the
+[/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+endpoint to retrieve all API keys for the specified
+organization to which the authenticated user has access.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+whose API keys you want to retrieve. Use the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint
+to retrieve all organizations to which the authenticated
+user has access.
         """
 
     class GetOneQueryParams(BaseModel):
@@ -310,32 +267,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -347,7 +293,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -376,11 +323,19 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key you want to update. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
+        """Unique identifier for the API key you want to update. Request
+the
+[/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-keys/)
+endpoint to retrieve all API keys to which the authenticated
+user has access for the specified organization.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization whose API keys you want to retrieve. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+whose API keys you want to retrieve. Use the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
+endpoint to retrieve all organizations to which the
+authenticated user has access.
         """
 
     class UpdateQueryParams(BaseModel):
@@ -389,32 +344,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -426,59 +370,35 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
+        """Description of the key. This parameter is optional; however, the
+request must contain either a `desc` parameter or a `roles`
+parameter. If `desc` is provided, it must be between 1 and 250
+characters long.
         """
 
         roles: Optional[list[OrgRole]] = Field(default=None, serialization_alias="roles")
-        """List of roles that the API key should have. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If roles is provided, there must be at least one role listed, and all roles must be valid for an Organization.
+        """List of roles that the API key should have. This parameter is
+optional; however, the request must contain either a `desc`
+parameter or a `roles` parameter. If `roles` is provided,
+there must be at least one role listed, and all roles must be
+valid for an Organization.
 
 Organization roles include:
 
-Role Value in API
-	
-Role
-
-
-
-ORG_OWNER
-
-	
-
-Organization Owner
-
-
-
-
-ORG_MEMBER
-
-	
-
-Organization Member
-
-
-
-
-ORG_GROUP_CREATOR
-
-	
-
-Organization Project Creator
-
-
-
-
-ORG_READ_ONLY
-
-	
-
-Organization Read Only
+| Role Value in API | Role |
+| --- | --- |
+| `ORG_OWNER` | [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) |
+| `ORG_MEMBER` | [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member) |
+| `ORG_GROUP_CREATOR` | [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator) |
+| `ORG_READ_ONLY` | [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only) |
         """
 
     def update(

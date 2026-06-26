@@ -15,11 +15,16 @@ class OrganizationAccessListsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the Organization API Key for which you want to create a new access list entry.
+        """Unique identifier for the Organization API Key for which you
+want to create a new access list entry.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization to which the target API Key belongs. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+to which the target API Key belongs. Use the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint
+to retrieve all organizations to which the authenticated
+user has access.
         """
 
     class CreateEntriesQueryParams(BaseModel):
@@ -28,32 +33,21 @@ class OrganizationAccessListsResource(BaseResource):
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -65,18 +59,23 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateEntriesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         cidr_block: Optional[str] = Field(default=None, serialization_alias="cidrBlock")
-        """Access list entry in CIDR notation to be added for the API key. This field is mutually exclusive with the ipAddress field.
+        """Access list entry in CIDR notation to be added for the
+API key. This field is mutually exclusive with the
+`ipAddress` field.
         """
 
         ip_address: Optional[str] = Field(default=None, serialization_alias="ipAddress")
-        """IP address to be added to the access list for the API key. This field is mutually exclusive with the cidrBlock field.
+        """IP address to be added to the access list for the
+API key. This field is mutually exclusive with the
+`cidrBlock` field.
         """
 
     def create_entries(
@@ -106,15 +105,25 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
-        """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
+        """The IP or CIDR address.
+If the entry includes a subnet mask, such as `192.0.2.0/24`,
+use the URL-encoded value `%2F` for the forward slash `/`.
         """
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        """Unique identifier for the API key for which you want to
+retrieve access list entries. Request the
+[/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+endpoint to retrieve all API keys for the specified
+organization to which the authenticated user has access.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization to which the target API key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+to which the target API key belongs. Request the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
+endpoint to retrieve all organizations to which the
+authenticated user has access.
         """
 
     class DeleteEntryQueryParams(BaseModel):
@@ -123,32 +132,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -160,7 +158,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete_entry(
@@ -189,11 +188,19 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API Key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        """Unique identifier for the API Key for which you want to
+retrieve access list entries. Request the
+[/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+endpoint to retrieve all API keys for the specified
+organization to which the authenticated user has access.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization to which the target API Key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+to which the target API Key belongs. Request the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint
+to retrieve all organizations to which the authenticated
+user has access.
         """
 
     class GetAllEntriesQueryParams(BaseModel):
@@ -202,32 +209,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -239,7 +235,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_entries(
@@ -268,15 +265,25 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         access_list_entry: str = Field(serialization_alias="ACCESS-LIST-ENTRY")
-        """The IP or CIDR address. If the entry includes a subnet mask, such as 192.0.2.0/24, use the URL-encoded value %2F for the forward slash /.
+        """The IP or CIDR address.
+If the entry includes a subnet mask, such as `192.0.2.0/24`,
+use the URL-encoded value `%2F` for the forward slash `/`.
         """
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API Key for which you want to retrieve access list entries. Request the /orgs/{ORG-ID}/apiKeys endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        """Unique identifier for the API Key for which you want to
+retrieve access list entries. Request the
+[/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+endpoint to retrieve all API keys for the specified
+organization to which the authenticated user has access.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique identifier for the organization to which the target API Key belongs. Request the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
+        """Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+to which the target API Key belongs. Request the
+[/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
+endpoint to retrieve all organizations to which the
+authenticated user has access.
         """
 
     class GetOneEntryQueryParams(BaseModel):
@@ -285,32 +292,21 @@ For endpoints that return a list of results, the results object is an envelope. 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         """Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
@@ -322,7 +318,8 @@ For endpoints that return a list of results, the results object is an envelope. 
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        """Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_entry(
