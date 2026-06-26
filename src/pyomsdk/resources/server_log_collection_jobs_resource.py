@@ -1,4 +1,4 @@
-"""Auto-generated client for ServerLogCollectionJobsResource resource.
+r"""Auto-generated client for ServerLogCollectionJobsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class ServerLogCollectionJobsResource(BaseResource):
-    """Client for ServerLogCollectionJobsResource resource."""
+    r"""Client for ServerLogCollectionJobsResource resource."""
 
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 Ops Manager server log collection job. To find a job ID, call
 [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
@@ -24,7 +24,7 @@ Ops Manager server log collection job. To find a job ID, call
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -41,7 +41,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -50,7 +50,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete an Ops Manager Server Log Collection Job
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-delete-one/)
@@ -74,7 +74,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 Ops Manager server log collection job. To find a job ID, call
 [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
@@ -83,7 +83,7 @@ Ops Manager server log collection job. To find a job ID, call
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -100,7 +100,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -109,7 +109,7 @@ includes:
         path_params: DownloadLogsPathParams,
         query_params: Optional[DownloadLogsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Download Ops Manager Server Logs
         ### Document:
         [Download Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-download-job/)
@@ -134,27 +134,27 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether to wrap the response in an
+        r"""Flag that indicates whether to wrap the response in an
 envelope. Some API clients cannot access the HTTP
 response headers or status code. To remediate this, set
 `envelope=true` in the query.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
-        """Flag that indicates whether to include all child jobs in
+        r"""Flag that indicates whether to include all child jobs in
 the response. Each Ops Manager server log collection job has a
 child job for each combination of server and log type
 included in the request.
@@ -164,7 +164,7 @@ included in the request.
         self,
         query_params: Optional[GetAllJobsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Ops Manager Server Log Collection Jobs
         ### Document:
         [Get All Jobs](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/)
@@ -186,7 +186,7 @@ included in the request.
         model_config = ConfigDict(populate_by_name=True)
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 Ops Manager server log collection job. To find a job ID, call
 [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
@@ -195,19 +195,19 @@ Ops Manager server log collection job. To find a job ID, call
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether to wrap the response in an
+        r"""Flag that indicates whether to wrap the response in an
 envelope. Some API clients cannot access the HTTP
 response headers or status code. To remediate this, set
 `envelope=true` in the query.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         verbose: Optional[bool] = Field(default=False, serialization_alias="verbose")
-        """Flag that indicates whether to include all child jobs in
+        r"""Flag that indicates whether to include all child jobs in
 the response.
         """
 
@@ -216,7 +216,7 @@ the response.
         path_params: GetOneJobPathParams,
         query_params: Optional[GetOneJobQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Ops Manager Server Log Collection Job
         ### Document:
         [Get One Job](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-one/)
@@ -238,34 +238,34 @@ the response.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether to wrap the response in an
+        r"""Flag that indicates whether to wrap the response in an
 envelope. Some API clients cannot access the HTTP
 response headers or status code. To remediate this, set
 `envelope=true` in the query.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         status: Optional[str] = Field(default="active", serialization_alias="status")
-        """Server status to filter by. Currently the only valid value
+        r"""Server status to filter by. Currently the only valid value
 is `active`. Any other value returns
 `400 INVALID_SERVER_STATUS`. If you omit this parameter,
 Ops Manager returns active servers.
         """
 
         type: Optional[str] = Field(default="All types", serialization_alias="type")
-        """Server type to filter by. Pass this parameter multiple times
+        r"""Server type to filter by. Pass this parameter multiple times
 to include several types (`?type=VALUE_1&type=VALUE_2`).
 The currently supported value is `MMS_SERVER`, which
 represents the Ops Manager application server. If you omit this
@@ -277,7 +277,7 @@ parameter, Ops Manager returns all types (currently only
         self,
         query_params: Optional[ListActiveServersQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## List Active Ops Manager Servers
         ### Document:
         [List Active Servers](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-list-servers/)
@@ -301,7 +301,7 @@ parameter, Ops Manager returns all types (currently only
         model_config = ConfigDict(populate_by_name=True)
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 Ops Manager server log collection job. To find a job ID, call
 [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
@@ -310,7 +310,7 @@ Ops Manager server log collection job. To find a job ID, call
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -327,7 +327,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -336,7 +336,7 @@ includes:
         path_params: RetryPathParams,
         query_params: Optional[RetryQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retry an Ops Manager Server Log Collection Job
         ### Document:
         [Retry](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-retry/)
@@ -359,7 +359,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -376,7 +376,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -386,7 +386,7 @@ includes:
         log_collection_from_date: Optional[str] = Field(
             default=None, serialization_alias="logCollectionFromDate"
         )
-        """Start of the time range to collect, in ISO 8601 UTC format.
+        r"""Start of the time range to collect, in ISO 8601 UTC format.
 If you set this field, you must also set
 `logCollectionToDate`.
         """
@@ -394,7 +394,7 @@ If you set this field, you must also set
         log_collection_to_date: Optional[str] = Field(
             default=None, serialization_alias="logCollectionToDate"
         )
-        """End of the time range to collect, in ISO 8601 UTC format.
+        r"""End of the time range to collect, in ISO 8601 UTC format.
 If you set this field, you must also set
 `logCollectionFromDate`.
         """
@@ -402,7 +402,7 @@ If you set this field, you must also set
         log_types: Optional[list[ServerLogType]] = Field(
             default=None, serialization_alias="logTypes"
         )
-        """Log types to collect. Each element must be one of the
+        r"""Log types to collect. Each element must be one of the
 following values:
 
 - `APPLICATION`
@@ -414,7 +414,7 @@ collects every log type.
         """
 
         servers: Optional[list[str]] = Field(default=None, serialization_alias="servers")
-        """List of `serverId` values returned by
+        r"""List of `serverId` values returned by
 [List Active Ops Manager Servers](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-list-servers/#std-label-api-om-log-collections-list-servers). If you omit
 this field or pass an empty array, Ops Manager collects logs from
 every active server.
@@ -423,7 +423,7 @@ every active server.
         size_requested_per_file_bytes: Optional[int] = Field(
             default=None, serialization_alias="sizeRequestedPerFileBytes"
         )
-        """Maximum uncompressed size, in bytes, per log type per
+        r"""Maximum uncompressed size, in bytes, per log type per
 server. Must be greater than 0. If you omit this field,
 Ops Manager auto-allocates the remaining configured storage
 across the requested servers and log types.
@@ -434,7 +434,7 @@ across the requested servers and log types.
         query_params: Optional[CreateQueryParams],
         body_params: Optional[CreateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create an Ops Manager Server Log Collection Job
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-submit/)
@@ -459,7 +459,7 @@ across the requested servers and log types.
         model_config = ConfigDict(populate_by_name=True)
 
         job_id: str = Field(serialization_alias="JOB-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 Ops Manager server log collection job. To find a job ID, call
 [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
@@ -468,7 +468,7 @@ Ops Manager server log collection job. To find a job ID, call
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -485,7 +485,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -493,7 +493,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         expiration_date: str = Field(serialization_alias="expirationDate")
-        """New expiration timestamp, in ISO 8601 UTC format. The
+        r"""New expiration timestamp, in ISO 8601 UTC format. The
 timestamp must be no more than 28 days after the job
 creation date and no earlier than the time of the request.
         """
@@ -504,7 +504,7 @@ creation date and no earlier than the time of the request.
         query_params: Optional[ExtendExpirationQueryParams],
         body_params: ExtendExpirationBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Extend an Ops Manager Server Log Collection Job Expiration
         ### Document:
         [Extend Expiration](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-update-one/)

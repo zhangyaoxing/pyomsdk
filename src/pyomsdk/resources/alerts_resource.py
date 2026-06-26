@@ -1,4 +1,4 @@
-"""Auto-generated client for AlertsResource resource.
+r"""Auto-generated client for AlertsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,24 +9,24 @@ from .enums import *
 
 
 class AlertsResource(BaseResource):
-    """Client for AlertsResource resource."""
+    r"""Client for AlertsResource resource."""
 
     class AcknowledgeOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         alert_id: str = Field(serialization_alias="ALERT-ID")
-        """Unique identifier for the Alert.
+        r"""Unique identifier for the Alert.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project in which this alert is set.
+        r"""Unique identifier for the Project in which this alert is set.
         """
 
     class AcknowledgeOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -43,7 +43,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -53,7 +53,7 @@ includes:
         acknowledged_until: Optional[str] = Field(
             default=None, serialization_alias="acknowledgedUntil"
         )
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC until which the alert should be acknowledged.
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC until which the alert should be acknowledged.
 
 - To acknowledge an alert "forever", set the field value to a
   large number of years in the future. Recommend setting to 100
@@ -65,7 +65,7 @@ includes:
         acknowledgement_comment: Optional[str] = Field(
             default=None, serialization_alias="acknowledgementComment"
         )
-        """Text description of the reason for this acknowledgement.
+        r"""Text description of the reason for this acknowledgement.
 
 Ops Manager displays the comment next to the message that the
 alert has been acknowledged.
@@ -77,7 +77,7 @@ alert has been acknowledged.
         query_params: Optional[AcknowledgeOneQueryParams],
         body_params: Optional[AcknowledgeOneBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Acknowledge One Alert
         ### Document:
         [Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-acknowledge-alert/)
@@ -98,18 +98,18 @@ alert has been acknowledged.
         model_config = ConfigDict(populate_by_name=True)
 
         alert_id: str = Field(serialization_alias="ALERT-ID")
-        """*(Required.)* Alert identifier.
+        r"""*(Required.)* Alert identifier.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Project identifier.
+        r"""*(Required.)* Project identifier.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -126,7 +126,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -135,7 +135,7 @@ includes:
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Alert
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-alert/)
@@ -156,14 +156,14 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Project identifier.
+        r"""*(Required.)* Project identifier.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -176,20 +176,20 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         status: Optional[AlertStatus] = Field(default=None, serialization_alias="status")
-        """Specify a status to return only those alerts with
+        r"""Specify a status to return only those alerts with
 the specified status. Omit to return all alerts.
 
 Ops Manager accepts the following values:
@@ -216,7 +216,7 @@ Ops Manager accepts the following values:
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Alerts
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-all-alerts/)

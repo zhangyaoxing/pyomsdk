@@ -1,4 +1,4 @@
-"""Auto-generated client for MeasurementsResource resource.
+r"""Auto-generated client for MeasurementsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,35 +9,35 @@ from .enums import *
 
 
 class MeasurementsResource(BaseResource):
-    """Client for MeasurementsResource resource."""
+    r"""Client for MeasurementsResource resource."""
 
     class DatabasePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         database_name: str = Field(serialization_alias="DATABASE-NAME")
-        """Unique identifier of the database on which the MongoDB
+        r"""Unique identifier of the database on which the MongoDB
 process is stored.
         """
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that serves the MongoDB process.
+        r"""Unique identifier of the host that serves the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
         """
 
     class DatabaseQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end: Optional[str] = Field(default=None, serialization_alias="end")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
 measurements. If you specify `end` you must also specify
 `start`.
         """
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -57,7 +57,7 @@ response body.
         """
 
         granularity: str = Field(serialization_alias="granularity")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
 measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -80,11 +80,11 @@ For example:
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         m: Optional[str] = Field(default=None, serialization_alias="m")
-        """Measurements to return. If `m` is not specified, all
+        r"""Measurements to return. If `m` is not specified, all
 measurements are returned.
 
 To specify multiple values for `m`, you must repeat the `m`
@@ -104,11 +104,11 @@ For available measurements, see [Measurement Types.](/docs/ops-manager/current/r
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         period: Optional[str] = Field(default=None, serialization_alias="period")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
 retrieve measurements.
 
 For example, to request the last 36 hours, include this query
@@ -116,12 +116,12 @@ parameter: `period=P1DT12H`.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start: Optional[str] = Field(default=None, serialization_alias="start")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
 retrieve measurements. If you specify `start` you must also
 specify `end`.
         """
@@ -131,7 +131,7 @@ specify `end`.
         path_params: DatabasePathParams,
         query_params: DatabaseQueryParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Database Measurements
         ### Document:
         [Database](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-database-measurements/)
@@ -154,29 +154,29 @@ specify `end`.
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that serves the MongoDB process.
+        r"""Unique identifier of the host that serves the MongoDB process.
         """
 
         partition_name: str = Field(serialization_alias="PARTITION-NAME")
-        """Name of the disk partition on which the MongoDB
+        r"""Name of the disk partition on which the MongoDB
 process is stored.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
         """
 
     class DiskPartitionQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end: Optional[str] = Field(default=None, serialization_alias="end")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
 measurements. If you specify `end` you must also specify
 `start`.
         """
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -196,7 +196,7 @@ response body.
         """
 
         granularity: str = Field(serialization_alias="granularity")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
 measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -219,11 +219,11 @@ For example:
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         m: Optional[str] = Field(default=None, serialization_alias="m")
-        """Measurements to return. If `m` is not specified, all
+        r"""Measurements to return. If `m` is not specified, all
 measurements are returned.
 
 To specify multiple values for `m`, you must repeat the `m`
@@ -243,11 +243,11 @@ For available measurements, see [Measurement Types.](/docs/ops-manager/current/r
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         period: Optional[str] = Field(default=None, serialization_alias="period")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
 retrieve measurements.
 
 For example, to request the last 36 hours, include this query
@@ -255,12 +255,12 @@ parameter: `period=P1DT12H`.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start: Optional[str] = Field(default=None, serialization_alias="start")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
 retrieve measurements. If you specify `start` you must also
 specify `end`.
         """
@@ -270,7 +270,7 @@ specify `end`.
         path_params: DiskPartitionPathParams,
         query_params: DiskPartitionQueryParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Disk Partition Measurements
         ### Document:
         [Disk Partition](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-disk-measurements/)
@@ -292,24 +292,24 @@ specify `end`.
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that serves the MongoDB process.
+        r"""Unique identifier of the host that serves the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
         """
 
     class HostQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end: Optional[str] = Field(default=None, serialization_alias="end")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
 measurements. If you specify `end` you must also specify
 `start`.
         """
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -329,7 +329,7 @@ response body.
         """
 
         granularity: str = Field(serialization_alias="granularity")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
 measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -352,11 +352,11 @@ For example:
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         m: Optional[str] = Field(default=None, serialization_alias="m")
-        """Measurements to return. If `m` is not specified, all
+        r"""Measurements to return. If `m` is not specified, all
 measurements are returned.
 
 To specify multiple values for `m`, you must repeat the `m`
@@ -376,11 +376,11 @@ For available measurements, see [Measurement Types.](/docs/ops-manager/current/r
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         period: Optional[str] = Field(default=None, serialization_alias="period")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
 retrieve measurements.
 
 For example, to request the last 36 hours, include this query
@@ -388,12 +388,12 @@ parameter: `period=P1DT12H`.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start: Optional[str] = Field(default=None, serialization_alias="start")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
 retrieve measurements. If you specify `start` you must also
 specify `end`.
         """
@@ -403,7 +403,7 @@ specify `end`.
         path_params: HostPathParams,
         query_params: HostQueryParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Host, Process, System Measurements
         ### Document:
         [Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-host-process-system-measurements/)
@@ -427,24 +427,24 @@ specify `end`.
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that serves the MongoDB process.
+        r"""Unique identifier of the host that serves the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the host.
         """
 
     class GetTypesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         end: Optional[str] = Field(default=None, serialization_alias="end")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the end of the period for which to retrieve
 measurements. If you specify `end` you must also specify
 `start`.
         """
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -464,7 +464,7 @@ response body.
         """
 
         granularity: str = Field(serialization_alias="granularity")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies the interval between
 measurement data points.
 
 Measurement granularity can be expressed as days, hours, minutes, seconds and milliseconds using the following notation:
@@ -487,11 +487,11 @@ For example:
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         m: Optional[str] = Field(default=None, serialization_alias="m")
-        """Measurements to return. If `m` is not specified, all
+        r"""Measurements to return. If `m` is not specified, all
 measurements are returned.
 
 To specify multiple values for `m`, you must repeat the `m`
@@ -511,11 +511,11 @@ For available measurements, see [Measurement Types.](/docs/ops-manager/current/r
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         period: Optional[str] = Field(default=None, serialization_alias="period")
-        """Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
+        r"""Duration in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594#Durations) notation that specifies how far back in the past to
 retrieve measurements.
 
 For example, to request the last 36 hours, include this query
@@ -523,12 +523,12 @@ parameter: `period=P1DT12H`.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         start: Optional[str] = Field(default=None, serialization_alias="start")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC for the beginning of the period for which to
 retrieve measurements. If you specify `start` you must also
 specify `end`.
         """
@@ -538,7 +538,7 @@ specify `end`.
         path_params: GetTypesPathParams,
         query_params: GetTypesQueryParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Measurement Types
         ### Document:
         [Get Types](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-measurement-types/)

@@ -1,4 +1,4 @@
-"""Auto-generated client for AgentsResource resource.
+r"""Auto-generated client for AgentsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class AgentsResource(BaseResource):
-    """Client for AgentsResource resource."""
+    r"""Client for AgentsResource resource."""
 
     class CreateApiKeyPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 Agent API Key.
         """
 
@@ -23,7 +23,7 @@ Agent API Key.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -40,7 +40,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -48,7 +48,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        """Label for this Agent API Key.
+        r"""Label for this Agent API Key.
         """
 
     def create_api_key(
@@ -57,7 +57,7 @@ includes:
         query_params: Optional[CreateApiKeyQueryParams],
         body_params: Optional[CreateApiKeyBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Agent API Key
         ### Document:
         [Create API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/create-one-agent-api-key/)
@@ -78,11 +78,11 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         api_agent_key_id: str = Field(serialization_alias="API-AGENT-KEY-ID")
-        """Unique identifier of Agent API Key.
+        r"""Unique identifier of Agent API Key.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 Agent API Key.
         """
 
@@ -90,7 +90,7 @@ Agent API Key.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -107,7 +107,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -116,7 +116,7 @@ includes:
         path_params: RemoveApiKeyPathParams,
         query_params: Optional[RemoveApiKeyQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Remove One Agent API Key
         ### Document:
         [Remove API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/delete-one-agent-api-key/)
@@ -137,7 +137,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 Agent API Key.
         """
 
@@ -145,7 +145,7 @@ Agent API Key.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -162,7 +162,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -171,7 +171,7 @@ includes:
         path_params: GetAllApiKeysPathParams,
         query_params: Optional[GetAllApiKeysQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Agent API Keys for One Project
         ### Document:
         [Get All API Keys](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/get-all-agent-api-keys-for-project/)
@@ -192,7 +192,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 Agent API Key.
         """
 
@@ -200,7 +200,7 @@ Agent API Key.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -213,15 +213,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -230,7 +230,7 @@ response body.
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Links to Agent Resources for a Project
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
@@ -251,12 +251,12 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 Agent API Key.
         """
 
         type: AgentType = Field(serialization_alias="TYPE")
-        """The agent type to retrieve. **TYPE** can be one of the
+        r"""The agent type to retrieve. **TYPE** can be one of the
 following values:
 
 - `MONITORING`
@@ -268,7 +268,7 @@ following values:
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -281,15 +281,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -298,7 +298,7 @@ response body.
         path_params: GetByTypePathParams,
         query_params: Optional[GetByTypeQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Agents by Type for One Project
         ### Document:
         [Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
@@ -320,7 +320,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -337,7 +337,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -345,7 +345,7 @@ includes:
         self,
         query_params: Optional[RetrieveAllVersionsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve All Agent Versions
         ### Document:
         [Retrieve All Versions](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-global/)
@@ -366,14 +366,14 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class RetrieveForOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -390,7 +390,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -399,7 +399,7 @@ includes:
         path_params: RetrieveForOneProjectPathParams,
         query_params: Optional[RetrieveForOneProjectQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve All Agent Versions for One Project
         ### Document:
         [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-per-project/)

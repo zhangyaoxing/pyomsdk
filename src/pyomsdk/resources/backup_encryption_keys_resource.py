@@ -1,4 +1,4 @@
-"""Auto-generated client for BackupEncryptionKeysResource resource.
+r"""Auto-generated client for BackupEncryptionKeysResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,18 +9,18 @@ from .enums import *
 
 
 class BackupEncryptionKeysResource(BaseResource):
-    """Client for BackupEncryptionKeysResource resource."""
+    r"""Client for BackupEncryptionKeysResource resource."""
 
     class RetrieveKmipMasterKeyIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster to which the encryption keys
+        r"""Unique identifier of the cluster to which the encryption keys
 belongs.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project to which the encryption key
+        r"""Unique identifier of the project to which the encryption key
 belongs.
         """
 
@@ -28,7 +28,7 @@ belongs.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -45,7 +45,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -54,7 +54,7 @@ includes:
         path_params: RetrieveKmipMasterKeyIdPathParams,
         query_params: Optional[RetrieveKmipMasterKeyIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve the KMIP Master Key ID
         ### Document:
         [Retrieve KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/kmip-keys/get-master-key/)
@@ -76,12 +76,12 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster to which the encryption keys
+        r"""Unique identifier of the cluster to which the encryption keys
 belongs.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project to which the encryption key
+        r"""Unique identifier of the project to which the encryption key
 belongs.
         """
 
@@ -89,7 +89,7 @@ belongs.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -106,7 +106,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -115,7 +115,7 @@ includes:
         path_params: RotateKmipMasterKeyIdPathParams,
         query_params: Optional[RotateKmipMasterKeyIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Rotate the KMIP Master Key ID
         ### Document:
         [Rotate KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/kmip-keys/rotate-master-key/)

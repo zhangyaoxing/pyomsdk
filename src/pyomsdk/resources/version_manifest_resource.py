@@ -1,4 +1,4 @@
-"""Auto-generated client for VersionManifestResource resource.
+r"""Auto-generated client for VersionManifestResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class VersionManifestResource(BaseResource):
-    """Client for VersionManifestResource resource."""
+    r"""Client for VersionManifestResource resource."""
 
     class RetrieveQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -23,7 +23,7 @@ class VersionManifestResource(BaseResource):
         self,
         query_params: Optional[RetrieveQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve the Ops Manager Version Manifest
         ### Document:
         [Retrieve](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/get-om-version-manifest/)
@@ -45,7 +45,7 @@ class VersionManifestResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -53,7 +53,7 @@ class VersionManifestResource(BaseResource):
         self,
         query_params: Optional[UpdateQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update the Version Manifest
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/update-version-manifest/)

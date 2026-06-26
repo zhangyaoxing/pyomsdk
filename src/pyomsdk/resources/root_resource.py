@@ -1,4 +1,4 @@
-"""Auto-generated client for RootResource resource.
+r"""Auto-generated client for RootResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class RootResource(BaseResource):
-    """Client for RootResource resource."""
+    r"""Client for RootResource resource."""
 
     class RootQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -28,15 +28,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -44,7 +44,7 @@ response body.
         self,
         query_params: Optional[RootQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Root
         ### Document:
         [Root](https://www.mongodb.com/docs/ops-manager/current/reference/api/root/)

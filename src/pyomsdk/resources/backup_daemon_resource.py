@@ -1,4 +1,4 @@
-"""Auto-generated client for BackupDaemonResource resource.
+r"""Auto-generated client for BackupDaemonResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class BackupDaemonResource(BaseResource):
-    """Client for BackupDaemonResource resource."""
+    r"""Client for BackupDaemonResource resource."""
 
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         machine: str = Field(serialization_alias="MACHINE")
-        """Hostname or IP address of the machine that serves the Backup
+        r"""Hostname or IP address of the machine that serves the Backup
 Daemon.
         """
 
@@ -23,7 +23,7 @@ Daemon.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -40,7 +40,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -50,33 +50,33 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be
 assigned backup jobs.
         """
 
         backup_jobs_enabled: Optional[bool] = Field(
             default=None, serialization_alias="backupJobsEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be used
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be used
 to backup databases.
         """
 
         configured: Optional[bool] = Field(default=None, serialization_alias="configured")
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) is ready to
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) is ready to
 use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
             default=None, serialization_alias="garbageCollectionEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has garbage
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has garbage
 collection set.
         """
 
         head_disk_type: Optional[HeadDiskType] = Field(
             default=None, serialization_alias="headDiskType"
         )
-        """Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
+        r"""Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
 
 The accepted values for this option are:
 
@@ -85,7 +85,7 @@ The accepted values for this option are:
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Array of tags to manage which
+        r"""Array of tags to manage which
 [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
 [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
 
@@ -101,37 +101,37 @@ jobs.
             head_root_directory: Optional[str] = Field(
                 default=None, serialization_alias="headRootDirectory"
             )
-            """Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this
+            r"""Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this
 [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash
 (`/`). If you omit the slash, the Backup Daemon generates a
 Java Exception error.
             """
 
             machine: str = Field(serialization_alias="machine")
-            """Hostname or IP address of the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
+            r"""Hostname or IP address of the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
         machine: MachineParams = Field(serialization_alias="machine")
-        """[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its
+        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its
 [head directories.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
         """
 
         num_workers: Optional[int] = Field(default=None, serialization_alias="numWorkers")
-        """Number of worker processes that can perform tasks
+        r"""Number of worker processes that can perform tasks
 (i.e. backup, restore, or groom) for the [Backup Daemon.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
         """
 
         resource_usage_enabled: Optional[bool] = Field(
             default=None, serialization_alias="resourceUsageEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has its
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has its
 resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
             default=None, serialization_alias="restoreQueryableJobsEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform
 [queryable restores.](/docs/ops-manager/current/tutorial/query-backup/)
         """
 
@@ -141,7 +141,7 @@ resource usage monitored.
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Backup Daemon Configuration
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/create-one-backup-daemon-configuration/)
@@ -162,13 +162,13 @@ resource usage monitored.
         model_config = ConfigDict(populate_by_name=True)
 
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        """Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
 of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
 May be omitted if the Backup Daemon has not been configured.
         """
 
         machine: str = Field(serialization_alias="MACHINE")
-        """Hostname or IP address of the machine that serves the Backup
+        r"""Hostname or IP address of the machine that serves the Backup
 Daemon.
         """
 
@@ -176,7 +176,7 @@ Daemon.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -193,7 +193,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -202,7 +202,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Backup Daemon Configuration
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/delete-one-backup-daemon-configuration/)
@@ -225,14 +225,14 @@ includes:
         backup_jobs_enabled_only: Optional[bool] = Field(
             default=True, serialization_alias="backupJobsEnabledOnly"
         )
-        """Flag indicating whether to exclude daemons not enabled for
+        r"""Flag indicating whether to exclude daemons not enabled for
 backing up databases from the response. Set this to `false` to
 include daemon configurations with the `backupJobsEnabled`
 flag set to `false`.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -245,15 +245,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -261,7 +261,7 @@ response body.
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Backup Daemon Configurations
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-all-backup-daemon-configurations/)
@@ -282,13 +282,13 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        """Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
 of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
 May be omitted if the Backup Daemon has not been configured.
         """
 
         machine: str = Field(serialization_alias="MACHINE")
-        """Hostname or IP address of the machine that serves the Backup
+        r"""Hostname or IP address of the machine that serves the Backup
 Daemon.
         """
 
@@ -296,7 +296,7 @@ Daemon.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -313,7 +313,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -322,7 +322,7 @@ includes:
         path_params: GetByIdPathParams,
         query_params: Optional[GetByIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Backup Daemon Configuration by ID
         ### Document:
         [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/get-one-backup-daemon-configuration-by-host/)
@@ -343,7 +343,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        """Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127)
 of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
 host.
 
@@ -359,7 +359,7 @@ you should add the head directory in this format:
         """
 
         machine: str = Field(serialization_alias="MACHINE")
-        """Hostname or IP address of the machine that serves the Backup
+        r"""Hostname or IP address of the machine that serves the Backup
 Daemon.
         """
 
@@ -367,7 +367,7 @@ Daemon.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -384,7 +384,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -394,33 +394,33 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be
 assigned backup jobs.
         """
 
         backup_jobs_enabled: Optional[bool] = Field(
             default=None, serialization_alias="backupJobsEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be used
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can be used
 to backup databases.
         """
 
         configured: Optional[bool] = Field(default=None, serialization_alias="configured")
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) is ready to
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) is ready to
 use.
         """
 
         garbage_collection_enabled: Optional[bool] = Field(
             default=None, serialization_alias="garbageCollectionEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has garbage
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has garbage
 collection set.
         """
 
         head_disk_type: Optional[HeadDiskType] = Field(
             default=None, serialization_alias="headDiskType"
         )
-        """Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
+        r"""Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
 
 The accepted values for this option are:
 
@@ -429,7 +429,7 @@ The accepted values for this option are:
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Array of tags to manage which
+        r"""Array of tags to manage which
 [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which
 [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
 
@@ -445,37 +445,37 @@ jobs.
             head_root_directory: Optional[str] = Field(
                 default=None, serialization_alias="headRootDirectory"
             )
-            """Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this
+            r"""Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this
 [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash
 (`/`). If you omit the slash, the Backup Daemon generates a
 Java Exception error.
             """
 
             machine: str = Field(serialization_alias="machine")
-            """Hostname or IP address of the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
+            r"""Hostname or IP address of the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
         machine: MachineParams = Field(serialization_alias="machine")
-        """[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its
+        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its
 [head directories.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
         """
 
         num_workers: Optional[int] = Field(default=None, serialization_alias="numWorkers")
-        """Number of worker processes that can perform tasks
+        r"""Number of worker processes that can perform tasks
 (i.e. backup, restore, or groom) for the [Backup Daemon.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
         """
 
         resource_usage_enabled: Optional[bool] = Field(
             default=None, serialization_alias="resourceUsageEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has its
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) has its
 resource usage monitored.
         """
 
         restore_queryable_jobs_enabled: Optional[bool] = Field(
             default=None, serialization_alias="restoreQueryableJobsEnabled"
         )
-        """Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform
 [queryable restores.](/docs/ops-manager/current/tutorial/query-backup/)
         """
 
@@ -485,7 +485,7 @@ resource usage monitored.
         query_params: Optional[UpdateQueryParams],
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Backup Daemon Configuration
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonConfigs/update-one-backup-daemon-configuration/)

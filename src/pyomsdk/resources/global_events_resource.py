@@ -1,4 +1,4 @@
-"""Auto-generated client for GlobalEventsResource resource.
+r"""Auto-generated client for GlobalEventsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class GlobalEventsResource(BaseResource):
-    """Client for GlobalEventsResource resource."""
+    r"""Client for GlobalEventsResource resource."""
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -35,7 +35,7 @@ response body.
         """
 
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
-        """Return only events of the specified types. Accepted
+        r"""Return only events of the specified types. Accepted
 values include:
 
 To review the types of events that generate alerts, see
@@ -46,25 +46,25 @@ For a complete list of events included in the Ops Manager audit log, see
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         max_date: Optional[str] = Field(default=None, serialization_alias="maxDate")
-        """Return only events for which the created date is less than or
+        r"""Return only events for which the created date is less than or
 equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         min_date: Optional[str] = Field(default=None, serialization_alias="minDate")
-        """Return only events for which the created date is greater than
+        r"""Return only events for which the created date is greater than
 or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -72,7 +72,7 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Global Events
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-global/)
@@ -93,14 +93,14 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         model_config = ConfigDict(populate_by_name=True)
 
         event_id: str = Field(serialization_alias="eventId")
-        """Unique identifier of the desired event.
+        r"""Unique identifier of the desired event.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -117,7 +117,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -126,7 +126,7 @@ includes:
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Global Event
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-global/)

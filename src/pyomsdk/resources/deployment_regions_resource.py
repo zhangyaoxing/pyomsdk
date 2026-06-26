@@ -1,4 +1,4 @@
-"""Auto-generated client for DeploymentRegionsResource resource.
+r"""Auto-generated client for DeploymentRegionsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,18 +9,18 @@ from .enums import *
 
 
 class DeploymentRegionsResource(BaseResource):
-    """Client for DeploymentRegionsResource resource."""
+    r"""Client for DeploymentRegionsResource resource."""
 
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique 24-hexadecimal digit string that identifies the cluster
+        r"""Unique 24-hexadecimal digit string that identifies the cluster
 whose backup configuration you want to find.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 project that holds the cluster with the backup configuration you
 want to find.
         """
@@ -29,7 +29,7 @@ want to find.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -46,7 +46,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -57,24 +57,24 @@ includes:
             model_config = ConfigDict(populate_by_name=True)
 
             deployment_id: str = Field(serialization_alias="deploymentId")
-            """Unique identifier that references the deployment region to
+            r"""Unique identifier that references the deployment region to
 assign to the shard.
             """
 
             rs_id: str = Field(serialization_alias="rsId")
-            """[Replica set](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-replica-set)
+            r"""[Replica set](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-replica-set)
 label that identifies the shard.
             """
 
         deployment_configs: list[DeploymentConfigsParams] = Field(
             serialization_alias="deploymentConfigs"
         )
-        """Specification objects for the cluster members for which to assign
+        r"""Specification objects for the cluster members for which to assign
 deployment regions.
         """
 
         multi_region_backup_enabled: bool = Field(serialization_alias="multiRegionBackupEnabled")
-        """Flag that indicates whether [multi-region backup](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
+        r"""Flag that indicates whether [multi-region backup](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
         """
 
     def assign(
@@ -83,7 +83,7 @@ deployment regions.
         query_params: Optional[AssignQueryParams],
         body_params: AssignBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Assign Deployment Region to One Shard
         ### Document:
         [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/assign-deployment-region/)
@@ -104,7 +104,7 @@ deployment regions.
         model_config = ConfigDict(populate_by_name=True)
 
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        """Unique identifier that references this deployment region in
+        r"""Unique identifier that references this deployment region in
 configurations.
         """
 
@@ -112,7 +112,7 @@ configurations.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -129,7 +129,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -139,29 +139,29 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
 
         bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
-        """Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
+        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
 is in the following format: `domain:port`. For example,
 `localhost:8080`.
         """
 
         deployment_description: str = Field(serialization_alias="deploymentDescription")
-        """String that describes the purpose of the deployment region.
+        r"""String that describes the purpose of the deployment region.
         """
 
         ingestion_endpoint: Optional[str] = Field(
             default=None, serialization_alias="ingestionEndpoint"
         )
-        """Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
+        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
 oplog data. Value is a valid URL such as
 `http://www.mongodb.com`. Supports both HTTP and HTTPS.
         """
 
         restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
-        """Ops Manager instance that serves restore requests.
+        r"""Ops Manager instance that serves restore requests.
         """
 
     def create_by_id(
@@ -170,7 +170,7 @@ oplog data. Value is a valid URL such as
         query_params: Optional[CreateByIdQueryParams],
         body_params: CreateByIdBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Deployment Region by ID
         ### Document:
         [Create by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region-by-id/)
@@ -191,7 +191,7 @@ oplog data. Value is a valid URL such as
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -208,7 +208,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -218,34 +218,34 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
 
         bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
-        """Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
+        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
 is in the following format: `domain:port`. For example,
 `localhost:8080`.
         """
 
         deployment_description: str = Field(serialization_alias="deploymentDescription")
-        """String that describes the purpose of the deployment region.
+        r"""String that describes the purpose of the deployment region.
         """
 
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        """Unique identifier that references this deployment region in
+        r"""Unique identifier that references this deployment region in
 configurations.
         """
 
         ingestion_endpoint: Optional[str] = Field(
             default=None, serialization_alias="ingestionEndpoint"
         )
-        """Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
+        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
 oplog data. Value is a valid URL such as
 `http://www.mongodb.com`. Supports both HTTP and HTTPS.
         """
 
         restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
-        """Ops Manager instance that serves restore requests.
+        r"""Ops Manager instance that serves restore requests.
         """
 
     def create(
@@ -253,7 +253,7 @@ oplog data. Value is a valid URL such as
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Deployment Region
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region/)
@@ -274,7 +274,7 @@ oplog data. Value is a valid URL such as
         model_config = ConfigDict(populate_by_name=True)
 
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        """Unique identifier that references the deployment region in
+        r"""Unique identifier that references the deployment region in
 configurations.
         """
 
@@ -282,7 +282,7 @@ configurations.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -299,7 +299,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -308,7 +308,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Deployment Region by ID
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/delete-one-deployment-region-by-id/)
@@ -329,7 +329,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -342,15 +342,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -358,7 +358,7 @@ response body.
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Deployment Regions
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-deployment-regions/)
@@ -379,7 +379,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        """Unique identifier that references the deployment region in
+        r"""Unique identifier that references the deployment region in
 configurations.
         """
 
@@ -387,7 +387,7 @@ configurations.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -400,15 +400,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -417,7 +417,7 @@ response body.
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Deployment Region
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-deployment-region-by-id/)

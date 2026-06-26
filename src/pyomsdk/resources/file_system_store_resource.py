@@ -1,4 +1,4 @@
-"""Auto-generated client for FileSystemStoreResource resource.
+r"""Auto-generated client for FileSystemStoreResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class FileSystemStoreResource(BaseResource):
-    """Client for FileSystemStoreResource resource."""
+    r"""Client for FileSystemStoreResource resource."""
 
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -32,7 +32,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -42,16 +42,16 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether this file system store can be
+        r"""Flag that indicates whether this file system store can be
 assigned backup jobs.
         """
 
         id: str = Field(serialization_alias="id")
-        """Unique identifier of this file system store.
+        r"""Unique identifier of this file system store.
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
 can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
 Setting these tags limits which backup jobs this file system
@@ -61,7 +61,7 @@ filter their jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Positive, non-zero integer that expresses how much backup work
+        r"""Positive, non-zero integer that expresses how much backup work
 this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
 snapshot store. Set this option only if you're using more than
 one snapshot store.
@@ -72,7 +72,7 @@ To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-m
         mmapv1_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="mmapv1CompressionSetting"
         )
-        """Compression setting if you use the MMAPv1 storage engine for
+        r"""Compression setting if you use the MMAPv1 storage engine for
 your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`.
@@ -87,14 +87,14 @@ restarts the MongoDB processes.
         """
 
         store_path: str = Field(serialization_alias="storePath")
-        """Location where file system-based backups are stored on the
+        r"""Location where file system-based backups are stored on the
 file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="wtCompressionSetting"
         )
-        """Compression setting if you use the WiredTiger storage engine for
+        r"""Compression setting if you use the WiredTiger storage engine for
 your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`.
@@ -108,7 +108,7 @@ this setting.
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One File System Store Configuration
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/create-one-file-system-store-configuration/)
@@ -129,7 +129,7 @@ this setting.
         model_config = ConfigDict(populate_by_name=True)
 
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        """Unique identifier that labels this file system store
+        r"""Unique identifier that labels this file system store
 configuration.
         """
 
@@ -137,7 +137,7 @@ configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -154,7 +154,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -163,7 +163,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One File System Store Configuration
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/delete-one-file-system-store-configuration/)
@@ -184,11 +184,11 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         assignable_only: Optional[bool] = Field(default=True, serialization_alias="assignableOnly")
-        """Indicates whether to return only file system stores to which you can assign new backup jobs.
+        r"""Indicates whether to return only file system stores to which you can assign new backup jobs.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -201,15 +201,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -217,7 +217,7 @@ response body.
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All File System Store Configurations
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-all-file-system-store-configurations/)
@@ -238,14 +238,14 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        """Unique name that labels this file system store configuration.
+        r"""Unique name that labels this file system store configuration.
         """
 
     class GetByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -262,7 +262,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -271,7 +271,7 @@ includes:
         path_params: GetByIdPathParams,
         query_params: Optional[GetByIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One File System Store Configuration by ID
         ### Document:
         [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-one-file-system-store-configuration-by-id/)
@@ -292,7 +292,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        """Unique identifier that labels this file system store
+        r"""Unique identifier that labels this file system store
 configuration.
         """
 
@@ -300,7 +300,7 @@ configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -317,7 +317,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -327,12 +327,12 @@ includes:
         assignment_enabled: Optional[bool] = Field(
             default=None, serialization_alias="assignmentEnabled"
         )
-        """Flag that indicates whether this file system store can be
+        r"""Flag that indicates whether this file system store can be
 assigned backup jobs.
         """
 
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        """Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
 can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
 Setting these tags limits which backup jobs this file system
@@ -342,7 +342,7 @@ filter their jobs.
         """
 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        """Positive, non-zero integer that expresses how much backup work
+        r"""Positive, non-zero integer that expresses how much backup work
 this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
 snapshot store. Set this option only if you're using more than
 one snapshot store.
@@ -353,7 +353,7 @@ To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-m
         mmapv1_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="mmapv1CompressionSetting"
         )
-        """Compression setting if you use the MMAPv1 storage engine for
+        r"""Compression setting if you use the MMAPv1 storage engine for
 your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
@@ -369,14 +369,14 @@ restarts the MongoDB processes.
         """
 
         store_path: str = Field(serialization_alias="storePath")
-        """Location where file system-based backups are stored on the
+        r"""Location where file system-based backups are stored on the
 file system store host.
         """
 
         wt_compression_setting: Optional[str] = Field(
             default=None, serialization_alias="wtCompressionSetting"
         )
-        """Compression setting if you use the WiredTiger storage engine for
+        r"""Compression setting if you use the WiredTiger storage engine for
 your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
@@ -392,7 +392,7 @@ this setting.
         query_params: Optional[UpdateQueryParams],
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One File System Store Configuration
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/update-one-file-system-store-configuration/)

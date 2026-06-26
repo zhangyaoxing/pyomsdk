@@ -1,4 +1,4 @@
-"""Auto-generated client for DatabasesResource resource.
+r"""Auto-generated client for DatabasesResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,28 +9,28 @@ from .enums import *
 
 
 class DatabasesResource(BaseResource):
-    """Client for DatabasesResource resource."""
+    r"""Client for DatabasesResource resource."""
 
     class GetByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         database_name: str = Field(serialization_alias="DATABASE-NAME")
-        """*(Required.)* The name of the MongoDB database.
+        r"""*(Required.)* The name of the MongoDB database.
         """
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """*(Required.)* Unique identifier of the host running the MongoDB process.
+        r"""*(Required.)* Unique identifier of the host running the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
+        r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetByNameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -47,7 +47,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -56,7 +56,7 @@ includes:
         path_params: GetByNamePathParams,
         query_params: Optional[GetByNameQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get a Database by Name
         ### Document:
         [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/database-get-by-name/)
@@ -77,18 +77,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """*(Required.)* Unique identifier of the host running the MongoDB process.
+        r"""*(Required.)* Unique identifier of the host running the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
+        r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -101,15 +101,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -118,7 +118,7 @@ response body.
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Databases on One Host
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/databases-get-all-on-host/)

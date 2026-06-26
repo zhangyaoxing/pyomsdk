@@ -1,4 +1,4 @@
-"""Auto-generated client for MigrateToMongodbAtlasResource resource.
+r"""Auto-generated client for MigrateToMongodbAtlasResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class MigrateToMongodbAtlasResource(BaseResource):
-    """Client for MigrateToMongodbAtlasResource resource."""
+    r"""Client for MigrateToMongodbAtlasResource resource."""
 
     class ConnectWithAtlasOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique 24-hexadecimal digit string that identifies the source
+        r"""Unique 24-hexadecimal digit string that identifies the source
 organization that contains your projects.
         """
 
@@ -23,7 +23,7 @@ organization that contains your projects.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -40,7 +40,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -48,7 +48,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         link_token: str = Field(serialization_alias="linkToken")
-        """String that contains the information necessary to connect from
+        r"""String that contains the information necessary to connect from
 MongoDB Cloud Manager or Ops Manager to MongoDB Atlas during a Live Migration from a
 MongoDB Cloud Manager or Ops Manager deployment to a cluster in MongoDB Atlas.
 
@@ -70,7 +70,7 @@ unique link-token for each MongoDB Cloud Manager or Ops Manager organization.
         query_params: Optional[ConnectWithAtlasOrganizationQueryParams],
         body_params: ConnectWithAtlasOrganizationBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Connect One Organization with One Atlas Organization
         ### Document:
         [Connect with Atlas Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/link-the-organization-with-atlas/)
@@ -92,7 +92,7 @@ unique link-token for each MongoDB Cloud Manager or Ops Manager organization.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique 24-hexadecimal digit string that identifies the source
+        r"""Unique 24-hexadecimal digit string that identifies the source
 organization that contains your projects.
         """
 
@@ -100,7 +100,7 @@ organization that contains your projects.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -117,7 +117,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -126,7 +126,7 @@ includes:
         path_params: RemoveConnectionPathParams,
         query_params: Optional[RemoveConnectionQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Remove the Connection between Organizations
         ### Document:
         [Remove Connection](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/remove-the-link-between-organizations/)
@@ -149,7 +149,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique 24-hexadecimal digit string that identifies the source
+        r"""Unique 24-hexadecimal digit string that identifies the source
 organization that contains the projects to be migrated to
 MongoDB Atlas.
         """
@@ -158,7 +158,7 @@ MongoDB Atlas.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -175,7 +175,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -184,7 +184,7 @@ includes:
         path_params: ReturnConnectionStatusPathParams,
         query_params: Optional[ReturnConnectionStatusQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Return the Status of the Connection between Organizations
         ### Document:
         [Return Connection Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/return-the-status-of-the-organization-link/)

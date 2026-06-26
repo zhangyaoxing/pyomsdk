@@ -1,4 +1,4 @@
-"""Auto-generated client for FeatureControlPoliciesResource resource.
+r"""Auto-generated client for FeatureControlPoliciesResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class FeatureControlPoliciesResource(BaseResource):
-    """Client for FeatureControlPoliciesResource resource."""
+    r"""Client for FeatureControlPoliciesResource resource."""
 
     class RetrieveAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -35,15 +35,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -51,7 +51,7 @@ response body.
         self,
         query_params: Optional[RetrieveAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve All Feature Policies
         ### Document:
         [Retrieve All](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-all-feature-control-policies/)
@@ -72,7 +72,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that has the controlled
+        r"""Unique identifier of the project that has the controlled
 features.
         """
 
@@ -80,7 +80,7 @@ features.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -100,15 +100,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -117,7 +117,7 @@ response body.
         path_params: RetrieveForOneProjectPathParams,
         query_params: Optional[RetrieveForOneProjectQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve Feature Policies for One Project
         ### Document:
         [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-controlled-features-for-one-project/)
@@ -138,7 +138,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that has the controlled
+        r"""Unique identifier of the project that has the controlled
 features.
         """
 
@@ -146,7 +146,7 @@ features.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -166,15 +166,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -185,24 +185,24 @@ response body.
             model_config = ConfigDict(populate_by_name=True)
 
             name: Optional[str] = Field(default=None, serialization_alias="name")
-            """Identifying label for the external system that manages this
+            r"""Identifying label for the external system that manages this
 Ops Manager Project.
             """
 
             system_id: Optional[str] = Field(default=None, serialization_alias="systemId")
-            """Unique identifier of the external system that manages this
+            r"""Unique identifier of the external system that manages this
 Ops Manager Project.
             """
 
             version: Optional[str] = Field(default=None, serialization_alias="version")
-            """Active release of the external system that manages this Ops Manager
+            r"""Active release of the external system that manages this Ops Manager
 Project.
             """
 
         external_management_system: Optional[ExternalManagementSystemParams] = Field(
             default=None, serialization_alias="externalManagementSystem"
         )
-        """Identifying parameters for the external system that manages this
+        r"""Identifying parameters for the external system that manages this
 Ops Manager Project.
         """
 
@@ -212,14 +212,14 @@ Ops Manager Project.
             disabled_params: Optional[list[Any]] = Field(
                 default=None, serialization_alias="disabledParams"
             )
-            """List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the
+            r"""List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the
 `DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support
 all MongoDB options, which can result in failed import attempts.
 To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/current/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
             """
 
             policy: Optional[Policy] = Field(default=None, serialization_alias="policy")
-            """Single policy set for this Ops Manager Project. This parameter can
+            r"""Single policy set for this Ops Manager Project. This parameter can
 be set one or more times in the `policies` array.
 
 Accepted values are:
@@ -241,7 +241,7 @@ Accepted values are:
         policies: Optional[list[PoliciesParams]] = Field(
             default=None, serialization_alias="policies"
         )
-        """List of policies that the external system applies to this
+        r"""List of policies that the external system applies to this
 Ops Manager Project.
         """
 
@@ -251,7 +251,7 @@ Ops Manager Project.
         query_params: Optional[UpdateQueryParams],
         body_params: Optional[UpdateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update Feature Policies for One Project
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/update-controlled-features-for-one-project/)

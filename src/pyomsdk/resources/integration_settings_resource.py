@@ -1,4 +1,4 @@
-"""Auto-generated client for IntegrationSettingsResource resource.
+r"""Auto-generated client for IntegrationSettingsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class IntegrationSettingsResource(BaseResource):
-    """Client for IntegrationSettingsResource resource."""
+    r"""Client for IntegrationSettingsResource resource."""
 
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted values are:
+        r"""Third-party service identifier. Accepted values are:
 
 - `DATADOG`
 - `HIP_CHAT`
@@ -28,14 +28,14 @@ class IntegrationSettingsResource(BaseResource):
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Project identifier.
+        r"""Project identifier.
         """
 
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -48,15 +48,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -64,7 +64,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         type: IntegrationType = Field(serialization_alias="type")
-        """The type of the third-party integration.
+        r"""The type of the third-party integration.
         """
 
     def create(
@@ -73,7 +73,7 @@ response body.
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create a Configuration for a Third-Party Service Integration
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
@@ -104,7 +104,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted
+        r"""Third-party service identifier. Accepted
 values are:
 
 - `DATADOG`
@@ -118,14 +118,14 @@ values are:
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Project identifier.
+        r"""Project identifier.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -138,15 +138,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -155,7 +155,7 @@ response body.
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete a Configuration for a Third-Party Service Integration
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-delete/)
@@ -176,14 +176,14 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies your project.
+        r"""Unique 24-hexadecimal digit string that identifies your project.
         """
 
     class ReturnLatestPrometheusTargetsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -196,15 +196,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -213,7 +213,7 @@ response body.
         path_params: ReturnLatestPrometheusTargetsPathParams,
         query_params: Optional[ReturnLatestPrometheusTargetsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Return the Latest Targets for Prometheus
         ### Document:
         [Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-discovery/)
@@ -234,14 +234,14 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Project identifier.
+        r"""Project identifier.
         """
 
     class GetAllConfigurationsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -254,15 +254,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -271,7 +271,7 @@ response body.
         path_params: GetAllConfigurationsPathParams,
         query_params: Optional[GetAllConfigurationsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Configurations for Third-Party Service Integrations
         ### Document:
         [Get All Configurations](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-all/)
@@ -292,7 +292,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted
+        r"""Third-party service identifier. Accepted
 values are:
 
 - `DATADOG`
@@ -306,14 +306,14 @@ values are:
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Project identifier.
+        r"""Project identifier.
         """
 
     class GetOneConfigurationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -326,15 +326,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -343,7 +343,7 @@ response body.
         path_params: GetOneConfigurationPathParams,
         query_params: Optional[GetOneConfigurationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get the Configuration of a Third-Party Service Integration
         ### Document:
         [Get One Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-one/)
@@ -364,7 +364,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         integration_type: IntegrationType = Field(serialization_alias="INTEGRATION-TYPE")
-        """Third-party service identifier. Accepted values are:
+        r"""Third-party service identifier. Accepted values are:
 
 - `DATADOG`
 - `HIP_CHAT`
@@ -377,14 +377,14 @@ response body.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Project identifier.
+        r"""Project identifier.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -397,15 +397,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -413,7 +413,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         type: IntegrationType = Field(serialization_alias="type")
-        """The type of the third-party integration.
+        r"""The type of the third-party integration.
         """
 
     def update(
@@ -422,7 +422,7 @@ response body.
         query_params: Optional[UpdateQueryParams],
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update a Configuration for a Third-Party Service Integration
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)

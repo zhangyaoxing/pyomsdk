@@ -1,4 +1,4 @@
-"""Auto-generated client for ProjectBackupJobResource resource.
+r"""Auto-generated client for ProjectBackupJobResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class ProjectBackupJobResource(BaseResource):
-    """Client for ProjectBackupJobResource resource."""
+    r"""Client for ProjectBackupJobResource resource."""
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -28,15 +28,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -44,7 +44,7 @@ response body.
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Project Backup Jobs Configurations
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-all-backup-group-configurations/)
@@ -65,7 +65,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """The unique identifier that represents this project and its backup
+        r"""The unique identifier that represents this project and its backup
 job configuration.
         """
 
@@ -73,7 +73,7 @@ job configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -90,7 +90,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -99,7 +99,7 @@ includes:
         path_params: GetByIdPathParams,
         query_params: Optional[GetByIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Project Backup Jobs Configuration by ID
         ### Document:
         [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-one-backup-group-configuration-by-id/)
@@ -120,7 +120,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """The unique identifier that represents this project and its
+        r"""The unique identifier that represents this project and its
 backup job configuration.
         """
 
@@ -128,7 +128,7 @@ backup job configuration.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -145,7 +145,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -158,32 +158,32 @@ includes:
             head_root_directory: Optional[str] = Field(
                 default=None, serialization_alias="headRootDirectory"
             )
-            """*Optional.* The root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
+            r"""*Optional.* The root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
 on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
             machine: Optional[str] = Field(default=None, serialization_alias="machine")
-            """The host address for one [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
+            r"""The host address for one [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
 
         daemon_filter: Optional[list[DaemonFilterParams]] = Field(
             default=None, serialization_alias="daemonFilter"
         )
-        """*Optional.* An array of pairs of [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) hosts and
+        r"""*Optional.* An array of pairs of [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) hosts and
 their [head directories](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) that to which
 this project's backup jobs are limited. If omitted, all available
 Backup Daemons are used.
         """
 
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        """The unique identifier that represents this project and its
+        r"""The unique identifier that represents this project and its
 backup job configuration.
         """
 
         kmip_client_cert_password: Optional[str] = Field(
             default=None, serialization_alias="kmipClientCertPassword"
         )
-        """*Optional.* The password that encrypts the
+        r"""*Optional.* The password that encrypts the
 KMIP
 client certificate.
         """
@@ -191,14 +191,14 @@ client certificate.
         kmip_client_cert_path: Optional[str] = Field(
             default=None, serialization_alias="kmipClientCertPath"
         )
-        """*Optional.* The root-relative path on the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
+        r"""*Optional.* The root-relative path on the [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon)
 host that stores the
 KMIP
 client certificate.
         """
 
         label_filter: Optional[list[str]] = Field(default=None, serialization_alias="labelFilter")
-        """*Optional.* An array of tags that limits which
+        r"""*Optional.* An array of tags that limits which
 [Backup Daemons](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon) and
 [snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) can process
 [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) for this project.
@@ -215,7 +215,7 @@ Backup Daemon or snapshot store.
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(default=None, serialization_alias="id")
-            """Unique identifier representing an
+            r"""Unique identifier representing an
 [oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) that may be used
 with this project's backup jobs.
 
@@ -224,7 +224,7 @@ Retrieve the `id` of the oplog store you want to use with
             """
 
             type: Optional[OplogStoreFilterType] = Field(default=None, serialization_alias="type")
-            """Type of [oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) to use.
+            r"""Type of [oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) to use.
 
 The accepted values are:
 
@@ -236,7 +236,7 @@ The accepted values are:
         oplog_store_filter: Optional[list[OplogStoreFilterParams]] = Field(
             default=None, serialization_alias="oplogStoreFilter"
         )
-        """*Optional.* An array of unique identifiers representing
+        r"""*Optional.* An array of unique identifiers representing
 [Oplog stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) that may
 be used with this project's backup jobs. If omitted, all
 available oplog stores may be used.
@@ -246,7 +246,7 @@ available oplog stores may be used.
             model_config = ConfigDict(populate_by_name=True)
 
             id: Optional[str] = Field(default=None, serialization_alias="id")
-            """*Optional.* The unique identifier representing specific
+            r"""*Optional.* The unique identifier representing specific
 [snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) that can be
 used with this project's backup jobs.
             """
@@ -254,7 +254,7 @@ used with this project's backup jobs.
             type: Optional[SnapshotStoreFilterType] = Field(
                 default=None, serialization_alias="type"
             )
-            """*Optional.* The type of the specific snapshot store given as
+            r"""*Optional.* The type of the specific snapshot store given as
 `snapshotStoreFilter.id`.
 
 The accepted values for this option are:
@@ -267,7 +267,7 @@ The accepted values for this option are:
         snapshot_store_filter: Optional[list[SnapshotStoreFilterParams]] = Field(
             default=None, serialization_alias="snapshotStoreFilter"
         )
-        """*Optional.* Array of unique identifiers representing specific
+        r"""*Optional.* Array of unique identifiers representing specific
 [snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) and their types that can
 be used with this project's backup jobs. If omitted, all
 available snapshot stores are used.
@@ -276,7 +276,7 @@ available snapshot stores are used.
         sync_store_filter: Optional[list[str]] = Field(
             default=None, serialization_alias="syncStoreFilter"
         )
-        """*Optional.* An array of sync store filters that can be used with
+        r"""*Optional.* An array of sync store filters that can be used with
 this project's backup jobs. If omitted, all available sync stores
 are used.
         """
@@ -287,7 +287,7 @@ are used.
         query_params: Optional[UpdateQueryParams],
         body_params: Optional[UpdateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Project Backup Jobs Configuration
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/update-one-backup-group-configuration/)

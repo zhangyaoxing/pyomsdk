@@ -1,4 +1,4 @@
-"""Auto-generated client for TeamsResource resource.
+r"""Auto-generated client for TeamsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,19 +9,19 @@ from .enums import *
 
 
 class TeamsResource(BaseResource):
-    """Client for TeamsResource resource."""
+    r"""Client for TeamsResource resource."""
 
     class AddUsersPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 you want to associate the team with.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to add
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to add
 users to.
         """
 
@@ -29,7 +29,7 @@ users to.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -46,7 +46,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -54,7 +54,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        """The unique ID of the user you want to add to the team
+        r"""The unique ID of the user you want to add to the team
         """
 
     def add_users(
@@ -63,7 +63,7 @@ includes:
         query_params: Optional[AddUsersQueryParams],
         body_params: list[Optional[AddUsersBodyParams]],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Add Users to Team
         ### Document:
         [Add Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-add-user/)
@@ -84,7 +84,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 with which you want to associate the team.
         """
@@ -93,7 +93,7 @@ with which you want to associate the team.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -110,7 +110,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -118,7 +118,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         name: Optional[str] = Field(default=None, serialization_alias="name")
-        """The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to create.
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to create.
         """
 
     def create(
@@ -127,7 +127,7 @@ includes:
         query_params: Optional[CreateQueryParams],
         body_params: Optional[CreateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create a Team
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-create-one/)
@@ -148,13 +148,13 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 associated with the team.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want
 to delete.
         """
 
@@ -162,7 +162,7 @@ to delete.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -179,7 +179,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -188,7 +188,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Team
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-delete-one/)
@@ -209,13 +209,13 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/tutorial/manage-organizations/) associated
 with the team.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams)
+        r"""The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams)
 whose user membership you want to retrieve.
         """
 
@@ -223,7 +223,7 @@ whose user membership you want to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -236,15 +236,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -253,7 +253,7 @@ response body.
         path_params: GetAllTeamUsersPathParams,
         query_params: Optional[GetAllTeamUsersQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Users Assigned to a Team
         ### Document:
         [Get All Team Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all-users/)
@@ -274,7 +274,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose teams you want
 to retrieve.
         """
@@ -283,7 +283,7 @@ to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -296,15 +296,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -313,7 +313,7 @@ response body.
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Teams
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all/)
@@ -334,13 +334,13 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 associated with the team.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams)
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams)
 whose information you want to retrieve.
         """
 
@@ -348,7 +348,7 @@ whose information you want to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -365,7 +365,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -374,7 +374,7 @@ includes:
         path_params: GetOneByIdPathParams,
         query_params: Optional[GetOneByIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Team by ID
         ### Document:
         [Get One by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-id/)
@@ -395,13 +395,13 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 associated with the team.
         """
 
         team_name: str = Field(serialization_alias="TEAM-NAME")
-        """The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) whose
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) whose
 information you want to retrieve.
         """
 
@@ -409,7 +409,7 @@ information you want to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -426,7 +426,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -435,7 +435,7 @@ includes:
         path_params: GetOneByNamePathParams,
         query_params: Optional[GetOneByNameQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Team by Name
         ### Document:
         [Get One by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-name/)
@@ -456,18 +456,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 that contains the team from which you want to remove a MongoDB
 user.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) from which you want to remove
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) from which you want to remove
 a MongoDB user.
         """
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """The unique identifier of the MongoDB [user](/docs/ops-manager/current/tutorial/manage-users/#std-label-add-users) that
+        r"""The unique identifier of the MongoDB [user](/docs/ops-manager/current/tutorial/manage-users/#std-label-add-users) that
 you want to remove from the specified team.
         """
 
@@ -475,7 +475,7 @@ you want to remove from the specified team.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -492,7 +492,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -501,7 +501,7 @@ includes:
         path_params: RemoveUserPathParams,
         query_params: Optional[RemoveUserQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Remove a User from a Team
         ### Document:
         [Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-user/)
@@ -522,20 +522,20 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/tutorial/manage-organizations/) associated
 with the team that you want to rename.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/) that you want to rename.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/) that you want to rename.
         """
 
     class RenameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -552,7 +552,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -560,7 +560,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         name: str = Field(serialization_alias="name")
-        """The new name of the team.
+        r"""The new name of the team.
         """
 
     def rename(
@@ -569,7 +569,7 @@ includes:
         query_params: Optional[RenameQueryParams],
         body_params: RenameBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Rename a Team
         ### Document:
         [Rename](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-rename-one/)
@@ -590,13 +590,13 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the
+        r"""Unique identifier of the
 [project](/docs/ops-manager/current/tutorial/manage-projects/)
 associated with this team.
         """
 
         team_id: str = Field(serialization_alias="TEAM-ID")
-        """Unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams) for which
+        r"""Unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams) for which
 you want to update roles.
         """
 
@@ -604,14 +604,14 @@ you want to update roles.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Flag that specifies whether or not to wrap the response in an
+        r"""Flag that specifies whether or not to wrap the response in an
 [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
 
 Defaults to `false`.
         """
 
         pretty: Optional[bool] = Field(default=None, serialization_alias="pretty")
-        """Flag that specifies whether or not to return a "pretty-printed"
+        r"""Flag that specifies whether or not to return a "pretty-printed"
 JSON document.
 
 Defaults to `false`.
@@ -621,7 +621,7 @@ Defaults to `false`.
         model_config = ConfigDict(populate_by_name=True)
 
         role_names: list[GroupRole] = Field(serialization_alias="roleNames")
-        """[Project roles](/docs/ops-manager/current/reference/user-roles/) you want to
+        r"""[Project roles](/docs/ops-manager/current/reference/user-roles/) you want to
 assign the given team.
         """
 
@@ -631,7 +631,7 @@ assign the given team.
         query_params: Optional[UpdateRolesQueryParams],
         body_params: list[UpdateRolesBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update Team Roles in One Project
         ### Document:
         [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-update-roles/)

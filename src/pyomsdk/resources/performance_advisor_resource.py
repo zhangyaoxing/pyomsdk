@@ -1,4 +1,4 @@
-"""Auto-generated client for PerformanceAdvisorResource resource.
+r"""Auto-generated client for PerformanceAdvisorResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,38 +9,38 @@ from .enums import *
 
 
 class PerformanceAdvisorResource(BaseResource):
-    """Client for PerformanceAdvisorResource resource."""
+    r"""Client for PerformanceAdvisorResource resource."""
 
     class GetSlowQueryLogsPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """*(Required.)* Unique identifier of the host for the MongoDB process.
+        r"""*(Required.)* Unique identifier of the host for the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
+        r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetSlowQueryLogsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         duration: Optional[int] = Field(default=None, serialization_alias="duration")
-        """Length of time in milliseconds during which to find
+        r"""Length of time in milliseconds during which to find
 slow query logs among the managed namespaces in the cluster.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an
+        r"""Indicates whether or not to wrap the response in an
 envelope.
         """
 
         n_logs: Optional[int] = Field(default=20000, serialization_alias="nLogs")
-        """Maximum number of log lines to return.
+        r"""Maximum number of log lines to return.
         """
 
         namespaces: Optional[str] = Field(default="all", serialization_alias="namespaces")
-        """Namespaces from which to retrieve suggested slow query logs.
+        r"""Namespaces from which to retrieve suggested slow query logs.
 A namespace consists of the database and collection resource
 separated by a `.`, such as `<database>.<collection>`.
 
@@ -58,12 +58,12 @@ For example:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         since: Optional[int] = Field(default=None, serialization_alias="since")
-        """Point in time from which to retrieve slow query logs,
+        r"""Point in time from which to retrieve slow query logs,
 stated in [milliseconds since epoch](https://currentmillis.com/).
         """
 
@@ -72,7 +72,7 @@ stated in [milliseconds since epoch](https://currentmillis.com/).
         path_params: GetSlowQueryLogsPathParams,
         query_params: Optional[GetSlowQueryLogsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Slow Query Logs
         ### Document:
         [Get Slow Query Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-slow-queries/)
@@ -94,37 +94,37 @@ stated in [milliseconds since epoch](https://currentmillis.com/).
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """*(Required.)* Unique identifier of the host for the MongoDB process.
+        r"""*(Required.)* Unique identifier of the host for the MongoDB process.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """*(Required.)* Unique identifier of the project that owns this MongoDB process.
+        r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
 
     class GetSuggestedIndexesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         duration: Optional[int] = Field(default=None, serialization_alias="duration")
-        """Length of time in milliseconds during which to find
+        r"""Length of time in milliseconds during which to find
 suggested indexes among the managed namespaces in the cluster.
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an
+        r"""Indicates whether or not to wrap the response in an
 envelope.
         """
 
         n_examples: Optional[int] = Field(default=5, serialization_alias="nExamples")
-        """Maximum number of examples queries to provide that will be
+        r"""Maximum number of examples queries to provide that will be
 improved by a suggested index.
         """
 
         n_indexes: Optional[int] = Field(default=None, serialization_alias="nIndexes")
-        """Maximum number of indexes to suggest.
+        r"""Maximum number of indexes to suggest.
         """
 
         namespaces: Optional[str] = Field(default="all", serialization_alias="namespaces")
-        """Namespaces from which to retrieve suggested indexes. A namespace
+        r"""Namespaces from which to retrieve suggested indexes. A namespace
 consists of the database and collection resource separated by a
 `.`, such as `<database>.<collection>`.
 
@@ -142,12 +142,12 @@ For example:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         since: Optional[int] = Field(default=None, serialization_alias="since")
-        """Point in time from which to retrieve suggested indexes,
+        r"""Point in time from which to retrieve suggested indexes,
 stated in [milliseconds since epoch](https://currentmillis.com/).
         """
 
@@ -156,7 +156,7 @@ stated in [milliseconds since epoch](https://currentmillis.com/).
         path_params: GetSuggestedIndexesPathParams,
         query_params: Optional[GetSuggestedIndexesQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Suggested Indexes
         ### Document:
         [Get Suggested Indexes](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-suggested-indexes/)
@@ -178,12 +178,12 @@ stated in [milliseconds since epoch](https://currentmillis.com/).
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """The unique identifier for the host of a MongoDB process. For
+        r"""The unique identifier for the host of a MongoDB process. For
 information about retrieving host ids, see [Get All Hosts in One Project.](/docs/ops-manager/current/reference/api/hosts/get-all-hosts-in-group/)
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """The unique identifier for the project where the
+        r"""The unique identifier for the project where the
 MongoDB host resides.
         """
 
@@ -191,7 +191,7 @@ MongoDB host resides.
         model_config = ConfigDict(populate_by_name=True)
 
         duration: Optional[int] = Field(default=None, serialization_alias="duration")
-        """Length of time from the `since` parameter, in milliseconds,
+        r"""Length of time from the `since` parameter, in milliseconds,
 for which you want to receive results. If you do not also specify
 the `since` parameter, the endpoint returns results from the
 number of milliseconds specified by `duration` before the
@@ -199,18 +199,18 @@ current time until now.
         """
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an
+        r"""Specifies whether or not to wrap the response in an
 [envelope](/docs/ops-manager/current/core/api/#std-label-api-envelope). The default is `false`.
         """
 
         pretty: Optional[bool] = Field(default=None, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/w/index.php?title=Unix_time&oldid=856146990)
 format. The default value is `false`.
         """
 
         since: Optional[int] = Field(default=None, serialization_alias="since")
-        """Point in time, specified as milliseconds since the [Unix Epoch](https://en.wikipedia.org/wiki/Unix_time),
+        r"""Point in time, specified as milliseconds since the [Unix Epoch](https://en.wikipedia.org/wiki/Unix_time),
 from which you want to receive results. If you do not also specify
 the `duration` parameter, the endpoint returns results from
 `since` until the current time.
@@ -221,7 +221,7 @@ the `duration` parameter, the endpoint returns results from
         path_params: GetNamespacesPathParams,
         query_params: Optional[GetNamespacesQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Namespaces for a Project
         ### Document:
         [Get Namespaces](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/pa-namespaces-get-all/)

@@ -1,4 +1,4 @@
-"""Auto-generated client for BackupConfigurationsResource resource.
+r"""Auto-generated client for BackupConfigurationsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class BackupConfigurationsResource(BaseResource):
-    """Client for BackupConfigurationsResource resource."""
+    r"""Client for BackupConfigurationsResource resource."""
 
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 project to which the backup configuration applies.
         """
 
@@ -23,7 +23,7 @@ project to which the backup configuration applies.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -36,15 +36,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -53,7 +53,7 @@ response body.
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Backup Configurations for One Project
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-backup-configs-for-group/)
@@ -74,12 +74,12 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique 24-hexadecimal digit string that identifies the cluster
+        r"""Unique 24-hexadecimal digit string that identifies the cluster
 whose backup configuration you want to find.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 project that holds the cluster with the backup configuration you
 want to find.
         """
@@ -88,7 +88,7 @@ want to find.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -105,7 +105,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -114,7 +114,7 @@ includes:
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Backup Configuration from One Project
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-backup-config-by-cluster-id/)
@@ -135,12 +135,12 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="clusterId")
-        """Unique 24-hexadecimal digit string that identifies the cluster
+        r"""Unique 24-hexadecimal digit string that identifies the cluster
 whose backup configuration you want to change.
         """
 
         project_id: str = Field(serialization_alias="projectId")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 project that holds the cluster with the backup configuration you
 want to change.
         """
@@ -149,7 +149,7 @@ want to change.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -166,7 +166,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -176,7 +176,7 @@ includes:
         auth_mechanism_name: Optional[AuthMechanismName] = Field(
             default=None, serialization_alias="authMechanismName"
         )
-        """Authentication mechanism needed to connect to the sync source
+        r"""Authentication mechanism needed to connect to the sync source
 database. Ops Manager requires this parameter if the sync store uses authentication. Ops Manager accepts:
 
 - `MONGODB_CR` (This covers SCRAM-SHA-1, SCRAM-SHA-256, and
@@ -190,7 +190,7 @@ database. Ops Manager requires this parameter if the sync store uses authenticat
         encryption_enabled: Optional[bool] = Field(
             default=None, serialization_alias="encryptionEnabled"
         )
-        """Flag that indicates if encryption is enabled for the backup
+        r"""Flag that indicates if encryption is enabled for the backup
 configuration. You must include the **syncSource** parameter
 when enabling encryption for a backup configuration. For
 existing backups in a project, enabling encryption requires an
@@ -208,7 +208,7 @@ later, see [Encrypted Backup Snapshots.](/docs/ops-manager/current/tutorial/encr
         excluded_namespaces: Optional[list[str]] = Field(
             default=None, serialization_alias="excludedNamespaces"
         )
-        """List of database and collection names to *omit* from the backup.
+        r"""List of database and collection names to *omit* from the backup.
 Each string represents one namespace. Namespaces use one of the
 following formats:
 
@@ -238,7 +238,7 @@ This parameter must meet the following conditions:
         included_namespaces: Optional[list[str]] = Field(
             default=None, serialization_alias="includedNamespaces"
         )
-        """List of database and collection names to *include* from the
+        r"""List of database and collection names to *include* from the
 backup. Each string represents one namespace. Namespaces use one
 of the following formats:
 
@@ -266,13 +266,13 @@ This parameter must meet the following conditions:
         """
 
         password: Optional[str] = Field(default=None, serialization_alias="password")
-        """Password to use to connect to the sync source database. Ops Manager
+        r"""Password to use to connect to the sync source database. Ops Manager
 requires this parameter when the sync store [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) instances
 require clients to authenticate.
         """
 
         preferred_member: Optional[str] = Field(default=None, serialization_alias="preferredMember")
-        """Cluster member that a user designates as the preferred replica
+        r"""Cluster member that a user designates as the preferred replica
 set member to create snapshots. You can set the preferred
 member using the [console](/docs/ops-manager/current/tutorial/edit-backup/).
 View available replica set members that can act as a preferred
@@ -280,7 +280,7 @@ member using the [Get one backup config endpoint.](/docs/ops-manager/current/ref
         """
 
         provisioned: Optional[bool] = Field(default=None, serialization_alias="provisioned")
-        """Flag that indicates if Ops Manager has provisioned the resources
+        r"""Flag that indicates if Ops Manager has provisioned the resources
 needed to store a backup.
         """
 
@@ -290,7 +290,7 @@ needed to store a backup.
             snapshot_store_id: Optional[str] = Field(
                 default=None, serialization_alias="snapshotStoreId"
             )
-            """String that identifies the S3 blockstore to transition to. New
+            r"""String that identifies the S3 blockstore to transition to. New
 snapshots will be stored in this destination S3 blockstore.
 Existing snapshots remain in the original store until they
 expire based on your configured retention policy. If you provide
@@ -301,7 +301,7 @@ the `snapshotStore` object, you must specify both the
             snapshot_store_type: Optional[str] = Field(
                 default=None, serialization_alias="snapshotStoreType"
             )
-            """String that identifies the snapshot store type. Currently, only
+            r"""String that identifies the snapshot store type. Currently, only
 an S3 bucket (S3 blockstore) is supported. Value must be
 `s3blockstore`. If you provide the `snapshotStore` object,
 you must specify both the `snapshotStoreType` and
@@ -311,7 +311,7 @@ you must specify both the `snapshotStoreType` and
         snapshot_store: Optional[SnapshotStoreParams] = Field(
             default=None, serialization_alias="snapshotStore"
         )
-        """Object that specifies the snapshot store to transition to. This
+        r"""Object that specifies the snapshot store to transition to. This
 object contains the snapshot store type and the ID of the S3
 bucket (S3 blockstore). Existing snapshots remain in the
 original store until they expire based on your configured
@@ -320,14 +320,14 @@ snapshot stores from the [Jobs page.](/docs/ops-manager/current/admin/backup/job
         """
 
         ssl_enabled: Optional[bool] = Field(default=None, serialization_alias="sslEnabled")
-        """Flag that indicates if TLS is enabled for the sync source
+        r"""Flag that indicates if TLS is enabled for the sync source
 database.
         """
 
         status_name: Optional[BackupStatusName] = Field(
             default=None, serialization_alias="statusName"
         )
-        """Current (or desired) status of the backup configuration. Ops Manager
+        r"""Current (or desired) status of the backup configuration. Ops Manager
 accepts:
 
 - **INACTIVE**
@@ -340,14 +340,14 @@ accepts:
         storage_engine_name: Optional[StorageEngineName] = Field(
             default=None, serialization_alias="storageEngineName"
         )
-        """Storage engine used for the backup. Ops Manager accepts:
+        r"""Storage engine used for the backup. Ops Manager accepts:
 
 - **MEMORY\_MAPPED**
 - **WIRED\_TIGER**
         """
 
         sync_source: Optional[str] = Field(default=None, serialization_alias="syncSource")
-        """[`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) instance from which you retrieve backup data. Ops Manager
+        r"""[`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) instance from which you retrieve backup data. Ops Manager
 accepts either a specific hostname or one of: **PRIMARY** and
 **SECONDARY**.
 
@@ -356,7 +356,7 @@ Ops Manager requires this parameter if
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")
-        """Name of the user to use to connect to the sync source database.
+        r"""Name of the user to use to connect to the sync source database.
 Ops Manager requires this parameter when the sync store [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod)
 instances require clients to authenticate.
 
@@ -371,7 +371,7 @@ configuration for a replica set or sharded cluster that Ops Manager
         query_params: Optional[UpdateQueryParams],
         body_params: Optional[UpdateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Backup Configuration
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-backup-config/)

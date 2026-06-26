@@ -1,4 +1,4 @@
-"""Auto-generated client for OrganizationsResource resource.
+r"""Auto-generated client for OrganizationsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class OrganizationsResource(BaseResource):
-    """Client for OrganizationsResource resource."""
+    r"""Client for OrganizationsResource resource."""
 
     class InviteUserPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -23,7 +23,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -40,7 +40,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -48,7 +48,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         roles: list[OrgRole] = Field(serialization_alias="roles")
-        """Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
 user.
 
 If the user accepts the invitation, Ops Manager assigns these roles
@@ -56,12 +56,12 @@ to them.
         """
 
         team_ids: Optional[list[str]] = Field(default=None, serialization_alias="teamIds")
-        """Unique 24-hexadecimal digit strings that identify the teams that
+        r"""Unique 24-hexadecimal digit strings that identify the teams that
 you invite the user to join.
         """
 
         username: str = Field(serialization_alias="username")
-        """Email address of the invited user. This is the address to which
+        r"""Email address of the invited user. This is the address to which
 Ops Manager sends the invite.
 
 If the user accepts the invitation, they log in to Ops Manager
@@ -74,7 +74,7 @@ with this username.
         query_params: Optional[InviteUserQueryParams],
         body_params: InviteUserBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Invite One User to an Ops Manager Organization
         ### Document:
         [Invite User](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/create-one-invitation/)
@@ -95,12 +95,12 @@ with this username.
         model_config = ConfigDict(populate_by_name=True)
 
         invitation_id: str = Field(serialization_alias="INVITATION-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 invitation.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -108,7 +108,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -125,7 +125,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -134,7 +134,7 @@ includes:
         path_params: DeleteInvitationPathParams,
         query_params: Optional[DeleteInvitationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Organization Invitation
         ### Document:
         [Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/delete-one-invitation/)
@@ -156,7 +156,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -164,7 +164,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -181,12 +181,12 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")
-        """Email address of the invited user. This is the address to which
+        r"""Email address of the invited user. This is the address to which
 Ops Manager sent the invite.
 
 If omitted, Ops Manager returns all pending invitations.
@@ -197,7 +197,7 @@ If omitted, Ops Manager returns all pending invitations.
         path_params: GetAllInvitationsPathParams,
         query_params: Optional[GetAllInvitationsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Organization Invitations
         ### Document:
         [Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-all-invitations/)
@@ -219,12 +219,12 @@ If omitted, Ops Manager returns all pending invitations.
         model_config = ConfigDict(populate_by_name=True)
 
         invitation_id: str = Field(serialization_alias="INVITATION-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 invitation.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -232,7 +232,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -249,7 +249,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -258,7 +258,7 @@ includes:
         path_params: GetOneInvitationPathParams,
         query_params: Optional[GetOneInvitationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Organization Invitation
         ### Document:
         [Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-one-invitation/)
@@ -280,12 +280,12 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         invitation_id: str = Field(serialization_alias="INVITATION-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 invitation.
         """
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -293,7 +293,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -310,7 +310,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -318,7 +318,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         roles: list[OrgRole] = Field(serialization_alias="roles")
-        """Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
 user.
 
 If the user accepts the invitation, Ops Manager assigns these roles
@@ -336,7 +336,7 @@ user in this request.
         query_params: Optional[UpdateByInvitationIdQueryParams],
         body_params: UpdateByInvitationIdBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Organization Invitation by Invitation ID
         ### Document:
         [Update by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation-by-id/)
@@ -358,7 +358,7 @@ user in this request.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """Unique 24-hexadecimal digit string that identifies the
+        r"""Unique 24-hexadecimal digit string that identifies the
 organization.
         """
 
@@ -366,7 +366,7 @@ organization.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -383,7 +383,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -391,7 +391,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         roles: list[OrgRole] = Field(serialization_alias="roles")
-        """Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited
 user.
 
 If the user accepts the invitation, Ops Manager assigns these roles
@@ -404,7 +404,7 @@ user in this request.
         """
 
         username: str = Field(serialization_alias="username")
-        """Username of the user whose invitation you want to update. In
+        r"""Username of the user whose invitation you want to update. In
 Ops Manager, an invited user's username is the email address to
 which Ops Manager sent the invitation.
         """
@@ -415,7 +415,7 @@ which Ops Manager sent the invitation.
         query_params: Optional[UpdateInvitationQueryParams],
         body_params: UpdateInvitationBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Organization Invitation
         ### Document:
         [Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation/)
@@ -437,7 +437,7 @@ which Ops Manager sent the invitation.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -450,15 +450,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -469,11 +469,11 @@ response body.
             model_config = ConfigDict(populate_by_name=True)
 
             ldap_groups: Optional[list[Any]] = Field(default=None, serialization_alias="ldapGroups")
-            """LDAP group(s) that map to associate to the `roleName`.
+            r"""LDAP group(s) that map to associate to the `roleName`.
             """
 
             role_name: Optional[OrgRole] = Field(default=None, serialization_alias="roleName")
-            """Ops Manager organization role to map. Can specify from the
+            r"""Ops Manager organization role to map. Can specify from the
 following list:
 
 - `ORG_READ_ONLY`
@@ -487,7 +487,7 @@ or an organization billing admin role.
         ldap_group_mappings: Optional[list[LdapGroupMappingsParams]] = Field(
             default=None, serialization_alias="ldapGroupMappings"
         )
-        """Requires LDAP integration for Ops Manager.
+        r"""Requires LDAP integration for Ops Manager.
 
 Array of documents that specify the mapping between the
 Ops Manager [Organization Roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) and the [LDAP groups.](/docs/ops-manager/current/tutorial/enable-ldap-authentication-for-group/)
@@ -497,7 +497,7 @@ If specifying `ldapGroupMappings`, mapping for
         """
 
         name: str = Field(serialization_alias="name")
-        """Name of the organization you want to create.
+        r"""Name of the organization you want to create.
         """
 
     def create_organization(
@@ -505,7 +505,7 @@ If specifying `ldapGroupMappings`, mapping for
         query_params: Optional[CreateOrganizationQueryParams],
         body_params: CreateOrganizationBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Organization
         ### Document:
         [Create Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-create-one/)
@@ -526,7 +526,7 @@ If specifying `ldapGroupMappings`, mapping for
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to delete.
         """
 
@@ -534,7 +534,7 @@ If specifying `ldapGroupMappings`, mapping for
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -551,7 +551,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -560,7 +560,7 @@ includes:
         path_params: DeleteOrganizationPathParams,
         query_params: Optional[DeleteOrganizationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Organization
         ### Document:
         [Delete Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-delete-one/)
@@ -581,7 +581,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the
+        r"""The unique identifier for the
 [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose information you want
 to retrieve.
         """
@@ -590,15 +590,15 @@ to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         name: Optional[str] = Field(default=None, serialization_alias="name")
-        """Human-readable label of the project to use to filter the returned
+        r"""Human-readable label of the project to use to filter the returned
 list. Performs a case-insensitive search for a project, which is
 prefixed by the specified `name`, within the organization.
 
@@ -608,11 +608,11 @@ would not return a project named `project123`.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-based).
+        r"""Page number (1-based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_projects(
@@ -620,7 +620,7 @@ would not return a project named `project123`.
         path_params: GetAllProjectsPathParams,
         query_params: Optional[GetAllProjectsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Projects in an Organization
         ### Document:
         [Get All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-projects/)
@@ -641,7 +641,7 @@ would not return a project named `project123`.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose
 user information you want to retrieve.
         """
 
@@ -649,26 +649,26 @@ user information you want to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an
+        r"""Specifies whether or not to wrap the response in an
 [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
 
 Defaults to `false`.
         """
 
         items_per_page: Optional[int] = Field(default=None, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
 
 Defaults to `100`.
         """
 
         page_num: Optional[int] = Field(default=None, serialization_alias="pageNum")
-        """The page to return.
+        r"""The page to return.
 
 Defaults to `1`.
         """
 
         pretty: Optional[bool] = Field(default=None, serialization_alias="pretty")
-        """Specifies whether or not to return a "pretty-printed"
+        r"""Specifies whether or not to return a "pretty-printed"
 JSON document.
 
 Defaults to `false`.
@@ -679,7 +679,7 @@ Defaults to `false`.
         path_params: GetAllUsersPathParams,
         query_params: Optional[GetAllUsersQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Organization Users
         ### Document:
         [Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-users/)
@@ -700,13 +700,13 @@ Defaults to `false`.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
 
         include_deleted_orgs: Optional[bool] = Field(
             default=True, serialization_alias="includeDeletedOrgs"
         )
-        """Flag indicating whether the response body contains deleted
+        r"""Flag indicating whether the response body contains deleted
 organizations.
 
 Ops Manager honors the value of this parameter only if the user who
@@ -719,11 +719,11 @@ role, the response does not contain deleted organizations.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         name: Optional[str] = Field(default=None, serialization_alias="name")
-        """Filters results based on the specified organization name. Performs
+        r"""Filters results based on the specified organization name. Performs
 a case-insensitive search for organizations which exactly match
 the specified `name`.
 
@@ -733,18 +733,18 @@ but would not return an organization named `org123`.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-based).
+        r"""Page number (1-based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_organizations(
         self,
         query_params: Optional[GetAllOrganizationsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Organizations
         ### Document:
         [Get All Organizations](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
@@ -765,7 +765,7 @@ but would not return an organization named `org123`.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """*(Required.)* The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
+        r"""*(Required.)* The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
 whose information you want to retrieve.
         """
 
@@ -773,7 +773,7 @@ whose information you want to retrieve.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag indicating whether or not to wrap the response in an
+        r"""Flag indicating whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -792,7 +792,7 @@ includes:
         include_deleted_orgs: Optional[bool] = Field(
             default=True, serialization_alias="includeDeletedOrgs"
         )
-        """Flag indicating whether the response body contains deleted
+        r"""Flag indicating whether the response body contains deleted
 organizations.
 
 Ops Manager honors the value of this parameter only if the user who
@@ -805,7 +805,7 @@ role, the response does not contain deleted organizations.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -814,7 +814,7 @@ role, the response does not contain deleted organizations.
         path_params: GetOneOrganizationPathParams,
         query_params: Optional[GetOneOrganizationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Organization
         ### Document:
         [Get One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-one/)
@@ -835,14 +835,14 @@ role, the response does not contain deleted organizations.
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="ORG-ID")
-        """The unique identifier of the organization.
+        r"""The unique identifier of the organization.
         """
 
     class RenameOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -859,7 +859,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -869,14 +869,14 @@ includes:
         ldap_group_mappings: Optional[list[dict]] = Field(
             default=None, serialization_alias="ldapGroupMappings"
         )
-        """For LDAP-backed Ops Manager, the mappings of
+        r"""For LDAP-backed Ops Manager, the mappings of
 [LDAP groups](/docs/ops-manager/current/tutorial/configure-for-ldap-authentication/)
 to Ops Manager organization roles. Only accepted for LDAP-backed
 Ops Manager.
         """
 
         name: Optional[str] = Field(default=None, serialization_alias="name")
-        """The new name for the organization.
+        r"""The new name for the organization.
         """
 
     def rename_organization(
@@ -885,7 +885,7 @@ Ops Manager.
         query_params: Optional[RenameOrganizationQueryParams],
         body_params: Optional[RenameOrganizationBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Organization
         ### Document:
         [Rename Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-rename/)

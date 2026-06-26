@@ -1,4 +1,4 @@
-"""Auto-generated client for UsersResource resource.
+r"""Auto-generated client for UsersResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class UsersResource(BaseResource):
-    """Client for UsersResource resource."""
+    r"""Client for UsersResource resource."""
 
     class CreateFirstUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         whitelist: Optional[str] = Field(default=None, serialization_alias="whitelist")
-        """IP address that you want to add to the whitelist for the first
+        r"""IP address that you want to add to the whitelist for the first
 Ops Manager user.
 
 You can add more than one `whitelist` parameter and value.
@@ -25,25 +25,25 @@ You can add more than one `whitelist` parameter and value.
         model_config = ConfigDict(populate_by_name=True)
 
         email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
-        """Email address of the first Ops Manager user.
+        r"""Email address of the first Ops Manager user.
         """
 
         first_name: str = Field(serialization_alias="firstName")
-        """First name of the first Ops Manager user.
+        r"""First name of the first Ops Manager user.
         """
 
         last_name: str = Field(serialization_alias="lastName")
-        """Last name of the first Ops Manager user.
+        r"""Last name of the first Ops Manager user.
         """
 
         password: str = Field(serialization_alias="password")
-        """Password of the first Ops Manager user. This field is *not included*
+        r"""Password of the first Ops Manager user. This field is *not included*
 in the HTTP response body. Ops Manager sends this in the HTTP
 request only when creating the first Ops Manager user.
         """
 
         username: str = Field(serialization_alias="username")
-        """Username of the first Ops Manager user. Validated depending on the
+        r"""Username of the first Ops Manager user. Validated depending on the
 value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
 | Value | Description |
@@ -64,7 +64,7 @@ value to an email address, you do not need to set the
         query_params: Optional[CreateFirstUserQueryParams],
         body_params: CreateFirstUserBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create the First User
         ### Document:
         [Create First User](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create-first/)
@@ -86,7 +86,7 @@ value to an email address, you do not need to set the
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -103,7 +103,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -111,23 +111,23 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
-        """Email address of the Ops Manager user.
+        r"""Email address of the Ops Manager user.
         """
 
         first_name: Optional[str] = Field(default=None, serialization_alias="firstName")
-        """First name of the Ops Manager user.
+        r"""First name of the Ops Manager user.
         """
 
         last_name: Optional[str] = Field(default=None, serialization_alias="lastName")
-        """Last name of the Ops Manager user.
+        r"""Last name of the Ops Manager user.
         """
 
         mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
-        """Mobile telephone number of the Ops Manager user.
+        r"""Mobile telephone number of the Ops Manager user.
         """
 
         password: Optional[str] = Field(default=None, serialization_alias="password")
-        """Password of the Ops Manager user.
+        r"""Password of the Ops Manager user.
 
 This field is *not* included in the
 entity returned from the server. It can be sent only in the entity body when you create a new user.
@@ -137,7 +137,7 @@ entity returned from the server. It can be sent only in the entity body when you
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            """Unique identifier of the group in which the Ops Manager user has the
+            r"""Unique identifier of the group in which the Ops Manager user has the
 specified role.
 
 For the "global" roles (those whose name starts
@@ -146,12 +146,12 @@ roles are not tied to a group.
             """
 
             org_id: Optional[str] = Field(default=None, serialization_alias="orgId")
-            """Unique identifier of the organization in which the Ops Manager user
+            r"""Unique identifier of the organization in which the Ops Manager user
 has the specified role.
             """
 
             role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
-            """Name of the role. Accepted values are:
+            r"""Name of the role. Accepted values are:
 
 | Value | Description |
 | --- | --- |
@@ -177,11 +177,11 @@ has the specified role.
             """
 
         roles: Optional[list[RolesParams]] = Field(default=None, serialization_alias="roles")
-        """Role assignments of the Ops Manager user.
+        r"""Role assignments of the Ops Manager user.
         """
 
         username: str = Field(serialization_alias="username")
-        """Username of the Ops Manager user. Validated depending on the
+        r"""Username of the Ops Manager user. Validated depending on the
 value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
 | Value | Description |
@@ -198,7 +198,7 @@ See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One User
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create/)
@@ -221,7 +221,7 @@ See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#
         model_config = ConfigDict(populate_by_name=True)
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID`
+        r"""*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID`
 for a user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
 
@@ -229,7 +229,7 @@ for a user, see [Get All Users in One Project.](/docs/ops-manager/current/refere
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -246,7 +246,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -255,7 +255,7 @@ includes:
         path_params: GetByIdPathParams,
         query_params: Optional[GetByIdQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get a User by ID
         ### Document:
         [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-id/)
@@ -280,14 +280,14 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         user_name: str = Field(serialization_alias="USER-NAME")
-        """*(Required.)* Username of the MongoDB user that you want to retrieve.
+        r"""*(Required.)* Username of the MongoDB user that you want to retrieve.
         """
 
     class GetByNameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -304,7 +304,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -313,7 +313,7 @@ includes:
         path_params: GetByNamePathParams,
         query_params: Optional[GetByNameQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get a User by Name
         ### Document:
         [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-name/)
@@ -338,7 +338,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """Unique identifier of the user that you want to
+        r"""Unique identifier of the user that you want to
 retrieve. To retrieve the `USER-ID` for a user, see
 [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
@@ -347,7 +347,7 @@ retrieve. To retrieve the `USER-ID` for a user, see
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -364,7 +364,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -375,7 +375,7 @@ includes:
             model_config = ConfigDict(populate_by_name=True)
 
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            """Unique identifier of the project in which the Ops Manager user has the
+            r"""Unique identifier of the project in which the Ops Manager user has the
 specified role.
 
 Roles that start with `GLOBAL_` don't require a `groupId`.
@@ -383,12 +383,12 @@ These roles aren't tied to a project.
             """
 
             org_id: Optional[str] = Field(default=None, serialization_alias="orgId")
-            """Unique identifier of the organization in which the Ops Manager user
+            r"""Unique identifier of the organization in which the Ops Manager user
 has the specified role.
             """
 
             role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
-            """Name of the role. Accepted values are:
+            r"""Name of the role. Accepted values are:
 
 | Value | Description |
 | --- | --- |
@@ -414,7 +414,7 @@ has the specified role.
             """
 
         roles: list[RolesParams] = Field(serialization_alias="roles")
-        """Role assigned to the Ops Manager user.
+        r"""Role assigned to the Ops Manager user.
         """
 
     def update_roles(
@@ -423,7 +423,7 @@ has the specified role.
         query_params: Optional[UpdateRolesQueryParams],
         body_params: UpdateRolesBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update Roles for One User
         ### Document:
         [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-update/)
@@ -449,14 +449,14 @@ has the specified role.
         model_config = ConfigDict(populate_by_name=True)
 
         user_id: str = Field(serialization_alias="USER-ID")
-        """Unique identifier of the user.
+        r"""Unique identifier of the user.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -473,7 +473,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -482,7 +482,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Remove One User
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/users/delete-one-user/)

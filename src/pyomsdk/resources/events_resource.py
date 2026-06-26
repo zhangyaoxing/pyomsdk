@@ -1,4 +1,4 @@
-"""Auto-generated client for EventsResource resource.
+r"""Auto-generated client for EventsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,20 +9,20 @@ from .enums import *
 
 
 class EventsResource(BaseResource):
-    """Client for EventsResource resource."""
+    r"""Client for EventsResource resource."""
 
     class GetAllOrganizationPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique identifier of the organization associated with the events.
+        r"""Unique identifier of the organization associated with the events.
         """
 
     class GetAllOrganizationQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -42,7 +42,7 @@ response body.
         """
 
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
-        """Return only events of the specified types.
+        r"""Return only events of the specified types.
 
 To review the types of events that generate alerts, see
 [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
@@ -52,7 +52,7 @@ For a complete list of events included in the Ops Manager audit log, see
         """
 
         include_raw: Optional[bool] = Field(default=False, serialization_alias="includeRaw")
-        """Specifies whether to include the `raw` document in the output.
+        r"""Specifies whether to include the `raw` document in the output.
 The `raw` document contains additional meta information about
 the event.
 
@@ -62,25 +62,25 @@ as its structure may vary across resource types.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         max_date: Optional[str] = Field(default=None, serialization_alias="maxDate")
-        """Return only events for which the created date is less than or
+        r"""Return only events for which the created date is less than or
 equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         min_date: Optional[str] = Field(default=None, serialization_alias="minDate")
-        """Return only events for which the created date is greater than
+        r"""Return only events for which the created date is greater than
 or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -89,7 +89,7 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         path_params: GetAllOrganizationPathParams,
         query_params: Optional[GetAllOrganizationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Organization Events
         ### Document:
         [Get All (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-org/)
@@ -110,7 +110,7 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         model_config = ConfigDict(populate_by_name=True)
 
         group_id: str = Field(serialization_alias="groupId")
-        """Unique identifier of the project associated with the
+        r"""Unique identifier of the project associated with the
 desired event.
         """
 
@@ -118,7 +118,7 @@ desired event.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -138,7 +138,7 @@ response body.
         """
 
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
-        """Return only events of the specified types.
+        r"""Return only events of the specified types.
 
 To review the types of events that generate alerts, see
 [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
@@ -148,7 +148,7 @@ For a complete list of events included in the Ops Manager audit log, see
         """
 
         include_raw: Optional[bool] = Field(default=False, serialization_alias="includeRaw")
-        """Specifies whether to include the `raw` document in the output.
+        r"""Specifies whether to include the `raw` document in the output.
 The `raw` document contains additional meta information about
 the event.
 
@@ -158,25 +158,25 @@ as its structure may vary across resource types.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         max_date: Optional[str] = Field(default=None, serialization_alias="maxDate")
-        """Return only events for which the created date is less than or
+        r"""Return only events for which the created date is less than or
 equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         min_date: Optional[str] = Field(default=None, serialization_alias="minDate")
-        """Return only events for which the created date is greater than
+        r"""Return only events for which the created date is greater than
 or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -185,7 +185,7 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         path_params: GetAllProjectPathParams,
         query_params: Optional[GetAllProjectQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Project Events
         ### Document:
         [Get All (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-project/)
@@ -206,11 +206,11 @@ or equal to the specified Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/
         model_config = ConfigDict(populate_by_name=True)
 
         event_id: str = Field(serialization_alias="eventId")
-        """Unique identifier of the desired event.
+        r"""Unique identifier of the desired event.
         """
 
         org_id: str = Field(serialization_alias="orgId")
-        """Unique identifier of the organization associated with the
+        r"""Unique identifier of the organization associated with the
 desired event.
         """
 
@@ -218,11 +218,11 @@ desired event.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
 
         include_raw: Optional[bool] = Field(default=False, serialization_alias="includeRaw")
-        """Specifies whether to include the `raw` document in the output.
+        r"""Specifies whether to include the `raw` document in the output.
 The `raw` document contains additional meta information about
 the event.
 
@@ -232,7 +232,7 @@ as its structure may vary across resource types.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_organization(
@@ -240,7 +240,7 @@ as its structure may vary across resource types.
         path_params: GetOneOrganizationPathParams,
         query_params: Optional[GetOneOrganizationQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Organization Event
         ### Document:
         [Get One (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-org/)
@@ -261,11 +261,11 @@ as its structure may vary across resource types.
         model_config = ConfigDict(populate_by_name=True)
 
         event_id: str = Field(serialization_alias="eventId")
-        """Unique identifier of the desired event.
+        r"""Unique identifier of the desired event.
         """
 
         group_id: str = Field(serialization_alias="groupId")
-        """Unique identifier of the project associated with the
+        r"""Unique identifier of the project associated with the
 desired event.
         """
 
@@ -273,11 +273,11 @@ desired event.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
 
         include_raw: Optional[bool] = Field(default=False, serialization_alias="includeRaw")
-        """Specifies whether to include the `raw` document in the output.
+        r"""Specifies whether to include the `raw` document in the output.
 The `raw` document contains additional meta information about
 the event.
 
@@ -287,7 +287,7 @@ as its structure may vary across resource types.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Displays response in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one_project(
@@ -295,7 +295,7 @@ as its structure may vary across resource types.
         path_params: GetOneProjectPathParams,
         query_params: Optional[GetOneProjectQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Project Event
         ### Document:
         [Get One (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-project/)

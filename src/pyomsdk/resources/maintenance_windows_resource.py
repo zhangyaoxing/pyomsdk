@@ -1,4 +1,4 @@
-"""Auto-generated client for MaintenanceWindowsResource resource.
+r"""Auto-generated client for MaintenanceWindowsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,20 +9,20 @@ from .enums import *
 
 
 class MaintenanceWindowsResource(BaseResource):
-    """Client for MaintenanceWindowsResource resource."""
+    r"""Client for MaintenanceWindowsResource resource."""
 
     class CreatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -39,7 +39,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -47,20 +47,20 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         alert_type_names: list[str] = Field(serialization_alias="alertTypeNames")
-        """Alert types to silence during maintenance window. For example:
+        r"""Alert types to silence during maintenance window. For example:
 `HOST`, `REPLICA_SET`, `CLUSTER`, `AGENT`, `BACKUP`
         """
 
         description: Optional[str] = Field(default=None, serialization_alias="description")
-        """Description of the maintenance window.
+        r"""Description of the maintenance window.
         """
 
         end_date: str = Field(serialization_alias="endDate")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window ends.
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window ends.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window starts.
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window starts.
         """
 
     def create(
@@ -69,7 +69,7 @@ includes:
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Maintenance Window
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-create-one/)
@@ -92,18 +92,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         mw_id: str = Field(serialization_alias="MW-ID")
-        """Unique identifier of the maintenance window you want to delete.
+        r"""Unique identifier of the maintenance window you want to delete.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -120,7 +120,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -129,7 +129,7 @@ includes:
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Maintenance Window
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-delete-one/)
@@ -150,14 +150,14 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -174,7 +174,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -183,7 +183,7 @@ includes:
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Maintenance Windows
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-all/)
@@ -204,18 +204,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         mw_id: str = Field(serialization_alias="MW-ID")
-        """Unique identifier of the maintenance window you want to retrieve.
+        r"""Unique identifier of the maintenance window you want to retrieve.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -232,7 +232,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -241,7 +241,7 @@ includes:
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Maintenance Window
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-one/)
@@ -262,18 +262,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         mw_id: str = Field(serialization_alias="MW-ID")
-        """Unique identifier of the maintenance window you want to update.
+        r"""Unique identifier of the maintenance window you want to update.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the project.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -290,7 +290,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -298,20 +298,20 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         alert_type_names: list[str] = Field(serialization_alias="alertTypeNames")
-        """Alert types to silence during maintenance window. For example:
+        r"""Alert types to silence during maintenance window. For example:
 `HOST`, `REPLICA_SET`, `CLUSTER`, `AGENT`, `BACKUP`
         """
 
         description: Optional[str] = Field(default=None, serialization_alias="description")
-        """Description of the maintenance window.
+        r"""Description of the maintenance window.
         """
 
         end_date: str = Field(serialization_alias="endDate")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window ends.
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window ends.
         """
 
         start_date: str = Field(serialization_alias="startDate")
-        """Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window starts.
+        r"""Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=960381594) date and time format in UTC when the maintenance window starts.
         """
 
     def update(
@@ -320,7 +320,7 @@ includes:
         query_params: Optional[UpdateQueryParams],
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Maintenance Window
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-update-one/)

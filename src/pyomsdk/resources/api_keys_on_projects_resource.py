@@ -1,4 +1,4 @@
-"""Auto-generated client for ApiKeysOnProjectsResource resource.
+r"""Auto-generated client for ApiKeysOnProjectsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,13 +9,13 @@ from .enums import *
 
 
 class ApiKeysOnProjectsResource(BaseResource):
-    """Client for ApiKeysOnProjectsResource resource."""
+    r"""Client for ApiKeysOnProjectsResource resource."""
 
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key you want to update. Request
+        r"""Unique identifier for the API key you want to update. Request
 the
 [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
 endpoint to retrieve all API keys to which the authenticated
@@ -23,7 +23,7 @@ user has access for the specified organization.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project whose API keys you want to
+        r"""Unique identifier for the Project whose API keys you want to
 update. Use the
 [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
 to retrieve all organizations to which the authenticated
@@ -34,7 +34,7 @@ user has access.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -54,15 +54,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -70,7 +70,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         roles: list[GroupRole] = Field(serialization_alias="roles")
-        """List of roles that the API Key should be granted. A minimum
+        r"""List of roles that the API Key should be granted. A minimum
 of one role must be provided. Any roles provided must be
 valid for the assigned Project:
 
@@ -93,7 +93,7 @@ valid for the assigned Project:
         query_params: Optional[AssignQueryParams],
         body_params: AssignBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Assign One Organization API Key to One Project
         ### Document:
         [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/assign-one-org-apiKey-to-one-project/)
@@ -114,7 +114,7 @@ valid for the assigned Project:
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project whose API keys you want to
+        r"""Unique identifier for the Project whose API keys you want to
 retrieve. Use the
 [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
 to retrieve all organizations to which the authenticated
@@ -125,7 +125,7 @@ user has access.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -145,15 +145,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -161,12 +161,12 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        """Description of the API key. Must be between 1 and 250
+        r"""Description of the API key. Must be between 1 and 250
 characters in length.
         """
 
         roles: Optional[list[GroupRole]] = Field(default=None, serialization_alias="roles")
-        """List of roles that the API Key needs to have. If the `roles`
+        r"""List of roles that the API Key needs to have. If the `roles`
 array is provided:
 
 - Provide at least one role
@@ -193,7 +193,7 @@ Project roles include:
         query_params: Optional[CreateAssignQueryParams],
         body_params: Optional[CreateAssignBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create and Assign One Organization API Key to One Project
         ### Document:
         [Create & Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/create-one-apiKey-in-one-project/)
@@ -214,7 +214,7 @@ Project roles include:
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key you want to update. Request
+        r"""Unique identifier for the API key you want to update. Request
 the
 [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
 endpoint to retrieve all API keys to which the authenticated
@@ -222,7 +222,7 @@ user has access for the specified organization.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project you wish to unassign from the
+        r"""Unique identifier for the Project you wish to unassign from the
 API key. Use the
 [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
 to retrieve all organizations to which the authenticated
@@ -233,7 +233,7 @@ user has access.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -253,15 +253,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -270,7 +270,7 @@ response body.
         path_params: UnassignPathParams,
         query_params: Optional[UnassignQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Unassign One Organization API Key from One Project
         ### Document:
         [Unassign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/delete-one-apiKey-in-one-project/)
@@ -291,7 +291,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project from which you want to
+        r"""Unique identifier for the Project from which you want to
 retrieve its assigned Organization API keys. Use the
 [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
 to retrieve all Projects to which the authenticated user has
@@ -302,7 +302,7 @@ access.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -322,15 +322,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -339,7 +339,7 @@ response body.
         path_params: GetAllPathParams,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Organization API Keys Assigned to One Project
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
@@ -360,7 +360,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key you want to update. Request
+        r"""Unique identifier for the API key you want to update. Request
 the
 [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
 endpoint to retrieve all API keys to which the authenticated
@@ -368,7 +368,7 @@ user has access for the specified organization.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the Project whose API keys you want to
+        r"""Unique identifier for the Project whose API keys you want to
 update. Use the
 [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
 to retrieve all organizations to which the authenticated
@@ -379,7 +379,7 @@ user has access.
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
 Some API clients cannot access the HTTP response headers or
 status code. To remediate this, set `"envelope" : true` in the
@@ -399,15 +399,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a
+        r"""Indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -415,7 +415,7 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         roles: list[GroupRole] = Field(serialization_alias="roles")
-        """List of roles that the API Key should be granted. A minimum
+        r"""List of roles that the API Key should be granted. A minimum
 of one role must be provided. Any roles provided must be
 valid for the assigned Project:
 
@@ -441,7 +441,7 @@ roles not in this array are removed.
         query_params: Optional[ModifyRolesQueryParams],
         body_params: ModifyRolesBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Modify Roles of One Organization API Key to One Project
         ### Document:
         [Modify Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/update-one-apiKey-in-one-project/)

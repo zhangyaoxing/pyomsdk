@@ -1,4 +1,4 @@
-"""Auto-generated client for SnapshotsResource resource.
+r"""Auto-generated client for SnapshotsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,28 +9,28 @@ from .enums import *
 
 
 class SnapshotsResource(BaseResource):
-    """Client for SnapshotsResource resource."""
+    r"""Client for SnapshotsResource resource."""
 
     class ChangeExpiryPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class ChangeExpiryQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -47,7 +47,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -55,7 +55,7 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         do_not_delete: Optional[bool] = Field(default=None, serialization_alias="doNotDelete")
-        """Indicator that the snapshot cannot be deleted.
+        r"""Indicator that the snapshot cannot be deleted.
 
 **IMPORTANT:** You cannot set `doNotDelete` to `true`
 *and* set a timestamp for `expires` in the same request. If
@@ -64,7 +64,7 @@ you do, Ops Manager returns an error:
         """
 
         expires: Optional[str] = Field(default=None, serialization_alias="expires")
-        """The date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=793821205) date
+        r"""The date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601?oldid=793821205) date
 and time format at UTC after
 which this snapshot can be deleted.
 
@@ -86,7 +86,7 @@ cannot be edited.
         query_params: Optional[ChangeExpiryQueryParams],
         body_params: Optional[ChangeExpiryBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Change the Expiry of One Snapshot
         ### Document:
         [Change Expiry](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/change-expiry-for-one-snapshot/)
@@ -107,18 +107,18 @@ cannot be edited.
         model_config = ConfigDict(populate_by_name=True)
 
         host_id: str = Field(serialization_alias="HOST-ID")
-        """Unique identifier of the host that that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the host that that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetAllConfigServerQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -131,15 +131,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -148,7 +148,7 @@ response body.
         path_params: GetAllConfigServerPathParams,
         query_params: Optional[GetAllConfigServerQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Snapshots for One Config Server
         ### Document:
         [Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-config-server/)
@@ -169,11 +169,11 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetAllClusterQueryParams(BaseModel):
@@ -182,7 +182,7 @@ response body.
         completed: Optional[SnapshotCompletedState] = Field(
             default=SnapshotCompletedState("true"), serialization_alias="completed"
         )
-        """String that indicates whether to return
+        r"""String that indicates whether to return
 completed or incomplete snapshots:
 
 - `true`: Return only completed snapshots
@@ -191,7 +191,7 @@ completed or incomplete snapshots:
         """
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -204,15 +204,15 @@ response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a
+        r"""Flag that indicates whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -221,7 +221,7 @@ response body.
         path_params: GetAllClusterPathParams,
         query_params: Optional[GetAllClusterQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Snapshots for One Cluster
         ### Document:
         [Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/)
@@ -242,22 +242,22 @@ response body.
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetOneConfigServerQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -274,7 +274,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -283,7 +283,7 @@ includes:
         path_params: GetOneConfigServerPathParams,
         query_params: Optional[GetOneConfigServerQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Snapshot for One Config Server
         ### Document:
         [Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-one-snapshot-for-config-server/)
@@ -304,24 +304,24 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
 represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the
 [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class GetOneClusterQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -338,7 +338,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -347,7 +347,7 @@ includes:
         path_params: GetOneClusterPathParams,
         query_params: Optional[GetOneClusterQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Snapshot for One Cluster
         ### Document:
         [Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-one-snapshot-for-one-cluster/)
@@ -368,22 +368,22 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        """Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot)
         """
 
     class RemoveOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -400,7 +400,7 @@ includes:
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a
+        r"""Flag indicating whether the response body should be in a
 [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
@@ -409,7 +409,7 @@ includes:
         path_params: RemoveOnePathParams,
         query_params: Optional[RemoveOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Remove One Snapshot from a Cluster
         ### Document:
         [Remove One](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/remove-one-snapshot-from-one-cluster/)
@@ -430,18 +430,18 @@ includes:
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snapshot) represents.
         """
 
         group_id: str = Field(serialization_alias="GROUP-ID")
-        """Unique identifier of your project from your project settings.
+        r"""Unique identifier of your project from your project settings.
         """
 
     class CreateOneOnDemandClusterQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an
+        r"""Flag that indicates whether or not to wrap the response in an
 envelope.
 
 Some API clients cannot access the HTTP response headers or
@@ -454,7 +454,7 @@ response body.
         """
 
         retention_days: int = Field(serialization_alias="retentionDays")
-        """Integer that indicates the number of days the on-demand
+        r"""Integer that indicates the number of days the on-demand
 snapshot will be retained. Must be greater than 0.
         """
 
@@ -463,7 +463,7 @@ snapshot will be retained. Must be greater than 0.
         path_params: CreateOneOnDemandClusterPathParams,
         query_params: CreateOneOnDemandClusterQueryParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create an On-Demand Snapshot
         ### Document:
         [Create One On-Demand (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/take-an-on-demand-snapshot/)

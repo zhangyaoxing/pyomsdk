@@ -1,4 +1,4 @@
-"""Auto-generated client for TelemetryResource resource.
+r"""Auto-generated client for TelemetryResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,12 +9,12 @@ from .enums import *
 
 
 class TelemetryResource(BaseResource):
-    """Client for TelemetryResource resource."""
+    r"""Client for TelemetryResource resource."""
 
     def retrieve_telemetry_data(
         self,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Retrieve Telemetry Data
         ### Document:
         [Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/get-data/)
@@ -36,14 +36,14 @@ class TelemetryResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
 
         enabled: bool = Field(serialization_alias="enabled")
-        """Set to `true` to enable telemetry, or `false` to disable telemetry.
+        r"""Set to `true` to enable telemetry, or `false` to disable telemetry.
         """
 
     def toggle_telemetry_status(
         self,
         body_params: ToggleTelemetryStatusBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Toggle Telemetry Status
         ### Document:
         [Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/toggle-status/)
