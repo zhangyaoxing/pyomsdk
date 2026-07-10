@@ -4,6 +4,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
 
 This is the repository for MongoDB Ops Manager API SDK in Python language.
+The version of this library follows Ops Manager versions. For example, `8.0.0` is for Ops Manager `8.0`. The revision is used for patches.
 
 ## How Is It Built
 The SDK code is generated based on the [Ops Mananger API document](https://www.mongodb.com/docs/ops-manager/current/api/).
