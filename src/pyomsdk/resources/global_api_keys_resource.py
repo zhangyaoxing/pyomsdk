@@ -1,4 +1,4 @@
-"""Auto-generated client for GlobalApiKeysResource resource.
+r"""Auto-generated client for GlobalApiKeysResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,116 +9,58 @@ from .enums import *
 
 
 class GlobalApiKeysResource(BaseResource):
-    """Client for GlobalApiKeysResource resource."""
+    r"""Client for GlobalApiKeysResource resource."""
 
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         desc: str = Field(serialization_alias="desc")
-        """Description of the Global API Key. Must be between 1 and 250 characters in length.
+        r"""Description of the Global API Key. Must be between 1 and 250
+characters in length.
         """
 
         roles: list[GlobalRole] = Field(serialization_alias="roles")
-        """List of roles that the Global API Key needs to have. If the roles array is provided:
+        r"""List of roles that the Global API Key needs to have. If the
+`roles` array is provided:
 
-Provide at least one role
-
-Make sure all roles are valid.
+- Provide at least one role
+- Make sure all roles are valid.
 
 Global roles accepted by default include:
 
-Role Value in API
-	
-Role
-
-
-
-GLOBAL_AUTOMATION_ADMIN
-
-	
-
-Global Automation Admin
-
-
-
-
-GLOBAL_BACKUP_ADMIN
-
-	
-
-Global Backup Admin
-
-
-
-
-GLOBAL_MONITORING_ADMIN
-
-	
-
-Global Monitoring Admin
-
-
-
-
-GLOBAL_OWNER
-
-	
-
-Global Owner
-
-
-
-
-GLOBAL_READ_ONLY
-
-	
-
-Global Read Only
-
-
-
-
-GLOBAL_USER_ADMIN
-
-	
-
-Global User Admin
+| Role Value in API | Role |
+| --- | --- |
+| `GLOBAL_AUTOMATION_ADMIN` | [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin) |
+| `GLOBAL_BACKUP_ADMIN` | [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin) |
+| `GLOBAL_MONITORING_ADMIN` | [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin) |
+| `GLOBAL_OWNER` | [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner) |
+| `GLOBAL_READ_ONLY` | [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only) |
+| `GLOBAL_USER_ADMIN` | [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin) |
         """
 
     def create(
@@ -126,7 +68,7 @@ Global User Admin
         query_params: Optional[CreateQueryParams],
         body_params: CreateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create One Global API Key
         ### Document:
         [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-api-key/)
@@ -147,43 +89,35 @@ Global User Admin
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the API key you want to delete. Use the /admin/apiKeys endpoint to retrieve all API keys to which the authenticated user has access.
+        r"""Unique identifier for the API key you want to delete. Use the
+[/admin/apiKeys](/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/) endpoint
+to retrieve all API keys to which the authenticated
+user has access.
         """
 
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete(
@@ -191,14 +125,15 @@ Expected response body
         path_params: DeletePathParams,
         query_params: Optional[DeleteQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete One Global API Key
         ### Document:
         [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-api-key/)
         ### Endpoint:
         `DELETE /admin/apiKeys/{API-KEY-ID}`
         ### Description
-        Delete one Global API Key from Ops Manager using the unique identifier for that Key.
+        Delete one Global API Key from Ops Manager using the unique identifier for
+        that Key.
         """
         return self._request(
             "DELETE",
@@ -212,53 +147,43 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        """Indicates whether or not to wrap the response in an envelope.
+        r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set "envelope" : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `"envelope" : true` in the
+query.
 
-For endpoints that return one result, response body includes:
+For endpoints that return one result, response body
+includes:
 
-Name
-	
-Description
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
 
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
-
-For endpoints that return a list of results, the results object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `results`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """Page number (1-index based).
+        r"""Page number (1-index based).
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Indicates whether the response body should be in a prettyprint format.
+        r"""Indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_roles(
         self,
         query_params: Optional[GetAllRolesQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Roles for Global API Keys
         ### Document:
         [Get All Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-key-roles/)
@@ -279,30 +204,36 @@ For endpoints that return a list of results, the results object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        r"""Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all(
         self,
         query_params: Optional[GetAllQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Global API Keys
         ### Document:
         [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/)
@@ -323,43 +254,32 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the Global API Key you want to retrieve.
+        r"""Unique identifier for the Global API Key you want to retrieve.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -367,14 +287,15 @@ Expected response body
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Global API Key
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-api-key/)
         ### Endpoint:
         `GET /admin/apiKeys/{API-KEY-ID}`
         ### Description
-        Return one Global API Key for Ops Manager using the unique identifier for that Key.
+        Return one Global API Key for Ops Manager using the unique identifier for
+        that Key.
         """
         return self._request(
             "GET",
@@ -388,117 +309,61 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        """Unique identifier for the Global API key you want to update.
+        r"""Unique identifier for the Global API key you want to update.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        """Description of the key. This parameter is optional; however, the request must contain either a desc parameter or a roles parameter. If desc is provided, it must be between 1 and 250 characters long.
+        r"""Description of the key. This parameter is optional; however, the
+request must contain either a `desc` parameter or a `roles`
+parameter. If `desc` is provided, it must be between 1 and 250
+characters long.
         """
 
         roles: Optional[list[GlobalRole]] = Field(default=None, serialization_alias="roles")
-        """List of roles that the Global API Key needs to have. If the roles array is provided:
+        r"""List of roles that the Global API Key needs to have. If the
+`roles` array is provided:
 
-Provide at least one role
-
-Make sure all roles are valid.
+- Provide at least one role
+- Make sure all roles are valid.
 
 Global roles accepted by default include:
 
-Role Value in API
-	
-Role
-
-
-
-GLOBAL_AUTOMATION_ADMIN
-
-	
-
-Global Automation Admin
-
-
-
-
-GLOBAL_BACKUP_ADMIN
-
-	
-
-Global Backup Admin
-
-
-
-
-GLOBAL_MONITORING_ADMIN
-
-	
-
-Global Monitoring Admin
-
-
-
-
-GLOBAL_OWNER
-
-	
-
-Global Owner
-
-
-
-
-GLOBAL_READ_ONLY
-
-	
-
-Global Read Only
-
-
-
-
-GLOBAL_USER_ADMIN
-
-	
-
-Global User Admin
+| Role Value in API | Role |
+| --- | --- |
+| `GLOBAL_AUTOMATION_ADMIN` | [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin) |
+| `GLOBAL_BACKUP_ADMIN` | [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin) |
+| `GLOBAL_MONITORING_ADMIN` | [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin) |
+| `GLOBAL_OWNER` | [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner) |
+| `GLOBAL_READ_ONLY` | [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only) |
+| `GLOBAL_USER_ADMIN` | [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin) |
         """
 
     def update(
@@ -507,14 +372,15 @@ Global User Admin
         query_params: Optional[UpdateQueryParams],
         body_params: Optional[UpdateBodyParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Global API Key
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-api-key/)
         ### Endpoint:
         `PATCH /admin/apiKeys/{API-KEY-ID}`
         ### Description
-        Update values of one Global API Key from Ops Manager using the unique identifier for that Key.
+        Update values of one Global API Key from Ops Manager using the unique
+        identifier for that Key.
         """
         return self._request(
             "PATCH",

@@ -1,4 +1,4 @@
-"""Auto-generated client for ImportDeploymentsResource resource.
+r"""Auto-generated client for ImportDeploymentsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,53 +9,42 @@ from .enums import *
 
 
 class ImportDeploymentsResource(BaseResource):
-    """Client for ImportDeploymentsResource resource."""
+    r"""Client for ImportDeploymentsResource resource."""
 
     class CancelImportDeploymentRequestPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the [project.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
         """
 
         request_id: str = Field(serialization_alias="REQUEST-ID")
-        """Unique identifier of the import deployment request to cancel.
+        r"""Unique identifier of the import deployment request to cancel.
         """
 
     class CancelImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def cancel_import_deployment_request(
@@ -63,14 +52,16 @@ Expected response body
         path_params: CancelImportDeploymentRequestPathParams,
         query_params: Optional[CancelImportDeploymentRequestQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Cancel Import Deployment Request
         ### Document:
         [Cancel Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/cancel/)
         ### Endpoint:
         `POST /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel`
         ### Description
-        Cancel an in-progress import deployment request. This endpoint allows you to stop an import deployment request that is currently running. Once cancelled, the import process will stop and the request state will change to CANCELLED.
+        Cancel an in-progress import deployment request. This endpoint allows you to
+        stop an import deployment request that is currently running. Once cancelled,
+        the import process will stop and the request state will change to `CANCELLED`.
         """
         return self._request(
             "POST",
@@ -84,98 +75,87 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project that will own the imported deployments.
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that will own the imported
+deployments.
         """
 
     class CreateImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class CreateImportDeploymentRequestBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         admin_db: Optional[str] = Field(default=None, serialization_alias="adminDb")
-        """Database to authenticate against. Default: admin.
+        r"""Database to authenticate against. Default: `admin`.
         """
 
         admin_kerberos_keytab: Optional[str] = Field(
             default=None, serialization_alias="adminKerberosKeytab"
         )
-        """Path to the Kerberos keytab file for GSSAPI authentication.
+        r"""Path to the Kerberos keytab file for GSSAPI authentication.
         """
 
         admin_ldap_group_dn: Optional[str] = Field(
             default=None, serialization_alias="adminLdapGroupDn"
         )
-        """LDAP group distinguished name for PLAIN authentication.
+        r"""LDAP group distinguished name for PLAIN authentication.
         """
 
         auth_mechanism: Optional[AuthMechanismName] = Field(
             default=None, serialization_alias="authMechanism"
         )
-        """Authentication mechanism for connecting to the MongoDB processes. Possible values are:
+        r"""Authentication mechanism for connecting to the MongoDB processes.
+Possible values are:
 
-MONGODB_CR (This covers SCRAM-SHA-1, SCRAM-SHA-256, and MONGODB-CR.)
-
-GSSAPI
-
-PLAIN
-
-MONGODB_X509
-
-NONE
+- `MONGODB_CR` (This covers SCRAM-SHA-1, SCRAM-SHA-256, and
+  MONGODB-CR.)
+- `GSSAPI`
+- `PLAIN`
+- `MONGODB_X509`
+- `NONE`
         """
 
         ca_file_path: Optional[str] = Field(default=None, serialization_alias="caFilePath")
-        """Path to the Certificate Authority file for TLS connections.
+        r"""Path to the Certificate Authority file for TLS connections.
         """
 
         client_certificate_mode: Optional[str] = Field(
             default=None, serialization_alias="clientCertificateMode"
         )
-        """Client certificate mode for TLS connections.
+        r"""Client certificate mode for TLS connections.
         """
 
         cluster_ca_file_path: Optional[str] = Field(
             default=None, serialization_alias="clusterCaFilePath"
         )
-        """Path to the cluster Certificate Authority file for TLS connections.
+        r"""Path to the cluster Certificate Authority file for TLS connections.
         """
 
         password: Optional[str] = Field(default=None, serialization_alias="password")
-        """Password for authenticating to the MongoDB processes. Required if authMechanism is MONGODB_CR.
+        r"""Password for authenticating to the MongoDB processes. Required if
+`authMechanism` is `MONGODB_CR`.
 
 Ops Manager doesn't include this parameter in response documents.
         """
@@ -183,27 +163,29 @@ Ops Manager doesn't include this parameter in response documents.
         pem_key_file_password: Optional[str] = Field(
             default=None, serialization_alias="pemKeyFilePassword"
         )
-        """Password for the PEM key file.
+        r"""Password for the PEM key file.
 
 Ops Manager doesn't include this parameter in response documents.
         """
 
         pem_key_file_path: Optional[str] = Field(default=None, serialization_alias="pemKeyFilePath")
-        """Path to the PEM key file for TLS client authentication.
+        r"""Path to the PEM key file for TLS client authentication.
         """
 
         required_processes: list[Any] = Field(serialization_alias="requiredProcesses")
-        """Array of hostname:port strings representing MongoDB processes that must be discovered before the import can proceed.
+        r"""Array of hostname:port strings representing MongoDB processes that
+must be discovered before the import can proceed.
         """
 
         sasl_service_name: Optional[str] = Field(
             default=None, serialization_alias="saslServiceName"
         )
-        """SASL service name for GSSAPI authentication.
+        r"""SASL service name for GSSAPI authentication.
         """
 
         seed_hostport: str = Field(serialization_alias="seedHostport")
-        """Hostname and port of the seed MongoDB process to connect to for discovery (e.g., mongodb1.example.com:27017).
+        r"""Hostname and port of the seed MongoDB process to connect to for
+discovery (e.g., `mongodb1.example.com:27017`).
         """
 
         class TimeoutsParams(BaseModel):
@@ -212,31 +194,36 @@ Ops Manager doesn't include this parameter in response documents.
             automation_imported: Optional[int] = Field(
                 default=None, serialization_alias="automationImported"
             )
-            """Timeout in seconds for completing the automation import. Range: 60-86400 seconds. Default uses system settings.
+            r"""Timeout in seconds for completing the automation import.
+Range: 60-86400 seconds. Default uses system settings.
             """
 
             goal_state_sec: Optional[int] = Field(default=None, serialization_alias="goalStateSec")
-            """Timeout in seconds for reaching automation goal state. Range: 60-86400 seconds. Default uses system settings.
+            r"""Timeout in seconds for reaching automation goal state.
+Range: 60-86400 seconds. Default uses system settings.
             """
 
             processes_discovery_sec: Optional[int] = Field(
                 default=None, serialization_alias="processesDiscoverySec"
             )
-            """Timeout in seconds for discovering all required processes. Range: 60-86400 seconds. Default uses system settings.
+            r"""Timeout in seconds for discovering all required processes.
+Range: 60-86400 seconds. Default uses system settings.
             """
 
             seed_host_connection_sec: Optional[int] = Field(
                 default=None, serialization_alias="seedHostConnectionSec"
             )
-            """Timeout in seconds for connecting to the seed host. Range: 60-86400 seconds. Default uses system settings.
+            r"""Timeout in seconds for connecting to the seed host.
+Range: 60-86400 seconds. Default uses system settings.
             """
 
         timeouts: Optional[TimeoutsParams] = Field(default=None, serialization_alias="timeouts")
-        """Timeout settings for various import phases.
+        r"""Timeout settings for various import phases.
         """
 
         username: Optional[str] = Field(default=None, serialization_alias="username")
-        """Username for authenticating to the MongoDB processes. Required if authMechanism is specified.
+        r"""Username for authenticating to the MongoDB processes. Required if
+`authMechanism` is specified.
         """
 
     def create_import_deployment_request(
@@ -245,14 +232,16 @@ Ops Manager doesn't include this parameter in response documents.
         query_params: Optional[CreateImportDeploymentRequestQueryParams],
         body_params: CreateImportDeploymentRequestBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Create Import Deployment Request
         ### Document:
         [Create Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/create/)
         ### Endpoint:
         `POST /automation/importDeployment/{PROJECT-ID}`
         ### Description
-        Create a new import deployment request to add existing MongoDB processes to Ops Manager automation. This endpoint initiates the process of importing multiple MongoDB processes into both monitoring and automation management.
+        Create a new import deployment request to add existing MongoDB processes to
+        Ops Manager automation. This endpoint initiates the process of importing
+        multiple MongoDB processes into both monitoring and automation management.
         """
         return self._request(
             "POST",
@@ -266,47 +255,36 @@ Ops Manager doesn't include this parameter in response documents.
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the [project.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
         """
 
         request_id: str = Field(serialization_alias="REQUEST-ID")
-        """Unique identifier of the import deployment request to delete.
+        r"""Unique identifier of the import deployment request to delete.
         """
 
     class DeleteImportDeploymentRequestQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def delete_import_deployment_request(
@@ -314,14 +292,17 @@ Expected response body
         path_params: DeleteImportDeploymentRequestPathParams,
         query_params: Optional[DeleteImportDeploymentRequestQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Delete Import Deployment Request
         ### Document:
         [Delete Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/delete/)
         ### Endpoint:
         `DELETE /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}`
         ### Description
-        Delete a failed import deployment request and clean up any partially imported resources. This endpoint removes the import deployment request record and performs cleanup of any resources that were partially imported during the failed import process.
+        Delete a failed import deployment request and clean up any partially
+        imported resources. This endpoint removes the import deployment request
+        record and performs cleanup of any resources that were partially imported
+        during the failed import process.
         """
         return self._request(
             "DELETE",
@@ -335,43 +316,32 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the [project.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
         """
 
     class GetImportDeploymentRequestsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_import_deployment_requests(
@@ -379,14 +349,16 @@ Expected response body
         path_params: GetImportDeploymentRequestsPathParams,
         query_params: Optional[GetImportDeploymentRequestsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Import Deployment Requests
         ### Document:
         [Get Import Deployment Requests](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-all/)
         ### Endpoint:
         `GET /automation/importDeployment/{PROJECT-ID}`
         ### Description
-        Retrieve all import deployment requests for a project. This endpoint returns a list of all import deployment requests that have been created for the specified project, including their current status and history.
+        Retrieve all import deployment requests for a project. This endpoint returns
+        a list of all import deployment requests that have been created for the
+        specified project, including their current status and history.
         """
         return self._request(
             "GET",
@@ -400,47 +372,36 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         import_process_id: str = Field(serialization_alias="IMPORT-PROCESS-ID")
-        """Unique identifier of the import deployment request.
+        r"""Unique identifier of the import deployment request.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier of the project.
+        r"""Unique identifier of the [project.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project)
         """
 
     class GetImportDeploymentRequestStatusQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_import_deployment_request_status(
@@ -448,14 +409,16 @@ Expected response body
         path_params: GetImportDeploymentRequestStatusPathParams,
         query_params: Optional[GetImportDeploymentRequestStatusQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get Import Deployment Request Status
         ### Document:
         [Get Import Deployment Request Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-status/)
         ### Endpoint:
         `GET /automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}`
         ### Description
-        Retrieve the status of a specific import deployment request. This endpoint provides detailed information about the current state and history of a single import deployment request.
+        Retrieve the status of a specific import deployment request. This endpoint
+        provides detailed information about the current state and history of a
+        single import deployment request.
         """
         return self._request(
             "GET",

@@ -1,4 +1,4 @@
-"""Auto-generated client for ClustersResource resource.
+r"""Auto-generated client for ClustersResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
 from typing import Any, Optional
@@ -9,56 +9,46 @@ from .enums import *
 
 
 class ClustersResource(BaseResource):
-    """Client for ClustersResource resource."""
+    r"""Client for ClustersResource resource."""
 
     class GetAllFromAllProjectsQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_from_all_projects(
         self,
         query_params: Optional[GetAllFromAllProjectsQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Clusters in All Projects
         ### Document:
         [Get All from All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all-key/)
         ### Endpoint:
         `GET /clusters`
         ### Description
-        Get details for all clusters in all projects available to the programmatic API key making the request.
+        Get details for all clusters in all projects available to the
+        programmatic API key making the request.
         """
         return self._request(
             "GET",
@@ -72,30 +62,36 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the project.
+        r"""Unique identifier for the project.
         """
 
     class GetAllFromOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set `envelope : true` in the
+query.
 
-For endpoints that return a list of results, the content object is an envelope. Ops Manager adds the status field to the response body.
+For endpoints that return a list of results, the `content`
+object is an envelope. Ops Manager adds the `status` field to the
+response body.
         """
 
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
-        """Number of items to return per page, up to a maximum of 500.
+        r"""Number of items to return per page, up to a maximum of 500.
         """
 
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
-        """One-based integer that returns a subsection of results.
+        r"""One-based integer that returns a subsection of results.
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag that indicates whether the response body should be in a prettyprint format.
+        r"""Flag that indicates whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_all_from_one_project(
@@ -103,7 +99,7 @@ For endpoints that return a list of results, the content object is an envelope. 
         path_params: GetAllFromOneProjectPathParams,
         query_params: Optional[GetAllFromOneProjectQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get All Clusters in One Project
         ### Document:
         [Get All from One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all/)
@@ -124,47 +120,36 @@ For endpoints that return a list of results, the content object is an envelope. 
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier for the cluster you want to retrieve.
+        r"""Unique identifier for the cluster you want to retrieve.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the project.
+        r"""Unique identifier for the project.
         """
 
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     def get_one(
@@ -172,7 +157,7 @@ Expected response body
         path_params: GetOnePathParams,
         query_params: Optional[GetOneQueryParams],
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Get One Cluster in One Project
         ### Document:
         [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-one/)
@@ -193,54 +178,43 @@ Expected response body
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        """Unique identifier for the cluster you want to retrieve.
+        r"""Unique identifier for the cluster you want to retrieve.
         """
 
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        """Unique identifier for the project.
+        r"""Unique identifier for the project.
         """
 
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        """Flag that indicates whether or not to wrap the response in an envelope.
+        r"""Flag that indicates whether or not to wrap the response in an
+envelope.
 
-Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope=true in the query.
+Some API clients cannot access the HTTP response headers or
+status code. To remediate this, set **envelope=true** in the
+query.
 
-For endpoints that return one result, the response body includes:
+For endpoints that return one result, the response body
+includes:
 
-Name
-	
-Description
-
-
-
-status
-
-	
-
-HTTP response code
-
-
-
-
-content
-
-	
-
-Expected response body
+| Name | Description |
+| --- | --- |
+| `status` | HTTP response code |
+| `content` | Expected response body |
         """
 
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        """Flag indicating whether the response body should be in a prettyprint format.
+        r"""Flag indicating whether the response body should be in a
+[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
 
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
 
         cluster_name: str = Field(serialization_alias="clusterName")
-        """Name to assign to the cluster.
+        r"""Name to assign to the cluster.
         """
 
     def update(
@@ -249,7 +223,7 @@ Expected response body
         query_params: Optional[UpdateQueryParams],
         body_params: UpdateBodyParams,
     ) -> dict[str, Any]:
-        """
+        r"""
         ## Update One Cluster
         ### Document:
         [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-update-one/)

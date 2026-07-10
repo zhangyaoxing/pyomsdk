@@ -63,7 +63,7 @@ path_params = resource.DeleteOrganizationPathParams(org_id=org["id"])
 resource.delete_organization(path_params, None)
 ```
 
-## Instructions
+## Other Instructions
 - Not only the endpoint metadata, but also the descriptions are crawled. When you use the SDK, you should be able to see the API title, description, document link, etc.
 - For each API
   - Unique path/query/body parameter data classes are defined (If the API needs them) for you to pass parameters.
@@ -71,3 +71,12 @@ resource.delete_organization(path_params, None)
 - All the enum types are defined in the `pyomsdk.resources.enums`. They are not crawled but hard-coded because they are unlikely to change. You can use these values to help you initialize the parameters.
 
 **Important Notes:** Keep in mind the metadata is from the API document. But the document is not always accurate. For example, some parameters doesn't have necessity, they are all marked as optional. When you have doubts, click the document link and review the document.
+
+## Use the Makefile
+If you are contributing to this project, use the `Makefile` to help you. You may need the following targets:
+- `venv`: initialize the virtual environment.
+- `install`: install the dependencies.
+- `install-dev`: install the dev dependencies.
+- `docs`: generate html doc from the docstring into `/docs`.
+
+There are other targets, use `make help` to find out.
