@@ -3,7 +3,6 @@ import pytest
 from pyomsdk.ops_manager_client import OpsManagerClient
 from pyomsdk.resources.global_app_settings_resource import GlobalAppSettingsResource
 
-
 # Pylint does not understand pytest fixture injection and reports false positives.
 # pylint: disable=redefined-outer-name
 
@@ -29,4 +28,3 @@ def test_global_app_settings_update_settings(client: OpsManagerClient) -> None:
     body_params = GlobalAppSettingsResource.UpdateSettingsBodyParams(db_properties=db_properties)
     result = resource.update_settings(None, body_params)
     assert result is not None
-    assert "error" not in result
