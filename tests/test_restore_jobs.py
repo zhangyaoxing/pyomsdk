@@ -35,3 +35,19 @@ def test_restore_jobs_get_all_cluster(
     result = resource.get_all_cluster(path_params, None)
     assert result is not None
     assert "error" not in result
+
+
+def test_restore_jobs_get_restorable_time_ranges_cluster(
+    client: OpsManagerClient, project_with_cluster: dict[str, Any]
+) -> None:
+    cluster_id = _first_cluster_id(client, project_with_cluster["id"])
+    if not cluster_id:
+        pytest.skip("No clusters found in project")
+
+    resource = client.restore_jobs_resource
+    path_params = RestoreJobsResource.GetRestorableTimeRangesClusterPathParams(
+        project_id=project_with_cluster["id"], cluster_id=cluster_id
+    )
+    result = resource.get_restorable_time_ranges_cluster(path_params, None)
+    assert result is not None
+    assert "error" not in result

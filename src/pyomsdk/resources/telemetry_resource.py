@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for TelemetryResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,22 +8,26 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class TelemetryResource(BaseResource):
-    r"""Client for TelemetryResource resource."""
-
-    def retrieve_telemetry_data(
-        self,
+    r"""Client for TelemetryResource resource.
+    """
+    
+    
+    
+    
+    def retrieve_telemetry_data(self,
+        
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Retrieve Telemetry Data
-        ### Document:
-        [Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/get-data/)
-        ### Endpoint:
-        `GET /collection/details`
-        ### Description
-        Retrieve telemetry collection status and configuration details for your
-        Ops Manager installation.
+## Retrieve Telemetry Data
+### Document:
+[Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/telemetry/get-data/)
+### Endpoint:
+`GET /collection/details`
+### Description
+Retrieve telemetry collection status and configuration details for your Ops Manager installation.
         """
         return self._request(
             "GET",
@@ -31,26 +36,34 @@ class TelemetryResource(BaseResource):
             None,
             None,
         )
-
+    
+    
+    
+    
     class ToggleTelemetryStatusBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         enabled: bool = Field(serialization_alias="enabled")
         r"""Set to `true` to enable telemetry, or `false` to disable telemetry.
         """
-
-    def toggle_telemetry_status(
-        self,
+        
+    
+    def toggle_telemetry_status(self,
+        
+        
+        
         body_params: ToggleTelemetryStatusBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Toggle Telemetry Status
-        ### Document:
-        [Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/toggle-status/)
-        ### Endpoint:
-        `PATCH /collection/status`
-        ### Description
-        Enable or disable telemetry collection for your Ops Manager installation.
+## Toggle Telemetry Status
+### Document:
+[Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/telemetry/toggle-status/)
+### Endpoint:
+`PATCH /collection/status`
+### Description
+Enable or disable telemetry collection for your Ops Manager installation.
         """
         return self._request(
             "PATCH",
@@ -59,3 +72,4 @@ class TelemetryResource(BaseResource):
             None,
             body_params,
         )
+    

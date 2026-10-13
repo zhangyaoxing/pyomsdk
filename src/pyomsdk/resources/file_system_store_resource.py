@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for FileSystemStoreResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,115 +8,104 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class FileSystemStoreResource(BaseResource):
-    r"""Client for FileSystemStoreResource resource."""
-
+    r"""Client for FileSystemStoreResource resource.
+    """
+    
+    
+    
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
-        assignment_enabled: Optional[bool] = Field(
-            default=None, serialization_alias="assignmentEnabled"
-        )
-        r"""Flag that indicates whether this file system store can be
-assigned backup jobs.
+        
+        
+        assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
+        r"""Flag that indicates whether this file system store can be assigned backup jobs.
         """
-
+        
+        
         id: str = Field(serialization_alias="id")
         r"""Unique identifier of this file system store.
         """
-
+        
+        
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
-can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
-Setting these tags limits which backup jobs this file system
-store can process. If omitted, this file system store can only
-process backup jobs for projects that do not use labels to
-filter their jobs.
+Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
-
+        
+        
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        r"""Positive, non-zero integer that expresses how much backup work
-this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
-snapshot store. Set this option only if you're using more than
-one snapshot store.
+        r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
-
-        mmapv1_compression_setting: Optional[str] = Field(
-            default=None, serialization_alias="mmapv1CompressionSetting"
-        )
-        r"""Compression setting if you use the MMAPv1 storage engine for
-your snaphots.
+        
+        
+        mmapv1_compression_setting: Optional[str] = Field(default=None, serialization_alias="mmapv1CompressionSetting")
+        r"""Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores
-this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores this setting.
 
-**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
-If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/)
-to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager
-restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine for MongoDB versions before 6.0. If you [edit your deployment's configuration](/docs/ops-manager/v8.0/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
         """
-
+        
+        
         store_path: str = Field(serialization_alias="storePath")
-        r"""Location where file system-based backups are stored on the
-file system store host.
+        r"""Location where file system-based backups are stored on the file system store host.
         """
-
-        wt_compression_setting: Optional[str] = Field(
-            default=None, serialization_alias="wtCompressionSetting"
-        )
-        r"""Compression setting if you use the WiredTiger storage engine for
-your snaphots.
+        
+        
+        wt_compression_setting: Optional[str] = Field(default=None, serialization_alias="wtCompressionSetting")
+        r"""Compression setting if you use the WiredTiger storage engine for your snaphots.
 
 Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores
-this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores this setting.
         """
-
-    def create(
-        self,
+        
+    
+    def create(self,
+        
+        
         query_params: Optional[CreateQueryParams],
+        
+        
         body_params: CreateBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create One File System Store Configuration
-        ### Document:
-        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/create-one-file-system-store-configuration/)
-        ### Endpoint:
-        `POST /snapshot/fileSystemConfigs`
-        ### Description
-        Configures one new file system store.
+## Create One File System Store Configuration
+### Document:
+[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/create-one-file-system-store-configuration/)
+### Endpoint:
+`POST /snapshot/fileSystemConfigs`
+### Description
+Configures one new file system store.
         """
         return self._request(
             "POST",
@@ -124,53 +114,56 @@ this setting.
             query_params,
             body_params,
         )
-
+    
+    
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        r"""Unique identifier that labels this file system store
-configuration.
+        r"""Unique identifier that labels this file system store configuration.
         """
-
+        
+    
+    
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def delete(
-        self,
+        
+    
+    
+    def delete(self,
+        
         path_params: DeletePathParams,
+        
+        
         query_params: Optional[DeleteQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Delete One File System Store Configuration
-        ### Document:
-        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/delete-one-file-system-store-configuration/)
-        ### Endpoint:
-        `DELETE /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        ### Description
-        Deletes the configuration of one file system store.
+## Delete One File System Store Configuration
+### Document:
+[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/delete-one-file-system-store-configuration/)
+### Endpoint:
+`DELETE /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+### Description
+Deletes the configuration of one file system store.
         """
         return self._request(
             "DELETE",
@@ -179,52 +172,58 @@ includes:
             query_params,
             None,
         )
-
+    
+    
+    
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         assignable_only: Optional[bool] = Field(default=True, serialization_alias="assignableOnly")
         r"""Indicates whether to return only file system stores to which you can assign new backup jobs.
         """
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `envelope : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `envelope : true` in the query.
 
-For endpoints that return a list of results, the `content`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `content` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""One-based integer that returns a subsection of results.
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag that indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag that indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_all(
-        self,
+        
+    
+    
+    def get_all(self,
+        
+        
         query_params: Optional[GetAllQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get All File System Store Configurations
-        ### Document:
-        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-all-file-system-store-configurations/)
-        ### Endpoint:
-        `GET /snapshot/fileSystemConfigs`
-        ### Description
-        Retrieves the configurations of all file system stores.
+## Get All File System Store Configurations
+### Document:
+[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/get-all-file-system-store-configurations/)
+### Endpoint:
+`GET /snapshot/fileSystemConfigs`
+### Description
+Retrieves the configurations of all file system stores.
         """
         return self._request(
             "GET",
@@ -233,52 +232,56 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
         r"""Unique name that labels this file system store configuration.
         """
-
+        
+    
+    
     class GetByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_by_id(
-        self,
+        
+    
+    
+    def get_by_id(self,
+        
         path_params: GetByIdPathParams,
+        
+        
         query_params: Optional[GetByIdQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get One File System Store Configuration by ID
-        ### Document:
-        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/get-one-file-system-store-configuration-by-id/)
-        ### Endpoint:
-        `GET /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        ### Description
-        Retrieves the configuration of one file system store.
+## Get One File System Store Configuration by ID
+### Document:
+[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/get-one-file-system-store-configuration-by-id/)
+### Endpoint:
+`GET /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+### Description
+Retrieves the configuration of one file system store.
         """
         return self._request(
             "GET",
@@ -287,119 +290,106 @@ includes:
             query_params,
             None,
         )
-
+    
+    
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         file_system_config_id: str = Field(serialization_alias="FILE-SYSTEM-CONFIG-ID")
-        r"""Unique identifier that labels this file system store
-configuration.
+        r"""Unique identifier that labels this file system store configuration.
         """
-
+        
+    
+    
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
-        assignment_enabled: Optional[bool] = Field(
-            default=None, serialization_alias="assignmentEnabled"
-        )
-        r"""Flag that indicates whether this file system store can be
-assigned backup jobs.
+        
+        
+        assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
+        r"""Flag that indicates whether this file system store can be assigned backup jobs.
         """
-
+        
+        
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager
-can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
-Setting these tags limits which backup jobs this file system
-store can process. If omitted, this file system store can only
-process backup jobs for projects that do not use labels to
-filter their jobs.
+Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
-
+        
+        
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
-        r"""Positive, non-zero integer that expresses how much backup work
-this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another
-snapshot store. Set this option only if you're using more than
-one snapshot store.
+        r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
+        
+        
+        mmapv1_compression_setting: Optional[str] = Field(default=None, serialization_alias="mmapv1CompressionSetting")
+        r"""Compression setting if you use the MMAPv1 storage engine for your snaphots.
 
-        mmapv1_compression_setting: Optional[str] = Field(
-            default=None, serialization_alias="mmapv1CompressionSetting"
-        )
-        r"""Compression setting if you use the MMAPv1 storage engine for
-your snaphots.
+Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to `NONE` by default.
 
-Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
-`NONE` by default.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores this setting.
 
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores
-this setting.
-
-**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2.
-If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/)
-to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager
-restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you [edit your deployment's configuration](/docs/ops-manager/v8.0/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
         """
-
+        
+        
         store_path: str = Field(serialization_alias="storePath")
-        r"""Location where file system-based backups are stored on the
-file system store host.
+        r"""Location where file system-based backups are stored on the file system store host.
         """
+        
+        
+        wt_compression_setting: Optional[str] = Field(default=None, serialization_alias="wtCompressionSetting")
+        r"""Compression setting if you use the WiredTiger storage engine for your snaphots.
 
-        wt_compression_setting: Optional[str] = Field(
-            default=None, serialization_alias="wtCompressionSetting"
-        )
-        r"""Compression setting if you use the WiredTiger storage engine for
-your snaphots.
+Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to `GZIP` by default.
 
-Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to
-`GZIP` by default.
-
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores
-this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores this setting.
         """
-
-    def update(
-        self,
+        
+    
+    def update(self,
+        
         path_params: UpdatePathParams,
+        
+        
         query_params: Optional[UpdateQueryParams],
+        
+        
         body_params: UpdateBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Update One File System Store Configuration
-        ### Document:
-        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/fileSystemConfigs/update-one-file-system-store-configuration/)
-        ### Endpoint:
-        `PUT /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
-        ### Description
-        Updates the configuration of one file system store.
+## Update One File System Store Configuration
+### Document:
+[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/update-one-file-system-store-configuration/)
+### Endpoint:
+`PUT /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
+### Description
+Updates the configuration of one file system store.
         """
         return self._request(
             "PUT",
@@ -408,3 +398,4 @@ this setting.
             query_params,
             body_params,
         )
+    

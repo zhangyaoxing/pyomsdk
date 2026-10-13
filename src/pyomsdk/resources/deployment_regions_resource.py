@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for DeploymentRegionsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,90 +8,91 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class DeploymentRegionsResource(BaseResource):
-    r"""Client for DeploymentRegionsResource resource."""
-
+    r"""Client for DeploymentRegionsResource resource.
+    """
+    
+    
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the cluster
-whose backup configuration you want to find.
+        r"""Unique 24-hexadecimal digit string that identifies the cluster whose backup configuration you want to find.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the
-project that holds the cluster with the backup configuration you
-want to find.
+        r"""Unique 24-hexadecimal digit string that identifies the project that holds the cluster with the backup configuration you want to find.
         """
-
+        
+    
+    
     class AssignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class AssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         class DeploymentConfigsParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
-
+            
             deployment_id: str = Field(serialization_alias="deploymentId")
-            r"""Unique identifier that references the deployment region to
-assign to the shard.
+            r"""Unique identifier that references the deployment region to assign to the shard.
             """
-
+            
             rs_id: str = Field(serialization_alias="rsId")
-            r"""[Replica set](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-replica-set)
-label that identifies the shard.
+            r"""[replica set](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-replica-set) label that identifies the shard.
             """
-
-        deployment_configs: list[DeploymentConfigsParams] = Field(
-            serialization_alias="deploymentConfigs"
-        )
-        r"""Specification objects for the cluster members for which to assign
-deployment regions.
+            
+        
+        deployment_configs: list[DeploymentConfigsParams] = Field(serialization_alias="deploymentConfigs")
+        r"""Specification objects for the cluster members for which to assign deployment regions.
         """
-
+        
+        
         multi_region_backup_enabled: bool = Field(serialization_alias="multiRegionBackupEnabled")
-        r"""Flag that indicates whether [multi-region backup](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
+        r"""Flag that indicates whether [multi-region backup](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
         """
-
-    def assign(
-        self,
+        
+    
+    def assign(self,
+        
         path_params: AssignPathParams,
+        
+        
         query_params: Optional[AssignQueryParams],
+        
+        
         body_params: AssignBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Assign Deployment Region to One Shard
-        ### Document:
-        [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/assign-deployment-region/)
-        ### Endpoint:
-        `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
-        ### Description
-        No description.
+## Assign Deployment Region to One Shard
+### Document:
+[Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/assign-deployment-region/)
+### Endpoint:
+`PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
+### Description
+No description.
         """
         return self._request(
             "PATCH",
@@ -99,85 +101,87 @@ deployment regions.
             query_params,
             body_params,
         )
-
+    
+    
     class CreateByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        r"""Unique identifier that references this deployment region in
-configurations.
+        r"""Unique identifier that references this deployment region in configurations.
         """
-
+        
+    
+    
     class CreateByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class CreateByIdBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
-        assignment_enabled: Optional[bool] = Field(
-            default=None, serialization_alias="assignmentEnabled"
-        )
-        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        
+        
+        assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
-
+        
+        
         bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
-        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
-is in the following format: `domain:port`. For example,
-`localhost:8080`.
+        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value is in the following format: `domain:port`. For example, `localhost:8080`.
         """
-
+        
+        
         deployment_description: str = Field(serialization_alias="deploymentDescription")
         r"""String that describes the purpose of the deployment region.
         """
-
-        ingestion_endpoint: Optional[str] = Field(
-            default=None, serialization_alias="ingestionEndpoint"
-        )
-        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
-oplog data. Value is a valid URL such as
-`http://www.mongodb.com`. Supports both HTTP and HTTPS.
+        
+        
+        ingestion_endpoint: Optional[str] = Field(default=None, serialization_alias="ingestionEndpoint")
+        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or oplog data. Value is a valid URL such as `http://www.mongodb.com`. Supports both HTTP and HTTPS.
         """
-
+        
+        
         restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
         r"""Ops Manager instance that serves restore requests.
         """
-
-    def create_by_id(
-        self,
+        
+    
+    def create_by_id(self,
+        
         path_params: CreateByIdPathParams,
+        
+        
         query_params: Optional[CreateByIdQueryParams],
+        
+        
         body_params: CreateByIdBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create One Deployment Region by ID
-        ### Document:
-        [Create by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region-by-id/)
-        ### Endpoint:
-        `PUT /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        ### Description
-        No description.
+## Create One Deployment Region by ID
+### Document:
+[Create by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/create-one-deployment-region-by-id/)
+### Endpoint:
+`PUT /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+### Description
+No description.
         """
         return self._request(
             "PUT",
@@ -186,81 +190,82 @@ oplog data. Value is a valid URL such as
             query_params,
             body_params,
         )
-
+    
+    
+    
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
-        assignment_enabled: Optional[bool] = Field(
-            default=None, serialization_alias="assignmentEnabled"
-        )
-        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        
+        
+        assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
-
+        
+        
         bq_proxy_endpoint: str = Field(serialization_alias="bqProxyEndpoint")
-        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value
-is in the following format: `domain:port`. For example,
-`localhost:8080`.
+        r"""Ops Manager instance that serves [Queryable Backup](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-queryable-backup) requests. Value is in the following format: `domain:port`. For example, `localhost:8080`.
         """
-
+        
+        
         deployment_description: str = Field(serialization_alias="deploymentDescription")
         r"""String that describes the purpose of the deployment region.
         """
-
+        
+        
         id: Optional[str] = Field(default=None, serialization_alias="id")
-        r"""Unique identifier that references this deployment region in
-configurations.
+        r"""Unique identifier that references this deployment region in configurations.
         """
-
-        ingestion_endpoint: Optional[str] = Field(
-            default=None, serialization_alias="ingestionEndpoint"
-        )
-        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or
-oplog data. Value is a valid URL such as
-`http://www.mongodb.com`. Supports both HTTP and HTTPS.
+        
+        
+        ingestion_endpoint: Optional[str] = Field(default=None, serialization_alias="ingestionEndpoint")
+        r"""Ops Manager instance to which the [Backup Agent](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-agent) writes snapshot or oplog data. Value is a valid URL such as `http://www.mongodb.com`. Supports both HTTP and HTTPS.
         """
-
+        
+        
         restore_endpoint: str = Field(serialization_alias="restoreEndpoint")
         r"""Ops Manager instance that serves restore requests.
         """
-
-    def create(
-        self,
+        
+    
+    def create(self,
+        
+        
         query_params: Optional[CreateQueryParams],
+        
+        
         body_params: CreateBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create One Deployment Region
-        ### Document:
-        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region/)
-        ### Endpoint:
-        `POST /admin/backup/backupDeployments`
-        ### Description
-        No description.
+## Create One Deployment Region
+### Document:
+[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/create-one-deployment-region/)
+### Endpoint:
+`POST /admin/backup/backupDeployments`
+### Description
+No description.
         """
         return self._request(
             "POST",
@@ -269,53 +274,56 @@ oplog data. Value is a valid URL such as
             query_params,
             body_params,
         )
-
+    
+    
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        r"""Unique identifier that references the deployment region in
-configurations.
+        r"""Unique identifier that references the deployment region in configurations.
         """
-
+        
+    
+    
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def delete(
-        self,
+        
+    
+    
+    def delete(self,
+        
         path_params: DeletePathParams,
+        
+        
         query_params: Optional[DeleteQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Delete One Deployment Region by ID
-        ### Document:
-        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/delete-one-deployment-region-by-id/)
-        ### Endpoint:
-        `DELETE /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        ### Description
-        No description.
+## Delete One Deployment Region by ID
+### Document:
+[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/delete-one-deployment-region-by-id/)
+### Endpoint:
+`DELETE /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+### Description
+No description.
         """
         return self._request(
             "DELETE",
@@ -324,48 +332,53 @@ includes:
             query_params,
             None,
         )
-
+    
+    
+    
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `envelope : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `envelope : true` in the query.
 
-For endpoints that return a list of results, the `content`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `content` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""One-based integer that returns a subsection of results.
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag that indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag that indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_all(
-        self,
+        
+    
+    
+    def get_all(self,
+        
+        
         query_params: Optional[GetAllQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get All Deployment Regions
-        ### Document:
-        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-deployment-regions/)
-        ### Endpoint:
-        `GET /admin/backup/backupDeployments`
-        ### Description
-        No description.
+## Get All Deployment Regions
+### Document:
+[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-all-deployment-regions/)
+### Endpoint:
+`GET /admin/backup/backupDeployments`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -374,57 +387,63 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class GetOnePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         deployment_id: str = Field(serialization_alias="DEPLOYMENT-ID")
-        r"""Unique identifier that references the deployment region in
-configurations.
+        r"""Unique identifier that references the deployment region in configurations.
         """
-
+        
+    
+    
     class GetOneQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `envelope : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `envelope : true` in the query.
 
-For endpoints that return a list of results, the `content`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `content` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""One-based integer that returns a subsection of results.
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag that indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag that indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_one(
-        self,
+        
+    
+    
+    def get_one(self,
+        
         path_params: GetOnePathParams,
+        
+        
         query_params: Optional[GetOneQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get One Deployment Region
-        ### Document:
-        [Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-deployment-region-by-id/)
-        ### Endpoint:
-        `GET /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
-        ### Description
-        No description.
+## Get One Deployment Region
+### Document:
+[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-one-deployment-region-by-id/)
+### Endpoint:
+`GET /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -433,3 +452,4 @@ response body.
             query_params,
             None,
         )
+    

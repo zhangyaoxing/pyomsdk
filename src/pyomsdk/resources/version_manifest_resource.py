@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for VersionManifestResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,31 +8,37 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class VersionManifestResource(BaseResource):
-    r"""Client for VersionManifestResource resource."""
-
+    r"""Client for VersionManifestResource resource.
+    """
+    
+    
+    
     class RetrieveQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def retrieve(
-        self,
+        
+    
+    
+    def retrieve(self,
+        
+        
         query_params: Optional[RetrieveQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Retrieve the Ops Manager Version Manifest
-        ### Document:
-        [Retrieve](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/get-om-version-manifest/)
-        ### Endpoint:
-        `GET /unauth/versionManifest`
-        ### Description
-        Use this resource to retrieve the version manifest that Ops Manager is
-        configured to use.
+## Retrieve the Ops Manager Version Manifest
+### Document:
+[Retrieve](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/version-manifest/get-om-version-manifest/)
+### Endpoint:
+`GET /unauth/versionManifest`
+### Description
+Use this resource to retrieve the version manifest that Ops Manager is configured to use.
         """
         return self._request(
             "GET",
@@ -40,28 +47,34 @@ class VersionManifestResource(BaseResource):
             query_params,
             None,
         )
-
+    
+    
+    
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def update(
-        self,
+        
+    
+    
+    def update(self,
+        
+        
         query_params: Optional[UpdateQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Update the Version Manifest
-        ### Document:
-        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/update-version-manifest/)
-        ### Endpoint:
-        `PUT /versionManifest`
-        ### Description
-        Use this resource to upload the latest version manifest from
-        MongoDB, Inc.
+## Update the Version Manifest
+### Document:
+[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/version-manifest/update-version-manifest/)
+### Endpoint:
+`PUT /versionManifest`
+### Description
+Use this resource to upload the latest version manifest from MongoDB, Inc.
         """
         return self._request(
             "PUT",
@@ -70,3 +83,4 @@ class VersionManifestResource(BaseResource):
             query_params,
             None,
         )
+    

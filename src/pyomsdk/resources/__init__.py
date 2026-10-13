@@ -5,8 +5,11 @@ from .oplog_store_resource import OplogStoreResource
 from .s3_oplog_resource import S3OplogResource
 from .file_system_store_resource import FileSystemStoreResource
 from .blockstore_resource import BlockstoreResource
+from .s3_compatible_blockstore_v20_resource import S3CompatibleBlockstoreV20Resource
 from .s3_compatible_blockstore_resource import S3CompatibleBlockstoreResource
 from .sync_store_resource import SyncStoreResource
+from .key_vault_resource import KeyVaultResource
+from .global_app_settings_resource import GlobalAppSettingsResource
 from .agents_resource import AgentsResource
 from .alert_configurations_resource import AlertConfigurationsResource
 from .alerts_resource import AlertsResource
@@ -40,6 +43,7 @@ from .maintenance_windows_resource import MaintenanceWindowsResource
 from .measurements_resource import MeasurementsResource
 from .server_log_collection_jobs_resource import ServerLogCollectionJobsResource
 from .performance_advisor_resource import PerformanceAdvisorResource
+from .re_election_jobs_resource import ReElectionJobsResource
 from .restore_jobs_resource import RestoreJobsResource
 from .root_resource import RootResource
 from .snapshots_resource import SnapshotsResource
@@ -66,8 +70,11 @@ __all__ = [
     "S3OplogResource",
     "FileSystemStoreResource",
     "BlockstoreResource",
+    "S3CompatibleBlockstoreV20Resource",
     "S3CompatibleBlockstoreResource",
     "SyncStoreResource",
+    "KeyVaultResource",
+    "GlobalAppSettingsResource",
     "AgentsResource",
     "AlertConfigurationsResource",
     "AlertsResource",
@@ -101,6 +108,7 @@ __all__ = [
     "MeasurementsResource",
     "ServerLogCollectionJobsResource",
     "PerformanceAdvisorResource",
+    "ReElectionJobsResource",
     "RestoreJobsResource",
     "RootResource",
     "SnapshotsResource",
@@ -117,5 +125,5 @@ __all__ = [
     "VictorOpsIntegrationSettings",
     "WebhookIntegrationSettings",
     "MicrosoftTeamsIntegrationSettings",
-    "PrometheusIntegrationSettings",
+    "PrometheusIntegrationSettings"
 ]

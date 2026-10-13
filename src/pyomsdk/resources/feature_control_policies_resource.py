@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for FeatureControlPoliciesResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,58 +8,61 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class FeatureControlPoliciesResource(BaseResource):
-    r"""Client for FeatureControlPoliciesResource resource."""
-
+    r"""Client for FeatureControlPoliciesResource resource.
+    """
+    
+    
+    
     class RetrieveAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def retrieve_all(
-        self,
+        
+    
+    
+    def retrieve_all(self,
+        
+        
         query_params: Optional[RetrieveAllQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Retrieve All Feature Policies
-        ### Document:
-        [Retrieve All](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-all-feature-control-policies/)
-        ### Endpoint:
-        `GET /groups/availablePolicies`
-        ### Description
-        No description.
+## Retrieve All Feature Policies
+### Document:
+[Retrieve All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/get-all-feature-control-policies/)
+### Endpoint:
+`GET /groups/availablePolicies`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -67,64 +71,68 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class RetrieveForOneProjectPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the project that has the controlled
-features.
+        r"""Unique identifier of the project that has the controlled features.
         """
-
+        
+    
+    
     class RetrieveForOneProjectQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def retrieve_for_one_project(
-        self,
+        
+    
+    
+    def retrieve_for_one_project(self,
+        
         path_params: RetrieveForOneProjectPathParams,
+        
+        
         query_params: Optional[RetrieveForOneProjectQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Retrieve Feature Policies for One Project
-        ### Document:
-        [Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-controlled-features-for-one-project/)
-        ### Endpoint:
-        `GET /groups/{PROJECT-ID}/controlledFeature`
-        ### Description
-        No description.
+## Retrieve Feature Policies for One Project
+### Document:
+[Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/get-controlled-features-for-one-project/)
+### Endpoint:
+`GET /groups/{PROJECT-ID}/controlledFeature`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -133,132 +141,125 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class UpdatePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the project that has the controlled
-features.
+        r"""Unique identifier of the project that has the controlled features.
         """
-
+        
+    
+    
     class UpdateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class UpdateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         class ExternalManagementSystemParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
-
+            
             name: Optional[str] = Field(default=None, serialization_alias="name")
-            r"""Identifying label for the external system that manages this
-Ops Manager Project.
+            r"""Identifying label for the external system that manages this Ops Manager Project.
             """
-
+            
             system_id: Optional[str] = Field(default=None, serialization_alias="systemId")
-            r"""Unique identifier of the external system that manages this
-Ops Manager Project.
+            r"""Unique identifier of the external system that manages this Ops Manager Project.
             """
-
+            
             version: Optional[str] = Field(default=None, serialization_alias="version")
-            r"""Active release of the external system that manages this Ops Manager
-Project.
+            r"""Active release of the external system that manages this Ops Manager Project.
             """
-
-        external_management_system: Optional[ExternalManagementSystemParams] = Field(
-            default=None, serialization_alias="externalManagementSystem"
-        )
-        r"""Identifying parameters for the external system that manages this
-Ops Manager Project.
+            
+        
+        external_management_system: Optional[ExternalManagementSystemParams] = Field(default=None, serialization_alias="externalManagementSystem")
+        r"""Identifying parameters for the external system that manages this Ops Manager Project.
         """
-
+        
+        
         class PoliciesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
-
-            disabled_params: Optional[list[Any]] = Field(
-                default=None, serialization_alias="disabledParams"
-            )
-            r"""List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the
-`DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support
-all MongoDB options, which can result in failed import attempts.
-To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/current/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
+            
+            disabled_params: Optional[list[Any]] = Field(default=None, serialization_alias="disabledParams")
+            r"""List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the `DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support all MongoDB options, which can result in failed import attempts. To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/v8.0/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
             """
-
+            
             policy: Optional[Policy] = Field(default=None, serialization_alias="policy")
-            r"""Single policy set for this Ops Manager Project. This parameter can
-be set one or more times in the `policies` array.
+            r"""Single policy set for this Ops Manager Project. This parameter can be set one or more times in the `policies` array.
 
 Accepted values are:
 
-| Value | Purpose |
-| --- | --- |
-| `ExternallyManagedLock` | Users can't use Ops Manager to manage other settings given in the `policies[n].policy` array. These same users may use a configured external system, like the Kubernetes Operator to manage these settings. |
-| `DisableUserManagement` | Users can't manage users or roles. |
-| `DisableAuthenticationMechanisms` | Users can't change authentication settings. |
-| `DisableSetMongodConfig` | Users can't change any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings listed in the `policies[n].disabledParams` array. |
-| `DisableSetMongodVersion` | Users can't change the version of any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) or [`mongos`](https://www.mongodb.com/docs/manual/reference/program/mongos/#mongodb-binary-bin.mongos). |
-| `DisableBackupAgent` | Users can't enable or disable the Backup agent. |
-| `DisableMongodLogManagement` | Users can't change log management settings. |
-| `DisableImportToAutomation` | Users can't manage deployments using Automation. |
-| `DisableAgentApiKeyManagement` | Users can't create or update Agent API keys. |
-| `DisableMongodHostManagement` | Users can't change the server type of hosts. |
+- `ExternallyManagedLock`: Users can't use Ops Manager to manage other settings given in the `policies[n].policy` array. These same users may use a configured external system, such as the Kubernetes Operator to manage these settings.
+- `DisableUserManagement`: Users can't manage users or roles.
+- `DisableAuthenticationMechanisms`: Users can't change authentication settings.
+- `DisableSetMongodConfig`: Users can't change any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings listed in the `policies[n].disabledParams` array.
+- `DisableSetMongodVersion`: Users can't change the version of any [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) or [`mongos`](https://www.mongodb.com/docs/manual/reference/program/mongos/#mongodb-binary-bin.mongos).
+- `DisableBackupAgent`: Users can't enable or disable the Backup agent.
+- `DisableMongodLogManagement`: Users can't change log management settings.
+- `DisableImportToAutomation`: Users can't manage deployments using Automation.
+- `DisableAgentApiKeyManagement`: Users can't create or update Agent API keys.
+- `DisableMongodHostManagement`: Users can't change the server type of hosts.
             """
-
-        policies: Optional[list[PoliciesParams]] = Field(
-            default=None, serialization_alias="policies"
-        )
-        r"""List of policies that the external system applies to this
-Ops Manager Project.
+            
+        
+        policies: Optional[list[PoliciesParams]] = Field(default=None, serialization_alias="policies")
+        r"""List of policies that the external system applies to this Ops Manager Project.
         """
-
-    def update(
-        self,
+        
+    
+    def update(self,
+        
         path_params: UpdatePathParams,
+        
+        
         query_params: Optional[UpdateQueryParams],
+        
+        
         body_params: Optional[UpdateBodyParams],
+        
     ) -> dict[str, Any]:
         r"""
-        ## Update Feature Policies for One Project
-        ### Document:
-        [Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/update-controlled-features-for-one-project/)
-        ### Endpoint:
-        `PUT /groups/{PROJECT-ID}/controlledFeature`
-        ### Description
-        No description.
+## Update Feature Policies for One Project
+### Document:
+[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/update-controlled-features-for-one-project/)
+### Endpoint:
+`PUT /groups/{PROJECT-ID}/controlledFeature`
+### Description
+No description.
         """
         return self._request(
             "PUT",
@@ -267,3 +268,4 @@ Ops Manager Project.
             query_params,
             body_params,
         )
+    

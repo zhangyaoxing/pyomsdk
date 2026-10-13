@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for DatabasesResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,63 +8,67 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class DatabasesResource(BaseResource):
-    r"""Client for DatabasesResource resource."""
-
+    r"""Client for DatabasesResource resource.
+    """
+    
+    
     class GetByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         database_name: str = Field(serialization_alias="DATABASE-NAME")
         r"""*(Required.)* The name of the MongoDB database.
         """
-
+        
         host_id: str = Field(serialization_alias="HOST-ID")
         r"""*(Required.)* Unique identifier of the host running the MongoDB process.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
         r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
-
+        
+    
+    
     class GetByNameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_by_name(
-        self,
+        
+    
+    
+    def get_by_name(self,
+        
         path_params: GetByNamePathParams,
+        
+        
         query_params: Optional[GetByNameQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get a Database by Name
-        ### Document:
-        [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/database-get-by-name/)
-        ### Endpoint:
-        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}`
-        ### Description
-        No description.
+## Get a Database by Name
+### Document:
+[Get by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/database-get-by-name/)
+### Endpoint:
+`GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -72,60 +77,67 @@ includes:
             query_params,
             None,
         )
-
+    
+    
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         host_id: str = Field(serialization_alias="HOST-ID")
         r"""*(Required.)* Unique identifier of the host running the MongoDB process.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
         r"""*(Required.)* Unique identifier of the project that owns this MongoDB process.
         """
-
+        
+    
+    
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `envelope : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `envelope : true` in the query.
 
-For endpoints that return a list of results, the `content`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `content` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""One-based integer that returns a subsection of results.
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag that indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag that indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_all(
-        self,
+        
+    
+    
+    def get_all(self,
+        
         path_params: GetAllPathParams,
+        
+        
         query_params: Optional[GetAllQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get All Databases on One Host
-        ### Document:
-        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/databases-get-all-on-host/)
-        ### Endpoint:
-        `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases`
-        ### Description
-        Retrieve all databases running on the specified host.
+## Get All Databases on One Host
+### Document:
+[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/databases-get-all-on-host/)
+### Endpoint:
+`GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases`
+### Description
+Retrieve all databases running on the specified host.
         """
         return self._request(
             "GET",
@@ -134,3 +146,4 @@ response body.
             query_params,
             None,
         )
+    

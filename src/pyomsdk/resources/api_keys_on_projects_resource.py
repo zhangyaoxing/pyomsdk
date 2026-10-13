@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for ApiKeysOnProjectsResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,100 +8,96 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class ApiKeysOnProjectsResource(BaseResource):
-    r"""Client for ApiKeysOnProjectsResource resource."""
-
+    r"""Client for ApiKeysOnProjectsResource resource.
+    """
+    
+    
     class AssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request
-the
-[/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
-endpoint to retrieve all API keys to which the authenticated
-user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to
-update. Use the
-[/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
-to retrieve all organizations to which the authenticated
-user has access.
+        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
-
+        
+    
+    
     class AssignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class AssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
+        
+        
+        roles: list[Any] = Field(serialization_alias="roles")
+        r"""List of roles that the API Key must be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
-        roles: list[GroupRole] = Field(serialization_alias="roles")
-        r"""List of roles that the API Key should be granted. A minimum
-of one role must be provided. Any roles provided must be
-valid for the assigned Project:
-
-| Role Value in API | Role |
-| --- | --- |
-| `GROUP_AUTOMATION_ADMIN` | [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) |
-| `GROUP_BACKUP_ADMIN` | [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin) |
-| `GROUP_DATA_ACCESS_ADMIN` | [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin) |
-| `GROUP_DATA_ACCESS_READ_ONLY` | [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only) |
-| `GROUP_DATA_ACCESS_READ_WRITE` | [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write) |
-| `GROUP_MONITORING_ADMIN` | [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin) |
-| `GROUP_OWNER` | [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) |
-| `GROUP_READ_ONLY` | [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) |
-| `GROUP_USER_ADMIN` | [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) |
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
-
-    def assign(
-        self,
+        
+    
+    def assign(self,
+        
         path_params: AssignPathParams,
+        
+        
         query_params: Optional[AssignQueryParams],
+        
+        
         body_params: AssignBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Assign One Organization API Key to One Project
-        ### Document:
-        [Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/assign-one-org-apiKey-to-one-project/)
-        ### Endpoint:
-        `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        ### Description
-        No description.
+## Assign One Organization API Key to One Project
+### Document:
+[Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/assign-one-org-apikey-to-one-project/)
+### Endpoint:
+`PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+### Description
+No description.
         """
         return self._request(
             "PATCH",
@@ -109,98 +106,99 @@ valid for the assigned Project:
             query_params,
             body_params,
         )
-
+    
+    
     class CreateAssignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to
-retrieve. Use the
-[/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
-to retrieve all organizations to which the authenticated
-user has access.
+        r"""Unique identifier for the Project whose API keys you want to retrieve. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
-
+        
+    
+    
     class CreateAssignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class CreateAssignBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         desc: Optional[str] = Field(default=None, serialization_alias="desc")
-        r"""Description of the API key. Must be between 1 and 250
-characters in length.
+        r"""Description of the API key. Must be between 1 and 250 characters in length.
         """
-
-        roles: Optional[list[GroupRole]] = Field(default=None, serialization_alias="roles")
-        r"""List of roles that the API Key needs to have. If the `roles`
-array is provided:
+        
+        
+        roles: Optional[list[str]] = Field(default=None, serialization_alias="roles")
+        r"""List of roles that the API Key needs to have. If the `roles` array is provided:
 
 - Provide at least one role
 - Make sure all roles must be valid for the Project
 
 Project roles include:
 
-| Role Value in API | Role |
-| --- | --- |
-| `GROUP_AUTOMATION_ADMIN` | [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) |
-| `GROUP_BACKUP_ADMIN` | [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin) |
-| `GROUP_DATA_ACCESS_ADMIN` | [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin) |
-| `GROUP_DATA_ACCESS_READ_ONLY` | [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only) |
-| `GROUP_DATA_ACCESS_READ_WRITE` | [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write) |
-| `GROUP_MONITORING_ADMIN` | [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin) |
-| `GROUP_OWNER` | [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) |
-| `GROUP_READ_ONLY` | [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) |
-| `GROUP_USER_ADMIN` | [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) |
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
-
-    def create_assign(
-        self,
+        
+    
+    def create_assign(self,
+        
         path_params: CreateAssignPathParams,
+        
+        
         query_params: Optional[CreateAssignQueryParams],
+        
+        
         body_params: Optional[CreateAssignBodyParams],
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create and Assign One Organization API Key to One Project
-        ### Document:
-        [Create & Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/create-one-apiKey-in-one-project/)
-        ### Endpoint:
-        `POST /groups/{PROJECT-ID}/apiKeys`
-        ### Description
-        No description.
+## Create and Assign One Organization API Key to One Project
+### Document:
+[Create & Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/create-one-apikey-in-one-project/)
+### Endpoint:
+`POST /groups/{PROJECT-ID}/apiKeys`
+### Description
+No description.
         """
         return self._request(
             "POST",
@@ -209,75 +207,72 @@ Project roles include:
             query_params,
             body_params,
         )
-
+    
+    
     class UnassignPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request
-the
-[/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
-endpoint to retrieve all API keys to which the authenticated
-user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project you wish to unassign from the
-API key. Use the
-[/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
-to retrieve all organizations to which the authenticated
-user has access.
+        r"""Unique identifier for the Project you wish to unassign from the API key. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
-
+        
+    
+    
     class UnassignQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def unassign(
-        self,
+        
+    
+    
+    def unassign(self,
+        
         path_params: UnassignPathParams,
+        
+        
         query_params: Optional[UnassignQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Unassign One Organization API Key from One Project
-        ### Document:
-        [Unassign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/delete-one-apiKey-in-one-project/)
-        ### Endpoint:
-        `DELETE /orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        ### Description
-        No description.
+## Unassign One Organization API Key from One Project
+### Document:
+[Unassign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/delete-one-apikey-in-one-project/)
+### Endpoint:
+`DELETE /orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+### Description
+No description.
         """
         return self._request(
             "DELETE",
@@ -286,67 +281,68 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class GetAllPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project from which you want to
-retrieve its assigned Organization API keys. Use the
-[/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
-to retrieve all Projects to which the authenticated user has
-access.
+        r"""Unique identifier for the Project from which you want to retrieve its assigned Organization API keys. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all Projects to which the authenticated user has access.
         """
-
+        
+    
+    
     class GetAllQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_all(
-        self,
+        
+    
+    
+    def get_all(self,
+        
         path_params: GetAllPathParams,
+        
+        
         query_params: Optional[GetAllQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get All Organization API Keys Assigned to One Project
-        ### Document:
-        [Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
-        ### Endpoint:
-        `GET /groups/{PROJECT-ID}/apiKeys`
-        ### Description
-        No description.
+## Get All Organization API Keys Assigned to One Project
+### Document:
+[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/)
+### Endpoint:
+`GET /groups/{PROJECT-ID}/apiKeys`
+### Description
+No description.
         """
         return self._request(
             "GET",
@@ -355,100 +351,95 @@ response body.
             query_params,
             None,
         )
-
+    
+    
     class ModifyRolesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request
-the
-[/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apiKeys-in-one-project/)
-endpoint to retrieve all API keys to which the authenticated
-user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
-
+        
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to
-update. Use the
-[/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint
-to retrieve all organizations to which the authenticated
-user has access.
+        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
-
+        
+    
+    
     class ModifyRolesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
         r"""Indicates whether or not to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set `"envelope" : true` in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set `"envelope" : true` in the query.
 
-For endpoints that return one result, response body
-includes:
+For endpoints that return one result, response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
 
-For endpoints that return a list of results, the `results`
-object is an envelope. Ops Manager adds the `status` field to the
-response body.
+For endpoints that return a list of results, the `results` object is an envelope. Ops Manager adds the `status` field to the response body.
         """
-
+        
+        
         items_per_page: Optional[int] = Field(default=100, serialization_alias="itemsPerPage")
         r"""Number of items to return per page, up to a maximum of 500.
         """
-
+        
+        
         page_num: Optional[int] = Field(default=1, serialization_alias="pageNum")
         r"""Page number (1-index based).
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Indicates whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Indicates whether the response body should be in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class ModifyRolesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
+        
+        
+        roles: list[str] = Field(serialization_alias="roles")
+        r"""List of roles that the API Key must be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
-        roles: list[GroupRole] = Field(serialization_alias="roles")
-        r"""List of roles that the API Key should be granted. A minimum
-of one role must be provided. Any roles provided must be
-valid for the assigned Project:
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
 
-| Role Value in API | Role |
-| --- | --- |
-| `GROUP_AUTOMATION_ADMIN` | [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) |
-| `GROUP_BACKUP_ADMIN` | [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin) |
-| `GROUP_DATA_ACCESS_ADMIN` | [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin) |
-| `GROUP_DATA_ACCESS_READ_ONLY` | [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only) |
-| `GROUP_DATA_ACCESS_READ_WRITE` | [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write) |
-| `GROUP_MONITORING_ADMIN` | [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin) |
-| `GROUP_OWNER` | [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) |
-| `GROUP_READ_ONLY` | [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) |
-| `GROUP_USER_ADMIN` | [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) |
-
-Include all roles that you want this API Key to have. Any
-roles not in this array are removed.
+Include all roles that you want this API Key to have. Any roles not in this array are removed.
         """
-
-    def modify_roles(
-        self,
+        
+    
+    def modify_roles(self,
+        
         path_params: ModifyRolesPathParams,
+        
+        
         query_params: Optional[ModifyRolesQueryParams],
+        
+        
         body_params: ModifyRolesBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Modify Roles of One Organization API Key to One Project
-        ### Document:
-        [Modify Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/update-one-apiKey-in-one-project/)
-        ### Endpoint:
-        `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
-        ### Description
-        No description.
+## Modify Roles of One Organization API Key to One Project
+### Document:
+[Modify Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/update-one-apikey-in-one-project/)
+### Endpoint:
+`PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
+### Description
+No description.
         """
         return self._request(
             "PATCH",
@@ -457,3 +448,4 @@ roles not in this array are removed.
             query_params,
             body_params,
         )
+    

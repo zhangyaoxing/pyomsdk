@@ -1,3 +1,4 @@
+
 r"""Auto-generated client for UsersResource resource.
 Any manual changes to this file may be overwritten when the code is regenerated.
 """
@@ -7,72 +8,78 @@ from pydantic import BaseModel, ConfigDict, Field
 from .base_resource import BaseResource
 from .enums import *
 
-
 class UsersResource(BaseResource):
-    r"""Client for UsersResource resource."""
-
+    r"""Client for UsersResource resource.
+    """
+    
+    
+    
     class CreateFirstUserQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         whitelist: Optional[str] = Field(default=None, serialization_alias="whitelist")
-        r"""IP address that you want to add to the whitelist for the first
-Ops Manager user.
+        r"""IP address that you want to add to the whitelist for the first Ops Manager user.
 
 You can add more than one `whitelist` parameter and value.
         """
-
+        
+    
+    
     class CreateFirstUserBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
         r"""Email address of the first Ops Manager user.
         """
-
+        
+        
         first_name: str = Field(serialization_alias="firstName")
         r"""First name of the first Ops Manager user.
         """
-
+        
+        
         last_name: str = Field(serialization_alias="lastName")
         r"""Last name of the first Ops Manager user.
         """
-
+        
+        
         password: str = Field(serialization_alias="password")
-        r"""Password of the first Ops Manager user. This field is *not included*
-in the HTTP response body. Ops Manager sends this in the HTTP
-request only when creating the first Ops Manager user.
+        r"""Password of the first Ops Manager user. This field is *not included* in the HTTP response body. Ops Manager sends this in the HTTP request only when creating the first Ops Manager user.
         """
-
+        
+        
         username: str = Field(serialization_alias="username")
-        r"""Username of the first Ops Manager user. Validated depending on the
-value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
+        r"""Username of the first Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
-| Value | Description |
-| --- | --- |
-| `false` | (**Default**) Username is not required to be an email address. |
-| `loose` | Username must contain an `@` symbol followed by a period. |
-| `strict` | Username must adhere to a strict email address validation regular expression. |
+- `false`: (**Default**) Username isn't required to be an email address.
+- `loose`: Username must contain an `@` symbol followed by a period.
+- `strict`: Username must adhere to a strict email address validation regular expression.
 
-See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) for details.
+See [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) for details.
 
-The `username` is usually an email address. If you set this
-value to an email address, you do not need to set the
-`emailAddress` value explicitly.
+The `username` is usually an email address. If you set this value to an email address, you do not need to set the `emailAddress` value explicitly.
         """
-
-    def create_first_user(
-        self,
+        
+    
+    def create_first_user(self,
+        
+        
         query_params: Optional[CreateFirstUserQueryParams],
+        
+        
         body_params: CreateFirstUserBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create the First User
-        ### Document:
-        [Create First User](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create-first/)
-        ### Endpoint:
-        `POST /unauth/users`
-        ### Description
-        Create the first Ops Manager user. You *can* call this endpoint without
-        having an API key.
+## Create the First User
+### Document:
+[Create First User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-create-first/)
+### Endpoint:
+`POST /unauth/users`
+### Description
+Create the first Ops Manager user. You *can* call this endpoint without having an API key.
         """
         return self._request(
             "POST",
@@ -81,133 +88,133 @@ value to an email address, you do not need to set the
             query_params,
             body_params,
         )
-
+    
+    
+    
     class CreateQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class CreateBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         email_address: Optional[str] = Field(default=None, serialization_alias="emailAddress")
         r"""Email address of the Ops Manager user.
         """
-
+        
+        
         first_name: Optional[str] = Field(default=None, serialization_alias="firstName")
         r"""First name of the Ops Manager user.
         """
-
+        
+        
         last_name: Optional[str] = Field(default=None, serialization_alias="lastName")
         r"""Last name of the Ops Manager user.
         """
-
+        
+        
         mobile_number: Optional[str] = Field(default=None, serialization_alias="mobileNumber")
         r"""Mobile telephone number of the Ops Manager user.
         """
-
+        
+        
         password: Optional[str] = Field(default=None, serialization_alias="password")
         r"""Password of the Ops Manager user.
 
-This field is *not* included in the
-entity returned from the server. It can be sent only in the entity body when you create a new user.
+This field is *not* included in the entity returned from the server. It can be sent only in the entity body when you create a new user.
         """
-
+        
+        
         class RolesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
-
+            
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            r"""Unique identifier of the group in which the Ops Manager user has the
-specified role.
+            r"""Unique identifier of the group in which the Ops Manager user has the specified role.
 
-For the "global" roles (those whose name starts
-with `GLOBAL_`) there is no `groupId` since these
-roles are not tied to a group.
+For the "global" roles (those whose name starts with `GLOBAL_`) there is no `groupId` since these roles are not tied to a group.
             """
-
+            
             org_id: Optional[str] = Field(default=None, serialization_alias="orgId")
-            r"""Unique identifier of the organization in which the Ops Manager user
-has the specified role.
+            r"""Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
-
-            role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
+            
+            role_name: Optional[str] = Field(default=None, serialization_alias="roleName")
             r"""Name of the role. Accepted values are:
 
-| Value | Description |
-| --- | --- |
-| `ORG_MEMBER` | [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member) |
-| `ORG_READ_ONLY` | [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only) |
-| `ORG_GROUP_CREATOR` | [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator) |
-| `ORG_OWNER` | [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) |
-| `GROUP_AUTOMATION_ADMIN` | [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) |
-| `GROUP_BACKUP_ADMIN` | [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin) |
-| `GROUP_MONITORING_ADMIN` | [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin) |
-| `GROUP_OWNER` | [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) |
-| `GROUP_READ_ONLY` | [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) |
-| `GROUP_USER_ADMIN` | [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) |
-| `GROUP_DATA_ACCESS_ADMIN` | [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin) |
-| `GROUP_DATA_ACCESS_READ_ONLY` | [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only) |
-| `GROUP_DATA_ACCESS_READ_WRITE` | [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write) |
-| `GLOBAL_AUTOMATION_ADMIN` | [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin) |
-| `GLOBAL_BACKUP_ADMIN` | [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin) |
-| `GLOBAL_MONITORING_ADMIN` | [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin) |
-| `GLOBAL_OWNER` | [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner) |
-| `GLOBAL_READ_ONLY` | [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only) |
-| `GLOBAL_USER_ADMIN` | [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin) |
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
             """
-
+            
+        
         roles: Optional[list[RolesParams]] = Field(default=None, serialization_alias="roles")
         r"""Role assignments of the Ops Manager user.
         """
-
+        
+        
         username: str = Field(serialization_alias="username")
-        r"""Username of the Ops Manager user. Validated depending on the
-value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
+        r"""Username of the Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
-| Value | Description |
-| --- | --- |
-| `false` | (**Default**) Username is not required to be an email address. |
-| `loose` | Username must contain an `@` symbol followed by a period. |
-| `strict` | Username must adhere to a strict email address validation regular expression. |
+- `false`: (**Default**) Username isn't required to be an email address.
+- `loose`: Username must contain an `@` symbol followed by a period.
+- `strict`: Username must adhere to a strict email address validation regular expression.
 
-See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) for details.
+See [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) for details.
         """
-
-    def create(
-        self,
+        
+    
+    def create(self,
+        
+        
         query_params: Optional[CreateQueryParams],
+        
+        
         body_params: CreateBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Create One User
-        ### Document:
-        [Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create/)
-        ### Endpoint:
-        `POST /users`
-        ### Description
-        Create a new user. By default, any non-global organization and project
-        roles in the payload send users an invitation to the organization or
-        project first.
+## Create One User
+### Document:
+[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-create/)
+### Endpoint:
+`POST /users`
+### Description
+Create a new user. By default, any non-global organization and project roles in the payload send users an invitation to the organization or project first.
         """
         return self._request(
             "POST",
@@ -216,57 +223,56 @@ See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#
             query_params,
             body_params,
         )
-
+    
+    
     class GetByIdPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID`
-for a user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
+        r"""*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
-
+        
+    
+    
     class GetByIdQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_by_id(
-        self,
+        
+    
+    
+    def get_by_id(self,
+        
         path_params: GetByIdPathParams,
+        
+        
         query_params: Optional[GetByIdQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get a User by ID
-        ### Document:
-        [Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-id/)
-        ### Endpoint:
-        `GET /users/{USER-ID}`
-        ### Description
-        You can always retrieve your own user account.
-        Otherwise, you must be a [global user](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) or you
-        must have the [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least
-        one project that is common between you and the user you are
-        retrieving.
+## Get a User by ID
+### Document:
+[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-get-by-id/)
+### Endpoint:
+`GET /users/{USER-ID}`
+### Description
+You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -275,56 +281,56 @@ includes:
             query_params,
             None,
         )
-
+    
+    
     class GetByNamePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         user_name: str = Field(serialization_alias="USER-NAME")
         r"""*(Required.)* Username of the MongoDB user that you want to retrieve.
         """
-
+        
+    
+    
     class GetByNameQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def get_by_name(
-        self,
+        
+    
+    
+    def get_by_name(self,
+        
         path_params: GetByNamePathParams,
+        
+        
         query_params: Optional[GetByNameQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Get a User by Name
-        ### Document:
-        [Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-name/)
-        ### Endpoint:
-        `GET /users/byName/{USER-NAME}`
-        ### Description
-        You can always retrieve your own user account.
-        Otherwise, you must be a [global user](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) or you
-        must have the [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least
-        one project that is common between you and the user you are
-        retrieving.
+## Get a User by Name
+### Document:
+[Get by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-get-by-name/)
+### Endpoint:
+`GET /users/byName/{USER-NAME}`
+### Description
+You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -333,109 +339,105 @@ includes:
             query_params,
             None,
         )
-
+    
+    
     class UpdateRolesPathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""Unique identifier of the user that you want to
-retrieve. To retrieve the `USER-ID` for a user, see
-[Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
+        r"""Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
-
+        
+    
+    
     class UpdateRolesQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
+        
+    
+    
     class UpdateRolesBodyParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         class RolesParams(BaseModel):
             model_config = ConfigDict(populate_by_name=True)
-
+            
             group_id: Optional[str] = Field(default=None, serialization_alias="groupId")
-            r"""Unique identifier of the project in which the Ops Manager user has the
-specified role.
+            r"""Unique identifier of the project in which the Ops Manager user has the specified role.
 
-Roles that start with `GLOBAL_` don't require a `groupId`.
-These roles aren't tied to a project.
+Roles that start with `GLOBAL_` don't require a `groupId`. These roles aren't tied to a project.
             """
-
+            
             org_id: Optional[str] = Field(default=None, serialization_alias="orgId")
-            r"""Unique identifier of the organization in which the Ops Manager user
-has the specified role.
+            r"""Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
-
-            role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
+            
+            role_name: Optional[str] = Field(default=None, serialization_alias="roleName")
             r"""Name of the role. Accepted values are:
 
-| Value | Description |
-| --- | --- |
-| `ORG_MEMBER` | [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member) |
-| `ORG_READ_ONLY` | [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only) |
-| `ORG_GROUP_CREATOR` | [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator) |
-| `ORG_OWNER` | [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) |
-| `GROUP_AUTOMATION_ADMIN` | [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) |
-| `GROUP_BACKUP_ADMIN` | [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin) |
-| `GROUP_MONITORING_ADMIN` | [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin) |
-| `GROUP_OWNER` | [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) |
-| `GROUP_READ_ONLY` | [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) |
-| `GROUP_USER_ADMIN` | [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) |
-| `GROUP_DATA_ACCESS_ADMIN` | [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin) |
-| `GROUP_DATA_ACCESS_READ_ONLY` | [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only) |
-| `GROUP_DATA_ACCESS_READ_WRITE` | [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write) |
-| `GLOBAL_AUTOMATION_ADMIN` | [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin) |
-| `GLOBAL_BACKUP_ADMIN` | [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin) |
-| `GLOBAL_MONITORING_ADMIN` | [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin) |
-| `GLOBAL_OWNER` | [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner) |
-| `GLOBAL_READ_ONLY` | [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only) |
-| `GLOBAL_USER_ADMIN` | [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin) |
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
             """
-
+            
+        
         roles: list[RolesParams] = Field(serialization_alias="roles")
         r"""Role assigned to the Ops Manager user.
         """
-
-    def update_roles(
-        self,
+        
+    
+    def update_roles(self,
+        
         path_params: UpdateRolesPathParams,
+        
+        
         query_params: Optional[UpdateRolesQueryParams],
+        
+        
         body_params: UpdateRolesBodyParams,
+        
     ) -> dict[str, Any]:
         r"""
-        ## Update Roles for One User
-        ### Document:
-        [Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-update/)
-        ### Endpoint:
-        `PATCH /users/{USER-ID}`
-        ### Description
-        Add, update, or remove a user's roles within an organization or
-        project. By default, any new non-global organization and project
-        roles in the payload send users an invitation to the organization or
-        project first. You can add users directly to an organization or project
-        only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers)
-        setting to `true`.
+## Update Roles for One User
+### Document:
+[Update Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-update/)
+### Endpoint:
+`PATCH /users/{USER-ID}`
+### Description
+Add, update, or remove a user's roles within an organization or project. By default, any new non-global organization and project roles in the payload send users an invitation to the organization or project first. You can add users directly to an organization or project only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers) setting to `true`.
         """
         return self._request(
             "PATCH",
@@ -444,52 +446,56 @@ has the specified role.
             query_params,
             body_params,
         )
-
+    
+    
     class DeletePathParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
         user_id: str = Field(serialization_alias="USER-ID")
         r"""Unique identifier of the user.
         """
-
+        
+    
+    
     class DeleteQueryParams(BaseModel):
         model_config = ConfigDict(populate_by_name=True)
-
+        
+        
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Flag that indicates whether or not to wrap the response in an
-envelope.
+        r"""Flag that indicates whether to wrap the response in an envelope.
 
-Some API clients cannot access the HTTP response headers or
-status code. To remediate this, set **envelope=true** in the
-query.
+Some API clients cannot access the HTTP response headers or status code. To remediate this, set **envelope=true** in the query.
 
-For endpoints that return one result, the response body
-includes:
+For endpoints that return one result, the response body includes:
 
-| Name | Description |
-| --- | --- |
-| `status` | HTTP response code |
-| `content` | Expected response body |
+- `status`: HTTP response code
+- `content`: Expected response body
         """
-
+        
+        
         pretty: Optional[bool] = Field(default=False, serialization_alias="pretty")
-        r"""Flag indicating whether the response body should be in a
-[prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
+        r"""Flag indicating whether the response body is in a [prettyprint](https://en.wikipedia.org/wiki/Prettyprint?oldid=791126873) format.
         """
-
-    def delete(
-        self,
+        
+    
+    
+    def delete(self,
+        
         path_params: DeletePathParams,
+        
+        
         query_params: Optional[DeleteQueryParams],
+        
+        
     ) -> dict[str, Any]:
         r"""
-        ## Remove One User
-        ### Document:
-        [Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/users/delete-one-user/)
-        ### Endpoint:
-        `DELETE /users/{USER-ID}`
-        ### Description
-        Removes one user from Ops Manager by user ID.
+## Remove One User
+### Document:
+[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/users/delete-one-user/)
+### Endpoint:
+`DELETE /users/{USER-ID}`
+### Description
+Removes one user from Ops Manager by user ID.
         """
         return self._request(
             "DELETE",
@@ -498,3 +504,4 @@ includes:
             query_params,
             None,
         )
+    
