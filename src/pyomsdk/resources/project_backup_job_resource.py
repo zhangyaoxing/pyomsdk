@@ -53,7 +53,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Project Backup Jobs Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/groups/get-all-backup-group-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-all-backup-group-configurations/)
 ### Endpoint:
 `GET /groups`
 ### Description
@@ -111,7 +111,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Project Backup Jobs Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/groups/get-one-backup-group-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/get-one-backup-group-configuration-by-id/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}`
 ### Description
@@ -165,7 +165,7 @@ For endpoints that return one result, the response body includes:
             model_config = ConfigDict(populate_by_name=True)
             
             head_root_directory: Optional[str] = Field(default=None, serialization_alias="headRootDirectory")
-            r"""*Optional.* The root-relative path of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
+            r"""*Optional.* The root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
             """
             
             machine: Optional[str] = Field(default=None, serialization_alias="machine")
@@ -174,7 +174,7 @@ For endpoints that return one result, the response body includes:
             
         
         daemon_filter: Optional[list[DaemonFilterParams]] = Field(default=None, serialization_alias="daemonFilter")
-        r"""*Optional.* An array of pairs of [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) hosts and their [head directories](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) that to which this project's backup jobs are limited. If omitted, all available Backup Daemons are used.
+        r"""*Optional.* An array of pairs of [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) hosts and their [head directories](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) that to which this project's backup jobs are limited. If omitted, all available Backup Daemons are used.
         """
         
         
@@ -194,7 +194,7 @@ For endpoints that return one result, the response body includes:
         
         
         label_filter: Optional[list[str]] = Field(default=None, serialization_alias="labelFilter")
-        r"""*Optional.* An array of tags that limits which [Backup Daemons](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon) and [snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) can process [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) for this project.
+        r"""*Optional.* An array of tags that limits which [Backup Daemons](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon) and [snapshot stores](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) can process [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) for this project.
 
 If a snapshot store or any Backup Daemon has the same `labels` set as this `labelFilter`, they can process backup jobs for this project.
 
@@ -208,7 +208,7 @@ If omitted, the project's backup jobs can use any available Backup Daemon or sna
             id: Optional[str] = Field(default=None, serialization_alias="id")
             r"""Unique identifier representing an [oplog store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database) that may be used with this project's backup jobs.
 
-Retrieve the `id` of the oplog store you want to use with [Get All Oplog Configurations.](/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/get-all-oplog-configurations/#std-label-get-all-oplog-configs-response)
+Retrieve the `id` of the oplog store you want to use with [Get All Oplog Configurations.](/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/get-all-oplog-configurations/#std-label-get-all-oplog-configs-response)
             """
             
             type: Optional[OplogStoreFilterType] = Field(default=None, serialization_alias="type")
@@ -269,7 +269,7 @@ The accepted values for this option are:
         r"""
 ## Update One Project Backup Jobs Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/groups/update-one-backup-group-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/groups/update-one-backup-group-configuration/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}`
 ### Description

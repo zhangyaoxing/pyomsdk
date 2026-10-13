@@ -53,7 +53,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Root
 ### Document:
-[Root](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/root/)
+[Root](https://www.mongodb.com/docs/ops-manager/current/reference/api/root/)
 ### Endpoint:
 `GET /`
 ### Description

@@ -60,7 +60,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Retrieve the KMIP Master Key ID
 ### Document:
-[Retrieve KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/kmip-keys/get-master-key/)
+[Retrieve KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/kmip-keys/get-master-key/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/encryptionKey`
 ### Description
@@ -122,7 +122,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Rotate the KMIP Master Key ID
 ### Document:
-[Rotate KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/kmip-keys/rotate-master-key/)
+[Rotate KMIP Master Key ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/kmip-keys/rotate-master-key/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/encryptionKey`
 ### Description

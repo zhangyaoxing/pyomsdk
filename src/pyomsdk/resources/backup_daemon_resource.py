@@ -69,7 +69,7 @@ For endpoints that return one result, the response body includes:
         
         
         head_disk_type: Optional[HeadDiskType] = Field(default=None, serialization_alias="headDiskType")
-        r"""Type of disk used to store the [head directory.](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory)
+        r"""Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
 
 The accepted values for this option are:
 
@@ -79,7 +79,7 @@ The accepted values for this option are:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -89,7 +89,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
             
             head_root_directory: Optional[str] = Field(default=None, serialization_alias="headRootDirectory")
-            r"""Root-relative path of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash (`/`). If you omit the slash, the Backup Daemon generates a Java Exception error.
+            r"""Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash (`/`). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
             
             machine: str = Field(serialization_alias="machine")
@@ -98,7 +98,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             
         
         machine: MachineParams = Field(serialization_alias="machine")
-        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its [head directories.](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory)
+        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its [head directories.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
         """
         
         
@@ -113,7 +113,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         
         
         restore_queryable_jobs_enabled: Optional[bool] = Field(default=None, serialization_alias="restoreQueryableJobsEnabled")
-        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform [queryable restores.](/docs/ops-manager/v8.0/tutorial/query-backup/)
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform [queryable restores.](/docs/ops-manager/current/tutorial/query-backup/)
         """
         
     
@@ -131,7 +131,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         r"""
 ## Create One Backup Daemon Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/daemonconfigs/create-one-backup-daemon-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonconfigs/create-one-backup-daemon-configuration/)
 ### Endpoint:
 `PUT /daemon/configs/{MACHINE}`
 ### Description
@@ -150,7 +150,7 @@ Configures a new [Backup Daemon.](https://www.mongodb.com/docs/ops-manager/curre
         model_config = ConfigDict(populate_by_name=True)
         
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. May be omitted if the Backup Daemon has not been configured.
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. May be omitted if the Backup Daemon has not been configured.
         """
         
         machine: str = Field(serialization_alias="MACHINE")
@@ -193,7 +193,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Backup Daemon Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/daemonconfigs/delete-one-backup-daemon-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonconfigs/delete-one-backup-daemon-configuration/)
 ### Endpoint:
 `DELETE /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
 ### Description
@@ -253,7 +253,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Backup Daemon Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/daemonconfigs/get-all-backup-daemon-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonconfigs/get-all-backup-daemon-configurations/)
 ### Endpoint:
 `GET /daemon/configs`
 ### Description
@@ -272,7 +272,7 @@ Retrieves the configurations of all backup daemons.
         model_config = ConfigDict(populate_by_name=True)
         
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. May be omitted if the Backup Daemon has not been configured.
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. May be omitted if the Backup Daemon has not been configured.
         """
         
         machine: str = Field(serialization_alias="MACHINE")
@@ -315,7 +315,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Backup Daemon Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/daemonconfigs/get-one-backup-daemon-configuration-by-host/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonconfigs/get-one-backup-daemon-configuration-by-host/)
 ### Endpoint:
 `GET /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
 ### Description
@@ -334,7 +334,7 @@ Retrieves the configuration of one backup daemon.
         model_config = ConfigDict(populate_by_name=True)
         
         head_root_directory: str = Field(serialization_alias="HEAD-ROOT-DIRECTORY")
-        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
+        r"""Root-relative [URL-encoded path](https://en.wikipedia.org/wiki/Percent-encoding?oldid=810929127) of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host.
 
 Requests encode slashes in the URL path. For example, for Linux platforms, you should add the head directory in this format:
 
@@ -399,7 +399,7 @@ For endpoints that return one result, the response body includes:
         
         
         head_disk_type: Optional[HeadDiskType] = Field(default=None, serialization_alias="headDiskType")
-        r"""Type of disk used to store the [head directory.](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory)
+        r"""Type of disk used to store the [head directory.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
 
 The accepted values for this option are:
 
@@ -409,7 +409,7 @@ The accepted values for this option are:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [Backup Daemons.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Backup-Daemon)
 
 Setting these tags limits which backup jobs this Backup Daemon can process. If omitted, this Backup Daemon can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -419,7 +419,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             model_config = ConfigDict(populate_by_name=True)
             
             head_root_directory: Optional[str] = Field(default=None, serialization_alias="headRootDirectory")
-            r"""Root-relative path of the [head directory](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash (`/`). If you omit the slash, the Backup Daemon generates a Java Exception error.
+            r"""Root-relative path of the [head directory](/docs/ops-manager/current/reference/glossary/#std-term-head-directory) on this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host. This directory must end with a slash (`/`). If you omit the slash, the Backup Daemon generates a Java Exception error.
             """
             
             machine: str = Field(serialization_alias="machine")
@@ -428,7 +428,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
             
         
         machine: MachineParams = Field(serialization_alias="machine")
-        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its [head directories.](/docs/ops-manager/v8.0/reference/glossary/#std-term-head-directory)
+        r"""[Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) host and its [head directories.](/docs/ops-manager/current/reference/glossary/#std-term-head-directory)
         """
         
         
@@ -443,7 +443,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         
         
         restore_queryable_jobs_enabled: Optional[bool] = Field(default=None, serialization_alias="restoreQueryableJobsEnabled")
-        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform [queryable restores.](/docs/ops-manager/v8.0/tutorial/query-backup/)
+        r"""Flag indicating whether this [Backup Daemon](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-daemon) can perform [queryable restores.](/docs/ops-manager/current/tutorial/query-backup/)
         """
         
     
@@ -461,7 +461,7 @@ Setting these tags limits which backup jobs this Backup Daemon can process. If o
         r"""
 ## Update One Backup Daemon Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/daemonconfigs/update-one-backup-daemon-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/daemonconfigs/update-one-backup-daemon-configuration/)
 ### Endpoint:
 `PUT /daemon/configs/{MACHINE}/{HEAD-ROOT-DIRECTORY}`
 ### Description

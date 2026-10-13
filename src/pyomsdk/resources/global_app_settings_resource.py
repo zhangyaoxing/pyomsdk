@@ -46,7 +46,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Global App Settings
 ### Document:
-[Get Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/settings/get-global-app-settings/)
+[Get Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/settings/get-global-app-settings/)
 ### Endpoint:
 `GET /admin/settings`
 ### Description
@@ -105,7 +105,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update Global App Settings
 ### Document:
-[Update Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/settings/update-global-app-settings/)
+[Update Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/settings/update-global-app-settings/)
 ### Endpoint:
 `PATCH /admin/settings`
 ### Description

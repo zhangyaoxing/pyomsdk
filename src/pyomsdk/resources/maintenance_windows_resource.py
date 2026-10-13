@@ -82,7 +82,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Maintenance Window
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/maintenance-windows-create-one/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-create-one/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/maintenanceWindows/`
 ### Description
@@ -144,7 +144,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Maintenance Window
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/maintenance-windows-delete-one/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-delete-one/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
 ### Description
@@ -202,7 +202,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get All Maintenance Windows
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/maintenance-windows-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/maintenanceWindows/`
 ### Description
@@ -264,7 +264,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Maintenance Window
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/maintenance-windows-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-get-one/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
 ### Description
@@ -352,7 +352,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update One Maintenance Window
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/maintenance-windows-update-one/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/maintenance-windows-update-one/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/maintenanceWindows/{MW-ID}`
 ### Description

@@ -92,7 +92,7 @@ For example:
 | ../measurements?m=CONNECTIONS&m=OPCOUNTER_CMD&m=OPCOUNTER_QUERY |
 ```
 
-You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/v8.0/reference/api/measures/measurement-types/#std-label-om-measurement-types)
+You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/current/reference/api/measures/measurement-types/#std-label-om-measurement-types)
         """
         
         
@@ -131,7 +131,7 @@ For example, to request the last 36 hours, include this query parameter: `period
         r"""
 ## Get Database Measurements
 ### Document:
-[Database](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/measures/get-database-measurements/)
+[Database](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-database-measurements/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}/measurements`
 ### Description
@@ -225,7 +225,7 @@ For example:
 | ../measurements?m=CONNECTIONS&m=OPCOUNTER_CMD&m=OPCOUNTER_QUERY |
 ```
 
-You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/v8.0/reference/api/measures/measurement-types/#std-label-om-measurement-types)
+You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/current/reference/api/measures/measurement-types/#std-label-om-measurement-types)
         """
         
         
@@ -264,7 +264,7 @@ For example, to request the last 36 hours, include this query parameter: `period
         r"""
 ## Get Disk Partition Measurements
 ### Document:
-[Disk Partition](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/measures/get-disk-measurements/)
+[Disk Partition](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-disk-measurements/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}/measurements`
 ### Description
@@ -354,7 +354,7 @@ For example:
 | ../measurements?m=CONNECTIONS&m=OPCOUNTER_CMD&m=OPCOUNTER_QUERY |
 ```
 
-You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/v8.0/reference/api/measures/measurement-types/#std-label-om-measurement-types)
+You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/current/reference/api/measures/measurement-types/#std-label-om-measurement-types)
         """
         
         
@@ -393,7 +393,7 @@ For example, to request the last 36 hours, include this query parameter: `period
         r"""
 ## Get Host, Process, System Measurements
 ### Document:
-[Host](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/measures/get-host-process-system-measurements/)
+[Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-host-process-system-measurements/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements?granularity={ISO-8601-PERIOD}&period={ISO-8601-PERIOD}`
 ### Description
@@ -483,7 +483,7 @@ For example:
 | ../measurements?m=CONNECTIONS&m=OPCOUNTER_CMD&m=OPCOUNTER_QUERY |
 ```
 
-You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/v8.0/reference/api/measures/measurement-types/#std-label-om-measurement-types)
+You must specify measurements that are valid for the host. Ops Manager returns an error if any specified measurements are invalid For available measurements, see [Measurement Types.](/docs/ops-manager/current/reference/api/measures/measurement-types/#std-label-om-measurement-types)
         """
         
         
@@ -522,11 +522,11 @@ For example, to request the last 36 hours, include this query parameter: `period
         r"""
 ## Get Measurement Types
 ### Document:
-[Get Types](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/measures/get-measurement-types/)
+[Get Types](https://www.mongodb.com/docs/ops-manager/current/reference/api/measures/get-measurement-types/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/measurements`
 ### Description
-To retrieve the [Measurement Types](/docs/ops-manager/v8.0/reference/api/measures/measurement-types/) that apply to a specific measurement without returning a large document, issue the following `GET` command with a value of `PT5M` for both the `granularity` and `period`. This returns a document with only one data point for each measurement.
+To retrieve the [Measurement Types](/docs/ops-manager/current/reference/api/measures/measurement-types/) that apply to a specific measurement without returning a large document, issue the following `GET` command with a value of `PT5M` for both the `granularity` and `period`. This returns a document with only one data point for each measurement.
         """
         return self._request(
             "GET",

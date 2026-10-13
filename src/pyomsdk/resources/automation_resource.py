@@ -56,7 +56,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Automation Status of Last 50 Plans
 ### Document:
-[Get Status of Last 50 Plans](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-status-full/)
+[Get Status of Last 50 Plans](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status-full/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/automationStatus/full`
 ### Description
@@ -114,7 +114,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Automation Status of Latest Plan
 ### Document:
-[Get Status](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-status/)
+[Get Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-status/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationStatus`
 ### Description

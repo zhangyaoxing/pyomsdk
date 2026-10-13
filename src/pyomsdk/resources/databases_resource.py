@@ -64,7 +64,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get a Database by Name
 ### Document:
-[Get by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/database-get-by-name/)
+[Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/database-get-by-name/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases/{DATABASE-NAME}`
 ### Description
@@ -133,7 +133,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Databases on One Host
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/databases-get-all-on-host/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/databases-get-all-on-host/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/databases`
 ### Description

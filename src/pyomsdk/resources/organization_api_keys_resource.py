@@ -17,7 +17,7 @@ class OrganizationApiKeysResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -65,15 +65,15 @@ For endpoints that return a list of results, the `results` object is an envelope
         """
         
         
-        roles: Optional[list[str]] = Field(default=None, serialization_alias="roles")
+        roles: Optional[list[OrgRole]] = Field(default=None, serialization_alias="roles")
         r"""List of roles that the API key should have. There must be at least one role listed, and all roles must be valid for an Organization.
 
 Organization roles include:
 
-- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
-- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
-- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
-- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
         """
         
     
@@ -91,7 +91,7 @@ Organization roles include:
         r"""
 ## Create an API Key
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/create-one-org-api-key/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-one-org-api-key/)
 ### Endpoint:
 `POST /orgs/{ORG-ID}/apiKeys`
 ### Description
@@ -165,7 +165,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Delete One API Key
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/delete-one-api-key/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-api-key/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
 ### Description
@@ -184,7 +184,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -235,7 +235,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All API Keys
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-keys/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-keys/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/apiKeys`
 ### Description
@@ -254,11 +254,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""The unique identifier for the [API key](/docs/ops-manager/v8.0/core/api/) you want to retrieve. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        r"""The unique identifier for the [API key](/docs/ops-manager/current/core/api/) you want to retrieve. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -309,7 +309,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get One API Key
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/get-one-org-api-key/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
 ### Description
@@ -328,11 +328,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-keys/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-keys/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose API keys you want to retrieve. Use the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -380,15 +380,15 @@ For endpoints that return a list of results, the `results` object is an envelope
         """
         
         
-        roles: Optional[list[str]] = Field(default=None, serialization_alias="roles")
+        roles: Optional[list[OrgRole]] = Field(default=None, serialization_alias="roles")
         r"""List of roles that the API key should have. This parameter is optional; however, the request must contain either a `desc` parameter or a `roles` parameter. If `roles` is provided, there must be at least one role listed, and all roles must be valid for an Organization.
 
 Organization roles include:
 
-- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
-- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
-- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
-- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
         """
         
     
@@ -406,7 +406,7 @@ Organization roles include:
         r"""
 ## Update an API Key
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/update-one-org-api-key/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/update-one-org-api-key/)
 ### Endpoint:
 `PATCH /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}`
 ### Description

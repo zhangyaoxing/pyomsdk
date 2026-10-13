@@ -46,7 +46,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get All Clusters in All Projects
 ### Document:
-[Get All from All Projects](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/clusters/clusters-get-all-key/)
+[Get All from All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all-key/)
 ### Endpoint:
 `GET /clusters`
 ### Description
@@ -111,7 +111,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Clusters in One Project
 ### Document:
-[Get All from One Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/clusters/clusters-get-all/)
+[Get All from One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters`
 ### Description
@@ -173,7 +173,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Cluster in One Project
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/clusters/clusters-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-get-one/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
 ### Description
@@ -246,7 +246,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update One Cluster
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/clusters/clusters-update-one/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/clusters/clusters-update-one/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}`
 ### Description

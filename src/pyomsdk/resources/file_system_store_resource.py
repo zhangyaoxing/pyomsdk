@@ -51,7 +51,7 @@ For endpoints that return one result, the response body includes:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -60,18 +60,18 @@ Setting these tags limits which backup jobs this file system store can process. 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
-        mmapv1_compression_setting: Optional[str] = Field(default=None, serialization_alias="mmapv1CompressionSetting")
-        r"""Compression setting if you use the MMAPv1 storage engine for your snaphots.
+        mmapv1_compression_setting: str = Field(serialization_alias="mmapv1CompressionSetting")
+        r"""Compression setting if you use the MMAPv1 storage engine for your snapshots.
 
 Ops Manager accepts `NONE` or `GZIP`.
 
 If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, MongoDB Atlas ignores this setting.
 
-**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine for MongoDB versions before 6.0. If you [edit your deployment's configuration](/docs/ops-manager/v8.0/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine for MongoDB versions before 6.0. If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
         """
         
         
@@ -80,8 +80,8 @@ If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/
         """
         
         
-        wt_compression_setting: Optional[str] = Field(default=None, serialization_alias="wtCompressionSetting")
-        r"""Compression setting if you use the WiredTiger storage engine for your snaphots.
+        wt_compression_setting: str = Field(serialization_alias="wtCompressionSetting")
+        r"""Compression setting if you use the WiredTiger storage engine for your snapshots.
 
 Ops Manager accepts `NONE` or `GZIP`.
 
@@ -101,7 +101,7 @@ If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/
         r"""
 ## Create One File System Store Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/create-one-file-system-store-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/filesystemconfigs/create-one-file-system-store-configuration/)
 ### Endpoint:
 `POST /snapshot/fileSystemConfigs`
 ### Description
@@ -159,7 +159,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One File System Store Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/delete-one-file-system-store-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/filesystemconfigs/delete-one-file-system-store-configuration/)
 ### Endpoint:
 `DELETE /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
 ### Description
@@ -219,7 +219,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All File System Store Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/get-all-file-system-store-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/filesystemconfigs/get-all-file-system-store-configurations/)
 ### Endpoint:
 `GET /snapshot/fileSystemConfigs`
 ### Description
@@ -277,7 +277,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One File System Store Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/get-one-file-system-store-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/filesystemconfigs/get-one-file-system-store-configuration-by-id/)
 ### Endpoint:
 `GET /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
 ### Description
@@ -333,7 +333,7 @@ For endpoints that return one result, the response body includes:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
+        r"""Tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [file system stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-File-System-Store)
 
 Setting these tags limits which backup jobs this file system store can process. If omitted, this file system store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -342,18 +342,18 @@ Setting these tags limits which backup jobs this file system store can process. 
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. Set this option only if you're using more than one snapshot store.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
-        mmapv1_compression_setting: Optional[str] = Field(default=None, serialization_alias="mmapv1CompressionSetting")
-        r"""Compression setting if you use the MMAPv1 storage engine for your snaphots.
+        mmapv1_compression_setting: str = Field(serialization_alias="mmapv1CompressionSetting")
+        r"""Compression setting if you use the MMAPv1 storage engine for your snapshots.
 
-Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to `NONE` by default.
+Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 6.0 or later, Ops Manager ignores this setting.
 
-**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine in MongoDB 4.2. If you [edit your deployment's configuration](/docs/ops-manager/v8.0/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
+**IMPORTANT:** MongoDB removed support for the MMAPv1 storage engine for MongoDB versions before 6.0. If you [edit your deployment's configuration](/docs/ops-manager/current/tutorial/edit-deployment/) to change your storage engine to [WiredTiger Storage Engine](https://www.mongodb.com/docs/manual/core/wiredtiger/#std-label-storage-wiredtiger), Ops Manager restarts the MongoDB processes.
         """
         
         
@@ -362,12 +362,12 @@ If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/
         """
         
         
-        wt_compression_setting: Optional[str] = Field(default=None, serialization_alias="wtCompressionSetting")
-        r"""Compression setting if you use the WiredTiger storage engine for your snaphots.
+        wt_compression_setting: str = Field(serialization_alias="wtCompressionSetting")
+        r"""Compression setting if you use the WiredTiger storage engine for your snapshots.
 
-Ops Manager accepts `NONE` or `GZIP`. Ops Manager sets this value to `GZIP` by default.
+Ops Manager accepts `NONE` or `GZIP`.
 
-If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 4.2 or later, Ops Manager ignores this setting.
+If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) 6.0 or later, Ops Manager ignores this setting.
         """
         
     
@@ -385,7 +385,7 @@ If the MongoDB runs [FCV](https://www.mongodb.com/docs/manual/reference/command/
         r"""
 ## Update One File System Store Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/filesystemconfigs/update-one-file-system-store-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/filesystemconfigs/update-one-file-system-store-configuration/)
 ### Endpoint:
 `PUT /snapshot/fileSystemConfigs/{FILE-SYSTEM-CONFIG-ID}`
 ### Description

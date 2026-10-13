@@ -23,7 +23,7 @@ class TelemetryResource(BaseResource):
         r"""
 ## Retrieve Telemetry Data
 ### Document:
-[Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/telemetry/get-data/)
+[Retrieve Telemetry Data](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/get-data/)
 ### Endpoint:
 `GET /collection/details`
 ### Description
@@ -59,7 +59,7 @@ Retrieve telemetry collection status and configuration details for your Ops Mana
         r"""
 ## Toggle Telemetry Status
 ### Document:
-[Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/telemetry/toggle-status/)
+[Toggle Telemetry Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/telemetry/toggle-status/)
 ### Endpoint:
 `PATCH /collection/status`
 ### Description

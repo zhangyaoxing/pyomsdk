@@ -67,7 +67,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Agent API Key
 ### Document:
-[Create API Key](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agentapikeys/create-one-agent-api-key/)
+[Create API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/create-one-agent-api-key/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/agentapikeys`
 ### Description
@@ -129,7 +129,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove One Agent API Key
 ### Document:
-[Remove API Key](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agentapikeys/delete-one-agent-api-key/)
+[Remove API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/delete-one-agent-api-key/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/agentapikeys/{API-AGENT-KEY-ID}`
 ### Description
@@ -187,7 +187,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get All Agent API Keys for One Project
 ### Document:
-[Get All API Keys](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agentapikeys/get-all-agent-api-keys-for-project/)
+[Get All API Keys](https://www.mongodb.com/docs/ops-manager/current/reference/api/agentapikeys/get-all-agent-api-keys-for-project/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/agentapikeys`
 ### Description
@@ -252,7 +252,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get Links to Agent Resources for a Project
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agents-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/agents`
 ### Description
@@ -274,7 +274,7 @@ Get links to Monitoring, Backup, and Automation Agent resources for a project.
         r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the Agent API Key.
         """
         
-        type: str = Field(serialization_alias="TYPE")
+        type: AgentType = Field(serialization_alias="TYPE")
         r"""The agent type to retrieve. **TYPE** can be one of the following values:
 
 - `MONITORING`
@@ -325,7 +325,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get Agents by Type for One Project
 ### Document:
-[Get by Type](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agents-get-by-type/)
+[Get by Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents-get-by-type/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/agents/{TYPE}`
 ### Description
@@ -373,7 +373,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Retrieve All Agent Versions
 ### Document:
-[Retrieve All Versions](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agents/get-agent-versions-global/)
+[Retrieve All Versions](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-global/)
 ### Endpoint:
 `GET /softwareComponents/versions/`
 ### Description
@@ -431,7 +431,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Retrieve All Agent Versions for One Project
 ### Document:
-[Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/agents/get-agent-versions-per-project/)
+[Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/agents/get-agent-versions-per-project/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/agents/versions`
 ### Description

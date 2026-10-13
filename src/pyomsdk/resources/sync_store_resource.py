@@ -46,7 +46,7 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this sync store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this sync store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
@@ -56,14 +56,14 @@ For endpoints that return one result, the response body includes:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [sync stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-sync-store)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [sync stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-sync-store)
 
 Setting these tags limits which backup jobs this sync store can process. If omitted, this sync store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The sync store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The sync store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -122,7 +122,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Create One Sync Store Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/sync/mongoconfigs/create-one-sync-store-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoconfigs/create-one-sync-store-configuration/)
 ### Endpoint:
 `POST /sync/mongoConfigs`
 ### Description
@@ -180,7 +180,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Sync Store Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/sync/mongoconfigs/delete-one-sync-store-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoconfigs/delete-one-sync-store-configuration/)
 ### Endpoint:
 `DELETE /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
 ### Description
@@ -240,7 +240,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Sync Store Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/sync/mongoconfigs/get-all-sync-store-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoconfigs/get-all-sync-store-configurations/)
 ### Endpoint:
 `GET /sync/mongoConfigs`
 ### Description
@@ -298,7 +298,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Sync Store Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/sync/mongoconfigs/get-one-sync-store-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoconfigs/get-one-sync-store-configuration-by-id/)
 ### Endpoint:
 `GET /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
 ### Description
@@ -354,19 +354,19 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this sync store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this sync store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [sync stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-sync-store)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [sync stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-sync-store)
 
 Setting these tags limits which backup jobs this sync store can process. If omitted, this sync store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The sync store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The sync store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -427,7 +427,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Update One Sync Store Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/sync/mongoconfigs/update-one-sync-store-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/sync/mongoconfigs/update-one-sync-store-configuration/)
 ### Endpoint:
 `PUT /sync/mongoConfigs/{SYNC-STORE-CONFIG-ID}`
 ### Description

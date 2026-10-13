@@ -63,7 +63,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Backup Configurations for One Project
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-all-backup-configs-for-group/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-backup-configs-for-group/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/backupConfigs`
 ### Description
@@ -125,7 +125,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Backup Configuration from One Project
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-one-backup-config-by-cluster-id/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-backup-config-by-cluster-id/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
 ### Description
@@ -198,9 +198,9 @@ For endpoints that return one result, the response body includes:
         encryption_enabled: Optional[bool] = Field(default=None, serialization_alias="encryptionEnabled")
         r"""Flag that indicates if encryption is enabled for the backup configuration. You must include the **syncSource** parameter when enabling encryption for a backup configuration. For existing backups in a project, enabling encryption requires an [initial sync](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-initial-sync) to recreate the backups’ head databases.
 
-[FCV](https://www.mongodb.com/docs/manual/reference/command/setFeatureCompatibilityVersion/#mongodb-dbcommand-dbcmd.setFeatureCompatibilityVersionbon.mon) `4.2` and later use [backup cursors](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-cursor) instead of [head databases](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-head-database). For more information, see [Backup Daemon Service.](/docs/ops-manager/v8.0/core/system-overview/#std-label-backup-daemon)
+Ops Manager uses [backup cursors](/docs/ops-manager/current/reference/glossary/#std-term-backup-cursor) and no longer uses [head databases](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-head-database). To learn more, see [Backup Daemon Service.](/docs/ops-manager/current/core/system-overview/#std-label-backup-daemon)
 
-For more information on backup encryption for FCV 4.2 or later, see [Encrypted Backup Snapshots.](/docs/ops-manager/v8.0/tutorial/encrypt-snapshots/#std-label-encrypt-snapshots)
+To learn more about backup encryption, see [Encrypted Backup Snapshots.](/docs/ops-manager/current/tutorial/encrypt-snapshots/#std-label-encrypt-snapshots)
         """
         
         
@@ -252,7 +252,7 @@ This parameter must meet the following conditions:
         
         
         preferred_member: Optional[str] = Field(default=None, serialization_alias="preferredMember")
-        r"""Cluster member that a user designates as the preferred replica set member to create snapshots. You can set the preferred member using the [console](/docs/ops-manager/v8.0/tutorial/edit-backup/). View available replica set members that can act as a preferred member using the [Get one backup config endpoint.](/docs/ops-manager/v8.0/reference/api/backup/get-one-backup-config-by-cluster-id/)
+        r"""Cluster member that a user designates as the preferred replica set member to create snapshots. You can set the preferred member using the [console](/docs/ops-manager/current/tutorial/edit-backup/). View available replica set members that can act as a preferred member using the [Get one backup config endpoint.](/docs/ops-manager/current/reference/api/backup/get-one-backup-config-by-cluster-id/)
         """
         
         
@@ -274,7 +274,7 @@ This parameter must meet the following conditions:
             
         
         snapshot_store: Optional[SnapshotStoreParams] = Field(default=None, serialization_alias="snapshotStore")
-        r"""Object that specifies the snapshot store to transition to. This object contains the snapshot store type and the ID of the S3 bucket (S3 blockstore). Existing snapshots remain in the original store until they expire based on your configured retention policy. You can also transition between S3-compatible snapshot stores from the [Jobs page.](/docs/ops-manager/v8.0/admin/backup/jobs-page/#std-label-transition-s3)
+        r"""Object that specifies the snapshot store to transition to. This object contains the snapshot store type and the ID of the S3 bucket (S3 blockstore). Existing snapshots remain in the original store until they expire based on your configured retention policy. You can also transition between S3-compatible snapshot stores from the [Jobs page.](/docs/ops-manager/current/admin/backup/jobs-page/#std-label-transition-s3)
         """
         
         
@@ -283,7 +283,7 @@ This parameter must meet the following conditions:
         """
         
         
-        status_name: Optional[str] = Field(default=None, serialization_alias="statusName")
+        status_name: Optional[BackupStatusName] = Field(default=None, serialization_alias="statusName")
         r"""Current (or desired) status of the backup configuration. Ops Manager accepts:
 
 - **INACTIVE**
@@ -330,7 +330,7 @@ Send this parameter to Ops Manager when updating the backup configuration for a 
         r"""
 ## Update One Backup Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/update-backup-config/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-backup-config/)
 ### Endpoint:
 `PATCH /groups/{projectId}/backupConfigs/{clusterId}`
 ### Description

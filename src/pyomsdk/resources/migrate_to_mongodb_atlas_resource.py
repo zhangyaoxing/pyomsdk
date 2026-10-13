@@ -74,7 +74,7 @@ You use the same link-token to migrate each deployment in your MongoDB Cloud Man
         r"""
 ## Connect One Organization with One Atlas Organization
 ### Document:
-[Connect with Atlas Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/cloud-migration/link-the-organization-with-atlas/)
+[Connect with Atlas Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/link-the-organization-with-atlas/)
 ### Endpoint:
 `POST /orgs/{orgId}/liveExport/migrationLink`
 ### Description
@@ -132,7 +132,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove the Connection between Organizations
 ### Document:
-[Remove Connection](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/cloud-migration/remove-the-link-between-organizations/)
+[Remove Connection](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/remove-the-link-between-organizations/)
 ### Endpoint:
 `DELETE /orgs/{orgId}/liveExport/migrationLink`
 ### Description
@@ -190,7 +190,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Return the Status of the Connection between Organizations
 ### Document:
-[Return Connection Status](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/cloud-migration/return-the-status-of-the-organization-link/)
+[Return Connection Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/cloud-migration/return-the-status-of-the-organization-link/)
 ### Endpoint:
 `GET /orgs/{orgId}/liveExport/migrationLink/status`
 ### Description

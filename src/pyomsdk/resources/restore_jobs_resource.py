@@ -77,12 +77,12 @@ If you set `delivery.expires`, you can't set `delivery.expirationHours`.
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
         snapshot_id: str = Field(serialization_alias="snapshotId")
-        r"""Unique identifier of the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) to restore.
+        r"""Unique identifier of the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) to restore.
         """
         
     
@@ -100,7 +100,7 @@ If you set `delivery.expires`, you can't set `delivery.expirationHours`.
         r"""
 ## Create One Restore Job for One Cluster
 ### Document:
-[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-cluster/)
+[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -166,9 +166,9 @@ The response shows the `"delivery.methodName" : "HTTP"`. An automated restore us
             """
             
             target_cluster_id: str = Field(serialization_alias="targetClusterId")
-            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
+            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
 
-If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
+If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
             """
             
             target_group_id: str = Field(serialization_alias="targetGroupId")
@@ -177,7 +177,7 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
@@ -211,7 +211,7 @@ If you provide this setting, this endpoint restores all data up to *and includin
         r"""
 ## Create One Restore Job for One Cluster
 ### Document:
-[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=oplog)
+[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=oplog)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -277,9 +277,9 @@ The response shows the `"delivery.methodName" : "HTTP"`. An automated restore us
             """
             
             target_cluster_id: str = Field(serialization_alias="targetClusterId")
-            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
+            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
 
-If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
+If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
             """
             
             target_group_id: str = Field(serialization_alias="targetGroupId")
@@ -288,7 +288,7 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
@@ -313,7 +313,7 @@ If you provide this setting, this endpoint restores all data up to this [Point i
         r"""
 ## Create One Restore Job for One Cluster
 ### Document:
-[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=pit)
+[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=pit)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -379,9 +379,9 @@ The response shows the `"delivery.methodName" : "HTTP"`. An automated restore us
             """
             
             target_cluster_id: str = Field(serialization_alias="targetClusterId")
-            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
+            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
 
-If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
+If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
             """
             
             target_group_id: str = Field(serialization_alias="targetGroupId")
@@ -390,12 +390,12 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
         snapshot_id: str = Field(serialization_alias="snapshotId")
-        r"""Unique identifier of the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) to restore.
+        r"""Unique identifier of the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) to restore.
         """
         
     
@@ -413,7 +413,7 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
         r"""
 ## Create One Restore Job for One Cluster
 ### Document:
-[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=snapshot)
+[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=automated&restore-type=snapshot)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -479,9 +479,9 @@ The response shows the `"delivery.methodName" : "HTTP"`. An automated restore us
             """
             
             target_cluster_id: str = Field(serialization_alias="targetClusterId")
-            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
+            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
 
-If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
+If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
             """
             
             target_group_id: str = Field(serialization_alias="targetGroupId")
@@ -490,12 +490,12 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
         snapshot_id: str = Field(serialization_alias="snapshotId")
-        r"""Unique identifier of the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) to restore.
+        r"""Unique identifier of the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) to restore.
         """
         
     
@@ -513,7 +513,7 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
         r"""
 ## Create One Restore Job for One Cluster
 ### Document:
-[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=http&restore-type=None)
+[Create (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-cluster/?restore-method=http&restore-type=None)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -617,11 +617,11 @@ In addition, the response shows the `delivery.methodName` as `HTTP`. An automate
             """
             
             target_cluster_id: Optional[str] = Field(default=None, serialization_alias="targetClusterId")
-            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
+            r"""Unique identifier of the target cluster. Use the `clusterId` returned in the response body of the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) and [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoints.
 
 `delivery.methodName" : "AUTOMATED_RESTORE"`.
 
-If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
+If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint returns an empty `results` array without `clusterId` elements, and the [Get a Snapshot](/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/) endpoint also does not return a `clusterId` element.
             """
             
             target_group_id: Optional[str] = Field(default=None, serialization_alias="targetGroupId")
@@ -632,7 +632,7 @@ If backup is not enabled on the target cluster, the [Get All Snapshots](/docs/op
             
         
         delivery: DeliveryParams = Field(serialization_alias="delivery")
-        r"""Method and details of how the restored [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) data is delivered.
+        r"""Method and details of how the restored [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) data is delivered.
         """
         
         
@@ -678,7 +678,7 @@ If you set `pointInTimeUTCMillis`, you cannot set `oplogInc`, `oplogTs`, or `che
         
         
         snapshot_id: Optional[str] = Field(default=None, serialization_alias="snapshotId")
-        r"""Unique identifier of the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) to restore.
+        r"""Unique identifier of the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) to restore.
         """
         
     
@@ -696,7 +696,7 @@ If you set `pointInTimeUTCMillis`, you cannot set `oplogInc`, `oplogTs`, or `che
         r"""
 ## Create One Restore Job for One Legacy Mirrored Config Server
 ### Document:
-[Create (Config Server)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/create-one-restore-job-for-one-sccc-config-server/)
+[Create (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/create-one-restore-job-for-one-sccc-config-server/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
 ### Description
@@ -715,11 +715,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -729,7 +729,7 @@ No description.
         
         
         batch_id: Optional[str] = Field(default=None, serialization_alias="BATCH-ID")
-        r"""Unique identifier of the [batch.](/docs/ops-manager/v8.0/reference/glossary/#std-term-batch)
+        r"""Unique identifier of the [batch.](/docs/ops-manager/current/reference/glossary/#std-term-batch)
         """
         
         
@@ -770,7 +770,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Restore Jobs for One Cluster
 ### Document:
-[Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/get-all-restore-jobs-for-one-cluster/)
+[Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-cluster/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs`
 ### Description
@@ -839,7 +839,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Restore Jobs for One Legacy Mirrored Config Server
 ### Document:
-[Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/get-all-restore-jobs-for-one-sccc-config-server/)
+[Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-all-restore-jobs-for-one-sccc-config-server/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs`
 ### Description
@@ -905,7 +905,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Restore Job for One Cluster
 ### Document:
-[Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/get-one-single-restore-job-for-one-cluster/)
+[Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-cluster/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/{JOB-ID}`
 ### Description
@@ -971,7 +971,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Restore Job for One Legacy Mirrored Config Server
 ### Document:
-[Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/get-one-single-restore-job-for-one-sccc-config-server/)
+[Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-one-single-restore-job-for-one-sccc-config-server/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/restoreJobs/{JOB-ID}`
 ### Description
@@ -1033,7 +1033,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Restorable Time Ranges for One Cluster
 ### Document:
-[Get Restorable Time Ranges (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/restorejobs/get-restorable-time-ranges-for-one-cluster/)
+[Get Restorable Time Ranges (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/restorejobs/get-restorable-time-ranges-for-one-cluster/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/restoreJobs/restorableTimeRanges`
 ### Description

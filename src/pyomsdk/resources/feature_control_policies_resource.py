@@ -58,7 +58,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Retrieve All Feature Policies
 ### Document:
-[Retrieve All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/get-all-feature-control-policies/)
+[Retrieve All](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-all-feature-control-policies/)
 ### Endpoint:
 `GET /groups/availablePolicies`
 ### Description
@@ -128,7 +128,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Retrieve Feature Policies for One Project
 ### Document:
-[Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/get-controlled-features-for-one-project/)
+[Retrieve for One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/get-controlled-features-for-one-project/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/controlledFeature`
 ### Description
@@ -215,7 +215,7 @@ For endpoints that return a list of results, the `results` object is an envelope
             model_config = ConfigDict(populate_by_name=True)
             
             disabled_params: Optional[list[Any]] = Field(default=None, serialization_alias="disabledParams")
-            r"""List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the `DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support all MongoDB options, which can result in failed import attempts. To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/v8.0/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
+            r"""List of [`mongod`](https://www.mongodb.com/docs/manual/reference/program/mongod/#mongodb-binary-bin.mongod) settings to disable when you apply the `DISABLE_SET_MONGOD_CONFIG` policy. Automation doesn't support all MongoDB options, which can result in failed import attempts. To learn more, see [MongoDB Settings and Automation Support.](/docs/ops-manager/current/reference/cluster-configuration-process-options/#std-label-om-unsupported-mdb-settings)
             """
             
             policy: Optional[Policy] = Field(default=None, serialization_alias="policy")
@@ -255,7 +255,7 @@ Accepted values are:
         r"""
 ## Update Feature Policies for One Project
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/controlled-features/update-controlled-features-for-one-project/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/controlled-features/update-controlled-features-for-one-project/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/controlledFeature`
 ### Description

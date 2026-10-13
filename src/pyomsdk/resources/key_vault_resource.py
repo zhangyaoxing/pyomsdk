@@ -112,7 +112,7 @@ Ops Manager encrypts this value at rest and redacts it in API responses.
         r"""
 ## Create One Key Vault Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/keyvault/create-one-key-vault-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/keyvault/create-one-key-vault-configuration/)
 ### Endpoint:
 `POST /keyVault`
 ### Description
@@ -170,7 +170,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Key Vault Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/keyvault/delete-one-key-vault-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/keyvault/delete-one-key-vault-configuration/)
 ### Endpoint:
 `DELETE /keyVault/{KEY-VAULT-ID}`
 ### Description
@@ -225,7 +225,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Key Vault Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/keyvault/get-all-key-vault-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/keyvault/get-all-key-vault-configurations/)
 ### Endpoint:
 `GET /keyVault`
 ### Description
@@ -283,7 +283,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Key Vault Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/keyvault/get-one-key-vault-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/keyvault/get-one-key-vault-configuration-by-id/)
 ### Endpoint:
 `GET /keyVault/{KEY-VAULT-ID}`
 ### Description
@@ -407,7 +407,7 @@ When you don't change `auth.mechanism`, omit this field or send the redacted val
         r"""
 ## Update One Key Vault Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/keyvault/update-one-key-vault-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/keyvault/update-one-key-vault-configuration/)
 ### Endpoint:
 `PATCH /keyVault/{KEY-VAULT-ID}`
 ### Description

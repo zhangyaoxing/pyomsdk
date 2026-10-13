@@ -76,7 +76,7 @@ To un-acknowledge an alert, specify a time and date in the past.
         r"""
 ## Acknowledge One Global Alert
 ### Document:
-[Acknowledge One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alerts-ack-one/)
+[Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-ack-one/)
 ### Endpoint:
 `PATCH /globalAlerts/{ALERT-ID}`
 ### Description
@@ -130,7 +130,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         """
         
         
-        status: Optional[str] = Field(default=None, serialization_alias="status")
+        status: Optional[AlertStatus] = Field(default=None, serialization_alias="status")
         r"""Status of alerts you want to return. Ops Manager returns alerts that match the status you indicate. Accepted values include:
 
 - `TRACKING`: Alert conditions exist, but the condition hasn't persisted for long enough to trigger an alert.
@@ -150,7 +150,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Global Alerts
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alerts-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-all/)
 ### Endpoint:
 `GET /globalAlerts`
 ### Description
@@ -208,7 +208,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global Alert
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alerts-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alerts-get-one/)
 ### Endpoint:
 `GET /globalAlerts/{ALERT-ID}`
 ### Description

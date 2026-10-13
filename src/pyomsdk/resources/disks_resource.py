@@ -64,7 +64,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get a Disk Partition
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/disk-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/disk-get-one/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks/{PARTITION-NAME}`
 ### Description
@@ -133,7 +133,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get all Disk Partitions
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/disks-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/disks-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/disks`
 ### Description

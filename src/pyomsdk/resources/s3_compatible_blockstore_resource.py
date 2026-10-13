@@ -83,13 +83,13 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         """
         
         
-        disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        r"""Flag that indicates whether to use the [HTTP proxy](/docs/ops-manager/v8.0/tutorial/use-with-http-proxy/) when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        disable_proxy_s3: bool = Field(serialization_alias="disableProxyS3")
+        r"""When connecting to S3-compatible storage, indicates whether to use the [HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/). You must include this field in every request to create or update an S3-compatible storage blockstore, even if you haven't configured Ops Manager to use the HTTP proxy.
         """
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
@@ -99,7 +99,7 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [S3 blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-S3-Snapshot-Store)
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [S3 blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-S3-Snapshot-Store)
 
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -108,7 +108,7 @@ Setting these tags limits which backup jobs this S3-compatible storage blockstor
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
@@ -219,7 +219,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Create One S3 Blockstore Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/s3configs/create-one-s3-blockstore-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3configs/create-one-s3-blockstore-configuration/)
 ### Endpoint:
 `POST /snapshot/s3Configs`
 ### Description
@@ -277,7 +277,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One S3-Compatible Blockstore Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/s3configs/delete-one-s3-blockstore-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3configs/delete-one-s3-blockstore-configuration/)
 ### Endpoint:
 `DELETE /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
 ### Description
@@ -337,7 +337,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All S3 Blockstore Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/s3configs/get-all-s3-blockstore-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3configs/get-all-s3-blockstore-configurations/)
 ### Endpoint:
 `GET /snapshot/s3Configs`
 ### Description
@@ -395,7 +395,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One S3 Blockstore Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/s3configs/get-one-s3-blockstore-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3configs/get-one-s3-blockstore-configuration-by-id/)
 ### Endpoint:
 `GET /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
 ### Description
@@ -488,18 +488,18 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         """
         
         
-        disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        r"""Flag that indicates whether to use the [HTTP proxy](/docs/ops-manager/v8.0/tutorial/use-with-http-proxy/) when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        disable_proxy_s3: bool = Field(serialization_alias="disableProxyS3")
+        r"""When connecting to S3-compatible storage, indicates whether to use the [HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/). You must include this field in every request to create or update an S3-compatible storage blockstore, even if you haven't configured Ops Manager to use the HTTP proxy.
         """
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""Flag that indicates whether the username and password for this S3-compatible storage blockstore were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [S3 blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-S3-Snapshot-Store)
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [S3 blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-S3-Snapshot-Store)
 
 Setting these tags limits which backup jobs this S3-compatible storage blockstore can process. If omitted, this S3-compatible storage blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -508,7 +508,7 @@ Setting these tags limits which backup jobs this S3-compatible storage blockstor
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""Positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) performs compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
@@ -625,7 +625,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Update One S3 Blockstore Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/s3configs/update-one-s3-blockstore-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/s3configs/update-one-s3-blockstore-configuration/)
 ### Endpoint:
 `PUT /snapshot/s3Configs/{S3-BLOCKSTORE-CONFIG-ID}`
 ### Description

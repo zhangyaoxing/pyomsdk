@@ -72,7 +72,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Replica Set Re-Election Jobs
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/re-election-jobs/re-election-jobs-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/re-election-jobs/re-election-jobs-get-all/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/replicaSets/{RS-ID}/reElectionJobs`
 ### Description
@@ -138,7 +138,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Replica Set Re-Election Job
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/re-election-jobs/re-election-jobs-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/re-election-jobs/re-election-jobs-get-one/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/replicaSets/{RS-ID}/reElectionJobs/{REELECTION-JOB-ID}`
 ### Description
@@ -225,7 +225,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Request a Replica Set Primary Step Down
 ### Document:
-[Step Down a Primary](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/re-election-jobs/re-election-jobs-step-down/)
+[Step Down a Primary](https://www.mongodb.com/docs/ops-manager/current/reference/api/re-election-jobs/re-election-jobs-step-down/)
 ### Endpoint:
 `POST /groups/{GROUP-ID}/replicaSets/{RS-ID}/process/{HOST-PORT}:stepDown`
 ### Description
@@ -317,7 +317,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Request a Replica Set Secondary Step Up
 ### Document:
-[Step Up a Secondary](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/re-election-jobs/re-election-jobs-step-up/)
+[Step Up a Secondary](https://www.mongodb.com/docs/ops-manager/current/reference/api/re-election-jobs/re-election-jobs-step-up/)
 ### Endpoint:
 `POST /groups/{GROUP-ID}/replicaSets/{RS-ID}/process/{HOST-PORT}:stepUp`
 ### Description

@@ -84,11 +84,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Add Existing Users to One Project
 ### Document:
-[Add Existing Users](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/add-users-to-one-group/)
+[Add Existing Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/add-users-to-one-group/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/users`
 ### Description
-This resource adds users who exist in Ops Manager to another project. It does not create new users and add them to a project. By default, users first receive an invitation to the project. You can add users directly to a project only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers) setting to `true`.
+This resource adds users who exist in Ops Manager to another project. It does not create new users and add them to a project. By default, users first receive an invitation to the project. You can add users directly to a project only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers) setting to `true`.
         """
         return self._request(
             "POST",
@@ -135,7 +135,7 @@ For endpoints that return one result, the response body includes:
         
         
         ldap_group_mappings: Optional[list[dict]] = Field(default=None, serialization_alias="ldapGroupMappings")
-        r"""For LDAP-backed Ops Manager, the mappings of [LDAP groups](/docs/ops-manager/v8.0/tutorial/configure-for-ldap-authentication/) to Ops Manager project roles. Only accepted for LDAP-backed Ops Manager.
+        r"""For LDAP-backed Ops Manager, the mappings of [LDAP groups](/docs/ops-manager/current/tutorial/configure-for-ldap-authentication/) to Ops Manager project roles. Only accepted for LDAP-backed Ops Manager.
         """
         
         
@@ -147,8 +147,8 @@ For endpoints that return one result, the response body includes:
         tags: Optional[list[str]] = Field(default=None, serialization_alias="tags")
         r"""The tags assigned to the project for use in programmatically identifying the project.
 
-- To view tags you must have either the [Global Read Only](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-read-only-role) or [Global Owner](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-owner-role) [role.](/docs/ops-manager/v8.0/reference/user-roles/)
-- To create or edit tags, you must be a [Global Owner.](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-owner-role)
+- To view tags you must have either the [Global Read Only](/docs/ops-manager/current/reference/user-roles/#std-label-global-read-only-role) or [Global Owner](/docs/ops-manager/current/reference/user-roles/#std-label-global-owner-role) [role.](/docs/ops-manager/current/reference/user-roles/)
+- To create or edit tags, you must be a [Global Owner.](/docs/ops-manager/current/reference/user-roles/#std-label-global-owner-role)
 
 A project can have up to 10 tags. Tags follow these rules:
 
@@ -178,7 +178,7 @@ A project can have up to 10 tags. Tags follow these rules:
         r"""
 ## Update One Project
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/change-one-group-name/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/change-one-group-name/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}`
 ### Description
@@ -228,7 +228,7 @@ For endpoints that return one result, the response body includes:
         org_id: str = Field(serialization_alias="orgId")
         r"""Unique 24-hexadecimal digit string that identifies the organization within which to create the project.
 
-Ops Manager set the oldest [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner) of the specified organization as a [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner) for the new project.
+Ops Manager set the oldest [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) of the specified organization as a [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner) for the new project.
         """
         
     
@@ -244,7 +244,7 @@ Ops Manager set the oldest [`Organization Owner`](/docs/ops-manager/v8.0/referen
         r"""
 ## Create One Project
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/create-one-group/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/create-one-group/)
 ### Endpoint:
 `POST /groups`
 ### Description
@@ -302,7 +302,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Project
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/delete-one-group/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/delete-one-group/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}`
 ### Description
@@ -357,7 +357,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Projects for the Current User
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/)
 ### Endpoint:
 `GET /groups`
 ### Description
@@ -380,8 +380,8 @@ No description.
         tag: Optional[str] = Field(default=None, serialization_alias="tag")
         r"""The tags assigned to the project for use in programmatically identifying the project.
 
-- To *view* tags you must have the [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only) [role.](/docs/ops-manager/v8.0/reference/user-roles/)
-- To *create* or *edit* tags you must have the [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) [role.](/docs/ops-manager/v8.0/reference/user-roles/)
+- To *view* tags you must have the [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only) [role.](/docs/ops-manager/current/reference/user-roles/)
+- To *create* or *edit* tags you must have the [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin) [role.](/docs/ops-manager/current/reference/user-roles/)
         """
         
     
@@ -396,7 +396,7 @@ No description.
         r"""
 ## Get All Projects with Specific Tags for the Current User
 ### Document:
-[Get by Specific Tags for the Current User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-with-specific-tags-for-current-user/)
+[Get by Specific Tags for the Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-groups-with-specific-tags-for-current-user/)
 ### Endpoint:
 `GET /groups`
 ### Description
@@ -433,7 +433,7 @@ No description.
         
         
         include_org_users: Optional[bool] = Field(default=None, serialization_alias="includeOrgUsers")
-        r"""Flag that indicates whether the returned list should include users with implicit access to the project through the [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner) or [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only) role. You might not have assigned the individual users a role in this project.
+        r"""Flag that indicates whether the returned list should include users with implicit access to the project through the [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner) or [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only) role. You might not have assigned the individual users a role in this project.
 
 - If this flag is set to `false`, the endpoint returns only users who are assigned a role in the project.
 - If this flag is set to `true`, the endpoint returns both users who are assigned roles in the project *and* users who have implicit access to the project through their organization role.
@@ -455,7 +455,7 @@ The default value is `false`.
         r"""
 ## Get All Users in One Project
 ### Document:
-[Get All Users](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/)
+[Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/users`
 ### Description
@@ -513,7 +513,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Project by Agent API Key
 ### Document:
-[Get by Agent API Key](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-one-group-by-agent-api-key/)
+[Get by Agent API Key](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-agent-api-key/)
 ### Endpoint:
 `GET /groups/byAgentApiKey/{AGENT-API-KEY}`
 ### Description
@@ -571,7 +571,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Project by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-one-group-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-id/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}`
 ### Description
@@ -629,7 +629,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Project by Name
 ### Document:
-[Get by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/get-one-group-by-name/)
+[Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/get-one-group-by-name/)
 ### Endpoint:
 `GET /groups/byName/{GROUP-NAME}`
 ### Description
@@ -648,7 +648,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""The unique identifier for the [project](/docs/ops-manager/v8.0/organizations-projects/#std-label-projects) to which you are adding the team or teams.
+        r"""The unique identifier for the [project](/docs/ops-manager/current/organizations-projects/#std-label-projects) to which you are adding the team or teams.
         """
         
     
@@ -686,25 +686,25 @@ For endpoints that return a list of results, the `content` object is an envelope
         model_config = ConfigDict(populate_by_name=True)
         
         
-        role_names: Optional[list[Any]] = Field(default=None, serialization_alias="roleNames")
-        r"""Each object in the array represents a [project role](/docs/ops-manager/v8.0/reference/user-roles/#std-label-project-roles) you want to assign to the team.
+        role_names: Optional[list[GroupRole]] = Field(default=None, serialization_alias="roleNames")
+        r"""Each object in the array represents a [project role](/docs/ops-manager/current/reference/user-roles/#std-label-project-roles) you want to assign to the team.
 
 The valid roles and their associated mappings are:
 
-- `GROUP_OWNER` - [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY` - [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_DATA_ACCESS_ADMIN` - [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_WRITE` - [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GROUP_DATA_ACCESS_READ_ONLY` - [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_MONITORING_ADMIN` - [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_BACKUP_ADMIN` - [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_AUTOMATION_ADMIN` - [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_USER_ADMIN` - [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_OWNER` - [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY` - [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_DATA_ACCESS_ADMIN` - [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_WRITE` - [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_DATA_ACCESS_READ_ONLY` - [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_MONITORING_ADMIN` - [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_BACKUP_ADMIN` - [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_AUTOMATION_ADMIN` - [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_USER_ADMIN` - [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
         
         
         team_id: Optional[str] = Field(default=None, serialization_alias="teamId")
-        r"""The unique identifier of the team you want to associate with the project. The team and project must share the same parent [organization.](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations)
+        r"""The unique identifier of the team you want to associate with the project. The team and project must share the same parent [organization.](/docs/ops-manager/current/organizations-projects/#std-label-organizations)
         """
         
     
@@ -722,7 +722,7 @@ The valid roles and their associated mappings are:
         r"""
 ## Add Teams to a Project
 ### Document:
-[Add Teams](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/project-add-team/)
+[Add Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-add-team/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/teams`
 ### Description
@@ -741,7 +741,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""The unique identifier for the [project.](/docs/ops-manager/v8.0/organizations-projects/#std-label-projects)
+        r"""The unique identifier for the [project.](/docs/ops-manager/current/organizations-projects/#std-label-projects)
         """
         
     
@@ -787,7 +787,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Teams in One Project
 ### Document:
-[Get All Teams](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/project-get-teams/)
+[Get All Teams](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/project-get-teams/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/teams`
 ### Description
@@ -849,7 +849,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove One User from One Project
 ### Document:
-[Remove User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/groups/remove-one-user-from-one-group/)
+[Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/groups/remove-one-user-from-one-group/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/users/{USER-ID}`
 ### Description
@@ -899,18 +899,18 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: Optional[list[str]] = Field(default=None, serialization_alias="roles")
+        roles: Optional[list[GroupRole]] = Field(default=None, serialization_alias="roles")
         r"""List of Ops Manager project roles to assign to the invited user. If the user accepts the invitation, Ops Manager assigns these roles to them. Specify one or more of the following values:
 
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
         
         
@@ -933,7 +933,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Project Invitation
 ### Document:
-[Create Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/create-one-invitation/)
+[Create Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/create-one-invitation/)
 ### Endpoint:
 `POST /groups/{GROUP-ID}/invites/`
 ### Description
@@ -995,7 +995,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Project Invitation
 ### Document:
-[Delete Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/delete-one-invitation/)
+[Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/delete-one-invitation/)
 ### Endpoint:
 `DELETE /groups/{GROUP-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -1060,7 +1060,7 @@ If omitted, Ops Manager returns all pending invitations.
         r"""
 ## Get All Project Invitations
 ### Document:
-[Get All Invitations](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/get-all-invitations/)
+[Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-all-invitations/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/invites`
 ### Description
@@ -1122,7 +1122,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Project Invitation
 ### Document:
-[Get One Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/get-one-invitation/)
+[Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/get-one-invitation/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -1176,8 +1176,8 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: list[str] = Field(serialization_alias="roles")
-        r"""Ops Manager [roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-project-roles) to assign to the invited user.
+        roles: list[GroupRole] = Field(serialization_alias="roles")
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-project-roles) to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
 
@@ -1199,7 +1199,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
         r"""
 ## Update One Project Invitation by Invitation ID
 ### Document:
-[Update Invitation by Invitation ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/update-one-invitation-by-id/)
+[Update Invitation by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation-by-id/)
 ### Endpoint:
 `PATCH /groups/{GROUP-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -1249,8 +1249,8 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: list[str] = Field(serialization_alias="roles")
-        r"""Ops Manager [roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-project-roles) to assign to the invited user.
+        roles: list[GroupRole] = Field(serialization_alias="roles")
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-project-roles) to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
 
@@ -1277,7 +1277,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
         r"""
 ## Update One Project Invitation
 ### Document:
-[Update Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/projects/update-one-invitation/)
+[Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/projects/update-one-invitation/)
 ### Endpoint:
 `PATCH /groups/{GROUP-ID}/invites`
 ### Description
@@ -1296,11 +1296,11 @@ Updates one pending invitation to the Ops Manager project that you specify.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""The unique identifier of the [group](/docs/ops-manager/v8.0/tutorial/manage-projects/) from which you want to remove a team.
+        r"""The unique identifier of the [group](/docs/ops-manager/current/tutorial/manage-projects/) from which you want to remove a team.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/tutorial/manage-users/) that you want to remove from the specified project.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/) that you want to remove from the specified project.
         """
         
     
@@ -1351,7 +1351,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Remove One Team From One Project
 ### Document:
-[Remove Team](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-remove-from-project/)
+[Remove Team](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-from-project/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/teams/{TEAM-ID}`
 ### Description

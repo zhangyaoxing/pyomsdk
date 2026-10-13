@@ -63,7 +63,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Open Alerts Triggered by One Global Alert Configuration
 ### Document:
-[Get All Open Alerts](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configuration-get-all-open-alerts-triggered/)
+[Get All Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configuration-get-all-open-alerts-triggered/)
 ### Endpoint:
 `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}/alerts`
 ### Description
@@ -113,9 +113,9 @@ For endpoints that return one result, the response body includes:
         event_type_name: EventTypeName = Field(serialization_alias="eventTypeName")
         r"""Type of event for which this alert configuration triggers an alert.
 
-To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/v8.0/reference/alert-types/)
+To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -195,7 +195,7 @@ You can filter using the `matchers` array only when the `eventTypeName` specifie
             model_config = ConfigDict(populate_by_name=True)
             
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            r"""Name of the metric to check. Supports the same values as the `metricName` field of the `globalAlerts` resource. For a list of possible values, see [Measurement Types for Global Alerts.](/docs/ops-manager/v8.0/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
+            r"""Name of the metric to check. Supports the same values as the `metricName` field of the `globalAlerts` resource. For a list of possible values, see [Measurement Types for Global Alerts.](/docs/ops-manager/current/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
             """
             
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
@@ -300,7 +300,7 @@ All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com
 - `GROUP`
 - `USER`
 - `EMAIL`
-- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/v8.0/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
+- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
 - `HIPCHAT`
 - `SLACK`
 - `PAGER_DUTY`
@@ -324,13 +324,13 @@ All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com
 - A `notifications.typeName` of `WEBHOOK`
 - An explicitly declared `notifications.webhookURL`
 
-You can configure a `webhookSecret` for a default `webhookURL` only with the [Admin Console.](/docs/ops-manager/v8.0/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
+You can configure a `webhookSecret` for a default `webhookURL` only with the [Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
 
 To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
             """
             
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set in the [Admin Console.](/docs/ops-manager/v8.0/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
+            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set in the [Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
             """
             
         
@@ -384,7 +384,7 @@ To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
         r"""
 ## Create One Global Alert Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-create-one/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-create-one/)
 ### Endpoint:
 `POST /globalAlertConfigs`
 ### Description
@@ -442,7 +442,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Global Alert Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-delete-one/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-delete-one/)
 ### Endpoint:
 `DELETE /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
 ### Description
@@ -497,7 +497,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Global Alert Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-all/)
 ### Endpoint:
 `GET /globalAlertConfigs`
 ### Description
@@ -555,7 +555,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global Alert Configuration
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-get-one/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-get-one/)
 ### Endpoint:
 `GET /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
 ### Description
@@ -594,7 +594,7 @@ Retrieve one global alert configuration by its `GLOBAL-ALERT-CONFIG-ID`.
         r"""
 ## Test Global Alert Configuration
 ### Document:
-[Test Global Alert Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-test-one/)
+[Test Global Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-test-one/)
 ### Endpoint:
 `POST /globalAlertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
 ### Description
@@ -666,7 +666,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Enable or Disable One Global Alert Configuration
 ### Document:
-[Enable or Disable](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-toggle-one/)
+[Enable or Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-toggle-one/)
 ### Endpoint:
 `PATCH /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
 ### Description
@@ -724,9 +724,9 @@ For endpoints that return one result, the response body includes:
         event_type_name: EventTypeName = Field(serialization_alias="eventTypeName")
         r"""Type of event for which this alert configuration triggers an alert.
 
-To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/v8.0/reference/alert-types/)
+To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -806,7 +806,7 @@ You can filter using the `matchers` array only when the `eventTypeName` specifie
             model_config = ConfigDict(populate_by_name=True)
             
             metric_name: Optional[str] = Field(default=None, serialization_alias="metricName")
-            r"""Name of the metric to check. Supports the same values as the `metricName` field of the `globalAlerts` resource. For a list of possible values, see [Measurement Types for Global Alerts.](/docs/ops-manager/v8.0/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
+            r"""Name of the metric to check. Supports the same values as the `metricName` field of the `globalAlerts` resource. For a list of possible values, see [Measurement Types for Global Alerts.](/docs/ops-manager/current/reference/api/global-alerts/#std-label-measurement-types-for-global-alerts-api)
             """
             
             mode: Optional[str] = Field(default=None, serialization_alias="mode")
@@ -911,7 +911,7 @@ All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com
 - `GROUP`
 - `USER`
 - `EMAIL`
-- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/v8.0/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
+- `SMS` (Available only if Ops Manager is configured for [Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings).)
 - `HIPCHAT`
 - `SLACK`
 - `PAGER_DUTY`
@@ -935,13 +935,13 @@ All new PagerDuty keys use their [Events API v2](https://developer.pagerduty.com
 - A `notifications.typeName` of `WEBHOOK`
 - An explicitly declared `notifications.webhookURL`
 
-You can configure a `webhookSecret` for a default `webhookURL` only with the [Admin Console.](/docs/ops-manager/v8.0/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
+You can configure a `webhookSecret` for a default `webhookURL` only with the [Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
 
 To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
             """
             
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set in the [Admin Console.](/docs/ops-manager/v8.0/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
+            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set in the [Admin Console.](/docs/ops-manager/current/tutorial/manage-global-alerts/#std-label-mms-manage-global-alerts)
             """
             
         
@@ -997,7 +997,7 @@ To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
         r"""
 ## Update One Global Alert Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/global-alert-configurations-update-one/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/global-alert-configurations-update-one/)
 ### Endpoint:
 `PUT /globalAlertConfigs/{GLOBAL-ALERT-CONFIG-ID}`
 ### Description

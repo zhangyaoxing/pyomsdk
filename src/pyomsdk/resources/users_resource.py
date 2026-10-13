@@ -51,13 +51,13 @@ You can add more than one `whitelist` parameter and value.
         
         
         username: str = Field(serialization_alias="username")
-        r"""Username of the first Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) property:
+        r"""Username of the first Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
 - `false`: (**Default**) Username isn't required to be an email address.
 - `loose`: Username must contain an `@` symbol followed by a period.
 - `strict`: Username must adhere to a strict email address validation regular expression.
 
-See [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) for details.
+See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) for details.
 
 The `username` is usually an email address. If you set this value to an email address, you do not need to set the `emailAddress` value explicitly.
         """
@@ -75,7 +75,7 @@ The `username` is usually an email address. If you set this value to an email ad
         r"""
 ## Create the First User
 ### Document:
-[Create First User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-create-first/)
+[Create First User](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create-first/)
 ### Endpoint:
 `POST /unauth/users`
 ### Description
@@ -157,28 +157,28 @@ For the "global" roles (those whose name starts with `GLOBAL_`) there is no `gro
             r"""Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
             
-            role_name: Optional[str] = Field(default=None, serialization_alias="roleName")
+            role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
             r"""Name of the role. Accepted values are:
 
-- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
-- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
-- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
-- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
-- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
-- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
-- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
-- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
-- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin)
             """
             
         
@@ -188,13 +188,13 @@ For the "global" roles (those whose name starts with `GLOBAL_`) there is no `gro
         
         
         username: str = Field(serialization_alias="username")
-        r"""Username of the Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) property:
+        r"""Username of the Ops Manager user. Validated depending on the value of the [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) property:
 
 - `false`: (**Default**) Username isn't required to be an email address.
 - `loose`: Username must contain an `@` symbol followed by a period.
 - `strict`: Username must adhere to a strict email address validation regular expression.
 
-See [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.email.validation) for details.
+See [`mms.email.validation`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.email.validation) for details.
         """
         
     
@@ -210,7 +210,7 @@ See [`mms.email.validation`](/docs/ops-manager/v8.0/reference/configuration/#mon
         r"""
 ## Create One User
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-create/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-create/)
 ### Endpoint:
 `POST /users`
 ### Description
@@ -229,7 +229,7 @@ Create a new user. By default, any non-global organization and project roles in 
         model_config = ConfigDict(populate_by_name=True)
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
+        r"""*(Required.)* Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
         
     
@@ -268,11 +268,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get a User by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-get-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-id/)
 ### Endpoint:
 `GET /users/{USER-ID}`
 ### Description
-You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
+You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -326,11 +326,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get a User by Name
 ### Document:
-[Get by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-get-by-name/)
+[Get by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-get-by-name/)
 ### Endpoint:
 `GET /users/byName/{USER-NAME}`
 ### Description
-You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
+You can always retrieve your own user account. Otherwise, you must be a [global user](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) or you must have the [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin) role in at least one project that is common between you and the user you are retrieving.
         """
         return self._request(
             "GET",
@@ -345,7 +345,7 @@ You can always retrieve your own user account. Otherwise, you must be a [global 
         model_config = ConfigDict(populate_by_name=True)
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
+        r"""Unique identifier of the user that you want to retrieve. To retrieve the `USER-ID` for a user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/#std-label-api-get-all-users-in-group)
         """
         
     
@@ -389,28 +389,28 @@ Roles that start with `GLOBAL_` don't require a `groupId`. These roles aren't ti
             r"""Unique identifier of the organization in which the Ops Manager user has the specified role.
             """
             
-            role_name: Optional[str] = Field(default=None, serialization_alias="roleName")
+            role_name: Optional[AllRole] = Field(default=None, serialization_alias="roleName")
             r"""Name of the role. Accepted values are:
 
-- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Member)
-- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
-- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
-- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Organization-Owner)
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
-- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
-- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
-- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
-- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
-- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
+- `ORG_MEMBER`: [`Organization Member`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Member)
+- `ORG_READ_ONLY`: [`Organization Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Read-Only)
+- `ORG_GROUP_CREATOR`: [`Organization Project Creator`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Project-Creator)
+- `ORG_OWNER`: [`Organization Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Organization-Owner)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin)
             """
             
         
@@ -433,11 +433,11 @@ Roles that start with `GLOBAL_` don't require a `groupId`. These roles aren't ti
         r"""
 ## Update Roles for One User
 ### Document:
-[Update Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/user-update/)
+[Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/user-update/)
 ### Endpoint:
 `PATCH /users/{USER-ID}`
 ### Description
-Add, update, or remove a user's roles within an organization or project. By default, any new non-global organization and project roles in the payload send users an invitation to the organization or project first. You can add users directly to an organization or project only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/v8.0/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers) setting to `true`.
+Add, update, or remove a user's roles within an organization or project. By default, any new non-global organization and project roles in the payload send users an invitation to the organization or project first. You can add users directly to an organization or project only if you set the [`mms.user.bypassInviteForExistingUsers`](/docs/ops-manager/current/reference/configuration/#mongodb-setting-mms.user.bypassInviteForExistingUsers) setting to `true`.
         """
         return self._request(
             "PATCH",
@@ -491,7 +491,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove One User
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/users/delete-one-user/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/users/delete-one-user/)
 ### Endpoint:
 `DELETE /users/{USER-ID}`
 ### Description

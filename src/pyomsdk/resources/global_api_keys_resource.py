@@ -45,7 +45,7 @@ For endpoints that return one result, the response body includes:
         """
         
         
-        roles: list[str] = Field(serialization_alias="roles")
+        roles: list[GlobalRole] = Field(serialization_alias="roles")
         r"""List of roles that the Global API Key needs to have. If the `roles` array is provided:
 
 - Provide at least one role
@@ -53,12 +53,12 @@ For endpoints that return one result, the response body includes:
 
 Global roles accepted by default include:
 
-- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
-- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
-- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
-- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
-- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
-- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin)
         """
         
     
@@ -74,7 +74,7 @@ Global roles accepted by default include:
         r"""
 ## Create One Global API Key
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/create-one-global-api-key/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-api-key/)
 ### Endpoint:
 `POST /admin/apiKeys`
 ### Description
@@ -93,7 +93,7 @@ Create one Global API Key for Ops Manager.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to delete. Use the [/admin/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/global/get-all-global-api-keys/) endpoint to retrieve all API keys to which the authenticated user has access.
+        r"""Unique identifier for the API key you want to delete. Use the [/admin/apiKeys](/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/) endpoint to retrieve all API keys to which the authenticated user has access.
         """
         
     
@@ -132,7 +132,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Global API Key
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/delete-one-global-api-key/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-api-key/)
 ### Endpoint:
 `DELETE /admin/apiKeys/{API-KEY-ID}`
 ### Description
@@ -192,7 +192,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Roles for Global API Keys
 ### Document:
-[Get All Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/get-all-global-api-key-roles/)
+[Get All Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-key-roles/)
 ### Endpoint:
 `GET /admin/apiKeys/roles`
 ### Description
@@ -247,7 +247,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Global API Keys
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/get-all-global-api-keys/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-api-keys/)
 ### Endpoint:
 `GET /admin/apiKeys`
 ### Description
@@ -305,7 +305,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global API Key
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/get-one-global-api-key/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-api-key/)
 ### Endpoint:
 `GET /admin/apiKeys/{API-KEY-ID}`
 ### Description
@@ -360,7 +360,7 @@ For endpoints that return one result, the response body includes:
         """
         
         
-        roles: Optional[list[str]] = Field(default=None, serialization_alias="roles")
+        roles: Optional[list[GlobalRole]] = Field(default=None, serialization_alias="roles")
         r"""List of roles that the Global API Key needs to have. If the `roles` array is provided:
 
 - Provide at least one role
@@ -368,12 +368,12 @@ For endpoints that return one result, the response body includes:
 
 Global roles accepted by default include:
 
-- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
-- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
-- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
-- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Owner)
-- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-Read-Only)
-- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Global-User-Admin)
+- `GLOBAL_AUTOMATION_ADMIN`: [`Global Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Automation-Admin)
+- `GLOBAL_BACKUP_ADMIN`: [`Global Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Backup-Admin)
+- `GLOBAL_MONITORING_ADMIN`: [`Global Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Monitoring-Admin)
+- `GLOBAL_OWNER`: [`Global Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Owner)
+- `GLOBAL_READ_ONLY`: [`Global Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-Read-Only)
+- `GLOBAL_USER_ADMIN`: [`Global User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Global-User-Admin)
         """
         
     
@@ -391,7 +391,7 @@ Global roles accepted by default include:
         r"""
 ## Update One Global API Key
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/update-one-global-api-key/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-api-key/)
 ### Endpoint:
 `PATCH /admin/apiKeys/{API-KEY-ID}`
 ### Description

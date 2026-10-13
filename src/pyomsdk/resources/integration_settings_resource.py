@@ -68,7 +68,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         model_config = ConfigDict(populate_by_name=True)
         
         
-        type: str = Field(serialization_alias="type")
+        type: IntegrationType = Field(serialization_alias="type")
         r"""The type of the third-party integration.
         """
         
@@ -87,7 +87,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Create a Configuration for a Third-Party Service Integration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-create/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-create/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
 ### Description
@@ -175,7 +175,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Delete a Configuration for a Third-Party Service Integration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-delete/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-delete/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
 ### Description
@@ -240,7 +240,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Return the Latest Targets for Prometheus
 ### Document:
-[Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-discovery/)
+[Return Latest Prometheus Targets](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-discovery/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/discovery`
 ### Description
@@ -305,7 +305,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Configurations for Third-Party Service Integrations
 ### Document:
-[Get All Configurations](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-get-all/)
+[Get All Configurations](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/integrations`
 ### Description
@@ -383,7 +383,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get the Configuration of a Third-Party Service Integration
 ### Document:
-[Get One Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-get-one/)
+[Get One Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-get-one/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
 ### Description
@@ -453,7 +453,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         model_config = ConfigDict(populate_by_name=True)
         
         
-        type: str = Field(serialization_alias="type")
+        type: IntegrationType = Field(serialization_alias="type")
         r"""The type of the third-party integration.
         """
         
@@ -472,7 +472,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Update a Configuration for a Third-Party Service Integration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-update/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/third-party-integration-settings-update/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/integrations/{INTEGRATION-TYPE}`
 ### Description

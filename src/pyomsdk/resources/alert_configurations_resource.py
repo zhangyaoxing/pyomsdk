@@ -60,151 +60,151 @@ Values include:
 
 **Agent**
 
-- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
-- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
-- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
-- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
-- [`BACKUP_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
-- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
-- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
-- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
-- [`MONITORING_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
-- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
-- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
-- [`NEW_AGENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-NEW_AGENT)
+- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
+- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
+- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
+- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
+- [`BACKUP_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
+- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
+- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
+- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
+- [`MONITORING_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
+- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
+- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
+- [`NEW_AGENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NEW_AGENT)
 
 **Alerts**
 
-- [`WEBHOOK_TEMPLATE_RENDER_FAILED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-WEBHOOK_TEMPLATE_RENDER_FAILED)
+- [`WEBHOOK_TEMPLATE_RENDER_FAILED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-WEBHOOK_TEMPLATE_RENDER_FAILED)
 
 **Automation Configuration**
 
-- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
+- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
 
 **Backup**
 
-- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
-- [`CLUSTER_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_DENYLIST_UPDATED_AUDIT)
-- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
-- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
-- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
-- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
-- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
-- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
-- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
-- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
-- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
-- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
-- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
-- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
-- [`OPLOG_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
-- [`OPLOG_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
-- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
-- [`RESYNC_PERFORMED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
-- [`RESYNC_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
-- [`RS_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_DENYLIST_UPDATED_AUDIT)
-- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
-- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
-- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
-- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
-- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
-- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
-- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
-- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
-- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
+- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
+- [`CLUSTER_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_DENYLIST_UPDATED_AUDIT)
+- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
+- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
+- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
+- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
+- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
+- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
+- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
+- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
+- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
+- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
+- [`OPLOG_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
+- [`OPLOG_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
+- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
+- [`RESYNC_PERFORMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
+- [`RESYNC_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
+- [`RS_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_DENYLIST_UPDATED_AUDIT)
+- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
+- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
+- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
+- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
+- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
+- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
+- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
 
 **BI Connector**
 
-- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
-- [`BI_CONNECTOR_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
+- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
+- [`BI_CONNECTOR_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
 
 **Cluster**
 
-- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
-- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
-- [`SHARD_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SHARD_ADDED)
-- [`SHARD_REMOVED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
+- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
+- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
+- [`SHARD_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_ADDED)
+- [`SHARD_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
 
 **Data Explorer Accessed**
 
-- [`DATA_EXPLORER`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
-- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
+- [`DATA_EXPLORER`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
+- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
 
 **Host**
 
-- [`ADD_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
-- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
-- [`DELETE_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
-- [`HOST_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_DOWN)
-- [`HOST_RECOVERING`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
-- [`HOST_RESTARTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
-- [`HOST_ROLLBACK`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
-- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
-- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
-- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
-- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
-- [`VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
+- [`ADD_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
+- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
+- [`DELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
+- [`HOST_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_DOWN)
+- [`HOST_RECOVERING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
+- [`HOST_RESTARTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
+- [`HOST_ROLLBACK`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
+- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
+- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
+- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
+- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
+- [`VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
 
 **Organization**
 
-- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
-- [`ORG_API_KEY_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
-- [`ORG_API_KEY_DELETED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
-- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
-- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
-- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
-- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
-- [`ORG_RENAMED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_RENAMED)
-- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
-- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
-- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
+- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
+- [`ORG_API_KEY_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
+- [`ORG_API_KEY_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
+- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
+- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
+- [`ORG_RENAMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_RENAMED)
+- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
+- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
+- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
 
 **Project**
 
-- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
-- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
+- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
+- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
 
 **Replica Set**
 
-- [`CONFIGURATION_CHANGED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
-- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
-- [`MEMBER_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
-- [`MEMBER_REMOVED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
-- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
-- [`NO_PRIMARY`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-NO_PRIMARY)
-- [`ONE_PRIMARY`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
-- [`PRIMARY_ELECTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
-- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
-- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
-- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
+- [`CONFIGURATION_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
+- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
+- [`MEMBER_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
+- [`MEMBER_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
+- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
+- [`NO_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NO_PRIMARY)
+- [`ONE_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
+- [`PRIMARY_ELECTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
+- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
+- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
+- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
 
 **Team**
 
-- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
-- [`TEAM_CREATED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_CREATED)
-- [`TEAM_DELETED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_DELETED)
-- [`TEAM_NAME_CHANGED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
-- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
-- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
-- [`TEAM_UPDATED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
-- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
+- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
+- [`TEAM_CREATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_CREATED)
+- [`TEAM_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_DELETED)
+- [`TEAM_NAME_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
+- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
+- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
+- [`TEAM_UPDATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
+- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
 
 **User**
 
-- [`INVITED_TO_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
-- [`INVITED_TO_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
-- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
-- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
-- [`JOINED_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_GROUP)
-- [`JOINED_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_ORG)
-- [`JOINED_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_TEAM)
-- [`REMOVED_FROM_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
-- [`REMOVED_FROM_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
-- [`REMOVED_FROM_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
-- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
-- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
+- [`INVITED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
+- [`INVITED_TO_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
+- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
+- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
+- [`JOINED_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_GROUP)
+- [`JOINED_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_ORG)
+- [`JOINED_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_TEAM)
+- [`REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
+- [`REMOVED_FROM_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
+- [`REMOVED_FROM_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
+- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
+- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
 
-To review the full list of events that generate alerts and their descriptions, see [Alert Types](/docs/ops-manager/v8.0/reference/alert-types/). For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+To review the full list of events that generate alerts and their descriptions, see [Alert Types](/docs/ops-manager/current/reference/alert-types/). For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -420,7 +420,7 @@ After you create a third-party integration that requires an API or integration k
 - `ORG`
 - `PAGER_DUTY`
 - `SLACK`
-- `SMS` ([Twilio integration](/docs/ops-manager/v8.0/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
+- `SMS` ([Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
 - `USER`
 - `WEBHOOK`
             """
@@ -443,7 +443,7 @@ After you create a third-party integration that requires an API or integration k
 - A `notifications.typeName` of `WEBHOOK`
 - An explicitly declared `notifications.webhookURL`
 
-You can configure a `webhookSecret` for a default `webhookURL` only either on the [Integrations](/docs/ops-manager/v8.0/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
+You can configure a `webhookSecret` for a default `webhookURL` only either on the [Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
 To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
 
@@ -451,7 +451,7 @@ After creating a webhook notification, the URL is partially redacted when you vi
             """
             
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set either on the [Integrations](/docs/ops-manager/v8.0/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
+            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set either on the [Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
@@ -499,7 +499,7 @@ After creating a webhook notification, the URL is partially redacted when you vi
         r"""
 ## Create an Alert Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-create-config/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-create-config/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/alertConfigs`
 ### Description
@@ -561,7 +561,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete an Alert Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-delete-config/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-delete-config/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
 ### Description
@@ -634,7 +634,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Enable/Disable Alert Configuration
 ### Document:
-[Enable/Disable](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-enable-disable-config/)
+[Enable/Disable](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-enable-disable-config/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
 ### Description
@@ -699,7 +699,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Alert Configurations for a Project
 ### Document:
-[Get All for a Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-get-all-configs/)
+[Get All for a Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-all-configs/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/alertConfigs`
 ### Description
@@ -768,7 +768,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get an Alert Configuration
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-get-config/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-config/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
 ### Description
@@ -816,7 +816,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get All Alert Configuration Matchers Field Names
 ### Document:
-[Get Matchers Field Names](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-get-matchers-field-names/)
+[Get Matchers Field Names](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-matchers-field-names/)
 ### Endpoint:
 `GET /alertConfigs/matchers/fieldNames`
 ### Description
@@ -885,7 +885,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get Open Alerts for Alert Configuration
 ### Document:
-[Get Open Alerts](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-get-open-alerts/)
+[Get Open Alerts](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-get-open-alerts/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}/alerts`
 ### Description
@@ -928,7 +928,7 @@ No description.
         r"""
 ## Test Project Alert Configuration
 ### Document:
-[Test Project Alert Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-test-config/)
+[Test Project Alert Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-test-config/)
 ### Endpoint:
 `POST /groups/{GROUP-ID}/alertConfigs/{ALERT-CONFIG-ID}/{NOTIFICATION-ID}/test`
 ### Description
@@ -994,151 +994,151 @@ Values include:
 
 **Agent**
 
-- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
-- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
-- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
-- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
-- [`BACKUP_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
-- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
-- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
-- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
-- [`MONITORING_AGENT_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
-- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
-- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
-- [`NEW_AGENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-NEW_AGENT)
+- [`AUTOMATION_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_DOWN)
+- [`AUTOMATION_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_AGENT_UP)
+- [`BACKUP_AGENT_CONF_CALL_FAILURE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_CONF_CALL_FAILURE)
+- [`BACKUP_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_DOWN)
+- [`BACKUP_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_UP)
+- [`BACKUP_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_BEHIND)
+- [`BACKUP_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BACKUP_AGENT_VERSION_CURRENT)
+- [`MONITORING_AGENT_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_DOWN)
+- [`MONITORING_AGENT_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_UP)
+- [`MONITORING_AGENT_VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_BEHIND)
+- [`MONITORING_AGENT_VERSION_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MONITORING_AGENT_VERSION_CURRENT)
+- [`NEW_AGENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NEW_AGENT)
 
 **Alerts**
 
-- [`WEBHOOK_TEMPLATE_RENDER_FAILED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-WEBHOOK_TEMPLATE_RENDER_FAILED)
+- [`WEBHOOK_TEMPLATE_RENDER_FAILED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-WEBHOOK_TEMPLATE_RENDER_FAILED)
 
 **Automation Configuration**
 
-- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
+- [`AUTOMATION_CONFIG_PUBLISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-AUTOMATION_CONFIG_PUBLISHED_AUDIT)
 
 **Backup**
 
-- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
-- [`CLUSTER_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_DENYLIST_UPDATED_AUDIT)
-- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
-- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
-- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
-- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
-- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
-- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
-- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
-- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
-- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
-- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
-- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
-- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
-- [`OPLOG_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
-- [`OPLOG_CURRENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
-- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
-- [`RESYNC_PERFORMED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
-- [`RESYNC_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
-- [`RS_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_DENYLIST_UPDATED_AUDIT)
-- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
-- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
-- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
-- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
-- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
-- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
-- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
-- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
-- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
+- [`BAD_CLUSTERSHOTS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BAD_CLUSTERSHOTS)
+- [`CLUSTER_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_DENYLIST_UPDATED_AUDIT)
+- [`CLUSTER_CHECKKPOINT_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CHECKKPOINT_UPDATED_AUDIT)
+- [`CLUSTER_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_CREDENTIAL_UPDATED_AUDIT)
+- [`CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`CLUSTER_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STATE_CHANGED_AUDIT)
+- [`CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`CLUSTERSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_DELETED_AUDIT)
+- [`CLUSTERSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTERSHOT_EXPIRY_UPDATED_AUDIT)
+- [`CONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONSISTENT_BACKUP_CONFIGURATION)
+- [`GOOD_CLUSTERSHOT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-GOOD_CLUSTERSHOT)
+- [`INCONSISTENT_BACKUP_CONFIGURATION`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INCONSISTENT_BACKUP_CONFIGURATION)
+- [`INITIAL_SYNC_FINISHED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_FINISHED_AUDIT)
+- [`INITIAL_SYNC_STARTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INITIAL_SYNC_STARTED_AUDIT)
+- [`OPLOG_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_BEHIND)
+- [`OPLOG_CURRENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OPLOG_CURRENT)
+- [`RESTORE_REQUESTED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESTORE_REQUESTED_AUDIT)
+- [`RESYNC_PERFORMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_PERFORMED)
+- [`RESYNC_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RESYNC_REQUIRED)
+- [`RS_DENYLIST_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_DENYLIST_UPDATED_AUDIT)
+- [`RS_CREDENTIAL_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_CREDENTIAL_UPDATED_AUDIT)
+- [`RS_ROTATE_MASTER_KEY_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_ROTATE_MASTER_KEY_AUDIT)
+- [`RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_SNAPSHOT_SCHEDULE_UPDATED_AUDIT)
+- [`RS_STATE_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STATE_CHANGED_AUDIT)
+- [`RS_STORAGE_ENGINE_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-RS_STORAGE_ENGINE_UPDATED_AUDIT)
+- [`SNAPSHOT_DELETED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_DELETED_AUDIT)
+- [`SNAPSHOT_EXPIRY_UPDATED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SNAPSHOT_EXPIRY_UPDATED_AUDIT)
+- [`SYNC_PENDING_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_PENDING_AUDIT)
+- [`SYNC_REQUIRED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SYNC_REQUIRED_AUDIT)
 
 **BI Connector**
 
-- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
-- [`BI_CONNECTOR_UP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
+- [`BI_CONNECTOR_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_DOWN)
+- [`BI_CONNECTOR_UP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-BI_CONNECTOR_UP)
 
 **Cluster**
 
-- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
-- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
-- [`SHARD_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SHARD_ADDED)
-- [`SHARD_REMOVED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
+- [`CLUSTER_MONGOS_IS_MISSING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_MISSING)
+- [`CLUSTER_MONGOS_IS_PRESENT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CLUSTER_MONGOS_IS_PRESENT)
+- [`SHARD_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_ADDED)
+- [`SHARD_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-SHARD_REMOVED)
 
 **Data Explorer Accessed**
 
-- [`DATA_EXPLORER`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
-- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
+- [`DATA_EXPLORER`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER)
+- [`DATA_EXPLORER_CRUD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DATA_EXPLORER_CRUD)
 
 **Host**
 
-- [`ADD_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
-- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
-- [`DELETE_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
-- [`HOST_DOWN`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_DOWN)
-- [`HOST_RECOVERING`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
-- [`HOST_RESTARTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
-- [`HOST_ROLLBACK`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
-- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
-- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
-- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
-- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
-- [`VERSION_BEHIND`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
+- [`ADD_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_AUDIT)
+- [`ADD_HOST_TO_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ADD_HOST_TO_REPLICA_SET_AUDIT)
+- [`DELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-DELETE_HOST_AUDIT)
+- [`HOST_DOWN`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_DOWN)
+- [`HOST_RECOVERING`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RECOVERING)
+- [`HOST_RESTARTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_RESTARTED)
+- [`HOST_ROLLBACK`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_ROLLBACK)
+- [`HOST_SSL_CERTIFICATE_STALE`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-HOST_SSL_CERTIFICATE_STALE)
+- [`OUTSIDE_METRIC_THRESHOLD`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-OUTSIDE_METRIC_THRESHOLD)
+- [`REMOVE_HOST_FROM_REPLICA_SET_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVE_HOST_FROM_REPLICA_SET_AUDIT)
+- [`UNDELETE_HOST_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-UNDELETE_HOST_AUDIT)
+- [`VERSION_BEHIND`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-VERSION_BEHIND)
 
 **Organization**
 
-- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
-- [`ORG_API_KEY_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
-- [`ORG_API_KEY_DELETED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
-- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
-- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
-- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
-- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
-- [`ORG_RENAMED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_RENAMED)
-- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
-- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
-- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
+- [`ALL_ORG_USERS_HAVE_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_ORG_USERS_HAVE_MFA)
+- [`ORG_API_KEY_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_ADDED)
+- [`ORG_API_KEY_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_API_KEY_DELETED)
+- [`ORG_EMPLOYEE_ACCESS_RESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_RESTRICTED)
+- [`ORG_EMPLOYEE_ACCESS_UNRESTRICTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_EMPLOYEE_ACCESS_UNRESTRICTED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_NOT_REQUIRED)
+- [`ORG_PUBLIC_API_ACCESS_LIST_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_PUBLIC_API_ACCESS_LIST_REQUIRED)
+- [`ORG_RENAMED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_RENAMED)
+- [`ORG_TWO_FACTOR_AUTH_OPTIONAL`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_OPTIONAL)
+- [`ORG_TWO_FACTOR_AUTH_REQUIRED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_TWO_FACTOR_AUTH_REQUIRED)
+- [`ORG_USERS_WITHOUT_MFA`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ORG_USERS_WITHOUT_MFA)
 
 **Project**
 
-- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
-- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
+- [`ALL_USERS_HAVE_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ALL_USERS_HAVE_MULTI_FACTOR_AUTH)
+- [`USERS_WITHOUT_MULTI_FACTOR_AUTH`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USERS_WITHOUT_MULTI_FACTOR_AUTH)
 
 **Replica Set**
 
-- [`CONFIGURATION_CHANGED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
-- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
-- [`MEMBER_ADDED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
-- [`MEMBER_REMOVED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
-- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
-- [`NO_PRIMARY`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-NO_PRIMARY)
-- [`ONE_PRIMARY`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
-- [`PRIMARY_ELECTED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
-- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
-- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
-- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
+- [`CONFIGURATION_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-CONFIGURATION_CHANGED)
+- [`ENOUGH_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ENOUGH_HEALTHY_MEMBERS)
+- [`MEMBER_ADDED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_ADDED)
+- [`MEMBER_REMOVED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MEMBER_REMOVED)
+- [`MULTIPLE_PRIMARIES`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-MULTIPLE_PRIMARIES)
+- [`NO_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-NO_PRIMARY)
+- [`ONE_PRIMARY`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-ONE_PRIMARY)
+- [`PRIMARY_ELECTED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-PRIMARY_ELECTED)
+- [`TOO_FEW_HEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_FEW_HEALTHY_MEMBERS)
+- [`TOO_MANY_ELECTIONS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_ELECTIONS)
+- [`TOO_MANY_UNHEALTHY_MEMBERS`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TOO_MANY_UNHEALTHY_MEMBERS)
 
 **Team**
 
-- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
-- [`TEAM_CREATED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_CREATED)
-- [`TEAM_DELETED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_DELETED)
-- [`TEAM_NAME_CHANGED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
-- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
-- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
-- [`TEAM_UPDATED`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
-- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
+- [`TEAM_ADDED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ADDED_TO_GROUP)
+- [`TEAM_CREATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_CREATED)
+- [`TEAM_DELETED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_DELETED)
+- [`TEAM_NAME_CHANGED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_NAME_CHANGED)
+- [`TEAM_REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_REMOVED_FROM_GROUP)
+- [`TEAM_ROLES_MODIFIED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_ROLES_MODIFIED)
+- [`TEAM_UPDATED`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-TEAM_UPDATED)
+- [`USER_ADDED_TO_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ADDED_TO_TEAM)
 
 **User**
 
-- [`INVITED_TO_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
-- [`INVITED_TO_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
-- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
-- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
-- [`JOINED_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_GROUP)
-- [`JOINED_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_ORG)
-- [`JOINED_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-JOINED_TEAM)
-- [`REMOVED_FROM_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
-- [`REMOVED_FROM_ORG`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
-- [`REMOVED_FROM_TEAM`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
-- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
-- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/v8.0/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
+- [`INVITED_TO_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_GROUP)
+- [`INVITED_TO_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-INVITED_TO_ORG)
+- [`JOIN_GROUP_REQUEST_APPROVED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_APPROVED_AUDIT)
+- [`JOIN_GROUP_REQUEST_DENIED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOIN_GROUP_REQUEST_DENIED_AUDIT)
+- [`JOINED_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_GROUP)
+- [`JOINED_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_ORG)
+- [`JOINED_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-JOINED_TEAM)
+- [`REMOVED_FROM_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_GROUP)
+- [`REMOVED_FROM_ORG`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_ORG)
+- [`REMOVED_FROM_TEAM`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REMOVED_FROM_TEAM)
+- [`REQUESTED_TO_JOIN_GROUP`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-REQUESTED_TO_JOIN_GROUP)
+- [`USER_ROLES_CHANGED_AUDIT`](/docs/ops-manager/current/reference/alert-types/#mongodb-alert-USER_ROLES_CHANGED_AUDIT)
 
-To review the full list of events that generate alerts and their descriptions, see [Alert Types](/docs/ops-manager/v8.0/reference/alert-types/). For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+To review the full list of events that generate alerts and their descriptions, see [Alert Types](/docs/ops-manager/current/reference/alert-types/). For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -1354,7 +1354,7 @@ After you create a third-party integration that requires an API or integration k
 - `ORG`
 - `PAGER_DUTY`
 - `SLACK`
-- `SMS` ([Twilio integration](/docs/ops-manager/v8.0/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
+- `SMS` ([Twilio integration](/docs/ops-manager/current/reference/config/ui-settings/#std-label-twilio-sms-alert-settings) must be configured)
 - `USER`
 - `WEBHOOK`
             """
@@ -1377,7 +1377,7 @@ After you create a third-party integration that requires an API or integration k
 - A `notifications.typeName` of `WEBHOOK`
 - An explicitly declared `notifications.webhookURL`
 
-You can configure a `webhookSecret` for a default `webhookURL` only either on the [Integrations](/docs/ops-manager/v8.0/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
+You can configure a `webhookSecret` for a default `webhookURL` only either on the [Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
 To explicitly declare a `webhookURL` without a `webhookSecret`, omit this field.
 
@@ -1385,7 +1385,7 @@ After creating a webhook notification, the URL is partially redacted when you vi
             """
             
             webhook_url: Optional[str] = Field(default=None, serialization_alias="webhookUrl")
-            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set either on the [Integrations](/docs/ops-manager/v8.0/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/v8.0/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
+            r"""URL for the webhook that triggers this notification. If you do not explicitly declare a `webhookUrl`, your request will use the default `webhookUrl` set either on the [Integrations](/docs/ops-manager/current/tutorial/third-party-service-integrations/#std-label-project-settings-alert-services) page, or with the [Integrations API.](/docs/ops-manager/current/reference/api/third-party-integration-settings-create/#std-label-mms-third-party-integration-settings-create)
 
 After creating a webhook notification, the URL is partially redacted when you view or edit the alert, and the secret is completely redacted.
             """
@@ -1433,7 +1433,7 @@ After creating a webhook notification, the URL is partially redacted when you vi
         r"""
 ## Update an Alert Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alert-configurations-update-config/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/alert-configurations-update-config/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/alertConfigs/{ALERT-CONFIG-ID}`
 ### Description

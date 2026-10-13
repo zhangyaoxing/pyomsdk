@@ -35,9 +35,9 @@ For endpoints that return a list of results, the `results` object is an envelope
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
         r"""Return only events of the specified types. Accepted values include:
 
-To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/v8.0/reference/alert-types/)
+To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -77,7 +77,7 @@ For a complete list of events included in the Ops Manager audit log, see [Audit 
         r"""
 ## Get All Global Events
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-all-events-global/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-global/)
 ### Endpoint:
 `GET /globalEvents`
 ### Description
@@ -135,7 +135,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global Event
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-one-event-global/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-global/)
 ### Endpoint:
 `GET /globalEvents/{eventId}`
 ### Description

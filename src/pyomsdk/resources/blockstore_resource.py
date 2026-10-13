@@ -46,7 +46,7 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this blockstore were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this blockstore were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
@@ -56,7 +56,7 @@ For endpoints that return one result, the response body includes:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
 Setting these tags limits which backup jobs this blockstore can process. If omitted, this blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -65,12 +65,12 @@ Setting these tags limits which backup jobs this blockstore can process. If omit
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""*Optional.* A positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The blockstore’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The blockstore’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -129,7 +129,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Create One Blockstore Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/mongoconfigs/create-one-blockstore-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoconfigs/create-one-blockstore-configuration/)
 ### Endpoint:
 `POST /snapshot/mongoConfigs`
 ### Description
@@ -187,7 +187,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Blockstore Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/mongoconfigs/delete-one-blockstore-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoconfigs/delete-one-blockstore-configuration/)
 ### Endpoint:
 `DELETE /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
 ### Description
@@ -247,7 +247,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Blockstore Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/mongoconfigs/get-all-blockstore-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoconfigs/get-all-blockstore-configurations/)
 ### Endpoint:
 `GET /snapshot/mongoConfigs`
 ### Description
@@ -305,7 +305,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Blockstore Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/mongoconfigs/get-one-blockstore-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoconfigs/get-one-blockstore-configuration-by-id/)
 ### Endpoint:
 `GET /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
 ### Description
@@ -361,12 +361,12 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this blockstore were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this blockstore were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [blockstores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-backup-blockstore-database)
 
 Setting these tags limits which backup jobs this blockstore can process. If omitted, this blockstore can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -375,12 +375,12 @@ Setting these tags limits which backup jobs this blockstore can process. If omit
         load_factor: Optional[int] = Field(default=None, serialization_alias="loadFactor")
         r"""*Optional.* A positive, non-zero integer that expresses how much backup work this [snapshot store](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-snapshot-store) should perform compared to another snapshot store. This option is needed only if more than one snapshot store is in use.
 
-To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/v8.0/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
+To learn more about Load Factor, see [Edit One Existing Blockstore.](/docs/ops-manager/current/tutorial/manage-blockstore-storage/#std-label-edit-blockstore)
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The blockstore’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The blockstore’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -441,7 +441,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Update One Blockstore Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/snapshot/mongoconfigs/update-one-blockstore-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/snapshot/mongoconfigs/update-one-blockstore-configuration/)
 ### Endpoint:
 `PUT /snapshot/mongoConfigs/{BLOCKSTORE-ID}`
 ### Description

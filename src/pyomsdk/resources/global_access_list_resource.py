@@ -62,7 +62,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Global Access List Entry
 ### Document:
-[Create Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/create-one-global-access-list/)
+[Create Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/create-one-global-access-list/)
 ### Endpoint:
 `POST /admin/accessList`
 ### Description
@@ -120,7 +120,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Access List Entry for a Global API Key
 ### Document:
-[Delete Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/delete-one-global-access-list/)
+[Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/delete-one-global-access-list/)
 ### Endpoint:
 `DELETE /admin/accessList/{ACCESS-LIST-ID}`
 ### Description
@@ -175,7 +175,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Access List Entries for a Global API Key
 ### Document:
-[Get All Entries](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/get-all-global-access-list/)
+[Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-all-global-access-list/)
 ### Endpoint:
 `GET /admin/accessList`
 ### Description
@@ -233,7 +233,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global Access List Entry
 ### Document:
-[Get One Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/get-one-global-access-list/)
+[Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/get-one-global-access-list/)
 ### Endpoint:
 `GET /admin/accessList/{ACCESS-LIST-ID}`
 ### Description
@@ -291,7 +291,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update One Global Access List Entry
 ### Document:
-[Update Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/global/update-one-global-access-list/)
+[Update Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/global/update-one-global-access-list/)
 ### Endpoint:
 `PATCH /admin/accessList/{ACCESS-LIST-ID}`
 ### Description

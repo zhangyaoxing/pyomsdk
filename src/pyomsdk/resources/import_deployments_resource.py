@@ -60,7 +60,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Cancel Import Deployment Request
 ### Document:
-[Cancel Import Deployment Request](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/import-deployments/cancel/)
+[Cancel Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/cancel/)
 ### Endpoint:
 `POST /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}/cancel`
 ### Description
@@ -229,7 +229,7 @@ Ops Manager doesn't include this parameter in response documents.
         r"""
 ## Create Import Deployment Request
 ### Document:
-[Create Import Deployment Request](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/import-deployments/create/)
+[Create Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/create/)
 ### Endpoint:
 `POST /automation/importDeployment/{PROJECT-ID}`
 ### Description
@@ -291,7 +291,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete Import Deployment Request
 ### Document:
-[Delete Import Deployment Request](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/import-deployments/delete/)
+[Delete Import Deployment Request](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/delete/)
 ### Endpoint:
 `DELETE /automation/importDeployment/{PROJECT-ID}/{REQUEST-ID}`
 ### Description
@@ -349,7 +349,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Import Deployment Requests
 ### Document:
-[Get Import Deployment Requests](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/import-deployments/get-all/)
+[Get Import Deployment Requests](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-all/)
 ### Endpoint:
 `GET /automation/importDeployment/{PROJECT-ID}`
 ### Description
@@ -411,7 +411,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Import Deployment Request Status
 ### Document:
-[Get Import Deployment Request Status](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/import-deployments/get-status/)
+[Get Import Deployment Request Status](https://www.mongodb.com/docs/ops-manager/current/reference/api/import-deployments/get-status/)
 ### Endpoint:
 `GET /automation/importDeployment/{PROJECT-ID}/{IMPORT-PROCESS-ID}`
 ### Description

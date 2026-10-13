@@ -60,7 +60,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get the Snapshot Schedule
 ### Document:
-[Get Schedule](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-snapshot-schedule/)
+[Get Schedule](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-snapshot-schedule/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule`
 ### Description
@@ -208,7 +208,7 @@ Setting `weeklySnapshotRetentionWeeks` to `0` disables this rule.
         r"""
 ## Update the Snapshot Schedule
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/update-one-snapshot-schedule-by-cluster-id/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/update-one-snapshot-schedule-by-cluster-id/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}/snapshotSchedule`
 ### Description

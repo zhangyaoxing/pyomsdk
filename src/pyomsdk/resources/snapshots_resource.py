@@ -17,15 +17,15 @@ class SnapshotsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        r"""Unique identifier of the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -88,7 +88,7 @@ If the current `expires` timestamp has already passed, it cannot be edited.
         r"""
 ## Change the Expiry of One Snapshot
 ### Document:
-[Change Expiry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/change-expiry-for-one-snapshot/)
+[Change Expiry](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/change-expiry-for-one-snapshot/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}`
 ### Description
@@ -107,11 +107,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         host_id: str = Field(serialization_alias="HOST-ID")
-        r"""Unique identifier of the host that that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the host that that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -157,7 +157,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Snapshots for One Config Server
 ### Document:
-[Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-config-server/)
+[Get All (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-config-server/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots`
 ### Description
@@ -176,11 +176,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -189,7 +189,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         
-        completed: Optional[str] = Field(default="true", serialization_alias="completed")
+        completed: Optional[SnapshotCompletedState] = Field(default=SnapshotCompletedState("true"), serialization_alias="completed")
         r"""String that indicates whether to return completed or incomplete snapshots:
 
 - `true`: Return only completed snapshots
@@ -235,7 +235,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Snapshots for One Cluster
 ### Document:
-[Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/get-all-snapshots-for-one-cluster/)
+[Get All (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-all-snapshots-for-one-cluster/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots`
 ### Description
@@ -254,15 +254,15 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        r"""Unique identifier of the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -301,7 +301,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Snapshot for One Config Server
 ### Document:
-[Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/get-one-snapshot-for-config-server/)
+[Get One (Config Server)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-one-snapshot-for-config-server/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/snapshots/{SNAPSHOT-ID}`
 ### Description
@@ -320,15 +320,15 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        r"""Unique identifier of the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -367,7 +367,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Snapshot for One Cluster
 ### Document:
-[Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/get-one-snapshot-for-one-cluster/)
+[Get One (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/get-one-snapshot-for-one-cluster/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}`
 ### Description
@@ -386,15 +386,15 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [project](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-project) that owns the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
         snapshot_id: str = Field(serialization_alias="SNAPSHOT-ID")
-        r"""Unique identifier of the [snapshot.](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot)
+        r"""Unique identifier of the [snapshot.](/docs/ops-manager/current/reference/glossary/#std-term-snapshot)
         """
         
     
@@ -433,7 +433,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove One Snapshot from a Cluster
 ### Document:
-[Remove One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/remove-one-snapshot-from-one-cluster/)
+[Remove One](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/remove-one-snapshot-from-one-cluster/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/clusters/{CLUSTER-ID}/snapshots/{SNAPSHOT-ID}`
 ### Description
@@ -452,7 +452,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         cluster_id: str = Field(serialization_alias="CLUSTER-ID")
-        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/v8.0/reference/glossary/#std-term-snapshot) represents.
+        r"""Unique identifier of the cluster that the [snapshot](/docs/ops-manager/current/reference/glossary/#std-term-snapshot) represents.
         """
         
         group_id: str = Field(serialization_alias="GROUP-ID")
@@ -492,7 +492,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Create an On-Demand Snapshot for a Cluster
 ### Document:
-[Create One On-Demand (Cluster)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/snapshots/take-an-on-demand-snapshot/)
+[Create One On-Demand (Cluster)](https://www.mongodb.com/docs/ops-manager/current/reference/api/snapshots/take-an-on-demand-snapshot/)
 ### Endpoint:
 `POST /groups/{groupId}/clusters/{clusterId}/snapshots/onDemandSnapshot`
 ### Description

@@ -17,11 +17,11 @@ class ApiKeysOnProjectsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -67,15 +67,15 @@ For endpoints that return a list of results, the `results` object is an envelope
         roles: list[Any] = Field(serialization_alias="roles")
         r"""List of roles that the API Key must be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
         
     
@@ -93,7 +93,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Assign One Organization API Key to One Project
 ### Document:
-[Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/assign-one-org-apikey-to-one-project/)
+[Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/assign-one-org-apikey-to-one-project/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
 ### Description
@@ -112,7 +112,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to retrieve. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the Project whose API keys you want to retrieve. Use the [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -168,15 +168,15 @@ For endpoints that return a list of results, the `results` object is an envelope
 
 Project roles include:
 
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
         """
         
     
@@ -194,7 +194,7 @@ Project roles include:
         r"""
 ## Create and Assign One Organization API Key to One Project
 ### Document:
-[Create & Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/create-one-apikey-in-one-project/)
+[Create & Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/create-one-apikey-in-one-project/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/apiKeys`
 ### Description
@@ -213,11 +213,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project you wish to unassign from the API key. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the Project you wish to unassign from the API key. Use the [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -268,7 +268,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Unassign One Organization API Key from One Project
 ### Document:
-[Unassign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/delete-one-apikey-in-one-project/)
+[Unassign](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/delete-one-apikey-in-one-project/)
 ### Endpoint:
 `DELETE /orgs/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
 ### Description
@@ -287,7 +287,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project from which you want to retrieve its assigned Organization API keys. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all Projects to which the authenticated user has access.
+        r"""Unique identifier for the Project from which you want to retrieve its assigned Organization API keys. Use the [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all Projects to which the authenticated user has access.
         """
         
     
@@ -338,7 +338,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Organization API Keys Assigned to One Project
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/get-all-apikeys-in-one-project/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/apiKeys`
 ### Description
@@ -357,11 +357,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
+        r"""Unique identifier for the API key you want to update. Request the [/groups/{PROJECT-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/project/get-all-apikeys-in-one-project/) endpoint to retrieve all API keys to which the authenticated user has access for the specified organization.
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/v8.0/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the Project whose API keys you want to update. Use the [/groups](/docs/ops-manager/current/reference/api/groups/get-all-groups-for-current-user/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -407,15 +407,15 @@ For endpoints that return a list of results, the `results` object is an envelope
         roles: list[str] = Field(serialization_alias="roles")
         r"""List of roles that the API Key must be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project:
 
-- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
-- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
-- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
-- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
-- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
-- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
-- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Owner)
-- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-Read-Only)
-- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/v8.0/reference/user-roles/#mongodb-authrole-Project-User-Admin)
+- `GROUP_AUTOMATION_ADMIN`: [`Project Automation Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Automation-Admin)
+- `GROUP_BACKUP_ADMIN`: [`Project Backup Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Backup-Admin)
+- `GROUP_DATA_ACCESS_ADMIN`: [`Project Data Access Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Admin)
+- `GROUP_DATA_ACCESS_READ_ONLY`: [`Project Data Access Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Only)
+- `GROUP_DATA_ACCESS_READ_WRITE`: [`Project Data Access Read/Write`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Data-Access-Read-Write)
+- `GROUP_MONITORING_ADMIN`: [`Project Monitoring Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Monitoring-Admin)
+- `GROUP_OWNER`: [`Project Owner`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Owner)
+- `GROUP_READ_ONLY`: [`Project Read Only`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-Read-Only)
+- `GROUP_USER_ADMIN`: [`Project User Admin`](/docs/ops-manager/current/reference/user-roles/#mongodb-authrole-Project-User-Admin)
 
 Include all roles that you want this API Key to have. Any roles not in this array are removed.
         """
@@ -435,7 +435,7 @@ Include all roles that you want this API Key to have. Any roles not in this arra
         r"""
 ## Modify Roles of One Organization API Key to One Project
 ### Document:
-[Modify Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/project/update-one-apikey-in-one-project/)
+[Modify Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/project/update-one-apikey-in-one-project/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/apiKeys/{API-KEY-ID}`
 ### Description

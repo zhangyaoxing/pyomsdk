@@ -83,11 +83,11 @@ For example:
         r"""
 ## Get Slow Query Logs
 ### Document:
-[Get Slow Query Logs](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/performance-advisor/get-slow-queries/)
+[Get Slow Query Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-slow-queries/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/slowQueryLogs`
 ### Description
-Retrieves log lines for slow queries as determined by the [Performance Advisor.](/docs/ops-manager/v8.0/tutorial/performance-advisor/)
+Retrieves log lines for slow queries as determined by the [Performance Advisor.](/docs/ops-manager/current/tutorial/performance-advisor/)
         """
         return self._request(
             "GET",
@@ -173,11 +173,11 @@ For example:
         r"""
 ## Get Suggested Indexes
 ### Document:
-[Get Suggested Indexes](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/performance-advisor/get-suggested-indexes/)
+[Get Suggested Indexes](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/get-suggested-indexes/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/suggestedIndexes`
 ### Description
-Retrieves suggested indexes as determined by the [Performance Advisor.](/docs/ops-manager/v8.0/tutorial/performance-advisor/)
+Retrieves suggested indexes as determined by the [Performance Advisor.](/docs/ops-manager/current/tutorial/performance-advisor/)
         """
         return self._request(
             "GET",
@@ -192,7 +192,7 @@ Retrieves suggested indexes as determined by the [Performance Advisor.](/docs/op
         model_config = ConfigDict(populate_by_name=True)
         
         host_id: str = Field(serialization_alias="HOST-ID")
-        r"""The unique identifier for the host of a MongoDB process. For information about retrieving host ids, see [Get All Hosts in One Project.](/docs/ops-manager/v8.0/reference/api/hosts/get-all-hosts-in-group/)
+        r"""The unique identifier for the host of a MongoDB process. For information about retrieving host ids, see [Get All Hosts in One Project.](/docs/ops-manager/current/reference/api/hosts/get-all-hosts-in-group/)
         """
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
@@ -211,7 +211,7 @@ Retrieves suggested indexes as determined by the [Performance Advisor.](/docs/op
         
         
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        r"""Specifies whether or not to wrap the response in an [envelope](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope). The default is `false`.
+        r"""Specifies whether or not to wrap the response in an [envelope](/docs/ops-manager/current/core/api/#std-label-api-envelope). The default is `false`.
         """
         
         
@@ -238,7 +238,7 @@ Retrieves suggested indexes as determined by the [Performance Advisor.](/docs/op
         r"""
 ## Get Namespaces for a Project
 ### Document:
-[Get Namespaces](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/performance-advisor/pa-namespaces-get-all/)
+[Get Namespaces](https://www.mongodb.com/docs/ops-manager/current/reference/api/performance-advisor/pa-namespaces-get-all/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}/performanceAdvisor/namespaces`
 ### Description

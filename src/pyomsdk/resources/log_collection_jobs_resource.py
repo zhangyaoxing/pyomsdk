@@ -21,7 +21,7 @@ class LogCollectionJobsResource(BaseResource):
         """
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
+        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
         """
         
     
@@ -60,7 +60,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete a Log Collection Job
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-delete-one/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-delete-one/)
 ### Endpoint:
 `DELETE /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
 ### Description
@@ -83,7 +83,7 @@ When you create a log collection job, Ops Manager starts a background job to dow
         """
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique identifier of the job for which to download the logs. You can obtain the `JOB-IDs` associated with your project by using the [Get All Log Collection Jobs for One Project](/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/) endpoint.
+        r"""Unique identifier of the job for which to download the logs. You can obtain the `JOB-IDs` associated with your project by using the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/) endpoint.
         """
         
     
@@ -122,7 +122,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Download Logs from a Log Collection Job
 ### Document:
-[Download Logs](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-download-job/)
+[Download Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-download-job/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/download`
 ### Description
@@ -192,7 +192,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Log Collection Jobs for One Project
 ### Document:
-[Get All Jobs](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/)
+[Get All Jobs](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/logCollectionJobs`
 ### Description
@@ -215,7 +215,7 @@ When you create a log collection job, Ops Manager starts a background job to dow
         """
         
         job_id: str = Field(default="Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the Get All Log Collection Jobs for One Project endpoint to obtain the IDs associated with your project.", serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
+        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
         """
         
     
@@ -271,7 +271,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get One Log Collection Job
 ### Document:
-[Get Job](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-one/)
+[Get Job](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-get-one/)
 ### Endpoint:
 `GET /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
 ### Description
@@ -294,7 +294,7 @@ When you create a log collection job, Ops Manager starts a background job to dow
         """
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
+        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
         """
         
     
@@ -333,7 +333,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Retry a Failed Log Collection Job
 ### Document:
-[Retry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-retry/)
+[Retry](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-retry/)
 ### Endpoint:
 `PUT /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}/retry`
 ### Description
@@ -414,10 +414,10 @@ For endpoints that return one result, the response body includes:
 
 - For the `CLUSTER` `resourceType`, the value is the name of the deployment or the `CLUSTER-ID`. For example, `my-deployment`.
 
-  - To obtain this value, use the [/groups/{GROUP-ID}/clusters/{CLUSTER-ID}](/docs/ops-manager/v8.0/reference/api/clusters/clusters-get-one/) endpoint.
+  - To obtain this value, use the [/groups/{GROUP-ID}/clusters/{CLUSTER-ID}](/docs/ops-manager/current/reference/api/clusters/clusters-get-one/) endpoint.
 - For the `PROCESS` `resourceType`, the value is the name of the replica set followed by the node name. For example, `Cluster0-shard-1-node-0`.
 
-  - To obtain this value, use the [/groups/{PROJECT-ID}/automationConfig](/docs/ops-manager/v8.0/reference/api/automation-config/get-automation-config/) endpoint. The value is located in the `processes.name` parameter.
+  - To obtain this value, use the [/groups/{PROJECT-ID}/automationConfig](/docs/ops-manager/current/reference/api/automation-config/get-automation-config/) endpoint. The value is located in the `processes.name` parameter.
 
   To obtain the name of the replica set, the list of nodes, and other information, access the cluster and run [`rs.conf()._id`](https://www.mongodb.com/docs/manual/reference/method/rs.conf/#mongodb-method-rs.conf) and [`rs.status()`.](https://www.mongodb.com/docs/manual/reference/method/rs.status/#mongodb-method-rs.status)
 - For the `REPLICASET` `resourceType`, the value is the name of the replica set in the cluster followed by the shard name. For example, `test-123abc-shard-0`.
@@ -452,7 +452,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create a Log Collection Job
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-submit/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-submit/)
 ### Endpoint:
 `POST /groups/{GROUP-ID}/logCollectionJobs`
 ### Description
@@ -475,7 +475,7 @@ Use this endpoint to create a new log collection job. When you create a log coll
         """
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
+        r"""Unique 24-hexadecimal digit string that identifies the log collection job to retry. Use the [Get All Log Collection Jobs for One Project](/docs/ops-manager/current/reference/api/log-collections/log-collections-get-all/) endpoint to obtain the IDs associated with your project.
         """
         
     
@@ -525,7 +525,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Extend a Log Collection Job
 ### Document:
-[Extend](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/log-collections/log-collections-update-one/)
+[Extend](https://www.mongodb.com/docs/ops-manager/current/reference/api/log-collections/log-collections-update-one/)
 ### Endpoint:
 `PATCH /groups/{GROUP-ID}/logCollectionJobs/{JOB-ID}`
 ### Description

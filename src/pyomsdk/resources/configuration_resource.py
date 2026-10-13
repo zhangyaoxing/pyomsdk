@@ -56,7 +56,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get the Audit Log Rotate Configuration
 ### Document:
-[Get the Audit Log Rotate Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-audit-log-rotate-config/)
+[Get the Audit Log Rotate Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-audit-log-rotate-config/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig`
 ### Description
@@ -114,11 +114,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get the Automation Configuration (Redacted Secrets)
 ### Document:
-[Get the Automation Configuration (No Secrets)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-automation-config-no-secrets/)
+[Get the Automation Configuration (No Secrets)](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-automation-config-no-secrets/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig/noSecrets`
 ### Description
-A project's [automation configuration](/docs/ops-manager/v8.0/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
         """
         return self._request(
             "GET",
@@ -172,11 +172,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get the Automation Configuration
 ### Document:
-[Get the Automation Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-automation-config/)
+[Get the Automation Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-automation-config/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig`
 ### Description
-A project's [automation configuration](/docs/ops-manager/v8.0/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
         """
         return self._request(
             "GET",
@@ -230,7 +230,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Backup Configuration Settings
 ### Document:
-[Get Backup Configuration Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-backup-log-attributes/)
+[Get Backup Configuration Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-backup-log-attributes/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig/backupAgentConfig`
 ### Description
@@ -288,7 +288,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Monitoring Configuration Settings
 ### Document:
-[Get Monitoring Configuration Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-monitoring-log-attributes/)
+[Get Monitoring Configuration Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-monitoring-log-attributes/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig`
 ### Description
@@ -346,7 +346,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get the System Log Rotate Configuration
 ### Document:
-[Get the System Log Rotate Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/get-system-log-rotate-config/)
+[Get the System Log Rotate Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/get-system-log-rotate-config/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig`
 ### Description
@@ -425,7 +425,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update Agent Versions
 ### Document:
-[Update Agent Versions](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-agent-versions/)
+[Update Agent Versions](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-agent-versions/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/automationConfig/updateAgentVersions`
 ### Description
@@ -514,7 +514,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update the Audit Log Rotate Config
 ### Document:
-[Update the Audit Log Rotate Config](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-audit-log-rotate-config/)
+[Update the Audit Log Rotate Config](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-audit-log-rotate-config/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig/auditLogRotateConfig`
 ### Description
@@ -578,11 +578,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update Automation Config Without Sensitive Fields
 ### Document:
-[Update the Automation Configuration (No Secrets)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-automation-config-no-secrets/)
+[Update the Automation Configuration (No Secrets)](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-automation-config-no-secrets/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig/noSecrets`
 ### Description
-A project's [automation configuration](/docs/ops-manager/v8.0/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
         """
         return self._request(
             "PUT",
@@ -642,11 +642,11 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update the Automation Configuration
 ### Document:
-[Update the Automation Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-automation-config/)
+[Update the Automation Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-automation-config/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig`
 ### Description
-A project's [automation configuration](/docs/ops-manager/v8.0/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
+A project's [automation configuration](/docs/ops-manager/current/reference/cluster-configuration/#std-label-automation-configuration-ref) determines the goal state of its MongoDB processes and agents. The MongoDB Agent builds the deployment according to the goals specified.
         """
         return self._request(
             "PUT",
@@ -693,23 +693,23 @@ For endpoints that return one result, the response body includes:
         
         
         config_overrides: Optional[dict] = Field(default=None, serialization_alias="configOverrides")
-        r"""List of MongoDB Agent settings that you need to change because your backup settings differ from those of the [MongoDB Agent](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure this option when upgrading from legacy agents to the MongoDB Agent.
+        r"""List of MongoDB Agent settings that you need to change because your backup settings differ from those of the [MongoDB Agent](/docs/ops-manager/current/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure this option when upgrading from legacy agents to the MongoDB Agent.
 
-- [`mmsGroupId`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsGroupId): string
-- [`mmsApiKey`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsApiKey): string
-- [`mothership`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothership): string
-- [`mothershipResponseHeaderTimeout`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothershipResponseHeaderTimeout): integer
-- [`https`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.https): boolean
-- [`httpProxy`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.httpProxy): string
-- [`krb5Principal`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Principal): string
-- [`krb5Keytab`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Keytab): string
-- [`krb5ConfigLocation`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5ConfigLocation): string
-- [`gsapiServiceName`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.gsapiServiceName): string
-- [`sslClientCertificate`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificate): string
-- [`sslClientCertificatePassword`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificatePassword): string
-- [`sslTrustedServerCertificates`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedServerCertificates): string
-- [`sslRequireValidServerCertificates`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslRequireValidServerCertificates): boolean
-- [`sslTrustedMMSBackupServerCertificate`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedMMSBackupServerCertificate): string
+- [`mmsGroupId`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsGroupId): string
+- [`mmsApiKey`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mmsApiKey): string
+- [`mothership`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothership): string
+- [`mothershipResponseHeaderTimeout`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.mothershipResponseHeaderTimeout): integer
+- [`https`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.https): boolean
+- [`httpProxy`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.httpProxy): string
+- [`krb5Principal`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Principal): string
+- [`krb5Keytab`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5Keytab): string
+- [`krb5ConfigLocation`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.krb5ConfigLocation): string
+- [`gsapiServiceName`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.gsapiServiceName): string
+- [`sslClientCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificate): string
+- [`sslClientCertificatePassword`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslClientCertificatePassword): string
+- [`sslTrustedServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedServerCertificates): string
+- [`sslRequireValidServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslRequireValidServerCertificates): boolean
+- [`sslTrustedMMSBackupServerCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-bsetting-bsetting.sslTrustedMMSBackupServerCertificate): string
         """
         
         
@@ -756,7 +756,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         r"""
 ## Update Backup Configuration Settings
 ### Document:
-[Update Backup Configuration Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-backup-log-attributes/)
+[Update Backup Configuration Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-backup-log-attributes/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig/backupAgentConfig`
 ### Description
@@ -807,21 +807,21 @@ For endpoints that return one result, the response body includes:
         
         
         config_overrides: Optional[dict] = Field(default=None, serialization_alias="configOverrides")
-        r"""List of MongoDB Agent settings that you need to change because your monitoring settings differ from those of the [MongoDB Agent](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure this option when upgrading from legacy agents to the MongoDB Agent.
+        r"""List of MongoDB Agent settings that you need to change because your monitoring settings differ from those of the [MongoDB Agent](/docs/ops-manager/current/reference/mongodb-agent-settings/#std-label-mongodb-agent-settings-main). Configure this option when upgrading from legacy agents to the MongoDB Agent.
 
-- [`mmsGroupId`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsGroupId): string
-- [`mmsApiKey`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsApiKey): string
-- [`mmsBaseUrl`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsBaseUrl): string
-- [`httpProxy`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.httpProxy): string
-- [`krb5Principal`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Principal): string
-- [`krb5Keytab`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Keytab): string
-- [`krb5ConfigLocation`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5ConfigLocation): string
-- [`gssapiServiceName`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.gssapiServiceName): string
-- [`useSslForAllConnections`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.useSslForAllConnections): boolean
-- [`sslClientCertificate`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificate): string
-- [`sslClientCertificatePassword`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificatePassword): string
-- [`sslTrustedServerCertificates`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslTrustedServerCertificates): string
-- [`sslRequireValidServerCertificates`](/docs/ops-manager/v8.0/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslRequireValidServerCertificates): boolean
+- [`mmsGroupId`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsGroupId): string
+- [`mmsApiKey`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsApiKey): string
+- [`mmsBaseUrl`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.mmsBaseUrl): string
+- [`httpProxy`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.httpProxy): string
+- [`krb5Principal`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Principal): string
+- [`krb5Keytab`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5Keytab): string
+- [`krb5ConfigLocation`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.krb5ConfigLocation): string
+- [`gssapiServiceName`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.gssapiServiceName): string
+- [`useSslForAllConnections`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.useSslForAllConnections): boolean
+- [`sslClientCertificate`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificate): string
+- [`sslClientCertificatePassword`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslClientCertificatePassword): string
+- [`sslTrustedServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslTrustedServerCertificates): string
+- [`sslRequireValidServerCertificates`](/docs/ops-manager/current/reference/mongodb-agent-settings/#mongodb-msetting-msetting.sslRequireValidServerCertificates): boolean
 - `enableMunin`: boolean
         """
         
@@ -869,7 +869,7 @@ If you use the API to enable authentication for the MongoDB Agent, set this para
         r"""
 ## Update Monitoring Configuration Settings
 ### Document:
-[Update Monitoring Configuration Settings](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-monitoring-log-attributes/)
+[Update Monitoring Configuration Settings](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-monitoring-log-attributes/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig/monitoringAgentConfig`
 ### Description
@@ -958,7 +958,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update the System Log Rotate Config
 ### Document:
-[Update the System Log Rotate Config](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/automation-config/update-system-log-rotate-config/)
+[Update the System Log Rotate Config](https://www.mongodb.com/docs/ops-manager/current/reference/api/automation-config/update-system-log-rotate-config/)
 ### Endpoint:
 `PUT /groups/{PROJECT-ID}/automationConfig/systemLogRotateConfig`
 ### Description

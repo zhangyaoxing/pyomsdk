@@ -43,9 +43,9 @@ For endpoints that return a list of results, the `results` object is an envelope
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
         r"""Return only events of the specified types.
 
-To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/v8.0/reference/alert-types/)
+To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -94,7 +94,7 @@ For a complete list of events included in the Ops Manager audit log, see [Audit 
         r"""
 ## Get All Organization Events
 ### Document:
-[Get All (Organization)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-all-events-for-org/)
+[Get All (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-org/)
 ### Endpoint:
 `GET /orgs/{orgId}/events`
 ### Description
@@ -139,9 +139,9 @@ For endpoints that return a list of results, the `results` object is an envelope
         event_type: Optional[str] = Field(default=None, serialization_alias="eventType")
         r"""Return only events of the specified types.
 
-To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/v8.0/reference/alert-types/)
+To review the types of events that generate alerts, see [Alert Types.](/docs/ops-manager/current/reference/alert-types/)
 
-For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/v8.0/reference/audit-events/)
+For a complete list of events included in the Ops Manager audit log, see [Audit Events.](/docs/ops-manager/current/reference/audit-events/)
         """
         
         
@@ -190,7 +190,7 @@ For a complete list of events included in the Ops Manager audit log, see [Audit 
         r"""
 ## Get All Project Events
 ### Document:
-[Get All (Project)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-all-events-for-project/)
+[Get All (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-all-events-for-project/)
 ### Endpoint:
 `GET /groups/{groupId}/events`
 ### Description
@@ -223,7 +223,7 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
         
         
@@ -252,7 +252,7 @@ No description.
         r"""
 ## Get One Organization Event
 ### Document:
-[Get One (Organization)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-one-event-for-org/)
+[Get One (Organization)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-org/)
 ### Endpoint:
 `GET /orgs/{orgId}/events/{eventId}`
 ### Description
@@ -285,7 +285,7 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
         
         
@@ -314,7 +314,7 @@ No description.
         r"""
 ## Get One Project Event
 ### Document:
-[Get One (Project)](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/events/get-one-event-for-project/)
+[Get One (Project)](https://www.mongodb.com/docs/ops-manager/current/reference/api/events/get-one-event-for-project/)
 ### Endpoint:
 `GET /groups/{groupId}/events/{eventId}`
 ### Description

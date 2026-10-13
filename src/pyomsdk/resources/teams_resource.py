@@ -17,11 +17,11 @@ class TeamsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) you want to associate the team with.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) you want to associate the team with.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The name of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) you want to add users to.
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to add users to.
         """
         
     
@@ -71,7 +71,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Add Users to Team
 ### Document:
-[Add Users](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-add-user/)
+[Add Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-add-user/)
 ### Endpoint:
 `POST /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
 ### Description
@@ -90,7 +90,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) with which you want to associate the team.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) with which you want to associate the team.
         """
         
     
@@ -122,7 +122,7 @@ For endpoints that return one result, the response body includes:
         
         
         name: Optional[str] = Field(default=None, serialization_alias="name")
-        r"""The name of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) you want to create.
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to create.
         """
         
     
@@ -140,7 +140,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create a Team
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-create-one/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-create-one/)
 ### Endpoint:
 `POST /orgs/{ORG-ID}/teams`
 ### Description
@@ -159,11 +159,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) associated with the team.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) associated with the team.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) you want to delete.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) you want to delete.
         """
         
     
@@ -202,7 +202,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Team
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-delete-one/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-delete-one/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}`
 ### Description
@@ -221,11 +221,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/tutorial/manage-organizations/) associated with the team.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/tutorial/manage-organizations/) associated with the team.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/tutorial/manage-users/#std-label-manage-teams) whose user membership you want to retrieve.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams) whose user membership you want to retrieve.
         """
         
     
@@ -271,7 +271,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Users Assigned to a Team
 ### Document:
-[Get All Team Users](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-get-all-users/)
+[Get All Team Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all-users/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/teams/{TEAM-ID}/users`
 ### Description
@@ -290,7 +290,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose teams you want to retrieve.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose teams you want to retrieve.
         """
         
     
@@ -336,7 +336,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Teams
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-get-all/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-all/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/teams`
 ### Description
@@ -355,11 +355,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) associated with the team.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) associated with the team.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) whose information you want to retrieve.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) whose information you want to retrieve.
         """
         
     
@@ -398,7 +398,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Team by ID
 ### Document:
-[Get One by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-get-one-by-id/)
+[Get One by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-id/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/teams/{TEAM-ID}`
 ### Description
@@ -417,11 +417,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) associated with the team.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) associated with the team.
         """
         
         team_name: str = Field(serialization_alias="TEAM-NAME")
-        r"""The name of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) whose information you want to retrieve.
+        r"""The name of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) whose information you want to retrieve.
         """
         
     
@@ -460,7 +460,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Team by Name
 ### Document:
-[Get One by Name](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-get-one-by-name/)
+[Get One by Name](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-get-one-by-name/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/teams/byName/{TEAM-NAME}`
 ### Description
@@ -479,15 +479,15 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) that contains the team from which you want to remove a MongoDB user.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) that contains the team from which you want to remove a MongoDB user.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/organizations-projects/#std-label-teams) from which you want to remove a MongoDB user.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/organizations-projects/#std-label-teams) from which you want to remove a MongoDB user.
         """
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""The unique identifier of the MongoDB [user](/docs/ops-manager/v8.0/tutorial/manage-users/#std-label-add-users) that you want to remove from the specified team.
+        r"""The unique identifier of the MongoDB [user](/docs/ops-manager/current/tutorial/manage-users/#std-label-add-users) that you want to remove from the specified team.
         """
         
     
@@ -526,7 +526,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Remove a User from a Team
 ### Document:
-[Remove User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-remove-user/)
+[Remove User](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-remove-user/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}/teams/{TEAM-ID}/users/{USER-ID}`
 ### Description
@@ -545,11 +545,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/tutorial/manage-organizations/) associated with the team that you want to rename.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/tutorial/manage-organizations/) associated with the team that you want to rename.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""The unique identifier of the [team](/docs/ops-manager/v8.0/tutorial/manage-users/) that you want to rename.
+        r"""The unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/) that you want to rename.
         """
         
     
@@ -599,7 +599,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Rename a Team
 ### Document:
-[Rename](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-rename-one/)
+[Rename](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-rename-one/)
 ### Endpoint:
 `PATCH /orgs/{ORG-ID}/teams/{TEAM-ID}`
 ### Description
@@ -618,11 +618,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         project_id: str = Field(serialization_alias="PROJECT-ID")
-        r"""Unique identifier of the [project](/docs/ops-manager/v8.0/tutorial/manage-projects/) associated with this team.
+        r"""Unique identifier of the [project](/docs/ops-manager/current/tutorial/manage-projects/) associated with this team.
         """
         
         team_id: str = Field(serialization_alias="TEAM-ID")
-        r"""Unique identifier of the [team](/docs/ops-manager/v8.0/tutorial/manage-users/#std-label-manage-teams) for which you want to update roles.
+        r"""Unique identifier of the [team](/docs/ops-manager/current/tutorial/manage-users/#std-label-manage-teams) for which you want to update roles.
         """
         
     
@@ -632,7 +632,7 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        r"""Flag that specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Flag that specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
 
 Defaults to `false`.
         """
@@ -650,8 +650,8 @@ Defaults to `false`.
         model_config = ConfigDict(populate_by_name=True)
         
         
-        role_names: list[Any] = Field(serialization_alias="roleNames")
-        r"""[Project roles](/docs/ops-manager/v8.0/reference/user-roles/) you want to assign the given team.
+        role_names: list[GroupRole] = Field(serialization_alias="roleNames")
+        r"""[Project roles](/docs/ops-manager/current/reference/user-roles/) you want to assign the given team.
         """
         
     
@@ -669,7 +669,7 @@ Defaults to `false`.
         r"""
 ## Update Team Roles in One Project
 ### Document:
-[Update Roles](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/teams/teams-update-roles/)
+[Update Roles](https://www.mongodb.com/docs/ops-manager/current/reference/api/teams/teams-update-roles/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/teams/{TEAM-ID}`
 ### Description

@@ -81,7 +81,7 @@ Ops Manager displays the comment next to the message that the alert has been ack
         r"""
 ## Acknowledge One Alert
 ### Document:
-[Acknowledge One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alerts-acknowledge-alert/)
+[Acknowledge One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-acknowledge-alert/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
 ### Description
@@ -143,7 +143,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Alert
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alerts-get-alert/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-alert/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/alerts/{ALERT-ID}`
 ### Description
@@ -195,14 +195,14 @@ For endpoints that return a list of results, the `content` object is an envelope
         """
         
         
-        status: Optional[str] = Field(default=None, serialization_alias="status")
+        status: Optional[AlertStatus] = Field(default=None, serialization_alias="status")
         r"""Specify a status to return only those alerts with the specified status. Omit to return all alerts.
 
 Ops Manager accepts the following values:
 
 - `TRACKING`
 
-  To return alerts with `TRACKING` status. If an alert's [configuration](/docs/ops-manager/v8.0/tutorial/manage-alert-configurations/) specifies a notification delay, Ops Manager assigns the alert the `TRACKING` status until the delay period ends. After the delay, Ops Manager sets the status to `OPEN`, if the condition persists.
+  To return alerts with `TRACKING` status. If an alert's [configuration](/docs/ops-manager/current/tutorial/manage-alert-configurations/) specifies a notification delay, Ops Manager assigns the alert the `TRACKING` status until the delay period ends. After the delay, Ops Manager sets the status to `OPEN`, if the condition persists.
 
   If an alert's configuration has multiple notifications, each with its own notification delay, Ops Manager uses the smallest delay value to determine when to move the alert from `TRACKING` to `OPEN`.
 - `OPEN`To return all open alerts.
@@ -223,7 +223,7 @@ Ops Manager accepts the following values:
         r"""
 ## Get All Alerts
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/alerts-get-all-alerts/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/alerts-get-all-alerts/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/alerts`
 ### Description

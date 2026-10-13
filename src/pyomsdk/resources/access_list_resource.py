@@ -17,7 +17,7 @@ class AccessListResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/)
+        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
         
     
@@ -74,7 +74,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Add Entries to an Access List
 ### Document:
-[Add Entries](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/access-list-add-entries/)
+[Add Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-add-entries/)
 ### Endpoint:
 `POST /users/{USER-ID}/accessList`
 ### Description
@@ -97,7 +97,7 @@ No description.
         """
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/)
+        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
         
     
@@ -136,7 +136,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Entry from One Access List
 ### Document:
-[Delete Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/access-list-delete-entry/)
+[Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-delete-entry/)
 ### Endpoint:
 `DELETE /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
 ### Description
@@ -155,7 +155,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* User Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/)
+        r"""*(Required.)* User Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
         
     
@@ -201,7 +201,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get Access List for the Current User
 ### Document:
-[Get for Current User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/access-list-get-for-current-user/)
+[Get for Current User](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-current-user/)
 ### Endpoint:
 `GET /users/{USER-ID}/accessList`
 ### Description
@@ -224,7 +224,7 @@ No description.
         """
         
         user_id: str = Field(serialization_alias="USER-ID")
-        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/v8.0/reference/api/groups/get-all-users-in-one-group/)
+        r"""*(Required.)* Unique identifier of the current user. To retrieve the ID of the current user, see [Get All Users in One Project.](/docs/ops-manager/current/reference/api/groups/get-all-users-in-one-group/)
         """
         
     
@@ -263,7 +263,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Access List for an IP Address
 ### Document:
-[Get for IP Address](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/access-list-get-for-ip-address/)
+[Get for IP Address](https://www.mongodb.com/docs/ops-manager/current/reference/api/access-list-get-for-ip-address/)
 ### Endpoint:
 `GET /users/{USER-ID}/accessList/{ACCESS-LIST-ENTRY}`
 ### Description

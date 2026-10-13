@@ -85,7 +85,7 @@ For example, to retrieve a diagnostic archive with data for the last 10 minutes,
         r"""
 ## Get One Project Diagnostic Archive
 ### Document:
-[Get Diagnostic Archive](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/diagnostics/get-project-diagnostic-archive/)
+[Get Diagnostic Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/diagnostics/get-project-diagnostic-archive/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/diagnostics`
 ### Description
@@ -144,7 +144,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         """
         
         
-        server_type: str = Field(serialization_alias="serverType")
+        server_type: ServerTypeName = Field(serialization_alias="serverType")
         r"""Server Type of the physical host. You can set this to one of the following values:
 
 - `DEV_SERVER`
@@ -152,7 +152,7 @@ For endpoints that return a list of results, the `results` object is an envelope
 - `PRODUCTION_SERVER`
 - `RAM_POOL`
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
         """
         
         
@@ -185,7 +185,7 @@ To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mo
         r"""
 ## Create One Physical Host
 ### Document:
-[Create Physical Host](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/create-one-physical-host/)
+[Create Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-physical-host/)
 ### Endpoint:
 `POST /usage/groups`
 ### Description
@@ -253,7 +253,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Global Usage Report Archive
 ### Document:
-[Get Global Usage Report Archive](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/create-one-report/)
+[Get Global Usage Report Archive](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/create-one-report/)
 ### Endpoint:
 `GET /usage/report`
 ### Description
@@ -313,11 +313,11 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Generate Daily Usage Snapshot
 ### Document:
-[Generate Usage Snapshot](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/generate-daily-usage-snapshot/)
+[Generate Usage Snapshot](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/generate-daily-usage-snapshot/)
 ### Endpoint:
 `POST /usage/dailyCapture`
 ### Description
-If [`MongoDB Usage UI`](/docs/ops-manager/v8.0/reference/config/ui-settings/#mongodb-setting-MongoDB-Usage-UI) is set to On, you can trigger this endpoint which tells Ops Manager to:
+If [`MongoDB Usage UI`](/docs/ops-manager/current/reference/config/ui-settings/#mongodb-setting-MongoDB-Usage-UI) is set to On, you can trigger this endpoint which tells Ops Manager to:
         """
         return self._request(
             "POST",
@@ -373,7 +373,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Retrieve All Physical Hosts
 ### Document:
-[Retrieve All Physical Hosts](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/get-all-physical-hosts/)
+[Retrieve All Physical Hosts](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-all-physical-hosts/)
 ### Endpoint:
 `GET /usage/groups`
 ### Description
@@ -431,7 +431,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Default Server Type For One Organization
 ### Document:
-[Get Server Type in One Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/get-default-server-type-for-one-organization/)
+[Get Server Type in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-organization/)
 ### Endpoint:
 `GET /usage/organizations/{orgId}/defaultServerType`
 ### Description
@@ -489,7 +489,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Default Server Type For One Project
 ### Document:
-[Get Default Server Type](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/get-default-server-type-for-one-project/)
+[Get Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-default-server-type-for-one-project/)
 ### Endpoint:
 `GET /usage/groups/{groupId}/defaultServerType`
 ### Description
@@ -559,7 +559,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Retrieve One Physical Host
 ### Document:
-[Retreive One Physical Host](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/get-one-physical-host-by-host-id/)
+[Retreive One Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/get-one-physical-host-by-host-id/)
 ### Endpoint:
 `GET /usage/groups/{physicalHostId}`
 ### Description
@@ -637,7 +637,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## List All Host Assignments In One Organization
 ### Document:
-[List Host Assignments in One Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/list-all-host-assignments-in-one-organization/)
+[List Host Assignments in One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-organization/)
 ### Endpoint:
 `GET /usage/organizations/{orgId}/hosts`
 ### Description
@@ -715,7 +715,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## List All Host Assignments In One Project
 ### Document:
-[List Host Assignments in One Project](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/list-all-host-assignments-in-one-project/)
+[List Host Assignments in One Project](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments-in-one-project/)
 ### Endpoint:
 `GET /usage/groups/{groupId}/hosts`
 ### Description
@@ -783,7 +783,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## List All Host Assignments
 ### Document:
-[List Host Assignments](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/list-all-host-assignments/)
+[List Host Assignments](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/list-all-host-assignments/)
 ### Endpoint:
 `GET /usage/assignments`
 ### Description
@@ -853,7 +853,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Remove One Physical Host
 ### Document:
-[Remove Physical Host](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/remove-one-physical-host/)
+[Remove Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/remove-one-physical-host/)
 ### Endpoint:
 `DELETE /usage/groups/{physicalHostId}`
 ### Description
@@ -916,7 +916,7 @@ You can set this to one of the following values:
 - **Production Server**
 - **Ram Pool**
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
             name: ServerTypeName = Field(serialization_alias="name")
@@ -929,7 +929,7 @@ You can set this to one of the following values:
 - `PRODUCTION_SERVER`
 - `RAM_POOL`
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
         
@@ -952,7 +952,7 @@ To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mo
         r"""
 ## Update Default Server Type For One Organization
 ### Document:
-[Update Server Type for One Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/update-default-server-type-for-one-organization/)
+[Update Server Type for One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-organization/)
 ### Endpoint:
 `PUT /usage/organizations/{orgId}/defaultServerType`
 ### Description
@@ -1015,7 +1015,7 @@ You can set this to one of the following values:
 - **Production Server**
 - **Ram Pool**
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
             name: ServerTypeName = Field(serialization_alias="name")
@@ -1028,7 +1028,7 @@ You can set this to one of the following values:
 - `PRODUCTION_SERVER`
 - `RAM_POOL`
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
         
@@ -1051,7 +1051,7 @@ To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mo
         r"""
 ## Update Default Server Type For One Project
 ### Document:
-[Update Default Server Type](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/update-default-server-type-for-one-project/)
+[Update Default Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-default-server-type-for-one-project/)
 ### Endpoint:
 `PUT /usage/groups/{groupId}/defaultServerType`
 ### Description
@@ -1118,7 +1118,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         """
         
         
-        server_type: str = Field(serialization_alias="serverType")
+        server_type: ServerTypeName = Field(serialization_alias="serverType")
         r"""Server Type of the physical host. You can set this to one of the following values:
 
 - `DEV_SERVER`
@@ -1126,7 +1126,7 @@ For endpoints that return a list of results, the `results` object is an envelope
 - `PRODUCTION_SERVER`
 - `RAM_POOL`
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
         """
         
         
@@ -1161,7 +1161,7 @@ To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mo
         r"""
 ## Update One Physical Host
 ### Document:
-[Update Physical Host](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/update-one-physical-host/)
+[Update Physical Host](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-one-physical-host/)
 ### Endpoint:
 `PUT /usage/groups/{physicalHostId}`
 ### Description
@@ -1224,7 +1224,7 @@ You can set this to one of the following values:
 - **Production Server**
 - **Ram Pool**
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
             name: ServerTypeName = Field(serialization_alias="name")
@@ -1237,7 +1237,7 @@ You can set this to one of the following values:
 - `PRODUCTION_SERVER`
 - `RAM_POOL`
 
-To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
+To learn more, see [MongoDB Usage Page.](/docs/ops-manager/current/admin/general/mongodb-usage-page/#std-label-admin-console-general-mongodb-usage)
             """
             
         
@@ -1260,7 +1260,7 @@ To learn more, see [MongoDB Usage Page.](/docs/ops-manager/v8.0/admin/general/mo
         r"""
 ## Update Server Type for One Host
 ### Document:
-[Update Server Type](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/usage/update-server-type-for-one-host/)
+[Update Server Type](https://www.mongodb.com/docs/ops-manager/current/reference/api/usage/update-server-type-for-one-host/)
 ### Endpoint:
 `PUT /usage/hosts/{hostId}`
 ### Description

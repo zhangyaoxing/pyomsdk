@@ -83,13 +83,13 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         """
         
         
-        disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        r"""Flag that indicates whether to use the [HTTP proxy](/docs/ops-manager/v8.0/tutorial/use-with-http-proxy/) when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        disable_proxy_s3: bool = Field(serialization_alias="disableProxyS3")
+        r"""When connecting to S3-compatible storage, indicates whether to use the [HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/). You must include this field in every request to create or update an S3-compatible storage oplog store, even if you haven't configured Ops Manager to use the HTTP proxy.
         """
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
@@ -99,7 +99,7 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which S3 oplog stores.
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which S3 oplog stores.
 
 Setting these tags limits which backup jobs this S3-compatible storage oplog store can process. If omitted, this S3-compatible storage oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -207,7 +207,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Create One S3 Oplog Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/s3configs/create-one-s3-oplog-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/s3configs/create-one-s3-oplog-configuration/)
 ### Endpoint:
 `POST /oplog/s3Configs`
 ### Description
@@ -265,7 +265,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One S3-Compatible Oplog Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/s3configs/delete-one-s3-oplog-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/s3configs/delete-one-s3-oplog-configuration/)
 ### Endpoint:
 `DELETE /oplog/s3Configs/{S3-OPLOG-CONFIG-ID}`
 ### Description
@@ -325,7 +325,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All S3 Oplog Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/s3configs/get-all-s3-oplog-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/s3configs/get-all-s3-oplog-configurations/)
 ### Endpoint:
 `GET /oplog/s3Configs`
 ### Description
@@ -383,7 +383,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One S3 Oplog Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/s3configs/get-one-s3-oplog-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/s3configs/get-one-s3-oplog-configuration-by-id/)
 ### Endpoint:
 `GET /oplog/s3Configs/{S3-OPLOG-CONFIG-ID}`
 ### Description
@@ -476,18 +476,18 @@ If `"s3AuthMethod" : "IAM_ROLE"`, then you don't need to include **awsSecretKey*
         """
         
         
-        disable_proxy_s3: Optional[bool] = Field(default=None, serialization_alias="disableProxyS3")
-        r"""Flag that indicates whether to use the [HTTP proxy](/docs/ops-manager/v8.0/tutorial/use-with-http-proxy/) when connecting to S3-compatible storage. You don't need to set this value unless you configured Ops Manager to use the HTTP proxy.
+        disable_proxy_s3: bool = Field(serialization_alias="disableProxyS3")
+        r"""When connecting to S3-compatible storage, indicates whether to use the [HTTP proxy](/docs/ops-manager/current/tutorial/use-with-http-proxy/). You must include this field in every request to create or update an S3-compatible storage oplog store, even if you haven't configured Ops Manager to use the HTTP proxy.
         """
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""Flag that indicates whether the username and password for this S3-compatible storage oplog store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which S3 oplog stores.
+        r"""Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which S3 oplog stores.
 
 Setting these tags limits which backup jobs this S3-compatible storage oplog store can process. If omitted, this S3-compatible storage oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
@@ -601,7 +601,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Update One S3 Oplog Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/s3configs/update-one-s3-oplog-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/s3configs/update-one-s3-oplog-configuration/)
 ### Endpoint:
 `PUT /oplog/s3Configs/{S3-OPLOG-CONFIG-ID}`
 ### Description

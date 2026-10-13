@@ -21,7 +21,7 @@ class OrganizationAccessListsResource(BaseResource):
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) to which the target API Key belongs. Use the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to which the target API Key belongs. Use the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -88,7 +88,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Create Access List Entries for One Organization API Key
 ### Document:
-[Create Entries](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/create-org-api-key-access-list/)
+[Create Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/create-org-api-key-access-list/)
 ### Endpoint:
 `POST /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
 ### Description
@@ -111,11 +111,11 @@ No description.
         """
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        r"""Unique identifier for the API key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) to which the target API key belongs. Request the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to which the target API key belongs. Request the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -166,7 +166,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Delete One Access List Entry for an API Key
 ### Document:
-[Delete Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/delete-one-org-api-key-access-list/)
+[Delete Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/delete-one-org-api-key-access-list/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
 ### Description
@@ -185,11 +185,11 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API Key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        r"""Unique identifier for the API Key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) to which the target API Key belongs. Request the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to which the target API Key belongs. Request the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -240,7 +240,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get All Access List Entries for One Organization API Key
 ### Document:
-[Get All Entries](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-key-access-list/)
+[Get All Entries](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList`
 ### Description
@@ -263,11 +263,11 @@ No description.
         """
         
         api_key_id: str = Field(serialization_alias="API-KEY-ID")
-        r"""Unique identifier for the API Key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/v8.0/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
+        r"""Unique identifier for the API Key for which you want to retrieve access list entries. Request the [/orgs/{ORG-ID}/apiKeys](/docs/ops-manager/current/reference/api/api-keys/org/get-all-org-api-key-access-list/) endpoint to retrieve all API keys for the specified organization to which the authenticated user has access.
         """
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""Unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) to which the target API Key belongs. Request the [/orgs](/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
+        r"""Unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to which the target API Key belongs. Request the [/orgs](/docs/ops-manager/current/reference/api/organizations/organization-get-all/) endpoint to retrieve all organizations to which the authenticated user has access.
         """
         
     
@@ -318,7 +318,7 @@ For endpoints that return a list of results, the `results` object is an envelope
         r"""
 ## Get One Access List Entry for One Organization API Key
 ### Document:
-[Get One Entry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/api-keys/org/get-one-org-api-key-access-list/)
+[Get One Entry](https://www.mongodb.com/docs/ops-manager/current/reference/api/api-keys/org/get-one-org-api-key-access-list/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/apiKeys/{API-KEY-ID}/accessList/{ACCESS-LIST-ENTRY}`
 ### Description

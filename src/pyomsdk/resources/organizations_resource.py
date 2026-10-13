@@ -48,8 +48,8 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: list[str] = Field(serialization_alias="roles")
-        r"""Ops Manager [roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
+        roles: list[OrgRole] = Field(serialization_alias="roles")
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
         """
@@ -81,7 +81,7 @@ If the user accepts the invitation, they log in to Ops Manager with this usernam
         r"""
 ## Invite One User to an Ops Manager Organization
 ### Document:
-[Invite User](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/create-one-invitation/)
+[Invite User](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/create-one-invitation/)
 ### Endpoint:
 `POST /orgs/{ORG-ID}/invites`
 ### Description
@@ -143,7 +143,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Organization Invitation
 ### Document:
-[Delete Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/delete-one-invitation/)
+[Delete Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/delete-one-invitation/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -208,7 +208,7 @@ If omitted, Ops Manager returns all pending invitations.
         r"""
 ## Get All Organization Invitations
 ### Document:
-[Get All Invitations](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/get-all-invitations/)
+[Get All Invitations](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-all-invitations/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/invites`
 ### Description
@@ -270,7 +270,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Organization Invitation
 ### Document:
-[Get One Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/get-one-invitation/)
+[Get One Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/get-one-invitation/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -324,8 +324,8 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: list[str] = Field(serialization_alias="roles")
-        r"""Ops Manager [roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
+        roles: list[OrgRole] = Field(serialization_alias="roles")
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
 
@@ -347,7 +347,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
         r"""
 ## Update One Organization Invitation by Invitation ID
 ### Document:
-[Update by Invitation ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/update-one-invitation-by-id/)
+[Update by Invitation ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation-by-id/)
 ### Endpoint:
 `PATCH /orgs/{ORG-ID}/invites/{INVITATION-ID}`
 ### Description
@@ -397,8 +397,8 @@ For endpoints that return one result, the response body includes:
         model_config = ConfigDict(populate_by_name=True)
         
         
-        roles: list[str] = Field(serialization_alias="roles")
-        r"""Ops Manager [roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
+        roles: list[OrgRole] = Field(serialization_alias="roles")
+        r"""Ops Manager [roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) to assign to the invited user.
 
 If the user accepts the invitation, Ops Manager assigns these roles to them.
 
@@ -425,7 +425,7 @@ If the user accepts the invitation, Ops Manager assigns these roles to them.
         r"""
 ## Update One Organization Invitation
 ### Document:
-[Update Invitation](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/invitations/organizations/update-one-invitation/)
+[Update Invitation](https://www.mongodb.com/docs/ops-manager/current/reference/api/invitations/organizations/update-one-invitation/)
 ### Endpoint:
 `PATCH /orgs/{ORG-ID}/invites`
 ### Description
@@ -481,7 +481,7 @@ For endpoints that return a list of results, the `content` object is an envelope
             r"""LDAP group(s) that map to associate to the `roleName`.
             """
             
-            role_name: Optional[str] = Field(default=None, serialization_alias="roleName")
+            role_name: Optional[OrgRole] = Field(default=None, serialization_alias="roleName")
             r"""Ops Manager organization role to map. Can specify from the following list:
 
 - `ORG_READ_ONLY`
@@ -495,7 +495,7 @@ You cannot specify a global role, project role, or an organization billing admin
         ldap_group_mappings: Optional[list[LdapGroupMappingsParams]] = Field(default=None, serialization_alias="ldapGroupMappings")
         r"""Requires LDAP integration for Ops Manager.
 
-Array of documents that specify the mapping between the Ops Manager [Organization Roles](/docs/ops-manager/v8.0/reference/user-roles/#std-label-organization-roles) and the [LDAP groups.](/docs/ops-manager/v8.0/tutorial/enable-ldap-authentication-for-group/)
+Array of documents that specify the mapping between the Ops Manager [Organization Roles](/docs/ops-manager/current/reference/user-roles/#std-label-organization-roles) and the [LDAP groups.](/docs/ops-manager/current/tutorial/enable-ldap-authentication-for-group/)
 
 If specifying `ldapGroupMappings`, mapping for `ORG_OWNER` role is required.
         """
@@ -518,7 +518,7 @@ If specifying `ldapGroupMappings`, mapping for `ORG_OWNER` role is required.
         r"""
 ## Create One Organization
 ### Document:
-[Create Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-create-one/)
+[Create Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-create-one/)
 ### Endpoint:
 `POST /orgs`
 ### Description
@@ -537,7 +537,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) to delete.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) to delete.
         """
         
     
@@ -576,7 +576,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Organization
 ### Document:
-[Delete Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-delete-one/)
+[Delete Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-delete-one/)
 ### Endpoint:
 `DELETE /orgs/{ORG-ID}`
 ### Description
@@ -595,7 +595,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose information you want to retrieve.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose information you want to retrieve.
         """
         
     
@@ -605,7 +605,7 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
         
         
@@ -644,7 +644,7 @@ For example, if you specify a `name` query parameter of `project1`, Ops Manager 
         r"""
 ## Get All Projects in an Organization
 ### Document:
-[Get All Projects](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all-projects/)
+[Get All Projects](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-projects/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/groups`
 ### Description
@@ -663,7 +663,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose user information you want to retrieve.
+        r"""The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose user information you want to retrieve.
         """
         
     
@@ -673,7 +673,7 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=None, serialization_alias="envelope")
-        r"""Specifies whether to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Specifies whether to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
 
 Defaults to `false`.
         """
@@ -713,7 +713,7 @@ Defaults to `false`.
         r"""
 ## Get All Organization Users
 ### Document:
-[Get All Users](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all-users/)
+[Get All Users](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all-users/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}/users`
 ### Description
@@ -734,17 +734,17 @@ No description.
         
         
         envelope: Optional[bool] = Field(default=False, serialization_alias="envelope")
-        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/v8.0/core/api/#std-label-api-envelope)
+        r"""Specifies whether or not to wrap the response in an [envelope.](/docs/ops-manager/current/core/api/#std-label-api-envelope)
         """
         
         
         include_deleted_orgs: Optional[bool] = Field(default=True, serialization_alias="includeDeletedOrgs")
         r"""Flag indicating whether the response body contains deleted organizations.
 
-Ops Manager honors the value of this parameter only if the user who makes the request has a [global role.](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles)
+Ops Manager honors the value of this parameter only if the user who makes the request has a [global role.](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles)
 
 If set to `true` or omitted, users assigned a [global
-role](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) receive deleted projects in the response. If set to `false` or if the user does not have a global owner role, the response does not contain deleted organizations.
+role](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) receive deleted projects in the response. If set to `false` or if the user does not have a global owner role, the response does not contain deleted organizations.
         """
         
         
@@ -781,7 +781,7 @@ For example, if you specify a `name` query parameter of `org1`, Ops Manager retu
         r"""
 ## Get All Organizations
 ### Document:
-[Get All Organizations](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-get-all/)
+[Get All Organizations](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-all/)
 ### Endpoint:
 `GET /orgs`
 ### Description
@@ -800,7 +800,7 @@ No description.
         model_config = ConfigDict(populate_by_name=True)
         
         org_id: str = Field(serialization_alias="ORG-ID")
-        r"""*(Required.)* The unique identifier for the [organization](/docs/ops-manager/v8.0/organizations-projects/#std-label-organizations) whose information you want to retrieve.
+        r"""*(Required.)* The unique identifier for the [organization](/docs/ops-manager/current/organizations-projects/#std-label-organizations) whose information you want to retrieve.
         """
         
     
@@ -824,10 +824,10 @@ For endpoints that return one result, the response body includes:
         include_deleted_orgs: Optional[bool] = Field(default=True, serialization_alias="includeDeletedOrgs")
         r"""Flag indicating whether the response body contains deleted organizations.
 
-Ops Manager honors the value of this parameter only if the user who makes the request has a [global role.](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles)
+Ops Manager honors the value of this parameter only if the user who makes the request has a [global role.](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles)
 
 If set to `true` or omitted, users assigned a [global
-role](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) receive deleted projects in the response. If set to `false` or if the user does not have a global owner role, the response does not contain deleted organizations.
+role](/docs/ops-manager/current/reference/user-roles/#std-label-global-roles) receive deleted projects in the response. If set to `false` or if the user does not have a global owner role, the response does not contain deleted organizations.
         """
         
         
@@ -849,7 +849,7 @@ role](/docs/ops-manager/v8.0/reference/user-roles/#std-label-global-roles) recei
         r"""
 ## Get One Organization
 ### Document:
-[Get One Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-get-one/)
+[Get One Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-get-one/)
 ### Endpoint:
 `GET /orgs/{ORG-ID}`
 ### Description
@@ -900,7 +900,7 @@ For endpoints that return one result, the response body includes:
         
         
         ldap_group_mappings: Optional[list[dict]] = Field(default=None, serialization_alias="ldapGroupMappings")
-        r"""For LDAP-backed Ops Manager, the mappings of [LDAP groups](/docs/ops-manager/v8.0/tutorial/configure-for-ldap-authentication/) to Ops Manager organization roles. Only accepted for LDAP-backed Ops Manager.
+        r"""For LDAP-backed Ops Manager, the mappings of [LDAP groups](/docs/ops-manager/current/tutorial/configure-for-ldap-authentication/) to Ops Manager organization roles. Only accepted for LDAP-backed Ops Manager.
         """
         
         
@@ -923,7 +923,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update One Organization
 ### Document:
-[Rename Organization](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/organizations/organization-rename/)
+[Rename Organization](https://www.mongodb.com/docs/ops-manager/current/reference/api/organizations/organization-rename/)
 ### Endpoint:
 `PATCH /orgs/{ORG-ID}`
 ### Description

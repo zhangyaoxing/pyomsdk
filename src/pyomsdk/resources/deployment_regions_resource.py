@@ -70,7 +70,7 @@ For endpoints that return one result, the response body includes:
         
         
         multi_region_backup_enabled: bool = Field(serialization_alias="multiRegionBackupEnabled")
-        r"""Flag that indicates whether [multi-region backup](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
+        r"""Flag that indicates whether [multi-region backup](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) is enabled for the cluster.
         """
         
     
@@ -88,7 +88,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Assign Deployment Region to One Shard
 ### Document:
-[Assign](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/assign-deployment-region/)
+[Assign](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/assign-deployment-region/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/backupConfigs/{CLUSTER-ID}`
 ### Description
@@ -139,7 +139,7 @@ For endpoints that return one result, the response body includes:
         
         
         assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
-        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
         
         
@@ -177,7 +177,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Deployment Region by ID
 ### Document:
-[Create by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/create-one-deployment-region-by-id/)
+[Create by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region-by-id/)
 ### Endpoint:
 `PUT /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
 ### Description
@@ -220,7 +220,7 @@ For endpoints that return one result, the response body includes:
         
         
         assignment_enabled: Optional[bool] = Field(default=None, serialization_alias="assignmentEnabled")
-        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/v8.0/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
+        r"""Flag indicating whether you can assign [Deployment Regions](/docs/ops-manager/current/admin/backup/deployment-regions-page/#std-label-deployment-regions-interface) to backup resources.
         """
         
         
@@ -261,7 +261,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Create One Deployment Region
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/create-one-deployment-region/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/create-one-deployment-region/)
 ### Endpoint:
 `POST /admin/backup/backupDeployments`
 ### Description
@@ -319,7 +319,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Deployment Region by ID
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/delete-one-deployment-region-by-id/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/delete-one-deployment-region-by-id/)
 ### Endpoint:
 `DELETE /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
 ### Description
@@ -374,7 +374,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Deployment Regions
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-all-deployment-regions/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-all-deployment-regions/)
 ### Endpoint:
 `GET /admin/backup/backupDeployments`
 ### Description
@@ -439,7 +439,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get One Deployment Region
 ### Document:
-[Get One](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/backup/get-one-deployment-region-by-id/)
+[Get One](https://www.mongodb.com/docs/ops-manager/current/reference/api/backup/get-one-deployment-region-by-id/)
 ### Endpoint:
 `GET /admin/backup/backupDeployments/{DEPLOYMENT-ID}`
 ### Description

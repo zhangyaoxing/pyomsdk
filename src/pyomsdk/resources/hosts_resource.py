@@ -121,7 +121,7 @@ Required if `"authMechanismName" : "MONGODB_CR"`
         r"""
 ## Begin Monitoring One Host
 ### Document:
-[Begin Monitoring](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/create-one-host/)
+[Begin Monitoring](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/create-one-host/)
 ### Endpoint:
 `POST /groups/{PROJECT-ID}/hosts`
 ### Description
@@ -183,7 +183,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Stop Monitoring One Host
 ### Document:
-[Stop Monitoring](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/delete-one-host/)
+[Stop Monitoring](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/delete-one-host/)
 ### Endpoint:
 `DELETE /groups/{PROJECT-ID}/hosts/{HOST-ID}`
 ### Description
@@ -253,7 +253,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Hosts in One Project
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/get-all-hosts-in-group/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/get-all-hosts-in-group/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts`
 ### Description
@@ -319,7 +319,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Host by Hostname and Port
 ### Document:
-[Get by Hostname & Port](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/get-one-host-by-hostname-port/)
+[Get by Hostname & Port](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/get-one-host-by-hostname-port/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/byName/{HOSTNAME}:{PORT}`
 ### Description
@@ -381,7 +381,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get Host by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/get-one-host-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/get-one-host-by-id/)
 ### Endpoint:
 `GET /groups/{PROJECT-ID}/hosts/{HOST-ID}`
 ### Description
@@ -490,7 +490,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Update Configuration of One Monitored Host
 ### Document:
-[Update Configuration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/hosts/update-one-host/)
+[Update Configuration](https://www.mongodb.com/docs/ops-manager/current/reference/api/hosts/update-one-host/)
 ### Endpoint:
 `PATCH /groups/{PROJECT-ID}/hosts/{HOST-ID}`
 ### Description

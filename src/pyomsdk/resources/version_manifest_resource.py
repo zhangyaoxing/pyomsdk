@@ -34,7 +34,7 @@ class VersionManifestResource(BaseResource):
         r"""
 ## Retrieve the Ops Manager Version Manifest
 ### Document:
-[Retrieve](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/version-manifest/get-om-version-manifest/)
+[Retrieve](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/get-om-version-manifest/)
 ### Endpoint:
 `GET /unauth/versionManifest`
 ### Description
@@ -70,7 +70,7 @@ Use this resource to retrieve the version manifest that Ops Manager is configure
         r"""
 ## Update the Version Manifest
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/version-manifest/update-version-manifest/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/version-manifest/update-version-manifest/)
 ### Endpoint:
 `PUT /versionManifest`
 ### Description

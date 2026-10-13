@@ -17,7 +17,7 @@ class ServerLogCollectionJobsResource(BaseResource):
         model_config = ConfigDict(populate_by_name=True)
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
+        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
         
     
@@ -56,7 +56,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete an Ops Manager Server Log Collection Job
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-delete-one/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-delete-one/)
 ### Endpoint:
 `DELETE /admin/omLogCollectionJobs/{JOB-ID}`
 ### Description
@@ -75,7 +75,7 @@ Use this endpoint to delete an Ops Manager server log collection job and its arc
         model_config = ConfigDict(populate_by_name=True)
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
+        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
         
     
@@ -114,7 +114,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Download Ops Manager Server Logs
 ### Document:
-[Download Logs](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-download-job/)
+[Download Logs](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-download-job/)
 ### Endpoint:
 `GET /admin/omLogCollectionJobs/{JOB-ID}:download`
 ### Description
@@ -170,7 +170,7 @@ Use this endpoint to download a `.tar.gz` archive that contains every log file t
         r"""
 ## Get All Ops Manager Server Log Collection Jobs
 ### Document:
-[Get All Jobs](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/)
+[Get All Jobs](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/)
 ### Endpoint:
 `GET /admin/omLogCollectionJobs`
 ### Description
@@ -189,7 +189,7 @@ Use this endpoint to retrieve every Ops Manager server log collection job.
         model_config = ConfigDict(populate_by_name=True)
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
+        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
         
     
@@ -226,7 +226,7 @@ Use this endpoint to retrieve every Ops Manager server log collection job.
         r"""
 ## Get One Ops Manager Server Log Collection Job
 ### Document:
-[Get One Job](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-one/)
+[Get One Job](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-one/)
 ### Endpoint:
 `GET /admin/omLogCollectionJobs/{JOB-ID}`
 ### Description
@@ -292,7 +292,7 @@ If you omit this parameter, Ops Manager returns all server types.
         r"""
 ## List Active Ops Manager Servers
 ### Document:
-[List Active Servers](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-list-servers/)
+[List Active Servers](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-list-servers/)
 ### Endpoint:
 `GET /admin/servers`
 ### Description
@@ -311,7 +311,7 @@ Returns a list of all active Ops Manager servers. Ops Manager considers a server
         model_config = ConfigDict(populate_by_name=True)
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
+        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
         
     
@@ -350,7 +350,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Retry an Ops Manager Server Log Collection Job
 ### Document:
-[Retry](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-retry/)
+[Retry](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-retry/)
 ### Endpoint:
 `POST /admin/omLogCollectionJobs/{JOB-ID}:retry`
 ### Description
@@ -402,7 +402,7 @@ For endpoints that return one result, the response body includes:
         """
         
         
-        log_types: Optional[list[LogType]] = Field(default=None, serialization_alias="logTypes")
+        log_types: Optional[list[ServerLogType]] = Field(default=None, serialization_alias="logTypes")
         r"""Log types to collect. Each element must be one of the following values:
 
 - `APPLICATION`
@@ -417,7 +417,7 @@ The `DAEMON` log type is available only when backup daemon log collection is ena
         
         
         servers: Optional[list[str]] = Field(default=None, serialization_alias="servers")
-        r"""List of `serverId` values returned by [List Active Ops Manager Servers](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-list-servers/#std-label-api-om-log-collections-list-servers). If you omit this field or pass an empty array, Ops Manager collects logs from every active server.
+        r"""List of `serverId` values returned by [List Active Ops Manager Servers](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-list-servers/#std-label-api-om-log-collections-list-servers). If you omit this field or pass an empty array, Ops Manager collects logs from every active server.
         """
         
         
@@ -438,7 +438,7 @@ The `DAEMON` log type is available only when backup daemon log collection is ena
         r"""
 ## Create an Ops Manager Server Log Collection Job
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-submit/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-submit/)
 ### Endpoint:
 `POST /admin/omLogCollectionJobs`
 ### Description
@@ -457,7 +457,7 @@ When you create an Ops Manager server log collection job, Ops Manager starts bac
         model_config = ConfigDict(populate_by_name=True)
         
         job_id: str = Field(serialization_alias="JOB-ID")
-        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
+        r"""Unique 24-hexadecimal digit string that identifies the Ops Manager server log collection job. To find a job ID, call [Get All Ops Manager Server Log Collection Jobs.](/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-get-all/#std-label-api-om-log-collections-get-all)
         """
         
     
@@ -507,7 +507,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Extend an Ops Manager Server Log Collection Job Expiration
 ### Document:
-[Extend Expiration](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/om-log-collections/om-log-collections-update-one/)
+[Extend Expiration](https://www.mongodb.com/docs/ops-manager/current/reference/api/om-log-collections/om-log-collections-update-one/)
 ### Endpoint:
 `PATCH /admin/omLogCollectionJobs/{JOB-ID}`
 ### Description

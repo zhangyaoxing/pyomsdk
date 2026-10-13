@@ -46,7 +46,7 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this oplog store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this oplog store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
@@ -56,14 +56,14 @@ For endpoints that return one result, the response body includes:
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [oplog stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [oplog stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database)
 
 Setting these tags limits which backup jobs this oplog store can process. If omitted, this oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The oplog store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The oplog store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -122,7 +122,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Create One Oplog Configuration
 ### Document:
-[Create](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/create-one-oplog-configuration/)
+[Create](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/create-one-oplog-configuration/)
 ### Endpoint:
 `POST /oplog/mongoConfigs`
 ### Description
@@ -180,7 +180,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Delete One Oplog Configuration
 ### Document:
-[Delete](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/delete-one-oplog-configuration/)
+[Delete](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/delete-one-oplog-configuration/)
 ### Endpoint:
 `DELETE /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
 ### Description
@@ -240,7 +240,7 @@ For endpoints that return a list of results, the `content` object is an envelope
         r"""
 ## Get All Oplog Configurations
 ### Document:
-[Get All](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/get-all-oplog-configurations/)
+[Get All](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/get-all-oplog-configurations/)
 ### Endpoint:
 `GET /oplog/mongoConfigs`
 ### Description
@@ -298,7 +298,7 @@ For endpoints that return one result, the response body includes:
         r"""
 ## Get One Oplog Configuration by ID
 ### Document:
-[Get by ID](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/get-one-oplog-configuration-by-id/)
+[Get by ID](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/get-one-oplog-configuration-by-id/)
 ### Endpoint:
 `GET /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
 ### Description
@@ -354,19 +354,19 @@ For endpoints that return one result, the response body includes:
         
         
         encrypted_credentials: Optional[bool] = Field(default=None, serialization_alias="encryptedCredentials")
-        r"""*Optional.* Flag indicating whether the username and password for this oplog store were encrypted using the [credentialstool.](/docs/ops-manager/v8.0/tutorial/encrypt-user-credentials/)
+        r"""*Optional.* Flag indicating whether the username and password for this oplog store were encrypted using the [credentialstool.](/docs/ops-manager/current/tutorial/encrypt-user-credentials/)
         """
         
         
         labels: Optional[list[str]] = Field(default=None, serialization_alias="labels")
-        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/v8.0/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [oplog stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database)
+        r"""*Optional.* Array of tags to manage which [backup jobs](/docs/ops-manager/current/reference/glossary/#std-term-backup-job) Ops Manager can assign to which [oplog stores.](https://www.mongodb.com/docs/ops-manager/current/reference/glossary/#std-term-Oplog-Store-Database)
 
 Setting these tags limits which backup jobs this oplog store can process. If omitted, this oplog store can only process backup jobs for projects that do not use labels to filter their jobs.
         """
         
         
         max_capacity_gb: Optional[int] = Field(default=None, serialization_alias="maxCapacityGB")
-        r"""*Optional.* The oplog store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/v8.0/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
+        r"""*Optional.* The oplog store’s expected maximum available capacity for use in the [OUTSIDE\_SPACE\_USED\_THRESHOLD](/docs/ops-manager/current/core/system-alerts/#std-label-blockstore) alert. `maxCapacityGB` does not enforce any limitation on the size of the backing database.
         """
         
         
@@ -427,7 +427,7 @@ To learn about write acknowledgement levels in MongoDB, see [Write Concern.](htt
         r"""
 ## Update One Oplog Configuration
 ### Document:
-[Update](https://www.mongodb.com/docs/ops-manager/v8.0/reference/api/admin/backup/oplog/mongoconfigs/update-one-oplog-configuration/)
+[Update](https://www.mongodb.com/docs/ops-manager/current/reference/api/admin/backup/oplog/mongoconfigs/update-one-oplog-configuration/)
 ### Endpoint:
 `PUT /oplog/mongoConfigs/{OPLOG-CONFIG-ID}`
 ### Description
